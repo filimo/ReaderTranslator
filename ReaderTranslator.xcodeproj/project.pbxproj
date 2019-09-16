@@ -120,9 +120,9 @@
 			children = (
 				F0AA69E5232E989F007CC07B /* ReaderTranslator.entitlements */,
 				F0AA69D0232E9729007CC07B /* Delegates */,
-				F0AA69D9232E979B007CC07B /* Components */,
 				F0AA69E2232E97C7007CC07B /* PropertyWrappers */,
 				F0AA69D6232E9780007CC07B /* Stores */,
+				F0AA69D9232E979B007CC07B /* Components */,
 				F0AA69D1232E9733007CC07B /* Views */,
 				F0AA69A6232E9712007CC07B /* Assets.xcassets */,
 				F09A5BF9232E9A3800CB88FB /* FunctionalSwift.pdf */,

@@ -10,8 +10,8 @@ import SwiftUI
 import PDFKit
 import Combine
 
-var willCurrentPageChanged: AnyCancellable?
-var willViewModeChanged: AnyCancellable?
+private var willCurrentPageChanged: AnyCancellable?
+private var willViewModeChanged: AnyCancellable?
 
 struct PDFKitView: View {
     @State var url: URL?

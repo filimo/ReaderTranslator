@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Speech
 
 enum ViewMode: String {
     case pdf
@@ -18,4 +19,6 @@ class Store: ObservableObject {
     @Published var currentPage = "1"
     @Published var pageCount = 0
     @Published var mode = ViewMode.pdf
+    @Published var voiceName = ""
+    @Published var voiceLanguage = ""
 }

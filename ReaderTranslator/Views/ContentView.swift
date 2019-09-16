@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ContentView: View {
     @State var url = ""
     @EnvironmentObject var store: Store
@@ -30,7 +28,7 @@ struct ContentView: View {
             .removeDuplicates()
             .sink { text in
                 if(text != "") {
-                    SpeechSynthesizer.speech(text: text)
+                    SpeechSynthesizer.speech(text: text, voiceName: self.store.voiceName)
                 }
         }
     }

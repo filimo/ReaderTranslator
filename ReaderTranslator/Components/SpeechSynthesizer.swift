@@ -9,19 +9,43 @@
 import Foundation
 import Speech
 
-class SpeechSynthesizer {
-    static private var speechSynthesizer = AVSpeechSynthesizer()
-    private init() { }
-    
-    static func speech(text: String) {
-        for availableVoice in AVSpeechSynthesisVoice.speechVoices() {
-            if availableVoice.language == "en-US" && availableVoice.debugDescription.contains("premium") {
-                print(availableVoice.debugDescription)
-            }
-        }
+struct VoiceInfo {
+    let id = UUID()
+    let name: String
+    let premium: Bool
+    let language: String
+    let voice: AVSpeechSynthesisVoice
+}
 
+extension Array where Element : Hashable {
+    var unique: [Element] {
+        Array(Set(self))
+    }
+}
+
+class SpeechSynthesizer {    
+    static private var speechSynthesizer = AVSpeechSynthesizer()
+    static var languages: [String] = {
+        var items = AVSpeechSynthesisVoice.speechVoices().map { $0.language }.unique
+        items.sort { left, right -> Bool in
+            left < right
+        }
+        return items
+    }()
+    
+    private init() { }
+
+    static func getVoices(language: String) -> [VoiceInfo] {
+        AVSpeechSynthesisVoice.speechVoices()
+            .filter({ $0.language == language })
+            .map { voice in
+                .init(name: voice.name, premium: voice.description.contains("premium"), language: voice.language, voice: voice)
+            }
+    }
+
+    static func speech(text: String, voiceName: String) {
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
-        speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == "Tessa" })
+        speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })
         speechUtterance.rate = 0.4
 
         if speechSynthesizer.isSpeaking {
