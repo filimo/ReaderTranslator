@@ -14,8 +14,8 @@ struct StatusBarView: View {
     
     var body: some View {
         let pdfMode = Binding<Bool>(
-            get: { self.store.mode == .pdf },
-            set: { self.store.mode = $0 ? .pdf : .web }
+            get: { self.store.viewMode == .pdf },
+            set: { self.store.viewMode = $0 ? .pdf : .web }
         )
 
         return HStack {

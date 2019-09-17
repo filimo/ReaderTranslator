@@ -70,7 +70,7 @@ struct PDFKitView: View {
             }
         
         //TODO: [Fix PDFView issue] PDFView will not correctly set the last page after SwiftUI reshows it.
-        _ = self.store.$mode
+        _ = self.store.$viewMode
             .receive(on: RunLoop.main)
             .sink { mode in
                 if mode == .pdf {

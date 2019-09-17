@@ -15,13 +15,13 @@ struct ReaderView: View {
 
     var body: some View {
         HStack {
-            if store.mode == .web {
+            if store.viewMode == .web {
                 VStack {
                     TextField("Enter website name", text: $store.lastWebPage)
                     WebView(url: $url)
                 }
             }
-            if store.mode == .pdf {
+            if store.viewMode == .pdf {
                 PDFKitView()
             }
             TranslatorView(text: .constant(URLQueryItem(name: "text", value: store.selectedText)))

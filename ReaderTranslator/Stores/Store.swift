@@ -20,7 +20,7 @@ class Store: ObservableObject {
     @Published var selectedText = ""
     @Published var currentPage = "1"
     @Published var pageCount = 0
-    @Published var mode = ViewMode.pdf
+    @Published(key: "viewMode") var viewMode = ViewMode.pdf
 
     @Published(key: "voiceLanguage") var voiceLanguage = "Select language"
     @Published(key: "voiceName")  var voiceName = "Select voice"
