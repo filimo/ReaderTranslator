@@ -9,27 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var url = ""
     @EnvironmentObject var store: Store
         
     var body: some View {
         VStack {
-            ReaderView(url: $url)
+            ReaderView()
             StatusBarView()
-        }
-        .onAppear {
-            self.onSelectedTextChanged()
-        }
-    }
-    
-    func onSelectedTextChanged() {
-        _ = store.$selectedText
-            .debounce(for: 0.5, scheduler: RunLoop.main)
-            .removeDuplicates()
-            .sink { text in
-                if(text != "") {
-                    SpeechSynthesizer.speech(text: text, voiceName: self.store.voiceName)
-                }
         }
     }
 }

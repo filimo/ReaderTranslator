@@ -20,6 +20,7 @@ struct WebView: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: WebViewController, context: Context) {
+        print("@Binding var url: ", url)
         if uiViewController.url != url {
             uiViewController.load(url: url)
         }

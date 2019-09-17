@@ -10,17 +10,11 @@ import SwiftUI
 import PDFKit
 import Combine
 
-private var willCurrentPageChanged: AnyCancellable?
-private var willViewModeChanged: AnyCancellable?
-
 struct PDFKitView: View {
     @State var url: URL?
 
     @EnvironmentObject var store: Store
 
-    @UserDefault(key: "LAST_PAGE", defaultValue: "1")
-    var lastPage: String
-    
     var body: some View {
         PDFKitViewRepresentable(url: $url)
         .onAppear {
@@ -28,7 +22,7 @@ struct PDFKitView: View {
             
             // TODO: [Fix PDFView issue] Set the current page after PDFView is rendered
             // otherwise .PDFViewPageChanged will be invoked many times.
-            if let lastPage = Int(self.lastPage) {
+            if let lastPage = Int(self.store.lastPage) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.goCurrentPage(page: lastPage)
                 }
@@ -43,7 +37,7 @@ struct PDFKitView: View {
             guard let pdfView = event.object as? PDFView else { return }
             guard let document = pdfView.document else { return }
 
-            print("debug: ", "PDFViewDocumentChanged: ", self.lastPage)
+            print("debug: ", "PDFViewDocumentChanged: ", self.store.lastPage)
             self.store.pageCount = document.pageCount
         }
         
@@ -56,7 +50,7 @@ struct PDFKitView: View {
 
             print("debug: ", "PDFViewPageChanged: ", page + 1, document.pageCount)
             self.store.currentPage = String(page + 1)
-            self.lastPage = String(page + 1)
+            self.store.lastPage = String(page + 1)
         }
 
         nc.addObserver(forName: .PDFViewSelectionChanged, object: nil, queue: nil) { _ in
@@ -66,7 +60,7 @@ struct PDFKitView: View {
             }
         }
         
-        willCurrentPageChanged = self.store.$currentPage
+        _ = self.store.$currentPage
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { page in
@@ -76,7 +70,7 @@ struct PDFKitView: View {
             }
         
         //TODO: [Fix PDFView issue] PDFView will not correctly set the last page after SwiftUI reshows it.
-        willViewModeChanged = self.store.$mode
+        _ = self.store.$mode
             .receive(on: RunLoop.main)
             .sink { mode in
                 if mode == .pdf {
@@ -88,7 +82,7 @@ struct PDFKitView: View {
             }
         
         
-        print("debug: ", "Bundle.main.url: ", self.lastPage)
+        print("debug: ", "Bundle.main.url: ", store.lastPage)
         self.url = Bundle.main.url(forResource: "FunctionalSwift", withExtension: "pdf")
     }
     

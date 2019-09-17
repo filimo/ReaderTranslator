@@ -9,20 +9,15 @@
 import SwiftUI
 
 struct ReaderView: View {
-    @Binding var url: String
-
     @EnvironmentObject var store: Store
 
-    @UserDefault(key: "LAST_URL", defaultValue: "https://www.google.com")
-    private var lastURL: String
+    @State var url = ""
 
     var body: some View {
         HStack {
             if store.mode == .web {
                 VStack {
-                    TextField("Enter website name", text: $url, onEditingChanged: { event in
-                        self.lastURL = self.url
-                    })
+                    TextField("Enter website name", text: $store.lastWebPage)
                     WebView(url: $url)
                 }
             }
@@ -32,13 +27,21 @@ struct ReaderView: View {
             TranslatorView(text: .constant(URLQueryItem(name: "text", value: store.selectedText)))
         }
         .onAppear {
-            self.url = self.lastURL
+            self.url = self.store.lastWebPage
+            _ = self.store.$selectedText
+                .debounce(for: 0.5, scheduler: RunLoop.main)
+                .removeDuplicates()
+                .sink { text in
+                    if(text != "") {
+                        SpeechSynthesizer.speech(text: text, voiceName: self.store.voiceName)
+                    }
+            }
         }
     }
 }
 
 struct ReaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ReaderView(url: .constant(""))
+        ReaderView()
     }
 }

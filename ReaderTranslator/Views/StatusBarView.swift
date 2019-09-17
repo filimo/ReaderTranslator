@@ -9,17 +9,9 @@
 import SwiftUI
 import Combine
 
-private var willVoiceLanguageChanged: AnyCancellable?
-private var willVoiceNameChanged: AnyCancellable?
-
 struct StatusBarView: View {
     @EnvironmentObject var store: Store
     
-    @UserDefault(key: "LAST_LANGUAGE", defaultValue: "")
-    var lastLanguage: String
-    @UserDefault(key: "LAST_VOICE_NAME", defaultValue: "")
-    var lastVoiceName: String
-
     var body: some View {
         let pdfMode = Binding<Bool>(
             get: { self.store.mode == .pdf },
@@ -32,6 +24,7 @@ struct StatusBarView: View {
                 ForEach(SpeechSynthesizer.languages, id: \.self) { language in
                     Button(action: {
                         self.store.voiceLanguage = language
+                        self.store.voiceName = "Select voice"
                     }) {
                         Text(language)
                     }
@@ -61,21 +54,6 @@ struct StatusBarView: View {
                 .keyboardType(.numberPad)
                 .background(Color.gray)
             Text(" / \(self.store.pageCount)")
-        }
-        .onAppear {
-            willVoiceLanguageChanged = self.store.$voiceLanguage
-                .removeDuplicates()
-                .sink { language in
-                    self.lastLanguage = language
-                    self.store.voiceName = "Select voice"
-                }
-            willVoiceNameChanged = self.store.$voiceName
-                .removeDuplicates()
-                .sink { name in
-                    self.lastVoiceName = name
-                }
-            self.store.voiceLanguage = self.lastLanguage == "" ? "Select language" : self.lastLanguage
-            self.store.voiceName = self.lastVoiceName
         }
     }
 }
