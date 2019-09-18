@@ -11,14 +11,12 @@ import SwiftUI
 struct ReaderView: View {
     @EnvironmentObject var store: Store
 
-    @State var url = ""
-
     var body: some View {
         HStack {
             if store.viewMode == .web {
                 VStack {
                     TextField("Enter website name", text: $store.lastWebPage)
-                    WebView(url: $url)
+                    WebView(url: $store.lastWebPage)
                 }
             }
             if store.viewMode == .pdf {
@@ -27,7 +25,6 @@ struct ReaderView: View {
             TranslatorView(text: .constant(URLQueryItem(name: "text", value: store.selectedText)))
         }
         .onAppear {
-            self.url = self.store.lastWebPage
             _ = self.store.$selectedText
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()

@@ -17,6 +17,7 @@ extension Published where Value: RawRepresentable, Value.RawValue == String {
     init(wrappedValue defaultValue: Value, key: String) {
         let savedValue = UserDefaults.standard.string(forKey: key) ?? ""
         let value = Value.init(rawValue: savedValue) ?? defaultValue
+        
         self.init(initialValue: value)
         cancellables[key] = projectedValue.sink { val in
             UserDefaults.standard.set(val.rawValue, forKey: key)
