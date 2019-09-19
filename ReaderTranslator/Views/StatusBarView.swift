@@ -22,6 +22,12 @@ struct StatusBarView: View {
             Image(systemName: "minus.magnifyingglass").onTapGesture { self.store.zoom -= 0.5 }
             Slider(value: $store.zoom, in: 1...3).frame(width: 100)
             Image(systemName: "plus.magnifyingglass").onTapGesture { self.store.zoom += 0.5 }
+            
+            Toggle(isOn: pdfMode) {
+                Text("WEB")
+            }.fixedSize()
+            Text("PDF").padding(.trailing, 20)
+
             Text(store.voiceLanguage)
             .contextMenu {
                 ForEach(SpeechSynthesizer.languages, id: \.self) { language in
@@ -43,10 +49,6 @@ struct StatusBarView: View {
                     }
                 }
             }
-            Toggle(isOn: pdfMode) {
-                Text("WEB")
-            }.fixedSize()
-            Text("PDF").padding(.trailing, 20)
             Toggle(isOn: $store.isVoiceEnabled) {
                 Button(action: {
                     SpeechSynthesizer.speech(text: self.store.selectedText, voiceName: self.store.voiceName)
@@ -54,11 +56,15 @@ struct StatusBarView: View {
                     store.isVoiceEnabled ? Image(systemName: "volume.3.fill") : Image(systemName: "speaker")
                 }
             }.fixedSize()
-            TextField("   ", text: $store.currentPage)
-                .fixedSize()
-                .keyboardType(.numberPad)
-                .background(Color.gray)
-            Text(" / \(self.store.pageCount)")
+            
+            if store.viewMode == .pdf {
+                Text("  Page:")
+                TextField("   ", text: $store.currentPage)
+                    .fixedSize()
+                    .keyboardType(.numberPad)
+                    .background(Color.gray)
+                Text(" / \(self.store.pageCount)")
+            }
         }
     }
 }
