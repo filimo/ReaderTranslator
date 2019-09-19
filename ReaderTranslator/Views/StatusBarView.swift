@@ -44,11 +44,13 @@ struct StatusBarView: View {
                 Text("WEB")
             }.fixedSize()
             Text("PDF").padding(.trailing, 20)
-            Button(action: {
-                SpeechSynthesizer.speech(text: self.store.selectedText, voiceName: self.store.voiceName)
-            }) {
-                Image(systemName: "volume.3.fill")
-            }
+            Toggle(isOn: $store.isVoiceEnabled) {
+                Button(action: {
+                    SpeechSynthesizer.speech(text: self.store.selectedText, voiceName: self.store.voiceName)
+                }) {
+                    store.isVoiceEnabled ? Image(systemName: "volume.3.fill") : Image(systemName: "speaker")
+                }
+            }.fixedSize()
             TextField("   ", text: $store.currentPage)
                 .fixedSize()
                 .keyboardType(.numberPad)

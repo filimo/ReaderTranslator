@@ -28,6 +28,8 @@ class Store: ObservableObject {
     @Published(key: "lastWebPage") var lastWebPage = "https://wwww.google.com"
     
     @Published(key: "lastPage") var lastPage = "1"
+    
+    @Published(key: "isVoiceEnabled") var isVoiceEnabled = true
 
     private init() {}
 }
