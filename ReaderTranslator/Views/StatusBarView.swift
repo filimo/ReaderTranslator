@@ -19,9 +19,11 @@ struct StatusBarView: View {
         )
 
         return HStack {
-            Image(systemName: "minus.magnifyingglass").onTapGesture { self.store.zoom -= 0.5 }
-            Slider(value: $store.zoom, in: 1...3).frame(width: 100)
-            Image(systemName: "plus.magnifyingglass").onTapGesture { self.store.zoom += 0.5 }
+            if store.viewMode == .web {
+                Image(systemName: "minus.magnifyingglass").onTapGesture { self.store.zoom -= 0.5 }
+                Slider(value: $store.zoom, in: 1...3).frame(width: 100)
+                Image(systemName: "plus.magnifyingglass").onTapGesture { self.store.zoom += 0.5 }
+            }
             
             Toggle(isOn: pdfMode) {
                 Text("WEB")
