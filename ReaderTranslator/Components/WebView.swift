@@ -30,8 +30,9 @@ struct WebView: UIViewControllerRepresentable {
 
 class WebViewController: UIViewController {
     @Published var url: String = ""
-    @Published var store: Store
     @Published var selectedText = ""
+
+    var store: Store
 
     private let script = """
         document.onselectionchange = function() {
@@ -66,7 +67,7 @@ class WebViewController: UIViewController {
         self.store = store
         
         super.init(nibName: nil, bundle: nil)
-        
+
         _ = $selectedText
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()

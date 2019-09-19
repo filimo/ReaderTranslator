@@ -25,14 +25,12 @@ class Store: ObservableObject {
 
     @Published(key: "voiceLanguage") var voiceLanguage = "Select language"
     @Published(key: "voiceName")  var voiceName = "Select voice"
+    @Published(key: "isVoiceEnabled") var isVoiceEnabled = true
 
+    @Published var zoom: CGFloat = 1
     @Published(key: "lastWebPage") var lastWebPage = "https://wwww.google.com"
     
     @Published(key: "lastPage") var lastPage = "1"
-    
-    @Published(key: "isVoiceEnabled") var isVoiceEnabled = true
-    
-    @Published(key: "zoom") var zoom: CGFloat = 1
-
+        
     private init() {}
 }
