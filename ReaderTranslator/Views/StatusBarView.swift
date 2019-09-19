@@ -19,6 +19,9 @@ struct StatusBarView: View {
         )
 
         return HStack {
+            Image(systemName: "minus.magnifyingglass").onTapGesture { self.store.zoom -= 0.5 }
+            Slider(value: $store.zoom, in: 1...3).frame(width: 100)
+            Image(systemName: "plus.magnifyingglass").onTapGesture { self.store.zoom += 0.5 }
             Text(store.voiceLanguage)
             .contextMenu {
                 ForEach(SpeechSynthesizer.languages, id: \.self) { language in

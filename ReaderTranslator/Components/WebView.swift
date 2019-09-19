@@ -20,6 +20,7 @@ struct WebView: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: WebViewController, context: Context) {
+        uiViewController.webView.scrollView.zoomScale = store.zoom
         print("@Binding var url: ", url)
         if uiViewController.url != url {
             uiViewController.load(url: url)
@@ -27,17 +28,22 @@ struct WebView: UIViewControllerRepresentable {
     }
 }
 
-class WebViewController: UIViewController, WKScriptMessageHandler {
+class WebViewController: UIViewController {
     @Published var url: String = ""
-    @Published var selectedText: String = ""
-            
+    @Published var store: Store
+    @Published var selectedText = ""
+
     private let script = """
-        function __ViewTranslator_getSelectionAndSendMessage()
-        {
-            var txt = document.getSelection().toString() ;
-            webkit.messageHandlers.callbackHandler.postMessage(txt);
+        document.onselectionchange = function() {
+            var txt = document.getSelection().toString()
+            
+            webkit.messageHandlers.onSelectionChange.postMessage(txt)
         }
-        document.onselectionchange = __ViewTranslator_getSelectionAndSendMessage ;
+        document.body.oncontextmenu = function() {
+            var txt = document.getSelection().toString()
+            
+            webkit.messageHandlers.onContextMenu.postMessage("txt")
+        }
     """
     lazy var webView: WKWebView = {
         let contentController = WKUserContentController();
@@ -47,7 +53,8 @@ class WebViewController: UIViewController, WKScriptMessageHandler {
             forMainFrameOnly: true
         )
         contentController.addUserScript(userScript)
-        contentController.add( self, name: "callbackHandler")
+        contentController.add(self, name: "onSelectionChange")
+        contentController.add(self, name: "onContextMenu")
 
         let config = WKWebViewConfiguration()
         config.userContentController = contentController
@@ -56,6 +63,8 @@ class WebViewController: UIViewController, WKScriptMessageHandler {
     }()
 
     init(store: Store) {
+        self.store = store
+        
         super.init(nibName: nil, bundle: nil)
         
         _ = $selectedText
@@ -63,7 +72,7 @@ class WebViewController: UIViewController, WKScriptMessageHandler {
             .removeDuplicates()
             .sink { text in
                 if text != "" {
-                    store.selectedText = text
+                    self.store.selectedText = text
                 }
             }
         
@@ -88,18 +97,40 @@ class WebViewController: UIViewController, WKScriptMessageHandler {
     override func loadView() {
         super.loadView()
         self.view = self.webView
-    }
-
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if(message.name == "callbackHandler") {
-            if let text = message.body as? String {
-                selectedText = text
-            }
-        }
+        
+        self.webView.navigationDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension WebViewController: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if(message.name == "onSelectionChange") {
+            if let text = message.body as? String {
+                selectedText = text
+            }
+        }
+        if(message.name == "onContextMenu") {
+            if let text = message.body as? String {
+                SpeechSynthesizer.speech(text: text, voiceName: store.voiceName)
+            }
+        }
+    }
+}
+
+extension WebViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if let url = navigationAction.request.url {
+            if url.absoluteString == store.lastWebPage {
+                decisionHandler(.allow)
+            }else{
+                UIApplication.shared.open(url)
+                decisionHandler(.cancel)
+            }
+        }
     }
 }

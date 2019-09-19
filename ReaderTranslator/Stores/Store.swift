@@ -20,6 +20,7 @@ class Store: ObservableObject {
     @Published var selectedText = ""
     @Published var currentPage = "1"
     @Published var pageCount = 0
+    
     @Published(key: "viewMode") var viewMode = ViewMode.pdf
 
     @Published(key: "voiceLanguage") var voiceLanguage = "Select language"
@@ -30,6 +31,8 @@ class Store: ObservableObject {
     @Published(key: "lastPage") var lastPage = "1"
     
     @Published(key: "isVoiceEnabled") var isVoiceEnabled = true
+    
+    @Published(key: "zoom") var zoom: CGFloat = 1
 
     private init() {}
 }
