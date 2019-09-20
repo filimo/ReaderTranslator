@@ -11,29 +11,28 @@ import Combine
 import WebKit
 import SafariServices
 
-struct WebView: UIViewControllerRepresentable {
+struct WebView: UIViewRepresentable {
     @Binding var url: String
     @EnvironmentObject var store: Store
-
-    func makeUIViewController(context: Context) -> WebViewController {
-        WebViewController(store: store)
+    
+    func makeUIView(context: Context) -> CustomWebView {
+        CustomWebView()
     }
 
-    func updateUIViewController(_ uiViewController: WebViewController, context: Context) {
-        uiViewController.webView.scrollView.zoomScale = store.zoom
-        print("@Binding var url: ", url)
-        if uiViewController.url != url {
-            uiViewController.load(url: url)
-        }
+    func updateUIView(_ uiView: CustomWebView, context: Context) {
+        uiView.scrollView.zoomScale = store.zoom
+        if uiView.newUrl != url { uiView.newUrl = url }
     }
 }
 
-class WebViewController: UIViewController {
-    @Published var url: String = ""
-    @Published var selectedText = ""
+class CustomWebView: WKWebView {
+    @Published private var selectedText = ""
+    @Published var newUrl = ""
 
-    var store: Store
-
+    typealias UIViewType = CustomWebView
+    
+    var store = Store.shared
+    
     private let script = """
         document.onselectionchange = function() {
             var txt = document.getSelection().toString()
@@ -45,28 +44,28 @@ class WebViewController: UIViewController {
             
             webkit.messageHandlers.onContextMenu.postMessage("txt")
         }
+        document.body.onload = function() {
+            webkit.messageHandlers.onBodyLoaded.postMessage("txt")
+        }
     """
-    lazy var webView: WKWebView = {
-        let contentController = WKUserContentController();
+    
+    init() {
+        let config = WKWebViewConfiguration()
+        let contentController = WKUserContentController()
         let userScript = WKUserScript(
             source: script,
             injectionTime: .atDocumentEnd,
             forMainFrameOnly: true
         )
+        config.userContentController = contentController
+        
+        super.init(frame: .zero, configuration: config)
+        self.navigationDelegate = self
+        
         contentController.addUserScript(userScript)
         contentController.add(self, name: "onSelectionChange")
         contentController.add(self, name: "onContextMenu")
-
-        let config = WKWebViewConfiguration()
-        config.userContentController = contentController
-
-        return WKWebView(frame: self.view.frame, configuration: config)
-    }()
-
-    init(store: Store) {
-        self.store = store
-        
-        super.init(nibName: nil, bundle: nil)
+        contentController.add(self, name: "onBodyLoaded")
 
         _ = $selectedText
             .debounce(for: 0.5, scheduler: RunLoop.main)
@@ -77,38 +76,22 @@ class WebViewController: UIViewController {
                 }
             }
         
-        _ = $url
+        _ = $newUrl
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { url in
                 if let url = URL(string: url) {
-                    self.webView.load(URLRequest(url: url))
+                    self.load(URLRequest(url: url))
                 }
             }
-    }
-    
-    func load(url: String) {
-        self.url = url
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func loadView() {
-        super.loadView()
-        self.view = self.webView
-        
-        self.webView.navigationDelegate = self
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
-extension WebViewController: WKScriptMessageHandler {
+extension CustomWebView: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if(message.name == "onSelectionChange") {
             if let text = message.body as? String {
@@ -120,10 +103,13 @@ extension WebViewController: WKScriptMessageHandler {
                 SpeechSynthesizer.speech(text: text, voiceName: store.voiceName)
             }
         }
+        if(message.name == "onBodyLoaded") {
+            self.scrollView.zoomScale = self.store.zoom
+        }
     }
 }
 
-extension WebViewController: WKNavigationDelegate {
+extension CustomWebView: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url {
             if url.absoluteString == store.lastWebPage {
@@ -135,3 +121,4 @@ extension WebViewController: WKNavigationDelegate {
         }
     }
 }
+
