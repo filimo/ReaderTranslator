@@ -104,7 +104,6 @@ extension CustomWebView: WKScriptMessageHandler {
             }
         }
         if(message.name == "onBodyLoaded") {
-            self.scrollView.zoomScale = self.store.zoom
         }
     }
 }
@@ -118,6 +117,13 @@ extension CustomWebView: WKNavigationDelegate {
                 UIApplication.shared.open(url)
                 decisionHandler(.cancel)
             }
+        }
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        //TODO: it's the hack it need research the issue why zoom doesn't work just after a page is loaded
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.scrollView.zoomScale = self.store.zoom
         }
     }
 }
