@@ -85,6 +85,7 @@ class PageWebView: WKWebView {
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { url in
+                self.evaluateJavaScript("document.body.remove()")
                 if let url = URL(string: url) {
                     self.load(URLRequest(url: url))
                 }
