@@ -8,6 +8,7 @@ This project is demo how to use SwiftUI, Combine and Catalyst together
 
 ![DEMO](files/demo.gif)
 
+![](files/Screen8.png)
 ![](files/Screen1.png)
 ![](files/Screen2.png)
 ![](files/Screen3.png)
