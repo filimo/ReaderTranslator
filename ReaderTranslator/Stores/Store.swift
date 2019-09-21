@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Combine
+import UIKit
+import SwiftUI
 
 enum ViewMode: String {
     case pdf
@@ -20,17 +21,35 @@ class Store: ObservableObject {
     @Published var selectedText = ""
     @Published var currentPage = "1"
     @Published var pageCount = 0
+
+    @Published(key: "currentTab") var currentTab = 0 {
+        didSet {
+            self.lastWebPage = self.savedLastWebPage[self.currentTab]
+        }
+    }
     
     @Published(key: "viewMode") var viewMode = ViewMode.pdf
 
     @Published(key: "voiceLanguage") var voiceLanguage = "Select language"
     @Published(key: "voiceName")  var voiceName = "Select voice"
     @Published(key: "isVoiceEnabled") var isVoiceEnabled = true
+    @Published(key: "voiceRate")  var voiceRate = "0.4"
 
-    @Published(key: "zoom") var zoom: CGFloat = 1
-    @Published(key: "lastWebPage") var lastWebPage = "https://wwww.google.com"
+    @UserDefault(key: "lastWebPage")
+    private var savedLastWebPage = ["https://wwww.google.com", "", ""]
+    @Published
+    var lastWebPage = "" {
+        willSet {
+            self.savedLastWebPage[self.currentTab] = newValue
+        }
+    }
     
     @Published(key: "lastPage") var lastPage = "1"
-        
-    private init() {}
+
+    @Published(key: "zoom") var zoom: CGFloat = 1
+
+
+    private init() {
+        self.lastWebPage = self.savedLastWebPage[self.currentTab]
+    }
 }

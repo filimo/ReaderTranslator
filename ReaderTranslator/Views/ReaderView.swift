@@ -15,8 +15,8 @@ struct ReaderView: View {
         HStack {
             if store.viewMode == .web {
                 VStack {
-                    TextField("Enter website name", text: $store.lastWebPage)
-                    WebView(url: $store.lastWebPage)
+                    TextField("Enter website name", text: self.$store.lastWebPage)
+                    WebView(lastWebPage: self.$store.lastWebPage, zoom: self.$store.zoom)
                 }
             }
             if store.viewMode == .pdf {

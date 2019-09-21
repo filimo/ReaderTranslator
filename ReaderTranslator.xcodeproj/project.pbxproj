@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F002C62A232FF40C00D3FC04 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = F002C629232FF40C00D3FC04 /* Published.swift */; };
+		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F09A5BFA232E9A3800CB88FB /* FunctionalSwift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F09A5BF9232E9A3800CB88FB /* FunctionalSwift.pdf */; };
 		F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A0232E9710007CC07B /* AppDelegate.swift */; };
 		F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A2232E9710007CC07B /* SceneDelegate.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		F002C629232FF40C00D3FC04 /* Published.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Published.swift; sourceTree = "<group>"; };
+		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F09A5BF9232E9A3800CB88FB /* FunctionalSwift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = FunctionalSwift.pdf; path = "../../../../../../../../Users/filimo/Downloads/Books about Swift/FunctionalSwift.pdf"; sourceTree = "<group>"; };
 		F0AA699D232E9710007CC07B /* ReaderTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AA69A0232E9710007CC07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				F002C629232FF40C00D3FC04 /* Published.swift */,
+				F040D5772336A77D004567B8 /* UserDefault.swift */,
 			);
 			path = "Property Wrappers";
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WebView.swift in Sources */,
 				F002C62A232FF40C00D3FC04 /* Published.swift in Sources */,
+				F040D5782336A77D004567B8 /* UserDefault.swift in Sources */,
 				F0AA69DE232E97B0007CC07B /* SpeechSynthesizer.swift in Sources */,
 				F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */,
 				F0AA69A5232E9710007CC07B /* ContentView.swift in Sources */,

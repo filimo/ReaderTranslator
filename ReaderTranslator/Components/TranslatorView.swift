@@ -13,7 +13,12 @@ struct TranslatorView : UIViewRepresentable {
     @Binding var text: URLQueryItem
       
     func makeUIView(context: Context) -> WKWebView  {
-        return WKWebView()
+        let config = WKWebViewConfiguration()
+        config.websiteDataStore = .nonPersistent()
+        
+        let view = WKWebView(frame: .zero, configuration: config)
+        
+        return view
     }
       
     func updateUIView(_ uiView: WKWebView, context: Context) {

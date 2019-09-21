@@ -12,24 +12,24 @@ import WebKit
 import SafariServices
 
 struct WebView: UIViewRepresentable {
-    @Binding var url: String
-    @EnvironmentObject var store: Store
-    
-    func makeUIView(context: Context) -> CustomWebView {
-        CustomWebView()
+    @Binding var lastWebPage: String
+    @Binding var zoom: CGFloat
+
+    func makeUIView(context: Context) -> PageWebView {
+        PageWebView()
     }
 
-    func updateUIView(_ uiView: CustomWebView, context: Context) {
-        uiView.scrollView.zoomScale = store.zoom
-        if uiView.newUrl != url { uiView.newUrl = url }
+    func updateUIView(_ uiView: PageWebView, context: Context) {
+        uiView.scrollView.zoomScale = self.zoom
+        if uiView.newUrl != self.lastWebPage { uiView.newUrl = self.lastWebPage }
     }
 }
 
-class CustomWebView: WKWebView {
+class PageWebView: WKWebView {
     @Published private var selectedText = ""
     @Published var newUrl = ""
 
-    typealias UIViewType = CustomWebView
+    typealias UIViewType = PageWebView
     
     var store = Store.shared
     
@@ -39,7 +39,7 @@ class CustomWebView: WKWebView {
             
             webkit.messageHandlers.onSelectionChange.postMessage(txt)
         }
-        document.body.oncontextmenu = function() {
+        window.oncontextmenu = function() {
             var txt = document.getSelection().toString()
             
             webkit.messageHandlers.onContextMenu.postMessage("txt")
@@ -58,14 +58,19 @@ class CustomWebView: WKWebView {
             forMainFrameOnly: true
         )
         config.userContentController = contentController
+        config.websiteDataStore = .nonPersistent()
         
         super.init(frame: .zero, configuration: config)
+
+//        cleanAllCookies()
+
         self.navigationDelegate = self
         
         contentController.addUserScript(userScript)
         contentController.add(self, name: "onSelectionChange")
         contentController.add(self, name: "onContextMenu")
         contentController.add(self, name: "onBodyLoaded")
+
 
         _ = $selectedText
             .debounce(for: 0.5, scheduler: RunLoop.main)
@@ -86,32 +91,46 @@ class CustomWebView: WKWebView {
             }
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
+    
+    func cleanAllCookies() {
+        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
+        print("All cookies deleted")
 
-extension CustomWebView: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if(message.name == "onSelectionChange") {
-            if let text = message.body as? String {
-                selectedText = text
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            records.forEach { record in
+                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
+                print("Cookie ::: \(record) deleted")
             }
-        }
-        if(message.name == "onContextMenu") {
-            if let text = message.body as? String {
-                SpeechSynthesizer.speech(text: text, voiceName: store.voiceName)
-            }
-        }
-        if(message.name == "onBodyLoaded") {
         }
     }
 }
 
-extension CustomWebView: WKNavigationDelegate {
+extension PageWebView: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+
+        switch message.name {
+        case "onSelectionChange":
+            if let value = message.body as? String {
+                selectedText = value
+            }
+        case "onContextMenu":
+            print("onContextMenu")
+        case "onBodyLoaded":
+            print("onBodyLoaded")
+        default:
+            print("webkit.messageHandlers.\(message.name).postMessage() isn't found")
+        }
+    }
+}
+
+extension PageWebView: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url {
-            if url.absoluteString == store.lastWebPage {
+            if url.absoluteString == self.store.lastWebPage {
                 decisionHandler(.allow)
             }else{
                 UIApplication.shared.open(url)
@@ -125,6 +144,14 @@ extension CustomWebView: WKNavigationDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.scrollView.zoomScale = self.store.zoom
         }
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
+        guard navigationAction.targetFrame?.isMainFrame == true else {
+            decisionHandler(.allow, preferences)
+            return
+        }
+        decisionHandler(.allow, preferences)
     }
 }
 

@@ -13,61 +13,143 @@ struct StatusBarView: View {
     @EnvironmentObject var store: Store
     
     var body: some View {
-        let pdfMode = Binding<Bool>(
-            get: { self.store.viewMode == .pdf },
-            set: { self.store.viewMode = $0 ? .pdf : .web }
-        )
+        HStack {
+            StatusBarView_Tabs(currentTab: self.$store.currentTab)
+            StatusBarView_Zoom()
+            StatusBarView_PdfMode()
+            StatusBarView_Voice()
+            StatusBarView_PdfPage()
+        }
+    }
+}
 
-        return HStack {
+struct StatusBarView_Tabs: View {
+    @Binding var currentTab: Int
+    
+    var body: some View {
+        Group {
+            Image(systemName: "1.circle\(iconStatus(0))").onTapGesture { self.currentTab = 0 }
+            Image(systemName: "2.circle\(iconStatus(1))").onTapGesture { self.currentTab = 1 }
+            Image(systemName: "3.circle\(iconStatus(2))").onTapGesture { self.currentTab = 2 }
+        }
+    }
+    
+    private func iconStatus(_ tab: Int) -> String {
+        self.currentTab == tab ? ".fill" : ""
+    }
+}
+
+struct StatusBarView_Zoom: View {
+    @EnvironmentObject var store: Store
+    
+    var body: some View {
+        let zoom = Binding<String>(
+            get: { String(format: "%.02f", CGFloat(self.store.zoom)) },
+            set: {
+                if let value = NumberFormatter().number(from: $0) {
+                    self.store.zoom = CGFloat(truncating: value)
+                }
+        }
+        )
+        
+        return Group {
             if store.viewMode == .web {
+                TextField("zoom", text: zoom)
+                    .fixedSize()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 Image(systemName: "minus.magnifyingglass").onTapGesture { self.store.zoom -= 0.5 }
                 Slider(value: $store.zoom, in: 1...3).frame(width: 100)
                 Image(systemName: "plus.magnifyingglass").onTapGesture { self.store.zoom += 0.5 }
             }
-            
+        }
+    }
+}
+struct StatusBarView_PdfMode: View {
+    @EnvironmentObject var store: Store
+    
+    var body: some View {
+        let pdfMode = Binding<Bool>(
+            get: { self.store.viewMode == .pdf },
+            set: { self.store.viewMode = $0 ? .pdf : .web }
+        )
+        
+        return Group {
             Toggle(isOn: pdfMode) {
                 Text("WEB")
             }.fixedSize()
             Text("PDF").padding(.trailing, 20)
+        }
+    }
+}
 
+struct StatusBarView_PdfPage: View {
+    @EnvironmentObject var store: Store
+    
+    var body: some View {
+        return Group {
+            if store.viewMode == .pdf {
+                Text("  Page:")
+                TextField("   ", text: self.$store.currentPage)
+                    .fixedSize()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                Text(" / \(self.store.pageCount)")
+            }
+        }
+    }
+}
+
+
+struct StatusBarView_Voice: View {
+    @EnvironmentObject var store: Store
+    
+    var body: some View {
+        Group {
             Text(store.voiceLanguage)
-            .contextMenu {
-                ForEach(SpeechSynthesizer.languages, id: \.self) { language in
-                    Button(action: {
-                        self.store.voiceLanguage = language
-                        self.store.voiceName = "Select voice"
-                    }) {
-                        Text(language)
+                .contextMenu {
+                    ForEach(SpeechSynthesizer.languages, id: \.self) { language in
+                        Button(action: {
+                            self.store.voiceLanguage = language
+                            self.store.voiceName = "Select voice"
+                        }) {
+                            Text(language)
+                        }
                     }
-                }
             }
             Text(store.voiceName)
-            .contextMenu {
-                ForEach(SpeechSynthesizer.getVoices(language: store.voiceLanguage), id: \.id) { voice in
-                    Button(action: {
-                        self.store.voiceName = voice.name
-                        SpeechSynthesizer.speech(text: self.store.selectedText, voiceName: self.store.voiceName)
-                    }) {
-                        Text("\(voice.name) \(voice.premium ? "(premium)" : "")")
+                .contextMenu {
+                    ForEach(SpeechSynthesizer.getVoices(language: store.voiceLanguage), id: \.id) { voice in
+                        Button(action: {
+                            self.store.voiceName = voice.name
+                            SpeechSynthesizer.speech()
+                        }) {
+                            Text("\(voice.name) \(voice.premium ? "(premium)" : "")")
+                        }
                     }
-                }
             }
+            StatusBarView_Voice_Volume()
+        }
+    }
+}
+
+struct StatusBarView_Voice_Volume: View {
+    @EnvironmentObject var store: Store
+    
+    var body: some View {
+        Group {
             Toggle(isOn: $store.isVoiceEnabled) {
+                Text("On:")
                 Button(action: {
-                    SpeechSynthesizer.speech(text: self.store.selectedText, voiceName: self.store.voiceName)
+                    SpeechSynthesizer.speech()
                 }) {
                     store.isVoiceEnabled ? Image(systemName: "volume.3.fill") : Image(systemName: "speaker")
                 }
             }.fixedSize()
-            
-            if store.viewMode == .pdf {
-                Text("  Page:")
-                TextField("   ", text: $store.currentPage)
-                    .fixedSize()
-                    .keyboardType(.numberPad)
-                    .background(Color.gray)
-                Text(" / \(self.store.pageCount)")
-            }
+            Text("Rate:")
+            TextField("   ", text: self.$store.voiceRate)
+                .fixedSize()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.numberPad)
         }
     }
 }
