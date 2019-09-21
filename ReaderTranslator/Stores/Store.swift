@@ -50,6 +50,6 @@ class Store: ObservableObject {
 
 
     private init() {
-        self.lastWebPage = self.savedLastWebPage[self.currentTab]
+        ({ currentTab = currentTab })() //call didSet
     }
 }
