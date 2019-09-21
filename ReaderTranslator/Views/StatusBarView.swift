@@ -14,7 +14,7 @@ struct StatusBarView: View {
     
     var body: some View {
         HStack {
-            StatusBarView_Tabs(currentTab: self.$store.currentTab)
+            StatusBarView_Tabs(viewMode: $store.viewMode, currentTab: $store.currentTab)
             StatusBarView_Zoom()
             StatusBarView_PdfMode()
             StatusBarView_Voice()
@@ -24,13 +24,16 @@ struct StatusBarView: View {
 }
 
 struct StatusBarView_Tabs: View {
+    @Binding var viewMode: ViewMode
     @Binding var currentTab: Int
     
     var body: some View {
         Group {
-            Image(systemName: "1.circle\(iconStatus(0))").onTapGesture { self.currentTab = 0 }
-            Image(systemName: "2.circle\(iconStatus(1))").onTapGesture { self.currentTab = 1 }
-            Image(systemName: "3.circle\(iconStatus(2))").onTapGesture { self.currentTab = 2 }
+            if viewMode == .web {
+                Image(systemName: "1.circle\(iconStatus(0))").onTapGesture { self.currentTab = 0 }
+                Image(systemName: "2.circle\(iconStatus(1))").onTapGesture { self.currentTab = 1 }
+                Image(systemName: "3.circle\(iconStatus(2))").onTapGesture { self.currentTab = 2 }
+            }
         }
     }
     
