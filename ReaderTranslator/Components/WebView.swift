@@ -25,6 +25,20 @@ struct WebView: UIViewRepresentable {
     }
 }
 
+
+//This hack to make PageWebView the first responder but the selection won't work
+//extension UIView {
+//    public override func becomeFirstResponder() -> Bool {
+//        // Actual view is instance of private class UIWebBrowserView, its parent parent view is UIWebView
+//        if self.superview?.superview is PageWebView {
+//            print(1)
+//            return false
+//        } else {
+//            return super.becomeFirstResponder()
+//        }
+//    }
+//}
+
 class PageWebView: WKWebView {
     @Published private var selectedText = ""
     @Published var newUrl = ""
@@ -46,6 +60,9 @@ class PageWebView: WKWebView {
         }
         document.body.onload = function() {
             webkit.messageHandlers.onBodyLoaded.postMessage("txt")
+        }
+        document.body.onkeydown = function(event) {
+            webkit.messageHandlers.onKeyPress.postMessage(event.code)
         }
     """
     
@@ -70,6 +87,7 @@ class PageWebView: WKWebView {
         contentController.add(self, name: "onSelectionChange")
         contentController.add(self, name: "onContextMenu")
         contentController.add(self, name: "onBodyLoaded")
+        contentController.add(self, name: "onKeyPress")
 
 
         _ = $selectedText
@@ -110,6 +128,18 @@ class PageWebView: WKWebView {
     }
 }
 
+extension PageWebView {
+    override public var keyCommands: [UIKeyCommand]? {
+        //Voice selected text with any key since performCommand isn't fired because PageWebView isn't the first responder.
+        SpeechSynthesizer.speech()
+        return [.init(input: "1", modifierFlags: .command, action: #selector(performCommand))]
+    }
+
+    @objc func performCommand(sender: UIKeyCommand) {
+        print(sender)
+    }
+}
+
 extension PageWebView: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
 
@@ -122,6 +152,10 @@ extension PageWebView: WKScriptMessageHandler {
             print("onContextMenu")
         case "onBodyLoaded":
             print("onBodyLoaded")
+        case "onKeyPress":
+            if let code = message.body as? String {
+                if code == "Space" { SpeechSynthesizer.speech() }
+            }
         default:
             print("webkit.messageHandlers.\(message.name).postMessage() isn't found")
         }
