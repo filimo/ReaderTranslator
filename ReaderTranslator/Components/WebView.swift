@@ -75,7 +75,7 @@ class PageWebView: WKWebView {
             forMainFrameOnly: true
         )
         config.userContentController = contentController
-        config.websiteDataStore = .default()
+        config.websiteDataStore = .nonPersistent()
         
         super.init(frame: .zero, configuration: config)
 
