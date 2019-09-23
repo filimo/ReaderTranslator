@@ -35,6 +35,7 @@ class Store: ObservableObject {
     @Published(key: "isVoiceEnabled") var isVoiceEnabled = true
     @Published(key: "voiceRate")  var voiceRate = "0.4"
 
+    @Published var canGoBack = false
     @UserDefault(key: "lastWebPage")
     private var savedLastWebPage = ["https://wwww.google.com", "", ""]
     @Published

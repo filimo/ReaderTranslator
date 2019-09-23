@@ -7,21 +7,15 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct ReaderView: View {
     @EnvironmentObject var store: Store
 
     var body: some View {
         HStack {
-            if store.viewMode == .web {
-                VStack {
-                    TextField("Enter website name", text: self.$store.lastWebPage)
-                    WebView(lastWebPage: self.$store.lastWebPage, zoom: self.$store.zoom)
-                }
-            }
-            if store.viewMode == .pdf {
-                PDFKitView()
-            }
+            ReaderView_Web()
+            ReaderView_PDF()
             TranslatorView(text: .constant(URLQueryItem(name: "text", value: store.selectedText)))
         }
         .onAppear {
@@ -32,6 +26,45 @@ struct ReaderView: View {
                     if(self.store.isVoiceEnabled && text != "") {
                         SpeechSynthesizer.speech(text: text, voiceName: self.store.voiceName)
                     }
+            }
+        }
+    }
+}
+
+struct ReaderView_Web: View {
+    @EnvironmentObject var store: Store
+    
+    var body: some View {
+        return Group {
+            if store.viewMode == .web {
+                VStack {
+                    HStack {
+                        Image(systemName: "arrowshape.turn.up.left\(store.canGoBack ? ".fill" : "")")
+                            .onTapGesture {
+                                _ = PageWebView.shared.goBack()
+                            }
+                        TextField("Enter website name", text: self.$store.lastWebPage)
+                    }.padding(5)
+                    WebView(lastWebPage: self.$store.lastWebPage, zoom: self.$store.zoom)
+                }
+            }else{
+                EmptyView()
+            }
+        }
+    }
+}
+
+struct ReaderView_PDF: View {
+    @EnvironmentObject var store: Store
+    
+    var body: some View {
+        Group {
+            if store.viewMode == .pdf {
+                if store.viewMode == .pdf {
+                    PDFKitView()
+                }
+            }else{
+                EmptyView()
             }
         }
     }
