@@ -9,6 +9,19 @@
 import SwiftUI
 import WebKit
 
+//protocol StoreDelegate {
+//    var store: Store { get }
+//}
+//
+//extension StoreDelegate {
+//    var store: EnvironmentObject<Store> {
+//        get {
+//            var env = EnvironmentObject<Store>(wrappedValue: Store.shared)
+//            return env
+//        }
+//    }
+//}
+
 struct ReaderView: View {
     @EnvironmentObject var store: Store
 
@@ -32,8 +45,8 @@ struct ReaderView: View {
 }
 
 struct ReaderView_Web: View {
-    @EnvironmentObject var store: Store
-    
+    @ObservedObject var store = Store.shared
+
     var body: some View {
         return Group {
             if store.viewMode == .web {
@@ -41,11 +54,13 @@ struct ReaderView_Web: View {
                     HStack {
                         Image(systemName: "arrowshape.turn.up.left\(store.canGoBack ? ".fill" : "")")
                             .onTapGesture {
-                                _ = PageWebView.shared.goBack()
+                                _ = WebView.pageView.goBack()
                             }
                         TextField("Enter website name", text: self.$store.lastWebPage)
                     }.padding(5)
-                    WebView(lastWebPage: self.$store.lastWebPage, zoom: self.$store.zoom)
+                    if self.store.currentTab == 0 { WebView(lastWebPage: $store.lastWebPage) }
+                    if self.store.currentTab == 1 { WebView(lastWebPage: $store.lastWebPage) }
+                    if self.store.currentTab == 2 { WebView(lastWebPage: $store.lastWebPage) }
                 }
             }else{
                 EmptyView()

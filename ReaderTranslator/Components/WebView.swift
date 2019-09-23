@@ -11,16 +11,27 @@ import Combine
 import WebKit
 
 struct WebView: UIViewRepresentable {
+    @ObservedObject var store = Store.shared
     @Binding var lastWebPage: String
-    @Binding var zoom: CGFloat
-
+    static private var views = [Int: PageWebView]()
+    
+    static var pageView: PageWebView {
+        get { views[Store.shared.currentTab]! }
+    }
+    
     func makeUIView(context: Context) -> PageWebView {
-         PageWebView.shared
+        let view = WebView.views[store.currentTab] ?? PageWebView()
+        
+        WebView.views[self.store.currentTab] = view
+        
+        store.canGoBack = view.canGoBack
+        
+        return view
     }
 
     func updateUIView(_ uiView: PageWebView, context: Context) {
-        uiView.scrollView.zoomScale = self.zoom
-        if uiView.newUrl != self.lastWebPage { uiView.newUrl = self.lastWebPage }
+        uiView.scrollView.zoomScale = store.zoom
+        if uiView.newUrl != lastWebPage { uiView.newUrl = lastWebPage }
     }
 }
 
@@ -41,9 +52,6 @@ struct WebView: UIViewRepresentable {
 class PageWebView: WKWebView {
     @Published private var selectedText = ""
     @Published var newUrl = ""
-    static var shared = PageWebView()
-
-    typealias UIViewType = PageWebView
     
     var store = Store.shared
     
@@ -66,7 +74,7 @@ class PageWebView: WKWebView {
         }
     """
     
-    private init() {
+    init() {
         let config = WKWebViewConfiguration()
         let contentController = WKUserContentController()
         let userScript = WKUserScript(
@@ -104,6 +112,7 @@ class PageWebView: WKWebView {
             .removeDuplicates()
             .sink { url in
                 if self.url?.absoluteString != self.newUrl {
+                    self.store.lastWebPage = self.newUrl
                     self.evaluateJavaScript("document.body.remove()")
                     if let url = URL(string: url) {
                         self.load(URLRequest(url: url))
@@ -177,8 +186,8 @@ extension PageWebView: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        if let url = self.url?.absoluteString { self.newUrl = url }
         store.canGoBack = canGoBack
-        self.store.lastWebPage = self.url?.absoluteString ?? ""
         //TODO: it's the hack it need research the issue why zoom doesn't work just after a page is loaded
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.scrollView.zoomScale = self.store.zoom
@@ -196,8 +205,8 @@ extension PageWebView: WKNavigationDelegate {
     override func goBack() -> WKNavigation? {
         let nav = super.goBack()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if let url = self.url?.absoluteString { self.newUrl = url }
             self.store.canGoBack = self.canGoBack
-            self.store.lastWebPage = self.url?.absoluteString ?? ""
         }
         return nav
     }

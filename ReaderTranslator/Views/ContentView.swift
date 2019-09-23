@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var store: Store
-        
     var body: some View {
         VStack {
             ReaderView()
