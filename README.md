@@ -1,5 +1,8 @@
-# ReaderTranslator with SwiftUI, Combine and Catalyst for MacOS, iPad and iPhone
-While I am waiting for the commercial SwiftUI projects I decided to dedicate my free time to build this open-source project.
+# ReaderTranslator 
+**using SwiftUI, Combine and Catalyst for MacOS iPad iPhone**
+
+## Status
+While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
 
 ## Base idea
 Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate 
