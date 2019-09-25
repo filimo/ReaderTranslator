@@ -188,10 +188,8 @@ extension PageWebView: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if let url = self.url?.absoluteString { self.newUrl = url }
         store.canGoBack = canGoBack
-        //TODO: it's the hack it need research the issue why zoom doesn't work just after a page is loaded
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.scrollView.zoomScale = self.store.zoom
-        }
+        self.scrollView.minimumZoomScale = self.store.zoom
+        self.scrollView.setZoomScale(self.store.zoom, animated: true)
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
