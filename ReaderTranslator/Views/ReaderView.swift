@@ -9,19 +9,6 @@
 import SwiftUI
 import WebKit
 
-//protocol StoreDelegate {
-//    var store: Store { get }
-//}
-//
-//extension StoreDelegate {
-//    var store: EnvironmentObject<Store> {
-//        get {
-//            var env = EnvironmentObject<Store>(wrappedValue: Store.shared)
-//            return env
-//        }
-//    }
-//}
-
 struct ReaderView: View {
     @EnvironmentObject var store: Store
 
@@ -67,8 +54,6 @@ struct ReaderView_Web: View {
                     if self.store.currentTab == 1 { WebView(lastWebPage: $store.lastWebPage) }
                     if self.store.currentTab == 2 { WebView(lastWebPage: $store.lastWebPage) }
                 }
-            }else{
-                EmptyView()
             }
         }
     }
@@ -80,11 +65,7 @@ struct ReaderView_PDF: View {
     var body: some View {
         Group {
             if store.viewMode == .pdf {
-                if store.viewMode == .pdf {
-                    PDFKitView()
-                }
-            }else{
-                EmptyView()
+                PDFKitView()
             }
         }
     }

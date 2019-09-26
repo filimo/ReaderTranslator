@@ -53,6 +53,8 @@ class PageWebView: WKWebView {
     @Published private var selectedText = ""
     @Published var newUrl = ""
     
+    private var cancellableSet: Set<AnyCancellable> = []
+    
     var store = Store.shared
     
     private let script = """
@@ -98,7 +100,7 @@ class PageWebView: WKWebView {
         contentController.add(self, name: "onKeyPress")
 
 
-        _ = $selectedText
+        $selectedText
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { text in
@@ -106,19 +108,20 @@ class PageWebView: WKWebView {
                     self.store.selectedText = text
                 }
             }
+            .store(in: &cancellableSet)
         
-        _ = $newUrl
+        $newUrl
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { url in
                 if self.url?.absoluteString != self.newUrl {
-                    self.store.lastWebPage = self.newUrl
                     self.evaluateJavaScript("document.body.remove()")
-                    if let url = URL(string: url) {
+                    if let url = URL(string: url.encodeUrl) {
                         self.load(URLRequest(url: url))
                     }
                 }
             }
+            .store(in: &cancellableSet)
     }
     
     
@@ -186,7 +189,7 @@ extension PageWebView: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if let url = self.url?.absoluteString { self.newUrl = url }
+        if let url = self.url?.absoluteString { store.lastWebPage = url }
         store.canGoBack = canGoBack
         self.scrollView.minimumZoomScale = self.store.zoom
         self.scrollView.setZoomScale(self.store.zoom, animated: true)
@@ -198,6 +201,10 @@ extension PageWebView: WKNavigationDelegate {
             return
         }
         decisionHandler(.allow, preferences)
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print(error)
     }
     
     override func goBack() -> WKNavigation? {
