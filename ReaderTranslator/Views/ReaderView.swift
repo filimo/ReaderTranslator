@@ -57,6 +57,10 @@ struct ReaderView_Web: View {
                                 _ = WebView.pageView.goBack()
                             }
                         TextField("Enter website name", text: self.$store.lastWebPage)
+                        Image(systemName: "xmark.circle")
+                        .onTapGesture {
+                            _ = self.store.lastWebPage = ""
+                        }
                     }.padding(5)
                     if self.store.currentTab == 0 { WebView(lastWebPage: $store.lastWebPage) }
                     if self.store.currentTab == 1 { WebView(lastWebPage: $store.lastWebPage) }
