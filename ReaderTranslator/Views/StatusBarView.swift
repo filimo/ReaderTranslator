@@ -30,19 +30,13 @@ struct StatusBarView_Tabs: View {
     var body: some View {
         Group {
             if viewMode == .web {
-                Button(action: {
-                    self.currentTab = 0
-                }) {
+                Button(action: { self.currentTab = 0 }) {
                     Image(systemName: "1.circle\(iconStatus(0))")
                 }
-                Button(action: {
-                    self.currentTab = 1
-                }) {
+                Button(action: { self.currentTab = 1 }) {
                     Image(systemName: "2.circle\(iconStatus(1))")
                 }
-                Button(action: {
-                    self.currentTab = 2
-                }) {
+                Button(action: { self.currentTab = 2 }) {
                     Image(systemName: "3.circle\(iconStatus(2))")
                 }
             }
@@ -72,18 +66,13 @@ struct StatusBarView_Zoom: View {
                 TextField("zoom", text: zoom)
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                Button(action: {
-                    self.store.zoom -= 0.5
-                }) {
+                Button(action: { self.store.zoom -= 0.5 }) {
                     Image(systemName: "minus.magnifyingglass")
                 }
                 Slider(value: $store.zoom, in: 1...3).frame(width: 100)
-                Button(action: {
-                    self.store.zoom += 0.5
-                }) {
+                Button(action: { self.store.zoom += 0.5 }) {
                     Image(systemName: "plus.magnifyingglass")
                 }
-                Image(systemName: "plus.magnifyingglass").onTapGesture { self.store.zoom += 0.5 }
             }
         }
     }
