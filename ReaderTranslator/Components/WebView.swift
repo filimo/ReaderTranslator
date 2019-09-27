@@ -114,7 +114,7 @@ class PageWebView: WKWebView {
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { url in
-                if self.url?.absoluteString != self.newUrl {
+                if self.url?.absoluteString.decodeUrl != url {
                     self.evaluateJavaScript("document.body.remove()")
                     if let url = URL(string: url.encodeUrl) {
                         self.load(URLRequest(url: url))
@@ -189,7 +189,7 @@ extension PageWebView: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if let url = self.url?.absoluteString { store.lastWebPage = url }
+        if let url = self.url?.absoluteString { store.lastWebPage = url.decodeUrl }
         store.canGoBack = canGoBack
         self.scrollView.minimumZoomScale = self.store.zoom
         self.scrollView.setZoomScale(self.store.zoom, animated: true)
