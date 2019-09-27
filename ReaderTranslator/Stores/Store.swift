@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-enum ViewMode: String {
+enum ViewMode: String, Codable {
     case pdf
     case web
 }
@@ -30,6 +30,7 @@ class Store: ObservableObject {
     
     @Published(key: "viewMode") var viewMode = ViewMode.pdf
 
+    @Published(key: "favoriteVoiceNames") var favoriteVoiceNames: [FavoriteVoiceName] = []
     @Published(key: "voiceLanguage") var voiceLanguage = "Select language"
     @Published(key: "voiceName")  var voiceName = "Select voice"
     @Published(key: "isVoiceEnabled") var isVoiceEnabled = true

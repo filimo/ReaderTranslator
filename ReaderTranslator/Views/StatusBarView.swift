@@ -139,6 +139,29 @@ struct StatusBarView_Voice: View {
                             Text("\(voice.name) \(voice.premium ? "(premium)" : "")")
                         }
                     }
+                }
+            if FavoriteVoiceName.isFavorite {
+                Button(action: {
+                    FavoriteVoiceName.removeCurrentVoice()
+                }) {
+                    Image(systemName: "star.fill")
+                }.contextMenu {
+                    ForEach(store.favoriteVoiceNames, id:\.id) { item in
+                        Button(action: {
+                            self.store.voiceLanguage = item.language
+                            self.store.voiceName = item.voice
+                            SpeechSynthesizer.speech()
+                        }) {
+                            Text("\(item.language) \(item.voice)")
+                        }
+                    }
+                }
+            }else{
+                Button(action: {
+                    FavoriteVoiceName.addCurrentVoice()
+                }) {
+                    Image(systemName: "star")
+                }
             }
             StatusBarView_Voice_Volume()
         }

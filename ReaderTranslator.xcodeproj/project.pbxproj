@@ -28,6 +28,7 @@
 		F0AA69E0232E97B0007CC07B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DC232E97B0007CC07B /* WebView.swift */; };
 		F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DD232E97B0007CC07B /* PDFKitView.swift */; };
 		F0F256BD233D309F00C9D719 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256BC233D309F00C9D719 /* String.swift */; };
+		F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		F0AA69DD232E97B0007CC07B /* PDFKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
 		F0AA69E5232E989F007CC07B /* ReaderTranslator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranslator.entitlements; sourceTree = "<group>"; };
 		F0F256BC233D309F00C9D719 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVoiceName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				F0AA69D0232E9729007CC07B /* Delegates */,
 				F0F256BB233D307C00C9D719 /* Extentions */,
 				F0AA69E2232E97C7007CC07B /* Property Wrappers */,
+				F0F256C0233E6C2B00C9D719 /* Model */,
 				F0AA69D6232E9780007CC07B /* Stores */,
 				F0AA69D9232E979B007CC07B /* Components */,
 				F0AA69D1232E9733007CC07B /* Views */,
@@ -223,6 +226,14 @@
 				F0F256BC233D309F00C9D719 /* String.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		F0F256C0233E6C2B00C9D719 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +375,7 @@
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
 				F0AA69D4232E9762007CC07B /* ReaderView.swift in Sources */,
 				F0AA69D8232E978E007CC07B /* Store.swift in Sources */,
+				F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */,
 				F0AA69DF232E97B0007CC07B /* TranslatorView.swift in Sources */,
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WebView.swift in Sources */,
