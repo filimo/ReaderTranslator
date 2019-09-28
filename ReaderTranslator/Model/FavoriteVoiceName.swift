@@ -27,6 +27,10 @@ extension FavoriteVoiceName {
     }
     
     static func removeCurrentVoice() {
-        _ = Store.shared.favoriteVoiceNames.firstIndex(where: { $0.voice == Store.shared.voiceName })
+        let store = Store.shared
+        
+        if let index = store.favoriteVoiceNames.firstIndex(where: { $0.voice == store.voiceName }) {
+            store.favoriteVoiceNames.remove(at: index)
+        }
     }
 }

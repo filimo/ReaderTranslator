@@ -118,6 +118,18 @@ struct StatusBarView_Voice: View {
     
     var body: some View {
         Group {
+            StatusBarView_Voice_Select()
+            StatusBarView_Voice_Favorite()
+            StatusBarView_Voice_Volume()
+        }
+    }
+}
+
+struct StatusBarView_Voice_Select: View {
+    @EnvironmentObject var store: Store
+    
+    var body: some View {
+        Group {
             Text(store.voiceLanguage)
                 .contextMenu {
                     ForEach(SpeechSynthesizer.languages, id: \.self) { language in
@@ -139,34 +151,48 @@ struct StatusBarView_Voice: View {
                             Text("\(voice.name) \(voice.premium ? "(premium)" : "")")
                         }
                     }
-                }
-            if FavoriteVoiceName.isFavorite {
-                Button(action: {
-                    FavoriteVoiceName.removeCurrentVoice()
-                }) {
-                    Image(systemName: "star.fill")
-                }.contextMenu {
-                    ForEach(store.favoriteVoiceNames, id:\.id) { item in
-                        Button(action: {
-                            self.store.voiceLanguage = item.language
-                            self.store.voiceName = item.voice
-                            SpeechSynthesizer.speech()
-                        }) {
-                            Text("\(item.language) \(item.voice)")
-                        }
-                    }
-                }
-            }else{
-                Button(action: {
-                    FavoriteVoiceName.addCurrentVoice()
-                }) {
-                    Image(systemName: "star")
-                }
             }
-            StatusBarView_Voice_Volume()
         }
     }
 }
+
+struct StatusBarView_Voice_Favorite: View {
+    @EnvironmentObject var store: Store
+    
+    var body: some View {
+        Group {
+            button()
+            .contextMenu {
+                ForEach(store.favoriteVoiceNames, id:\.id) { item in
+                    Button(action: {
+                        self.store.voiceLanguage = item.language
+                        self.store.voiceName = item.voice
+                        SpeechSynthesizer.speech()
+                    }) {
+                        Text("\(item.language) \(item.voice)")
+                    }
+                }
+            }
+        }
+    }
+    
+    private func button() -> some View {
+        if FavoriteVoiceName.isFavorite {
+            return Button(action: {
+                FavoriteVoiceName.removeCurrentVoice()
+            }) {
+                Image(systemName: "star.fill")
+            }
+        }else{
+            return Button(action: {
+                FavoriteVoiceName.addCurrentVoice()
+            }) {
+                Image(systemName: "star")
+            }
+        }
+    }
+}
+
 
 struct StatusBarView_Voice_Volume: View {
     @EnvironmentObject var store: Store
