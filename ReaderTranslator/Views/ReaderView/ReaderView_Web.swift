@@ -23,15 +23,21 @@ struct ReaderView_Web: View {
                         TextField("Enter website name", text: self.$store.lastWebPage)
                         Button(action: {
                             if let url = URL(string: self.store.lastWebPage) {
-                                UIApplication.shared.open(url)
+                                PageWebView.open(url)
                             }
                         }) {
                             Image(systemName: "safari")
                         }
                         Button(action: {
+                            #if os(macOS)
+                            if let string = NSPasteboard.general.string(forType: .string) {
+                                self.store.lastWebPage = string
+                            }
+                            #else
                             if let string = UIPasteboard.general.string {
                                 self.store.lastWebPage = string
                             }
+                            #endif
                         }) {
                             Image(systemName: "doc.on.clipboard")
                         }

@@ -96,6 +96,46 @@ struct PDFKitView: View {
     }
 }
 
+#if os(macOS)
+private struct PDFKitViewRepresentable: NSViewRepresentable {
+    @Binding var url: URL?
+    static let pdfView = PDFView()
+
+    class Coordinator: NSObject, PDFViewDelegate {
+        var parent: PDFKitViewRepresentable
+        
+        init(_ parent: PDFKitViewRepresentable) {
+            self.parent = parent
+        }
+    }
+    
+    func makeCoordinator() -> PDFKitViewRepresentable.Coordinator {
+        Coordinator(self)
+    }
+
+    func makeNSView(context: Context) -> PDFView {
+        PDFKitViewRepresentable.pdfView
+    }
+
+    func updateNSView(_ uiView: PDFView, context: Context) {
+        if PDFKitViewRepresentable.pdfView.document != nil { return }
+        if let url = url {
+//TODO:            PDFKitViewRepresentable.pdfView.autoresizingMask = [.flexibleWidth]
+            PDFKitViewRepresentable.pdfView.autoScales = true
+            PDFKitViewRepresentable.pdfView.document = PDFDocument(url: url)
+            PDFKitViewRepresentable.pdfView.delegate = context.coordinator
+        }
+    }
+    
+    static func getSelectedText() -> String {
+        guard let selections = PDFKitViewRepresentable.pdfView.currentSelection?.selectionsByLine() else { return "" }
+
+        return selections
+            .map { selection in selection.string! }
+            .joined(separator: " ")
+    }
+}
+#else
 private struct PDFKitViewRepresentable: UIViewRepresentable {
     @Binding var url: URL?
     static let pdfView = PDFView()
@@ -134,4 +174,6 @@ private struct PDFKitViewRepresentable: UIViewRepresentable {
             .joined(separator: " ")
     }
 }
+#endif
+
 

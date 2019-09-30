@@ -15,10 +15,16 @@ struct StatusBarView_PdfPage: View {
         return Group {
             if store.viewMode == .pdf {
                 Text("  Page:")
+                #if os(macOS)
+                TextField("   ", text: self.$store.currentPage)
+                    .fixedSize()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                #else
                 TextField("   ", text: self.$store.currentPage)
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)
+                #endif
                 Text(" / \(self.store.pageCount)")
             }
         }

@@ -10,6 +10,37 @@ import SwiftUI
 import Combine
 import WebKit
 
+#if os(macOS)
+struct WebView: NSViewRepresentable {
+    @ObservedObject var store = Store.shared
+    @Binding var lastWebPage: String
+    static private var views = [Int: PageWebView]()
+    
+    static var pageView: PageWebView {
+        get { views[Store.shared.currentTab]! }
+    }
+    
+    func makeNSView(context: Context) -> PageWebView {
+        let view = WebView.views[store.currentTab] ?? PageWebView()
+        
+        WebView.views[self.store.currentTab] = view
+        
+        store.canGoBack = view.canGoBack
+        
+        return view
+    }
+
+    func updateNSView(_ view: PageWebView, context: Context) {
+        #if os(macOS)
+        //TODO: view.scrollView.zoomScale = store.zoom
+        view.setNeedsDisplay(view.bounds)
+        #else
+        view.scrollView.zoomScale = store.zoom
+        #endif
+        if view.newUrl != lastWebPage { view.newUrl = lastWebPage }
+    }
+}
+#else
 struct WebView: UIViewRepresentable {
     @ObservedObject var store = Store.shared
     @Binding var lastWebPage: String
@@ -34,6 +65,7 @@ struct WebView: UIViewRepresentable {
         if uiView.newUrl != lastWebPage { uiView.newUrl = lastWebPage }
     }
 }
+#endif
 
 
 //This hack to make PageWebView the first responder but the selection won't work
@@ -87,7 +119,7 @@ class PageWebView: WKWebView {
         config.userContentController = contentController
         config.websiteDataStore = .nonPersistent()
         
-        super.init(frame: .zero, configuration: config)
+        super.init(frame: .init(x: 0, y: 0, width: 500, height: 500), configuration: config)
 
 //        cleanAllCookies()
 
@@ -142,7 +174,22 @@ class PageWebView: WKWebView {
     }
 }
 
+
+#if os(macOS)
 extension PageWebView {
+    @discardableResult
+    static func open(_ url: URL) -> Bool {
+        NSWorkspace.shared.open(url)
+    }
+
+    //TODO: implement keyCommands and performCommand
+}
+#else
+extension PageWebView {
+    static func open(_ url: URL) -> () {
+       UIApplication.shared.open(url)
+    }
+
     override public var keyCommands: [UIKeyCommand]? {
         //Voice selected text with any key since performCommand isn't fired because PageWebView isn't the first responder.
         SpeechSynthesizer.speech()
@@ -153,6 +200,7 @@ extension PageWebView {
         print(sender)
     }
 }
+#endif
 
 extension PageWebView: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -182,7 +230,7 @@ extension PageWebView: WKNavigationDelegate {
             if url.absoluteString == self.store.lastWebPage {
                 decisionHandler(.allow)
             }else{
-                UIApplication.shared.open(url)
+                PageWebView.open(url)
                 decisionHandler(.cancel)
             }
         }
@@ -191,8 +239,14 @@ extension PageWebView: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if let url = self.url?.absoluteString { store.lastWebPage = url.decodeUrl }
         store.canGoBack = canGoBack
+        
+        #if os(macOS)
+//TODO:        self.scrollView.minimumZoomScale = self.store.zoom
+//TODO:        self.scrollView.setZoomScale(self.store.zoom, animated: true)
+        #else
         self.scrollView.minimumZoomScale = self.store.zoom
         self.scrollView.setZoomScale(self.store.zoom, animated: true)
+        #endif
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {

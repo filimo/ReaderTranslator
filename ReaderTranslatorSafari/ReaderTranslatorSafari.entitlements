@@ -6,11 +6,9 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.by.filimo.ReaderTranslatorSafari</string>
+		<string>$(TeamIdentifierPrefix)by.filimo.ReaderTranlatorMac</string>
 	</array>
-	<key>com.apple.security.files.user-selected.read-write</key>
-	<true/>
-	<key>com.apple.security.network.client</key>
+	<key>com.apple.security.files.user-selected.read-only</key>
 	<true/>
 </dict>
 </plist>

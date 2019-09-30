@@ -22,10 +22,16 @@ struct StatusBarView_Voice_Volume: View {
                 }
             }.fixedSize()
             Text("Rate:")
+            #if os(macOS)
+            TextField("   ", text: self.$store.voiceRate)
+                .fixedSize()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            #else
             TextField("   ", text: self.$store.voiceRate)
                 .fixedSize()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.numberPad)
+            #endif
         }
     }
 }
