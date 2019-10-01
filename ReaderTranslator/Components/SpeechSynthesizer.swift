@@ -43,13 +43,14 @@ class SpeechSynthesizer {
             }
     }
 
-    static func speech(text: String = Store.shared.selectedText, voiceName: String = Store.shared.voiceName) {
+    static func speech(text: String = Store.shared.selectedText, voiceName: String = Store.shared.voiceName, stopSpeaking: Bool = false) {
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })
         speechUtterance.rate = (Store.shared.voiceRate as NSString).floatValue
 
         if speechSynthesizer.isSpeaking {
             speechSynthesizer.stopSpeaking(at: .immediate)
+            if stopSpeaking { return }
         }
         speechSynthesizer = AVSpeechSynthesizer()
         speechSynthesizer.speak(speechUtterance)

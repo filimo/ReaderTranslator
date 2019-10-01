@@ -244,7 +244,7 @@ extension PageWebView: WKScriptMessageHandler {
             print("onBodyLoaded")
         case "onKeyPress":
             if let code = message.body as? String {
-                if code == "MetaLeft" { SpeechSynthesizer.speech() }
+                if code == "MetaLeft" { SpeechSynthesizer.speech(stopSpeaking: true) }
             }
         default:
             print("webkit.messageHandlers.\(message.name).postMessage() isn't found")
