@@ -13,18 +13,23 @@ struct StatusBarView: View {
     @EnvironmentObject var store: Store
     
     var body: some View {
-        HStack {
-            StatusBarView_Tabs(viewMode: $store.viewMode, currentTab: $store.currentTab)
-            StatusBarView_Zoom()
-            StatusBarView_PdfMode()
-            StatusBarView_Voice()
+        HStack() {
+            StatusBarView_ViewMode().padding(5)
             StatusBarView_PdfPage()
-        }
+            Divider().fixedSize()
+            StatusBarView_Tabs(viewMode: $store.viewMode, currentTab: $store.currentTab)
+            #if os(macOS)
+            #else
+            StatusBarView_Zoom()
+            #endif
+            if store.viewMode == .web { Divider().fixedSize() }
+            StatusBarView_Voice().padding([.top,.bottom], 5)
+        }.padding(.trailing, 20)
     }
 }
 
 struct StatusBarView_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView()
+        StatusBarView().environmentObject(Store.shared)
     }
 }

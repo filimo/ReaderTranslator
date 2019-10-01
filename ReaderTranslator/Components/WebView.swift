@@ -61,7 +61,7 @@ struct WebView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: PageWebView, context: Context) {
-        uiView.scrollView.zoomScale = store.zoom
+        uiView.setZoom(zoomLevel: store.zoom)
         if uiView.newUrl != lastWebPage { uiView.newUrl = lastWebPage }
     }
 }
@@ -80,33 +80,35 @@ struct WebView: UIViewRepresentable {
 //        }
 //    }
 //}
+// MARK: Script
+private let script = """
+    document.onselectionchange = function() {
+        var txt = document.getSelection().toString()
+        
+        webkit.messageHandlers.onSelectionChange.postMessage(txt)
+    }
+    window.oncontextmenu = function() {
+        var txt = document.getSelection().toString()
+        
+        webkit.messageHandlers.onContextMenu.postMessage("txt")
+    }
+    document.body.onload = function() {
+        webkit.messageHandlers.onBodyLoaded.postMessage("txt")
+    }
+    document.body.onkeydown = function(event) {
+        webkit.messageHandlers.onKeyPress.postMessage(event.code)
+    }
+"""
 
 class PageWebView: WKWebView {
-    @Published private var selectedText = ""
     @Published var newUrl = ""
     
+    @Published private var selectedText = ""    
+    
     private var cancellableSet: Set<AnyCancellable> = []
-    
-    var store = Store.shared
-    
-    private let script = """
-        document.onselectionchange = function() {
-            var txt = document.getSelection().toString()
-            
-            webkit.messageHandlers.onSelectionChange.postMessage(txt)
-        }
-        window.oncontextmenu = function() {
-            var txt = document.getSelection().toString()
-            
-            webkit.messageHandlers.onContextMenu.postMessage("txt")
-        }
-        document.body.onload = function() {
-            webkit.messageHandlers.onBodyLoaded.postMessage("txt")
-        }
-        document.body.onkeydown = function(event) {
-            webkit.messageHandlers.onKeyPress.postMessage(event.code)
-        }
-    """
+    private var store = Store.shared
+    private var zoomLevel: CGFloat = 1
+        
     
     init() {
         let config = WKWebViewConfiguration()
@@ -121,8 +123,9 @@ class PageWebView: WKWebView {
         
         super.init(frame: .init(x: 0, y: 0, width: 500, height: 500), configuration: config)
 
-//        cleanAllCookies()
-
+        #if os(macOS)
+        self.allowsMagnification = true
+        #endif
         self.navigationDelegate = self
         
         contentController.addUserScript(userScript)
@@ -160,18 +163,19 @@ class PageWebView: WKWebView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func cleanAllCookies() {
-        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
-        print("All cookies deleted")
-
-        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
-            records.forEach { record in
-                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
-                print("Cookie ::: \(record) deleted")
-            }
-        }
-    }
+  
+//TODO: cleanAllCookies is left just in case
+//    func cleanAllCookies() {
+//        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
+//        print("All cookies deleted")
+//
+//        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+//            records.forEach { record in
+//                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
+//                print("Cookie ::: \(record) deleted")
+//            }
+//        }
+//    }
 }
 
 
@@ -201,6 +205,30 @@ extension PageWebView {
     }
 }
 #endif
+
+#if os(macOS)
+extension PageWebView {
+//    override func layout() {
+//        super.layout()
+//        self.frame.size = CGSize(width: frame.width * (1/zoomLevel), height: frame.height * (1/zoomLevel))
+//        self.layer?.transform = CATransform3DMakeScale(zoomLevel, zoomLevel, 1)
+//    }
+//
+    func setZoom(zoomLevel: CGFloat) {
+//        self.zoomLevel = zoomLevel
+//        self.needsLayout = true
+    }
+}
+#else
+extension PageWebView {
+    func setZoom(zoomLevel: CGFloat) {
+        self.scrollView.setZoomScale(zoomLevel, animated: true)
+        self.scrollView.minimumZoomScale = zoomLevel
+//TODO: I don't know to need call it        self.setNeedsDisplay(self.bounds)
+    }
+}
+#endif
+
 
 extension PageWebView: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -240,13 +268,7 @@ extension PageWebView: WKNavigationDelegate {
         if let url = self.url?.absoluteString { store.lastWebPage = url.decodeUrl }
         store.canGoBack = canGoBack
         
-        #if os(macOS)
-//TODO:        self.scrollView.minimumZoomScale = self.store.zoom
-//TODO:        self.scrollView.setZoomScale(self.store.zoom, animated: true)
-        #else
-        self.scrollView.minimumZoomScale = self.store.zoom
-        self.scrollView.setZoomScale(self.store.zoom, animated: true)
-        #endif
+        self.setZoom(zoomLevel: self.store.zoom)
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {

@@ -14,7 +14,7 @@ struct StatusBarView_PdfPage: View {
     var body: some View {
         return Group {
             if store.viewMode == .pdf {
-                Text("  Page:")
+                Text("Page:")
                 #if os(macOS)
                 TextField("   ", text: self.$store.currentPage)
                     .fixedSize()

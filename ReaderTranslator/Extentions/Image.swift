@@ -13,10 +13,23 @@ struct Image: View {
     
     init(systemName: String) {
         self.symbol = [
-            "speaker": "􀊠",
-            "speaker.fill": "􀊩",
-            "star": "􀑭",
-            "star.fill": "􀋃"
+            "volume.3": "􀊠",
+            "volume.3.fill": "􀊩",
+            "star": "􀋂",
+            "star.fill": "􀋃",
+            "arrowshape.turn.up.left": "􀉌",
+            "arrowshape.turn.up.left.fill": "􀉍",
+            "safari": "􀎬",
+            "doc.on.clipboard": "􀉃",
+            "xmark.circle": "􀁠",
+            "1.circle": "􀀺",
+            "1.circle.fill": "􀀻",
+            "2.circle": "􀓭",
+            "2.circle.fill": "􀔌",
+            "3.circle": "􀀾",
+            "3.circle.fill": "􀀿",
+            "minus.magnifyingglass": "􀊭",
+            "plus.magnifyingglass": "􀊬"
         ][systemName] ?? ""
     }
     

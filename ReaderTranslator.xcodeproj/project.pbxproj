@@ -26,7 +26,7 @@
 		F04924392341F3D600F3C728 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D3232E9762007CC07B /* StatusBarView.swift */; };
 		F049243A2341F3D600F3C728 /* StatusBarView_Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */; };
 		F049243B2341F3D600F3C728 /* StatusBarView_Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */; };
-		F049243C2341F3D600F3C728 /* StatusBarView_PdfMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AB233F5908005B9F2A /* StatusBarView_PdfMode.swift */; };
+		F049243C2341F3D600F3C728 /* StatusBarView_ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AB233F5908005B9F2A /* StatusBarView_ViewMode.swift */; };
 		F049243D2341F3D600F3C728 /* StatusBarView_PdfPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */; };
 		F049243E2341F3D600F3C728 /* StatusBarView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */; };
 		F049243F2341F3D600F3C728 /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
@@ -66,7 +66,7 @@
 		F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */; };
 		F0AB12A8233F5802005B9F2A /* StatusBarView_Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */; };
 		F0AB12AA233F58A2005B9F2A /* StatusBarView_Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */; };
-		F0AB12AC233F5908005B9F2A /* StatusBarView_PdfMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AB233F5908005B9F2A /* StatusBarView_PdfMode.swift */; };
+		F0AB12AC233F5908005B9F2A /* StatusBarView_ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AB233F5908005B9F2A /* StatusBarView_ViewMode.swift */; };
 		F0AB12AE233F5950005B9F2A /* StatusBarView_PdfPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */; };
 		F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */; };
 		F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
@@ -171,7 +171,7 @@
 		F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Web.swift; sourceTree = "<group>"; };
 		F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Tabs.swift; sourceTree = "<group>"; };
 		F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Zoom.swift; sourceTree = "<group>"; };
-		F0AB12AB233F5908005B9F2A /* StatusBarView_PdfMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_PdfMode.swift; sourceTree = "<group>"; };
+		F0AB12AB233F5908005B9F2A /* StatusBarView_ViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_ViewMode.swift; sourceTree = "<group>"; };
 		F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_PdfPage.swift; sourceTree = "<group>"; };
 		F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice.swift; sourceTree = "<group>"; };
 		F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Select.swift; sourceTree = "<group>"; };
@@ -424,7 +424,7 @@
 				F0AA69D3232E9762007CC07B /* StatusBarView.swift */,
 				F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */,
 				F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */,
-				F0AB12AB233F5908005B9F2A /* StatusBarView_PdfMode.swift */,
+				F0AB12AB233F5908005B9F2A /* StatusBarView_ViewMode.swift */,
 				F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */,
 				F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */,
 				F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */,
@@ -660,7 +660,7 @@
 				F049243A2341F3D600F3C728 /* StatusBarView_Tabs.swift in Sources */,
 				F04924442341F3DA00F3C728 /* ReaderView_Web.swift in Sources */,
 				F049243B2341F3D600F3C728 /* StatusBarView_Zoom.swift in Sources */,
-				F049243C2341F3D600F3C728 /* StatusBarView_PdfMode.swift in Sources */,
+				F049243C2341F3D600F3C728 /* StatusBarView_ViewMode.swift in Sources */,
 				F049243D2341F3D600F3C728 /* StatusBarView_PdfPage.swift in Sources */,
 				F04924392341F3D600F3C728 /* StatusBarView.swift in Sources */,
 				F04924432341F3DA00F3C728 /* ReaderView_PDF.swift in Sources */,
@@ -705,7 +705,7 @@
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WebView.swift in Sources */,
 				F0AB12AA233F58A2005B9F2A /* StatusBarView_Zoom.swift in Sources */,
-				F0AB12AC233F5908005B9F2A /* StatusBarView_PdfMode.swift in Sources */,
+				F0AB12AC233F5908005B9F2A /* StatusBarView_ViewMode.swift in Sources */,
 				F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */,
 				F002C62A232FF40C00D3FC04 /* Published.swift in Sources */,
 				F040D5782336A77D004567B8 /* UserDefault.swift in Sources */,

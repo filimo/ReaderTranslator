@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct StatusBarView_PdfMode: View {
+struct StatusBarView_ViewMode: View {
     @EnvironmentObject var store: Store
     
     var body: some View {
@@ -21,13 +21,13 @@ struct StatusBarView_PdfMode: View {
             Toggle(isOn: pdfMode) {
                 Text("WEB")
             }.fixedSize()
-            Text("PDF").padding(.trailing, 20)
+            Text("PDF")
         }
     }
 }
 
 struct StatusBarView_PdfMode_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_PdfMode()
+        StatusBarView_ViewMode().environmentObject(Store.shared)
     }
 }

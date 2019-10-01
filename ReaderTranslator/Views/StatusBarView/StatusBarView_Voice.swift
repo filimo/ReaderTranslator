@@ -13,6 +13,7 @@ struct StatusBarView_Voice: View {
     
     var body: some View {
         Group {
+            Text("Voice: ")
             StatusBarView_Voice_Select()
             StatusBarView_Voice_Favorite()
             StatusBarView_Voice_Volume()
