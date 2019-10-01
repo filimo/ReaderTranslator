@@ -1,5 +1,5 @@
 # ReaderTranslator 
-**using SwiftUI, Combine and Catalyst for MacOS iPad iPhone**
+**using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
