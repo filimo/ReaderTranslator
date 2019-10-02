@@ -15,6 +15,7 @@ struct StatusBarView_Tabs: View {
     var body: some View {
         Group {
             if viewMode == .web {
+                Divider().fixedSize()
                 Button(action: { self.currentTab = 0 }) {
                     Image(systemName: "1.circle\(iconStatus(0))")
                 }
@@ -35,6 +36,6 @@ struct StatusBarView_Tabs: View {
 
 struct StatusBarView_Tabs_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_Tabs(viewMode: .constant(.web), currentTab: .constant(0))
+        StatusBarView_Tabs(viewMode: .constant(.web), currentTab: .constant(0)).environmentObject(Store.shared)
     }
 }

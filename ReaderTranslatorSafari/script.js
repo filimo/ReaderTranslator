@@ -1,3 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    safari.extension.dispatchMessage("Hello World!");
 });
+
+document.onselectionchange = function() {
+    var txt = document.getSelection().toString()
+    
+    safari.extension.dispatchMessage(txt)
+}

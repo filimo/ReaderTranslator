@@ -16,13 +16,11 @@ struct StatusBarView: View {
         HStack() {
             StatusBarView_ViewMode().padding(5)
             StatusBarView_PdfPage()
-            Divider().fixedSize()
             StatusBarView_Tabs(viewMode: $store.viewMode, currentTab: $store.currentTab)
             #if os(macOS)
             #else
             StatusBarView_Zoom()
             #endif
-            if store.viewMode == .web { Divider().fixedSize() }
             StatusBarView_Voice().padding([.top,.bottom], 5)
         }.padding(.trailing, 20)
     }

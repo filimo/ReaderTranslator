@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ReaderView_Web: View {
-    @ObservedObject var store = Store.shared
+    @ObservedObject private var store = Store.shared
 
     var body: some View {
         Group {
@@ -58,15 +58,15 @@ struct ReaderView_Web: View {
     private func webView(_ currentTab: Int) -> some View {
         if self.store.currentTab == currentTab {
             let view = WebView(lastWebPage: $store.lastWebPage)
-            return AnyView(view)
+            return view.any
         }else{
-            return AnyView(EmptyView())
+            return EmptyView().any
         }
     }
 }
 
 struct ReaderView_Web_Previews: PreviewProvider {
     static var previews: some View {
-        ReaderView_Web()
+        ReaderView_Web().environmentObject(Store.shared)
     }
 }

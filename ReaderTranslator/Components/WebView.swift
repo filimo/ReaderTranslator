@@ -11,24 +11,25 @@ import Combine
 import WebKit
 
 #if os(macOS)
+
 struct WebView: NSViewRepresentable {
-    @ObservedObject var store = Store.shared
     @Binding var lastWebPage: String
+
+    static var pageView: PageWebView { views[Store.shared.currentTab]! }
+    
+    @ObservedObject private var store = Store.shared
     static private var views = [Int: PageWebView]()
-    
-    static var pageView: PageWebView {
-        get { views[Store.shared.currentTab]! }
-    }
-    
-    func makeNSView(context: Context) -> PageWebView {
-        let view = WebView.views[store.currentTab] ?? PageWebView()
+    private var view: PageWebView {
+        if let view = WebView.views[store.currentTab] { return view }
+        let view = PageWebView()
         
         WebView.views[self.store.currentTab] = view
-        
         store.canGoBack = view.canGoBack
-        
+
         return view
     }
+    
+    func makeNSView(context: Context) -> PageWebView { view }
 
     func updateNSView(_ view: PageWebView, context: Context) {
         #if os(macOS)
@@ -42,19 +43,16 @@ struct WebView: NSViewRepresentable {
 }
 #else
 struct WebView: UIViewRepresentable {
-    @ObservedObject var store = Store.shared
     @Binding var lastWebPage: String
+
+    @ObservedObject private var store = Store.shared
     static private var views = [Int: PageWebView]()
-    
-    static var pageView: PageWebView {
-        get { views[Store.shared.currentTab]! }
-    }
+    private var view: PageWebView { WebView.views[store.currentTab] ?? PageWebView() }
+
+    static var pageView: PageWebView { views[Store.shared.currentTab]! }
     
     func makeUIView(context: Context) -> PageWebView {
-        let view = WebView.views[store.currentTab] ?? PageWebView()
-        
         WebView.views[self.store.currentTab] = view
-        
         store.canGoBack = view.canGoBack
         
         return view
@@ -121,7 +119,7 @@ class PageWebView: WKWebView {
         config.userContentController = contentController
         config.websiteDataStore = .nonPersistent()
         
-        super.init(frame: .init(x: 0, y: 0, width: 500, height: 500), configuration: config)
+        super.init(frame: .zero, configuration: config)
 
         #if os(macOS)
         self.allowsMagnification = true

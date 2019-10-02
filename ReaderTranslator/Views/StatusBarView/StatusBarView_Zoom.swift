@@ -23,6 +23,7 @@ struct StatusBarView_Zoom: View {
         
         return Group {
             if store.viewMode == .web {
+                Divider().fixedSize()
                 TextField("zoom", text: zoom)
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -40,6 +41,6 @@ struct StatusBarView_Zoom: View {
 
 struct StatusBarView_Zoom_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_Zoom()
+        StatusBarView_Zoom().environmentObject(Store.shared)
     }
 }

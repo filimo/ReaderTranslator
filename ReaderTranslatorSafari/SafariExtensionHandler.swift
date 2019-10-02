@@ -2,7 +2,7 @@
 //  SafariExtensionHandler.swift
 //  ReaderTranslatorSafari
 //
-//  Created by Viktor Kushnerov on 9/30/19.
+//  Created by Viktor Kushnerov on 10/2/19.
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
@@ -14,6 +14,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         page.getPropertiesWithCompletionHandler { properties in
             NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
+            SharedContainer.set(value: messageName)
         }
     }
     

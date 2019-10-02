@@ -50,15 +50,20 @@
 		<dict>
 			<key>Allowed Domains</key>
 			<array>
-				<string>*.webkit.org</string>
+				<string>*</string>
 			</array>
 			<key>Level</key>
-			<string>Some</string>
+			<string>All</string>
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 Viktor Kushnerov. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
 	<string>This is a Safari Extension. You should tell us what your extension does here.</string>
+    <key>AppIdentifierPrefix</key>
+    <string>$(AppIdentifierPrefix)</string>
+    <key>NSAppleEventsUsageDescription</key>
+    <string>ReaderTranslator communicates with other apps on your Mac when you choose to share a news item.</string>
+    
 </dict>
 </plist>

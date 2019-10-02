@@ -10,8 +10,9 @@ import Foundation
 import SwiftUI
 
 enum ViewMode: String, Codable {
-    case pdf
-    case web
+    case pdf = "PDF"
+    case web = "WEB"
+    case safari = "Safari"
 }
 
 class Store: ObservableObject {
