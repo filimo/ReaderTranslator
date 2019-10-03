@@ -24,10 +24,8 @@ struct ReaderView: View {
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
                 .sink { text in
-                    if(self.store.isVoiceEnabled && text != "") {
-                        SpeechSynthesizer.speech(text: text, voiceName: self.store.voiceName)
-                    }
-            }
+                    SpeechSynthesizer.speak(text: text, voiceName: self.store.voiceName)
+                }
         }
     }
 }

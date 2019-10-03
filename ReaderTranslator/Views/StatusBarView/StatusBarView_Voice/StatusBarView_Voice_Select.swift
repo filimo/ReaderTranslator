@@ -29,7 +29,7 @@ struct StatusBarView_Voice_Select: View {
                     ForEach(SpeechSynthesizer.getVoices(language: store.voiceLanguage), id: \.id) { voice in
                         Button(action: {
                             self.store.voiceName = voice.name
-                            SpeechSynthesizer.speech()
+                            SpeechSynthesizer.speak(isVoiceEnabled: true)
                         }) {
                             Text("\(voice.name) \(voice.premium ? "(premium)" : "")")
                         }

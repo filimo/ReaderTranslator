@@ -7,14 +7,27 @@
 //
 
 import SafariServices
+import Combine
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
+    static private var message: PassthroughSubject<String, Never> = {
+        let pub = PassthroughSubject<String, Never>()
+        
+        _  = pub
+            .debounce(for: 1, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { message in
+                SharedContainer.set(value: message)
+            }
+        
+        return pub
+    }()
     
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         page.getPropertiesWithCompletionHandler { properties in
             NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
-            SharedContainer.set(value: messageName)
+            SafariExtensionHandler.message.send(messageName)
         }
     }
     

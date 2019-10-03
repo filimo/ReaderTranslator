@@ -22,6 +22,8 @@
 		F06DB10B234504FD00C2DE90 /* EditorNSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */; };
 		F06DB10D23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
 		F06DB10E23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
+		F06DB1122345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */; };
+		F06DB1132345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */; };
 		F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0754439234479DA00E1D88E /* AppDelegate.swift */; };
 		F075443E234479DB00E1D88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F075443D234479DB00E1D88E /* Assets.xcassets */; };
 		F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0754440234479DB00E1D88E /* Preview Assets.xcassets */; };
@@ -135,6 +137,7 @@
 		F06DB1032344975E00C2DE90 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNSTextView.swift; sourceTree = "<group>"; };
 		F06DB10C23450B6000C2DE90 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Toggle.swift; sourceTree = "<group>"; };
 		F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0754439234479DA00E1D88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F075443D234479DB00E1D88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -241,6 +244,18 @@
 				F00644442341E22D006BCA94 /* ReaderTranslatorSafari.appex */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */ = {
+			isa = PBXGroup;
+			children = (
+				F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */,
+				F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */,
+				F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */,
+				F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */,
+				F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */,
+			);
+			path = StatusBarView_Voice;
 			sourceTree = "<group>";
 		};
 		F0754438234479DA00E1D88E /* ReaderTranslatorMac */ = {
@@ -422,10 +437,7 @@
 				F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */,
 				F0AB12AB233F5908005B9F2A /* StatusBarView_ViewMode.swift */,
 				F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */,
-				F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */,
-				F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */,
-				F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */,
-				F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */,
+				F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */,
 			);
 			path = StatusBarView;
 			sourceTree = "<group>";
@@ -663,6 +675,7 @@
 				F0BB437E2344845000ADBEF1 /* StatusBarView_Voice_Select.swift in Sources */,
 				F0BB436E2344843400ADBEF1 /* String.swift in Sources */,
 				F0BB43702344843900ADBEF1 /* Published.swift in Sources */,
+				F06DB1132345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */,
 				F0BB43832344846C00ADBEF1 /* ContentView.swift in Sources */,
 				F0BB43772344844800ADBEF1 /* WebView.swift in Sources */,
 				F0BB436C2344842200ADBEF1 /* ReaderView.swift in Sources */,
@@ -713,6 +726,7 @@
 				F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */,
 				F002C62A232FF40C00D3FC04 /* Published.swift in Sources */,
 				F040D5782336A77D004567B8 /* UserDefault.swift in Sources */,
+				F06DB1122345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */,
 				F0AB12AE233F5950005B9F2A /* StatusBarView_PdfPage.swift in Sources */,
 				F0AA69DE232E97B0007CC07B /* SpeechSynthesizer.swift in Sources */,
 				F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */,

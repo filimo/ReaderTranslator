@@ -33,7 +33,12 @@ class Store: ObservableObject {
     @Published(key: "favoriteVoiceNames") var favoriteVoiceNames: [FavoriteVoiceName] = []
     @Published(key: "voiceLanguage") var voiceLanguage = "Select language"
     @Published(key: "voiceName")  var voiceName = "Select voice"
-    @Published(key: "isVoiceEnabled") var isVoiceEnabled = true
+    @Published(key: "isVoiceEnabled") var isVoiceEnabled = true {
+        didSet {
+            if isVoiceEnabled { SpeechSynthesizer.speak() }
+            else{ SpeechSynthesizer.stop() }
+        }
+    }
     @Published(key: "voiceRate")  var voiceRate = "0.4"
 
     @Published var canGoBack = false

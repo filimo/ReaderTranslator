@@ -194,7 +194,7 @@ extension PageWebView {
 
     override public var keyCommands: [UIKeyCommand]? {
         //Voice selected text with any key since performCommand isn't fired because PageWebView isn't the first responder.
-        SpeechSynthesizer.speech()
+        SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true)
         return [.init(input: "1", modifierFlags: .command, action: #selector(performCommand))]
     }
 
@@ -242,7 +242,7 @@ extension PageWebView: WKScriptMessageHandler {
             print("onBodyLoaded")
         case "onKeyPress":
             if let code = message.body as? String {
-                if code == "MetaLeft" { SpeechSynthesizer.speech(stopSpeaking: true) }
+                if code == "MetaLeft" { SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true) }
             }
         default:
             print("webkit.messageHandlers.\(message.name).postMessage() isn't found")

@@ -13,14 +13,6 @@ struct StatusBarView_Voice_Volume: View {
     
     var body: some View {
         Group {
-            Toggle(isOn: $store.isVoiceEnabled) {
-                Text("On:")
-                Button(action: {
-                    SpeechSynthesizer.speech()
-                }) {
-                    store.isVoiceEnabled ? Image(systemName: "volume.3.fill") : Image(systemName: "speaker")
-                }
-            }.fixedSize()
             Text("Rate:")
             #if os(macOS)
             TextField("   ", text: self.$store.voiceRate)
