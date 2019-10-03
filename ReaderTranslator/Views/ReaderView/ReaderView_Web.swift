@@ -17,33 +17,11 @@ struct ReaderView_Web: View {
                 VStack {
                     HStack {
                         Image(systemName: "arrowshape.turn.up.left\(store.canGoBack ? ".fill" : "")")
-                            .onTapGesture {
-                                _ = WebView.pageView.goBack()
-                            }
+                            .onTapGesture { _ = WebView.pageView.goBack() }
                         TextField("Enter website name", text: self.$store.lastWebPage)
-                        Button(action: {
-                            if let url = URL(string: self.store.lastWebPage) {
-                                PageWebView.open(url)
-                            }
-                        }) {
-                            Image(systemName: "safari")
-                        }
-                        Button(action: {
-                            #if os(macOS)
-                            if let string = NSPasteboard.general.string(forType: .string) {
-                                self.store.lastWebPage = string
-                            }
-                            #else
-                            if let string = UIPasteboard.general.string {
-                                self.store.lastWebPage = string
-                            }
-                            #endif
-                        }) {
-                            Image(systemName: "doc.on.clipboard")
-                        }
-                        Button(action: {
-                            self.store.lastWebPage = ""
-                        }) {
+                        openInSafari()
+                        pasteClipbord()
+                        Button(action: { self.store.lastWebPage = "" }) {
                             Image(systemName: "xmark.circle")
                         }
                     }.padding(5)
@@ -52,6 +30,32 @@ struct ReaderView_Web: View {
                     webView(2)
                 }
             }
+        }
+    }
+    
+    fileprivate func openInSafari() -> Button<Image> {
+        return Button(action: {
+            if let url = URL(string: self.store.lastWebPage) {
+                PageWebView.open(url)
+            }
+        }) {
+            Image(systemName: "safari")
+        }
+    }
+    
+    fileprivate func pasteClipbord() -> Button<Image> {
+        return Button(action: {
+            #if os(macOS)
+            if let string = NSPasteboard.general.string(forType: .string) {
+                self.store.lastWebPage = string
+            }
+            #else
+            if let string = UIPasteboard.general.string {
+                self.store.lastWebPage = string
+            }
+            #endif
+        }) {
+            Image(systemName: "doc.on.clipboard")
         }
     }
     
