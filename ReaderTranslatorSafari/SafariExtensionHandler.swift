@@ -18,6 +18,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             .removeDuplicates()
             .sink { message in
                 SharedContainer.set(value: message)
+                SafariExtensionManager.didMessageChanged()
             }
         
         return pub

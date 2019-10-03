@@ -24,6 +24,8 @@
 		F06DB10E23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
 		F06DB1122345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */; };
 		F06DB1132345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */; };
+		F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB115234611BB00C2DE90 /* ExtensionManager.swift */; };
+		F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB115234611BB00C2DE90 /* ExtensionManager.swift */; };
 		F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0754439234479DA00E1D88E /* AppDelegate.swift */; };
 		F075443E234479DB00E1D88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F075443D234479DB00E1D88E /* Assets.xcassets */; };
 		F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0754440234479DB00E1D88E /* Preview Assets.xcassets */; };
@@ -138,6 +140,7 @@
 		F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNSTextView.swift; sourceTree = "<group>"; };
 		F06DB10C23450B6000C2DE90 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Toggle.swift; sourceTree = "<group>"; };
+		F06DB115234611BB00C2DE90 /* ExtensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionManager.swift; sourceTree = "<group>"; };
 		F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0754439234479DA00E1D88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F075443D234479DB00E1D88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -391,6 +394,7 @@
 			children = (
 				F0AA69D7232E978E007CC07B /* Store.swift */,
 				F0039EC223447E24002F3F95 /* SharedContainer.swift */,
+				F06DB115234611BB00C2DE90 /* ExtensionManager.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -681,6 +685,7 @@
 				F0BB436C2344842200ADBEF1 /* ReaderView.swift in Sources */,
 				F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */,
 				F0BB43812344846200ADBEF1 /* ReaderView_PDF.swift in Sources */,
+				F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */,
 				F0BB43722344843D00ADBEF1 /* FavoriteVoiceName.swift in Sources */,
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
 				F0BB437C2344845000ADBEF1 /* StatusBarView_PdfPage.swift in Sources */,
@@ -695,6 +700,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F075445423447A2800E1D88E /* SafariExtensionViewController.swift in Sources */,
+				F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */,
 				F075445223447A2800E1D88E /* SafariExtensionHandler.swift in Sources */,
 				F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */,
 			);

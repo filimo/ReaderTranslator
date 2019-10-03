@@ -195,7 +195,7 @@ extension PageWebView {
     override public var keyCommands: [UIKeyCommand]? {
         //Voice selected text with any key since performCommand isn't fired because PageWebView isn't the first responder.
         SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true)
-        return [.init(input: "1", modifierFlags: .command, action: #selector(performCommand))]
+        return [.init(input: "1", modifierFlags: .command, eventName: #selector(performCommand))]
     }
 
     @objc func performCommand(sender: UIKeyCommand) {
