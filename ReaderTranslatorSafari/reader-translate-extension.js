@@ -16,6 +16,7 @@
         if (e.keyCode >= 65 && e.keyCode <= 90) {
             var txt = document.getSelection().toString()
             let event = {
+                time: Date(), // to prevent removing duplicate events
                 name: 'keydown',
                 source: 'window',
                 extra: {
