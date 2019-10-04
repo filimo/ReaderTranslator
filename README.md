@@ -2,7 +2,7 @@
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
 ## Coming soon
-I almost finished implement Safari extension. You can review it in `#15_safari_plugin` branch right now. It's very intresting case when we need to make commnication between the app and extentions.
+I almost finished implement Safari extension. You can read about coming features [here](https://github.com/filimo/ReaderTranslator/issues/15) and review [here](https://github.com/filimo/ReaderTranslator/tree/%2315_safari_plugin). It's very intresting case when we need to make commnication between the app and extentions.
 ![](files/Screen11.png)
 
 ## Status
