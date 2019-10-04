@@ -1,7 +1,7 @@
 # ReaderTranslator 
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
-# Coming soon
+## Coming soon
 I almost finished implement Safari extension. You can review it in `#15_safari_plugin` branch right now. It's very intresting case when we need to make commnication between the app and extentions.
 ![](files/Screen11.png)
 
