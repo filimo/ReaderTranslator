@@ -8,27 +8,32 @@
 
 import SafariServices
 import Combine
+import os.log
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
-    static private var message: PassthroughSubject<String, Never> = {
-        let pub = PassthroughSubject<String, Never>()
+    typealias EventType = PassthroughSubject<String, Never>
+    static private var event: EventType = {
+        let pub = EventType()
         
         _  = pub
             .debounce(for: 1, scheduler: RunLoop.main)
             .removeDuplicates()
-            .sink { message in
-                SharedContainer.set(value: message)
+            .sink { event in
+                SharedContainer.setEvent(string: event)
                 SafariExtensionManager.didMessageChanged()
             }
         
         return pub
     }()
     
-    override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
+    override func messageReceived(withName event: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         page.getPropertiesWithCompletionHandler { properties in
-            NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
-            SafariExtensionHandler.message.send(messageName)
+            os_log("The extension received a message %@ from a script injected into %@ with userInfo %@",
+                   type: .debug, event,
+                   String(describing: properties?.url),
+                   userInfo ?? [:])
+            SafariExtensionHandler.event.send(event)
         }
     }
     

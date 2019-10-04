@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import os.log
 
 struct ReaderView_Safari: View {
     @ObservedObject private var store = Store.shared
@@ -20,9 +21,34 @@ struct ReaderView_Safari: View {
             #endif
         }
         .onAppear {
-            SafariExtensionManager().start(onMessageChanged: { notificationName in
-                self.store.selectedText = SharedContainer.string()
-            })
+            SafariExtensionManager().start(onMessageChanged: self.onMessageChanged(notificationName:))
+        }
+    }
+    
+    private func onMessageChanged(notificationName: String) {
+        if let event = SharedContainer.getEvent()  {
+            switch event.name {
+            case "keydown":
+                if let extra = event.extra {
+                    if extra.altKey == true && extra.metaKey == true { //Alt+Cmd
+                        if extra.keyCode == 88 { // x
+                            self.store.isVoiceEnabled.toggle()
+                        }
+                        if extra.keyCode == 90 { // z
+                            self.store.canSafariSendSelectedText.toggle()
+                            if self.store.canSafariSendSelectedText {
+                                self.store.selectedText = event.extra?.selectedText ?? ""
+                            }
+                        }
+                    }
+                }
+            case "selectionchange":
+                if store.canSafariSendSelectedText { store.selectedText = event.extra?.selectedText ?? "" }
+            default:
+                os_log("🐞🐞🐞DOMEvent %@ is not recognized", type: .error, event.name)
+            }
+        }else{
+            os_log("🐞🐞🐞DOMEvent is nil", type: .error)
         }
     }
 }
