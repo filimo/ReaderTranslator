@@ -3,6 +3,7 @@
 
 # Coming soon
 I almost finished implement Safari extension. You can review it in `#15_safari_plugin` branch right now. It's very intresting case when we need to make commnication between the app and extentions.
+![](files/Screen11.png)
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
