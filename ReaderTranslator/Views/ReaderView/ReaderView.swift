@@ -15,8 +15,10 @@ struct ReaderView: View {
     var body: some View {
         Stack(arrange: store.viewMode == .safari ? .vertical : .horizontal) {
             ReaderView_PDF()
-            ReaderView_Web() 
+            ReaderView_Web()
+            #if os(macOS)
             ReaderView_Safari()
+            #endif
             TranslatorView(text: .constant(URLQueryItem(name: "text", value: self.store.selectedText)))
         }
         .onAppear {

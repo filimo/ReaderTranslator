@@ -14,11 +14,9 @@ struct ReaderView_Safari: View {
 
     var body: some View {
         Group {
-            #if os(macOS)
             if store.viewMode == .safari {
                 Text(store.selectedText)
             }
-            #endif
         }
         .onAppear {
             SafariExtensionManager().start(onMessageChanged: self.onMessageChanged(notificationName:))

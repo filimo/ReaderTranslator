@@ -1,69 +1,13 @@
 //
-//  WebView.swift
-//  PdfTranslator
+//  PageWebView.swift
+//  ReaderTranslator
 //
-//  Created by Viktor Kushnerov on 9/14/19.
+//  Created by Viktor Kushnerov on 10/4/19.
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SwiftUI
 import Combine
 import WebKit
-
-#if os(macOS)
-
-struct WebView: NSViewRepresentable {
-    @Binding var lastWebPage: String
-
-    static var pageView: PageWebView { views[Store.shared.currentTab]! }
-    
-    @ObservedObject private var store = Store.shared
-    static private var views = [Int: PageWebView]()
-    private var view: PageWebView {
-        if let view = WebView.views[store.currentTab] { return view }
-        let view = PageWebView()
-        
-        WebView.views[self.store.currentTab] = view
-        store.canGoBack = view.canGoBack
-
-        return view
-    }
-    
-    func makeNSView(context: Context) -> PageWebView { view }
-
-    func updateNSView(_ view: PageWebView, context: Context) {
-        #if os(macOS)
-        //TODO: view.scrollView.zoomScale = store.zoom
-        view.setNeedsDisplay(view.bounds)
-        #else
-        view.scrollView.zoomScale = store.zoom
-        #endif
-        if view.newUrl != lastWebPage { view.newUrl = lastWebPage }
-    }
-}
-#else
-struct WebView: UIViewRepresentable {
-    @Binding var lastWebPage: String
-
-    @ObservedObject private var store = Store.shared
-    static private var views = [Int: PageWebView]()
-    private var view: PageWebView { WebView.views[store.currentTab] ?? PageWebView() }
-
-    static var pageView: PageWebView { views[Store.shared.currentTab]! }
-    
-    func makeUIView(context: Context) -> PageWebView {
-        WebView.views[self.store.currentTab] = view
-        store.canGoBack = view.canGoBack
-        
-        return view
-    }
-
-    func updateUIView(_ uiView: PageWebView, context: Context) {
-        uiView.setZoom(zoomLevel: store.zoom)
-        if uiView.newUrl != lastWebPage { uiView.newUrl = lastWebPage }
-    }
-}
-#endif
 
 
 //This hack to make PageWebView the first responder but the selection won't work
@@ -101,7 +45,7 @@ private let script = """
 class PageWebView: WKWebView {
     @Published var newUrl = ""
     
-    @Published private var selectedText = ""    
+    @Published private var selectedText = ""
     
     private var cancellableSet: Set<AnyCancellable> = []
     private var store = Store.shared
@@ -195,7 +139,7 @@ extension PageWebView {
     override public var keyCommands: [UIKeyCommand]? {
         //Voice selected text with any key since performCommand isn't fired because PageWebView isn't the first responder.
         SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true)
-        return [.init(input: "1", modifierFlags: .command, eventName: #selector(performCommand))]
+        return [.init(input: "1", modifierFlags: .command, action: #selector(performCommand))]
     }
 
     @objc func performCommand(sender: UIKeyCommand) {
@@ -291,4 +235,3 @@ extension PageWebView: WKNavigationDelegate {
     }
     
 }
-
