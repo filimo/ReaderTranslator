@@ -1,6 +1,9 @@
 # ReaderTranslator 
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
+# Coming soon
+I almost finished implement Safari extension. You can review it in `#15_safari_plugin` branch right now.
+
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
 
