@@ -90,6 +90,8 @@
 		F0EE0A172347BF09004A5EAD /* PageWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* PageWebView.swift */; };
 		F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */; };
 		F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */; };
+		F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */; };
+		F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */; };
 		F0F256BD233D309F00C9D719 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256BC233D309F00C9D719 /* String.swift */; };
 		F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */; };
 /* End PBXBuildFile section */
@@ -198,6 +200,7 @@
 		F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMEvent.swift; sourceTree = "<group>"; };
 		F0EE0A152347BF09004A5EAD /* PageWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageWebView.swift; sourceTree = "<group>"; };
 		F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Safari.swift; sourceTree = "<group>"; };
+		F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitViewRepresentable.swift; sourceTree = "<group>"; };
 		F0F256BC233D309F00C9D719 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVoiceName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -412,7 +415,7 @@
 		F0AA69D9232E979B007CC07B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F0AA69DD232E97B0007CC07B /* PDFKitView.swift */,
+				F0EE0A1B2348A645004A5EAD /* PDFKitView */,
 				F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */,
 				F0AA69DB232E97AF007CC07B /* TranslatorView.swift */,
 				F0EE0A142347BEDB004A5EAD /* WebView */,
@@ -464,6 +467,15 @@
 				F0EE0A152347BF09004A5EAD /* PageWebView.swift */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		F0EE0A1B2348A645004A5EAD /* PDFKitView */ = {
+			isa = PBXGroup;
+			children = (
+				F0AA69DD232E97B0007CC07B /* PDFKitView.swift */,
+				F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */,
+			);
+			path = PDFKitView;
 			sourceTree = "<group>";
 		};
 		F0F256BB233D307C00C9D719 /* Extentions */ = {
@@ -707,6 +719,7 @@
 				F0BB436C2344842200ADBEF1 /* ReaderView.swift in Sources */,
 				F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */,
 				F0BB43812344846200ADBEF1 /* ReaderView_PDF.swift in Sources */,
+				F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
 				F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */,
 				F0BB43722344843D00ADBEF1 /* FavoriteVoiceName.swift in Sources */,
 				F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
@@ -739,6 +752,7 @@
 				F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */,
 				F0F256BD233D309F00C9D719 /* String.swift in Sources */,
 				F0AB12A3233F5798005B9F2A /* ReaderView_PDF.swift in Sources */,
+				F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
 				F06DB0FF2344856300C2DE90 /* Store.swift in Sources */,
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
 				F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */,

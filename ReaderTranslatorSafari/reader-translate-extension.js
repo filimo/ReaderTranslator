@@ -9,7 +9,9 @@
 
     document.addEventListener('selectionchange', (event) => {
         var txt = document.getSelection().toString()
-        send({name: 'selectionchange', source: 'document', extra: { selectedText: txt } })
+        if(txt.trim()) {
+            send({name: 'selectionchange', source: 'document', extra: { selectedText: txt } })
+        }
     })
 
     window.addEventListener('keydown', (e) => {
