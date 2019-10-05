@@ -4,7 +4,8 @@
     }
 
     document.addEventListener("DOMContentLoaded", (event) => {
-        send({name: 'DOMContentLoaded', source: 'document'})
+        //disabled: sometimes this event occurs after press keys
+//        send({name: 'DOMContentLoaded', source: 'document'})
     })
 
     document.addEventListener('selectionchange', (event) => {
@@ -16,6 +17,9 @@
 
     window.addEventListener('keydown', (e) => {
         if (e.keyCode >= 65 && e.keyCode <= 90) {
+            if(['text', 'textarea'].indexOf(e.srcElement.type) != -1) {
+                if(!(e.ctrlKey || e.altKey)) return
+            }
             var txt = document.getSelection().toString()
             let event = {
                 time: Date(), // to prevent removing duplicate events
