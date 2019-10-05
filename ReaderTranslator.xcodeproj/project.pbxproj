@@ -8,44 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		F002C62A232FF40C00D3FC04 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = F002C629232FF40C00D3FC04 /* Published.swift */; };
-		F00644B22341F2DD006BCA94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00644B12341F2DD006BCA94 /* AppDelegate.swift */; };
-		F00644B62341F2DE006BCA94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00644B52341F2DE006BCA94 /* Assets.xcassets */; };
-		F00644B92341F2DE006BCA94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00644B82341F2DE006BCA94 /* Preview Assets.xcassets */; };
-		F00644BC2341F2DE006BCA94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00644BA2341F2DE006BCA94 /* Main.storyboard */; };
-		F00644C72341F2E9006BCA94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00644462341E22D006BCA94 /* Cocoa.framework */; };
-		F00644CA2341F2E9006BCA94 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00644C92341F2E9006BCA94 /* SafariExtensionHandler.swift */; };
-		F00644CC2341F2E9006BCA94 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00644CB2341F2E9006BCA94 /* SafariExtensionViewController.swift */; };
-		F00644CF2341F2E9006BCA94 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00644CD2341F2E9006BCA94 /* SafariExtensionViewController.xib */; };
-		F00644D22341F2E9006BCA94 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = F00644D12341F2E9006BCA94 /* script.js */; };
-		F00644D42341F2E9006BCA94 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F00644D32341F2E9006BCA94 /* ToolbarItemIcon.pdf */; };
-		F00644D82341F2E9006BCA94 /* ReaderTranlatorSafari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F00644C62341F2E9006BCA94 /* ReaderTranlatorSafari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
+		F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
+		F026B1E82344830200E032B9 /* ReaderView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* ReaderView_Safari.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57A2336BD62004567B8 /* files in Resources */ = {isa = PBXBuildFile; fileRef = F040D5792336BD61004567B8 /* files */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
-		F04924382341F39E00F3C728 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A4232E9710007CC07B /* ContentView.swift */; };
-		F04924392341F3D600F3C728 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D3232E9762007CC07B /* StatusBarView.swift */; };
-		F049243A2341F3D600F3C728 /* StatusBarView_Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */; };
-		F049243B2341F3D600F3C728 /* StatusBarView_Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */; };
-		F049243C2341F3D600F3C728 /* StatusBarView_ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AB233F5908005B9F2A /* StatusBarView_ViewMode.swift */; };
-		F049243D2341F3D600F3C728 /* StatusBarView_PdfPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */; };
-		F049243E2341F3D600F3C728 /* StatusBarView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */; };
-		F049243F2341F3D600F3C728 /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
-		F04924402341F3D600F3C728 /* StatusBarView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */; };
-		F04924412341F3D600F3C728 /* StatusBarView_Voice_Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */; };
-		F04924422341F3DA00F3C728 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D2232E9762007CC07B /* ReaderView.swift */; };
-		F04924432341F3DA00F3C728 /* ReaderView_PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A2233F5798005B9F2A /* ReaderView_PDF.swift */; };
-		F04924442341F3DA00F3C728 /* ReaderView_Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */; };
-		F04924452341F3E200F3C728 /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DD232E97B0007CC07B /* PDFKitView.swift */; };
-		F04924462341F3E200F3C728 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */; };
-		F04924472341F3E200F3C728 /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DB232E97AF007CC07B /* TranslatorView.swift */; };
-		F04924482341F3E200F3C728 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DC232E97B0007CC07B /* WebView.swift */; };
-		F04924492341F3E600F3C728 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
-		F049244A2341F3EA00F3C728 /* FavoriteVoiceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */; };
-		F049244B2341F3EE00F3C728 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = F002C629232FF40C00D3FC04 /* Published.swift */; };
-		F049244C2341F3EE00F3C728 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
-		F049244D2341F3F300F3C728 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256BC233D309F00C9D719 /* String.swift */; };
 		F049244F2341F54800F3C728 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
-		F04924502341F54800F3C728 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
+		F06DB0FF2344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
+		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
+		F06DB1042344975E00C2DE90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* Stack.swift */; };
+		F06DB1052344975E00C2DE90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* Stack.swift */; };
+		F06DB10B234504FD00C2DE90 /* EditorNSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */; };
+		F06DB10D23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
+		F06DB10E23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
+		F06DB1122345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */; };
+		F06DB1132345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */; };
+		F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB115234611BB00C2DE90 /* ExtensionManager.swift */; };
+		F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB115234611BB00C2DE90 /* ExtensionManager.swift */; };
+		F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0754439234479DA00E1D88E /* AppDelegate.swift */; };
+		F075443E234479DB00E1D88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F075443D234479DB00E1D88E /* Assets.xcassets */; };
+		F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0754440234479DB00E1D88E /* Preview Assets.xcassets */; };
+		F0754444234479DB00E1D88E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0754442234479DB00E1D88E /* Main.storyboard */; };
+		F075444F23447A2700E1D88E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00644462341E22D006BCA94 /* Cocoa.framework */; };
+		F075445223447A2800E1D88E /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075445123447A2800E1D88E /* SafariExtensionHandler.swift */; };
+		F075445423447A2800E1D88E /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075445323447A2800E1D88E /* SafariExtensionViewController.swift */; };
+		F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F075445523447A2800E1D88E /* SafariExtensionViewController.xib */; };
+		F075445A23447A2800E1D88E /* reader-translate-extension.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translate-extension.js */; };
+		F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */; };
+		F075446023447A2800E1D88E /* ReaderTranslatorSafari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F09A5BFA232E9A3800CB88FB /* FunctionalSwift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F09A5BF9232E9A3800CB88FB /* FunctionalSwift.pdf */; };
 		F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A0232E9710007CC07B /* AppDelegate.swift */; };
 		F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A2232E9710007CC07B /* SceneDelegate.swift */; };
@@ -57,7 +48,6 @@
 		F0AA69C3232E9712007CC07B /* ReaderTranslatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69C2232E9712007CC07B /* ReaderTranslatorUITests.swift */; };
 		F0AA69D4232E9762007CC07B /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D2232E9762007CC07B /* ReaderView.swift */; };
 		F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D3232E9762007CC07B /* StatusBarView.swift */; };
-		F0AA69D8232E978E007CC07B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F0AA69DE232E97B0007CC07B /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */; };
 		F0AA69DF232E97B0007CC07B /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DB232E97AF007CC07B /* TranslatorView.swift */; };
 		F0AA69E0232E97B0007CC07B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DC232E97B0007CC07B /* WebView.swift */; };
@@ -72,17 +62,47 @@
 		F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
 		F0AB12B4233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */; };
 		F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */; };
+		F0BB436C2344842200ADBEF1 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D2232E9762007CC07B /* ReaderView.swift */; };
+		F0BB436E2344843400ADBEF1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256BC233D309F00C9D719 /* String.swift */; };
+		F0BB436F2344843400ADBEF1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
+		F0BB43702344843900ADBEF1 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = F002C629232FF40C00D3FC04 /* Published.swift */; };
+		F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
+		F0BB43722344843D00ADBEF1 /* FavoriteVoiceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */; };
+		F0BB43742344844800ADBEF1 /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DD232E97B0007CC07B /* PDFKitView.swift */; };
+		F0BB43752344844800ADBEF1 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */; };
+		F0BB43762344844800ADBEF1 /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DB232E97AF007CC07B /* TranslatorView.swift */; };
+		F0BB43772344844800ADBEF1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DC232E97B0007CC07B /* WebView.swift */; };
+		F0BB43782344845000ADBEF1 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D3232E9762007CC07B /* StatusBarView.swift */; };
+		F0BB43792344845000ADBEF1 /* StatusBarView_Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */; };
+		F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */; };
+		F0BB437B2344845000ADBEF1 /* StatusBarView_ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AB233F5908005B9F2A /* StatusBarView_ViewMode.swift */; };
+		F0BB437C2344845000ADBEF1 /* StatusBarView_PdfPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */; };
+		F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */; };
+		F0BB437E2344845000ADBEF1 /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
+		F0BB437F2344845000ADBEF1 /* StatusBarView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */; };
+		F0BB43802344845000ADBEF1 /* StatusBarView_Voice_Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */; };
+		F0BB43812344846200ADBEF1 /* ReaderView_PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A2233F5798005B9F2A /* ReaderView_PDF.swift */; };
+		F0BB43822344846700ADBEF1 /* ReaderView_Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */; };
+		F0BB43832344846C00ADBEF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A4232E9710007CC07B /* ContentView.swift */; };
+		F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
+		F0EE0A122347AA0E004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
+		F0EE0A162347BF09004A5EAD /* PageWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* PageWebView.swift */; };
+		F0EE0A172347BF09004A5EAD /* PageWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* PageWebView.swift */; };
+		F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */; };
+		F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */; };
+		F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */; };
+		F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */; };
 		F0F256BD233D309F00C9D719 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256BC233D309F00C9D719 /* String.swift */; };
 		F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F00644D62341F2E9006BCA94 /* PBXContainerItemProxy */ = {
+		F075445E23447A2800E1D88E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F00644C52341F2E9006BCA94;
-			remoteInfo = ReaderTranlatorSafari;
+			remoteGlobalIDString = F075444D23447A2700E1D88E;
+			remoteInfo = ReaderTranslatorSafari;
 		};
 		F0AA69B4232E9712007CC07B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -101,13 +121,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F00644DC2341F2E9006BCA94 /* Embed App Extensions */ = {
+		F075446423447A2800E1D88E /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F00644D82341F2E9006BCA94 /* ReaderTranlatorSafari.appex in Embed App Extensions */,
+				F075446023447A2800E1D88E /* ReaderTranslatorSafari.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,34 +136,34 @@
 
 /* Begin PBXFileReference section */
 		F002C629232FF40C00D3FC04 /* Published.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Published.swift; sourceTree = "<group>"; };
+		F0039EC223447E24002F3F95 /* SharedContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedContainer.swift; sourceTree = "<group>"; };
 		F00644442341E22D006BCA94 /* ReaderTranslatorSafari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = ReaderTranslatorSafari.appex; path = "/Volumes/Macintosh HD/Users/filimo/MyProjects/SwiftUI/ReaderTranslator/build/Debug/ReaderTranslatorSafari.appex"; sourceTree = "<absolute>"; };
 		F00644462341E22D006BCA94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		F00644492341E22D006BCA94 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
-		F006444B2341E22D006BCA94 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
-		F006444E2341E22D006BCA94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
-		F00644502341E22D006BCA94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F00644512341E22D006BCA94 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
-		F00644532341E22D006BCA94 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
-		F00644552341E22D006BCA94 /* ReaderTranslatorSafari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranslatorSafari.entitlements; sourceTree = "<group>"; };
-		F00644AF2341F2DD006BCA94 /* ReaderTranlatorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranlatorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F00644B12341F2DD006BCA94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F00644B52341F2DE006BCA94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F00644B82341F2DE006BCA94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F00644BB2341F2DE006BCA94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F00644BD2341F2DE006BCA94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F00644BE2341F2DE006BCA94 /* ReaderTranlatorMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranlatorMac.entitlements; sourceTree = "<group>"; };
-		F00644C62341F2E9006BCA94 /* ReaderTranlatorSafari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ReaderTranlatorSafari.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		F00644C92341F2E9006BCA94 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
-		F00644CB2341F2E9006BCA94 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
-		F00644CE2341F2E9006BCA94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
-		F00644D02341F2E9006BCA94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F00644D12341F2E9006BCA94 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
-		F00644D32341F2E9006BCA94 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
-		F00644D52341F2E9006BCA94 /* ReaderTranlatorSafari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranlatorSafari.entitlements; sourceTree = "<group>"; };
+		F026B1E72344830200E032B9 /* ReaderView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Safari.swift; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D5792336BD61004567B8 /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F049244E2341F54800F3C728 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		F06DB1032344975E00C2DE90 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNSTextView.swift; sourceTree = "<group>"; };
+		F06DB10C23450B6000C2DE90 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Toggle.swift; sourceTree = "<group>"; };
+		F06DB115234611BB00C2DE90 /* ExtensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionManager.swift; sourceTree = "<group>"; };
+		F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0754439234479DA00E1D88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F075443D234479DB00E1D88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0754440234479DB00E1D88E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F0754443234479DB00E1D88E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0754445234479DB00E1D88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0754446234479DB00E1D88E /* ReaderTranslatorMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranslatorMac.entitlements; sourceTree = "<group>"; };
+		F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ReaderTranslatorSafari.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F075445123447A2800E1D88E /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		F075445323447A2800E1D88E /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		F075445623447A2800E1D88E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		F075445823447A2800E1D88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F075445923447A2800E1D88E /* reader-translate-extension.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reader-translate-extension.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
+		F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
+		F075445D23447A2800E1D88E /* ReaderTranslatorSafari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranslatorSafari.entitlements; sourceTree = "<group>"; };
 		F09A5BF9232E9A3800CB88FB /* FunctionalSwift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = FunctionalSwift.pdf; path = "../../../../../../../../Users/filimo/Downloads/Books about Swift/FunctionalSwift.pdf"; sourceTree = "<group>"; };
 		F0AA699D232E9710007CC07B /* ReaderTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AA69A0232E9710007CC07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,23 +197,27 @@
 		F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Select.swift; sourceTree = "<group>"; };
 		F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Favorite.swift; sourceTree = "<group>"; };
 		F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Volume.swift; sourceTree = "<group>"; };
+		F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMEvent.swift; sourceTree = "<group>"; };
+		F0EE0A152347BF09004A5EAD /* PageWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageWebView.swift; sourceTree = "<group>"; };
+		F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Safari.swift; sourceTree = "<group>"; };
+		F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitViewRepresentable.swift; sourceTree = "<group>"; };
 		F0F256BC233D309F00C9D719 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVoiceName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F00644AC2341F2DD006BCA94 /* Frameworks */ = {
+		F0754434234479DA00E1D88E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F00644C32341F2E9006BCA94 /* Frameworks */ = {
+		F075444B23447A2700E1D88E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F00644C72341F2E9006BCA94 /* Cocoa.framework in Frameworks */,
+				F075444F23447A2700E1D88E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,55 +253,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F00644482341E22D006BCA94 /* ReaderTranslatorSafari */ = {
-			isa = PBXGroup;
-			children = (
-				F00644492341E22D006BCA94 /* SafariExtensionHandler.swift */,
-				F006444B2341E22D006BCA94 /* SafariExtensionViewController.swift */,
-				F006444D2341E22D006BCA94 /* SafariExtensionViewController.xib */,
-				F00644502341E22D006BCA94 /* Info.plist */,
-				F00644512341E22D006BCA94 /* script.js */,
-				F00644532341E22D006BCA94 /* ToolbarItemIcon.pdf */,
-				F00644552341E22D006BCA94 /* ReaderTranslatorSafari.entitlements */,
-			);
-			path = ReaderTranslatorSafari;
-			sourceTree = "<group>";
-		};
-		F00644B02341F2DD006BCA94 /* ReaderTranlatorMac */ = {
-			isa = PBXGroup;
-			children = (
-				F00644B12341F2DD006BCA94 /* AppDelegate.swift */,
-				F00644B52341F2DE006BCA94 /* Assets.xcassets */,
-				F00644BA2341F2DE006BCA94 /* Main.storyboard */,
-				F00644BD2341F2DE006BCA94 /* Info.plist */,
-				F00644BE2341F2DE006BCA94 /* ReaderTranlatorMac.entitlements */,
-				F00644B72341F2DE006BCA94 /* Preview Content */,
-			);
-			path = ReaderTranlatorMac;
-			sourceTree = "<group>";
-		};
-		F00644B72341F2DE006BCA94 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F00644B82341F2DE006BCA94 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F00644C82341F2E9006BCA94 /* ReaderTranlatorSafari */ = {
-			isa = PBXGroup;
-			children = (
-				F00644C92341F2E9006BCA94 /* SafariExtensionHandler.swift */,
-				F00644CB2341F2E9006BCA94 /* SafariExtensionViewController.swift */,
-				F00644CD2341F2E9006BCA94 /* SafariExtensionViewController.xib */,
-				F00644D02341F2E9006BCA94 /* Info.plist */,
-				F00644D12341F2E9006BCA94 /* script.js */,
-				F00644D32341F2E9006BCA94 /* ToolbarItemIcon.pdf */,
-				F00644D52341F2E9006BCA94 /* ReaderTranlatorSafari.entitlements */,
-			);
-			path = ReaderTranlatorSafari;
-			sourceTree = "<group>";
-		};
 		F04924372341F2F800F3C728 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,17 +261,63 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */ = {
+			isa = PBXGroup;
+			children = (
+				F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */,
+				F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */,
+				F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */,
+				F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */,
+				F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */,
+			);
+			path = StatusBarView_Voice;
+			sourceTree = "<group>";
+		};
+		F0754438234479DA00E1D88E /* ReaderTranslatorMac */ = {
+			isa = PBXGroup;
+			children = (
+				F0754439234479DA00E1D88E /* AppDelegate.swift */,
+				F075443D234479DB00E1D88E /* Assets.xcassets */,
+				F0754442234479DB00E1D88E /* Main.storyboard */,
+				F0754445234479DB00E1D88E /* Info.plist */,
+				F0754446234479DB00E1D88E /* ReaderTranslatorMac.entitlements */,
+				F075443F234479DB00E1D88E /* Preview Content */,
+			);
+			path = ReaderTranslatorMac;
+			sourceTree = "<group>";
+		};
+		F075443F234479DB00E1D88E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F0754440234479DB00E1D88E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F075445023447A2800E1D88E /* ReaderTranslatorSafari */ = {
+			isa = PBXGroup;
+			children = (
+				F075445123447A2800E1D88E /* SafariExtensionHandler.swift */,
+				F075445323447A2800E1D88E /* SafariExtensionViewController.swift */,
+				F075445523447A2800E1D88E /* SafariExtensionViewController.xib */,
+				F075445823447A2800E1D88E /* Info.plist */,
+				F075445923447A2800E1D88E /* reader-translate-extension.js */,
+				F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */,
+				F075445D23447A2800E1D88E /* ReaderTranslatorSafari.entitlements */,
+			);
+			path = ReaderTranslatorSafari;
+			sourceTree = "<group>";
+		};
 		F0AA6994232E9710007CC07B = {
 			isa = PBXGroup;
 			children = (
 				F040D57B2336BD97004567B8 /* README.md */,
 				F040D5792336BD61004567B8 /* files */,
 				F0AA699F232E9710007CC07B /* ReaderTranslator */,
+				F0754438234479DA00E1D88E /* ReaderTranslatorMac */,
+				F075445023447A2800E1D88E /* ReaderTranslatorSafari */,
 				F0AA69B6232E9712007CC07B /* ReaderTranslatorTests */,
 				F0AA69C1232E9712007CC07B /* ReaderTranslatorUITests */,
-				F00644482341E22D006BCA94 /* ReaderTranslatorSafari */,
-				F00644B02341F2DD006BCA94 /* ReaderTranlatorMac */,
-				F00644C82341F2E9006BCA94 /* ReaderTranlatorSafari */,
 				F00644452341E22D006BCA94 /* Frameworks */,
 				F0AA699E232E9710007CC07B /* Products */,
 				F04924372341F2F800F3C728 /* Recovered References */,
@@ -309,8 +330,8 @@
 				F0AA699D232E9710007CC07B /* ReaderTranslator.app */,
 				F0AA69B3232E9712007CC07B /* ReaderTranslatorTests.xctest */,
 				F0AA69BE232E9712007CC07B /* ReaderTranslatorUITests.xctest */,
-				F00644AF2341F2DD006BCA94 /* ReaderTranlatorMac.app */,
-				F00644C62341F2E9006BCA94 /* ReaderTranlatorSafari.appex */,
+				F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */,
+				F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -384,6 +405,9 @@
 			isa = PBXGroup;
 			children = (
 				F0AA69D7232E978E007CC07B /* Store.swift */,
+				F0039EC223447E24002F3F95 /* SharedContainer.swift */,
+				F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */,
+				F06DB115234611BB00C2DE90 /* ExtensionManager.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -391,10 +415,13 @@
 		F0AA69D9232E979B007CC07B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F0AA69DD232E97B0007CC07B /* PDFKitView.swift */,
+				F0EE0A1B2348A645004A5EAD /* PDFKitView */,
 				F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */,
 				F0AA69DB232E97AF007CC07B /* TranslatorView.swift */,
-				F0AA69DC232E97B0007CC07B /* WebView.swift */,
+				F0EE0A142347BEDB004A5EAD /* WebView */,
+				F06DB1032344975E00C2DE90 /* Stack.swift */,
+				F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */,
+				F06DB10C23450B6000C2DE90 /* View.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -412,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				F0AA69D2232E9762007CC07B /* ReaderView.swift */,
+				F026B1E72344830200E032B9 /* ReaderView_Safari.swift */,
 				F0AB12A2233F5798005B9F2A /* ReaderView_PDF.swift */,
 				F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */,
 			);
@@ -422,16 +450,32 @@
 			isa = PBXGroup;
 			children = (
 				F0AA69D3232E9762007CC07B /* StatusBarView.swift */,
+				F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */,
 				F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */,
 				F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */,
 				F0AB12AB233F5908005B9F2A /* StatusBarView_ViewMode.swift */,
 				F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */,
-				F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */,
-				F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */,
-				F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */,
-				F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */,
+				F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */,
 			);
 			path = StatusBarView;
+			sourceTree = "<group>";
+		};
+		F0EE0A142347BEDB004A5EAD /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				F0AA69DC232E97B0007CC07B /* WebView.swift */,
+				F0EE0A152347BF09004A5EAD /* PageWebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		F0EE0A1B2348A645004A5EAD /* PDFKitView */ = {
+			isa = PBXGroup;
+			children = (
+				F0AA69DD232E97B0007CC07B /* PDFKitView.swift */,
+				F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */,
+			);
+			path = PDFKitView;
 			sourceTree = "<group>";
 		};
 		F0F256BB233D307C00C9D719 /* Extentions */ = {
@@ -454,40 +498,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F00644AE2341F2DD006BCA94 /* ReaderTranlatorMac */ = {
+		F0754436234479DA00E1D88E /* ReaderTranslatorMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F00644BF2341F2DE006BCA94 /* Build configuration list for PBXNativeTarget "ReaderTranlatorMac" */;
+			buildConfigurationList = F0754447234479DB00E1D88E /* Build configuration list for PBXNativeTarget "ReaderTranslatorMac" */;
 			buildPhases = (
-				F00644AB2341F2DD006BCA94 /* Sources */,
-				F00644AC2341F2DD006BCA94 /* Frameworks */,
-				F00644AD2341F2DD006BCA94 /* Resources */,
-				F00644DC2341F2E9006BCA94 /* Embed App Extensions */,
+				F0754433234479DA00E1D88E /* Sources */,
+				F0754434234479DA00E1D88E /* Frameworks */,
+				F0754435234479DA00E1D88E /* Resources */,
+				F075446423447A2800E1D88E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F00644D72341F2E9006BCA94 /* PBXTargetDependency */,
+				F075445F23447A2800E1D88E /* PBXTargetDependency */,
 			);
-			name = ReaderTranlatorMac;
-			productName = ReaderTranlatorMac;
-			productReference = F00644AF2341F2DD006BCA94 /* ReaderTranlatorMac.app */;
+			name = ReaderTranslatorMac;
+			productName = ReaderTranslatorMac;
+			productReference = F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F00644C52341F2E9006BCA94 /* ReaderTranlatorSafari */ = {
+		F075444D23447A2700E1D88E /* ReaderTranslatorSafari */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F00644D92341F2E9006BCA94 /* Build configuration list for PBXNativeTarget "ReaderTranlatorSafari" */;
+			buildConfigurationList = F075446123447A2800E1D88E /* Build configuration list for PBXNativeTarget "ReaderTranslatorSafari" */;
 			buildPhases = (
-				F00644C22341F2E9006BCA94 /* Sources */,
-				F00644C32341F2E9006BCA94 /* Frameworks */,
-				F00644C42341F2E9006BCA94 /* Resources */,
+				F075444A23447A2700E1D88E /* Sources */,
+				F075444B23447A2700E1D88E /* Frameworks */,
+				F075444C23447A2700E1D88E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ReaderTranlatorSafari;
-			productName = ReaderTranlatorSafari;
-			productReference = F00644C62341F2E9006BCA94 /* ReaderTranlatorSafari.appex */;
+			name = ReaderTranslatorSafari;
+			productName = ReaderTranslatorSafari;
+			productReference = F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		F0AA699C232E9710007CC07B /* ReaderTranslator */ = {
@@ -553,10 +597,10 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Viktor Kushnerov";
 				TargetAttributes = {
-					F00644AE2341F2DD006BCA94 = {
+					F0754436234479DA00E1D88E = {
 						CreatedOnToolsVersion = 11.1;
 					};
-					F00644C52341F2E9006BCA94 = {
+					F075444D23447A2700E1D88E = {
 						CreatedOnToolsVersion = 11.1;
 					};
 					F0AA699C232E9710007CC07B = {
@@ -586,32 +630,32 @@
 			projectRoot = "";
 			targets = (
 				F0AA699C232E9710007CC07B /* ReaderTranslator */,
+				F0754436234479DA00E1D88E /* ReaderTranslatorMac */,
+				F075444D23447A2700E1D88E /* ReaderTranslatorSafari */,
 				F0AA69B2232E9712007CC07B /* ReaderTranslatorTests */,
 				F0AA69BD232E9712007CC07B /* ReaderTranslatorUITests */,
-				F00644AE2341F2DD006BCA94 /* ReaderTranlatorMac */,
-				F00644C52341F2E9006BCA94 /* ReaderTranlatorSafari */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F00644AD2341F2DD006BCA94 /* Resources */ = {
+		F0754435234479DA00E1D88E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F00644BC2341F2DE006BCA94 /* Main.storyboard in Resources */,
-				F00644B92341F2DE006BCA94 /* Preview Assets.xcassets in Resources */,
-				F00644B62341F2DE006BCA94 /* Assets.xcassets in Resources */,
+				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
+				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
+				F075443E234479DB00E1D88E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F00644C42341F2E9006BCA94 /* Resources */ = {
+		F075444C23447A2700E1D88E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F00644D42341F2E9006BCA94 /* ToolbarItemIcon.pdf in Resources */,
-				F00644CF2341F2E9006BCA94 /* SafariExtensionViewController.xib in Resources */,
-				F00644D22341F2E9006BCA94 /* script.js in Resources */,
+				F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */,
+				F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */,
+				F075445A23447A2800E1D88E /* reader-translate-extension.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,43 +689,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F00644AB2341F2DD006BCA94 /* Sources */ = {
+		F0754433234479DA00E1D88E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F049243F2341F3D600F3C728 /* StatusBarView_Voice_Select.swift in Sources */,
-				F04924502341F54800F3C728 /* Image.swift in Sources */,
-				F04924422341F3DA00F3C728 /* ReaderView.swift in Sources */,
-				F049244D2341F3F300F3C728 /* String.swift in Sources */,
-				F04924462341F3E200F3C728 /* SpeechSynthesizer.swift in Sources */,
-				F04924402341F3D600F3C728 /* StatusBarView_Voice_Favorite.swift in Sources */,
-				F04924452341F3E200F3C728 /* PDFKitView.swift in Sources */,
-				F049244A2341F3EA00F3C728 /* FavoriteVoiceName.swift in Sources */,
-				F049243A2341F3D600F3C728 /* StatusBarView_Tabs.swift in Sources */,
-				F04924442341F3DA00F3C728 /* ReaderView_Web.swift in Sources */,
-				F049243B2341F3D600F3C728 /* StatusBarView_Zoom.swift in Sources */,
-				F049243C2341F3D600F3C728 /* StatusBarView_ViewMode.swift in Sources */,
-				F049243D2341F3D600F3C728 /* StatusBarView_PdfPage.swift in Sources */,
-				F04924392341F3D600F3C728 /* StatusBarView.swift in Sources */,
-				F04924432341F3DA00F3C728 /* ReaderView_PDF.swift in Sources */,
-				F049244B2341F3EE00F3C728 /* Published.swift in Sources */,
-				F049244C2341F3EE00F3C728 /* UserDefault.swift in Sources */,
-				F04924472341F3E200F3C728 /* TranslatorView.swift in Sources */,
-				F049243E2341F3D600F3C728 /* StatusBarView_Voice.swift in Sources */,
-				F04924492341F3E600F3C728 /* Store.swift in Sources */,
-				F00644B22341F2DD006BCA94 /* AppDelegate.swift in Sources */,
-				F04924482341F3E200F3C728 /* WebView.swift in Sources */,
-				F04924412341F3D600F3C728 /* StatusBarView_Voice_Volume.swift in Sources */,
-				F04924382341F39E00F3C728 /* ContentView.swift in Sources */,
+				F0BB43792344845000ADBEF1 /* StatusBarView_Tabs.swift in Sources */,
+				F0EE0A172347BF09004A5EAD /* PageWebView.swift in Sources */,
+				F06DB10B234504FD00C2DE90 /* EditorNSTextView.swift in Sources */,
+				F06DB10E23450B6000C2DE90 /* View.swift in Sources */,
+				F0BB437F2344845000ADBEF1 /* StatusBarView_Voice_Favorite.swift in Sources */,
+				F0BB43762344844800ADBEF1 /* TranslatorView.swift in Sources */,
+				F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */,
+				F06DB1002344856300C2DE90 /* Store.swift in Sources */,
+				F0BB43742344844800ADBEF1 /* PDFKitView.swift in Sources */,
+				F0BB43782344845000ADBEF1 /* StatusBarView.swift in Sources */,
+				F0BB436F2344843400ADBEF1 /* Image.swift in Sources */,
+				F0BB43802344845000ADBEF1 /* StatusBarView_Voice_Volume.swift in Sources */,
+				F0BB437B2344845000ADBEF1 /* StatusBarView_ViewMode.swift in Sources */,
+				F0BB43752344844800ADBEF1 /* SpeechSynthesizer.swift in Sources */,
+				F06DB1052344975E00C2DE90 /* Stack.swift in Sources */,
+				F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */,
+				F0BB43822344846700ADBEF1 /* ReaderView_Web.swift in Sources */,
+				F0BB437E2344845000ADBEF1 /* StatusBarView_Voice_Select.swift in Sources */,
+				F0BB436E2344843400ADBEF1 /* String.swift in Sources */,
+				F0BB43702344843900ADBEF1 /* Published.swift in Sources */,
+				F06DB1132345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */,
+				F0BB43832344846C00ADBEF1 /* ContentView.swift in Sources */,
+				F0BB43772344844800ADBEF1 /* WebView.swift in Sources */,
+				F0BB436C2344842200ADBEF1 /* ReaderView.swift in Sources */,
+				F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */,
+				F0BB43812344846200ADBEF1 /* ReaderView_PDF.swift in Sources */,
+				F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
+				F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */,
+				F0BB43722344843D00ADBEF1 /* FavoriteVoiceName.swift in Sources */,
+				F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
+				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
+				F0BB437C2344845000ADBEF1 /* StatusBarView_PdfPage.swift in Sources */,
+				F026B1E82344830200E032B9 /* ReaderView_Safari.swift in Sources */,
+				F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */,
+				F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F00644C22341F2E9006BCA94 /* Sources */ = {
+		F075444A23447A2700E1D88E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F00644CC2341F2E9006BCA94 /* SafariExtensionViewController.swift in Sources */,
-				F00644CA2341F2E9006BCA94 /* SafariExtensionHandler.swift in Sources */,
+				F075445423447A2800E1D88E /* SafariExtensionViewController.swift in Sources */,
+				F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */,
+				F0EE0A122347AA0E004A5EAD /* DOMEvent.swift in Sources */,
+				F075445223447A2800E1D88E /* SafariExtensionHandler.swift in Sources */,
+				F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,21 +752,27 @@
 				F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */,
 				F0F256BD233D309F00C9D719 /* String.swift in Sources */,
 				F0AB12A3233F5798005B9F2A /* ReaderView_PDF.swift in Sources */,
+				F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
+				F06DB0FF2344856300C2DE90 /* Store.swift in Sources */,
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
 				F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */,
 				F0AA69D4232E9762007CC07B /* ReaderView.swift in Sources */,
-				F0AA69D8232E978E007CC07B /* Store.swift in Sources */,
 				F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */,
 				F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */,
+				F0EE0A162347BF09004A5EAD /* PageWebView.swift in Sources */,
 				F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */,
+				F06DB10D23450B6000C2DE90 /* View.swift in Sources */,
+				F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0AA69DF232E97B0007CC07B /* TranslatorView.swift in Sources */,
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
+				F06DB1042344975E00C2DE90 /* Stack.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WebView.swift in Sources */,
 				F0AB12AA233F58A2005B9F2A /* StatusBarView_Zoom.swift in Sources */,
 				F0AB12AC233F5908005B9F2A /* StatusBarView_ViewMode.swift in Sources */,
 				F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */,
 				F002C62A232FF40C00D3FC04 /* Published.swift in Sources */,
 				F040D5782336A77D004567B8 /* UserDefault.swift in Sources */,
+				F06DB1122345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */,
 				F0AB12AE233F5950005B9F2A /* StatusBarView_PdfPage.swift in Sources */,
 				F0AA69DE232E97B0007CC07B /* SpeechSynthesizer.swift in Sources */,
 				F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */,
@@ -736,10 +800,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F00644D72341F2E9006BCA94 /* PBXTargetDependency */ = {
+		F075445F23447A2800E1D88E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F00644C52341F2E9006BCA94 /* ReaderTranlatorSafari */;
-			targetProxy = F00644D62341F2E9006BCA94 /* PBXContainerItemProxy */;
+			target = F075444D23447A2700E1D88E /* ReaderTranslatorSafari */;
+			targetProxy = F075445E23447A2800E1D88E /* PBXContainerItemProxy */;
 		};
 		F0AA69B5232E9712007CC07B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -754,26 +818,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F006444D2341E22D006BCA94 /* SafariExtensionViewController.xib */ = {
+		F0754442234479DB00E1D88E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F006444E2341E22D006BCA94 /* Base */,
-			);
-			name = SafariExtensionViewController.xib;
-			sourceTree = "<group>";
-		};
-		F00644BA2341F2DE006BCA94 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F00644BB2341F2DE006BCA94 /* Base */,
+				F0754443234479DB00E1D88E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		F00644CD2341F2E9006BCA94 /* SafariExtensionViewController.xib */ = {
+		F075445523447A2800E1D88E /* SafariExtensionViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F00644CE2341F2E9006BCA94 /* Base */,
+				F075445623447A2800E1D88E /* Base */,
 			);
 			name = SafariExtensionViewController.xib;
 			sourceTree = "<group>";
@@ -789,71 +845,71 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F00644C02341F2DE006BCA94 /* Debug */ = {
+		F0754448234479DB00E1D88E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ReaderTranlatorMac/ReaderTranlatorMac.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorMac/ReaderTranslatorMac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranlatorMac/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslatorMac/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ReaderTranlatorMac/Info.plist;
+				INFOPLIST_FILE = ReaderTranslatorMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranlatorMac;
+				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		F00644C12341F2DE006BCA94 /* Release */ = {
+		F0754449234479DB00E1D88E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ReaderTranlatorMac/ReaderTranlatorMac.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorMac/ReaderTranslatorMac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranlatorMac/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslatorMac/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ReaderTranlatorMac/Info.plist;
+				INFOPLIST_FILE = ReaderTranslatorMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranlatorMac;
+				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
-		F00644DA2341F2E9006BCA94 /* Debug */ = {
+		F075446223447A2800E1D88E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ReaderTranlatorSafari/ReaderTranlatorSafari.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorSafari/ReaderTranslatorSafari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ReaderTranlatorSafari/Info.plist;
+				INFOPLIST_FILE = ReaderTranslatorSafari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranlatorMac.ReaderTranlatorSafari;
+				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -861,21 +917,21 @@
 			};
 			name = Debug;
 		};
-		F00644DB2341F2E9006BCA94 /* Release */ = {
+		F075446323447A2800E1D88E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ReaderTranlatorSafari/ReaderTranlatorSafari.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorSafari/ReaderTranslatorSafari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ReaderTranlatorSafari/Info.plist;
+				INFOPLIST_FILE = ReaderTranslatorSafari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranlatorMac.ReaderTranlatorSafari;
+				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1126,20 +1182,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F00644BF2341F2DE006BCA94 /* Build configuration list for PBXNativeTarget "ReaderTranlatorMac" */ = {
+		F0754447234479DB00E1D88E /* Build configuration list for PBXNativeTarget "ReaderTranslatorMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F00644C02341F2DE006BCA94 /* Debug */,
-				F00644C12341F2DE006BCA94 /* Release */,
+				F0754448234479DB00E1D88E /* Debug */,
+				F0754449234479DB00E1D88E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F00644D92341F2E9006BCA94 /* Build configuration list for PBXNativeTarget "ReaderTranlatorSafari" */ = {
+		F075446123447A2800E1D88E /* Build configuration list for PBXNativeTarget "ReaderTranslatorSafari" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F00644DA2341F2E9006BCA94 /* Debug */,
-				F00644DB2341F2E9006BCA94 /* Release */,
+				F075446223447A2800E1D88E /* Debug */,
+				F075446323447A2800E1D88E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -14,6 +14,7 @@ struct StatusBarView_PdfPage: View {
     var body: some View {
         return Group {
             if store.viewMode == .pdf {
+                Divider().fixedSize()
                 Text("Page:")
                 #if os(macOS)
                 TextField("   ", text: self.$store.currentPage)
@@ -33,6 +34,6 @@ struct StatusBarView_PdfPage: View {
 
 struct StatusBarView_PdfPage_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_PdfPage()
+        StatusBarView_PdfPage().environmentObject(Store.shared)
     }
 }

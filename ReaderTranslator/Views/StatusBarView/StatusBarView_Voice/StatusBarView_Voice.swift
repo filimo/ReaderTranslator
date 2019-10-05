@@ -13,9 +13,11 @@ struct StatusBarView_Voice: View {
     
     var body: some View {
         Group {
+            Divider().fixedSize()
             Text("Voice: ")
             StatusBarView_Voice_Select()
             StatusBarView_Voice_Favorite()
+            StatusBarView_Voice_Toggle()
             StatusBarView_Voice_Volume()
         }
     }
@@ -23,6 +25,6 @@ struct StatusBarView_Voice: View {
 
 struct StatusBarView_Voice_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_Voice()
+        StatusBarView_Voice().environmentObject(Store.shared)
     }
 }

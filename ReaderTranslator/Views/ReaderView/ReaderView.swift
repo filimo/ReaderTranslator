@@ -13,26 +13,27 @@ struct ReaderView: View {
     @EnvironmentObject var store: Store
 
     var body: some View {
-        HStack {
-            ReaderView_Web()
+        Stack(arrange: store.viewMode == .safari ? .vertical : .horizontal) {
             ReaderView_PDF()
-            TranslatorView(text: .constant(URLQueryItem(name: "text", value: store.selectedText)))
+            ReaderView_Web()
+            #if os(macOS)
+            ReaderView_Safari()
+            #endif
+            TranslatorView(text: .constant(URLQueryItem(name: "text", value: self.store.selectedText)))
         }
         .onAppear {
             _ = self.store.$selectedText
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
                 .sink { text in
-                    if(self.store.isVoiceEnabled && text != "") {
-                        SpeechSynthesizer.speech(text: text, voiceName: self.store.voiceName)
-                    }
-            }
+                    SpeechSynthesizer.speak(text: text, voiceName: self.store.voiceName)
+                }
         }
     }
 }
 
 struct ReaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ReaderView()
+        ReaderView().environmentObject(Store.shared)
     }
 }

@@ -13,7 +13,7 @@ struct Image: View {
     
     init(systemName: String) {
         self.symbol = [
-            "volume.3": "􀊠",
+            "speaker": "􀊠",
             "volume.3.fill": "􀊩",
             "star": "􀋂",
             "star.fill": "􀋃",

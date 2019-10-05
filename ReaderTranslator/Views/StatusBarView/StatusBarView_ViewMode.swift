@@ -12,17 +12,22 @@ struct StatusBarView_ViewMode: View {
     @EnvironmentObject var store: Store
     
     var body: some View {
-        let pdfMode = Binding<Bool>(
-            get: { self.store.viewMode == .pdf },
-            set: { self.store.viewMode = $0 ? .pdf : .web }
-        )
-        
-        return Group {
-            Toggle(isOn: pdfMode) {
-                Text("WEB")
-            }.fixedSize()
-            Text("PDF")
+        HStack(spacing: 5) {
+            button(mode: .pdf)
+            button(mode: .web)
+            #if os(macOS)
+            button(mode: .safari)
+            #endif
         }
+    }
+    
+    private func button(mode: ViewMode) -> some View {
+        Button(action: {
+            self.store.viewMode = mode
+        }, label: {
+            Text(mode.rawValue)
+        })
+        .background(self.store.viewMode == mode ? Color.red : Color.clear)
     }
 }
 

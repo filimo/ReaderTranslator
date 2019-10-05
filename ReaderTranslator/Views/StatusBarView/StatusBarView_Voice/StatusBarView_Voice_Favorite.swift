@@ -19,7 +19,7 @@ struct StatusBarView_Voice_Favorite: View {
                     Button(action: {
                         self.store.voiceLanguage = item.language
                         self.store.voiceName = item.voice
-                        SpeechSynthesizer.speech()
+                        SpeechSynthesizer.speak(isVoiceEnabled: true)
                     }) {
                         Text("\(item.language) \(item.voice)")
                     }

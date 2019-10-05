@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ReaderTranlatorMac
+//  ReaderTranslatorMac
 //
-//  Created by Viktor Kushnerov on 9/30/19.
+//  Created by Viktor Kushnerov on 10/2/19.
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
@@ -18,7 +18,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView().environmentObject(Store.shared)
-            
 
         // Create the window and set the content view. 
         window = NSWindow(

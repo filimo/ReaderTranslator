@@ -43,16 +43,34 @@ class SpeechSynthesizer {
             }
     }
 
-    static func speech(text: String = Store.shared.selectedText, voiceName: String = Store.shared.voiceName, stopSpeaking: Bool = false) {
+    static func stop() {
+        speechSynthesizer.stopSpeaking(at: .immediate)
+    }
+        
+    /*
+     selecting text that calls speak()
+     the sound button calls speak() with isVoiceEnabled = true, stopSpeaking = true
+     select voice calls speak() with isVoiceEnabled = true, stopSpeaking = true
+     the shortcut calls speak() with isVoiceEnabled = true
+     isVoiceEnabled = true calls speak()
+     isVoiceEnabled = false calls stop()
+     */
+    static func speak(
+        text: String = Store.shared.selectedText,
+        voiceName: String = Store.shared.voiceName,
+        stopSpeaking: Bool = false,
+        isVoiceEnabled: Bool = Store.shared.isVoiceEnabled) {
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
+
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })
         speechUtterance.rate = (Store.shared.voiceRate as NSString).floatValue
-
         if speechSynthesizer.isSpeaking {
-            speechSynthesizer.stopSpeaking(at: .immediate)
+            SpeechSynthesizer.stop()
             if stopSpeaking { return }
         }
-        speechSynthesizer = AVSpeechSynthesizer()
-        speechSynthesizer.speak(speechUtterance)
+        if isVoiceEnabled {
+            speechSynthesizer = AVSpeechSynthesizer()
+            speechSynthesizer.speak(speechUtterance)
+        }
     }
 }

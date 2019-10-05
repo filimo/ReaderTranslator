@@ -10,19 +10,23 @@ import SwiftUI
 
 struct StatusBarView_Zoom: View {
     @EnvironmentObject var store: Store
-    
-    var body: some View {
-        let zoom = Binding<String>(
-            get: { String(format: "%.02f", CGFloat(self.store.zoom)) },
-            set: {
-                if let value = NumberFormatter().number(from: $0) {
-                    self.store.zoom = CGFloat(truncating: value)
-                }
+    #if !os(macOS)
+    let zoom = Binding<String>(
+        get: { String(format: "%.02f", CGFloat(Store.shared.zoom)) },
+        set: {
+            if let value = NumberFormatter().number(from: $0) {
+                Store.shared.zoom = CGFloat(truncating: value)
+            }
         }
-        )
+    )
+    #endif
+
+    var body: some View {
         
         return Group {
+            #if !os(macOS)
             if store.viewMode == .web {
+                Divider().fixedSize()
                 TextField("zoom", text: zoom)
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -34,12 +38,13 @@ struct StatusBarView_Zoom: View {
                     Image(systemName: "plus.magnifyingglass")
                 }
             }
+            #endif
         }
     }
 }
 
 struct StatusBarView_Zoom_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_Zoom()
+        StatusBarView_Zoom().environmentObject(Store.shared)
     }
 }

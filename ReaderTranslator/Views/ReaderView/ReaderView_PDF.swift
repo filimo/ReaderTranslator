@@ -22,6 +22,6 @@ struct ReaderView_PDF: View {
 
 struct ReaderView_PDF_Previews: PreviewProvider {
     static var previews: some View {
-        ReaderView_PDF()
+        ReaderView_PDF().environmentObject(Store.shared)
     }
 }
