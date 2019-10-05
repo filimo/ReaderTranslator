@@ -1,10 +1,6 @@
 # ReaderTranslator 
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
-## Coming soon
-I almost finished implement Safari extension. You can read about coming features [here](https://github.com/filimo/ReaderTranslator/issues/15) and review [here](https://github.com/filimo/ReaderTranslator/tree/%2315_safari_plugin). It's very intresting case when we need to make commnication between the app and extentions.
-![](files/Screen11.png)
-
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
 
@@ -24,6 +20,12 @@ Sometimes I am lazy to look into the translator and I make an assumption about t
 
 ## Goals
 Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
+
+
+## Releases
+**1.2** Implemented Safari extension. You can read about coming features [here](https://github.com/filimo/ReaderTranslator/issues/15) and review [here](https://github.com/filimo/ReaderTranslator/tree/%2315_safari_plugin). It's very intresting case when we need to make commnication between the app and extentions.
+![](files/Screen11.png)
+
 
 **You can help** me if you look at the list of [open bugs](https://github.com/filimo/ReaderTranslator/issues/).
 
