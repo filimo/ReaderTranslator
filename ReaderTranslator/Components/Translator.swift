@@ -9,13 +9,6 @@
 import SwiftUI
 import WebKit
 
-#if os(macOS)
-typealias ViewRepresentable = NSViewRepresentable
-#else
-typealias ViewRepresentable = UIViewRepresentable
-#endif
-
-
 struct Translator : ViewRepresentable {
     @Binding var text: URLQueryItem
     
@@ -27,9 +20,13 @@ struct Translator : ViewRepresentable {
     }()
     
     
-    func makeView(context: Context) -> WKWebView  { Translator.webView }
+    func makeView(context: Context) -> WKWebView  {
+        print("Translator_makeView")
+        return Translator.webView
+    }
       
     func updateView(_ view: WKWebView, context: Context) {
+        print("Translator_updateView")
         let lastUrl = view.url?.absoluteString.replacingOccurrences(of: "#view=home", with: "")
         let url = lastUrl ?? "https://translate.google.com?sl=auto&tl=ru"
         

@@ -27,9 +27,13 @@ struct WebView: NSViewRepresentable {
         return view
     }
     
-    func makeNSView(context: Context) -> PageWebView { view }
+    func makeNSView(context: Context) -> PageWebView {
+        print("WebView_makeNSView")
+        return view
+    }
 
     func updateNSView(_ view: PageWebView, context: Context) {
+        print("WebView_updateNSView")
         #if os(macOS)
         //TODO: view.scrollView.zoomScale = store.zoom
         view.setNeedsDisplay(view.bounds)

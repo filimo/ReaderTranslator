@@ -15,7 +15,7 @@ struct ReaderView_Safari: View {
     var body: some View {
         Group {
             if store.viewMode == .safari {
-//                Text(store.selectedText) // temporarily disable
+                Text(store.selectedText).frame(width: 1)
             }
         }
         .onAppear {
