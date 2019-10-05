@@ -19,10 +19,7 @@ struct StatusBarView: View {
             StatusBarView_Tabs(viewMode: $store.viewMode, currentTab: $store.currentTab)
             StatusBarView_Zoom()
             StatusBarView_Voice().padding([.top,.bottom], 5)
-            #if os(macOS)
-            Text("Safari plugin: \(store.canSafariSendSelectedText ? "on" : "off")")
-            .foregroundColor(store.canSafariSendSelectedText ? .green : .red)
-            #endif
+            StatusBarView_Safari()
         }.padding(.trailing, 20)
     }
 }

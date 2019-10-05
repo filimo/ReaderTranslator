@@ -88,6 +88,8 @@
 		F0EE0A122347AA0E004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EE0A162347BF09004A5EAD /* PageWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* PageWebView.swift */; };
 		F0EE0A172347BF09004A5EAD /* PageWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* PageWebView.swift */; };
+		F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */; };
+		F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */; };
 		F0F256BD233D309F00C9D719 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256BC233D309F00C9D719 /* String.swift */; };
 		F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */; };
 /* End PBXBuildFile section */
@@ -195,6 +197,7 @@
 		F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Volume.swift; sourceTree = "<group>"; };
 		F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMEvent.swift; sourceTree = "<group>"; };
 		F0EE0A152347BF09004A5EAD /* PageWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageWebView.swift; sourceTree = "<group>"; };
+		F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Safari.swift; sourceTree = "<group>"; };
 		F0F256BC233D309F00C9D719 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVoiceName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -444,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				F0AA69D3232E9762007CC07B /* StatusBarView.swift */,
+				F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */,
 				F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */,
 				F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */,
 				F0AB12AB233F5908005B9F2A /* StatusBarView_ViewMode.swift */,
@@ -705,6 +709,7 @@
 				F0BB43812344846200ADBEF1 /* ReaderView_PDF.swift in Sources */,
 				F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */,
 				F0BB43722344843D00ADBEF1 /* FavoriteVoiceName.swift in Sources */,
+				F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
 				F0BB437C2344845000ADBEF1 /* StatusBarView_PdfPage.swift in Sources */,
 				F026B1E82344830200E032B9 /* ReaderView_Safari.swift in Sources */,
@@ -743,6 +748,7 @@
 				F0EE0A162347BF09004A5EAD /* PageWebView.swift in Sources */,
 				F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */,
 				F06DB10D23450B6000C2DE90 /* View.swift in Sources */,
+				F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0AA69DF232E97B0007CC07B /* TranslatorView.swift in Sources */,
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
 				F06DB1042344975E00C2DE90 /* Stack.swift in Sources */,

@@ -15,11 +15,14 @@ struct ReaderView_Safari: View {
     var body: some View {
         Group {
             if store.viewMode == .safari {
-                Text(store.selectedText)
+        /** Hack: it or `Divider()` required to display TranslatorView properly `Divider()` takes more space **/
+//                Text("").frame(height: 1)
+                Text(store.selectedText) // temporarily disable
             }
         }
         .onAppear {
-            SafariExtensionManager().start(onMessageChanged: self.onMessageChanged(notificationName:))
+            SafariExtensionManager()
+                .start(onMessageChanged: self.onMessageChanged(notificationName:))
         }
     }
     
@@ -27,23 +30,24 @@ struct ReaderView_Safari: View {
         if let event = SharedContainer.getEvent()  {
             switch event.name {
             case "keydown":
-                if let extra = event.extra {
-                    if extra.altKey == true && extra.metaKey == true { //Alt+Cmd
-                        if extra.keyCode == 88 { // x
-                            self.store.isVoiceEnabled.toggle()
-                        }
-                        if extra.keyCode == 90 { // z
-                            self.store.canSafariSendSelectedText.toggle()
-                            if self.store.canSafariSendSelectedText {
-                                self.store.selectedText = event.extra?.selectedText ?? ""
-                            }
+                if let extra = event.extra,
+                    extra.shiftKey == false,
+                    extra.metaKey == false {
+                    
+                    if extra.keyCode == 65 { // a
+                        self.store.isVoiceEnabled.toggle()
+                    }
+                    if extra.keyCode == 83 { // s
+                        self.store.canSafariSendSelectedText.toggle()
+                        if self.store.canSafariSendSelectedText {
+                            self.store.selectedText = event.extra?.selectedText ?? ""
                         }
                     }
                 }
             case "selectionchange":
                 if store.canSafariSendSelectedText { store.selectedText = event.extra?.selectedText ?? "" }
             default:
-                os_log("🐞🐞🐞DOMEvent %@ is not recognized", type: .error, event.name)
+                os_log("DOMEvent %@ is not recognized", type: .debug, event.name)
             }
         }else{
             os_log("🐞🐞🐞DOMEvent is nil", type: .error)
