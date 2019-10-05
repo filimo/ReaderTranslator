@@ -2,7 +2,7 @@
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
 ## Next release
-Support **Reverso Context**
+Support **Reverso Context** [new features](https://github.com/filimo/ReaderTranslator/issues/19)
 ![](files/Screen12.png)
 
 ## Status
