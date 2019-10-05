@@ -15,8 +15,6 @@ struct ReaderView_Safari: View {
     var body: some View {
         Group {
             if store.viewMode == .safari {
-        /** Hack: it or `Divider()` required to display TranslatorView properly `Divider()` takes more space **/
-                Text("").frame(height: 1)
 //                Text(store.selectedText) // temporarily disable
             }
         }

@@ -16,16 +16,18 @@ typealias ViewRepresentable = UIViewRepresentable
 #endif
 
 
-struct TranslatorView : ViewRepresentable {
+struct Translator : ViewRepresentable {
     @Binding var text: URLQueryItem
+    
     static private let webView: WKWebView = {
         let config = WKWebViewConfiguration()
         config.websiteDataStore = .nonPersistent()
         
         return WKWebView(frame: .zero, configuration: config)
     }()
-      
-    func makeView(context: Context) -> WKWebView  { TranslatorView.webView }
+    
+    
+    func makeView(context: Context) -> WKWebView  { Translator.webView }
       
     func updateView(_ view: WKWebView, context: Context) {
         let lastUrl = view.url?.absoluteString.replacingOccurrences(of: "#view=home", with: "")
