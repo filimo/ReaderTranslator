@@ -12,43 +12,34 @@ import WebKit
 struct ReversoContext : ViewRepresentable {
     @Binding var text: String
     
-    static private let webView: WKWebView = {
-        let config = WKWebViewConfiguration()
-        config.websiteDataStore = .nonPersistent()
+    static var pageView: PageWebView?
+    private var view: PageWebView {
+        if let view = Self.pageView { return view }
         
-        return WKWebView(frame: .zero, configuration: config)
-    }()
+        let view = PageWebView()
+        Self.pageView = view
+        
+        return view
+    }
     
-    
-    func makeView(context: Context) -> WKWebView  { ReversoContext.webView }
+    func makeView(context: Context) -> PageWebView  {
+        print("ReversoContext_makeView")
+        return view
+    }
       
-    func updateView(_ view: WKWebView, context: Context) {
+    func updateView(_ view: PageWebView, context: Context) {
+        print("ReversoContext_updateView")
         let host = "https://context.reverso.net/translation/english-russian/"
         let search = text.replacingOccurrences(of: " ", with: "+")
         let urlString = "\(host)\(search)"
         
-        if(view.url?.absoluteString == urlString) { return }
+        if view.url?.absoluteString == urlString { return }
         
         if let url = URL(string: urlString) {
+            print("ReversoContext_updateView_reload")
             view.load(URLRequest(url: url))
         }
     }
-    
-    #if os(macOS)
-    func makeNSView(context: Context) -> WKWebView  {
-        makeView(context: context)
-    }
-    func updateNSView(_ view: WKWebView, context: Context) {
-        updateView(view, context: context)
-    }
-    #else
-    func makeUIView(context: Context) -> WKWebView  {
-        makeView(context: context)
-    }
-    func updateUIView(_ view: WKWebView, context: Context) {
-        updateView(view, context: context)
-    }
-    #endif
 }
 
 

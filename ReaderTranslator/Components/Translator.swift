@@ -11,21 +11,23 @@ import WebKit
 
 struct Translator : ViewRepresentable {
     @Binding var text: URLQueryItem
-    
-    static private let webView: WKWebView = {
-        let config = WKWebViewConfiguration()
-        config.websiteDataStore = .nonPersistent()
         
-        return WKWebView(frame: .zero, configuration: config)
-    }()
+    static var pageView: PageWebView?
+    private var view: PageWebView {
+        if let view = Self.pageView { return view }
+        
+        let view = PageWebView()
+        Self.pageView = view
+        
+        return view
+    }
     
-    
-    func makeView(context: Context) -> WKWebView  {
+    func makeView(context: Context) -> PageWebView  {
         print("Translator_makeView")
-        return Translator.webView
+        return view
     }
       
-    func updateView(_ view: WKWebView, context: Context) {
+    func updateView(_ view: PageWebView, context: Context) {
         print("Translator_updateView")
         let lastUrl = view.url?.absoluteString.replacingOccurrences(of: "#view=home", with: "")
         let url = lastUrl ?? "https://translate.google.com?sl=auto&tl=ru"
@@ -46,24 +48,11 @@ struct Translator : ViewRepresentable {
             self.text
         ]
         
-        view.load(URLRequest(url: urlComponent.url!))
+        if let url = urlComponent.url {
+            print("Translator_updateView_reload")
+            view.load(URLRequest(url: url))
+        }
     }
-    
-    #if os(macOS)
-    func makeNSView(context: Context) -> WKWebView  {
-        makeView(context: context)
-    }
-    func updateNSView(_ view: WKWebView, context: Context) {
-        updateView(view, context: context)
-    }
-    #else
-    func makeUIView(context: Context) -> WKWebView  {
-        makeView(context: context)
-    }
-    func updateUIView(_ view: WKWebView, context: Context) {
-        updateView(view, context: context)
-    }
-    #endif
 }
 
 
