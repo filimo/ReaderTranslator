@@ -11,12 +11,13 @@ import WebKit
 
 struct ReversoContext : ViewRepresentable {
     @Binding var text: String
-    
+    private let host = "https://context.reverso.net/translation/english-russian/"
+
     static var pageView: PageWebView?
     private var view: PageWebView {
         if let view = Self.pageView { return view }
         
-        let view = PageWebView()
+        let view = PageWebView(defaultUrl: host)
         Self.pageView = view
         
         return view
@@ -29,7 +30,6 @@ struct ReversoContext : ViewRepresentable {
       
     func updateView(_ view: PageWebView, context: Context) {
         print("ReversoContext_updateView")
-        let host = "https://context.reverso.net/translation/english-russian/"
         let search = text.replacingOccurrences(of: " ", with: "+")
         let urlString = "\(host)\(search)"
         

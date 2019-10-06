@@ -11,12 +11,13 @@ import WebKit
 
 struct Translator : ViewRepresentable {
     @Binding var text: URLQueryItem
+    private let defaultUrl = "https://translate.google.com?sl=auto&tl=ru"
         
     static var pageView: PageWebView?
     private var view: PageWebView {
         if let view = Self.pageView { return view }
         
-        let view = PageWebView()
+        let view = PageWebView(defaultUrl: defaultUrl)
         Self.pageView = view
         
         return view
@@ -30,12 +31,12 @@ struct Translator : ViewRepresentable {
     func updateView(_ view: PageWebView, context: Context) {
         print("Translator_updateView")
         let lastUrl = view.url?.absoluteString.replacingOccurrences(of: "#view=home", with: "")
-        let url = lastUrl ?? "https://translate.google.com?sl=auto&tl=ru"
+        let url = lastUrl ?? defaultUrl
         
         guard var urlComponent = URLComponents(string: url) else { return }
         guard let queryItems = urlComponent.queryItems else { return }
 
-        let text = queryItems.first(where: { $0.name == "text" })?.value
+        let text = queryItems.first(where: { $0.name == "text" })?.value ?? ""
         
         if text == self.text.value { return }
 
