@@ -16,23 +16,23 @@ typealias ViewRepresentableType = UIViewRepresentable
 
 
 protocol ViewRepresentable: ViewRepresentableType {
-    func updateView(_ view: PageWebView, context: Context)
-    func makeView(context: Context) -> PageWebView    
+    func updateView(_ view: WKPage, context: Context)
+    func makeView(context: Context) -> WKPage    
 }
 
 extension ViewRepresentable {
     #if os(macOS)
-    func makeNSView(context: Context) -> PageWebView  {
+    func makeNSView(context: Context) -> WKPage  {
         makeView(context: context)
     }
-    func updateNSView(_ view: PageWebView, context: Context) {
+    func updateNSView(_ view: WKPage, context: Context) {
         updateView(view, context: context)
     }
     #else
-    func makeUIView(context: Context) -> PageWebView  {
+    func makeUIView(context: Context) -> WKPage  {
         makeView(context: context)
     }
-    func updateUIView(_ view: PageWebView, context: Context) {
+    func updateUIView(_ view: WKPage, context: Context) {
         updateView(view, context: context)
     }
     #endif

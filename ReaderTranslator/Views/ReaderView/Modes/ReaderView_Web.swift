@@ -17,7 +17,7 @@ struct ReaderView_Web: View {
                 VStack {
                     HStack {
                         Image(systemName: "arrowshape.turn.up.left\(store.canGoBack ? ".fill" : "")")
-                            .onTapGesture { _ = WebView.pageView.goBack() }
+                            .onTapGesture { _ = WKRepresenter.pageView.goBack() }
                         TextField("Enter website name", text: self.$store.lastWebPage)
                         openInSafari()
                         pasteClipbord()
@@ -37,7 +37,7 @@ struct ReaderView_Web: View {
 extension ReaderView_Web {
     private func webView(_ currentTab: Int) -> some View {
         if self.store.currentTab == currentTab {
-            let view = WebView(lastWebPage: $store.lastWebPage)
+            let view = WKRepresenter(lastWebPage: $store.lastWebPage)
             return view.any
         }else{
             return EmptyView().any
@@ -47,7 +47,7 @@ extension ReaderView_Web {
     fileprivate func openInSafari() -> Button<Image> {
         Button(action: {
             if let url = URL(string: self.store.lastWebPage) {
-                PageWebView.open(url)
+                Safari.openSafari(url)
             }
         }) { Image(systemName: "safari") }
     }

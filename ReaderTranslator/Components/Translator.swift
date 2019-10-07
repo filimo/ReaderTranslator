@@ -10,14 +10,14 @@ import Combine
 import SwiftUI
 import WebKit
 
-struct Translator : ViewRepresentable, ScriptViewRepresenterDelegate {
+struct Translator : ViewRepresentable, WKScriptsSetup {
     @Binding var text: String
     private let defaultUrl = "https://translate.google.com?sl=auto&tl=ru"
         
-    static var pageView: PageWebView?
+    static var pageView: WKPage?
 
-    class Coordinator: ScriptViewRepresenterCoordinator {
-        override init(_ parent: ScriptViewRepresenterDelegate) {
+    class Coordinator: WKCoordinator {
+        override init(_ parent: WKScriptsSetup) {
             super.init(parent)
 
             $selectedText
@@ -34,21 +34,21 @@ struct Translator : ViewRepresentable, ScriptViewRepresenterDelegate {
         Coordinator(self)
     }
     
-    func makeView(context: Context) -> PageWebView  {
+    func makeView(context: Context) -> WKPage  {
         print("Translator_makeView")
         if let view = Self.pageView { return view }
         
-        let view = PageWebView(defaultUrl: defaultUrl)
+        let view = WKPage(defaultUrl: defaultUrl)
         Self.pageView = view
         
-        addJavaScriptEvents(
+        setupScripts(
             userContentController: view.configuration.userContentController,
             coordinator: context.coordinator)
 
         return view
     }
       
-    func updateView(_ view: PageWebView, context: Context) {
+    func updateView(_ view: WKPage, context: Context) {
         print("Translator_updateView")
         let lastUrl = view.url?.absoluteString.replacingOccurrences(of: "#view=home", with: "")
         let url = lastUrl ?? defaultUrl

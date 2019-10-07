@@ -8,7 +8,7 @@
 import Combine
 import WebKit
 
-class PageWebView: WKWebView {
+class WKPage: WKWebView {
     private var store = Store.shared
     private var zoomLevel: CGFloat = 1
         
@@ -61,36 +61,8 @@ class PageWebView: WKWebView {
     }
 }
 
-
 #if os(macOS)
-extension PageWebView {
-    @discardableResult
-    static func open(_ url: URL) -> Bool {
-        NSWorkspace.shared.open(url)
-    }
-
-    //TODO: implement keyCommands and performCommand
-}
-#else
-extension PageWebView {
-    static func open(_ url: URL) -> () {
-       UIApplication.shared.open(url)
-    }
-
-    override public var keyCommands: [UIKeyCommand]? {
-        //Voice selected text with any key since performCommand isn't fired because PageWebView isn't the first responder.
-        SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true)
-        return [.init(input: "1", modifierFlags: .command, action: #selector(performCommand))]
-    }
-
-    @objc func performCommand(sender: UIKeyCommand) {
-        print(sender)
-    }
-}
-#endif
-
-#if os(macOS)
-extension PageWebView {
+extension WKPage {
 //    override func layout() {
 //        super.layout()
 //        self.frame.size = CGSize(width: frame.width * (1/zoomLevel), height: frame.height * (1/zoomLevel))
@@ -103,7 +75,7 @@ extension PageWebView {
     }
 }
 #else
-extension PageWebView {
+extension WKPage {
     func setZoom(zoomLevel: CGFloat) {
         self.scrollView.setZoomScale(zoomLevel, animated: true)
         self.scrollView.minimumZoomScale = zoomLevel

@@ -1,5 +1,5 @@
 //
-//  WebView.swift
+//  WebViewRepresentable.swift
 //  PdfTranslator
 //
 //  Created by Viktor Kushnerov on 9/14/19.
@@ -10,25 +10,25 @@ import Combine
 import SwiftUI
 import WebKit
 
-struct WebView: ViewRepresentable, ScriptViewRepresenterDelegate {
+struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var lastWebPage: String
 
-    static var pageView: PageWebView { views[Store.shared.currentTab]! }
+    static var pageView: WKPage { views[Store.shared.currentTab]! }
     
     @ObservedObject private var store = Store.shared
-    static private var views = [Int: PageWebView]()
+    static private var views = [Int: WKPage]()
 
-    class Coordinator: ScriptViewRepresenterCoordinator {
-        override init(_ parent: ScriptViewRepresenterDelegate) {
+    class Coordinator: WKCoordinator {
+        override init(_ parent: WKScriptsSetup) {
             super.init(parent)
-
+            
             $selectedText
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
                 .sink { text in
                     if text != "" { self.store.selectedText = text }
-                }
-                .store(in: &cancellableSet)
+            }
+            .store(in: &cancellableSet)
         }
     }
 
@@ -36,18 +36,18 @@ struct WebView: ViewRepresentable, ScriptViewRepresenterDelegate {
         Coordinator(self)
     }
     
-    func makeView(context: Context) -> PageWebView {
+    func makeView(context: Context) -> WKPage {
         print("WebView_makeNSView")
         
         if let view = Self.views[store.currentTab] { return view }
-        let view = PageWebView(defaultUrl: "")
+        let view = WKPage(defaultUrl: "")
         
         #if os(macOS)
         view.allowsMagnification = true
         #endif
         view.navigationDelegate = context.coordinator
         
-        addJavaScriptEvents(
+        setupScripts(
             userContentController: view.configuration.userContentController,
             coordinator: context.coordinator)
         
@@ -57,7 +57,7 @@ struct WebView: ViewRepresentable, ScriptViewRepresenterDelegate {
         return view
     }
 
-    func updateView(_ view: PageWebView, context: Context) {
+    func updateView(_ view: WKPage, context: Context) {
         print("WebView_updateNSView")
         #if os(macOS)
 //        TODO: view.scrollView.zoomScale = store.zoom

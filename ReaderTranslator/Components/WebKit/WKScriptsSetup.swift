@@ -28,11 +28,10 @@ private let script = """
     }
 """
 
-protocol ScriptViewRepresenterDelegate {
-}
+protocol WKScriptsSetup {}
 
-extension ScriptViewRepresenterDelegate {
-    func addJavaScriptEvents(userContentController: WKUserContentController, coordinator: WKScriptMessageHandler) {
+extension WKScriptsSetup {
+    func setupScripts(userContentController: WKUserContentController, coordinator: WKScriptMessageHandler) {
 //        let userContentController = view.configuration.userContentController
 
         userContentController.add(coordinator, name: "onSelectionChange")
