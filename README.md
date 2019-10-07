@@ -4,6 +4,7 @@
 ## Next release
 Support **Reverso Context** [new features](https://github.com/filimo/ReaderTranslator/issues/19)
 ![](files/Screen12.png)
+![](files/Screen13.png)
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
