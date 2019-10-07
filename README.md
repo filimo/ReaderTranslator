@@ -1,11 +1,42 @@
 # ReaderTranslator 
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
-## Next release
-Support **Reverso Context** [new features](https://github.com/filimo/ReaderTranslator/issues/19)
+## Comming features
+### Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)
 ![](files/Screen12.png)
 ![](files/Screen13.png)
 ![](files/Screen14.png)
+### New WebKit architecture [info](https://github.com/filimo/ReaderTranslator/issues/27)
+           ┌────────────────┐                                  ┌────────────────┐
+           │                │                                  │                │
+           │      View      │────────openSafari───────────────▶│     Safari     │
+           │                │                                  │                │
+           └────────────────┘                                  └────────────────┘
+           │                │
+           │                │
+       makeView        updateView                                    ┌──────────────────────┐
+           │                │                                        │                      │
+           ▼                ▼                   ┌───────────────────▶│        WKPage        │
+           ┌────────────────┐                   │                    │                      │
+           │                │               makeView                 └──────────────────────┘
+           │ WKPepresenter  │───────────────────┘                    │           │          ▲
+           │                │                ┌──────────────────┐    │           │          │
+           └────────────────┘──makeView      │  WKScriptsSetup  │    │           │          │
+                                    └───────▶│                  │ create        ┌┘   goBack handler
+            ┌───────────────────────┐        └──────────────────┘    │        load          │
+            │     WKCoordinator     │                  │             │          │           │
+            │                       │                  │             ▼          │           │
+            └───────────────────────┘                  │             ┌──────────▼───────────┐
+            ▲           ▲                              │             │      WKWebView       │
+            │           │                              └──setup─────▶│                      │
+            │           │                                            └──────────────────────┘
+            │           │              ┌────────────────────────┐    │           │
+            │           │              │ WKScriptMessageHandler │    │           │
+            │           └──────────────│                        │◀───┘           │
+            ┌──────────────────────┐   └────────────────────────┘                │
+            │ WKNavigationDelegate │                                             │
+            │                      │◀──────────────────────────navigation events─┘
+            └──────────────────────┘
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
