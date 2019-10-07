@@ -32,19 +32,28 @@ struct ReaderView_Web: View {
             }
         }
     }
-    
-    fileprivate func openInSafari() -> Button<Image> {
-        return Button(action: {
-            if let url = URL(string: self.store.lastWebPage) {
-                PageWebView.open(url)
-            }
-        }) {
-            Image(systemName: "safari")
+}
+ 
+extension ReaderView_Web {
+    private func webView(_ currentTab: Int) -> some View {
+        if self.store.currentTab == currentTab {
+            let view = WebView(lastWebPage: $store.lastWebPage)
+            return view.any
+        }else{
+            return EmptyView().any
         }
     }
     
+    fileprivate func openInSafari() -> Button<Image> {
+        Button(action: {
+            if let url = URL(string: self.store.lastWebPage) {
+                PageWebView.open(url)
+            }
+        }) { Image(systemName: "safari") }
+    }
+    
     fileprivate func pasteClipbord() -> Button<Image> {
-        return Button(action: {
+        Button(action: {
             #if os(macOS)
             if let string = NSPasteboard.general.string(forType: .string) {
                 self.store.lastWebPage = string
@@ -54,18 +63,7 @@ struct ReaderView_Web: View {
                 self.store.lastWebPage = string
             }
             #endif
-        }) {
-            Image(systemName: "doc.on.clipboard")
-        }
-    }
-    
-    private func webView(_ currentTab: Int) -> some View {
-        if self.store.currentTab == currentTab {
-            let view = WebView(lastWebPage: $store.lastWebPage)
-            return view.any
-        }else{
-            return EmptyView().any
-        }
+        }) { Image(systemName: "doc.on.clipboard") }
     }
 }
 

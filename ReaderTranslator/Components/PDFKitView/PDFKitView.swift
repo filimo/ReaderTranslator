@@ -21,7 +21,7 @@ struct PDFKitView: View {
             
             // TODO: [Fix PDFView issue] Set the current page after PDFView is rendered
             // otherwise .PDFViewPageChanged will be invoked many times.
-            if let lastPage = Int(self.store.lastPage) {
+            if let lastPage = Int(self.store.lastPdfPage) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.goCurrentPage(page: lastPage)
                 }
@@ -36,7 +36,7 @@ struct PDFKitView: View {
             guard let pdfView = event.object as? PDFView else { return }
             guard let document = pdfView.document else { return }
 
-            print("debug: ", "PDFViewDocumentChanged: ", self.store.lastPage)
+            print("debug: ", "PDFViewDocumentChanged: ", self.store.lastPdfPage)
             self.store.pageCount = document.pageCount
         }
         
@@ -49,7 +49,7 @@ struct PDFKitView: View {
 
             print("debug: ", "PDFViewPageChanged: ", page + 1, document.pageCount)
             self.store.currentPage = String(page + 1)
-            self.store.lastPage = String(page + 1)
+            self.store.lastPdfPage = String(page + 1)
         }
 
         nc.addObserver(forName: .PDFViewSelectionChanged, object: nil, queue: nil) { _ in
@@ -81,7 +81,7 @@ struct PDFKitView: View {
             }
         
         
-        print("debug: ", "Bundle.main.url: ", store.lastPage)
+        print("debug: ", "Bundle.main.url: ", store.lastPdfPage)
         self.url = Bundle.main.url(forResource: "FunctionalSwift", withExtension: "pdf")
     }
     

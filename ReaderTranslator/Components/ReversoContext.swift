@@ -9,22 +9,41 @@
 import SwiftUI
 import WebKit
 
-struct ReversoContext : ViewRepresentable {
+struct ReversoContext : ViewRepresentable, ScriptViewRepresenterDelegate {
     @Binding var text: String
     private let host = "https://context.reverso.net/translation/english-russian/"
 
     static var pageView: PageWebView?
-    private var view: PageWebView {
+    
+    class Coordinator: ScriptViewRepresenterCoordinator {
+        override init(_ parent: ScriptViewRepresenterDelegate) {
+            super.init(parent)
+
+            $selectedText
+                .debounce(for: 0.5, scheduler: RunLoop.main)
+                .removeDuplicates()
+                .sink { text in
+                    if text != "" { self.store.selectedText = text }
+                }
+                .store(in: &cancellableSet)
+        }
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    func makeView(context: Context) -> PageWebView  {
+        print("ReversoContext_makeView")
         if let view = Self.pageView { return view }
         
         let view = PageWebView(defaultUrl: host)
         Self.pageView = view
         
-        return view
-    }
-    
-    func makeView(context: Context) -> PageWebView  {
-        print("ReversoContext_makeView")
+        addJavaScriptEvents(
+            userContentController: view.configuration.userContentController,
+            coordinator: context.coordinator)
+
         return view
     }
       

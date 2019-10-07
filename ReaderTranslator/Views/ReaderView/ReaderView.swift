@@ -19,16 +19,8 @@ struct ReaderView: View {
             #if os(macOS)
             ReaderView_Safari()
             #endif
-            ReversoContextView(text: .constant(self.store.selectedText))
-            TranslatorView(text: .constant(URLQueryItem(name: "text", value: self.store.selectedText)))
-        }
-        .onAppear {
-            _ = self.store.$selectedText
-                .debounce(for: 0.5, scheduler: RunLoop.main)
-                .removeDuplicates()
-                .sink { text in
-                    SpeechSynthesizer.speak(text: text, voiceName: self.store.voiceName)
-                }
+            ReversoContextView()
+            TranslatorView()
         }
     }
 }

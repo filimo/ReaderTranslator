@@ -89,6 +89,10 @@
 		F0C4EDAA2349271C00CCD97A /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */; };
 		F0C4EDAD234940B300CCD97A /* FunctionalSwift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F0C4EDAC234940B300CCD97A /* FunctionalSwift.pdf */; };
 		F0C4EDAF234940D300CCD97A /* FunctionalSwift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F0C4EDAE234940D300CCD97A /* FunctionalSwift.pdf */; };
+		F0C53174234B06D3003174B5 /* ScriptViewRepresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53173234B06D3003174B5 /* ScriptViewRepresenterDelegate.swift */; };
+		F0C53175234B06D3003174B5 /* ScriptViewRepresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53173234B06D3003174B5 /* ScriptViewRepresenterDelegate.swift */; };
+		F0C53178234B3EE1003174B5 /* ScriptViewRepresenterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53177234B3EE1003174B5 /* ScriptViewRepresenterCoordinator.swift */; };
+		F0C53179234B3EE1003174B5 /* ScriptViewRepresenterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53177234B3EE1003174B5 /* ScriptViewRepresenterCoordinator.swift */; };
 		F0D31C5123491C23003CF86B /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* TranslatorView.swift */; };
 		F0D31C5223491C23003CF86B /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* TranslatorView.swift */; };
 		F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
@@ -188,6 +192,8 @@
 		F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		F0C4EDAC234940B300CCD97A /* FunctionalSwift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = FunctionalSwift.pdf; path = "../../../../../../../../Users/filimo/Downloads/Books about Swift/FunctionalSwift.pdf"; sourceTree = "<group>"; };
 		F0C4EDAE234940D300CCD97A /* FunctionalSwift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = FunctionalSwift.pdf; path = "../../../../../../../../Users/filimo/Downloads/Books about Swift/FunctionalSwift.pdf"; sourceTree = "<group>"; };
+		F0C53173234B06D3003174B5 /* ScriptViewRepresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptViewRepresenterDelegate.swift; sourceTree = "<group>"; };
+		F0C53177234B3EE1003174B5 /* ScriptViewRepresenterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptViewRepresenterCoordinator.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
 		F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMEvent.swift; sourceTree = "<group>"; };
 		F0EE0A152347BF09004A5EAD /* PageWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageWebView.swift; sourceTree = "<group>"; };
@@ -372,6 +378,7 @@
 		F0AA69D9232E979B007CC07B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F0C53176234B3E8B003174B5 /* ScriptViewRepresenter */,
 				F0EE0A1B2348A645004A5EAD /* PDFKitView */,
 				F0EE0A142347BEDB004A5EAD /* WebView */,
 				F0A9F35A2349228A00970C97 /* ReversoContext.swift */,
@@ -396,8 +403,6 @@
 			children = (
 				F0C4EDA3234925B800CCD97A /* Modes */,
 				F0AA69D2232E9762007CC07B /* ReaderView.swift */,
-				F01A50E823492398001DCC11 /* ReversoContextView.swift */,
-				F0D31C5023491C23003CF86B /* TranslatorView.swift */,
 			);
 			path = ReaderView;
 			sourceTree = "<group>";
@@ -421,9 +426,20 @@
 			children = (
 				F0AB12A2233F5798005B9F2A /* ReaderView_PDF.swift */,
 				F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */,
+				F01A50E823492398001DCC11 /* ReversoContextView.swift */,
+				F0D31C5023491C23003CF86B /* TranslatorView.swift */,
 				F026B1E72344830200E032B9 /* ReaderView_Safari.swift */,
 			);
 			path = Modes;
+			sourceTree = "<group>";
+		};
+		F0C53176234B3E8B003174B5 /* ScriptViewRepresenter */ = {
+			isa = PBXGroup;
+			children = (
+				F0C53173234B06D3003174B5 /* ScriptViewRepresenterDelegate.swift */,
+				F0C53177234B3EE1003174B5 /* ScriptViewRepresenterCoordinator.swift */,
+			);
+			path = ScriptViewRepresenter;
 			sourceTree = "<group>";
 		};
 		F0EE0A142347BEDB004A5EAD /* WebView */ = {
@@ -640,8 +656,10 @@
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
 				F0BB437C2344845000ADBEF1 /* StatusBarView_PdfPage.swift in Sources */,
 				F026B1E82344830200E032B9 /* ReaderView_Safari.swift in Sources */,
+				F0C53175234B06D3003174B5 /* ScriptViewRepresenterDelegate.swift in Sources */,
 				F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */,
 				F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */,
+				F0C53179234B3EE1003174B5 /* ScriptViewRepresenterCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +684,7 @@
 				F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */,
 				F0F256BD233D309F00C9D719 /* String.swift in Sources */,
 				F0AB12A3233F5798005B9F2A /* ReaderView_PDF.swift in Sources */,
+				F0C53174234B06D3003174B5 /* ScriptViewRepresenterDelegate.swift in Sources */,
 				F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
 				F06DB0FF2344856300C2DE90 /* Store.swift in Sources */,
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
@@ -692,6 +711,7 @@
 				F0AB12AE233F5950005B9F2A /* StatusBarView_PdfPage.swift in Sources */,
 				F0AA69DE232E97B0007CC07B /* SpeechSynthesizer.swift in Sources */,
 				F0C4EDA92349271C00CCD97A /* ViewRepresentable.swift in Sources */,
+				F0C53178234B3EE1003174B5 /* ScriptViewRepresenterCoordinator.swift in Sources */,
 				F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */,
 				F0C4EDA42349260000CCD97A /* ReversoContextView.swift in Sources */,
 				F0AA69A5232E9710007CC07B /* ContentView.swift in Sources */,

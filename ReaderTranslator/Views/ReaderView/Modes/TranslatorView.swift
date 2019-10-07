@@ -8,21 +8,21 @@
 
 import SwiftUI
 
-struct ReversoContextView: View {
-    @Binding var text: String
+struct TranslatorView: View {
+    @ObservedObject private var store = Store.shared
     
     var body: some View {
         VStack {
             /** Hack: it or `Divider()` required to display TranslatorView properly `Divider()` takes more space **/
             Text("").frame(height: 1)
-            ReversoContext(text: $text)
+            Translator(text: $store.selectedText)
         }
     }
 }
 
-struct ContextReversoView_Previews: PreviewProvider {
+struct TranslatorView_Previews: PreviewProvider {
     static var previews: some View {
-        ReversoContextView(text: .constant("human being"))
+        TranslatorView()
         .environmentObject(Store.shared)
     }
 }
