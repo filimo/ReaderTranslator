@@ -6,7 +6,7 @@
 ![](files/Screen12.png)
 ![](files/Screen13.png)
 ![](files/Screen14.png)
-### New WebKit architecture [info](https://github.com/filimo/ReaderTranslator/issues/27)
+### New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issues/27)
            ┌────────────────┐                                  ┌────────────────┐
            │                │                                  │                │
            │      View      │────────openSafari───────────────▶│     Safari     │
