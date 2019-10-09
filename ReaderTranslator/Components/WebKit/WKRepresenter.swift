@@ -13,14 +13,15 @@ import WebKit
 struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var lastWebPage: String
 
-    static var pageView: WKPage { views[Store.shared.currentTab]! }
+    static var pageView: WKPageView { views[Store.shared.currentTab]! }
     static var hasSentTranslateAction = false
 
     @ObservedObject private var store = Store.shared
-    static private var views = [Int: WKPage]()
+    static private var views = [Int: WKPageView]()
 
     class Coordinator: WKCoordinator {
         override init(_ parent: WKScriptsSetup) {
+            print("WKRepresenter_Coordinator_init")
             super.init(parent)
             
             $selectedText
@@ -37,28 +38,20 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
         Coordinator(self)
     }
     
-    func makeView(context: Context) -> WKPage {
+    func makeView(context: Context) -> WKPageView {
         print("WebView_makeNSView")
         
         if let view = Self.views[store.currentTab] { return view }
-        let view = WKPage(defaultUrl: "")
-        
-        #if os(macOS)
-        view.allowsMagnification = true
-        #endif
-        view.navigationDelegate = context.coordinator
-        
-        setupScripts(
-            userContentController: view.configuration.userContentController,
-            coordinator: context.coordinator)
-        
+        let view = WKPageView(defaultUrl: "")
         Self.views[self.store.currentTab] = view
+
+        setupScripts(view: view, coordinator: context.coordinator)
         store.canGoBack = view.canGoBack
 
         return view
     }
 
-    func updateView(_ view: WKPage, context: Context) {
+    func updateView(_ view: WKPageView, context: Context) {
         print("WebView_updateNSView")
         #if os(macOS)
 //        TODO: view.scrollView.zoomScale = store.zoom
@@ -67,6 +60,19 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
         view.setZoom(zoomLevel: store.zoom)
         #endif
         if view.newUrl != lastWebPage { view.newUrl = lastWebPage }
+    }
+    
+    func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!) {
+        if let url = webView.url?.absoluteString { store.lastWebPage = url.decodeUrl }
+        store.canGoBack = webView.canGoBack
+        webView.setZoom(zoomLevel: self.store.zoom)
+    }
+    
+    func goBack(_ webView: WKPageView) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if let url = webView.url?.absoluteString { webView.newUrl = url }
+            self.store.canGoBack = webView.canGoBack
+        }
     }
 }
 

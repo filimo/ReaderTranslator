@@ -10,6 +10,8 @@
 		F002C62A232FF40C00D3FC04 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = F002C629232FF40C00D3FC04 /* Published.swift */; };
 		F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
 		F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
+		F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
+		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F026B1E82344830200E032B9 /* ReaderView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* ReaderView_Safari.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
@@ -98,8 +100,8 @@
 		F0D31C5223491C23003CF86B /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* TranslatorView.swift */; };
 		F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EE0A122347AA0E004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
-		F0EE0A162347BF09004A5EAD /* WKPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPage.swift */; };
-		F0EE0A172347BF09004A5EAD /* WKPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPage.swift */; };
+		F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
+		F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
 		F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */; };
 		F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */; };
 		F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */; };
@@ -138,8 +140,9 @@
 		F00644442341E22D006BCA94 /* ReaderTranslatorSafari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = ReaderTranslatorSafari.appex; path = "/Volumes/Macintosh HD/Users/filimo/MyProjects/SwiftUI/ReaderTranslator/build/Debug/ReaderTranslatorSafari.appex"; sourceTree = "<absolute>"; };
 		F00644462341E22D006BCA94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		F01A50E823492398001DCC11 /* ReversoContextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoContextView.swift; sourceTree = "<group>"; };
+		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
 		F026B1E72344830200E032B9 /* ReaderView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Safari.swift; sourceTree = "<group>"; };
-		F03D7DFD234DF59500E53E3D /* Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Files; sourceTree = "<group>"; };
+		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F049244E2341F54800F3C728 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -197,7 +200,7 @@
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
 		F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMEvent.swift; sourceTree = "<group>"; };
-		F0EE0A152347BF09004A5EAD /* WKPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKPage.swift; sourceTree = "<group>"; };
+		F0EE0A152347BF09004A5EAD /* WKPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKPageView.swift; sourceTree = "<group>"; };
 		F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Safari.swift; sourceTree = "<group>"; };
 		F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitViewRepresentable.swift; sourceTree = "<group>"; };
 		F0F256BC233D309F00C9D719 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -297,7 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				F040D57B2336BD97004567B8 /* README.md */,
-				F03D7DFD234DF59500E53E3D /* Files */,
+				F03D7DFD234DF59500E53E3D /* files */,
 				F0AA699F232E9710007CC07B /* ReaderTranslator */,
 				F0754438234479DA00E1D88E /* ReaderTranslatorMac */,
 				F075445023447A2800E1D88E /* ReaderTranslatorSafari */,
@@ -447,7 +450,7 @@
 				F0AA69DC232E97B0007CC07B /* WKRepresenter.swift */,
 				F0C53177234B3EE1003174B5 /* WKCoordinator.swift */,
 				F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */,
-				F0EE0A152347BF09004A5EAD /* WKPage.swift */,
+				F0EE0A152347BF09004A5EAD /* WKPageView.swift */,
 			);
 			path = WebKit;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				F049244E2341F54800F3C728 /* Image.swift */,
 				F06DB1032344975E00C2DE90 /* Stack.swift */,
 				F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */,
+				F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -620,7 +624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0BB43792344845000ADBEF1 /* StatusBarView_Tabs.swift in Sources */,
-				F0EE0A172347BF09004A5EAD /* WKPage.swift in Sources */,
+				F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */,
 				F0C4EDA52349260000CCD97A /* ReversoContextView.swift in Sources */,
 				F06DB10B234504FD00C2DE90 /* EditorNSTextView.swift in Sources */,
 				F06DB10E23450B6000C2DE90 /* View.swift in Sources */,
@@ -632,6 +636,7 @@
 				F0C4EDAA2349271C00CCD97A /* ViewRepresentable.swift in Sources */,
 				F06DB1002344856300C2DE90 /* Store.swift in Sources */,
 				F0BB43742344844800ADBEF1 /* PDFKitView.swift in Sources */,
+				F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F0BB43782344845000ADBEF1 /* StatusBarView.swift in Sources */,
 				F0BB436F2344843400ADBEF1 /* Image.swift in Sources */,
 				F0BB43802344845000ADBEF1 /* StatusBarView_Voice_Volume.swift in Sources */,
@@ -690,11 +695,12 @@
 				F06DB0FF2344856300C2DE90 /* Store.swift in Sources */,
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
 				F0D2E334234BA49000D95994 /* Safari.swift in Sources */,
+				F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */,
 				F0AA69D4232E9762007CC07B /* ReaderView.swift in Sources */,
 				F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */,
 				F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */,
-				F0EE0A162347BF09004A5EAD /* WKPage.swift in Sources */,
+				F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */,
 				F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */,
 				F06DB10D23450B6000C2DE90 /* View.swift in Sources */,
 				F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,

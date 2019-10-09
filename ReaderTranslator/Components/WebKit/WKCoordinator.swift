@@ -44,8 +44,8 @@ extension WKCoordinator: WKScriptMessageHandler {
     }
 }
 
-extension WKCoordinator: WKNavigationDelegate {
-    private func webView(_ webView: WKPage, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+extension WKCoordinator: WKNavigationDelegate, WKCoordinatorNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url {
             if url.absoluteString == self.store.lastWebPage {
                 decisionHandler(.allow)
@@ -56,14 +56,11 @@ extension WKCoordinator: WKNavigationDelegate {
         }
     }
 
-    private func webView(_ webView: WKPage, didFinish navigation: WKNavigation!) {
-        if let url = webView.url?.absoluteString { store.lastWebPage = url.decodeUrl }
-        store.canGoBack = webView.canGoBack
-
-        webView.setZoom(zoomLevel: self.store.zoom)
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        if let webView = webView as? WKPageView { parent.webView(webView, didFinish: navigation) }        
     }
 
-    private func webView(_ webView: WKPage, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
         guard navigationAction.targetFrame?.isMainFrame == true else {
             decisionHandler(.allow, preferences)
             return
@@ -71,7 +68,11 @@ extension WKCoordinator: WKNavigationDelegate {
         decisionHandler(.allow, preferences)
     }
 
-    private func webView(_ webView: WKPage, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print(error)
+    }
+    
+    func goBack(_ webView: WKWebView) {
+        if let webView = webView as? WKPageView { parent.goBack(webView) }
     }
 }

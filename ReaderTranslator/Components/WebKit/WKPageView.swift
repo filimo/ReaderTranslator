@@ -9,14 +9,14 @@ import Combine
 import SwiftUI
 import WebKit
 
-class WKPage: WKWebView {
+class WKPageView: WKWebView {
     @ObservedObject private var store = Store.shared
     private var zoomLevel: CGFloat = 1
         
     @Published var newUrl: String
 
     private var cancellableSet: Set<AnyCancellable> = []
-
+    
     init(defaultUrl: String) {
         let config = WKWebViewConfiguration()
         let contentController = WKUserContentController()
@@ -54,15 +54,13 @@ class WKPage: WKWebView {
     
     func goBack() {
         super.goBack()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            if let url = self.url?.absoluteString { self.newUrl = url }
-            self.store.canGoBack = self.canGoBack
-        }
+        (self.navigationDelegate as? WKCoordinatorNavigationDelegate)?.goBack(self)
     }
 }
 
+
 #if os(macOS)
-extension WKPage {
+extension WKPageView {
 //    override func layout() {
 //        super.layout()
 //        self.frame.size = CGSize(width: frame.width * (1/zoomLevel), height: frame.height * (1/zoomLevel))
@@ -75,7 +73,7 @@ extension WKPage {
     }
 }
 #else
-extension WKPage {
+extension WKPageView {
     func setZoom(zoomLevel: CGFloat) {
         self.scrollView.setZoomScale(zoomLevel, animated: true)
         self.scrollView.minimumZoomScale = zoomLevel

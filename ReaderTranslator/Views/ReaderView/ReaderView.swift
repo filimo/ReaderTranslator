@@ -19,8 +19,8 @@ struct ReaderView: View {
             #if os(macOS)
             ReaderView_Safari()
             #endif
-            ReversoContextView()
             TranslatorView()
+            ReversoContextView()
         }
     }
 }

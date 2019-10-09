@@ -15,7 +15,7 @@ struct Translator : ViewRepresentable, WKScriptsSetup {
     private let defaultUrl = "https://translate.google.com?sl=auto&tl=ru"
     static var hasSentTranslateAction = false
         
-    static var pageView: WKPage?
+    static var pageView: WKPageView?
 
     class Coordinator: WKCoordinator {
         override init(_ parent: WKScriptsSetup) {
@@ -39,21 +39,19 @@ struct Translator : ViewRepresentable, WKScriptsSetup {
         Coordinator(self)
     }
     
-    func makeView(context: Context) -> WKPage  {
+    func makeView(context: Context) -> WKPageView  {
         print("Translator_makeView")
         if let view = Self.pageView { return view }
         
-        let view = WKPage(defaultUrl: defaultUrl)
+        let view = WKPageView(defaultUrl: defaultUrl)
         Self.pageView = view
         
-        setupScripts(
-            userContentController: view.configuration.userContentController,
-            coordinator: context.coordinator)
+        setupScripts(view: view, coordinator: context.coordinator)
 
         return view
     }
       
-    func updateView(_ view: WKPage, context: Context) {
+    func updateView(_ view: WKPageView, context: Context) {
         print("Translator_updateView")
         let lastUrl = view.url?.absoluteString.replacingOccurrences(of: "#view=home", with: "")
         let url = lastUrl ?? defaultUrl

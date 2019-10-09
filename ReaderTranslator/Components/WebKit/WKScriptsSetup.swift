@@ -30,6 +30,8 @@ private let script = """
 
 protocol WKScriptsSetup {
     static var hasSentTranslateAction: Bool { get set }
+    func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!)
+    func goBack(_ webView: WKPageView)
 }
 
 extension WKScriptsSetup {
@@ -37,13 +39,18 @@ extension WKScriptsSetup {
         Self.hasSentTranslateAction = true
     }
 
-    func setupScripts(userContentController: WKUserContentController, coordinator: WKScriptMessageHandler) {
-//        let userContentController = view.configuration.userContentController
+    func setupScripts(view: WKPageView, coordinator: WKCoordinator) {
+        let userContentController = view.configuration.userContentController
 
         userContentController.add(coordinator, name: "onSelectionChange")
         userContentController.add(coordinator, name: "onContextMenu")
         userContentController.add(coordinator, name: "onBodyLoaded")
         userContentController.add(coordinator, name: "onKeyPress")
+        
+        #if os(macOS)
+        view.allowsMagnification = true
+        #endif
+        view.navigationDelegate = coordinator
         
         let userScript = WKUserScript(
             source: script,
@@ -52,5 +59,8 @@ extension WKScriptsSetup {
         )
         userContentController.addUserScript(userScript)
     }
+    
+    func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!) {}
+    func goBack(_ webView: WKPageView) {}
 }
 

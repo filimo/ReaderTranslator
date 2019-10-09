@@ -13,7 +13,7 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let host = "https://context.reverso.net/translation/english-russian/"
 
-    static var pageView: WKPage?
+    static var pageView: WKPageView?
     static var hasSentTranslateAction = false
 
     class Coordinator: WKCoordinator {
@@ -35,21 +35,19 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
         Coordinator(self)
     }
     
-    func makeView(context: Context) -> WKPage  {
+    func makeView(context: Context) -> WKPageView  {
         print("ReversoContext_makeView")
         if let view = Self.pageView { return view }
         
-        let view = WKPage(defaultUrl: host)
+        let view = WKPageView(defaultUrl: host)
         Self.pageView = view
         
-        setupScripts(
-            userContentController: view.configuration.userContentController,
-            coordinator: context.coordinator)
+        setupScripts(view: view, coordinator: context.coordinator)
 
         return view
     }
       
-    func updateView(_ view: WKPage, context: Context) {
+    func updateView(_ view: WKPageView, context: Context) {
         print("ReversoContext_updateView")
         
         guard case let .reversoContext(text) = selectedText else { return }
