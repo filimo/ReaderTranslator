@@ -14,7 +14,8 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var lastWebPage: String
 
     static var pageView: WKPage { views[Store.shared.currentTab]! }
-    
+    static var hasSentTranslateAction = false
+
     @ObservedObject private var store = Store.shared
     static private var views = [Int: WKPage]()
 
@@ -26,7 +27,7 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
                 .sink { text in
-                    if text != "" { self.store.selectedText = text }
+                    if text != "" { self.store.translateAction = .translator(text) }
             }
             .store(in: &cancellableSet)
         }

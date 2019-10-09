@@ -15,7 +15,7 @@ struct TranslatorView: View {
         VStack {
             /** Hack: it or `Divider()` required to display TranslatorView properly `Divider()` takes more space **/
             Text("").frame(height: 1)
-            Translator(text: $store.selectedText)
+            Translator(selectedText: $store.translateAction)
         }
     }
 }

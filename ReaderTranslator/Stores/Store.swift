@@ -15,13 +15,30 @@ enum ViewMode: String, Codable {
     case safari = "Safari"
 }
 
+enum TranslateAction {
+    case reversoContext(String)
+    case translator(String)
+    
+    func getText() -> String {
+        switch self {
+        case .reversoContext(let text):
+            return text
+        case .translator(let text):
+            return text
+        }
+    }
+}
+
 class Store: ObservableObject {
     static var shared = Store()
     
     @Published(key: "canSafariSendSelectedText") var canSafariSendSelectedText: Bool = true
-    @Published var selectedText = "" { didSet { SpeechSynthesizer.speak() } }
-    @Published var selectedTextInTranslator = "" { didSet { SpeechSynthesizer.speak(text: selectedTextInTranslator) } }
-    
+    @Published var translateAction: TranslateAction = .translator("") {
+        didSet {
+            if case .translator(_) = translateAction { SpeechSynthesizer.speak() }
+        }
+    }
+
     
     @Published var currentPage = "1"
     @Published var pageCount = 0
@@ -40,7 +57,7 @@ class Store: ObservableObject {
 
     @Published var canGoBack = false
     @UserDefault(key: "lastWebPage")
-    private var savedLastWebPage = ["https://wwww.google.com", "", ""]
+    private var savedLastWebPage = ["https://google.com", "", ""]
     @Published
     var lastWebPage = "" { willSet { self.savedLastWebPage[self.currentTab] = newValue } }
     

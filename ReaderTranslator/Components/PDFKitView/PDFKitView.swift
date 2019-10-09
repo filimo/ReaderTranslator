@@ -10,7 +10,7 @@ import SwiftUI
 import PDFKit
 
 struct PDFKitView: View {
-    @State var url: URL?
+    @State var url: URL? = Bundle.main.url(forResource: "Functional-Swift", withExtension: "pdf")
 
     @EnvironmentObject var store: Store
 
@@ -55,7 +55,7 @@ struct PDFKitView: View {
         nc.addObserver(forName: .PDFViewSelectionChanged, object: nil, queue: nil) { _ in
             let text = PDFKitViewRepresentable.getSelectedText()
             if text != "" {
-                self.store.selectedText = text
+                self.store.translateAction = .translator(text)
             }
         }
         
@@ -82,7 +82,7 @@ struct PDFKitView: View {
         
         
         print("debug: ", "Bundle.main.url: ", store.lastPdfPage)
-        self.url = Bundle.main.url(forResource: "FunctionalSwift", withExtension: "pdf")
+//        self.url = Bundle.main.url(forResource: "Functional-Swift", withExtension: "pdf")
     }
     
     private func goCurrentPage(page: Int) {

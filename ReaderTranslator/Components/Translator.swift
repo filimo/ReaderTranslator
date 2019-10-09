@@ -11,8 +11,9 @@ import SwiftUI
 import WebKit
 
 struct Translator : ViewRepresentable, WKScriptsSetup {
-    @Binding var text: String
+    @Binding var selectedText: TranslateAction
     private let defaultUrl = "https://translate.google.com?sl=auto&tl=ru"
+    static var hasSentTranslateAction = false
         
     static var pageView: WKPage?
 
@@ -24,7 +25,11 @@ struct Translator : ViewRepresentable, WKScriptsSetup {
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
                 .sink { text in
-                    if text != "" { self.store.selectedTextInTranslator = text }
+                    print("Translator_$selectedText", text)
+                    if text != "" {
+                        parent.sentTranslateAction()
+                        self.store.translateAction = .reversoContext(text)
+                    }
                 }
                 .store(in: &cancellableSet)
         }
@@ -54,12 +59,17 @@ struct Translator : ViewRepresentable, WKScriptsSetup {
         let url = lastUrl ?? defaultUrl
         
         guard var urlComponent = URLComponents(string: url) else { return }
-        print(urlComponent)
         guard let queryItems = urlComponent.queryItems else { return }
 
-        let text = queryItems.first(where: { $0.name == "text" })?.value ?? ""
-        print("text:", text, "self.text:", self.text)
-        if text == self.text { return }
+        let oldText = queryItems.first(where: { $0.name == "text" })?.value ?? ""
+        
+        guard case let .translator(text) = selectedText, text != "", text != oldText else { return }
+
+        if Self.hasSentTranslateAction {
+            Self.hasSentTranslateAction = false
+            return
+        }
+
 
         let sl = queryItems.first(where: { $0.name == "sl" })?.value
         let tl = queryItems.first(where: { $0.name == "tl" })?.value
@@ -67,7 +77,7 @@ struct Translator : ViewRepresentable, WKScriptsSetup {
         urlComponent.queryItems = [
             .init(name: "sl", value: sl),
             .init(name: "tl", value: tl),
-            .init(name: "text", value: self.text)
+            .init(name: "text", value: text)
         ]
         
         if let url = urlComponent.url {

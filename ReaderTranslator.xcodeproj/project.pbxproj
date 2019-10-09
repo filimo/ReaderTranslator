@@ -12,9 +12,9 @@
 		F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
 		F026B1E82344830200E032B9 /* ReaderView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* ReaderView_Safari.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
-		F040D57A2336BD62004567B8 /* files in Resources */ = {isa = PBXBuildFile; fileRef = F040D5792336BD61004567B8 /* files */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
 		F049244F2341F54800F3C728 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
+		F04FC5D8234CA63E002EFC0A /* Functional-Swift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F0C4EDAE234940D300CCD97A /* Functional-Swift.pdf */; };
 		F06DB0FF2344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1042344975E00C2DE90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* Stack.swift */; };
@@ -87,8 +87,7 @@
 		F0C4EDA7234926D400CCD97A /* ReversoContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9F35A2349228A00970C97 /* ReversoContext.swift */; };
 		F0C4EDA92349271C00CCD97A /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */; };
 		F0C4EDAA2349271C00CCD97A /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */; };
-		F0C4EDAD234940B300CCD97A /* FunctionalSwift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F0C4EDAC234940B300CCD97A /* FunctionalSwift.pdf */; };
-		F0C4EDAF234940D300CCD97A /* FunctionalSwift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F0C4EDAE234940D300CCD97A /* FunctionalSwift.pdf */; };
+		F0C4EDAF234940D300CCD97A /* Functional-Swift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F0C4EDAE234940D300CCD97A /* Functional-Swift.pdf */; };
 		F0C53174234B06D3003174B5 /* WKScriptsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */; };
 		F0C53175234B06D3003174B5 /* WKScriptsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */; };
 		F0C53178234B3EE1003174B5 /* WKCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53177234B3EE1003174B5 /* WKCoordinator.swift */; };
@@ -140,8 +139,8 @@
 		F00644462341E22D006BCA94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		F01A50E823492398001DCC11 /* ReversoContextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoContextView.swift; sourceTree = "<group>"; };
 		F026B1E72344830200E032B9 /* ReaderView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Safari.swift; sourceTree = "<group>"; };
+		F03D7DFD234DF59500E53E3D /* Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Files; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
-		F040D5792336BD61004567B8 /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F049244E2341F54800F3C728 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F06DB1032344975E00C2DE90 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -192,8 +191,7 @@
 		F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Favorite.swift; sourceTree = "<group>"; };
 		F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Volume.swift; sourceTree = "<group>"; };
 		F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
-		F0C4EDAC234940B300CCD97A /* FunctionalSwift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = FunctionalSwift.pdf; path = "../../../../../../../../Users/filimo/Downloads/Books about Swift/FunctionalSwift.pdf"; sourceTree = "<group>"; };
-		F0C4EDAE234940D300CCD97A /* FunctionalSwift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = FunctionalSwift.pdf; path = "../../../../../../../../Users/filimo/Downloads/Books about Swift/FunctionalSwift.pdf"; sourceTree = "<group>"; };
+		F0C4EDAE234940D300CCD97A /* Functional-Swift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Functional-Swift.pdf"; path = "../../../Downloads/Books/Functional-Swift.pdf"; sourceTree = "<group>"; };
 		F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKScriptsSetup.swift; sourceTree = "<group>"; };
 		F0C53177234B3EE1003174B5 /* WKCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinator.swift; sourceTree = "<group>"; };
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				F075443D234479DB00E1D88E /* Assets.xcassets */,
-				F0C4EDAC234940B300CCD97A /* FunctionalSwift.pdf */,
 				F0754439234479DA00E1D88E /* AppDelegate.swift */,
 				F0754442234479DB00E1D88E /* Main.storyboard */,
 				F0754445234479DB00E1D88E /* Info.plist */,
@@ -300,7 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				F040D57B2336BD97004567B8 /* README.md */,
-				F040D5792336BD61004567B8 /* files */,
+				F03D7DFD234DF59500E53E3D /* Files */,
 				F0AA699F232E9710007CC07B /* ReaderTranslator */,
 				F0754438234479DA00E1D88E /* ReaderTranslatorMac */,
 				F075445023447A2800E1D88E /* ReaderTranslatorSafari */,
@@ -332,7 +329,7 @@
 				F0AA69D9232E979B007CC07B /* Components */,
 				F0AA69D1232E9733007CC07B /* Views */,
 				F0AA69A6232E9712007CC07B /* Assets.xcassets */,
-				F0C4EDAE234940D300CCD97A /* FunctionalSwift.pdf */,
+				F0C4EDAE234940D300CCD97A /* Functional-Swift.pdf */,
 				F0AA69AB232E9712007CC07B /* LaunchScreen.storyboard */,
 				F0AA69AE232E9712007CC07B /* Info.plist */,
 				F0AA69A8232E9712007CC07B /* Preview Content */,
@@ -458,8 +455,8 @@
 		F0EE0A1B2348A645004A5EAD /* PDFKitView */ = {
 			isa = PBXGroup;
 			children = (
-				F0AA69DD232E97B0007CC07B /* PDFKitView.swift */,
 				F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */,
+				F0AA69DD232E97B0007CC07B /* PDFKitView.swift */,
 			);
 			path = PDFKitView;
 			sourceTree = "<group>";
@@ -587,9 +584,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
+				F04FC5D8234CA63E002EFC0A /* Functional-Swift.pdf in Resources */,
 				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
 				F075443E234479DB00E1D88E /* Assets.xcassets in Resources */,
-				F0C4EDAD234940B300CCD97A /* FunctionalSwift.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,10 +605,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F040D57C2336BD97004567B8 /* README.md in Resources */,
-				F0C4EDAF234940D300CCD97A /* FunctionalSwift.pdf in Resources */,
+				F0C4EDAF234940D300CCD97A /* Functional-Swift.pdf in Resources */,
 				F0AA69AD232E9712007CC07B /* LaunchScreen.storyboard in Resources */,
 				F0AA69AA232E9712007CC07B /* Preview Assets.xcassets in Resources */,
-				F040D57A2336BD62004567B8 /* files in Resources */,
 				F0AA69A7232E9712007CC07B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,7 @@ struct ReaderView_Web: View {
                 VStack {
                     HStack {
                         Image(systemName: "arrowshape.turn.up.left\(store.canGoBack ? ".fill" : "")")
-                            .onTapGesture { _ = WKRepresenter.pageView.goBack() }
+                            .onTapGesture { WKRepresenter.pageView.goBack() }
                         TextField("Enter website name", text: self.$store.lastWebPage)
                         openInSafari()
                         pasteClipbord()

@@ -9,6 +9,8 @@
 import Foundation
 #if os(macOS)
 import AppKit
+#else
+import UIKit
 #endif
 
 
@@ -28,17 +30,7 @@ extension Safari {
 #else
 extension Safari {
     static func openSafari(_ url: URL) -> () {
-       UIApplication.shared.openSafari(url)
-    }
-
-    override public var keyCommands: [UIKeyCommand]? {
-        //Voice selected text with any key since performCommand isn't fired because PageWebView isn't the first responder.
-        SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true)
-        return [.init(input: "1", modifierFlags: .command, action: #selector(performCommand))]
-    }
-
-    @objc func performCommand(sender: UIKeyCommand) {
-        print(sender)
+       UIApplication.shared.open(url)
     }
 }
 #endif

@@ -56,10 +56,11 @@ class SpeechSynthesizer {
      isVoiceEnabled = false calls stop()
      */
     static func speak(
-        text: String = Store.shared.selectedText,
+        text: String = Store.shared.translateAction.getText(),
         voiceName: String = Store.shared.voiceName,
         stopSpeaking: Bool = false,
         isVoiceEnabled: Bool = Store.shared.isVoiceEnabled) {
+        
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
 
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })

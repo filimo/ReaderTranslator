@@ -15,7 +15,7 @@ struct ReaderView_Safari: View {
     var body: some View {
         Group {
             if store.viewMode == .safari {
-                Text(store.selectedText).frame(width: 1)
+                Text("").frame(width: 1)
             }
         }
         .onAppear {
@@ -38,12 +38,14 @@ struct ReaderView_Safari: View {
                     if extra.keyCode == 83 { // s
                         self.store.canSafariSendSelectedText.toggle()
                         if self.store.canSafariSendSelectedText {
-                            self.store.selectedText = event.extra?.selectedText ?? ""
+                            self.store.translateAction = .translator(event.extra?.selectedText ?? "")
                         }
                     }
                 }
             case "selectionchange":
-                if store.canSafariSendSelectedText { store.selectedText = event.extra?.selectedText ?? "" }
+                if store.canSafariSendSelectedText {
+                    store.translateAction = .translator(event.extra?.selectedText ?? "")
+                }
             default:
                 os_log("DOMEvent %@ is not recognized", type: .debug, event.name)
             }

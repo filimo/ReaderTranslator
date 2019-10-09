@@ -6,10 +6,11 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 import Combine
+import SwiftUI
 import WebKit
 
 class WKPage: WKWebView {
-    private var store = Store.shared
+    @ObservedObject private var store = Store.shared
     private var zoomLevel: CGFloat = 1
         
     @Published var newUrl: String
@@ -51,13 +52,12 @@ class WKPage: WKWebView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func goBack() -> WKNavigation? {
-        let nav = super.goBack()
+    func goBack() {
+        super.goBack()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if let url = self.url?.absoluteString { self.newUrl = url }
             self.store.canGoBack = self.canGoBack
         }
-        return nav
     }
 }
 

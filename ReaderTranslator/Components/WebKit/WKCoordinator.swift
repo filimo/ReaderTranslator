@@ -13,14 +13,13 @@ import WebKit
 
 class WKCoordinator: NSObject {
     let parent: WKScriptsSetup
-    var store = Store.shared
+    @ObservedObject var store = Store.shared
     var cancellableSet: Set<AnyCancellable> = []
     
     @Published var selectedText = ""
     
     init(_ parent: WKScriptsSetup) {
         self.parent = parent
-        super.init()
     }
 }
 

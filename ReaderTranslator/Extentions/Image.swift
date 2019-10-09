@@ -19,6 +19,8 @@ struct Image: View {
             "star.fill": "􀋃",
             "arrowshape.turn.up.left": "􀉌",
             "arrowshape.turn.up.left.fill": "􀉍",
+            "arrowshape.turn.up.right": "􀉐",
+            "arrowshape.turn.up.right.fill": "􀉑",
             "safari": "􀎬",
             "doc.on.clipboard": "􀉃",
             "xmark.circle": "􀁠",

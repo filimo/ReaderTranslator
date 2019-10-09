@@ -10,11 +10,12 @@ import SwiftUI
 import WebKit
 
 struct ReversoContext : ViewRepresentable, WKScriptsSetup {
-    @Binding var text: String
+    @Binding var selectedText: TranslateAction
     private let host = "https://context.reverso.net/translation/english-russian/"
 
     static var pageView: WKPage?
-    
+    static var hasSentTranslateAction = false
+
     class Coordinator: WKCoordinator {
         override init(_ parent: WKScriptsSetup) {
             super.init(parent)
@@ -23,7 +24,8 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
                 .sink { text in
-                    if text != "" { self.store.selectedTextInTranslator = text }
+                    print("ReversoContext_$selectedText", text)
+                    if text != "" { self.store.translateAction = .translator(text) }
                 }
                 .store(in: &cancellableSet)
         }
@@ -49,6 +51,9 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
       
     func updateView(_ view: WKPage, context: Context) {
         print("ReversoContext_updateView")
+        
+        guard case let .reversoContext(text) = selectedText else { return }
+        
         let search = text.replacingOccurrences(of: " ", with: "+")
         let urlString = "\(host)\(search)"
         

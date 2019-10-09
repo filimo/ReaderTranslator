@@ -15,7 +15,7 @@ struct ReversoContextView: View {
         VStack {
             /** Hack: it or `Divider()` required to display TranslatorView properly `Divider()` takes more space **/
             Text("").frame(height: 1)
-            ReversoContext(text: $store.selectedTextInTranslator)
+            ReversoContext(selectedText: $store.translateAction)
         }
     }
 }

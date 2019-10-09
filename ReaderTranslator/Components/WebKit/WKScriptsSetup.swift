@@ -28,9 +28,15 @@ private let script = """
     }
 """
 
-protocol WKScriptsSetup {}
+protocol WKScriptsSetup {
+    static var hasSentTranslateAction: Bool { get set }
+}
 
 extension WKScriptsSetup {
+    func sentTranslateAction() {
+        Self.hasSentTranslateAction = true
+    }
+
     func setupScripts(userContentController: WKUserContentController, coordinator: WKScriptMessageHandler) {
 //        let userContentController = view.configuration.userContentController
 
