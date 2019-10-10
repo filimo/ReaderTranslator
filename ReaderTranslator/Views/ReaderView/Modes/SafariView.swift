@@ -29,7 +29,7 @@ struct SafariView: View {
             switch event.name {
             case "keydown":
                 if let extra = event.extra,
-                    extra.shiftKey == false {
+                    extra.shiftKey != true {
                     
                     if extra.keyCode == 65 { // a
                         self.store.isVoiceEnabled.toggle()
