@@ -1,30 +1,11 @@
 (function() {
-    function send(event) {
-        safari.extension.dispatchMessage(JSON.stringify(event))
-    }
-
-    document.addEventListener("DOMContentLoaded", (event) => {
-        //disabled: sometimes this event occurs after press keys
-//        send({name: 'DOMContentLoaded', source: 'document'})
-    })
-
-    document.addEventListener('selectionchange', (event) => {
+    function send(name, source, e) {
         var txt = document.getSelection().toString()
         if(txt.trim()) {
-            send({name: 'selectionchange', source: 'document', extra: { selectedText: txt } })
-        }
-    })
-
-    window.addEventListener('keydown', (e) => {
-        if((e.keyCode >= 65 && e.keyCode <= 91)) {
-            if(['text', 'textarea'].indexOf(e.srcElement.type) != -1) {
-                if(!(e.ctrlKey || e.altKey) && e.keyCode != 91) return
-            }
-            var txt = document.getSelection().toString()
             let event = {
                 time: Date(), // to prevent removing duplicate events
-                name: 'keydown',
-                source: 'window',
+                name: name,
+                source: source,
                 extra: {
                     ctrlKey: e.ctrlKey,
                     altKey: e.altKey,
@@ -35,7 +16,32 @@
                     selectedText: txt,
                 }
             }
-            send(event)
+            safari.extension.dispatchMessage(JSON.stringify(event))
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        //disabled: sometimes this event occurs after press keys
+//        send({name: 'DOMContentLoaded', source: 'document'})
+    })
+
+    document.addEventListener('selectionchange', (event) => {
+        var txt = document.getSelection().toString()
+        if(txt.trim()) {
+            send('selectionchange', 'document', event)
+        }
+    })
+
+    window.addEventListener('keydown', (event) => {
+        if(event.keyCode >= 65 && event.keyCode <= 90) {
+            if(['text', 'textarea'].indexOf(event.srcElement.type) != -1) {
+                if(!(event.ctrlKey || event.altKey)) return
+            }
+            send('keydown', 'window', event)
+        }else{
+            if(event.altKey && event.metaKey) {
+                send('keydown', 'window', event)
+            }
         }
     })
  })()
