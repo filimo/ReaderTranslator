@@ -44,7 +44,7 @@ extension WKCoordinator: WKScriptMessageHandler {
     }
 }
 
-extension WKCoordinator: WKNavigationDelegate, WKCoordinatorNavigationDelegate {
+extension WKCoordinator: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url {
             if url.absoluteString == self.store.lastWebPage {
@@ -71,7 +71,9 @@ extension WKCoordinator: WKNavigationDelegate, WKCoordinatorNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print(error)
     }
-    
+}
+
+extension WKCoordinator: WKCoordinatorNavigationDelegate {    
     func goBack(_ webView: WKWebView) {
         if let webView = webView as? WKPageView { parent.goBack(webView) }
     }

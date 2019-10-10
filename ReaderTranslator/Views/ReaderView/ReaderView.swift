@@ -19,8 +19,13 @@ struct ReaderView: View {
             #if os(macOS)
             ReaderView_Safari()
             #endif
-            TranslatorView()
-            ReversoContextView()
+            if store.viewMode == .safari {
+                ReversoContextView()
+                TranslatorView()
+            }else{
+                TranslatorView()
+                ReversoContextView()
+            }
         }
     }
 }
