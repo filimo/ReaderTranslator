@@ -24,7 +24,7 @@ private let script = """
         webkit.messageHandlers.onBodyLoaded.postMessage("txt")
     }
     document.body.onkeydown = function(event) {
-        webkit.messageHandlers.onKeyPress.postMessage(event.code)
+        webkit.messageHandlers.onKeyDown.postMessage(event.code)
     }
 """
 
@@ -45,7 +45,7 @@ extension WKScriptsSetup {
         userContentController.add(coordinator, name: "onSelectionChange")
         userContentController.add(coordinator, name: "onContextMenu")
         userContentController.add(coordinator, name: "onBodyLoaded")
-        userContentController.add(coordinator, name: "onKeyPress")
+        userContentController.add(coordinator, name: "onKeyDown")
         
         #if os(macOS)
         view.allowsMagnification = true

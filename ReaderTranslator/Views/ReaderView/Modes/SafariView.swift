@@ -9,7 +9,7 @@
 import SwiftUI
 import os.log
 
-struct ReaderView_Safari: View {
+struct SafariView: View {
     @ObservedObject private var store = Store.shared
 
     var body: some View {
@@ -41,6 +41,9 @@ struct ReaderView_Safari: View {
                             self.store.translateAction = .translator(event.extra?.selectedText ?? "")
                         }
                     }
+                    if extra.keyCode == 82 { // r
+                        SpeechSynthesizer.speak()
+                    }
                 }
             case "selectionchange":
                 if store.canSafariSendSelectedText {
@@ -57,7 +60,7 @@ struct ReaderView_Safari: View {
 
 struct ReaderView_Safari_Previews: PreviewProvider {
     static var previews: some View {
-        ReaderView_Safari()
+        SafariView()
             .frame(maxWidth: 100)
             .environmentObject(Store.shared)
     }

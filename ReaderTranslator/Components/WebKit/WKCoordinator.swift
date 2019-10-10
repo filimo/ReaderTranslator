@@ -34,7 +34,7 @@ extension WKCoordinator: WKScriptMessageHandler {
             print("onContextMenu")
         case "onBodyLoaded":
             print("onBodyLoaded")
-        case "onKeyPress":
+        case "onKeyDown":
             if let code = message.body as? String {
                 if code == "MetaLeft" { SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true) }
             }

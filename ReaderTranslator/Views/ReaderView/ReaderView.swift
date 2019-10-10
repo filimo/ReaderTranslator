@@ -17,7 +17,7 @@ struct ReaderView: View {
             ReaderView_PDF()
             ReaderView_Web()
             #if os(macOS)
-            ReaderView_Safari()
+            SafariView()
             #endif
             if store.viewMode == .safari {
                 ReversoContextView()
@@ -35,3 +35,4 @@ struct ReaderView_Previews: PreviewProvider {
         ReaderView().environmentObject(Store.shared)
     }
 }
+

@@ -12,7 +12,7 @@
 		F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
 		F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
-		F026B1E82344830200E032B9 /* ReaderView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* ReaderView_Safari.swift */; };
+		F026B1E82344830200E032B9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* SafariView.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
 		F049244F2341F54800F3C728 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
@@ -141,7 +141,7 @@
 		F00644462341E22D006BCA94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		F01A50E823492398001DCC11 /* ReversoContextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoContextView.swift; sourceTree = "<group>"; };
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
-		F026B1E72344830200E032B9 /* ReaderView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Safari.swift; sourceTree = "<group>"; };
+		F026B1E72344830200E032B9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -381,7 +381,6 @@
 		F0AA69D9232E979B007CC07B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F0C53176234B3E8B003174B5 /* ScriptViewRepresenter */,
 				F0EE0A1B2348A645004A5EAD /* PDFKitView */,
 				F0EE0A142347BEDB004A5EAD /* WebKit */,
 				F0A9F35A2349228A00970C97 /* ReversoContext.swift */,
@@ -432,16 +431,9 @@
 				F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */,
 				F01A50E823492398001DCC11 /* ReversoContextView.swift */,
 				F0D31C5023491C23003CF86B /* TranslatorView.swift */,
-				F026B1E72344830200E032B9 /* ReaderView_Safari.swift */,
+				F026B1E72344830200E032B9 /* SafariView.swift */,
 			);
 			path = Modes;
-			sourceTree = "<group>";
-		};
-		F0C53176234B3E8B003174B5 /* ScriptViewRepresenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ScriptViewRepresenter;
 			sourceTree = "<group>";
 		};
 		F0EE0A142347BEDB004A5EAD /* WebKit */ = {
@@ -660,7 +652,7 @@
 				F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
 				F0BB437C2344845000ADBEF1 /* StatusBarView_PdfPage.swift in Sources */,
-				F026B1E82344830200E032B9 /* ReaderView_Safari.swift in Sources */,
+				F026B1E82344830200E032B9 /* SafariView.swift in Sources */,
 				F0C53175234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */,
 				F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */,
