@@ -29,20 +29,23 @@ struct SafariView: View {
             switch event.name {
             case "keydown":
                 if let extra = event.extra,
-                    extra.shiftKey == false,
-                    extra.metaKey == false {
+                    extra.shiftKey == false {
                     
-                    if extra.keyCode == 65 { // a
-                        self.store.isVoiceEnabled.toggle()
-                    }
-                    if extra.keyCode == 83 { // s
-                        self.store.canSafariSendSelectedText.toggle()
-                        if self.store.canSafariSendSelectedText {
-                            self.store.translateAction = .translator(event.extra?.selectedText ?? "")
-                        }
-                    }
-                    if extra.keyCode == 82 { // r
+                    if extra.metaKey == true {
                         SpeechSynthesizer.speak()
+                    }else{
+                        if extra.keyCode == 65 { // a
+                            self.store.isVoiceEnabled.toggle()
+                        }
+                        if extra.keyCode == 83 { // s
+                            self.store.canSafariSendSelectedText.toggle()
+                            if self.store.canSafariSendSelectedText {
+                                self.store.translateAction = .translator(event.extra?.selectedText ?? "")
+                            }
+                        }
+                        if extra.keyCode == 82 { // r
+                            SpeechSynthesizer.speak()
+                        }
                     }
                 }
             case "selectionchange":

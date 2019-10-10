@@ -8,21 +8,21 @@
 
 import SwiftUI
 
-struct TranslatorView: View {
+struct GTranslatorView: View {
     @ObservedObject private var store = Store.shared
     
     var body: some View {
         VStack {
-            /** Hack: it or `Divider()` required to display TranslatorView properly `Divider()` takes more space **/
+            /** Hack: it or `Divider()` required to display GTranslatorView properly `Divider()` takes more space **/
             Text("").frame(height: 1)
-            Translator(selectedText: $store.translateAction)
+            GTranslator(selectedText: $store.translateAction)
         }
     }
 }
 
-struct TranslatorView_Previews: PreviewProvider {
+struct GTranslatorView_Previews: PreviewProvider {
     static var previews: some View {
-        TranslatorView()
+        GTranslatorView()
         .environmentObject(Store.shared)
     }
 }

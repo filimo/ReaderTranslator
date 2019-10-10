@@ -1,5 +1,5 @@
 //
-//  TranslatorView.swift
+//  GTranslatorView.swift
 //  ReaderTranslator
 //
 //  Created by Viktor Kushnerov on 10/5/19.
@@ -13,7 +13,7 @@ struct ReversoContextView: View {
     
     var body: some View {
         VStack {
-            /** Hack: it or `Divider()` required to display TranslatorView properly `Divider()` takes more space **/
+            /** Hack: it or `Divider()` required to display GTranslatorView properly `Divider()` takes more space **/
             Text("").frame(height: 1)
             ReversoContext(selectedText: $store.translateAction)
         }

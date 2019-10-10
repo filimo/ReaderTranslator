@@ -23,10 +23,10 @@ struct StatusBarView: View {
             Spacer()
             Button(action: {
                 self.store.translateAction = .translator("")
-                Translator.pageView?.goBack()
+                GTranslator.pageView?.goBack()
             }) { Text("􀉍") }
             Button(action: {
-                Translator.pageView?.goForward()
+                GTranslator.pageView?.goForward()
             }) { Text("􀉑") }
         }.padding(.trailing, 20)
     }

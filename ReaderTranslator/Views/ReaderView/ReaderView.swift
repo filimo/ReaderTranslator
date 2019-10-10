@@ -21,9 +21,9 @@ struct ReaderView: View {
             #endif
             if store.viewMode == .safari {
                 ReversoContextView()
-                TranslatorView()
+                GTranslatorView()
             }else{
-                TranslatorView()
+                GTranslatorView()
                 ReversoContextView()
             }
         }

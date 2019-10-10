@@ -16,9 +16,9 @@
     })
 
     window.addEventListener('keydown', (e) => {
-        if (e.keyCode >= 65 && e.keyCode <= 90) {
+        if((e.keyCode >= 65 && e.keyCode <= 91)) {
             if(['text', 'textarea'].indexOf(e.srcElement.type) != -1) {
-                if(!(e.ctrlKey || e.altKey)) return
+                if(!(e.ctrlKey || e.altKey) && e.keyCode != 91) return
             }
             var txt = document.getSelection().toString()
             let event = {

@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 import WebKit
 
-struct Translator : ViewRepresentable, WKScriptsSetup {
+struct GTranslator : ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultUrl = "https://translate.google.com?sl=auto&tl=ru"
     static var hasSentTranslateAction = false
