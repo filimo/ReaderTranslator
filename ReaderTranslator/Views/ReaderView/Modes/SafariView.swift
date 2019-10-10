@@ -31,26 +31,25 @@ struct SafariView: View {
                 if let extra = event.extra,
                     extra.shiftKey == false {
                     
-                    if extra.metaKey == true {
+                    if extra.keyCode == 65 { // a
+                        self.store.isVoiceEnabled.toggle()
+                    }
+                    if extra.keyCode == 83 { // s
+                        self.store.canSafariSendSelectedText.toggle()
+                        if self.store.canSafariSendSelectedText {
+                            self.store.translateAction = .translator(event.extra?.selectedText ?? "")
+                        }
+                    }
+                    if extra.altKey == true && extra.metaKey == true { //Alt+Cmd
                         SpeechSynthesizer.speak()
-                    }else{
-                        if extra.keyCode == 65 { // a
-                            self.store.isVoiceEnabled.toggle()
-                        }
-                        if extra.keyCode == 83 { // s
-                            self.store.canSafariSendSelectedText.toggle()
-                            if self.store.canSafariSendSelectedText {
-                                self.store.translateAction = .translator(event.extra?.selectedText ?? "")
-                            }
-                        }
-                        if extra.altKey == true && extra.metaKey == true { //Alt+Cmd
-                            SpeechSynthesizer.speak()
-                        }
                     }
                 }
             case "selectionchange":
                 if store.canSafariSendSelectedText {
-                    store.translateAction = .translator(event.extra?.selectedText ?? "")
+                    if let extra = event.extra,
+                        extra.altKey != true && extra.metaKey != true {
+                        store.translateAction = .translator(event.extra?.selectedText ?? "")
+                    }
                 }
             default:
                 os_log("DOMEvent %@ is not recognized", type: .debug, event.name)

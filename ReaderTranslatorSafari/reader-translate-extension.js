@@ -1,4 +1,6 @@
 (function() {
+    var keysStatus = {}
+
     function send(name, source, e) {
         var txt = document.getSelection().toString()
         if(txt.trim()) {
@@ -7,12 +9,12 @@
                 name: name,
                 source: source,
                 extra: {
-                    ctrlKey: e.ctrlKey,
-                    altKey: e.altKey,
-                    metaKey: e.metaKey, //⌘ Command
-                    shiftKey: e.shiftKey,
-                    which: e.which,
-                    keyCode: e.keyCode,
+                    ctrlKey: e.ctrlKey || keysStatus.ctrlKey,
+                    altKey: e.altKey || keysStatus.altKey,
+                    metaKey: e.metaKey || keysStatus.metaKey, //⌘ Command
+                    shiftKey: e.shiftKey || keysStatus.shiftKey,
+                    which: e.which || keysStatus.which,
+                    keyCode: e.keyCode || keysStatus.keyCode,
                     selectedText: txt,
                 }
             }
@@ -23,6 +25,14 @@
     document.addEventListener("DOMContentLoaded", (event) => {
         //disabled: sometimes this event occurs after press keys
 //        send({name: 'DOMContentLoaded', source: 'document'})
+    })
+
+    document.addEventListener("mousedown", (event) => {
+        keysStatus = event
+    })
+
+    document.addEventListener("mouseup", (event) => {
+        keysStatus = {}
     })
 
     document.addEventListener('selectionchange', (event) => {
