@@ -25,7 +25,7 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
                 .removeDuplicates()
                 .sink { text in
                     print("ReversoContext_$selectedText", text)
-                    if text != "" { self.store.translateAction = .translator(text) }
+//                    if text != "" { self.store.translateAction = .translator(text) }
                 }
                 .store(in: &cancellableSet)
         }

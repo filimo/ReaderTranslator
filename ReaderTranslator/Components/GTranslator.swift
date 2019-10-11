@@ -12,10 +12,11 @@ import WebKit
 
 struct GTranslator : ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
-    private let defaultUrl = "https://translate.google.com?sl=auto&tl=ru"
-    static var hasSentTranslateAction = false
-        
+
     static var pageView: WKPageView?
+
+    @ObservedObject private var store = Store.shared
+    private let defaultUrl = "https://translate.google.com?sl=auto&tl=ru"
 
     class Coordinator: WKCoordinator {
         override init(_ parent: WKScriptsSetup) {
@@ -27,7 +28,7 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
                 .sink { text in
                     print("Translator_$selectedText", text)
                     if text != "" {
-                        parent.sentTranslateAction()
+                        SpeechSynthesizer.speak(text: text)
                         self.store.translateAction = .reversoContext(text)
                     }
                 }
@@ -63,12 +64,6 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
         
         guard case let .translator(text) = selectedText, text != "", text != oldText else { return }
 
-        if Self.hasSentTranslateAction {
-            Self.hasSentTranslateAction = false
-            return
-        }
-
-
         let sl = queryItems.first(where: { $0.name == "sl" })?.value
         let tl = queryItems.first(where: { $0.name == "tl" })?.value
 
@@ -81,6 +76,10 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
         if let url = urlComponent.url {
             print("Translator_updateView_reload")
             view.load(URLRequest(url: url))
+        }
+        
+        if text.split(separator: " ").count < 6 {
+            self.store.translateAction = .reversoContext(text)
         }
     }
 }

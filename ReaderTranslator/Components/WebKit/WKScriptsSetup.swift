@@ -29,16 +29,11 @@ private let script = """
 """
 
 protocol WKScriptsSetup {
-    static var hasSentTranslateAction: Bool { get set }
     func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!)
     func goBack(_ webView: WKPageView)
 }
 
 extension WKScriptsSetup {
-    func sentTranslateAction() {
-        Self.hasSentTranslateAction = true
-    }
-
     func setupScripts(view: WKPageView, coordinator: WKCoordinator) {
         let userContentController = view.configuration.userContentController
 
