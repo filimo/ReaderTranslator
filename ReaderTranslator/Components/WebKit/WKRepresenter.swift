@@ -20,6 +20,8 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     static private var views = [Int: WKPageView]()
 
     class Coordinator: WKCoordinator {
+        @Published var selectedText = ""
+        
         override init(_ parent: WKScriptsSetup) {
             print("WKRepresenter_Coordinator_init")
             super.init(parent)
@@ -76,6 +78,28 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     }
 }
 
+extension WKRepresenter.Coordinator: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        switch message.name {
+        case "onSelectionChange":
+//            if let value = message.body as? String {
+//                selectedText = value
+//            }
+            print("onSelectionChange is not implemented")
+        case "onContextMenu":
+            print("onContextMenu")
+        case "onBodyLoaded":
+            print("onBodyLoaded")
+        case "onKeyDown":
+//            if let code = message.body as? String {
+//                if code == "MetaLeft" { SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true) }
+//            }
+            print("onKeyDown is not implemented")
+        default:
+            print("webkit.messageHandlers.\(message.name).postMessage() isn't found")
+        }
+    }
+}
 
 
 

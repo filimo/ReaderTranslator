@@ -17,11 +17,13 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
     static var hasSentTranslateAction = false
 
     class Coordinator: WKCoordinator {
+        @Published var selectedText = ""
+        
         override init(_ parent: WKScriptsSetup) {
             super.init(parent)
 
             $selectedText
-                .debounce(for: 0.5, scheduler: RunLoop.main)
+                .debounce(for: 0.1, scheduler: RunLoop.main)
                 .removeDuplicates()
                 .sink { text in
                     print("ReversoContext_$selectedText", text)
@@ -64,6 +66,29 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
     }
 }
 
+extension ReversoContext.Coordinator: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        switch message.name {
+        case "onSelectionChange":
+            if let value = message.body as? String {
+                self.selectedText = value
+                SpeechSynthesizer.speak(text: self.selectedText, stopSpeaking: true, isVoiceEnabled: true)
+            }
+        case "onContextMenu":
+            print("onContextMenu")
+        case "onBodyLoaded":
+            print("onBodyLoaded")
+        case "onKeyDown":
+            if let code = message.body as? Int {
+                if code == 18 || code == 91 {
+                    SpeechSynthesizer.speak(text: self.selectedText, stopSpeaking: true, isVoiceEnabled: true)                    
+                }
+            }
+        default:
+            print("webkit.messageHandlers.\(message.name).postMessage() isn't found")
+        }
+    }
+}
 
 
 

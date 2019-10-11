@@ -16,31 +16,8 @@ class WKCoordinator: NSObject {
     @ObservedObject var store = Store.shared
     var cancellableSet: Set<AnyCancellable> = []
     
-    @Published var selectedText = ""
-    
     init(_ parent: WKScriptsSetup) {
         self.parent = parent
-    }
-}
-
-extension WKCoordinator: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        switch message.name {
-        case "onSelectionChange":
-            if let value = message.body as? String {
-                selectedText = value
-            }
-        case "onContextMenu":
-            print("onContextMenu")
-        case "onBodyLoaded":
-            print("onBodyLoaded")
-        case "onKeyDown":
-            if let code = message.body as? String {
-                if code == "MetaLeft" { SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true) }
-            }
-        default:
-            print("webkit.messageHandlers.\(message.name).postMessage() isn't found")
-        }
     }
 }
 

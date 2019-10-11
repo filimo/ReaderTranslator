@@ -19,6 +19,8 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
     private let defaultUrl = "https://translate.google.com?sl=auto&tl=ru"
 
     class Coordinator: WKCoordinator {
+        @Published var selectedText = ""
+        
         override init(_ parent: WKScriptsSetup) {
             super.init(parent)
 
@@ -80,6 +82,27 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
         
         if text.split(separator: " ").count < 6 {
             self.store.translateAction = .reversoContext(text)
+        }
+    }
+}
+
+extension GTranslator.Coordinator: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        switch message.name {
+        case "onSelectionChange":
+            if let value = message.body as? String {
+                selectedText = value
+            }
+        case "onContextMenu":
+            print("onContextMenu")
+        case "onBodyLoaded":
+            print("onBodyLoaded")
+        case "onKeyDown":
+            if let code = message.body as? String {
+                if code == "MetaLeft" { SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true) }
+            }
+        default:
+            print("webkit.messageHandlers.\(message.name).postMessage() isn't found")
         }
     }
 }
