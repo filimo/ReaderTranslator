@@ -55,7 +55,7 @@ struct PDFKitView: View {
         nc.addObserver(forName: .PDFViewSelectionChanged, object: nil, queue: nil) { _ in
             let text = PDFKitViewRepresentable.getSelectedText()
             if text != "" {
-                self.store.translateAction = .translator(text)
+                self.store.translateAction = .translator(text: text)
             }
         }
         

@@ -17,19 +17,10 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
     static var hasSentTranslateAction = false
 
     class Coordinator: WKCoordinator {
-        @Published var selectedText = ""
+        var selectedText = ""
         
         override init(_ parent: WKScriptsSetup) {
             super.init(parent)
-
-            $selectedText
-                .debounce(for: 0.1, scheduler: RunLoop.main)
-                .removeDuplicates()
-                .sink { text in
-                    print("ReversoContext_$selectedText", text)
-//                    if text != "" { self.store.translateAction = .translator(text) }
-                }
-                .store(in: &cancellableSet)
         }
     }
     
@@ -72,7 +63,6 @@ extension ReversoContext.Coordinator: WKScriptMessageHandler {
         case "onSelectionChange":
             if let value = message.body as? String {
                 self.selectedText = value
-                SpeechSynthesizer.speak(text: self.selectedText, stopSpeaking: true, isVoiceEnabled: true)
             }
         case "onContextMenu":
             print("onContextMenu")
@@ -80,8 +70,11 @@ extension ReversoContext.Coordinator: WKScriptMessageHandler {
             print("onBodyLoaded")
         case "onKeyDown":
             if let code = message.body as? Int {
-                if code == 18 || code == 91 {
-                    SpeechSynthesizer.speak(text: self.selectedText, stopSpeaking: true, isVoiceEnabled: true)                    
+                if code == 17 { //Ctrl
+                    store.translateAction = .translator(text: self.selectedText, noReversoContext: true)
+                }
+                if code == 18 { //Alt
+                    SpeechSynthesizer.speak(text: self.selectedText, stopSpeaking: true, isVoiceEnabled: true)
                 }
             }
         default:

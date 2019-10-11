@@ -19,7 +19,7 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
     private let defaultUrl = "https://translate.google.com?sl=auto&tl=ru"
 
     class Coordinator: WKCoordinator {
-        @Published var selectedText = ""
+        @Published var selectedText = TranslateAction.translator(text: "")
         
         override init(_ parent: WKScriptsSetup) {
             super.init(parent)
@@ -27,11 +27,12 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
             $selectedText
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
-                .sink { text in
-                    print("Translator_$selectedText", text)
+                .sink { action in
+                    print("Translator_$selectedText")
+                    let text = action.getText()
                     if text != "" {
                         SpeechSynthesizer.speak(text: text)
-                        self.store.translateAction = .reversoContext(text)
+                        self.store.translateAction = .reversoContext(text: text)
                     }
                 }
                 .store(in: &cancellableSet)
@@ -64,24 +65,27 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
 
         let oldText = queryItems.first(where: { $0.name == "text" })?.value ?? ""
         
-        guard case let .translator(text) = selectedText, text != "", text != oldText else { return }
+        if case let .translator(text, noReversoContext) = selectedText,
+            text != "",
+            text != oldText {
 
-        let sl = queryItems.first(where: { $0.name == "sl" })?.value
-        let tl = queryItems.first(where: { $0.name == "tl" })?.value
+            let sl = queryItems.first(where: { $0.name == "sl" })?.value
+            let tl = queryItems.first(where: { $0.name == "tl" })?.value
 
-        urlComponent.queryItems = [
-            .init(name: "sl", value: sl),
-            .init(name: "tl", value: tl),
-            .init(name: "text", value: text)
-        ]
-        
-        if let url = urlComponent.url {
-            print("Translator_updateView_reload")
-            view.load(URLRequest(url: url))
-        }
-        
-        if text.split(separator: " ").count < 6 {
-            self.store.translateAction = .reversoContext(text)
+            urlComponent.queryItems = [
+                .init(name: "sl", value: sl),
+                .init(name: "tl", value: tl),
+                .init(name: "text", value: text)
+            ]
+            
+            if let url = urlComponent.url {
+                print("Translator_updateView_reload")
+                view.load(URLRequest(url: url))
+            }
+            
+            if noReversoContext != true, text.split(separator: " ").count < 6 {
+                self.store.translateAction = .reversoContext(text: text)
+            }
         }
     }
 }
@@ -90,16 +94,16 @@ extension GTranslator.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         switch message.name {
         case "onSelectionChange":
-            if let value = message.body as? String {
-                selectedText = value
+            if let text = message.body as? String {
+                selectedText = .reversoContext(text: text)
             }
         case "onContextMenu":
             print("onContextMenu")
         case "onBodyLoaded":
             print("onBodyLoaded")
         case "onKeyDown":
-            if let code = message.body as? String {
-                if code == "MetaLeft" { SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true) }
+            if let code = message.body as? Int {
+                if code == 18 { SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true) }
             }
         default:
             print("webkit.messageHandlers.\(message.name).postMessage() isn't found")

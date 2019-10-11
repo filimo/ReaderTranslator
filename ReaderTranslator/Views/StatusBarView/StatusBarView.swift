@@ -22,7 +22,7 @@ struct StatusBarView: View {
             StatusBarView_Safari()
             Spacer()
             Button(action: {
-                self.store.translateAction = .translator("")
+                self.store.translateAction = .translator(text: "")
                 GTranslator.pageView?.goBack()
             }) { Text("􀉍") }
             Button(action: {

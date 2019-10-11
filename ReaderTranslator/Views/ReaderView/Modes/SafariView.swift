@@ -37,7 +37,7 @@ struct SafariView: View {
                     if extra.keyCode == 83 { // s
                         self.store.canSafariSendSelectedText.toggle()
                         if self.store.canSafariSendSelectedText {
-                            self.store.translateAction = .translator(event.extra?.selectedText ?? "")
+                            self.store.translateAction = .translator(text: event.extra?.selectedText ?? "")
                         }
                     }
                     if extra.altKey == true && extra.metaKey == true { //Alt+Cmd
@@ -48,7 +48,7 @@ struct SafariView: View {
                 if store.canSafariSendSelectedText {
                     if let extra = event.extra,
                         extra.altKey != true && extra.metaKey != true {
-                        store.translateAction = .translator(event.extra?.selectedText ?? "")
+                        store.translateAction = .translator(text: event.extra?.selectedText ?? "")
                     }
                 }
             default:

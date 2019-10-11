@@ -15,15 +15,15 @@ enum ViewMode: String, Codable {
     case safari = "Safari"
 }
 
-enum TranslateAction {
-    case reversoContext(String)
-    case translator(String)
+enum TranslateAction: Equatable {
+    case reversoContext(text: String)
+    case translator(text: String, noReversoContext: Bool = false)
     
     func getText() -> String {
         switch self {
         case .reversoContext(let text):
             return text
-        case .translator(let text):
+        case .translator(let text, _):
             return text
         }
     }
@@ -33,7 +33,7 @@ class Store: ObservableObject {
     static var shared = Store()
     
     @Published(key: "canSafariSendSelectedText") var canSafariSendSelectedText: Bool = true
-    @Published var translateAction: TranslateAction = .translator("") {
+    @Published var translateAction: TranslateAction = .translator(text: "") {
         didSet {
             if case .translator(_) = translateAction { SpeechSynthesizer.speak() }
         }

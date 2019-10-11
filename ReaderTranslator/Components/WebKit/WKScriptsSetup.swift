@@ -59,7 +59,7 @@ private let script = """
     }
 
     var sendIn100 = debounce(_send, 100)
-    var sendIn1000 = debounce(_send, 1000)
+    var sendIn1000 = debounce(_send, 500)
 
     document.onselectionchange = function() {
         var txt = document.getSelection().toString()
