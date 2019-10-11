@@ -45,24 +45,21 @@
     }
 
     function _send(name, source, e) {
-        var txt = document.getSelection().toString()
-        if(txt.trim()) {
-            let event = {
-                time: Date(), // to prevent removing duplicate events
-                name: name,
-                source: source,
-                extra: {
-                    ctrlKey: e.ctrlKey || keysStatus.ctrlKey,
-                    altKey: e.altKey || keysStatus.altKey,
-                    metaKey: e.metaKey || keysStatus.metaKey, //⌘ Command
-                    shiftKey: e.shiftKey || keysStatus.shiftKey,
-                    which: e.which || keysStatus.which,
-                    keyCode: e.keyCode || keysStatus.keyCode,
-                    selectedText: txt,
-                }
+        let event = {
+            time: Date(), // to prevent removing duplicate events
+            name: name,
+            source: source,
+            extra: {
+                ctrlKey: e.ctrlKey || keysStatus.ctrlKey,
+                altKey: e.altKey || keysStatus.altKey,
+                metaKey: e.metaKey || keysStatus.metaKey, //⌘ Command
+                shiftKey: e.shiftKey || keysStatus.shiftKey,
+                which: e.which || keysStatus.which,
+                keyCode: e.keyCode || keysStatus.keyCode,
+                selectedText: document.getSelection().toString(),
             }
-            safari.extension.dispatchMessage(JSON.stringify(event))
         }
+        safari.extension.dispatchMessage(JSON.stringify(event))
     }
  
     var sendIn100 = debounce(_send, 100)
