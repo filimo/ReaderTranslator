@@ -28,9 +28,9 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
                 .sink { action in
-                    print("Translator_$selectedText")
                     let text = action.getText()
                     if text != "" {
+                        print("Translator_$selectedText")
                         SpeechSynthesizer.speak(text: text)
                         self.store.translateAction = .reversoContext(text: text)
                     }
@@ -56,9 +56,12 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
     }
       
     func updateView(_ view: WKPageView, context: Context) {
-        print("Translator_updateView")
         if case let .translator(text, noReversoContext) = selectedText,
             text != "" {
+            selectedText = .none
+
+            print("Translator_updateView", noReversoContext, text)
+            
             let (sl, tl) = getParams(url: view.url)
             guard var urlComponent = URLComponents(string: defaultUrl) else { return }
             urlComponent.queryItems = [
@@ -73,7 +76,7 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
                 view.load(URLRequest(url: url))
             }
             
-            if noReversoContext != true, text.split(separator: " ").count < 6 {
+            if noReversoContext != true, text.split(separator: " ").count < 10 {
                 self.store.translateAction = .reversoContext(text: text)
             }
         }

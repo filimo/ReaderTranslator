@@ -33,7 +33,7 @@ class Store: ObservableObject {
     static var shared = Store()
     
     @Published(key: "canSafariSendSelectedText") var canSafariSendSelectedText: Bool = true
-    @Published var translateAction: TranslateAction = .translator(text: "") {
+    @Published var translateAction: TranslateAction = .none {
         didSet {
             if case .translator(_) = translateAction { SpeechSynthesizer.speak() }
         }
