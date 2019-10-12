@@ -16,7 +16,7 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
     static var pageView: WKPageView?
 
     @ObservedObject private var store = Store.shared
-    private let defaultUrl = "https://translate.google.com?sl=auto&tl=ru"
+    private let defaultUrl = "https://translate.google.com?op=translate&sl=auto&tl=ru"
 
     class Coordinator: WKCoordinator {
         @Published var selectedText = TranslateAction.translator(text: "")
@@ -57,29 +57,19 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
       
     func updateView(_ view: WKPageView, context: Context) {
         print("Translator_updateView")
-        let lastUrl = view.url?.absoluteString.replacingOccurrences(of: "#view=home", with: "")
-        let url = lastUrl ?? defaultUrl
-        
-        guard var urlComponent = URLComponents(string: url) else { return }
-        guard let queryItems = urlComponent.queryItems else { return }
-
-        let oldText = queryItems.first(where: { $0.name == "text" })?.value ?? ""
-        
         if case let .translator(text, noReversoContext) = selectedText,
-            text != "",
-            text != oldText {
-
-            let sl = queryItems.first(where: { $0.name == "sl" })?.value
-            let tl = queryItems.first(where: { $0.name == "tl" })?.value
-
+            text != "" {
+            let (sl, tl) = getParams(url: view.url)
+            guard var urlComponent = URLComponents(string: defaultUrl) else { return }
             urlComponent.queryItems = [
+                .init(name: "op", value: "translate"),
                 .init(name: "sl", value: sl),
                 .init(name: "tl", value: tl),
                 .init(name: "text", value: text)
             ]
             
             if let url = urlComponent.url {
-                print("Translator_updateView_reload")
+                print("Translator_updateView_reload", url)
                 view.load(URLRequest(url: url))
             }
             
@@ -87,6 +77,21 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
                 self.store.translateAction = .reversoContext(text: text)
             }
         }
+    }
+    
+    private func getParams(url: URL?) -> (String?, String?) {
+        let lastUrl = url?.absoluteString.replacingOccurrences(of: "#view=home", with: "")
+        let url = lastUrl ?? defaultUrl
+        
+        guard let urlComponent = URLComponents(string: url) else { return (nil, nil) }
+        let queryItems = urlComponent.queryItems
+
+        selectedText = .none
+        
+        let sl = queryItems?.last(where: { $0.name == "sl" })?.value
+        let tl = queryItems?.last(where: { $0.name == "tl" })?.value
+        
+        return (sl, tl)
     }
 }
 

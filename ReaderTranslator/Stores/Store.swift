@@ -16,15 +16,15 @@ enum ViewMode: String, Codable {
 }
 
 enum TranslateAction: Equatable {
+    case none
     case reversoContext(text: String)
     case translator(text: String, noReversoContext: Bool = false)
     
     func getText() -> String {
         switch self {
-        case .reversoContext(let text):
-            return text
-        case .translator(let text, _):
-            return text
+        case .none: return ""
+        case .reversoContext(let text): return text
+        case .translator(let text, _): return text
         }
     }
 }

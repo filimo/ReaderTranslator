@@ -45,6 +45,8 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
         
         guard case let .reversoContext(text) = selectedText else { return }
         
+        selectedText = .none
+        
         let search = text.replacingOccurrences(of: " ", with: "+")
         let urlString = "\(host)\(search)"
         
