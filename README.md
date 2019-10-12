@@ -66,20 +66,24 @@ New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issue
             └──────────────────────┘
 </code></pre>
 
-### TranslateAction
+### TranslateAction [here](https://github.com/filimo/ReaderTranslator/wiki/Diagrams)
 
 ```swift
 enum TranslateAction: Equatable {
-    case none
+    case none(text: String = "")
     case reversoContext(text: String)
     case translator(text: String, noReversoContext: Bool = false)
     
     func getText() -> String {
         switch self {
-        case .none: return ""
+        case .none(let text): return text
         case .reversoContext(let text): return text
         case .translator(let text, _): return text
         }
+    }
+    
+    mutating func setNone() {
+        self = .none(text: getText())
     }
 }
 ```
