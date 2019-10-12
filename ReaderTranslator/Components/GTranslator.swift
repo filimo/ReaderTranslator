@@ -58,7 +58,7 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
     func updateView(_ view: WKPageView, context: Context) {
         if case let .translator(text, noReversoContext) = selectedText,
             text != "" {
-            selectedText = .none
+            selectedText.setNone()
 
             print("Translator_updateView", noReversoContext, text)
             
@@ -89,7 +89,7 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
         guard let urlComponent = URLComponents(string: url) else { return (nil, nil) }
         let queryItems = urlComponent.queryItems
 
-        selectedText = .none
+        selectedText.setNone()
         
         let sl = queryItems?.last(where: { $0.name == "sl" })?.value
         let tl = queryItems?.last(where: { $0.name == "tl" })?.value
@@ -111,7 +111,7 @@ extension GTranslator.Coordinator: WKScriptMessageHandler {
             print("onBodyLoaded")
         case "onKeyDown":
             if let code = message.body as? Int {
-                if code == 18 { SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true) }
+                if code == 18 { SpeechSynthesizer.speak(text: selectedText.getText(), stopSpeaking: true, isVoiceEnabled: true) }
             }
         default:
             print("webkit.messageHandlers.\(message.name).postMessage() isn't found")

@@ -42,7 +42,7 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
       
     func updateView(_ view: WKPageView, context: Context) {
         guard case let .reversoContext(text) = selectedText else { return }
-        selectedText = .none
+        selectedText.setNone()
 
         print("ReversoContext_updateView")
         
