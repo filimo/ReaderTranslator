@@ -28,9 +28,9 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 **1.3**
 
 Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)
-<img src="https://github.com/filimo/ReaderTranslator/blob/master/files/Screen12.png" height="400px"/>
-<img src="https://github.com/filimo/ReaderTranslator/blob/master/files/Screen13.png" height="400px"/>
-<img src="https://github.com/filimo/ReaderTranslator/blob/master/files/Screen14.png" height="400px"/>
+![](files/Screen12.png)
+![](files/Screen13.png)
+![](files/Screen14.png)
 
 New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issues/27)
 <pre><code>
@@ -65,7 +65,9 @@ New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issue
             │                      │◀──────────────────────────navigation events─┘
             └──────────────────────┘
 <pre><code>
-### `TranslateAction`
+
+### TranslateAction
+
 ```swift
 enum TranslateAction: Equatable {
     case none
@@ -81,7 +83,7 @@ enum TranslateAction: Equatable {
     }
 }
 ```
-<img src="https://github.com/filimo/ReaderTranslator/blob/master/files/diagram-selected-text.jpg" height="400px"/>
+![](files/diagram-selected-text.jpg)
 
 
 **1.2** Implemented Safari extension. You can read about coming features [here](https://github.com/filimo/ReaderTranslator/issues/15) and review [here](https://github.com/filimo/ReaderTranslator/tree/%2315_safari_plugin). It's very intresting case when we need to make commnication between the app and extentions.
