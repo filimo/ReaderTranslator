@@ -28,9 +28,9 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 **1.3**
 
 Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)
-<img src="https://github.com/filimo/ReaderTranslatorfiles/Screen12.png" height="400px"/>
-<img src="https://github.com/filimo/ReaderTranslatorfiles/Screen13.png" height="400px"/>
-<img src="https://github.com/filimo/ReaderTranslatorfiles/Screen14.png" height="400px"/>
+<img src="https://github.com/filimo/ReaderTranslator/blob/master/files/Screen12.png" height="400px"/>
+<img src="https://github.com/filimo/ReaderTranslator/blob/master/files/Screen13.png" height="400px"/>
+<img src="https://github.com/filimo/ReaderTranslator/blob/master/files/Screen14.png" height="400px"/>
 
 New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issues/27)
 <pre><code>
