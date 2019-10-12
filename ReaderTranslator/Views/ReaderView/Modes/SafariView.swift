@@ -40,7 +40,7 @@ struct SafariView: View {
                             self.store.translateAction = .translator(text: event.extra?.selectedText ?? "")
                         }
                     }
-                    if extra.altKey == true && extra.metaKey == true { //Alt+Cmd
+                    if extra.altKey == true {
                         SpeechSynthesizer.speak()
                     }
                 }

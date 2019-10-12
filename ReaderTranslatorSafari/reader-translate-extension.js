@@ -86,15 +86,12 @@
     })
 
     window.addEventListener('keydown', (event) => {
-        if(event.keyCode >= 65 && event.keyCode <= 90) {
-            if(['text', 'textarea'].indexOf(event.srcElement.type) != -1) {
-                if(!(event.ctrlKey || event.altKey)) return
+        if(['text', 'textarea'].indexOf(event.srcElement.type) != -1) {
+            if(event.keyCode >= 65 && event.keyCode <= 90) {
+                if(event.ctrlKey || event.altKey) { sendIn100('keydown', 'window', event) }
             }
-            sendIn100('keydown', 'window', event)
         }else{
-            if(event.altKey && event.metaKey) {
-                sendIn100('keydown', 'window', event)
-            }
+            sendIn100('keydown', 'window', event)
         }
     })
  })()
