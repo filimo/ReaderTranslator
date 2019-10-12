@@ -64,7 +64,7 @@ New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issue
             │ WKNavigationDelegate │                                             │
             │                      │◀──────────────────────────navigation events─┘
             └──────────────────────┘
-<pre><code>
+</code></pre>
 
 ### TranslateAction
 
