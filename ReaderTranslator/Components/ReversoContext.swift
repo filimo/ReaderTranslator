@@ -47,7 +47,7 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
         print("ReversoContext_updateView")
         
         let search = text.replacingOccurrences(of: " ", with: "+")
-        let language = view.url?.absoluteString.groups(for: #"\/translation\/(.+)\/"#)[safe: 0]?[safe: 1] ?? "english-russian"
+        let language = view.url?.absoluteString.groups(for: #"\/translation\/(\w+-\w+)\/"#)[safe: 0]?[safe: 1] ?? "english-russian"
         let urlString = "\(host)\(language)/\(search)"
         
         if view.url?.absoluteString == urlString { return }
