@@ -33,7 +33,6 @@ struct PDFKitViewRepresentable: NSViewRepresentable {
     func updateNSView(_ uiView: PDFView, context: Context) {
         if PDFKitViewRepresentable.pdfView.document != nil { return }
         if let url = url {
-//TODO:            PDFKitViewRepresentable.pdfView.autoresizingMask = [.flexibleWidth]
             PDFKitViewRepresentable.pdfView.autoScales = true
             PDFKitViewRepresentable.pdfView.document = PDFDocument(url: url)
             PDFKitViewRepresentable.pdfView.delegate = context.coordinator

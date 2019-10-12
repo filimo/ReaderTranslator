@@ -20,6 +20,14 @@ struct StatusBarView: View {
             StatusBarView_Zoom()
             StatusBarView_Voice().padding([.top,.bottom], 5)
             StatusBarView_Safari()
+            Spacer()
+            Button(action: {
+                self.store.translateAction = .translator(text: "")
+                GTranslator.pageView?.goBack()
+            }) { Text("􀉍") }
+            Button(action: {
+                GTranslator.pageView?.goForward()
+            }) { Text("􀉑") }
         }.padding(.trailing, 20)
     }
 }

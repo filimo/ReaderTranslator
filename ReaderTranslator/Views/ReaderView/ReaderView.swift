@@ -13,21 +13,19 @@ struct ReaderView: View {
     @EnvironmentObject var store: Store
 
     var body: some View {
-        Stack(arrange: store.viewMode == .safari ? .vertical : .horizontal) {
+        HStack {
             ReaderView_PDF()
             ReaderView_Web()
             #if os(macOS)
-            ReaderView_Safari()
+            SafariView()
             #endif
-            TranslatorView(text: .constant(URLQueryItem(name: "text", value: self.store.selectedText)))
-        }
-        .onAppear {
-            _ = self.store.$selectedText
-                .debounce(for: 0.5, scheduler: RunLoop.main)
-                .removeDuplicates()
-                .sink { text in
-                    SpeechSynthesizer.speak(text: text, voiceName: self.store.voiceName)
-                }
+            if store.viewMode == .safari {
+                ReversoContextView()
+                GTranslatorView()
+            }else{
+                GTranslatorView()
+                ReversoContextView()
+            }
         }
     }
 }
@@ -37,3 +35,4 @@ struct ReaderView_Previews: PreviewProvider {
         ReaderView().environmentObject(Store.shared)
     }
 }
+

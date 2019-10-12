@@ -16,7 +16,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         let pub = EventType()
         
         _  = pub
-            .debounce(for: 1, scheduler: RunLoop.main)
+            .debounce(for: 0.1, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { event in
                 SharedContainer.setEvent(string: event)
