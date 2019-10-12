@@ -66,7 +66,7 @@ New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issue
             └──────────────────────┘
 </code></pre>
 
-### TranslateAction
+### TranslateAction [here](https://github.com/filimo/ReaderTranslator/wiki/Diagrams)
 
 ```swift
 enum TranslateAction: Equatable {
