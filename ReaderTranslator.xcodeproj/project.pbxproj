@@ -771,7 +771,7 @@
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorMac/ReaderTranslatorMac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.3.0;
+				CURRENT_PROJECT_VERSION = 1.3.1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslatorMac/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -782,7 +782,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -798,7 +798,7 @@
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorMac/ReaderTranslatorMac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.3.0;
+				CURRENT_PROJECT_VERSION = 1.3.1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslatorMac/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -809,7 +809,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -822,6 +822,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorSafari/ReaderTranslatorSafari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.3.0;
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ReaderTranslatorSafari/Info.plist;
@@ -831,6 +832,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -844,6 +846,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorSafari/ReaderTranslatorSafari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.3.0;
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ReaderTranslatorSafari/Info.plist;
@@ -853,6 +856,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -981,7 +985,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslator/ReaderTranslator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3.0;
+				CURRENT_PROJECT_VERSION = 1.3.1;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
@@ -991,7 +995,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -1006,7 +1010,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslator/ReaderTranslator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3.0;
+				CURRENT_PROJECT_VERSION = 1.3.1;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
@@ -1016,7 +1020,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

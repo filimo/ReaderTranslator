@@ -14,7 +14,6 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
     private let host = "https://context.reverso.net/translation/"
 
     static var pageView: WKPageView?
-    static var hasSentTranslateAction = false
 
     class Coordinator: WKCoordinator {
         var selectedText = ""
@@ -25,13 +24,12 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        print("ReversoContext_makeCoordinator")
+        return Coordinator(self)
     }
     
     func makeView(context: Context) -> WKPageView  {
         print("ReversoContext_makeView")
-        if let view = Self.pageView { return view }
-        
         let view = WKPageView(defaultUrl: host)
         Self.pageView = view
         
@@ -41,10 +39,11 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
     }
       
     func updateView(_ view: WKPageView, context: Context) {
+        print("ReversoContext_updateView")
         guard case let .reversoContext(text) = selectedText else { return }
         selectedText.setNone()
 
-        print("ReversoContext_updateView")
+        print("ReversoContext_updateView_update", text)
         
         let search = text.replacingOccurrences(of: " ", with: "+")
         let language = view.url?.absoluteString.groups(for: #"\/translation\/(\w+-\w+)\/"#)[safe: 0]?[safe: 1] ?? "english-russian"

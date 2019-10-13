@@ -23,7 +23,9 @@ struct StatusBarView_ViewMode: View {
     
     private func button(mode: ViewMode) -> some View {
         Button(action: {
-            self.store.viewMode = mode
+            RunLoop.main.perform {
+                self.store.viewMode = mode
+            }
         }, label: {
             Text(mode.rawValue)
         })

@@ -40,13 +40,12 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        print("Translator_makeCoordinator")
+        return Coordinator(self)
     }
     
     func makeView(context: Context) -> WKPageView  {
         print("Translator_makeView")
-        if let view = Self.pageView { return view }
-        
         let view = WKPageView(defaultUrl: defaultUrl)
         Self.pageView = view
         
@@ -56,11 +55,12 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
     }
       
     func updateView(_ view: WKPageView, context: Context) {
+        print("Translator_updateView")
         if case let .translator(text, noReversoContext) = selectedText,
             text != "" {
             selectedText.setNone()
 
-            print("Translator_updateView", noReversoContext, text)
+            print("Translator_updateView_update", noReversoContext, text)
             
             let (sl, tl) = getParams(url: view.url)
             guard var urlComponent = URLComponents(string: defaultUrl) else { return }

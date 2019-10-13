@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AppIdentifierPrefix</key>
+	<string>$(AppIdentifierPrefix)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -17,11 +19,13 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.1</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1.1.12</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>ReaderTranslator communicates with other apps on your Mac when you choose to share a news item.</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPointIdentifier</key>
@@ -60,9 +64,5 @@
 	<string>Copyright © 2019 Viktor Kushnerov. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
 	<string>This is a Safari Extension. You should tell us what your extension does here.</string>
-	<key>AppIdentifierPrefix</key>
-	<string>$(AppIdentifierPrefix)</string>
-	<key>NSAppleEventsUsageDescription</key>
-	<string>ReaderTranslator communicates with other apps on your Mac when you choose to share a news item.</string>
 </dict>
 </plist>
