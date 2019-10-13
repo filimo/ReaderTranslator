@@ -1,6 +1,14 @@
 # ReaderTranslator 
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
+## Important
+Catalyst project for macOS has some problems:
+- Select a text in `WKWebView`
+- Handle key events
+- Support Safari extension
+
+If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
+
 ## Comming features in 1.4
 
 ## Status
@@ -25,7 +33,10 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
-**1.3**
+**1.3.2**
+- Fix: Crash the app when switching between view modes
+- Fix: Translate/Speak selected text in WebPage
+**1.3.0**
 
 Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)
 ![](files/Screen12.png)
