@@ -82,18 +82,18 @@ extension WKRepresenter.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         switch message.name {
         case "onSelectionChange":
-//            if let value = message.body as? String {
-//                selectedText = value
-//            }
+            if let text = message.body as? String {
+                selectedText = text
+            }
             print("onSelectionChange is not implemented")
         case "onContextMenu":
             print("onContextMenu")
         case "onBodyLoaded":
             print("onBodyLoaded")
         case "onKeyDown":
-//            if let code = message.body as? String {
-//                if code == "MetaLeft" { SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true) }
-//            }
+            if let code = message.body as? Int {
+                if code == 18 { SpeechSynthesizer.speak(text: selectedText, stopSpeaking: true, isVoiceEnabled: true) }
+            }
             print("onKeyDown is not implemented")
         default:
             print("webkit.messageHandlers.\(message.name).postMessage() isn't found")
