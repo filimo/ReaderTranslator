@@ -62,7 +62,7 @@
         safari.extension.dispatchMessage(JSON.stringify(event))
     }
  
-    var sendIn100 = debounce(_send, 100)
+    var sendIn500 = debounce(_send, 500)
     var sendIn1000 = debounce(_send, 1000)
 
     document.addEventListener("DOMContentLoaded", (event) => {
@@ -86,13 +86,7 @@
     })
 
     window.addEventListener('keydown', (event) => {
-        if(['text', 'textarea'].indexOf(event.srcElement.type) != -1) {
-            if(event.keyCode >= 65 && event.keyCode <= 90) {
-                if(event.ctrlKey || event.altKey) { sendIn100('keydown', 'window', event) }
-            }
-        }else{
-            sendIn100('keydown', 'window', event)
-        }
+        if(event.ctrlKey || event.altKey) sendIn500('keydown', 'window', event)
     })
  })()
 

@@ -29,19 +29,23 @@ struct SafariView: View {
             switch event.name {
             case "keydown":
                 if let extra = event.extra,
-                    extra.shiftKey != true {
+                    extra.shiftKey != true,
+                    extra.metaKey != true {
                     
-                    if extra.keyCode == 65 { // a
+                    if extra.altKey == true && extra.keyCode == 65 { // Alt+a
                         self.store.isVoiceEnabled.toggle()
+                        return
                     }
-                    if extra.keyCode == 83 { // s
+                    if extra.altKey == true && extra.keyCode == 83 { // Alt+s
                         self.store.canSafariSendSelectedText.toggle()
                         if self.store.canSafariSendSelectedText {
                             self.store.translateAction = .translator(text: event.extra?.selectedText ?? "")
                         }
+                        return
                     }
                     if extra.altKey == true {
                         SpeechSynthesizer.speak()
+                        return
                     }
                 }
             case "selectionchange":

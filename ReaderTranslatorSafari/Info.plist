@@ -36,7 +36,7 @@
 		<array>
 			<dict>
 				<key>Script</key>
-				<string>reader-translate-extension.js</string>
+				<string>reader-translator-extension.js</string>
 			</dict>
 		</array>
 		<key>SFSafariToolbarItem</key>
