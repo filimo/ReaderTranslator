@@ -1,15 +1,23 @@
 # ReaderTranslator 
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
+## Important
+Catalyst project for macOS has some problems:
+- Select a text in `WKWebView`
+- Handle key events
+- Support Safari extension
+
+If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
+
 ## Comming features in 1.4
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
 
 ## Base idea
-Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate 
+Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate and ReversoContext
 to understand unfamiliar idioms, words or to find a sutable expressions or words in my native language.
-And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate(or others services).
+And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate and ReversoContext.
 Although this process is simple I would like to make it as more comfortable as possible.
 Sometimes I am lazy to look into the translator and I make an assumption about the meaning of a word or idiom and it can lead to a missunderstanding which turns into even greater loss of my time.
 
@@ -25,7 +33,10 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
-**1.3**
+**1.3.2**
+- Fix: Crash the app when switching between view modes
+- Fix: Translate/Speak selected text in WebPage
+**1.3.0**
 
 Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)
 ![](files/Screen12.png)
