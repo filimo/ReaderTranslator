@@ -15,7 +15,7 @@ struct StatusBarView_Voice_Volume: View {
         Group {
             Text("Rate:")
             #if os(macOS)
-            TextField("   ", text: self.$store.voiceRate)
+            TextField("   ", text: self.$store.voiceRate, onCommit: { SpeechSynthesizer.speak() })
                 .fixedSize()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             #else
