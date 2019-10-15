@@ -12,8 +12,8 @@ import os.log
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
     typealias EventType = PassthroughSubject<String, Never>
-    static private var anyCancellable: Set<AnyCancellable> = []
-    static private var event: EventType = {
+    private var anyCancellable: Set<AnyCancellable> = []
+    private lazy var eventType: EventType = {
         let pub = EventType()
         
         pub
@@ -23,13 +23,13 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                 SharedContainer.setEvent(string: event)
                 SafariExtensionManager.didMessageChanged()
             }
-        .store(in: &SafariExtensionHandler.anyCancellable)
+            .store(in: &anyCancellable)
         
         return pub
     }()
     
     deinit {
-        Self.anyCancellable.allCancel()
+        anyCancellable.allCancel()
     }
     
     override func messageReceived(withName event: String, from page: SFSafariPage, userInfo: [String : Any]?) {
@@ -39,7 +39,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                    type: .debug, event,
                    String(describing: properties?.url),
                    userInfo ?? [:])
-            SafariExtensionHandler.event.send(event)
+            self.eventType.send(event)
         }
     }
     
