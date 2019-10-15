@@ -39,6 +39,9 @@
 		F075445A23447A2800E1D88E /* reader-translator-extension.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator-extension.js */; };
 		F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */; };
 		F075446023447A2800E1D88E /* ReaderTranslatorSafari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0814BA223562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
+		F0814BA323562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
+		F0814BA423562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F0A10C8523537D38002908D5 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A10C8423537D38002908D5 /* reader-translator.js */; };
 		F0A10C8623537D38002908D5 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A10C8423537D38002908D5 /* reader-translator.js */; };
 		F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A0232E9710007CC07B /* AppDelegate.swift */; };
@@ -170,6 +173,7 @@
 		F075445923447A2800E1D88E /* reader-translator-extension.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reader-translator-extension.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		F075445D23447A2800E1D88E /* ReaderTranslatorSafari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranslatorSafari.entitlements; sourceTree = "<group>"; };
+		F0814BA123562AF300212F52 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		F0A10C8423537D38002908D5 /* reader-translator.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reader-translator.js"; sourceTree = "<group>"; };
 		F0A9F35A2349228A00970C97 /* ReversoContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoContext.swift; sourceTree = "<group>"; };
 		F0AA699D232E9710007CC07B /* ReaderTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -473,6 +477,7 @@
 				F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */,
 				F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */,
 				F0C6657B2351A70B0087B6F2 /* Collection.swift */,
+				F0814BA123562AF300212F52 /* Set.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 				F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
 				F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */,
 				F0BB43722344843D00ADBEF1 /* FavoriteVoiceName.swift in Sources */,
+				F0814BA323562AF300212F52 /* Set.swift in Sources */,
 				F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
 				F0BB437C2344845000ADBEF1 /* StatusBarView_PdfPage.swift in Sources */,
@@ -678,6 +684,7 @@
 			files = (
 				F075445423447A2800E1D88E /* SafariExtensionViewController.swift in Sources */,
 				F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */,
+				F0814BA423562AF300212F52 /* Set.swift in Sources */,
 				F0EE0A122347AA0E004A5EAD /* DOMEvent.swift in Sources */,
 				F075445223447A2800E1D88E /* SafariExtensionHandler.swift in Sources */,
 				F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */,
@@ -727,6 +734,7 @@
 				F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */,
 				F0C4EDA42349260000CCD97A /* ReversoContextView.swift in Sources */,
 				F0AA69A5232E9710007CC07B /* ContentView.swift in Sources */,
+				F0814BA223562AF300212F52 /* Set.swift in Sources */,
 				F049244F2341F54800F3C728 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

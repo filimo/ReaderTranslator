@@ -19,6 +19,10 @@ class WKCoordinator: NSObject {
     init(_ parent: WKScriptsSetup) {
         self.parent = parent
     }
+    
+    deinit {
+        cancellableSet.allCancel()
+    }
 }
 
 extension WKCoordinator: WKNavigationDelegate {

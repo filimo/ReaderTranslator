@@ -12,19 +12,25 @@ import os.log
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
     typealias EventType = PassthroughSubject<String, Never>
+    static private var anyCancellable: Set<AnyCancellable> = []
     static private var event: EventType = {
         let pub = EventType()
         
-        _  = pub
+        pub
             .debounce(for: 0.1, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { event in
                 SharedContainer.setEvent(string: event)
                 SafariExtensionManager.didMessageChanged()
             }
+        .store(in: &SafariExtensionHandler.anyCancellable)
         
         return pub
     }()
+    
+    deinit {
+        Self.anyCancellable.allCancel()
+    }
     
     override func messageReceived(withName event: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").

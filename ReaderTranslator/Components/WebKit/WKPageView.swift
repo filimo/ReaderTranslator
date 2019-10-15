@@ -47,6 +47,10 @@ class WKPageView: WKWebView {
             .store(in: &cancellableSet)
     }
     
+    deinit {
+        cancellableSet.allCancel()
+    }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
+import Combine
 import SwiftUI
 import PDFKit
 
@@ -13,6 +14,8 @@ struct PDFKitView: View {
     @State var url: URL? = Bundle.main.url(forResource: "Functional-Swift", withExtension: "pdf")
 
     @EnvironmentObject var store: Store
+
+    static private var cancellableSet: Set<AnyCancellable> = []
 
     var body: some View {
         PDFKitViewRepresentable(url: $url)
@@ -26,6 +29,9 @@ struct PDFKitView: View {
                     self.goCurrentPage(page: lastPage)
                 }
             }
+        }
+        .onDisappear {
+            Self.cancellableSet.allCancel()
         }
     }
     
@@ -59,7 +65,7 @@ struct PDFKitView: View {
             }
         }
         
-        _ = self.store.$currentPage
+        self.store.$currentPage
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { page in
@@ -67,9 +73,10 @@ struct PDFKitView: View {
                 print("debug: ", "willCurrentPageChanged: ", page)
                 self.goCurrentPage(page: page)
             }
+            .store(in: &Self.cancellableSet)
         
         //TODO: [Fix PDFView issue] PDFView will not correctly set the last page after SwiftUI reshows it.
-        _ = self.store.$viewMode
+        self.store.$viewMode
             .receive(on: RunLoop.main)
             .sink { mode in
                 if mode == .pdf {
@@ -79,7 +86,8 @@ struct PDFKitView: View {
                     }
                 }
             }
-        
+            .store(in: &Self.cancellableSet)
+
         
         print("debug: ", "Bundle.main.url: ", store.lastPdfPage)
 //        self.url = Bundle.main.url(forResource: "Functional-Swift", withExtension: "pdf")
