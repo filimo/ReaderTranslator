@@ -37,6 +37,8 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
+**1.3.4**
+Speak text in GTranslator by Reverso
 **1.3.2**
 - Fix: Crash the app when switching between view modes
 - Fix: Translate/Speak selected text in WebPage
