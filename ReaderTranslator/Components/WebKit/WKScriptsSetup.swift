@@ -42,6 +42,24 @@ extension WKScriptsSetup {
             print(error.localizedDescription)
         }
     }
+    
+    func setupReversoSpeak(view: WKPageView) {
+        let userContentController = view.configuration.userContentController
+        guard let scriptUrl = Bundle.main.url(forResource: "reverso-speaker", withExtension: "js") else { return }
+        
+        do {
+            let script = try String(contentsOf: scriptUrl)
+
+            let userScript = WKUserScript(
+                source: script,
+                injectionTime: .atDocumentEnd,
+                forMainFrameOnly: true
+            )
+            userContentController.addUserScript(userScript)
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
         
     func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!) {}
     func goBack(_ webView: WKPageView) {}

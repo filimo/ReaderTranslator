@@ -50,6 +50,7 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
         Self.pageView = view
         
         setupScripts(view: view, coordinator: context.coordinator)
+        setupReversoSpeak(view: view)
 
         return view
     }

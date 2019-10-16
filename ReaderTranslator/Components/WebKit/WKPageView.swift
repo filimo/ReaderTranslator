@@ -48,7 +48,7 @@ class WKPageView: WKWebView {
     }
     
     deinit {
-        cancellableSet.allCancel()
+        cancellableSet.cancelAndRemoveAll()
     }
     
     

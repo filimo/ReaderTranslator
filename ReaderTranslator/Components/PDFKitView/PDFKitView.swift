@@ -31,7 +31,7 @@ struct PDFKitView: View {
             }
         }
         .onDisappear {
-            Self.cancellableSet.allCancel()
+            Self.cancellableSet.cancelAndRemoveAll()
         }
     }
     

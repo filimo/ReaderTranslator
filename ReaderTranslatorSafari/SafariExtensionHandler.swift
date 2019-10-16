@@ -29,7 +29,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }()
     
     deinit {
-        anyCancellable.allCancel()
+        anyCancellable.cancelAndRemoveAll()
     }
     
     override func messageReceived(withName event: String, from page: SFSafariPage, userInfo: [String : Any]?) {

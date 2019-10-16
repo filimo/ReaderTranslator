@@ -21,7 +21,7 @@ class WKCoordinator: NSObject {
     }
     
     deinit {
-        cancellableSet.allCancel()
+        cancellableSet.cancelAndRemoveAll()
     }
 }
 

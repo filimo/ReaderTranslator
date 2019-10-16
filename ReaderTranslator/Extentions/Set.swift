@@ -9,7 +9,8 @@
 import Combine
 
 extension Set where Element: AnyCancellable {
-    func allCancel() {
+    mutating func cancelAndRemoveAll() {
         self.forEach { $0.cancel() }
+        self.removeAll()
     }
 }
