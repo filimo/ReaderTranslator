@@ -28,8 +28,8 @@ Sometimes I am lazy to look into the translator and I make an assumption about t
 ## Features
 - Support MacOS, ipadOS, iOS
 - Read PDF books or Web pages
-- Translate selected words or sentences through *Google Translate*
-- Voice words or sentences though voice engines with rate speech
+- Translate selected words or sentences through *Google Translate* and *Reverso*
+- Voice words or sentences though voice engines with rate speech, *Google Translate* and *Reverso*
 - Adjust speech rate
 
 ## Goals
@@ -38,7 +38,8 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 ## Releases
 **1.3.4**
-Speak text in GTranslator by Reverso
+Add button to Reverso to speak text by Reverso
+Add button to GTranslator to speak text by Reverso
 **1.3.2**
 - Fix: Crash the app when switching between view modes
 - Fix: Translate/Speak selected text in WebPage
