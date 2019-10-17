@@ -47,7 +47,7 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
         let view = WKPageView(defaultUrl: "")
         Self.views[self.store.currentTab] = view
 
-        setupScripts(view: view, coordinator: context.coordinator)
+        setupScriptCoordinator(view: view, coordinator: context.coordinator)
         store.canGoBack = view.canGoBack
 
         return view
@@ -100,6 +100,5 @@ extension WKRepresenter.Coordinator: WKScriptMessageHandler {
         }
     }
 }
-
 
 

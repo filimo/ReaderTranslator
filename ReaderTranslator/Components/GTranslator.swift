@@ -49,8 +49,8 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
         let view = WKPageView(defaultUrl: defaultUrl)
         Self.pageView = view
         
-        setupScripts(view: view, coordinator: context.coordinator)
-        setupReversoSpeak(view: view)
+        setupScriptCoordinator(view: view, coordinator: context.coordinator)
+        setupScript(view: view, file: "gtranslator-reverso-speaker")
 
         return view
     }

@@ -15,7 +15,7 @@ protocol WKScriptsSetup {
 }
 
 extension WKScriptsSetup {
-    func setupScripts<T: WKCoordinator>(view: WKPageView, coordinator: T) where T: WKScriptMessageHandler {
+    func setupScriptCoordinator<T: WKCoordinator>(view: WKPageView, coordinator: T) where T: WKScriptMessageHandler {
         let userContentController = view.configuration.userContentController
         guard let scriptUrl = Bundle.main.url(forResource: "reader-translator", withExtension: "js") else { return }
         
@@ -43,9 +43,9 @@ extension WKScriptsSetup {
         }
     }
     
-    func setupReversoSpeak(view: WKPageView) {
+    func setupScript(view: WKPageView, file name: String) {
         let userContentController = view.configuration.userContentController
-        guard let scriptUrl = Bundle.main.url(forResource: "reverso-speaker", withExtension: "js") else { return }
+        guard let scriptUrl = Bundle.main.url(forResource: name, withExtension: "js") else { return }
         
         do {
             let script = try String(contentsOf: scriptUrl)

@@ -33,7 +33,8 @@ struct ReversoContext : ViewRepresentable, WKScriptsSetup {
         let view = WKPageView(defaultUrl: host)
         Self.pageView = view
         
-        setupScripts(view: view, coordinator: context.coordinator)
+        setupScriptCoordinator(view: view, coordinator: context.coordinator)
+        setupScript(view: view, file: "reverso-reverso-speaker")
 
         return view
     }
