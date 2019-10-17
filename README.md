@@ -37,14 +37,16 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
+
 **1.3.4**
-Add button to Reverso to speak text by Reverso
-Add button to GTranslator to speak text by Reverso
+- Add button to Reverso to speak text by Reverso
+- Add button to GTranslator to speak text by Reverso
+
 **1.3.2**
 - Fix: Crash the app when switching between view modes
 - Fix: Translate/Speak selected text in WebPage
-**1.3.0**
 
+**1.3.0**
 Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)
 ![](files/Screen12.png)
 ![](files/Screen13.png)
