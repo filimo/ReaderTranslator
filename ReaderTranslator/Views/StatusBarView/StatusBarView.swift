@@ -20,6 +20,7 @@ struct StatusBarView: View {
             StatusBarView_Zoom()
             StatusBarView_Voice().padding([.top,.bottom], 5)
             StatusBarView_Safari()
+            StatusBarView_Bookmarks()
             Spacer()
             Button(action: {
                 self.store.translateAction = .translator(text: "")

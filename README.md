@@ -19,9 +19,9 @@ While I am waiting for the commercial **SwiftUI** projects I decided to dedicate
 > “If you can’t explain it simply, you don’t understand it well enough.” 
 > by Albert Einstein
 
-Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate and ReversoContext
+Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate and Reverso
 to understand unfamiliar idioms, words or to find a sutable expressions or words in my native language.
-And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate and ReversoContext.
+And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate and Reverso.
 Although this process is simple I would like to make it as more comfortable as possible.
 Sometimes I am lazy to look into the translator and I make an assumption about the meaning of a word or idiom and it can lead to a missunderstanding which turns into even greater loss of my time.
 
@@ -88,13 +88,13 @@ New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issue
 ```swift
 enum TranslateAction: Equatable {
     case none(text: String = "")
-    case reversoContext(text: String)
-    case translator(text: String, noReversoContext: Bool = false)
+    case reverso(text: String)
+    case translator(text: String, noReverso: Bool = false)
     
     func getText() -> String {
         switch self {
         case .none(let text): return text
-        case .reversoContext(let text): return text
+        case .reverso(let text): return text
         case .translator(let text, _): return text
         }
     }

@@ -17,14 +17,14 @@ enum ViewMode: String, Codable {
 
 enum TranslateAction: Equatable {
     case none(text: String = "")
-    case reversoContext(text: String)
-    case translator(text: String, noReversoContext: Bool = false)
-    
+    case reverso(text: String)
+    case translator(text: String, noReverso: Bool = false)
+
     func getText() -> String {
         switch self {
-        case .none(let text): return text
-        case .reversoContext(let text): return text
-        case .translator(let text, _): return text
+        case .none(let text): return text.trimmingCharacters(in: .whitespaces)
+        case .reverso(let text): return text.trimmingCharacters(in: .whitespaces)
+        case .translator(let text, _): return text.trimmingCharacters(in: .whitespaces)
         }
     }
     
@@ -69,6 +69,7 @@ class Store: ObservableObject {
 
     @Published(key: "zoom") var zoom: CGFloat = 1
 
+    @Published(key: "bookmarks") var bookmarks: [String] = []
 
     private init() {
         ({ currentTab = currentTab })() //call didSet

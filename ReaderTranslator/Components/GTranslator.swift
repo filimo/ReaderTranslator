@@ -32,7 +32,7 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
                     if text != "" {
                         print("Translator_$selectedText")
                         SpeechSynthesizer.speak(text: text)
-                        self.store.translateAction = .reversoContext(text: text)
+                        self.store.translateAction = .reverso(text: text)
                     }
                 }
                 .store(in: &cancellableSet)
@@ -57,11 +57,11 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
       
     func updateView(_ view: WKPageView, context: Context) {
         print("Translator_updateView")
-        if case let .translator(text, noReversoContext) = selectedText,
+        if case let .translator(text, noReverso) = selectedText,
             text != "" {
             selectedText.setNone()
 
-            print("Translator_updateView_update", noReversoContext, text)
+            print("Translator_updateView_update", noReverso, text)
             
             let (sl, tl) = getParams(url: view.url)
             guard var urlComponent = URLComponents(string: defaultUrl) else { return }
@@ -77,8 +77,8 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
                 view.load(URLRequest(url: url))
             }
             
-            if noReversoContext != true, text.split(separator: " ").count < 10 {
-                self.store.translateAction = .reversoContext(text: text)
+            if noReverso != true, text.split(separator: " ").count < 10 {
+                self.store.translateAction = .reverso(text: text)
             }
         }
     }
@@ -104,7 +104,7 @@ extension GTranslator.Coordinator: WKScriptMessageHandler {
         switch message.name {
         case "onSelectionChange":
             if let text = message.body as? String {
-                selectedText = .reversoContext(text: text)
+                selectedText = .reverso(text: text)
             }
         case "onContextMenu":
             print("onContextMenu")
