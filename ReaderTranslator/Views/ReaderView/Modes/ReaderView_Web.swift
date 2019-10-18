@@ -54,15 +54,7 @@ extension ReaderView_Web {
     
     fileprivate func pasteClipbord() -> Button<Image> {
         Button(action: {
-            #if os(macOS)
-            if let string = NSPasteboard.general.string(forType: .string) {
-                self.store.lastWebPage = string
-            }
-            #else
-            if let string = UIPasteboard.general.string {
-                self.store.lastWebPage = string
-            }
-            #endif
+            self.store.lastWebPage = Clipboard.string
         }) { Image(systemName: "doc.on.clipboard") }
     }
 }

@@ -16,7 +16,7 @@ struct StatusBarView_Bookmarks: View {
         Group {
             Divider().fixedSize()
             self.bookmarkView
-            Button(action: { self.show = true }) { Text(show ? "􀉛" : "􀉚") }
+            Button(action: { self.show = true } ) { Text(show ? "􀉛" : "􀉚") }
         }
         .sheet(isPresented: $show) {
             self.listView
@@ -44,14 +44,19 @@ struct StatusBarView_Bookmarks: View {
     }
     
     private var listView: some View {
-        List {
+        VStack {
             ForEach(self.store.bookmarks, id: \.self) { text in
                 Text("\(text)").onTapGesture {
                     self.store.translateAction = .translator(text: text)
                     self.show = false
                 }
             }
-            Button(action: { self.show = false}) { Text("􀁠") }
+            HStack {
+                Button(action: {
+                    Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))
+                } ) { Text("􀉃") }
+                Button(action: { self.show = false} ) { Text("􀁠") }
+            }
         }
     }
 }
