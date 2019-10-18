@@ -37,6 +37,8 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
+**1.3.5**
+[Bookmarks for favorite sentences](https://github.com/filimo/ReaderTranslator/issues/42)  
 **1.3.4**
 Speak text in GTranslator by Reverso
 **1.3.2**
