@@ -10,6 +10,7 @@ Catalyst project for macOS has some problems:
 If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
 
 ## Comming features in 1.4
+Translate selected text from any apps shortcuts.
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
