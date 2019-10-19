@@ -2,6 +2,9 @@
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
 ## Important
+If you want to translate selected text from Safari you should enable ReaderTranslatorSafari extension in Safari preferences
+![](files/Screen15.png)
+
 Catalyst project for macOS has some problems:
 - Select a text in `WKWebView`
 - Handle key events
