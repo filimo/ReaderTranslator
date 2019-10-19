@@ -38,7 +38,7 @@
 		F075445223447A2800E1D88E /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075445123447A2800E1D88E /* SafariExtensionHandler.swift */; };
 		F075445423447A2800E1D88E /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075445323447A2800E1D88E /* SafariExtensionViewController.swift */; };
 		F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F075445523447A2800E1D88E /* SafariExtensionViewController.xib */; };
-		F075445A23447A2800E1D88E /* reader-translator-extension.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator-extension.js */; };
+		F075445A23447A2800E1D88E /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */; };
 		F075446023447A2800E1D88E /* ReaderTranslatorSafari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F0814BA223562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
@@ -46,8 +46,6 @@
 		F0814BA423562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F0A001C623587121009E9CD6 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */; };
 		F0A001C723587121009E9CD6 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */; };
-		F0A10C8523537D38002908D5 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A10C8423537D38002908D5 /* reader-translator.js */; };
-		F0A10C8623537D38002908D5 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A10C8423537D38002908D5 /* reader-translator.js */; };
 		F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A0232E9710007CC07B /* AppDelegate.swift */; };
 		F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A2232E9710007CC07B /* SceneDelegate.swift */; };
 		F0AA69A5232E9710007CC07B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A4232E9710007CC07B /* ContentView.swift */; };
@@ -99,6 +97,8 @@
 		F0C36A9F2359C78A001E396C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A9C2359C78A001E396C /* Array.swift */; };
 		F0C36AA12359D50A001E396C /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36AA02359D50A001E396C /* Clipboard.swift */; };
 		F0C36AA22359D50A001E396C /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36AA02359D50A001E396C /* Clipboard.swift */; };
+		F0C36AA7235ADF5E001E396C /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
+		F0C36AA8235ADF5E001E396C /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F0C4EDA42349260000CCD97A /* ReversoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A50E823492398001DCC11 /* ReversoView.swift */; };
 		F0C4EDA52349260000CCD97A /* ReversoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A50E823492398001DCC11 /* ReversoView.swift */; };
 		F0C4EDA6234926D400CCD97A /* Reverso.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9F35A2349228A00970C97 /* Reverso.swift */; };
@@ -182,12 +182,11 @@
 		F075445323447A2800E1D88E /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		F075445623447A2800E1D88E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		F075445823447A2800E1D88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F075445923447A2800E1D88E /* reader-translator-extension.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reader-translator-extension.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
+		F075445923447A2800E1D88E /* reader-translator.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reader-translator.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		F075445D23447A2800E1D88E /* ReaderTranslatorSafari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranslatorSafari.entitlements; sourceTree = "<group>"; };
 		F0814BA123562AF300212F52 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
-		F0A10C8423537D38002908D5 /* reader-translator.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reader-translator.js"; sourceTree = "<group>"; };
 		F0A9F35A2349228A00970C97 /* Reverso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reverso.swift; sourceTree = "<group>"; };
 		F0AA699D232E9710007CC07B /* ReaderTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AA69A0232E9710007CC07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -315,7 +314,6 @@
 				F075445323447A2800E1D88E /* SafariExtensionViewController.swift */,
 				F075445523447A2800E1D88E /* SafariExtensionViewController.xib */,
 				F075445823447A2800E1D88E /* Info.plist */,
-				F075445923447A2800E1D88E /* reader-translator-extension.js */,
 				F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */,
 				F075445D23447A2800E1D88E /* ReaderTranslatorSafari.entitlements */,
 			);
@@ -407,14 +405,15 @@
 		F0AA69D9232E979B007CC07B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F0C36AA32359FA13001E396C /* Scripts */,
 				F0EE0A1B2348A645004A5EAD /* PDFKitView */,
 				F0EE0A142347BEDB004A5EAD /* WebKit */,
 				F0A9F35A2349228A00970C97 /* Reverso.swift */,
-				F0C36AA02359D50A001E396C /* Clipboard.swift */,
 				F0AA69DB232E97AF007CC07B /* GTranslator.swift */,
-				F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */,
-				F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */,
 				F0D2E333234BA49000D95994 /* Safari.swift */,
+				F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */,
+				F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */,
+				F0C36AA02359D50A001E396C /* Clipboard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -452,6 +451,16 @@
 			path = StatusBarView;
 			sourceTree = "<group>";
 		};
+		F0C36AA32359FA13001E396C /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				F075445923447A2800E1D88E /* reader-translator.js */,
+				F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */,
+				F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		F0C4EDA3234925B800CCD97A /* Modes */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,9 +476,6 @@
 		F0EE0A142347BEDB004A5EAD /* WebKit */ = {
 			isa = PBXGroup;
 			children = (
-				F0A10C8423537D38002908D5 /* reader-translator.js */,
-				F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */,
-				F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */,
 				F0AA69DC232E97B0007CC07B /* WKRepresenter.swift */,
 				F0C53177234B3EE1003174B5 /* WKCoordinator.swift */,
 				F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */,
@@ -613,8 +619,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0C36AA7235ADF5E001E396C /* reader-translator.js in Resources */,
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
-				F0A10C8623537D38002908D5 /* reader-translator.js in Resources */,
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
 				F04FC5D8234CA63E002EFC0A /* Functional-Swift.pdf in Resources */,
 				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
@@ -629,7 +635,7 @@
 			files = (
 				F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */,
 				F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */,
-				F075445A23447A2800E1D88E /* reader-translator-extension.js in Resources */,
+				F075445A23447A2800E1D88E /* reader-translator.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,11 +644,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F040D57C2336BD97004567B8 /* README.md in Resources */,
+				F0C36AA8235ADF5E001E396C /* reader-translator.js in Resources */,
 				F0C4EDAF234940D300CCD97A /* Functional-Swift.pdf in Resources */,
 				F0AA69AD232E9712007CC07B /* LaunchScreen.storyboard in Resources */,
 				F0A001C623587121009E9CD6 /* reverso-reverso-speaker.js in Resources */,
 				F00C7C87235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
-				F0A10C8523537D38002908D5 /* reader-translator.js in Resources */,
 				F0AA69AA232E9712007CC07B /* Preview Assets.xcassets in Resources */,
 				F0AA69A7232E9712007CC07B /* Assets.xcassets in Resources */,
 			);
@@ -818,7 +824,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.3.5;
+				CURRENT_PROJECT_VERSION = 1.3.6;
 				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslatorMac/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -829,7 +835,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 1.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -846,7 +852,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.3.5;
+				CURRENT_PROJECT_VERSION = 1.3.6;
 				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslatorMac/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -857,7 +863,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 1.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -871,7 +877,7 @@
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorSafari/ReaderTranslatorSafari.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3.5;
+				CURRENT_PROJECT_VERSION = 1.3.6;
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ReaderTranslatorSafari/Info.plist;
@@ -881,7 +887,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 1.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -896,7 +902,7 @@
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorSafari/ReaderTranslatorSafari.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3.5;
+				CURRENT_PROJECT_VERSION = 1.3.6;
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ReaderTranslatorSafari/Info.plist;
@@ -906,7 +912,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 1.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1035,7 +1041,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslator/ReaderTranslator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3.5;
+				CURRENT_PROJECT_VERSION = 1.3.6;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
@@ -1045,7 +1051,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 1.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -1060,7 +1066,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslator/ReaderTranslator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3.5;
+				CURRENT_PROJECT_VERSION = 1.3.6;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
@@ -1070,7 +1076,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 1.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

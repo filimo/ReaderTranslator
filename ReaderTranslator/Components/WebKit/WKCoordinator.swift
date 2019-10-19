@@ -23,6 +23,17 @@ class WKCoordinator: NSObject {
     deinit {
         cancellableSet.cancelAndRemoveAll()
     }
+    
+    func getEvent(data: Any) -> DOMEvent? {
+        if let string = data as? String {
+            do {
+                return try JSONDecoder().decode(DOMEvent.self, from: Data(string.utf8))
+            }catch{
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
 }
 
 extension WKCoordinator: WKNavigationDelegate {

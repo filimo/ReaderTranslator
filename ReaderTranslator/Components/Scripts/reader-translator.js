@@ -45,6 +45,9 @@
     }
 
     function _send(name, source, e) {
+        let text = document.getSelection().toString()
+        let sourceValue = (document.querySelector("#source") || {}).value
+        let entryValue = (document.querySelector("#entry") || {}).value
         let event = {
             time: Date(), // to prevent removing duplicate events
             name: name,
@@ -56,10 +59,15 @@
                 shiftKey: e.shiftKey || keysStatus.shiftKey,
                 which: e.which || keysStatus.which,
                 keyCode: e.keyCode || keysStatus.keyCode,
-                selectedText: document.getSelection().toString(),
+                selectedText: text || sourceValue || entryValue,
             }
         }
-        safari.extension.dispatchMessage(JSON.stringify(event))
+ 
+        if(window.safari && safari.extension) {
+            safari.extension.dispatchMessage(JSON.stringify(event))
+         }else{
+            webkit.messageHandlers.send.postMessage(JSON.stringify(event))
+         }
     }
  
     var sendIn500 = debounce(_send, 500)

@@ -22,10 +22,7 @@ extension WKScriptsSetup {
         do {
             let script = try String(contentsOf: scriptUrl)
 
-            userContentController.add(coordinator, name: "onSelectionChange")
-            userContentController.add(coordinator, name: "onContextMenu")
-            userContentController.add(coordinator, name: "onBodyLoaded")
-            userContentController.add(coordinator, name: "onKeyDown")
+            userContentController.add(coordinator, name: "send")
             
             #if os(macOS)
             view.allowsMagnification = true
@@ -60,7 +57,7 @@ extension WKScriptsSetup {
             print(error.localizedDescription)
         }
     }
-        
+            
     func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!) {}
     func goBack(_ webView: WKPageView) {}
 }

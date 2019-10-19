@@ -80,23 +80,17 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
 
 extension WKRepresenter.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        switch message.name {
-        case "onSelectionChange":
-            if let text = message.body as? String {
-                selectedText = text
+        guard let event = getEvent(data: message.body) else { return }
+        
+        switch event.name {
+        case "selectionchange":
+            self.selectedText = event.extra?.selectedText ?? ""
+        case "keydown":
+            if event.extra?.keyCode == 18 { //Alt
+                SpeechSynthesizer.speak(text: self.selectedText, stopSpeaking: true, isVoiceEnabled: true)
             }
-            print("onSelectionChange is not implemented")
-        case "onContextMenu":
-            print("onContextMenu")
-        case "onBodyLoaded":
-            print("onBodyLoaded")
-        case "onKeyDown":
-            if let code = message.body as? Int {
-                if code == 18 { SpeechSynthesizer.speak(text: selectedText, stopSpeaking: true, isVoiceEnabled: true) }
-            }
-            print("onKeyDown is not implemented")
         default:
-            print("webkit.messageHandlers.\(message.name).postMessage() isn't found")
+            print("webkit.messageHandlers.\(event.name).postMessage() isn't found")
         }
     }
 }

@@ -61,26 +61,22 @@ struct Reverso : ViewRepresentable, WKScriptsSetup {
 
 extension Reverso.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        switch message.name {
-        case "onSelectionChange":
-            if let value = message.body as? String {
-                self.selectedText = value
+        guard let event = getEvent(data: message.body) else { return }
+        var text: String { event.extra?.selectedText ?? "" }
+
+        switch event.name {
+        case "selectionchange":
+            guard let text = event.extra?.selectedText else { return }
+            self.selectedText = text
+        case "keydown":
+            if event.extra?.keyCode == 17 { //Ctrl
+                store.translateAction = .translator(text: text, noReverso: true)
             }
-        case "onContextMenu":
-            print("onContextMenu")
-        case "onBodyLoaded":
-            print("onBodyLoaded")
-        case "onKeyDown":
-            if let code = message.body as? Int {
-                if code == 17 { //Ctrl
-                    store.translateAction = .translator(text: self.selectedText, noReverso: true)
-                }
-                if code == 18 { //Alt
-                    SpeechSynthesizer.speak(text: self.selectedText, stopSpeaking: true, isVoiceEnabled: true)
-                }
+            if event.extra?.keyCode == 18 { //Alt
+                SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)
             }
         default:
-            print("webkit.messageHandlers.\(message.name).postMessage() isn't found")
+            print("webkit.messageHandlers.\(event.name).postMessage() isn't found")
         }
     }
 }
