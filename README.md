@@ -50,6 +50,7 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 **1.3.5**
 - [Bookmarks for favorite sentences](https://github.com/filimo/ReaderTranslator/issues/42)  
+![](files/Screen16.png)
 
 **1.3.4**
 - Add button to Reverso to speak text by Reverso
