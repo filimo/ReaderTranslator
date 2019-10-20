@@ -12,13 +12,15 @@
 		F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
 		F00C7C87235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
 		F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
+		F01B0196235C5EBF000CB5C1 /* Functional-Swift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F01B0195235C5EBF000CB5C1 /* Functional-Swift.pdf */; };
+		F01B0197235C5EBF000CB5C1 /* Functional-Swift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F01B0195235C5EBF000CB5C1 /* Functional-Swift.pdf */; };
+		F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F026B1E82344830200E032B9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* SafariView.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
 		F049244F2341F54800F3C728 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
-		F04FC5D8234CA63E002EFC0A /* Functional-Swift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F0C4EDAE234940D300CCD97A /* Functional-Swift.pdf */; };
 		F06DB0FF2344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1042344975E00C2DE90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* Stack.swift */; };
@@ -105,7 +107,6 @@
 		F0C4EDA7234926D400CCD97A /* Reverso.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9F35A2349228A00970C97 /* Reverso.swift */; };
 		F0C4EDA92349271C00CCD97A /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */; };
 		F0C4EDAA2349271C00CCD97A /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */; };
-		F0C4EDAF234940D300CCD97A /* Functional-Swift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F0C4EDAE234940D300CCD97A /* Functional-Swift.pdf */; };
 		F0C53174234B06D3003174B5 /* WKScriptsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */; };
 		F0C53175234B06D3003174B5 /* WKScriptsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */; };
 		F0C53178234B3EE1003174B5 /* WKCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53177234B3EE1003174B5 /* WKCoordinator.swift */; };
@@ -159,6 +160,7 @@
 		F00644462341E22D006BCA94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "gtranslator-reverso-speaker.js"; sourceTree = "<group>"; };
 		F01A50E823492398001DCC11 /* ReversoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoView.swift; sourceTree = "<group>"; };
+		F01B0195235C5EBF000CB5C1 /* Functional-Swift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Functional-Swift.pdf"; path = "../../../Downloads/Functional-Swift.pdf"; sourceTree = "<group>"; };
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
 		F026B1E72344830200E032B9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
@@ -218,7 +220,6 @@
 		F0C36A9C2359C78A001E396C /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		F0C36AA02359D50A001E396C /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
 		F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
-		F0C4EDAE234940D300CCD97A /* Functional-Swift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Functional-Swift.pdf"; path = "../../../Downloads/Books/Functional-Swift.pdf"; sourceTree = "<group>"; };
 		F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKScriptsSetup.swift; sourceTree = "<group>"; };
 		F0C53177234B3EE1003174B5 /* WKCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinator.swift; sourceTree = "<group>"; };
 		F0C6657B2351A70B0087B6F2 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
@@ -356,7 +357,7 @@
 				F0AA69D9232E979B007CC07B /* Components */,
 				F0AA69D1232E9733007CC07B /* Views */,
 				F0AA69A6232E9712007CC07B /* Assets.xcassets */,
-				F0C4EDAE234940D300CCD97A /* Functional-Swift.pdf */,
+				F01B0195235C5EBF000CB5C1 /* Functional-Swift.pdf */,
 				F0AA69AB232E9712007CC07B /* LaunchScreen.storyboard */,
 				F0AA69AE232E9712007CC07B /* Info.plist */,
 				F0AA69A8232E9712007CC07B /* Preview Content */,
@@ -622,10 +623,10 @@
 				F0C36AA7235ADF5E001E396C /* reader-translator.js in Resources */,
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
-				F04FC5D8234CA63E002EFC0A /* Functional-Swift.pdf in Resources */,
 				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
 				F0A001C723587121009E9CD6 /* reverso-reverso-speaker.js in Resources */,
 				F075443E234479DB00E1D88E /* Assets.xcassets in Resources */,
+				F01B0197235C5EBF000CB5C1 /* Functional-Swift.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,8 +645,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F040D57C2336BD97004567B8 /* README.md in Resources */,
+				F01B0196235C5EBF000CB5C1 /* Functional-Swift.pdf in Resources */,
 				F0C36AA8235ADF5E001E396C /* reader-translator.js in Resources */,
-				F0C4EDAF234940D300CCD97A /* Functional-Swift.pdf in Resources */,
 				F0AA69AD232E9712007CC07B /* LaunchScreen.storyboard in Resources */,
 				F0A001C623587121009E9CD6 /* reverso-reverso-speaker.js in Resources */,
 				F00C7C87235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
@@ -737,6 +738,7 @@
 				F0AB12A3233F5798005B9F2A /* ReaderView_PDF.swift in Sources */,
 				F0C53174234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
+				F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */,
 				F06DB0FF2344856300C2DE90 /* Store.swift in Sources */,
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
 				F0D2E334234BA49000D95994 /* Safari.swift in Sources */,
