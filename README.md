@@ -6,8 +6,8 @@
 - iOS 13
 
 ## How to install on macOS
-- Download DMG from https://github.com/filimo/ReaderTranslator/releases
-- Open downloaded DMG file
+- Download **ReaderTranslatorMac.dmg** from https://github.com/filimo/ReaderTranslator/releases
+- Open downloaded **ReaderTranslatorMac.dmg**
 - Copy **ReaderTranslatorMac** to **Applications** folder
 - Open **ReaderTranslatorMac** by the right click and click **Open** button (might require two attempts) 
 - Enable **ReaderTranslatorSafari** extension in Safari->Preferences->Extensions
