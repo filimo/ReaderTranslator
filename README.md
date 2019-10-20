@@ -2,6 +2,9 @@
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
 ## Important
+If you want to translate selected text from Safari you should enable ReaderTranslatorSafari extension in Safari preferences
+![](files/Screen15.png)
+
 Catalyst project for macOS has some problems:
 - Select a text in `WKWebView`
 - Handle key events
@@ -42,10 +45,13 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 ## Releases
 **1.3.6**
-If there isn't selected text in GTranslator then text is spoken from input tag
-If there isn't selected text in Reverso then text is spoken from textarea tag
+- If there isn't selected text in GTranslator then text is spoken from input tag
+- If there isn't selected text in Reverso then text is spoken from textarea tag
+
 **1.3.5**
-[Bookmarks for favorite sentences](https://github.com/filimo/ReaderTranslator/issues/42)  
+- [Bookmarks for favorite sentences](https://github.com/filimo/ReaderTranslator/issues/42)  
+![](files/Screen16.png)
+
 **1.3.4**
 - Add button to Reverso to speak text by Reverso
 - Add button to GTranslator to speak text by Reverso
