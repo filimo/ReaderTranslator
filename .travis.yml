@@ -11,9 +11,4 @@ install:
     security set-key-partition-list -S apple-tool:,apple: -s -k travis build.keychain
 
 script:
-    xcodebuild
-    clean
-    build
-    -scheme "ReaderTranslatorMac"
-    -configuration Debug
-
+    - xcodebuild clean build -project ReaderTranslator.xcodeproj -scheme 'ReaderTranslatorMac' -sdk macosx -configuration Debug | xcpretty -c
