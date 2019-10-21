@@ -23,7 +23,6 @@ deploy:
   api_key: $GITHUB_TOKEN
   file_glob: true
   file: ReaderTranslatorMac *.dmg
-  draft: true
   skip_cleanup: true
   on:
     tags: true
