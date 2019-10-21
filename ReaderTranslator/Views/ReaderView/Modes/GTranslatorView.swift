@@ -8,6 +8,21 @@
 
 import SwiftUI
 
+struct EditorNSTextView: View {
+    @ObservedObject var store = Store.shared
+    
+    var body: some View {
+        Group {
+            #if os(macOS)
+            EditorNSTextRepresentable(translateAction: $store.translateAction)
+            #else
+            EmptyView()
+            #endif
+        }
+    }
+}
+
+
 struct GTranslatorView: View {
     @ObservedObject private var store = Store.shared
     

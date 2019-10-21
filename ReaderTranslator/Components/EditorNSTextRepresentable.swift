@@ -14,8 +14,17 @@
 import Combine
 import SwiftUI
 
-struct EditorNSTextView: NSViewRepresentable {
-    @Binding var text: String
+struct EditorNSTextRepresentable: NSViewRepresentable {
+    @Binding var translateAction: TranslateAction
+    private var text: String {
+        get {
+            guard case let .translator(text, _) = translateAction else { return "" }
+            return text
+        }
+        set {
+            translateAction = .translator(text: newValue)
+        }
+    }
     
     var onEditingChanged: () -> Void = {}
     var onCommit: () -> Void = {}
@@ -25,7 +34,7 @@ struct EditorNSTextView: NSViewRepresentable {
     }
     
     func makeNSView(context: Context) -> CustomNSTextView {
-        let textView = CustomNSTextView(text: self.text)
+        let textView = CustomNSTextView(text: text)
         textView.delegate = context.coordinator
         
         return textView
@@ -37,12 +46,12 @@ struct EditorNSTextView: NSViewRepresentable {
     }
 }
 
-extension EditorNSTextView {
+extension EditorNSTextRepresentable {
     class Coordinator: NSObject, NSTextViewDelegate {
-        var parent: EditorNSTextView
+        var parent: EditorNSTextRepresentable
         var selectedRanges: [NSValue] = []
         
-        init(_ parent: EditorNSTextView) {
+        init(_ parent: EditorNSTextRepresentable) {
             self.parent = parent
         }
         
@@ -183,19 +192,5 @@ final class CustomNSTextView: NSView {
     
     func setupTextView() {
         scrollView.documentView = textView
-    }
-}
-
-struct EditorTextView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            EditorNSTextView(text: .constant("{ \n    planets { \n        name \n    }\n}"))
-                .environment(\.colorScheme, .dark)
-                .previewDisplayName("Light Mode")
-            
-            EditorNSTextView(text: .constant("{ \n    planets { \n        name \n    }\n}"))
-                .environment(\.colorScheme, .light)
-                .previewDisplayName("Dark Mode")
-        }
     }
 }

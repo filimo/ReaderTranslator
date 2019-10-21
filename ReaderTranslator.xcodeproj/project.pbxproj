@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F001A701235E095700617573 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001A700235E095700617573 /* ServiceProvider.swift */; };
 		F002C62A232FF40C00D3FC04 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = F002C629232FF40C00D3FC04 /* Published.swift */; };
 		F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
 		F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
@@ -25,7 +26,7 @@
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1042344975E00C2DE90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* Stack.swift */; };
 		F06DB1052344975E00C2DE90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* Stack.swift */; };
-		F06DB10B234504FD00C2DE90 /* EditorNSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */; };
+		F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */; };
 		F06DB10D23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
 		F06DB10E23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
 		F06DB1122345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */; };
@@ -154,6 +155,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F001A700235E095700617573 /* ServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		F002C629232FF40C00D3FC04 /* Published.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Published.swift; sourceTree = "<group>"; };
 		F0039EC223447E24002F3F95 /* SharedContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedContainer.swift; sourceTree = "<group>"; };
 		F00644442341E22D006BCA94 /* ReaderTranslatorSafari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = ReaderTranslatorSafari.appex; path = "/Volumes/Macintosh HD/Users/filimo/MyProjects/SwiftUI/ReaderTranslator/build/Debug/ReaderTranslatorSafari.appex"; sourceTree = "<absolute>"; };
@@ -168,7 +170,7 @@
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F049244E2341F54800F3C728 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F06DB1032344975E00C2DE90 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNSTextView.swift; sourceTree = "<group>"; };
+		F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNSTextRepresentable.swift; sourceTree = "<group>"; };
 		F06DB10C23450B6000C2DE90 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Toggle.swift; sourceTree = "<group>"; };
 		F06DB115234611BB00C2DE90 /* ExtensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionManager.swift; sourceTree = "<group>"; };
@@ -412,9 +414,10 @@
 				F0A9F35A2349228A00970C97 /* Reverso.swift */,
 				F0AA69DB232E97AF007CC07B /* GTranslator.swift */,
 				F0D2E333234BA49000D95994 /* Safari.swift */,
-				F06DB109234504FD00C2DE90 /* EditorNSTextView.swift */,
+				F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */,
 				F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */,
 				F0C36AA02359D50A001E396C /* Clipboard.swift */,
+				F001A700235E095700617573 /* ServiceProvider.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -665,7 +668,7 @@
 				F0BB43792344845000ADBEF1 /* StatusBarView_Tabs.swift in Sources */,
 				F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */,
 				F0C4EDA52349260000CCD97A /* ReversoView.swift in Sources */,
-				F06DB10B234504FD00C2DE90 /* EditorNSTextView.swift in Sources */,
+				F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */,
 				F06DB10E23450B6000C2DE90 /* View.swift in Sources */,
 				F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */,
 				F0C36A9E2359C78A001E396C /* Array.swift in Sources */,
@@ -685,6 +688,7 @@
 				F0BB43752344844800ADBEF1 /* SpeechSynthesizer.swift in Sources */,
 				F06DB1052344975E00C2DE90 /* Stack.swift in Sources */,
 				F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */,
+				F001A701235E095700617573 /* ServiceProvider.swift in Sources */,
 				F0BB43822344846700ADBEF1 /* ReaderView_Web.swift in Sources */,
 				F0BB437E2344845000ADBEF1 /* StatusBarView_Voice_Select.swift in Sources */,
 				F0BB436E2344843400ADBEF1 /* String.swift in Sources */,
