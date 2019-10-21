@@ -17,12 +17,19 @@ script:
     - create-dmg --volname "Application Installer" --hide-extension "Application.app" --app-drop-link 600 185 "ReaderTranslatorMac.dmg" "ReaderTranslatorMac.app/" | xcpretty -c
     - find ReaderTranslatorMac *.dmg
     
+branches:
+only:
+  - master
+  - /v\d+\.\d+[a-z]/
+
 deploy:
-    - provider: releases
-      api_key: $GITHUB_TOKEN
-      file_glob: true
-      file: ReaderTranslatorMac *.dmg
-      draft: true
-      skip_cleanup: true
-      on:
-        tags: true
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file_glob: true
+  file: ReaderTranslatorMac *.dmg
+  draft: true
+  skip_cleanup: true
+  on:
+    repo: filimo/ReaderTranslator
+    tags: true
+    all_branches: true
