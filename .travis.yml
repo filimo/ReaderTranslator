@@ -20,7 +20,7 @@ script:
 
 deploy:
   provider: releases
-  api_key: $GITHUB_TOKEN
+  github_token: $GITHUB_TOKEN
   file_glob: true
   file: ReaderTranslatorMac *.dmg
   draft: true
