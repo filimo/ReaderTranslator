@@ -55,7 +55,7 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
-**1.3.23**
+**1.3.7**
 - Build `ReaderTranslatorMac.dmg` . You can find them [here](https://github.com/filimo/ReaderTranslator/releases) 
 
 **1.3.6**
