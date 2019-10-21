@@ -16,7 +16,8 @@ script:
     - cp -R build/Build/Products/Debug/ReaderTranslatorMac.app .
     - create-dmg --volname "Application Installer" --hide-extension "Application.app" --app-drop-link 600 185 "ReaderTranslatorMac.dmg" "ReaderTranslatorMac.app/" | xcpretty -c
     - find ReaderTranslatorMac *.dmg
-    
+
+
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
