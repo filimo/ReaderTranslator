@@ -1,8 +1,12 @@
 os: osx
 osx_image: xcode11.1
 language: swift
+branches:
+    only:
+    - master
 install:
   - |
+    brew install create-dmg
     security create-keychain -p travis build.keychain
     security default-keychain -s build.keychain
     security unlock-keychain -p travis build.keychain
@@ -11,4 +15,16 @@ install:
     security set-key-partition-list -S apple-tool:,apple: -s -k travis build.keychain
 
 script:
-    - xcodebuild clean build -project ReaderTranslator.xcodeproj -scheme 'ReaderTranslatorMac' -sdk macosx -configuration Debug | xcpretty -c
+    - xcodebuild clean build -project ReaderTranslator.xcodeproj -scheme 'ReaderTranslatorMac' -sdk macosx -configuration Debug -derivedDataPath ./build | xcpretty -c
+    - create-dmg --volname "Application Installer" --hide-extension "Application.app" --app-drop-link 600 185 "ReaderTranslatorMac.dmg" "build/Build/Products/Debug/ReaderTranslatorMac.app/" | xcpretty -c
+    - find ReaderTranslatorMac *.dmg
+    
+deploy:
+    - provider: releases
+      api_key: $GITHUB_TOKEN
+      file_glob: true
+      file: ReaderTranslatorMac *.dmg
+      draft: true
+      skip_cleanup: true
+      on:
+        tags: true
