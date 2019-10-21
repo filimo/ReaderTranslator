@@ -1,9 +1,6 @@
 os: osx
 osx_image: xcode11.1
 language: swift
-branches:
-    only:
-    - master
 install:
   - |
     brew install create-dmg
