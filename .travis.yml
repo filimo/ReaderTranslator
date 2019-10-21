@@ -13,7 +13,8 @@ install:
 
 script:
     - xcodebuild clean build -project ReaderTranslator.xcodeproj -scheme 'ReaderTranslatorMac' -sdk macosx -configuration Debug -derivedDataPath ./build | xcpretty -c
-    - create-dmg --volname "Application Installer" --hide-extension "Application.app" --app-drop-link 600 185 "ReaderTranslatorMac.dmg" "build/Build/Products/Debug/ReaderTranslatorMac.app/" | xcpretty -c
+    - cp -R build/Build/Products/Debug/ReaderTranslatorMac.app .
+    - create-dmg --volname "Application Installer" --hide-extension "Application.app" --app-drop-link 600 185 "ReaderTranslatorMac.dmg" "ReaderTranslatorMac.app/" | xcpretty -c
     - find ReaderTranslatorMac *.dmg
     
 deploy:
