@@ -30,9 +30,9 @@ deploy:
   draft: true
   skip_cleanup: true
   on:
-    repo: filimo/ReaderTranslator
     tags: true
-    master: true
+    repo: filimo/ReaderTranslator
+    branch: master
 branches:
   only:
     - master
