@@ -14,20 +14,17 @@ install:
 script:
     - xcodebuild clean build -project ReaderTranslator.xcodeproj -scheme 'ReaderTranslatorMac' -sdk macosx -configuration Debug -derivedDataPath ./build | xcpretty -c
     - cp -R build/Build/Products/Debug/ReaderTranslatorMac.app .
-    - create-dmg --volname "Application Installer" --hide-extension "Application.app" --app-drop-link 600 185 "ReaderTranslatorMac.dmg" "ReaderTranslatorMac.app/" | xcpretty -c
+    - create-dmg --volname "Application Installer" --hide-extension "Application.app" --app-drop-link 600 185 "ReaderTranslatorMac.dmg" "ReaderTranslatorMac.app/"
     - find ReaderTranslatorMac *.dmg
-    
-branches:
-only:
-  - master
-  - /\d+\.\d+\.\d+/
+
 
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file_glob: true
-  file: ReaderTranslatorMac *.dmg
-  draft: true
+  file:
+    - ReaderTranslatorMac
+    - ReaderTranslatorMac.dmg
   skip_cleanup: true
   on:
     tags: true
@@ -36,4 +33,4 @@ deploy:
 branches:
   only:
     - master
-    - /^v\d+\.\d+\.\d+.*$/
+    - /^\d+\.\d+\.\d+.*$/
