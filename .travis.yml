@@ -32,4 +32,8 @@ deploy:
   on:
     repo: filimo/ReaderTranslator
     tags: true
-    all_branches: true
+    master: true
+branches:
+  only:
+    - master
+    - /^v\d+\.\d+\.\d+.*$/
