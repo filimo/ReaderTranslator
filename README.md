@@ -1,6 +1,17 @@
 # ReaderTranslator 
 **using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
 
+## Requirements
+- macOS 10.15 Catalina
+- iOS 13
+
+## How to install on macOS
+- Download **ReaderTranslatorMac.dmg** from https://github.com/filimo/ReaderTranslator/releases
+- Open downloaded **ReaderTranslatorMac.dmg**
+- Copy **ReaderTranslatorMac** to **Applications** folder
+- Open **ReaderTranslatorMac** by the right click and click **Open** button (might require two attempts) 
+- Enable **ReaderTranslatorSafari** extension in Safari->Preferences->Extensions
+
 ## Important
 If you want to translate selected text from Safari you should enable ReaderTranslatorSafari extension in Safari preferences
 ![](files/Screen15.png)
