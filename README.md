@@ -42,6 +42,7 @@ to understand unfamiliar idioms, words or to find a sutable expressions or words
 And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate and Reverso.
 Although this process is simple I would like to make it as more comfortable as possible.
 Sometimes I am lazy to look into the translator and I make an assumption about the meaning of a word or idiom and it can lead to a missunderstanding which turns into even greater loss of my time.
+Another useful feature is to write text in Safari to check and listen to it with a simple selection of text.
 
 ## Features
 - Support MacOS, ipadOS, iOS
