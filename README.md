@@ -14,7 +14,7 @@
 
 ## Important
 If you want to translate selected text from Safari you should enable ReaderTranslatorSafari extension in Safari preferences
-![](files/Screen15.png)
+![](files/important_1.png)
 
 Catalyst project for macOS has some problems:
 - Select a text in `WKWebView`
@@ -68,9 +68,12 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 - If there isn't selected text in GTranslator then text is spoken from input tag
 - If there isn't selected text in Reverso then text is spoken from textarea tag
 
+![](files/Release_1.3.6_1)
+![](files/Release_1.3.6_2)
+
 **1.3.5**
 - [Bookmarks for favorite sentences](https://github.com/filimo/ReaderTranslator/issues/42)  
-![](files/Screen16.png)
+![](files/Release_1.3.6.png)
 
 **1.3.4**
 - Add button to Reverso to speak text by Reverso
@@ -82,9 +85,9 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 **1.3.0**
 Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)
-![](files/Screen12.png)
-![](files/Screen13.png)
-![](files/Screen14.png)
+![](files/Release_1.3.0_1.png)
+![](files/Release_1.3.0_2.png)
+![](files/Release_1.3.0_3.png)
 
 New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issues/27)
 <pre><code>
@@ -145,7 +148,7 @@ enum TranslateAction: Equatable {
 
 
 **1.2** Implemented Safari extension. You can read about coming features [here](https://github.com/filimo/ReaderTranslator/issues/15) and review [here](https://github.com/filimo/ReaderTranslator/tree/%2315_safari_plugin). It's very intresting case when we need to make commnication between the app and extentions.
-![](files/Screen11.png)
+![](files/Release_1.2_1.png)
 
 
 **You can help** me if you look at the list of [open bugs](https://github.com/filimo/ReaderTranslator/issues/).
