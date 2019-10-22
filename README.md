@@ -27,7 +27,7 @@ iPadOS project takes place to exist but I don't have iPad now. I going to buy it
 If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
 
 ## Comming features in 1.5
-Open selected text in Collins, MacMillan, Longman dictionaries, Wikipedia.
+Open selected text in Collins, MacMillan, Longman dictionaries, Wikipedia. 
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
@@ -56,7 +56,7 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 ## Releases
 **1.4**
- - Open selected text by service menu items in Safari and GTranslator
+ - Open selected text by service menu items in Safari and GTranslator [#40](https://github.com/filimo/ReaderTranslator/issues/40)
 
 ![](files/Release_1.4_1.png)
 ![](files/Release_1.4_2.png)
