@@ -55,6 +55,11 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
+**1.4**
+  Open selected text by service menu items in Safari and GTranslator
+![](files/Release_1.4_1.png)
+![](files/Release_1.4_2.png)
+
 **1.3.7**
 - Build `ReaderTranslatorMac.dmg` . You can find them [here](https://github.com/filimo/ReaderTranslator/releases) 
 
