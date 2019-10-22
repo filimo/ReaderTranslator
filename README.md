@@ -37,12 +37,12 @@ While I am waiting for the commercial **SwiftUI** projects I decided to dedicate
 > “If you can’t explain it simply, you don’t understand it well enough.” 
 > by Albert Einstein
 
-Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate and Reverso
+<p>Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate and Reverso
 to understand unfamiliar idioms, words or to find a sutable expressions or words in my native language.
-And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate and Reverso.
-Although this process is simple I would like to make it as more comfortable as possible.
-Sometimes I am lazy to look into the translator and I make an assumption about the meaning of a word or idiom and it can lead to a missunderstanding which turns into even greater loss of my time.
-Another useful feature is to write text in Safari to check and listen to it with a simple selection of text.
+And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate and Reverso.</p>
+<p>Although this process is simple I would like to make it as more comfortable as possible.
+Sometimes I am lazy to look into the translator and I make an assumption about the meaning of a word or idiom and it can lead to a missunderstanding which turns into even greater loss of my time.</p>
+<p>Another useful feature is to write text in Safari to check and listen to it with a simple selection of text.</p>
 
 ## Features
 - Support MacOS, ipadOS, iOS
