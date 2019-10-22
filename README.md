@@ -89,9 +89,18 @@ Second you can select a particular sentence in Safari to translate it in GTransl
 - Fix: Translate/Speak selected text in WebPage
 
 **1.3.0**
-Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)
+<p>Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)</p>
+
+<p>You can use it with Safari</p>
+ 
 ![](files/Release_1.3.0_1.png)
+ 
+<p>You can use it with the build-in web browser</p>
+
 ![](files/Release_1.3.0_2.png)
+ 
+<p>You can use it with with the bild-in PDF viewer</p>
+ 
 ![](files/Release_1.3.0_3.png)
 
 New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issues/27)
