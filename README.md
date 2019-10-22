@@ -26,8 +26,8 @@ iPadOS project takes place to exist but I don't have iPad now. I going to buy it
 
 If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
 
-## Comming features in 1.4
-Translate selected text from any apps shortcuts.
+## Comming features in 1.5
+New features are being moderated)
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
