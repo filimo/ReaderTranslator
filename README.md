@@ -4,6 +4,7 @@
 ## Requirements
 - macOS 10.15 Catalina
 - iOS 13
+- iPadOS
 
 ## How to install on macOS
 - Download **ReaderTranslatorMac.dmg** from https://github.com/filimo/ReaderTranslator/releases
