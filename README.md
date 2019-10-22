@@ -61,6 +61,10 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ![](files/Release_1.4_1.png)
 ![](files/Release_1.4_2.png)
 
+You are curious about why same text are opened in both GTranslator and Safari. There are two reasons.
+First you can select a particular sentence in GTranslator to translate it in Reverso.
+Second you can select a particular sentence in Safari to translate it in GTranslator.
+
 **1.3.7**
 - Build `ReaderTranslatorMac.dmg` . You can find them [here](https://github.com/filimo/ReaderTranslator/releases) 
 
