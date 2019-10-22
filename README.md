@@ -68,12 +68,12 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 - If there isn't selected text in GTranslator then text is spoken from input tag
 - If there isn't selected text in Reverso then text is spoken from textarea tag
 
-![](files/Release_1.3.6_1)
-![](files/Release_1.3.6_2)
+![](files/Release_1.3.6_1.png)
+![](files/Release_1.3.6_2.png)
 
 **1.3.5**
 - [Bookmarks for favorite sentences](https://github.com/filimo/ReaderTranslator/issues/42)  
-![](files/Release_1.3.6.png)
+![](files/Release_1.3.5.png)
 
 **1.3.4**
 - Add button to Reverso to speak text by Reverso
