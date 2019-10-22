@@ -103,6 +103,11 @@ Second you can select a particular sentence in Safari to translate it in GTransl
  
 ![](files/Release_1.3.0_3.png)
 
+- Selected text in Safari will be sent to Reverso if it has less than 10 words
+- Selected text in the build-in Google Translator will be send to Reverso
+- Selected text in the build-in Reverso could be translated by pressing `Ctrl`
+- Selected text in the build-in Reverso could be speaked by pressing `Alt`
+
 New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issues/27)
 <pre><code>
            ┌────────────────┐                                  ┌────────────────┐
