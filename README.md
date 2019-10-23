@@ -21,6 +21,7 @@ Catalyst project for macOS has some problems:
 - Select a text in `WKWebView`
 - Handle key events
 - Support Safari extension
+- Smart zoom doesn't work
 
 iOS project seems less useful as it has a small screen to fit 3 views.
 iPadOS project takes place to exist but I don't have iPad now. I going to buy it with a pencil and continue experimenting with usability.
