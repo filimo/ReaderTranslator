@@ -26,37 +26,42 @@
 	<string>public.app-category.education</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 Viktor Kushnerov. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>NSSupportsAutomaticTermination</key>
-	<true/>
-	<key>NSSupportsSuddenTermination</key>
-	<true/>
 	<key>NSServices</key>
 	<array>
 		<dict>
-			<key>NSMessage</key>
-			<string>service</string>
-			<key>NSPortName</key>
-			<string>serviceTest</string>
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
 				<string>Send to ReaderTranslator</string>
 			</dict>
-			<key>NSRestricted</key>
-			<false/>
+			<key>NSMessage</key>
+			<string>service</string>
+			<key>NSPortName</key>
+			<string>serviceTest</string>
 			<key>NSRequiredContext</key>
 			<dict/>
+			<key>NSRestricted</key>
+			<false/>
 			<key>NSSendTypes</key>
 			<array>
 				<string>NSStringPboardType</string>
 			</array>
 		</dict>
 	</array>
+	<key>NSSupportsAutomaticTermination</key>
+	<true/>
+	<key>NSSupportsSuddenTermination</key>
+	<true/>
 </dict>
 </plist>

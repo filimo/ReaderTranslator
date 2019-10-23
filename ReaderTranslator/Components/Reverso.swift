@@ -52,7 +52,7 @@ struct Reverso : ViewRepresentable, WKScriptsSetup {
         
         if view.url?.absoluteString == urlString { return }
         
-        if let url = URL(string: urlString) {
+        if let url = URL(string: urlString.encodeUrl) {
             print("Reverso_updateView_reload", urlString)
             view.load(URLRequest(url: url))
         }
