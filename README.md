@@ -4,6 +4,7 @@
 ## Requirements
 - macOS 10.15 Catalina
 - iOS 13
+- iPadOS
 
 ## How to install on macOS
 - Download **ReaderTranslatorMac.dmg** from https://github.com/filimo/ReaderTranslator/releases
@@ -27,7 +28,7 @@ iPadOS project takes place to exist but I don't have iPad now. I going to buy it
 If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
 
 ## Comming features in 1.5
-New features is being moderated.
+Open selected text in Collins, MacMillan, Longman dictionaries, Wikipedia. [46](https://github.com/filimo/ReaderTranslator/issues/46)
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
@@ -37,11 +38,12 @@ While I am waiting for the commercial **SwiftUI** projects I decided to dedicate
 > “If you can’t explain it simply, you don’t understand it well enough.” 
 > by Albert Einstein
 
-Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate and Reverso
+<p>Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate and Reverso
 to understand unfamiliar idioms, words or to find a sutable expressions or words in my native language.
-And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate and Reverso.
-Although this process is simple I would like to make it as more comfortable as possible.
-Sometimes I am lazy to look into the translator and I make an assumption about the meaning of a word or idiom and it can lead to a missunderstanding which turns into even greater loss of my time.
+And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate and Reverso.</p>
+<p>Although this process is simple I would like to make it as more comfortable as possible.
+Sometimes I am lazy to look into the translator and I make an assumption about the meaning of a word or idiom and it can lead to a missunderstanding which turns into even greater loss of my time.</p>
+<p>Another useful feature is to write text in Safari to check and listen to it with a simple selection of text.</p>
 
 ## Features
 - Support MacOS, ipadOS, iOS
@@ -59,10 +61,14 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
  - Fixed an issue with translating text with invalid characters in Reverso.
 
 **1.4**
- - Open selected text by service menu items in Safari and GTranslator
+ - Open selected text by service menu items in Safari and GTranslator [#40](https://github.com/filimo/ReaderTranslator/issues/40)
 
 ![](files/Release_1.4_1.png)
 ![](files/Release_1.4_2.png)
+
+You are curious about why same text are opened in both GTranslator and Safari. There are two reasons.
+First you can select a particular sentence in GTranslator to translate it in Reverso.
+Second you can select a particular sentence in Safari to translate it in GTranslator.
 
 **1.3.7**
 - Build `ReaderTranslatorMac.dmg` . You can find them [here](https://github.com/filimo/ReaderTranslator/releases) 
@@ -71,12 +77,12 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 - If there isn't selected text in GTranslator then text is spoken from input tag
 - If there isn't selected text in Reverso then text is spoken from textarea tag
 
-![](files/Release_1.3.6_1)
-![](files/Release_1.3.6_2)
+![](files/Release_1.3.6_1.png)
+![](files/Release_1.3.6_2.png)
 
 **1.3.5**
 - [Bookmarks for favorite sentences](https://github.com/filimo/ReaderTranslator/issues/42)  
-![](files/Release_1.3.6.png)
+![](files/Release_1.3.5.png)
 
 **1.3.4**
 - Add button to Reverso to speak text by Reverso
@@ -87,10 +93,24 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 - Fix: Translate/Speak selected text in WebPage
 
 **1.3.0**
-Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)
+<p>Support *Reverso Context* [features](https://github.com/filimo/ReaderTranslator/issues/19)</p>
+
+<p>You can use it with Safari</p>
+ 
 ![](files/Release_1.3.0_1.png)
+ 
+<p>You can use it with the build-in web browser</p>
+
 ![](files/Release_1.3.0_2.png)
+ 
+<p>You can use it with with the bild-in PDF viewer</p>
+ 
 ![](files/Release_1.3.0_3.png)
+
+- Selected text in Safari will be sent to Reverso if it has less than 10 words
+- Selected text in the build-in Google Translator will be send to Reverso
+- Selected text in the build-in Reverso could be translated by pressing `Ctrl`
+- Selected text in the build-in Reverso could be speaked by pressing `Alt`
 
 New WebKit architecture [issue](https://github.com/filimo/ReaderTranslator/issues/27)
 <pre><code>
