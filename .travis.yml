@@ -1,7 +1,3 @@
-git push --delete origin 1.4.4; git tag -d 1.4.4
-git tag 1.4.4;git push origin master --tags
-
-
 os: osx
 osx_image: xcode11.1
 language: swift
@@ -22,6 +18,8 @@ script:
     - find ReaderTranslatorMac *.dmg
 deploy:
   provider: releases
+  file_glob: true
+  skip_cleanup: true
   api_key:
     secure: EFHFwA1bdGZROxfu894FUvlwNg17CnvX6QjTHyxUsC5h6MAVIQ1y7OLUkpRf/EpSNv/EocW10/VbGfOgvwuxNXNG491F+mb4YSEuzNVBrjIaXBrivIRPsQRTnqxwiBu3KfyIsETizxmcE/1hcYJ66vUZ23/uJuFVUy7O/2kgQl47X7e7qi0bp450u+ua2Le34vESgvPz7DlA79jh/dZ+igxGYs0LXdtE8xU/FbXZHk8p8Ov8Z3qIq6AY38gc/4plyt8F/AVkUuOiK3MngkCwi52W/CkTORD9gx0s6k3z6tip/fAeJ5rrQ7OKR7b4Z24g9Bebzyh22PpjQMnerxsmmXMag0B8QSlnNM+NJKLAiExK3JAR0mOgflAMrQwSO3JxjOCNXKVXl0K5a8go16cdNi1fbGP0osMABUWA3pG/5saLcEM6iKh90hFSovTfQEwEizHHIILWqgzqmpiyCS0SFXUuxtDbCivzaOb/IFv1/DLBpESzlJ/SuOgvnJnmI0C6mw9w7ueMIER4tTytrbomgV3dcPaQrH5jrdlr3tN2JQigxWXVVqGLaRtpSJDCvvfDUMinWFLu0MbKWlbztnP3wtz00BcYOiUfBlManNK+CQOlt9TVvDIgrY2ToSYtFDuwiYTxCXqt0iDvIUXdFuWexT8OzxROmUfkZ3t1UZHrDIc=
   file:
