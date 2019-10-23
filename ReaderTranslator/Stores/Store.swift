@@ -65,6 +65,7 @@ class Store: ObservableObject {
     @Published
     var lastWebPage = "" { willSet { self.savedLastWebPage[self.currentTab] = newValue } }
     
+    var lastPdf: String = ""
     @Published(key: "lastPdfPage") var lastPdfPage = "1"
 
     @Published(key: "zoom") var zoom: CGFloat = 1

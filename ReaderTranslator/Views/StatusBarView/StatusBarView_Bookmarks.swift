@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StatusBarView_Bookmarks: View {
-    @EnvironmentObject var store: Store
+    @ObservedObject var store = Store.shared
     @State var show: Bool = false
     
     var body: some View {

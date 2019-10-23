@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StatusBarView_Voice: View {
-    @EnvironmentObject var store: Store
+    @ObservedObject var store = Store.shared
     
     var body: some View {
         Group {
@@ -25,6 +25,6 @@ struct StatusBarView_Voice: View {
 
 struct StatusBarView_Voice_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_Voice().environmentObject(Store.shared)
+        StatusBarView_Voice()
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 import WebKit
 
 struct ReaderView: View {
-    @EnvironmentObject var store: Store
+    @ObservedObject var store = Store.shared
 
     var body: some View {
         HStack {
@@ -32,7 +32,7 @@ struct ReaderView: View {
 
 struct ReaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ReaderView().environmentObject(Store.shared)
+        ReaderView()
     }
 }
 

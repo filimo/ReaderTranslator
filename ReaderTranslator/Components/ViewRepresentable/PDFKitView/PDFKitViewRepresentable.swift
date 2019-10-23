@@ -11,7 +11,7 @@ import PDFKit
 
 #if os(macOS)
 struct PDFKitViewRepresentable: NSViewRepresentable {
-    @Binding var url: URL?
+    @Binding var url: String
     static let pdfView = PDFView()
 
     class Coordinator: NSObject, PDFViewDelegate {
@@ -31,8 +31,8 @@ struct PDFKitViewRepresentable: NSViewRepresentable {
     }
 
     func updateNSView(_ uiView: PDFView, context: Context) {
-        if PDFKitViewRepresentable.pdfView.document != nil { return }
-        if let url = url {
+        if url == "" || PDFKitViewRepresentable.pdfView.document?.documentURL?.absoluteString == url { return }
+        if let url = URL(string: url) {
             PDFKitViewRepresentable.pdfView.autoScales = true
             PDFKitViewRepresentable.pdfView.document = PDFDocument(url: url)
             PDFKitViewRepresentable.pdfView.delegate = context.coordinator

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StatusBarView_PdfPage: View {
-    @EnvironmentObject var store: Store
+    @ObservedObject var store = Store.shared
     
     var body: some View {
         return Group {
@@ -34,6 +34,6 @@ struct StatusBarView_PdfPage: View {
 
 struct StatusBarView_PdfPage_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_PdfPage().environmentObject(Store.shared)
+        StatusBarView_PdfPage()
     }
 }

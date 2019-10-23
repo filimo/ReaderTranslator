@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ReaderView_PDF: View {
-    @EnvironmentObject var store: Store
+    @ObservedObject var store = Store.shared
     
     var body: some View {
         Group {
@@ -22,6 +22,6 @@ struct ReaderView_PDF: View {
 
 struct ReaderView_PDF_Previews: PreviewProvider {
     static var previews: some View {
-        ReaderView_PDF().environmentObject(Store.shared)
+        ReaderView_PDF()
     }
 }

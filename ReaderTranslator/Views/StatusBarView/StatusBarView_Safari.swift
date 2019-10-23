@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct StatusBarView_Safari: View {
-    @EnvironmentObject var store: Store
+    @ObservedObject var store = Store.shared
+    
     var body: some View {
         Group {
             #if os(macOS)

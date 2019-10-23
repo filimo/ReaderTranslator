@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StatusBarView_Voice_Select: View {
-    @EnvironmentObject var store: Store
+    @ObservedObject var store = Store.shared
     
     var body: some View {
         Group {

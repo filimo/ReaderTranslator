@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StatusBarView_ViewMode: View {
-    @EnvironmentObject var store: Store
+    @ObservedObject var store = Store.shared
     
     var body: some View {
         HStack(spacing: 5) {
@@ -35,6 +35,6 @@ struct StatusBarView_ViewMode: View {
 
 struct StatusBarView_PdfMode_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_ViewMode().environmentObject(Store.shared)
+        StatusBarView_ViewMode()
     }
 }

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StatusBarView_Zoom: View {
-    @EnvironmentObject var store: Store
+    @ObservedObject var store = Store.shared
     #if !os(macOS)
     let zoom = Binding<String>(
         get: { String(format: "%.02f", CGFloat(Store.shared.zoom)) },
@@ -45,6 +45,6 @@ struct StatusBarView_Zoom: View {
 
 struct StatusBarView_Zoom_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_Zoom().environmentObject(Store.shared)
+        StatusBarView_Zoom()
     }
 }

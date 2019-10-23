@@ -57,6 +57,11 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
+**1.4.3**
+ - Open any PDF file (MacOS has restrictions on opening files hence you should select a PDF file after starting the app by clicking on `Open PDF file` in the bottom status menu`)
+
+![](files/Release_1.4.3_1.png)
+
 **1.4.2**
  - Fixed an issue with translating text with invalid characters in Reverso.
 

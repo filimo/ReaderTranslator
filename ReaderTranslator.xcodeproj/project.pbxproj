@@ -19,6 +19,7 @@
 		F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F026B1E82344830200E032B9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* SafariView.swift */; };
+		F02989EC2360488800DF722E /* OpenPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02989EB2360488800DF722E /* OpenPanel.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
 		F049244F2341F54800F3C728 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
@@ -165,6 +166,7 @@
 		F01B019C235C6749000CB5C1 /* Functional-Swift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Functional-Swift.pdf"; sourceTree = "<group>"; };
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
 		F026B1E72344830200E032B9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		F02989EB2360488800DF722E /* OpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPanel.swift; sourceTree = "<group>"; };
 		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -267,6 +269,20 @@
 				F00644462341E22D006BCA94 /* Cocoa.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F02989EA2360486500DF722E /* ViewRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				F0C36AA32359FA13001E396C /* Scripts */,
+				F0EE0A1B2348A645004A5EAD /* PDFKitView */,
+				F0EE0A142347BEDB004A5EAD /* WebKit */,
+				F0A9F35A2349228A00970C97 /* Reverso.swift */,
+				F0AA69DB232E97AF007CC07B /* GTranslator.swift */,
+				F0D2E333234BA49000D95994 /* Safari.swift */,
+				F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */,
+			);
+			path = ViewRepresentable;
 			sourceTree = "<group>";
 		};
 		F04924372341F2F800F3C728 /* Recovered References */ = {
@@ -408,16 +424,11 @@
 		F0AA69D9232E979B007CC07B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F0C36AA32359FA13001E396C /* Scripts */,
-				F0EE0A1B2348A645004A5EAD /* PDFKitView */,
-				F0EE0A142347BEDB004A5EAD /* WebKit */,
-				F0A9F35A2349228A00970C97 /* Reverso.swift */,
-				F0AA69DB232E97AF007CC07B /* GTranslator.swift */,
-				F0D2E333234BA49000D95994 /* Safari.swift */,
-				F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */,
+				F02989EA2360486500DF722E /* ViewRepresentable */,
 				F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */,
 				F0C36AA02359D50A001E396C /* Clipboard.swift */,
 				F001A700235E095700617573 /* ServiceProvider.swift */,
+				F02989EB2360488800DF722E /* OpenPanel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -711,6 +722,7 @@
 				F0C36AA22359D50A001E396C /* Clipboard.swift in Sources */,
 				F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */,
 				F0C36A972359AF76001E396C /* StatusBarView_Bookmarks.swift in Sources */,
+				F02989EC2360488800DF722E /* OpenPanel.swift in Sources */,
 				F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */,
 				F0C53179234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
 				F0D2E335234BA49000D95994 /* Safari.swift in Sources */,
