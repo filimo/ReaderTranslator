@@ -55,6 +55,9 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
+**1.4.2**
+ - Fixed an issue with translating text with invalid characters in Reverso.
+
 **1.4**
  - Open selected text by service menu items in Safari and GTranslator
 
