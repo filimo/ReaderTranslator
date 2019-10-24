@@ -31,6 +31,8 @@ If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac'
 ## Comming features in 1.5
 Open selected text in Collins, MacMillan, Longman dictionaries, Wikipedia. [46](https://github.com/filimo/ReaderTranslator/issues/46)
 ![](files/Release_1.5_1.png)
+![](files/Release_1.5_2.png)
+![](files/Release_1.5_3.png)
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
