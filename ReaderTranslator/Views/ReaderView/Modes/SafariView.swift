@@ -66,8 +66,6 @@ struct SafariView: View {
 
 struct ReaderView_Safari_Previews: PreviewProvider {
     static var previews: some View {
-        SafariView()
-            .frame(maxWidth: 100)
-            .environmentObject(Store.shared)
+        SafariView().frame(maxWidth: 100)
     }
 }

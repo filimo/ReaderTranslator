@@ -25,16 +25,20 @@ protocol ViewRepresentable: ViewRepresentableType {
 extension ViewRepresentable {
     #if os(macOS)
     func makeNSView(context: Context) -> ViewType  {
-        makeView(context: context)
+        print("\(theClassName)_makeView")
+        return makeView(context: context)
     }
     func updateNSView(_ view: ViewType, context: Context) {
+        print("\(theClassName)_updateView")
         updateView(view, context: context)
     }
     #else
     func makeUIView(context: Context) -> ViewType  {
-        makeView(context: context)
+        print("\(theClassName)_makeView")
+        return makeView(context: context)
     }
     func updateUIView(_ view: ViewType, context: Context) {
+        print("\(theClassName)_updateView")
         updateView(view, context: context)
     }
     #endif

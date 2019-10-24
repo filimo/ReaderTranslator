@@ -14,18 +14,17 @@ struct ReaderView: View {
 
     var body: some View {
         HStack {
-            ReaderView_PDF()
-            ReaderView_Web()
             #if os(macOS)
             SafariView()
             #endif
-            if store.viewMode == .safari {
-                ReversoView()
-                GTranslatorView()
-            }else{
-                GTranslatorView()
-                ReversoView()
-            }
+            if store.enabledViews.contains(.wikipedia) { WikipediaView() }
+            if store.enabledViews.contains(.macmillan) { MacmillanView() }
+            if store.enabledViews.contains(.collins) { CollinsView() }
+            if store.enabledViews.contains(.longman) { LongmanView() }
+            if store.enabledViews.contains(.reverso) { ReversoView() }
+            if store.enabledViews.contains(.translator) { GTranslatorView() }
+            ReaderView_PDF()
+            ReaderView_Web()
         }
     }
 }

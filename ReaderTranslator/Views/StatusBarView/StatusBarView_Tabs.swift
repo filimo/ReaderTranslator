@@ -36,6 +36,6 @@ struct StatusBarView_Tabs: View {
 
 struct StatusBarView_Tabs_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_Tabs(viewMode: .constant(.web), currentTab: .constant(0)).environmentObject(Store.shared)
+        StatusBarView_Tabs(viewMode: .constant(.web), currentTab: .constant(0))
     }
 }

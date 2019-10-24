@@ -8,20 +8,20 @@
 
 import SwiftUI
 
-struct ReversoView: View {
+struct WikipediaView: View {
     @ObservedObject private var store = Store.shared
     
     var body: some View {
         VStack {
             /** Hack: it or `Divider()` required to display GTranslatorView properly `Divider()` takes more space **/
             Text("").frame(height: 1)
-            Reverso(selectedText: $store.translateAction)
+            Wikipedia(selectedText: $store.translateAction)
         }
     }
 }
 
-struct ReversoView_Previews: PreviewProvider {
+struct WikipediaView_Previews: PreviewProvider {
     static var previews: some View {
-        ReversoView()
+        WikipediaView()
     }
 }

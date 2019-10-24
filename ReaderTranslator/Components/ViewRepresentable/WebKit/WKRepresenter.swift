@@ -23,9 +23,9 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
         @Published var selectedText = ""
         
         override init(_ parent: WKScriptsSetup) {
-            print("WKRepresenter_Coordinator_init")
             super.init(parent)
-            
+            print("\(theClassName)_Coordinator_init")
+
             $selectedText
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
@@ -41,8 +41,6 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     }
     
     func makeView(context: Context) -> WKPageView {
-        print("WebView_makeNSView")
-        
         if let view = Self.views[store.currentTab] { return view }
         let view = WKPageView(defaultUrl: "")
         Self.views[self.store.currentTab] = view
@@ -54,7 +52,6 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     }
 
     func updateView(_ view: WKPageView, context: Context) {
-        print("WebView_updateNSView")
         #if os(macOS)
 //        TODO: view.scrollView.zoomScale = store.zoom
 //        view.setNeedsDisplay(view.bounds)

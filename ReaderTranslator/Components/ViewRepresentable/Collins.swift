@@ -1,5 +1,5 @@
 //
-//  WebView.swift
+//  Collins.swift
 //  PdfTranslate
 //
 //  Created by Viktor Kushnerov on 9/9/19.
@@ -9,9 +9,9 @@
 import SwiftUI
 import WebKit
 
-struct Reverso : ViewRepresentable, WKScriptsSetup {
+struct Collins : ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
-    private let host = "https://context.reverso.net/translation/"
+    private let host = "https://www.collinsdictionary.com/dictionary/english/"
 
     static var pageView: WKPageView?
 
@@ -34,20 +34,18 @@ struct Reverso : ViewRepresentable, WKScriptsSetup {
         Self.pageView = view
         
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
-        setupScript(view: view, file: "reverso-reverso-speaker")
 
         return view
     }
       
     func updateView(_ view: WKPageView, context: Context) {
-        guard case let .reverso(text) = selectedText else { return }
+        guard case let .collins(text) = selectedText else { return }
         selectedText.setNone()
 
         print("\(theClassName)_updateView_update", text)
         
-        let search = text.replacingOccurrences(of: " ", with: "+")
-        let language = view.url?.absoluteString.groups(for: #"\/translation\/(\w+-\w+)\/"#)[safe: 0]?[safe: 1] ?? "english-russian"
-        let urlString = "\(host)\(language)/\(search)"
+        let search = text.replacingOccurrences(of: " ", with: "-")
+        let urlString = "\(host)\(search)"
         
         if view.url?.absoluteString == urlString { return }
         
@@ -60,7 +58,7 @@ struct Reverso : ViewRepresentable, WKScriptsSetup {
     }
 }
 
-extension Reverso.Coordinator: WKScriptMessageHandler {
+extension Collins.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
         var text: String { event.extra?.selectedText ?? "" }
@@ -69,11 +67,8 @@ extension Reverso.Coordinator: WKScriptMessageHandler {
         case "selectionchange":
             guard let text = event.extra?.selectedText else { return }
             self.selectedText = text
-            store.translateAction = .none(text: text)
+            store.translateAction = .translator(text: text, noReverso: true)
         case "keydown":
-            if event.extra?.keyCode == 17 { //Ctrl
-                store.translateAction = .translator(text: text, noReverso: true)
-            }
             if event.extra?.keyCode == 18 { //Alt
                 SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)
             }

@@ -23,6 +23,19 @@
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
 		F049244F2341F54800F3C728 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
+		F04C830C23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */; };
+		F04C830D23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */; };
+		F04C830F23617BE6003A25B4 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830E23617BE6003A25B4 /* NSObject.swift */; };
+		F04C831023617BE6003A25B4 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830E23617BE6003A25B4 /* NSObject.swift */; };
+		F04C831123617BE6003A25B4 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830E23617BE6003A25B4 /* NSObject.swift */; };
+		F0505C542360D474004F2D50 /* Longman.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C522360D37C004F2D50 /* Longman.swift */; };
+		F0505C552360D475004F2D50 /* Longman.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C522360D37C004F2D50 /* Longman.swift */; };
+		F0505C562360D485004F2D50 /* LongmanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C532360D3DA004F2D50 /* LongmanView.swift */; };
+		F0505C572360D485004F2D50 /* LongmanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C532360D3DA004F2D50 /* LongmanView.swift */; };
+		F0562E0C2362025D0074ACF5 /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0229BE02362021200F12F47 /* WikipediaView.swift */; };
+		F0562E0D2362025E0074ACF5 /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0229BE02362021200F12F47 /* WikipediaView.swift */; };
+		F0562E0E2362026C0074ACF5 /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */; };
+		F0562E0F2362026C0074ACF5 /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */; };
 		F06DB0FF2344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1042344975E00C2DE90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* Stack.swift */; };
@@ -129,6 +142,14 @@
 		F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */; };
 		F0F256BD233D309F00C9D719 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256BC233D309F00C9D719 /* String.swift */; };
 		F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */; };
+		F0FCDD40236189750016F23F /* MacmillanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCDD3F2361890C0016F23F /* MacmillanView.swift */; };
+		F0FCDD41236189760016F23F /* MacmillanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCDD3F2361890C0016F23F /* MacmillanView.swift */; };
+		F0FCDD422361897D0016F23F /* Macmillan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C8312236187D6003A25B4 /* Macmillan.swift */; };
+		F0FCDD432361897E0016F23F /* Macmillan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C8312236187D6003A25B4 /* Macmillan.swift */; };
+		F0FCDD462361A8060016F23F /* CollinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCDD452361A7BF0016F23F /* CollinsView.swift */; };
+		F0FCDD472361A8070016F23F /* CollinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCDD452361A7BF0016F23F /* CollinsView.swift */; };
+		F0FCDD482361A80C0016F23F /* Collins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCDD442361A7650016F23F /* Collins.swift */; };
+		F0FCDD492361A80D0016F23F /* Collins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCDD442361A7650016F23F /* Collins.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +185,7 @@
 		F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "gtranslator-reverso-speaker.js"; sourceTree = "<group>"; };
 		F01A50E823492398001DCC11 /* ReversoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoView.swift; sourceTree = "<group>"; };
 		F01B019C235C6749000CB5C1 /* Functional-Swift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Functional-Swift.pdf"; sourceTree = "<group>"; };
+		F0229BE02362021200F12F47 /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
 		F026B1E72344830200E032B9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F02989EB2360488800DF722E /* OpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPanel.swift; sourceTree = "<group>"; };
@@ -171,6 +193,12 @@
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F049244E2341F54800F3C728 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_ViewsEnabler.swift; sourceTree = "<group>"; };
+		F04C830E23617BE6003A25B4 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		F04C8312236187D6003A25B4 /* Macmillan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macmillan.swift; sourceTree = "<group>"; };
+		F0505C522360D37C004F2D50 /* Longman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Longman.swift; sourceTree = "<group>"; };
+		F0505C532360D3DA004F2D50 /* LongmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanView.swift; sourceTree = "<group>"; };
+		F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
 		F06DB1032344975E00C2DE90 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNSTextRepresentable.swift; sourceTree = "<group>"; };
 		F06DB10C23450B6000C2DE90 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -235,6 +263,9 @@
 		F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitViewRepresentable.swift; sourceTree = "<group>"; };
 		F0F256BC233D309F00C9D719 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVoiceName.swift; sourceTree = "<group>"; };
+		F0FCDD3F2361890C0016F23F /* MacmillanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacmillanView.swift; sourceTree = "<group>"; };
+		F0FCDD442361A7650016F23F /* Collins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collins.swift; sourceTree = "<group>"; };
+		F0FCDD452361A7BF0016F23F /* CollinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollinsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +308,10 @@
 				F0C36AA32359FA13001E396C /* Scripts */,
 				F0EE0A1B2348A645004A5EAD /* PDFKitView */,
 				F0EE0A142347BEDB004A5EAD /* WebKit */,
+				F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */,
+				F04C8312236187D6003A25B4 /* Macmillan.swift */,
+				F0FCDD442361A7650016F23F /* Collins.swift */,
+				F0505C522360D37C004F2D50 /* Longman.swift */,
 				F0A9F35A2349228A00970C97 /* Reverso.swift */,
 				F0AA69DB232E97AF007CC07B /* GTranslator.swift */,
 				F0D2E333234BA49000D95994 /* Safari.swift */,
@@ -455,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				F0AA69D3232E9762007CC07B /* StatusBarView.swift */,
+				F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */,
 				F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */,
 				F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */,
 				F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */,
@@ -479,10 +515,14 @@
 		F0C4EDA3234925B800CCD97A /* Modes */ = {
 			isa = PBXGroup;
 			children = (
-				F0AB12A2233F5798005B9F2A /* ReaderView_PDF.swift */,
-				F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */,
+				F0229BE02362021200F12F47 /* WikipediaView.swift */,
+				F0FCDD3F2361890C0016F23F /* MacmillanView.swift */,
+				F0FCDD452361A7BF0016F23F /* CollinsView.swift */,
+				F0505C532360D3DA004F2D50 /* LongmanView.swift */,
 				F01A50E823492398001DCC11 /* ReversoView.swift */,
 				F0D31C5023491C23003CF86B /* GTranslatorView.swift */,
+				F0AB12A2233F5798005B9F2A /* ReaderView_PDF.swift */,
+				F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */,
 				F026B1E72344830200E032B9 /* SafariView.swift */,
 			);
 			path = Modes;
@@ -520,6 +560,7 @@
 				F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */,
 				F0C6657B2351A70B0087B6F2 /* Collection.swift */,
 				F0814BA123562AF300212F52 /* Set.swift */,
+				F04C830E23617BE6003A25B4 /* NSObject.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -681,6 +722,7 @@
 				F0C4EDA52349260000CCD97A /* ReversoView.swift in Sources */,
 				F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */,
 				F06DB10E23450B6000C2DE90 /* View.swift in Sources */,
+				F04C830D23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
 				F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */,
 				F0C36A9E2359C78A001E396C /* Array.swift in Sources */,
 				F0BB437F2344845000ADBEF1 /* StatusBarView_Voice_Favorite.swift in Sources */,
@@ -696,10 +738,16 @@
 				F0BB436F2344843400ADBEF1 /* Image.swift in Sources */,
 				F0BB43802344845000ADBEF1 /* StatusBarView_Voice_Volume.swift in Sources */,
 				F0BB437B2344845000ADBEF1 /* StatusBarView_ViewMode.swift in Sources */,
+				F04C831023617BE6003A25B4 /* NSObject.swift in Sources */,
 				F0BB43752344844800ADBEF1 /* SpeechSynthesizer.swift in Sources */,
 				F06DB1052344975E00C2DE90 /* Stack.swift in Sources */,
+				F0FCDD432361897E0016F23F /* Macmillan.swift in Sources */,
+				F0562E0F2362026C0074ACF5 /* Wikipedia.swift in Sources */,
 				F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */,
 				F001A701235E095700617573 /* ServiceProvider.swift in Sources */,
+				F0FCDD472361A8070016F23F /* CollinsView.swift in Sources */,
+				F0562E0D2362025E0074ACF5 /* WikipediaView.swift in Sources */,
+				F0FCDD492361A80D0016F23F /* Collins.swift in Sources */,
 				F0BB43822344846700ADBEF1 /* ReaderView_Web.swift in Sources */,
 				F0BB437E2344845000ADBEF1 /* StatusBarView_Voice_Select.swift in Sources */,
 				F0BB436E2344843400ADBEF1 /* String.swift in Sources */,
@@ -708,6 +756,7 @@
 				F0BB43832344846C00ADBEF1 /* ContentView.swift in Sources */,
 				F0BB43772344844800ADBEF1 /* WKRepresenter.swift in Sources */,
 				F0BB436C2344842200ADBEF1 /* ReaderView.swift in Sources */,
+				F0FCDD41236189760016F23F /* MacmillanView.swift in Sources */,
 				F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */,
 				F0BB43812344846200ADBEF1 /* ReaderView_PDF.swift in Sources */,
 				F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
@@ -725,7 +774,9 @@
 				F02989EC2360488800DF722E /* OpenPanel.swift in Sources */,
 				F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */,
 				F0C53179234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
+				F0505C552360D475004F2D50 /* Longman.swift in Sources */,
 				F0D2E335234BA49000D95994 /* Safari.swift in Sources */,
+				F0505C572360D485004F2D50 /* LongmanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +785,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F075445423447A2800E1D88E /* SafariExtensionViewController.swift in Sources */,
+				F04C831123617BE6003A25B4 /* NSObject.swift in Sources */,
 				F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */,
 				F0C36A9F2359C78A001E396C /* Array.swift in Sources */,
 				F0814BA423562AF300212F52 /* Set.swift in Sources */,
@@ -759,6 +811,7 @@
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
 				F0D2E334234BA49000D95994 /* Safari.swift in Sources */,
 				F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */,
+				F0FCDD422361897D0016F23F /* Macmillan.swift in Sources */,
 				F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */,
 				F0AA69D4232E9762007CC07B /* ReaderView.swift in Sources */,
 				F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */,
@@ -769,25 +822,34 @@
 				F06DB10D23450B6000C2DE90 /* View.swift in Sources */,
 				F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0AA69DF232E97B0007CC07B /* GTranslator.swift in Sources */,
+				F0505C542360D474004F2D50 /* Longman.swift in Sources */,
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
 				F06DB1042344975E00C2DE90 /* Stack.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WKRepresenter.swift in Sources */,
 				F0C4EDA6234926D400CCD97A /* Reverso.swift in Sources */,
 				F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */,
 				F0AB12AA233F58A2005B9F2A /* StatusBarView_Zoom.swift in Sources */,
+				F0505C562360D485004F2D50 /* LongmanView.swift in Sources */,
 				F0AB12AC233F5908005B9F2A /* StatusBarView_ViewMode.swift in Sources */,
+				F04C830F23617BE6003A25B4 /* NSObject.swift in Sources */,
 				F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */,
 				F002C62A232FF40C00D3FC04 /* Published.swift in Sources */,
 				F040D5782336A77D004567B8 /* UserDefault.swift in Sources */,
 				F06DB1122345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */,
 				F0C6657C2351A70B0087B6F2 /* Collection.swift in Sources */,
+				F0FCDD482361A80C0016F23F /* Collins.swift in Sources */,
 				F0AB12AE233F5950005B9F2A /* StatusBarView_PdfPage.swift in Sources */,
+				F0FCDD462361A8060016F23F /* CollinsView.swift in Sources */,
 				F0AA69DE232E97B0007CC07B /* SpeechSynthesizer.swift in Sources */,
 				F0C4EDA92349271C00CCD97A /* ViewRepresentable.swift in Sources */,
 				F0C53178234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
 				F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */,
+				F0562E0E2362026C0074ACF5 /* Wikipedia.swift in Sources */,
 				F0C36AA12359D50A001E396C /* Clipboard.swift in Sources */,
+				F04C830C23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
+				F0FCDD40236189750016F23F /* MacmillanView.swift in Sources */,
 				F0C4EDA42349260000CCD97A /* ReversoView.swift in Sources */,
+				F0562E0C2362025D0074ACF5 /* WikipediaView.swift in Sources */,
 				F0AA69A5232E9710007CC07B /* ContentView.swift in Sources */,
 				F0814BA223562AF300212F52 /* Set.swift in Sources */,
 				F0C36A962359AF75001E396C /* StatusBarView_Bookmarks.swift in Sources */,

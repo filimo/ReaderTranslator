@@ -30,7 +30,7 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
                 .sink { action in
                     let text = action.getText()
                     if text != "" {
-                        print("Translator_$selectedText")
+                        print("\(self.theClassName)_$selectedText")
                         SpeechSynthesizer.speak(text: text)
                         self.store.translateAction = .reverso(text: text)
                     }
@@ -40,12 +40,12 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
     }
     
     func makeCoordinator() -> Coordinator {
-        print("Translator_makeCoordinator")
-        return Coordinator(self)
+        Coordinator(self)
     }
     
     func makeView(context: Context) -> WKPageView  {
-        print("Translator_makeView")
+        if let view = Self.pageView { return view }
+
         let view = WKPageView(defaultUrl: defaultUrl)
         Self.pageView = view
         
@@ -56,12 +56,11 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
     }
       
     func updateView(_ view: WKPageView, context: Context) {
-        print("Translator_updateView")
         if case let .translator(text, noReverso) = selectedText,
             text != "" {
             selectedText.setNone()
 
-            print("Translator_updateView_update", noReverso, text)
+            print("\(theClassName)_updateView_update", noReverso, text)
             
             let (sl, tl) = getParams(url: view.url)
             guard var urlComponent = URLComponents(string: defaultUrl) else { return }
@@ -73,8 +72,10 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
             ]
             
             if let url = urlComponent.url {
-                print("Translator_updateView_reload", url)
-                view.load(URLRequest(url: url))
+                print("\(theClassName)_updateView_reload", url)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    view.load(URLRequest(url: url))
+                }
             }
             
             if noReverso != true, text.split(separator: " ").count < 10 {

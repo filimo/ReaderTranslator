@@ -1,5 +1,12 @@
 # ReaderTranslator 
-**using SwiftUI, Combine and Catalyst for MacOS(Catalyst and AppKit) iPad iPhone**
+**using SwiftUI, Combine and Catalyst**
+
+## Projects
+ - macOS
+ - macOS Catalyst
+ - iPadOS
+ - iOS
+ - Safari extension
 
 ## Requirements
 - macOS 10.15 Catalina
@@ -28,11 +35,10 @@ iPadOS project takes place to exist but I don't have iPad now. I going to buy it
 
 If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
 
-## Comming features in 1.5
-Open selected text in Collins, MacMillan, Longman dictionaries, Wikipedia. [46](https://github.com/filimo/ReaderTranslator/issues/46)
-![](files/Release_1.5_1.png)
-![](files/Release_1.5_2.png)
-![](files/Release_1.5_3.png)
+## Comming features in 1.6
+Implement San Francisco font to display icons on macOS corretly [#49](https://github.com/filimo/ReaderTranslator/issues/49)
+Now You need install SF Symbols app from [here](https://developer.apple.com/design/downloads/SF-Symbols.dmg)
+
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
@@ -61,6 +67,22 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
+
+**1.5**
+ - Speak a word or sentences by Macmillan, Collins, Longman, Reverso speakers.
+ - See explanations words in Macmillan, Collins, Longman, Reverso dictionaries.
+ - Look at the information on Wikipedia 
+ 
+ ![](files/Release_1.5_Macmillan.png)
+ ![](files/Release_1.5_Collins.png)
+ ![](files/Release_1.5_Longman.png)
+ ![](files/Release_1.5_Reverso.png)
+ 
+ - Any view can be shown or hidden by clicking on a name view.
+ - Paste selected text to any view by clicking a button next to a name view
+ ![](files/Release_1.5_Enabler.png)
+ 
+
 **1.4.3**
  - Open any PDF file (MacOS has restrictions on opening files hence you should select a PDF file after starting the app by clicking on `Open PDF file` in the bottom status menu`)
 

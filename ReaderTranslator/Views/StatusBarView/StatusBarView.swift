@@ -15,21 +15,16 @@ struct StatusBarView: View {
     var body: some View {
         HStack() {
             StatusBarView_ViewMode().padding(5)
-            openPDFPanelView
             StatusBarView_PdfPage()
             StatusBarView_Tabs(viewMode: $store.viewMode, currentTab: $store.currentTab)
             StatusBarView_Zoom()
             StatusBarView_Voice().padding([.top,.bottom], 5)
             StatusBarView_Safari()
             StatusBarView_Bookmarks()
-//            Spacer()
-//            Button(action: {
-//                self.store.translateAction = .translator(text: "")
-//                GTranslator.pageView?.goBack()
-//            }) { Text("􀉍") }
-//            Button(action: {
-//                GTranslator.pageView?.goForward()
-//            }) { Text("􀉑") }
+            StatusBarView_ViewsEnabler()
+            Spacer()
+            openPDFPanelView
+//            gTranslatorNavbarView
         }.padding(.trailing, 20)
     }
     
@@ -47,6 +42,19 @@ struct StatusBarView: View {
             }else{
                 EmptyView()
             }
+        }
+    }
+    
+    private var gTranslatorNavbarView: some View {
+        Group {
+            Spacer()
+            Button(action: {
+                self.store.translateAction = .translator(text: "")
+                GTranslator.pageView?.goBack()
+            }) { Text("􀉍") }
+            Button(action: {
+                GTranslator.pageView?.goForward()
+            }) { Text("􀉑") }
         }
     }
 }

@@ -11,4 +11,8 @@ extension View {
     var any: AnyView {
         AnyView(self)
     }
+    
+    var theClassName: String {
+        String(describing: type(of: self))
+    }
 }

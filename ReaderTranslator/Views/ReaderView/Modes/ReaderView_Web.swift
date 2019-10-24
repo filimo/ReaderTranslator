@@ -61,6 +61,6 @@ extension ReaderView_Web {
 
 struct ReaderView_Web_Previews: PreviewProvider {
     static var previews: some View {
-        ReaderView_Web().environmentObject(Store.shared)
+        ReaderView_Web()
     }
 }

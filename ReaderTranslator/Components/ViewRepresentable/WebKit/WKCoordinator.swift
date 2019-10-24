@@ -18,6 +18,8 @@ class WKCoordinator: NSObject {
     
     init(_ parent: WKScriptsSetup) {
         self.parent = parent
+        super.init()
+        print("\(theClassName)_makeCoordinator")
     }
     
     deinit {

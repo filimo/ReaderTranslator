@@ -38,6 +38,5 @@ struct GTranslatorView: View {
 struct GTranslatorView_Previews: PreviewProvider {
     static var previews: some View {
         GTranslatorView()
-        .environmentObject(Store.shared)
     }
 }
