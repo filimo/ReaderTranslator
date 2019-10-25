@@ -69,6 +69,7 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases
 **1.5.2**
  - Implemented SwiftLint
+ - Installation: `brew install swiftlint`
 
 **1.5**
  - Speak a word or sentences by Macmillan, Collins, Longman, Reverso speakers.
