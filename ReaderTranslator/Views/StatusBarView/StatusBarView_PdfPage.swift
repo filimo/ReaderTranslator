@@ -10,7 +10,7 @@ import SwiftUI
 
 struct StatusBarView_PdfPage: View {
     @ObservedObject var store = Store.shared
-    
+
     var body: some View {
         return Group {
             if store.viewMode == .pdf {

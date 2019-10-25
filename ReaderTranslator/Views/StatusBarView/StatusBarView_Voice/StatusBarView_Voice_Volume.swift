@@ -10,7 +10,7 @@ import SwiftUI
 
 struct StatusBarView_Voice_Volume: View {
     @ObservedObject var store = Store.shared
-    
+
     var body: some View {
         Group {
             Text("Rate:")

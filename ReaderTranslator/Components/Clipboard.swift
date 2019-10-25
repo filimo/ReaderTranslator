@@ -14,7 +14,6 @@ struct Clipboard {
         NSPasteboard.general.string(forType: .string) ?? ""
     }
 
-    
     static func copy(_ text: String) {
         NSPasteboard.general.clearContents()
         NSPasteboard.general.setString(text, forType: .string)
@@ -27,7 +26,7 @@ struct Clipboard {
     static var string: String {
         return UIPasteboard.general.string ?? ""
     }
-    
+
     static func copy(_ text: String) {
         UIPasteboard.general.string = text
     }

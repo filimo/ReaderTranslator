@@ -9,20 +9,20 @@ extension Published where Value: Codable {
             do {
                 let value = try JSONDecoder().decode(Value.self, from: data)
                 self.init(initialValue: value)
-            }catch{
+            } catch {
                 print("🐞🐞🐞Error while deconding yser data")
                 self.init(initialValue: defaultValue)
             }
-        }else{
+        } else {
             self.init(initialValue: defaultValue)
         }
-                
+
         projectedValue
             .sink { val in
                 do {
                     let data = try JSONEncoder().encode(val)
                     UserDefaults.standard.set(data, forKey: key)
-                }catch{
+                } catch {
                     print("Error while decoding user data")
                 }
             }
@@ -42,8 +42,6 @@ extension Published where Value: Codable {
 //    }
 //}
 
-
-
 //extension Published where Value: RawRepresentable, Value.RawValue == String {
 //    init(wrappedValue defaultValue: Value, key: String) {
 //        let savedValue = UserDefaults.standard.string(forKey: key) ?? ""
@@ -57,4 +55,3 @@ extension Published where Value: Codable {
 //            .store(in: &cancellableSet)
 //    }
 //}
-

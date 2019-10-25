@@ -10,7 +10,7 @@ import SwiftUI
 
 struct StatusBarView_Voice_Toggle: View {
     @ObservedObject var store = Store.shared
-    
+
     var body: some View {
         Group {
             Toggle(isOn: $store.isVoiceEnabled) {

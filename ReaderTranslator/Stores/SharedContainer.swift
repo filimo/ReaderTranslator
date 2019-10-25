@@ -10,10 +10,13 @@ import Foundation
 
 struct SharedContainer {
     private static let key = "SharedContainer.Message"
-    static let sharedDefaults: UserDefaults? =  {
-        let appIdentifierPrefix = Bundle.main.infoDictionary!["AppIdentifierPrefix"] as! String
-        let bundleIdentifier = "by.filimo.ReaderTranslatorMac"
-        
+    static private let bundleIdentifier = "by.filimo.ReaderTranslatorMac"
+    static private var appIdentifierPrefix: String? = {
+        Bundle.main.infoDictionary!["AppIdentifierPrefix"] as? String
+    }()
+
+    static let sharedDefaults: UserDefaults? = {
+        guard let appIdentifierPrefix = appIdentifierPrefix else { return nil }
         return UserDefaults(suiteName: "\(appIdentifierPrefix)\(bundleIdentifier)")
     }()
 
@@ -21,17 +24,14 @@ struct SharedContainer {
         if let string = sharedDefaults?.string(forKey: key) {
             do {
                 return try JSONDecoder().decode(DOMEvent.self, from: Data(string.utf8))
-            }catch{
+            } catch {
                 print(error.localizedDescription)
             }
         }
         return nil
     }
-    
+
     static func setEvent(string: String) {
-        let appIdentifierPrefix = Bundle.main.infoDictionary!["AppIdentifierPrefix"] as! String
-        let bundleIdentifier = "by.filimo.ReaderTranslatorMac"
-        
-        UserDefaults(suiteName: "\(appIdentifierPrefix)\(bundleIdentifier)")?.set(string, forKey: key)
+        sharedDefaults?.set(string, forKey: key)
     }
 }

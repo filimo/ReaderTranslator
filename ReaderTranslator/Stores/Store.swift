@@ -22,10 +22,10 @@ enum AvailableView: String, Codable {
     case longman = "Longman"
     case macmillan = "Macmillan"
     case collins = "Collin's"
-    
+
     func getAction() -> TranslateAction {
         let text = TranslateAction.getText(Store.shared.translateAction)()
-        
+
         switch self {
         case .wikipedia:
             return .wikipedia(text: text)
@@ -63,7 +63,7 @@ enum TranslateAction: Equatable {
         case .wikipedia(let text): return text.trimmingCharacters(in: .whitespaces)
         }
     }
-    
+
     mutating func setNone() {
         self = .none(text: getText())
     }
@@ -71,9 +71,9 @@ enum TranslateAction: Equatable {
 
 class Store: ObservableObject {
     static var shared = Store()
-    
+
     var maxViewWidth: CGFloat = 400
-    
+
     @Published(key: "canSafariSendSelectedText") var canSafariSendSelectedText: Bool = true
     @Published var translateAction: TranslateAction = .none(text: "") {
         didSet {
@@ -82,14 +82,14 @@ class Store: ObservableObject {
     }
 
     @Published(key: "enabledViews") var enabledViews: Set<AvailableView> = [.reverso, .translator]
-    
+
     @Published var currentPage = "1"
     @Published var pageCount = 0
 
     @Published(key: "currentTab") var currentTab = 0 {
         didSet { self.lastWebPage = self.savedLastWebPage[self.currentTab] }
     }
-    
+
     @Published(key: "viewMode") var viewMode = ViewMode.pdf
 
     @Published(key: "favoriteVoiceNames") var favoriteVoiceNames: [FavoriteVoiceName] = []
@@ -103,7 +103,7 @@ class Store: ObservableObject {
     private var savedLastWebPage = ["https://google.com", "", ""]
     @Published
     var lastWebPage = "" { willSet { self.savedLastWebPage[self.currentTab] = newValue } }
-    
+
     var lastPdf: String = ""
     @Published(key: "lastPdfPage") var lastPdfPage = "1"
 

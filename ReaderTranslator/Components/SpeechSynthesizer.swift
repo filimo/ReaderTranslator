@@ -17,13 +17,13 @@ struct VoiceInfo {
     let voice: AVSpeechSynthesisVoice
 }
 
-extension Array where Element : Hashable {
+extension Array where Element: Hashable {
     var unique: [Element] {
         Array(Set(self))
     }
 }
 
-class SpeechSynthesizer {    
+class SpeechSynthesizer {
     static private var speechSynthesizer = AVSpeechSynthesizer()
     static var languages: [String] = {
         var items = AVSpeechSynthesisVoice.speechVoices().map { $0.language }.unique
@@ -32,21 +32,25 @@ class SpeechSynthesizer {
         }
         return items
     }()
-    
+
     private init() { }
 
     static func getVoices(language: String) -> [VoiceInfo] {
         AVSpeechSynthesisVoice.speechVoices()
             .filter({ $0.language == language })
             .map { voice in
-                .init(name: voice.name, premium: voice.description.contains("premium"), language: voice.language, voice: voice)
+                .init(
+                    name: voice.name,
+                    premium: voice.description.contains("premium"),
+                    language: voice.language,
+                    voice: voice)
             }
     }
 
     static func stop() {
         speechSynthesizer.stopSpeaking(at: .immediate)
     }
-        
+
     /*
      selecting text that calls speak()
      the sound button calls speak() with isVoiceEnabled = true, stopSpeaking = true
@@ -60,7 +64,7 @@ class SpeechSynthesizer {
         voiceName: String = Store.shared.voiceName,
         stopSpeaking: Bool = false,
         isVoiceEnabled: Bool = Store.shared.isVoiceEnabled) {
-        
+
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
 
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })

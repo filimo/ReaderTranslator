@@ -12,11 +12,11 @@ import WebKit
 class WKPageView: WKWebView {
     @ObservedObject private var store = Store.shared
     private var zoomLevel: CGFloat = 1
-        
+
     @Published var newUrl: String
 
     private var cancellableSet: Set<AnyCancellable> = []
-    
+
     init(defaultUrl: String) {
         let config = WKWebViewConfiguration()
         let contentController = WKUserContentController()
@@ -26,11 +26,11 @@ class WKPageView: WKWebView {
 
         self.newUrl = defaultUrl
         super.init(frame: .zero, configuration: config)
-    
+
         if let url = URL(string: defaultUrl) {
             self.load(URLRequest(url: url))
         }
-        
+
         $newUrl
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
@@ -39,29 +39,27 @@ class WKPageView: WKWebView {
                     self.evaluateJavaScript("document.documentElement.innerHTML = ''")
                     if let url = URL(string: url.encodeUrl) {
                         self.load(URLRequest(url: url))
-                    }else{
+                    } else {
                         self.evaluateJavaScript("window.location = 'about:blank'")
                     }
                 }
             }
             .store(in: &cancellableSet)
     }
-    
+
     deinit {
         cancellableSet.cancelAndRemoveAll()
     }
-    
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func goBack() {
         super.goBack()
         (self.navigationDelegate as? WKCoordinatorNavigationDelegate)?.goBack(self)
     }
 }
-
 
 #if os(macOS)
 extension WKPageView {

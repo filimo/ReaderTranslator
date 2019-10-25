@@ -14,7 +14,7 @@ struct ContentView: View {
         NSUpdateDynamicServices()
         #endif
     }
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             ReaderView()

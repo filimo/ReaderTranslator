@@ -10,7 +10,7 @@ import SwiftUI
 
 struct StatusBarView_Voice: View {
     @ObservedObject var store = Store.shared
-    
+
     var body: some View {
         Group {
             Divider().fixedSize()

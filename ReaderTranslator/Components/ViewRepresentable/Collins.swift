@@ -9,7 +9,7 @@
 import SwiftUI
 import WebKit
 
-struct Collins : ViewRepresentable, WKScriptsSetup {
+struct Collins: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let host = "https://www.collinsdictionary.com/dictionary/english/"
 
@@ -17,38 +17,38 @@ struct Collins : ViewRepresentable, WKScriptsSetup {
 
     class Coordinator: WKCoordinator {
         var selectedText = ""
-        
+
         override init(_ parent: WKScriptsSetup) {
             super.init(parent)
         }
     }
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
-    func makeView(context: Context) -> WKPageView  {
+
+    func makeView(context: Context) -> WKPageView {
         if let view = Self.pageView { return view }
 
         let view = WKPageView(defaultUrl: host)
         Self.pageView = view
-        
+
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
 
         return view
     }
-      
+
     func updateView(_ view: WKPageView, context: Context) {
         guard case let .collins(text) = selectedText else { return }
         selectedText.setNone()
 
         print("\(theClassName)_updateView_update", text)
-        
+
         let search = text.replacingOccurrences(of: " ", with: "-")
         let urlString = "\(host)\(search)"
-        
+
         if view.url?.absoluteString == urlString { return }
-        
+
         if let url = URL(string: urlString.encodeUrl) {
             print("\(theClassName)_updateView_reload", urlString)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -77,6 +77,3 @@ extension Collins.Coordinator: WKScriptMessageHandler {
         }
     }
 }
-
-
-

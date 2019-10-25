@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LongmanView: View {
     @ObservedObject private var store = Store.shared
-    
+
     var body: some View {
         VStack {
             /** Hack: it or `Divider()` required to display GTranslatorView properly `Divider()` takes more space **/

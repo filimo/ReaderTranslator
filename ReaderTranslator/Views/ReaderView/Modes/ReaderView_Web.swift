@@ -21,9 +21,11 @@ struct ReaderView_Web: View {
                         TextField("Enter website name", text: self.$store.lastWebPage)
                         openInSafari()
                         pasteClipbord()
-                        Button(action: { self.store.lastWebPage = "" }) {
-                            Image(systemName: "xmark.circle")
-                        }
+                        Button(
+                            action: { self.store.lastWebPage = "" },
+                            label: {
+                                Image(systemName: "xmark.circle")
+                        })
                     }.padding(5)
                     webView(0)
                     webView(1)
@@ -33,29 +35,33 @@ struct ReaderView_Web: View {
         }
     }
 }
- 
+
 extension ReaderView_Web {
     private func webView(_ currentTab: Int) -> some View {
         if self.store.currentTab == currentTab {
             let view = WKRepresenter(lastWebPage: $store.lastWebPage)
             return view.any
-        }else{
+        } else {
             return EmptyView().any
         }
     }
-    
+
     fileprivate func openInSafari() -> Button<Image> {
-        Button(action: {
-            if let url = URL(string: self.store.lastWebPage) {
-                Safari.openSafari(url)
-            }
-        }) { Image(systemName: "safari") }
+        Button(
+            action: {
+                if let url = URL(string: self.store.lastWebPage) {
+                    Safari.openSafari(url)
+                }
+            },
+            label: { Image(systemName: "safari") })
     }
-    
+
     fileprivate func pasteClipbord() -> Button<Image> {
-        Button(action: {
-            self.store.lastWebPage = Clipboard.string
-        }) { Image(systemName: "doc.on.clipboard") }
+        Button(
+            action: {
+                self.store.lastWebPage = Clipboard.string
+            },
+            label: { Image(systemName: "doc.on.clipboard") })
     }
 }
 

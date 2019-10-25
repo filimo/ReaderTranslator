@@ -10,7 +10,7 @@ import SwiftUI
 
 struct StatusBarView_Safari: View {
     @ObservedObject var store = Store.shared
-    
+
     var body: some View {
         Group {
             #if os(macOS)
@@ -21,4 +21,3 @@ struct StatusBarView_Safari: View {
         }
     }
 }
-

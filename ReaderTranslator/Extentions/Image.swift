@@ -10,7 +10,7 @@ import SwiftUI
 #if os(macOS)
 struct Image: View {
     let symbol: String
-    
+
     init(systemName: String) {
         self.symbol = [
             "speaker": "􀊠",
@@ -34,7 +34,7 @@ struct Image: View {
             "plus.magnifyingglass": "􀊬"
         ][systemName] ?? ""
     }
-    
+
     var body: some View {
         Text(symbol)
     }

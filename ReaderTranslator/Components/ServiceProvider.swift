@@ -13,7 +13,10 @@ class ServiceProvider: NSObject {
 
     let errorMessage = NSString(string: "Could not find the text for parsing.")
 
-    @objc func service(_ pasteboard: NSPasteboard, userData: String?, error: AutoreleasingUnsafeMutablePointer<NSString>) {
+    @objc func service(
+        _ pasteboard: NSPasteboard,
+        userData: String?,
+        error: AutoreleasingUnsafeMutablePointer<NSString>) {
         guard let text = pasteboard.string(forType: .string) else {
             error.pointee = errorMessage
             return
@@ -22,14 +25,14 @@ class ServiceProvider: NSObject {
         self.store.translateAction = .translator(text: text)
         openText(text: text)
     }
-    
+
     private func openText(text: String) {
         let defaultUrl = "https://translate.google.com"
         guard var urlComponent = URLComponents(string: defaultUrl) else { return }
         urlComponent.queryItems = [
             .init(name: "text", value: text)
         ]
-        
+
         if let url = urlComponent.url { Safari.openSafari(url) }
     }
 }

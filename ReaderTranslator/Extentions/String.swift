@@ -8,16 +8,14 @@
 
 import Foundation
 
-extension String{
-    var encodeUrl : String
-    {
+extension String {
+    var encodeUrl: String {
         return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
     }
-    var decodeUrl : String
-    {
+    var decodeUrl: String {
         return self.removingPercentEncoding!
     }
-    
+
     func groups(for regexPattern: String) -> [[String]] {
         do {
             let text = self

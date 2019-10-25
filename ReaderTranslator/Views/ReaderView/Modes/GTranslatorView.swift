@@ -10,7 +10,7 @@ import SwiftUI
 
 struct EditorNSTextView: View {
     @ObservedObject var store = Store.shared
-    
+
     var body: some View {
         Group {
             #if os(macOS)
@@ -22,10 +22,9 @@ struct EditorNSTextView: View {
     }
 }
 
-
 struct GTranslatorView: View {
     @ObservedObject private var store = Store.shared
-    
+
     var body: some View {
         VStack {
             /** Hack: it or `Divider()` required to display GTranslatorView properly `Divider()` takes more space **/

@@ -18,17 +18,17 @@ extension FavoriteVoiceName {
     static var isFavorite: Bool {
         Store.shared.favoriteVoiceNames.first { $0.voice == Store.shared.voiceName } != nil
     }
-    
+
     static func addCurrentVoice() {
         let store = Store.shared
-        
+
         FavoriteVoiceName.removeCurrentVoice()
         store.favoriteVoiceNames.append(.init(language: store.voiceLanguage, voice: store.voiceName))
     }
-    
+
     static func removeCurrentVoice() {
         let store = Store.shared
-        
+
         if let index = store.favoriteVoiceNames.firstIndex(where: { $0.voice == store.voiceName }) {
             store.favoriteVoiceNames.remove(at: index)
         }

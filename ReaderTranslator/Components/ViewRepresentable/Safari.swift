@@ -13,7 +13,6 @@ import AppKit
 import UIKit
 #endif
 
-
 struct Safari {
     private init() {}
 }
@@ -29,7 +28,7 @@ extension Safari {
 }
 #else
 extension Safari {
-    static func openSafari(_ url: URL) -> () {
+    static func openSafari(_ url: URL) {
        UIApplication.shared.open(url)
     }
 }

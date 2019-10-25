@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ReaderView_PDF: View {
     @ObservedObject var store = Store.shared
-    
+
     var body: some View {
         Group {
             if store.viewMode == .pdf {

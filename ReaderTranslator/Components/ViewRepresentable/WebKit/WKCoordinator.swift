@@ -1,4 +1,3 @@
-
 //
 //  ViewRepresentableJavaScriptDelegate.swift
 //  ReaderTranslator
@@ -10,27 +9,26 @@ import Combine
 import SwiftUI
 import WebKit
 
-
 class WKCoordinator: NSObject {
     let parent: WKScriptsSetup
     @ObservedObject var store = Store.shared
     var cancellableSet: Set<AnyCancellable> = []
-    
+
     init(_ parent: WKScriptsSetup) {
         self.parent = parent
         super.init()
         print("\(theClassName)_makeCoordinator")
     }
-    
+
     deinit {
         cancellableSet.cancelAndRemoveAll()
     }
-    
+
     func getEvent(data: Any) -> DOMEvent? {
         if let string = data as? String {
             do {
                 return try JSONDecoder().decode(DOMEvent.self, from: Data(string.utf8))
-            }catch{
+            } catch {
                 print(error.localizedDescription)
             }
         }
@@ -39,11 +37,15 @@ class WKCoordinator: NSObject {
 }
 
 extension WKCoordinator: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationAction: WKNavigationAction,
+        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+
         if let url = navigationAction.request.url {
             if url.absoluteString == self.store.lastWebPage {
                 decisionHandler(.allow)
-            }else{
+            } else {
                 Safari.openSafari(url)
                 decisionHandler(.cancel)
             }
@@ -51,10 +53,14 @@ extension WKCoordinator: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if let webView = webView as? WKPageView { parent.webView(webView, didFinish: navigation) }        
+        if let webView = webView as? WKPageView { parent.webView(webView, didFinish: navigation) }
     }
 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationAction: WKNavigationAction,
+        preferences: WKWebpagePreferences,
+        decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
         guard navigationAction.targetFrame?.isMainFrame == true else {
             decisionHandler(.allow, preferences)
             return
@@ -67,7 +73,7 @@ extension WKCoordinator: WKNavigationDelegate {
     }
 }
 
-extension WKCoordinator: WKCoordinatorNavigationDelegate {    
+extension WKCoordinator: WKCoordinatorNavigationDelegate {
     func goBack(_ webView: WKWebView) {
         if let webView = webView as? WKPageView { parent.goBack(webView) }
     }

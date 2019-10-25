@@ -8,10 +8,9 @@
 
 import SwiftUI
 
-
 struct StatusBarView_ViewsEnabler: View {
     @ObservedObject var store = Store.shared
-    
+
     var body: some View {
         HStack(spacing: 0) {
             Divider().fixedSize()
@@ -23,7 +22,7 @@ struct StatusBarView_ViewsEnabler: View {
             button(.translator)
         }
     }
-    
+
     private func button(_ view: AvailableView) -> some View {
         Group {
             Text(view.rawValue)
@@ -43,7 +42,7 @@ struct StatusBarView_ViewsEnabler: View {
     private func toggle(_ view: AvailableView) {
         if store.enabledViews.contains(view) {
            store.enabledViews.remove(view)
-        }else{
+        } else {
             self.store.translateAction = view.getAction()
             store.enabledViews.insert(view)
         }

@@ -22,7 +22,7 @@ struct StatusBarView_Zoom: View {
     #endif
 
     var body: some View {
-        
+
         return Group {
             #if !os(macOS)
             if store.viewMode == .web {
@@ -30,13 +30,17 @@ struct StatusBarView_Zoom: View {
                 TextField("zoom", text: zoom)
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                Button(action: { self.store.zoom -= 0.25 }) {
-                    Image(systemName: "minus.magnifyingglass")
-                }
+                Button(
+                    action: { self.store.zoom -= 0.25 },
+                    label: {
+                        Image(systemName: "minus.magnifyingglass")
+                })
                 Slider(value: $store.zoom, in: 1...3).frame(width: 100)
-                Button(action: { self.store.zoom += 0.25 }) {
-                    Image(systemName: "plus.magnifyingglass")
-                }
+                Button(
+                    action: { self.store.zoom += 0.25 },
+                    label: {
+                        Image(systemName: "plus.magnifyingglass")
+                })
             }
             #endif
         }

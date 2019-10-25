@@ -18,32 +18,32 @@ extension WKScriptsSetup {
     func setupScriptCoordinator<T: WKCoordinator>(view: WKPageView, coordinator: T) where T: WKScriptMessageHandler {
         let userContentController = view.configuration.userContentController
         guard let scriptUrl = Bundle.main.url(forResource: "reader-translator", withExtension: "js") else { return }
-        
+
         do {
             let script = try String(contentsOf: scriptUrl)
 
             userContentController.add(coordinator, name: "send")
-            
+
             #if os(macOS)
             view.allowsMagnification = true
             #endif
             view.navigationDelegate = coordinator
-            
+
             let userScript = WKUserScript(
                 source: script,
                 injectionTime: .atDocumentEnd,
                 forMainFrameOnly: true
             )
             userContentController.addUserScript(userScript)
-        }catch{
+        } catch {
             print(error.localizedDescription)
         }
     }
-    
+
     func setupScript(view: WKPageView, file name: String) {
         let userContentController = view.configuration.userContentController
         guard let scriptUrl = Bundle.main.url(forResource: name, withExtension: "js") else { return }
-        
+
         do {
             let script = try String(contentsOf: scriptUrl)
 
@@ -53,12 +53,11 @@ extension WKScriptsSetup {
                 forMainFrameOnly: true
             )
             userContentController.addUserScript(userScript)
-        }catch{
+        } catch {
             print(error.localizedDescription)
         }
     }
-            
+
     func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!) {}
     func goBack(_ webView: WKPageView) {}
 }
-

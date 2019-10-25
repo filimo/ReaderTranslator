@@ -14,17 +14,16 @@ typealias ViewRepresentableType = NSViewRepresentable
 typealias ViewRepresentableType = UIViewRepresentable
 #endif
 
-
 protocol ViewRepresentable: ViewRepresentableType {
     associatedtype ViewType
-    
+
     func updateView(_ view: ViewType, context: Context)
     func makeView(context: Context) -> ViewType
 }
 
 extension ViewRepresentable {
     #if os(macOS)
-    func makeNSView(context: Context) -> ViewType  {
+    func makeNSView(context: Context) -> ViewType {
         print("\(theClassName)_makeView")
         return makeView(context: context)
     }
@@ -33,7 +32,7 @@ extension ViewRepresentable {
         updateView(view, context: context)
     }
     #else
-    func makeUIView(context: Context) -> ViewType  {
+    func makeUIView(context: Context) -> ViewType {
         print("\(theClassName)_makeView")
         return makeView(context: context)
     }

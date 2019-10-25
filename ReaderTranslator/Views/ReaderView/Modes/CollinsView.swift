@@ -10,8 +10,8 @@ import SwiftUI
 
 struct CollinsView: View {
     @ObservedObject private var store = Store.shared
-    @State var width: CGFloat? = nil
-    
+    @State var width: CGFloat?
+
     var body: some View {
         VStack {
             /** Hack: it or `Divider()` required to display GTranslatorView properly `Divider()` takes more space **/

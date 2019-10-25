@@ -18,13 +18,13 @@ struct DOMEvent: Decodable, Equatable {
                               was active when the key event was generated.*/
         let shiftKey: Bool?
         let which: Int?   /* Returns a Number representing a system and implementation dependent numeric
-                              code identifying the unmodified value of the pressed key; this is usually the same as keyCode. */
+                            code identifying the unmodified value of the pressed key;
+                            this is usually the same as keyCode. */
         let keyCode: Int?
-        
-        
+
         let selectedText: String?
     }
-    
+
     let name: String
     let source: String
     let extra: Extra?

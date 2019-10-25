@@ -21,7 +21,7 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
 
     class Coordinator: WKCoordinator {
         @Published var selectedText = ""
-        
+
         override init(_ parent: WKScriptsSetup) {
             super.init(parent)
             print("\(theClassName)_Coordinator_init")
@@ -39,7 +39,7 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
+
     func makeView(context: Context) -> WKPageView {
         if let view = Self.views[store.currentTab] { return view }
         let view = WKPageView(defaultUrl: "")
@@ -60,13 +60,13 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
         #endif
         if view.newUrl != lastWebPage { view.newUrl = lastWebPage }
     }
-    
+
     func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!) {
         if let url = webView.url?.absoluteString { store.lastWebPage = url.decodeUrl }
         store.canGoBack = webView.canGoBack
         webView.setZoom(zoomLevel: self.store.zoom)
     }
-    
+
     func goBack(_ webView: WKPageView) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if let url = webView.url?.absoluteString { webView.newUrl = url }
@@ -78,7 +78,7 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
 extension WKRepresenter.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
-        
+
         switch event.name {
         case "selectionchange":
             self.selectedText = event.extra?.selectedText ?? ""
@@ -91,5 +91,3 @@ extension WKRepresenter.Coordinator: WKScriptMessageHandler {
         }
     }
 }
-
-

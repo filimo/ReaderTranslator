@@ -11,19 +11,19 @@ import SwiftUI
 struct Stack<Content: View>: View {
     var arrange: Arrange
     private let content: () -> Content
-    
+
     init(arrange: Arrange, @ViewBuilder content: @escaping () -> Content) {
         self.arrange = arrange
         self.content = content
     }
-    
+
     var body: some View {
         Group {
             if arrange == .vertical {
                 VStack {
                     content()
                 }
-            }else{
+            } else {
                 HStack {
                     content()
                 }

@@ -34,4 +34,3 @@ struct ReaderView_Previews: PreviewProvider {
         ReaderView()
     }
 }
-

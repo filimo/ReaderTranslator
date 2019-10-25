@@ -11,38 +11,34 @@ import SwiftUI
 struct StatusBarView_Bookmarks: View {
     @ObservedObject var store = Store.shared
     @State var show: Bool = false
-    
+
     var body: some View {
         Group {
             Divider().fixedSize()
             self.bookmarkView
-            Button(action: { self.show = true } ) { Text(show ? "􀉛" : "􀉚") }
+            Button(action: { self.show = true }, label: { Text(show ? "􀉛" : "􀉚") })
         }
         .sheet(isPresented: $show) {
             self.listView
         }
     }
-    
+
     private var bookmarkView: some View {
         let text = self.store.translateAction.getText()
-        
+
         return Group {
             if text != "" {
                 if self.store.bookmarks.contains(text) {
-                    Button(action: {
-                        self.store.bookmarks.remove(object: text)
-                    }) { Text("􀉟") }
-                }else{
-                    Button(action: {
-                        self.store.bookmarks.append(text)
-                    }) { Text("􀉞") }
+                    Button(action: { self.store.bookmarks.remove(object: text)}, label: { Text("􀉟") })
+                } else {
+                    Button(action: { self.store.bookmarks.append(text) }, label: { Text("􀉞") })
                 }
-            }else{
+            } else {
                 EmptyView()
             }
         }
     }
-    
+
     private var listView: some View {
         VStack {
             ForEach(self.store.bookmarks, id: \.self) { text in
@@ -52,12 +48,9 @@ struct StatusBarView_Bookmarks: View {
                 }
             }
             HStack {
-                Button(action: {
-                    Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))
-                } ) { Text("􀉃") }
-                Button(action: { self.show = false} ) { Text("􀁠") }
+                Button(action: { Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))}, label: { Text("􀉃") })
+                Button(action: { self.show = false}, label: { Text("􀁠") })
             }
         }
     }
 }
-

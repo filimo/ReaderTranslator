@@ -23,43 +23,49 @@ struct SafariView: View {
                 .start(onMessageChanged: self.onMessageChanged(notificationName:))
         }
     }
-    
+
     private func onMessageChanged(notificationName: String) {
-        if let event = SharedContainer.getEvent()  {
-            switch event.name {
-            case "keydown":
-                if let extra = event.extra,
-                    extra.shiftKey != true,
-                    extra.metaKey != true {
-                    
-                    if extra.altKey == true && extra.keyCode == 65 { // Alt+a
-                        self.store.isVoiceEnabled.toggle()
-                        return
-                    }
-                    if extra.altKey == true && extra.keyCode == 83 { // Alt+s
-                        self.store.canSafariSendSelectedText.toggle()
-                        if self.store.canSafariSendSelectedText {
-                            self.store.translateAction = .translator(text: event.extra?.selectedText ?? "")
-                        }
-                        return
-                    }
-                    if extra.altKey == true {
-                        SpeechSynthesizer.speak()
-                        return
-                    }
-                }
-            case "selectionchange":
-                if store.canSafariSendSelectedText {
-                    if let extra = event.extra,
-                        extra.altKey != true && extra.metaKey != true {
-                        store.translateAction = .translator(text: event.extra?.selectedText ?? "")
-                    }
-                }
-            default:
-                os_log("DOMEvent %@ is not recognized", type: .debug, event.name)
-            }
-        }else{
+        guard let event = SharedContainer.getEvent() else {
             os_log("🐞🐞🐞DOMEvent is nil", type: .error)
+            return
+        }
+
+        switch event.name {
+        case "keydown": onMessageChanged_keydown(event: event)
+        case "selectionchange": onMessageChanged_selectionchange(event: event)
+        default: os_log("DOMEvent %@ is not recognized", type: .debug, event.name)
+        }
+    }
+
+    private func onMessageChanged_keydown(event: DOMEvent) {
+        if let extra = event.extra,
+            extra.shiftKey != true,
+            extra.metaKey != true {
+
+            if extra.altKey == true && extra.keyCode == 65 { // Alt+a
+                self.store.isVoiceEnabled.toggle()
+                return
+            }
+            if extra.altKey == true && extra.keyCode == 83 { // Alt+s
+                self.store.canSafariSendSelectedText.toggle()
+                if self.store.canSafariSendSelectedText {
+                    self.store.translateAction = .translator(text: event.extra?.selectedText ?? "")
+                }
+                return
+            }
+            if extra.altKey == true {
+                SpeechSynthesizer.speak()
+                return
+            }
+        }
+    }
+
+    private func onMessageChanged_selectionchange(event: DOMEvent) {
+        if store.canSafariSendSelectedText {
+            if let extra = event.extra,
+                extra.altKey != true && extra.metaKey != true {
+                store.translateAction = .translator(text: event.extra?.selectedText ?? "")
+            }
         }
     }
 }

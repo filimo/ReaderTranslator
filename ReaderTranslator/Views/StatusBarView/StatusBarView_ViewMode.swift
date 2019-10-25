@@ -10,7 +10,7 @@ import SwiftUI
 
 struct StatusBarView_ViewMode: View {
     @ObservedObject var store = Store.shared
-    
+
     var body: some View {
         HStack(spacing: 5) {
             button(mode: .pdf)
@@ -20,7 +20,7 @@ struct StatusBarView_ViewMode: View {
             #endif
         }
     }
-    
+
     private func button(mode: ViewMode) -> some View {
         Button(action: {
             RunLoop.main.perform {

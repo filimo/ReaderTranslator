@@ -16,12 +16,12 @@ struct PDFKitViewRepresentable: NSViewRepresentable {
 
     class Coordinator: NSObject, PDFViewDelegate {
         var parent: PDFKitViewRepresentable
-        
+
         init(_ parent: PDFKitViewRepresentable) {
             self.parent = parent
         }
     }
-    
+
     func makeCoordinator() -> PDFKitViewRepresentable.Coordinator {
         Coordinator(self)
     }
@@ -38,7 +38,7 @@ struct PDFKitViewRepresentable: NSViewRepresentable {
             PDFKitViewRepresentable.pdfView.delegate = context.coordinator
         }
     }
-    
+
     static func getSelectedText() -> String {
         guard let selections = PDFKitViewRepresentable.pdfView.currentSelection?.selectionsByLine() else { return "" }
 
@@ -54,12 +54,12 @@ struct PDFKitViewRepresentable: UIViewRepresentable {
 
     class Coordinator: NSObject, PDFViewDelegate {
         var parent: PDFKitViewRepresentable
-        
+
         init(_ parent: PDFKitViewRepresentable) {
             self.parent = parent
         }
     }
-    
+
     func makeCoordinator() -> PDFKitViewRepresentable.Coordinator {
         Coordinator(self)
     }
@@ -77,7 +77,7 @@ struct PDFKitViewRepresentable: UIViewRepresentable {
             PDFKitViewRepresentable.pdfView.delegate = context.coordinator
         }
     }
-    
+
     static func getSelectedText() -> String {
         guard let selections = PDFKitViewRepresentable.pdfView.currentSelection?.selectionsByLine() else { return "" }
 
