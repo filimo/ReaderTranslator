@@ -24,10 +24,12 @@ struct GTranslator : ViewRepresentable, WKScriptsSetup {
         override init(_ parent: WKScriptsSetup) {
             super.init(parent)
 
+            cancellableSet.cancelAndRemoveAll()
             $selectedText
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
-                .sink { action in
+                .sink { [weak self] action in
+                    guard let self = self else { return }
                     let text = action.getText()
                     if text != "" {
                         print("\(self.theClassName)_$selectedText")
