@@ -67,6 +67,8 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
+**1.5.1**
+ - Implemented SwiftLint
 
 **1.5**
  - Speak a word or sentences by Macmillan, Collins, Longman, Reverso speakers.
