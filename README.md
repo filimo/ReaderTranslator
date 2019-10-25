@@ -67,7 +67,7 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
-**1.5.1**
+**1.5.2**
  - Implemented SwiftLint
 
 **1.5**
