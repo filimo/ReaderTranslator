@@ -66,7 +66,13 @@ Sometimes I am lazy to look into the translator and I make an assumption about t
 Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
-## Releases
+## Releases 
+### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
+
+**1.5.4**
+ - Fixed getting action event in GTranslator  
+ - Limit the amount of translated words for different views
+
 **1.5.3**
  - New way to send multiple action events to views. [TranslateAction.swift](https://github.com/filimo/ReaderTranslator/tree/master/ReaderTranslator/Model/TranslateAction.swift)
  - Send selected text in any view to all enabled views.
