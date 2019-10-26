@@ -19,7 +19,7 @@ script:
 deploy:
   provider: releases
   file_glob: true
-  skip_cleanup: true
+  skip_cleanup: false
   api_key: $GITHUB_TOKEN
   file:
     - ReaderTranslatorMac
