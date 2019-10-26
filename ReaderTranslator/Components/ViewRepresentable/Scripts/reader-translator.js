@@ -70,8 +70,8 @@
          }
     }
  
-    var sendIn500 = debounce(_send, 500)
-    var sendIn1000 = debounce(_send, 1000)
+    let sendIn500 = debounce(_send, 500)
+    let sendIn1000 = debounce(_send, 1000)
 
     document.addEventListener("DOMContentLoaded", (event) => {
         //disabled: sometimes this event occurs after press keys
@@ -87,8 +87,12 @@
     })
 
     document.addEventListener('selectionchange', (event) => {
-        var txt = document.getSelection().toString()
-        if(txt.trim()) {
+        let selection = document.getSelection()
+                              
+        //Reverso selects text in `search-input` tag after the page loaded
+        if(document.getSelection().focusNode.id == 'search-input') return
+                              
+        if(selection.toString().trim()) {
             sendIn1000('selectionchange', 'document', event)
         }
     })

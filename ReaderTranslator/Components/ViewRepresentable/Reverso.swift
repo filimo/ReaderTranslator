@@ -70,11 +70,8 @@ extension Reverso.Coordinator: WKScriptMessageHandler {
         case "selectionchange":
             guard let text = event.extra?.selectedText else { return }
             self.selectedText = text
-            store.translateAction = .none(text: text)
+            store.translateAction = .translator(text: text, noReverso: true)
         case "keydown":
-            if event.extra?.keyCode == 17 { //Ctrl
-                store.translateAction = .translator(text: text, noReverso: true)
-            }
             if event.extra?.keyCode == 18 { //Alt
                 SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)
             }

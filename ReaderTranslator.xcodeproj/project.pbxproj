@@ -14,8 +14,6 @@
 		F00C7C87235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
 		F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
 		F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
-		F01B019D235C6749000CB5C1 /* Functional-Swift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F01B019C235C6749000CB5C1 /* Functional-Swift.pdf */; };
-		F01B019E235C6749000CB5C1 /* Functional-Swift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F01B019C235C6749000CB5C1 /* Functional-Swift.pdf */; };
 		F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F026B1E82344830200E032B9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* SafariView.swift */; };
@@ -85,6 +83,12 @@
 		F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
 		F0AB12B4233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */; };
 		F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */; };
+		F0AD8B18236413DA0017C22F /* ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B17236413DA0017C22F /* ViewMode.swift */; };
+		F0AD8B19236413DA0017C22F /* ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B17236413DA0017C22F /* ViewMode.swift */; };
+		F0AD8B1B236413F60017C22F /* AvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1A236413F60017C22F /* AvailableView.swift */; };
+		F0AD8B1C236413F60017C22F /* AvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1A236413F60017C22F /* AvailableView.swift */; };
+		F0AD8B1E236414070017C22F /* TranslateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1D236414070017C22F /* TranslateAction.swift */; };
+		F0AD8B1F236414070017C22F /* TranslateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1D236414070017C22F /* TranslateAction.swift */; };
 		F0BB436C2344842200ADBEF1 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D2232E9762007CC07B /* ReaderView.swift */; };
 		F0BB436E2344843400ADBEF1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256BC233D309F00C9D719 /* String.swift */; };
 		F0BB436F2344843400ADBEF1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
@@ -132,8 +136,8 @@
 		F0D2E335234BA49000D95994 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
 		F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
+		F0EDE34B236418E000E0B81C /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
-		F0EE0A122347AA0E004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
 		F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
 		F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */; };
@@ -184,7 +188,6 @@
 		F00644462341E22D006BCA94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "gtranslator-reverso-speaker.js"; sourceTree = "<group>"; };
 		F01A50E823492398001DCC11 /* ReversoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoView.swift; sourceTree = "<group>"; };
-		F01B019C235C6749000CB5C1 /* Functional-Swift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Functional-Swift.pdf"; sourceTree = "<group>"; };
 		F0229BE02362021200F12F47 /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
 		F026B1E72344830200E032B9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -248,6 +251,9 @@
 		F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Select.swift; sourceTree = "<group>"; };
 		F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Favorite.swift; sourceTree = "<group>"; };
 		F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Volume.swift; sourceTree = "<group>"; };
+		F0AD8B17236413DA0017C22F /* ViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMode.swift; sourceTree = "<group>"; };
+		F0AD8B1A236413F60017C22F /* AvailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableView.swift; sourceTree = "<group>"; };
+		F0AD8B1D236414070017C22F /* TranslateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAction.swift; sourceTree = "<group>"; };
 		F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Bookmarks.swift; sourceTree = "<group>"; };
 		F0C36A9C2359C78A001E396C /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		F0C36AA02359D50A001E396C /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
@@ -410,7 +416,6 @@
 				F0AA69D9232E979B007CC07B /* Components */,
 				F0AA69D1232E9733007CC07B /* Views */,
 				F0AA69A6232E9712007CC07B /* Assets.xcassets */,
-				F01B019C235C6749000CB5C1 /* Functional-Swift.pdf */,
 				F0AA69AB232E9712007CC07B /* LaunchScreen.storyboard */,
 				F0AA69AE232E9712007CC07B /* Info.plist */,
 				F0AA69A8232E9712007CC07B /* Preview Content */,
@@ -450,7 +455,6 @@
 			children = (
 				F0AA69D7232E978E007CC07B /* Store.swift */,
 				F0039EC223447E24002F3F95 /* SharedContainer.swift */,
-				F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */,
 				F06DB115234611BB00C2DE90 /* ExtensionManager.swift */,
 			);
 			path = Stores;
@@ -569,6 +573,10 @@
 			isa = PBXGroup;
 			children = (
 				F0F256C1233E6C4C00C9D719 /* FavoriteVoiceName.swift */,
+				F0AD8B17236413DA0017C22F /* ViewMode.swift */,
+				F0AD8B1A236413F60017C22F /* AvailableView.swift */,
+				F0AD8B1D236414070017C22F /* TranslateAction.swift */,
+				F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -682,7 +690,6 @@
 				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
 				F0A001C723587121009E9CD6 /* reverso-reverso-speaker.js in Resources */,
 				F075443E234479DB00E1D88E /* Assets.xcassets in Resources */,
-				F01B019E235C6749000CB5C1 /* Functional-Swift.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,7 +708,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F040D57C2336BD97004567B8 /* README.md in Resources */,
-				F01B019D235C6749000CB5C1 /* Functional-Swift.pdf in Resources */,
 				F0C36AA8235ADF5E001E396C /* reader-translator.js in Resources */,
 				F0AA69AD232E9712007CC07B /* LaunchScreen.storyboard in Resources */,
 				F0A001C623587121009E9CD6 /* reverso-reverso-speaker.js in Resources */,
@@ -742,6 +748,7 @@
 				F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */,
 				F0C4EDA52349260000CCD97A /* ReversoView.swift in Sources */,
 				F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */,
+				F0AD8B1C236413F60017C22F /* AvailableView.swift in Sources */,
 				F06DB10E23450B6000C2DE90 /* View.swift in Sources */,
 				F04C830D23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
 				F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */,
@@ -751,7 +758,9 @@
 				F0BB43762344844800ADBEF1 /* GTranslator.swift in Sources */,
 				F0C4EDA7234926D400CCD97A /* Reverso.swift in Sources */,
 				F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */,
+				F0AD8B19236413DA0017C22F /* ViewMode.swift in Sources */,
 				F0C4EDAA2349271C00CCD97A /* ViewRepresentable.swift in Sources */,
+				F0AD8B1F236414070017C22F /* TranslateAction.swift in Sources */,
 				F06DB1002344856300C2DE90 /* Store.swift in Sources */,
 				F0BB43742344844800ADBEF1 /* PDFKitView.swift in Sources */,
 				F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */,
@@ -808,9 +817,9 @@
 				F075445423447A2800E1D88E /* SafariExtensionViewController.swift in Sources */,
 				F04C831123617BE6003A25B4 /* NSObject.swift in Sources */,
 				F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */,
+				F0EDE34B236418E000E0B81C /* DOMEvent.swift in Sources */,
 				F0C36A9F2359C78A001E396C /* Array.swift in Sources */,
 				F0814BA423562AF300212F52 /* Set.swift in Sources */,
-				F0EE0A122347AA0E004A5EAD /* DOMEvent.swift in Sources */,
 				F075445223447A2800E1D88E /* SafariExtensionHandler.swift in Sources */,
 				F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */,
 			);
@@ -825,6 +834,7 @@
 				F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */,
 				F0F256BD233D309F00C9D719 /* String.swift in Sources */,
 				F0AB12A3233F5798005B9F2A /* ReaderView_PDF.swift in Sources */,
+				F0AD8B1E236414070017C22F /* TranslateAction.swift in Sources */,
 				F0C53174234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
 				F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */,
@@ -853,6 +863,7 @@
 				F0505C562360D485004F2D50 /* LongmanView.swift in Sources */,
 				F0AB12AC233F5908005B9F2A /* StatusBarView_ViewMode.swift in Sources */,
 				F04C830F23617BE6003A25B4 /* NSObject.swift in Sources */,
+				F0AD8B18236413DA0017C22F /* ViewMode.swift in Sources */,
 				F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */,
 				F002C62A232FF40C00D3FC04 /* Published.swift in Sources */,
 				F040D5782336A77D004567B8 /* UserDefault.swift in Sources */,
@@ -874,6 +885,7 @@
 				F0AA69A5232E9710007CC07B /* ContentView.swift in Sources */,
 				F0814BA223562AF300212F52 /* Set.swift in Sources */,
 				F0C36A962359AF75001E396C /* StatusBarView_Bookmarks.swift in Sources */,
+				F0AD8B1B236413F60017C22F /* AvailableView.swift in Sources */,
 				F049244F2341F54800F3C728 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

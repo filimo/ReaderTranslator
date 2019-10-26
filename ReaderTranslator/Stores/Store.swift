@@ -9,66 +9,6 @@
 import Foundation
 import SwiftUI
 
-enum ViewMode: String, Codable {
-    case pdf = "PDF"
-    case web = "WEB"
-    case safari = "Safari"
-}
-
-enum AvailableView: String, Codable {
-    case wikipedia = "Wikipedia"
-    case reverso = "Reverso"
-    case translator = "GTranslator"
-    case longman = "Longman"
-    case macmillan = "Macmillan"
-    case collins = "Collin's"
-
-    func getAction() -> TranslateAction {
-        let text = TranslateAction.getText(Store.shared.translateAction)()
-
-        switch self {
-        case .wikipedia:
-            return .wikipedia(text: text)
-        case .reverso:
-            return .reverso(text: text)
-        case .translator:
-            return .translator(text: text)
-        case .longman:
-            return .longman(text: text)
-        case .macmillan:
-            return .macmillan(text: text)
-        case .collins:
-            return .collins(text: text)
-        }
-    }
-}
-
-enum TranslateAction: Equatable {
-    case none(text: String = "")
-    case reverso(text: String)
-    case translator(text: String, noReverso: Bool = false)
-    case longman(text: String)
-    case macmillan(text: String)
-    case collins(text: String)
-    case wikipedia(text: String)
-
-    func getText() -> String {
-        switch self {
-        case .none(let text): return text.trimmingCharacters(in: .whitespaces)
-        case .reverso(let text): return text.trimmingCharacters(in: .whitespaces)
-        case .translator(let text, _): return text.trimmingCharacters(in: .whitespaces)
-        case .longman(let text): return text.trimmingCharacters(in: .whitespaces)
-        case .macmillan(let text): return text.trimmingCharacters(in: .whitespaces)
-        case .collins(let text): return text.trimmingCharacters(in: .whitespaces)
-        case .wikipedia(let text): return text.trimmingCharacters(in: .whitespaces)
-        }
-    }
-
-    mutating func setNone() {
-        self = .none(text: getText())
-    }
-}
-
 class Store: ObservableObject {
     static var shared = Store()
 

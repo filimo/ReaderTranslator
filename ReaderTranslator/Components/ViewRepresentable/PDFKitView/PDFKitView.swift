@@ -15,7 +15,7 @@ private var cancellableSet: Set<AnyCancellable> = []
 struct PDFKitView: View {
     @ObservedObject var store = Store.shared
     var selectedText = PassthroughSubject<String, Never>()
-    
+
     var body: some View {
         var pdfViewDocumentChangedObserver: NSObjectProtocol?
         var pdfViewPageChangedObserver: NSObjectProtocol?
