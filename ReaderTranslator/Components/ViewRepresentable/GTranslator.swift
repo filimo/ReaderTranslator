@@ -57,8 +57,7 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
     }
 
     func updateView(_ view: WKPageView, context: Context) {
-        if case let .translator(text) = selectedText,
-            text != "" {
+        if case let .translator(text) = selectedText {
             Store.shared.translateAction.next()
 
             print("\(theClassName)_updateView_update", text)

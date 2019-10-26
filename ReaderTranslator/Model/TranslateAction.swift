@@ -55,7 +55,20 @@ enum TranslateAction: Equatable {
 
     mutating func addAll(text: String, except: AvailableView? = nil) {
         let actions = Store.shared.enabledViews
-            .filter { $0 != except }
+            .filter {
+                guard $0 != except else { return false }
+
+                let count = text.split(separator: " ").count
+                switch $0 {
+                case .collins,
+                     .longman,
+                     .macmillan,
+                     .wikipedia: if count < 4 { return true }
+                case .reverso: if count < 10 { return true }
+                case .translator: return true
+                }
+                return false
+            }
             .map { $0.getAction(text: text) }
         add(actions)
     }
