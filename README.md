@@ -67,6 +67,12 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 
 ## Releases
+**1.5.3**
+ - New way to send multiple action events to views. [TranslateAction.swift](https://github.com/filimo/ReaderTranslator/tree/master/ReaderTranslator/Model/TranslateAction.swift)
+ - Send selected text in any view to all enabled views.
+ - Send selected text in Reverso to all enabled views  without pressing `Ctrl`  
+
+
 **1.5.2**
  - Implemented SwiftLint
  - Installation: `brew install swiftlint`

@@ -2,53 +2,17 @@
 //  Stack.swift
 //  ReaderTranslator
 //
-//  Created by Viktor Kushnerov on 10/2/19.
+//  Created by Viktor Kushnerov on 26/10/19.
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SwiftUI
+import Foundation
 
-struct Stack<Content: View>: View {
-    var arrange: Arrange
-    private let content: () -> Content
+struct Stack<Element> {
+    private var items = [Element]()
 
-    init(arrange: Arrange, @ViewBuilder content: @escaping () -> Content) {
-        self.arrange = arrange
-        self.content = content
-    }
-
-    var body: some View {
-        Group {
-            if arrange == .vertical {
-                VStack {
-                    content()
-                }
-            } else {
-                HStack {
-                    content()
-                }
-            }
-        }
-    }
-}
-
-extension Stack {
-    enum Arrange {
-        case vertical, horizontal
-    }
-}
-
-struct Stack_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            Stack(arrange: .vertical) {
-                Text("vertical 1")
-                Text("vertical 2")
-            }
-            Stack(arrange: .horizontal) {
-                Text("horizontal 1")
-                Text("horizontal 2")
-            }
-        }
-    }
+    mutating func push(_ item: Element) { items.append(item) }
+    mutating func pop() -> Element { items.removeLast() }
+    var value: Element? { items.first }
+    var count: Int { items.count }
 }

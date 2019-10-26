@@ -18,7 +18,7 @@ struct EditorNSTextRepresentable: NSViewRepresentable {
     @Binding var translateAction: TranslateAction
     private var text: String {
         get {
-            guard case let .translator(text, _) = translateAction else { return "" }
+            guard case let .translator(text) = translateAction else { return "" }
             return text
         }
         set {

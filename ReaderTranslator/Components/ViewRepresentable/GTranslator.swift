@@ -33,8 +33,7 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
                     let text = action.getText()
                     if text != "" {
                         print("\(self.theClassName)_$selectedText")
-                        SpeechSynthesizer.speak(text: text)
-                        self.store.translateAction = .reverso(text: text)
+                        self.store.translateAction.addAll(text: text, except: .translator)
                     }
                 }
                 .store(in: &cancellableSet)
@@ -58,11 +57,11 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
     }
 
     func updateView(_ view: WKPageView, context: Context) {
-        if case let .translator(text, noReverso) = selectedText,
+        if case let .translator(text) = selectedText,
             text != "" {
-            selectedText.setNone()
+            Store.shared.translateAction.next()
 
-            print("\(theClassName)_updateView_update", noReverso, text)
+            print("\(theClassName)_updateView_update", text)
 
             let (slValue, tlValue) = getParams(url: view.url)
             guard var urlComponent = URLComponents(string: defaultUrl) else { return }
@@ -79,10 +78,6 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
                     view.load(URLRequest(url: url))
                 }
             }
-
-            if noReverso != true, text.split(separator: " ").count < 10 {
-                self.store.translateAction = .reverso(text: text)
-            }
         }
     }
 
@@ -92,8 +87,6 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
 
         guard let urlComponent = URLComponents(string: url) else { return (nil, nil) }
         let queryItems = urlComponent.queryItems
-
-        selectedText.setNone()
 
         let slValue = queryItems?.last(where: { $0.name == "sl" })?.value
         let tlValue = queryItems?.last(where: { $0.name == "tl" })?.value

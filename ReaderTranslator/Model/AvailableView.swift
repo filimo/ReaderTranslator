@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AvailableView: String, Codable {
+enum AvailableView: String, Codable, CaseIterable {
     case wikipedia = "Wikipedia"
     case reverso = "Reverso"
     case translator = "GTranslator"
@@ -16,9 +16,7 @@ enum AvailableView: String, Codable {
     case macmillan = "Macmillan"
     case collins = "Collin's"
 
-    func getAction() -> TranslateAction {
-        let text = TranslateAction.getText(Store.shared.translateAction)()
-
+    func getAction(text: String = TranslateAction.getText(Store.shared.translateAction)()) -> TranslateAction {
         switch self {
         case .wikipedia:
             return .wikipedia(text: text)

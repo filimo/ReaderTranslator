@@ -22,15 +22,25 @@ struct StatusBarView: View {
             StatusBarView_Safari()
             StatusBarView_Bookmarks()
             StatusBarView_ViewsEnabler()
-            Spacer()
             openPDFPanelView
 //            gTranslatorNavbarView
+            speakView
         }.padding(.trailing, 20)
+    }
+
+    private var speakView: some View {
+        if case let .speak(text) = self.store.translateAction {
+            self.store.translateAction.next()
+            SpeechSynthesizer.speak(text: text)
+        }
+
+        return EmptyView()
     }
 
     private var openPDFPanelView: some View {
         Group {
             if store.viewMode == .pdf {
+                Spacer()
                 Button(
                     action: {
                         OpenPanel.showChooseFileDialog(title: "Open PDF file", allowedFileTypes: ["pdf"]) { urlString in
@@ -51,7 +61,7 @@ struct StatusBarView: View {
         Group {
             Spacer()
             Button(action: {
-                self.store.translateAction = .translator(text: "")
+                self.store.translateAction.add(.translator(text: ""))
                 GTranslator.pageView?.goBack()
             }, label: { Text("􀉍") })
             Button(action: {

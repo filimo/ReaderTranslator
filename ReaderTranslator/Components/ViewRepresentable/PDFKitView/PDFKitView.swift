@@ -43,7 +43,7 @@ struct PDFKitView: View {
                 .debounce(for: 0.1, scheduler: RunLoop.main)
                 .removeDuplicates()
                 .sink { text in
-                    self.store.translateAction = .translator(text: text)
+                    self.store.translateAction.addAll(text: text)
                 }
                 .store(in: &cancellableSet)
 

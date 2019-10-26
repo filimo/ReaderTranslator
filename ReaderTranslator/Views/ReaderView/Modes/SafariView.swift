@@ -43,13 +43,13 @@ struct SafariView: View {
             extra.metaKey != true {
 
             if extra.altKey == true && extra.keyCode == 65 { // Alt+a
-                self.store.isVoiceEnabled.toggle()
+                store.isVoiceEnabled.toggle()
                 return
             }
             if extra.altKey == true && extra.keyCode == 83 { // Alt+s
-                self.store.canSafariSendSelectedText.toggle()
-                if self.store.canSafariSendSelectedText {
-                    self.store.translateAction = .translator(text: event.extra?.selectedText ?? "")
+                store.canSafariSendSelectedText.toggle()
+                if store.canSafariSendSelectedText {
+                    store.translateAction.add(.translator(text: event.extra?.selectedText ?? ""))
                 }
                 return
             }
@@ -64,7 +64,9 @@ struct SafariView: View {
         if store.canSafariSendSelectedText {
             if let extra = event.extra,
                 extra.altKey != true && extra.metaKey != true {
-                store.translateAction = .translator(text: event.extra?.selectedText ?? "")
+
+                let text = event.extra?.selectedText ?? ""
+                store.translateAction.addAll(text: text)
             }
         }
     }

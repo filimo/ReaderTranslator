@@ -15,11 +15,8 @@ class Store: ObservableObject {
     var maxViewWidth: CGFloat = 400
 
     @Published(key: "canSafariSendSelectedText") var canSafariSendSelectedText: Bool = true
-    @Published var translateAction: TranslateAction = .none(text: "") {
-        didSet {
-            if case .translator(_) = translateAction { SpeechSynthesizer.speak() }
-        }
-    }
+
+    @Published var translateAction = TranslateAction()
 
     @Published(key: "enabledViews") var enabledViews: Set<AvailableView> = [.reverso, .translator]
 

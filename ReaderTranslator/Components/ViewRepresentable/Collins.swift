@@ -40,7 +40,7 @@ struct Collins: ViewRepresentable, WKScriptsSetup {
 
     func updateView(_ view: WKPageView, context: Context) {
         guard case let .collins(text) = selectedText else { return }
-        selectedText.setNone()
+        Store.shared.translateAction.next()
 
         print("\(theClassName)_updateView_update", text)
 
@@ -67,7 +67,7 @@ extension Collins.Coordinator: WKScriptMessageHandler {
         case "selectionchange":
             guard let text = event.extra?.selectedText else { return }
             self.selectedText = text
-            store.translateAction = .translator(text: text, noReverso: true)
+            store.translateAction.addAll(text: text, except: .collins)
         case "keydown":
             if event.extra?.keyCode == 18 { //Alt
                 SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)

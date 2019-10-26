@@ -33,7 +33,7 @@ struct StatusBarView_ViewsEnabler: View {
             Text("􀈅")
                 .padding(.trailing, 5)
                 .onTapGesture(count: 1) {
-                    self.store.translateAction = view.getAction()
+                    self.store.translateAction.add(view.getAction())
                     self.store.enabledViews.insert(view)
                 }
         }
@@ -43,7 +43,7 @@ struct StatusBarView_ViewsEnabler: View {
         if store.enabledViews.contains(view) {
            store.enabledViews.remove(view)
         } else {
-            self.store.translateAction = view.getAction()
+            self.store.translateAction.add(view.getAction())
             store.enabledViews.insert(view)
         }
     }

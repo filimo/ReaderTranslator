@@ -36,8 +36,8 @@
 		F0562E0F2362026C0074ACF5 /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */; };
 		F06DB0FF2344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
-		F06DB1042344975E00C2DE90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* Stack.swift */; };
-		F06DB1052344975E00C2DE90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* Stack.swift */; };
+		F06DB1042344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
+		F06DB1052344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
 		F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */; };
 		F06DB10D23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
 		F06DB10E23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
@@ -137,6 +137,8 @@
 		F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0EDE34B236418E000E0B81C /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
+		F0EDE34D23641B1300E0B81C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE34C23641B1300E0B81C /* Stack.swift */; };
+		F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE34C23641B1300E0B81C /* Stack.swift */; };
 		F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
 		F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
@@ -202,7 +204,7 @@
 		F0505C522360D37C004F2D50 /* Longman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Longman.swift; sourceTree = "<group>"; };
 		F0505C532360D3DA004F2D50 /* LongmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanView.swift; sourceTree = "<group>"; };
 		F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
-		F06DB1032344975E00C2DE90 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		F06DB1032344975E00C2DE90 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNSTextRepresentable.swift; sourceTree = "<group>"; };
 		F06DB10C23450B6000C2DE90 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Toggle.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		F0C6657B2351A70B0087B6F2 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
+		F0EDE34C23641B1300E0B81C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMEvent.swift; sourceTree = "<group>"; };
 		F0EE0A152347BF09004A5EAD /* WKPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKPageView.swift; sourceTree = "<group>"; };
 		F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Safari.swift; sourceTree = "<group>"; };
@@ -556,10 +559,11 @@
 			isa = PBXGroup;
 			children = (
 				F06DB10C23450B6000C2DE90 /* View.swift */,
+				F0EDE34C23641B1300E0B81C /* Stack.swift */,
 				F0C36A9C2359C78A001E396C /* Array.swift */,
 				F0F256BC233D309F00C9D719 /* String.swift */,
 				F049244E2341F54800F3C728 /* Image.swift */,
-				F06DB1032344975E00C2DE90 /* Stack.swift */,
+				F06DB1032344975E00C2DE90 /* StackView.swift */,
 				F0C4EDA82349271C00CCD97A /* ViewRepresentable.swift */,
 				F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */,
 				F0C6657B2351A70B0087B6F2 /* Collection.swift */,
@@ -770,8 +774,9 @@
 				F0BB437B2344845000ADBEF1 /* StatusBarView_ViewMode.swift in Sources */,
 				F04C831023617BE6003A25B4 /* NSObject.swift in Sources */,
 				F0BB43752344844800ADBEF1 /* SpeechSynthesizer.swift in Sources */,
-				F06DB1052344975E00C2DE90 /* Stack.swift in Sources */,
+				F06DB1052344975E00C2DE90 /* StackView.swift in Sources */,
 				F0FCDD432361897E0016F23F /* Macmillan.swift in Sources */,
+				F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */,
 				F0562E0F2362026C0074ACF5 /* Wikipedia.swift in Sources */,
 				F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */,
 				F001A701235E095700617573 /* ServiceProvider.swift in Sources */,
@@ -840,6 +845,7 @@
 				F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */,
 				F06DB0FF2344856300C2DE90 /* Store.swift in Sources */,
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
+				F0EDE34D23641B1300E0B81C /* Stack.swift in Sources */,
 				F0D2E334234BA49000D95994 /* Safari.swift in Sources */,
 				F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F0FCDD422361897D0016F23F /* Macmillan.swift in Sources */,
@@ -855,7 +861,7 @@
 				F0AA69DF232E97B0007CC07B /* GTranslator.swift in Sources */,
 				F0505C542360D474004F2D50 /* Longman.swift in Sources */,
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
-				F06DB1042344975E00C2DE90 /* Stack.swift in Sources */,
+				F06DB1042344975E00C2DE90 /* StackView.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WKRepresenter.swift in Sources */,
 				F0C4EDA6234926D400CCD97A /* Reverso.swift in Sources */,
 				F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */,

@@ -43,7 +43,7 @@ struct StatusBarView_Bookmarks: View {
         VStack {
             ForEach(self.store.bookmarks, id: \.self) { text in
                 Text("\(text)").onTapGesture {
-                    self.store.translateAction = .translator(text: text)
+                    self.store.translateAction.add(.translator(text: text))
                     self.show = false
                 }
             }
