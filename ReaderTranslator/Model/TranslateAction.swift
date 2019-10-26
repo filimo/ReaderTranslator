@@ -11,7 +11,7 @@ import SwiftUI
 private var stack = Stack<TranslateAction>()
 
 enum TranslateAction: Equatable {
-    case none(text: String = "")
+    case none(text: String)
     case speak(text: String)
     case reverso(text: String)
     case translator(text: String)
@@ -37,8 +37,6 @@ enum TranslateAction: Equatable {
              return text.trimmingCharacters(in: .whitespaces)
         }
     }
-
-    func none() -> TranslateAction { .none(text: getText()) }
 
     mutating func add(_ action: TranslateAction) {
         add([.speak(text: action.getText()), action])
@@ -75,7 +73,7 @@ enum TranslateAction: Equatable {
 
     @discardableResult
     mutating func next() -> TranslateAction {
-        self = stack.count == 0 ? .none() : stack.pop()
+        self = stack.count == 0 ? .none(text: getText()) : stack.pop()
         return self
     }
 }
