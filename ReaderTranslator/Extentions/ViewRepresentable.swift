@@ -17,8 +17,11 @@ typealias ViewRepresentableType = UIViewRepresentable
 protocol ViewRepresentable: ViewRepresentableType {
     associatedtype ViewType
 
+    static var coorinator: Coordinator? { get set }
+
     func updateView(_ view: ViewType, context: Context)
     func makeView(context: Context) -> ViewType
+    func makeCoordinator(coordinator: @autoclosure () -> Coordinator) -> Coordinator
 }
 
 extension ViewRepresentable {
@@ -41,4 +44,15 @@ extension ViewRepresentable {
         updateView(view, context: context)
     }
     #endif
+}
+
+extension ViewRepresentable {
+    func makeCoordinator(coordinator: @autoclosure () -> Coordinator) -> Coordinator {
+        if let coordinator = Self.coorinator { return coordinator }
+
+        let coorinator = coordinator()
+        Self.coorinator = coorinator
+
+        return coorinator
+    }
 }

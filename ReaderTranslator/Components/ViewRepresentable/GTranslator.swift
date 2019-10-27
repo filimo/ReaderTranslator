@@ -13,6 +13,7 @@ import WebKit
 struct GTranslator: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
 
+    static var coorinator: Coordinator?
     static var pageView: WKPageView?
 
     @ObservedObject private var store = Store.shared
@@ -24,7 +25,6 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
         override init(_ parent: WKScriptsSetup) {
             super.init(parent)
 
-            cancellableSet.cancelAndRemoveAll()
             $selectedText
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
@@ -41,7 +41,7 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        makeCoordinator(coordinator: Coordinator(self))
     }
 
     func makeView(context: Context) -> WKPageView {

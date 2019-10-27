@@ -13,18 +13,15 @@ struct Collins: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let host = "https://www.collinsdictionary.com/dictionary/english/"
 
+    static var coorinator: Coordinator?
     static var pageView: WKPageView?
 
     class Coordinator: WKCoordinator {
         var selectedText = ""
-
-        override init(_ parent: WKScriptsSetup) {
-            super.init(parent)
-        }
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        makeCoordinator(coordinator: Coordinator(self))
     }
 
     func makeView(context: Context) -> WKPageView {

@@ -14,17 +14,14 @@ struct Wikipedia: ViewRepresentable, WKScriptsSetup {
     private let host = "https://en.wikipedia.org/wiki/Special:Search"
 
     static var pageView: WKPageView?
+    static var coorinator: Coordinator?
 
     class Coordinator: WKCoordinator {
         var selectedText = ""
-
-        override init(_ parent: WKScriptsSetup) {
-            super.init(parent)
-        }
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        makeCoordinator(coordinator: Coordinator(self))
     }
 
     func makeView(context: Context) -> WKPageView {
