@@ -41,15 +41,19 @@ struct StatusBarView_Bookmarks: View {
 
     private var listView: some View {
         VStack {
-            ForEach(self.store.bookmarks, id: \.self) { text in
-                Text("\(text)").onTapGesture {
-                    self.store.translateAction.add(.translator(text: text))
-                    self.show = false
-                }
+            HStack {
+                ScrollView {
+                    ForEach(self.store.bookmarks, id: \.self) { text in
+                        Text("\(text)").onTapGesture {
+                            self.store.translateAction.add(.translator(text: text))
+                            self.show = false
+                        }
+                    }
+                }.frame(height: 800)
             }
             HStack {
                 Button(action: { Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))}, label: { Text("􀉃") })
-                Button(action: { self.show = false}, label: { Text("􀁠") })
+                Button(action: { self.show = false }, label: { Text("􀁠") })
             }
         }
     }
