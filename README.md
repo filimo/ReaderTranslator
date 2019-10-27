@@ -69,6 +69,9 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**1.6**
+- Implement San Francisco font to display icons on macOS corretly #49
+
 **1.5.4**
  - Fixed getting action event in GTranslator  
  - Limit the amount of translated words for different views
