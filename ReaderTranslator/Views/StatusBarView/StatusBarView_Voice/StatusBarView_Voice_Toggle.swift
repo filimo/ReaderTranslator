@@ -16,7 +16,7 @@ struct StatusBarView_Voice_Toggle: View {
             Toggle(isOn: $store.isVoiceEnabled) {
                 Text("On:")
             }.fixedSize()
-            Image(systemName: store.isVoiceEnabled ? "volume.3.fill" : "speaker")
+            Image.sfSymbol(store.isVoiceEnabled ? "speaker.3.fill" : "speaker")
                 .onTapGesture {
                     SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true)
                 }

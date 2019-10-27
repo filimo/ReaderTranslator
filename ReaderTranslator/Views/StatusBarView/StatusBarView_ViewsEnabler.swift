@@ -30,7 +30,7 @@ struct StatusBarView_ViewsEnabler: View {
                 .onTapGesture {
                     self.toggle(view)
                 }
-            Text("􀈅")
+            Image.sfSymbol("square.and.arrow.down.fill")
                 .padding(.trailing, 5)
                 .onTapGesture(count: 1) {
                     self.store.translateAction.add(view.getAction())

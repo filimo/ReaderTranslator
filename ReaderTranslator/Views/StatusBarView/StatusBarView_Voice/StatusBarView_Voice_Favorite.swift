@@ -37,7 +37,7 @@ struct StatusBarView_Voice_Favorite: View {
                     FavoriteVoiceName.removeCurrentVoice()
                 },
                 label: {
-                    Image(systemName: "star.fill")
+                    Image.sfSymbol("star.fill")
             })
         } else {
             return Button(
@@ -45,7 +45,7 @@ struct StatusBarView_Voice_Favorite: View {
                     FavoriteVoiceName.addCurrentVoice()
                 },
                 label: {
-                    Image(systemName: "star")
+                    Image.sfSymbol("star")
             })
         }
     }

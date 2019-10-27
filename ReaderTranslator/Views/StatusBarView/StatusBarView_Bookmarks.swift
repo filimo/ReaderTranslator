@@ -29,9 +29,11 @@ struct StatusBarView_Bookmarks: View {
         return Group {
             if text != "" {
                 if self.store.bookmarks.contains(text) {
-                    Button(action: { self.store.bookmarks.remove(object: text)}, label: { Text("􀉟") })
+                    Button(action: { self.store.bookmarks.remove(object: text)},
+                           label: { Image.sfSymbol("bookmark.fill") })
                 } else {
-                    Button(action: { self.store.bookmarks.append(text) }, label: { Text("􀉞") })
+                    Button(action: { self.store.bookmarks.append(text) },
+                           label: { Image.sfSymbol("bookmark") })
                 }
             } else {
                 EmptyView()
@@ -52,8 +54,10 @@ struct StatusBarView_Bookmarks: View {
                 }.frame(height: 800)
             }
             HStack {
-                Button(action: { Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))}, label: { Text("􀉃") })
-                Button(action: { self.show = false }, label: { Text("􀁠") })
+                Button(action: { Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))},
+                       label: { Image.sfSymbol("doc.on.clipboard") })
+                Button(action: { self.show = false },
+                       label: { Image.sfSymbol("xmark.circle") })
             }
         }
     }

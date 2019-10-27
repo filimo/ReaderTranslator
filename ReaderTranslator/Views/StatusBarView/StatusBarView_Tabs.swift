@@ -18,13 +18,13 @@ struct StatusBarView_Tabs: View {
                 Divider().fixedSize()
                 Button(
                     action: { self.currentTab = 0 },
-                    label: { Image(systemName: "1.circle\(iconStatus(0))") })
+                    label: { Image.sfSymbol("1.circle\(iconStatus(0))") })
                 Button(
                     action: { self.currentTab = 1 },
-                    label: { Image(systemName: "2.circle\(iconStatus(1))") })
+                    label: { Image.sfSymbol("2.circle\(iconStatus(1))") })
                 Button(
                     action: { self.currentTab = 2 },
-                    label: { Image(systemName: "3.circle\(iconStatus(2))") })
+                    label: { Image.sfSymbol("3.circle\(iconStatus(2))") })
             }
         }
     }

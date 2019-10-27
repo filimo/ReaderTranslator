@@ -8,35 +8,19 @@
 import SwiftUI
 
 #if os(macOS)
-struct Image: View {
-    let symbol: String
-
-    init(systemName: String) {
-        self.symbol = [
-            "speaker": "􀊠",
-            "volume.3.fill": "􀊩",
-            "star": "􀋂",
-            "star.fill": "􀋃",
-            "arrowshape.turn.up.left": "􀉌",
-            "arrowshape.turn.up.left.fill": "􀉍",
-            "arrowshape.turn.up.right": "􀉐",
-            "arrowshape.turn.up.right.fill": "􀉑",
-            "safari": "􀎬",
-            "doc.on.clipboard": "􀉃",
-            "xmark.circle": "􀁠",
-            "1.circle": "􀀺",
-            "1.circle.fill": "􀀻",
-            "2.circle": "􀓭",
-            "2.circle.fill": "􀔌",
-            "3.circle": "􀀾",
-            "3.circle.fill": "􀀿",
-            "minus.magnifyingglass": "􀊭",
-            "plus.magnifyingglass": "􀊬"
-        ][systemName] ?? ""
-    }
-
-    var body: some View {
-        Text(symbol)
+extension Image {
+    static func sfSymbol(_ systemName: String) -> some View {
+        Image(systemName)
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .colorInvert()
+        .frame(height: 20)
     }
 }
 #endif
+
+struct ImageView_Previews: PreviewProvider {
+    static var previews: some View {
+        Image.sfSymbol("square.and.arrow.down.fill")
+    }
+}

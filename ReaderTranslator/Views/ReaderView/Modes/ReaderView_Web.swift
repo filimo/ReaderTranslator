@@ -16,16 +16,14 @@ struct ReaderView_Web: View {
             if store.viewMode == .web {
                 VStack {
                     HStack {
-                        Image(systemName: "arrowshape.turn.up.left\(store.canGoBack ? ".fill" : "")")
+                        Image.sfSymbol("arrowshape.turn.up.left\(store.canGoBack ? ".fill" : "")")
                             .onTapGesture { WKRepresenter.pageView.goBack() }
                         TextField("Enter website name", text: self.$store.lastWebPage)
                         openInSafari()
                         pasteClipbord()
                         Button(
                             action: { self.store.lastWebPage = "" },
-                            label: {
-                                Image(systemName: "xmark.circle")
-                        })
+                            label: { Image.sfSymbol("xmark.circle") })
                     }.padding(5)
                     webView(0)
                     webView(1)
@@ -46,22 +44,22 @@ extension ReaderView_Web {
         }
     }
 
-    fileprivate func openInSafari() -> Button<Image> {
+    fileprivate func openInSafari() -> some View {
         Button(
             action: {
                 if let url = URL(string: self.store.lastWebPage) {
                     Safari.openSafari(url)
                 }
             },
-            label: { Image(systemName: "safari") })
+            label: { Image.sfSymbol("safari") })
     }
 
-    fileprivate func pasteClipbord() -> Button<Image> {
+    fileprivate func pasteClipbord() -> some View {
         Button(
             action: {
                 self.store.lastWebPage = Clipboard.string
             },
-            label: { Image(systemName: "doc.on.clipboard") })
+            label: { Image.sfSymbol("doc.on.clipboard") })
     }
 }
 
