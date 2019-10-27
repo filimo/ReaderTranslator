@@ -35,10 +35,10 @@ iPadOS project takes place to exist but I don't have iPad now. I going to buy it
 
 If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
 
-## Comming features in 1.6
-Implement San Francisco font to display icons on macOS corretly [#49](https://github.com/filimo/ReaderTranslator/issues/49)
-Now You need install SF Symbols app from [here](https://developer.apple.com/design/downloads/SF-Symbols.dmg)
-
+## Comming features in 1.7
+- Help page
+- App icon
+- Safari extension icon
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
