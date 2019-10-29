@@ -36,7 +36,8 @@ struct Macmillan: ViewRepresentable, WKScriptsSetup {
     }
 
     func updateView(_ view: WKPageView, context: Context) {
-        guard case let .macmillan(text) = selectedText else { return }
+        guard case var .macmillan(text) = selectedText else { return }
+        text = text.replacingOccurrences(of: "\n", with: " ")
         Store.shared.translateAction.next()
 
         print("\(theClassName)_updateView_update", text)

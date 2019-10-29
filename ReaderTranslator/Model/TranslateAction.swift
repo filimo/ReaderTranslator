@@ -34,7 +34,8 @@ enum TranslateAction: Equatable {
              .macmillan(let text),
              .collins(let text),
              .wikipedia(let text):
-             return text.trimmingCharacters(in: .whitespaces)
+            return text
+                .trimmingCharacters(in: .whitespaces)
         }
     }
 

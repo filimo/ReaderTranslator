@@ -36,7 +36,8 @@ struct Longman: ViewRepresentable, WKScriptsSetup {
     }
 
     func updateView(_ view: WKPageView, context: Context) {
-        guard case let .longman(text) = selectedText else { return }
+        guard case var .longman(text) = selectedText else { return }
+        text = text.replacingOccurrences(of: "\n", with: " ")
         Store.shared.translateAction.next()
 
         print("\(theClassName)_updateView_update", text)

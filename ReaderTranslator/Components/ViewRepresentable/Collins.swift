@@ -36,7 +36,8 @@ struct Collins: ViewRepresentable, WKScriptsSetup {
     }
 
     func updateView(_ view: WKPageView, context: Context) {
-        guard case let .collins(text) = selectedText else { return }
+        guard case var .collins(text) = selectedText else { return }
+        text = text.replacingOccurrences(of: "\n", with: " ")
         Store.shared.translateAction.next()
 
         print("\(theClassName)_updateView_update", text)
