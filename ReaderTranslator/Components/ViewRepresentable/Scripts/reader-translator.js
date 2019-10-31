@@ -116,6 +116,7 @@
             if(elm) {
                 if(lastElm) lastElm.style.color = ""
                 elm.style.color="yellow"
+                elm.scrollIntoViewIfNeeded()
                 lastElm = elm
             }
         }
