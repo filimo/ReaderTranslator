@@ -125,19 +125,22 @@
             if(['textarea', 'input'].includes(tagName)) return
 
             if(event.key == 'p') {
+                event.preventDefault()
                 video.paused ? video.play() : video.pause()
-                return
+                return false
             }
             if(event.key == 't') {
+                event.preventDefault()
                 sendIn1000('selectionchange', 'document', event, lastElm.text.trim())
-                return
+                return false
             }
             if(event.key == 'ArrowLeft') {
+                event.preventDefault()
                 if(lastElm) lastElm.style.color = ""
                 lastElm = lastElm.previousElementSibling
                 lastElm.click()
                 video.play()
-                return
+                return false
             }
         })
     })
