@@ -143,6 +143,14 @@
                 video.play()
                 return false
             }
+            if(event.key == 'ArrowUp') {
+                event.preventDefault()
+                video.playbackRate += 0.1
+            }
+            if(event.key == 'ArrowDown') {
+                event.preventDefault()
+                video.playbackRate -= 0.1
+            }
         })
     })
  })()

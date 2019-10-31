@@ -69,9 +69,12 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
-**1.6.5** Features for `https://developer.apple.com/videos/**` 
+**1.6.6** Features for `https://developer.apple.com/videos/**` 
 ![](files/Release_1.6.5.png)
+ - Press the down arrow button to decrease the speech rate
+ - Press the up arrow button to increase the speech rate
 
+**1.6.5** Features for `https://developer.apple.com/videos/**` 
 - Prevent bubble events when press "t", "p", left arrow button on https://developer.apple.com/videos/**
 - Scroll view to the speaking sentence if it is needed on https://developer.apple.com/videos/**
 
