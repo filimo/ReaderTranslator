@@ -69,6 +69,11 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**1.6.4**
+ - Select speaking text in Apple videos transcripts. 
+ - Go to a previous sentence by left arrow button. 
+ - Send selected text in transcripts to ReaderTranslator.
+
 **1.6**
 - Implement San Francisco font to display icons on macOS corretly #49
 
