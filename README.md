@@ -70,8 +70,8 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
 **1.6.4** Features for `https://developer.apple.com/videos/**` 
- - Select speaking text in Apple videos transcripts. 
- - Go to a previous sentence by left arrow button. 
+ - Highlight the speaking text in Apple videos transcripts
+ - Go to a previous sentence by left arrow button 
  - Send selected text in transcripts to ReaderTranslator by pressing "t"
  - Play/pause apple videos by pressing "p"
 
