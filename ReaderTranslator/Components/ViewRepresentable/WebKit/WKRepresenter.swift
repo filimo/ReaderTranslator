@@ -31,7 +31,7 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .removeDuplicates()
                 .sink { text in
-                    if text != "" { self.store.translateAction.add(.translator(text: text)) }
+                    if text != "" { self.store.translateAction.addAll(text: text) }
             }
             .store(in: &cancellableSet)
         }
