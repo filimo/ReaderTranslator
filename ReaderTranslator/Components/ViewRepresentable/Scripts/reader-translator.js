@@ -44,8 +44,8 @@
       }
     }
 
-    function _send(name, source, e) {
-        let text = document.getSelection().toString()
+    function _send(name, source, e, text) {
+        text = text || document.getSelection().toString().trim()
         let sourceValue = (document.querySelector("#source") || {}).value
         let entryValue = (document.querySelector("#entry") || {}).value
         let event = {
@@ -70,6 +70,7 @@
          }
     }
  
+    let sendIn100 = debounce(_send, 100)
     let sendIn500 = debounce(_send, 500)
     let sendIn1000 = debounce(_send, 1000)
 
@@ -100,5 +101,44 @@
     window.addEventListener('keydown', (event) => {
         if(event.ctrlKey || event.altKey) sendIn500('keydown', 'window', event)
     })
- })()
 
+
+    //Apple videos
+    document.addEventListener("DOMContentLoaded", (event) => {
+        if(!location.href.includes('https://developer.apple.com/videos/')) return
+
+        let video = document.querySelector('video')
+        let lastElm
+
+        video.ontimeupdate = function() {
+            let time = parseInt(video.currentTime)
+            let elm = document.querySelector(`[href$="?time=${time}"]`)
+            if(elm) {
+                if(lastElm) lastElm.style.color = ""
+                elm.style.color="yellow"
+                lastElm = elm
+            }
+        }
+
+        window.addEventListener('keydown', (event) => {
+            let tagName = event.target.tagName.toLocaleLowerCase()
+            if(['textarea', 'input'].includes(tagName)) return
+
+            if(event.key == 'p') {
+                video.paused ? video.play() : video.pause()
+                return
+            }
+            if(event.key == 't') {
+                sendIn1000('selectionchange', 'document', event, lastElm.text.trim())
+                return
+            }
+            if(event.key == 'ArrowLeft') {
+                if(lastElm) lastElm.style.color = ""
+                lastElm = lastElm.previousElementSibling
+                lastElm.click()
+                video.play()
+                return
+            }
+        })
+    })
+ })()
