@@ -69,6 +69,10 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**1.6.7** Volume control
+![](files/Release_1.6.7.png)
+
+
 **1.6.6** Features for `https://developer.apple.com/videos/**` 
 ![](files/Release_1.6.5.png)
  - Press the down arrow button to decrease the speech rate

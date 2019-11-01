@@ -34,6 +34,7 @@ class Store: ObservableObject {
     @Published(key: "voiceName")  var voiceName = "Select voice"
     @Published(key: "isVoiceEnabled") var isVoiceEnabled = true { didSet { SpeechSynthesizer.speak() } }
     @Published(key: "voiceRate")  var voiceRate = "0.4"
+    @Published(key: "voiceVolume")  var voiceVolume: Float = 1
 
     @Published var canGoBack = false
     @UserDefault(key: "lastWebPage")

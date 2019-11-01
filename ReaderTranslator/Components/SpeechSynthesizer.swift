@@ -68,6 +68,7 @@ class SpeechSynthesizer {
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
 
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })
+        speechUtterance.volume = Store.shared.voiceVolume
         speechUtterance.rate = (Store.shared.voiceRate as NSString).floatValue
         if speechSynthesizer.isSpeaking {
             SpeechSynthesizer.stop()
