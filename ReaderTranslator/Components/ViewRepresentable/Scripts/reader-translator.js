@@ -130,9 +130,20 @@
                 video.paused ? video.play() : video.pause()
                 return false
             }
-            if(event.key == 't') {
+            if(event.keyCode == 84) { // key: t
                 event.preventDefault()
-                sendIn1000('selectionchange', 'document', event, lastElm.text.trim())
+
+                let text = lastElm.text.trim()
+
+                if(event.shiftKey) {
+                    text = [...lastElm.parentElement.children]
+                        .map(item=>{ return item.text.trim() })
+                        .join(' ')
+                        .match(/[^\.!\?]+[\.!\?]+/g)
+                        .find(item=>item.includes(text))
+                }
+                                
+                sendIn1000('selectionchange', 'document', event, text.trim())
                 return false
             }
             if(event.key == 'ArrowLeft') {
