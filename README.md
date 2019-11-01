@@ -69,6 +69,9 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**1.6.9** 
+ - Apple videos features: Send the current and previous phrase by "<" key to ReaderTranslator
+
 **1.6.8** 
  - Apple videos features: Send the entire sentence by "f" key to ReaderTranslator
 
