@@ -153,19 +153,31 @@
             }
             if(event.key == 'ArrowLeft') {
                 event.preventDefault()
+
                 if(lastElm) lastElm.style.color = ""
-                lastElm = lastElm.previousElementSibling
-                lastElm.click()
-                video.play()
+                if(lastElm.previousElementSibling) {
+                    lastElm = lastElm.previousElementSibling
+                    lastElm.click()
+                    video.play()
+                }
+                return false
+            }
+            if(event.keyCode == 188) { // "<" key
+                event.preventDefault()
+
+                if(!lastElm) return false
+                let text = (lastElm.previousElementSibling || {}).text.trim()
+                text += ` ${lastElm.text.trim()}`
+                sendIn1000('selectionchange', 'document', event, text)
                 return false
             }
             if(event.key == 'ArrowUp') {
                 event.preventDefault()
-                video.playbackRate += 0.1
+                video.playbackRate += 0.05
             }
             if(event.key == 'ArrowDown') {
                 event.preventDefault()
-                video.playbackRate -= 0.1
+                video.playbackRate -= 0.05
             }
         })
     })
