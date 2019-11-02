@@ -35,6 +35,10 @@ iPadOS project takes place to exist but I don't have iPad now. I going to buy it
 
 If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
 
+## Comming features in 2.0
+ - Watch videos with subtitles [#55](https://github.com/filimo/ReaderTranslator/issues/55)
+![](files/Release_2.0.0_1.png)
+
 ## Comming features in 1.7
 - Help page
 - App icon
