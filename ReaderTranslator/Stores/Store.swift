@@ -49,6 +49,8 @@ class Store: ObservableObject {
 
     @Published(key: "bookmarks") var bookmarks: [String] = []
 
+    @Published(key: "playbackRate") var playbackRate: Float = 1.0
+
     private init() {
         ({ currentTab = currentTab })() //call didSet
     }

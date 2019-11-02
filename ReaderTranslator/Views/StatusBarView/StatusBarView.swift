@@ -15,26 +15,39 @@ struct StatusBarView: View {
     var body: some View {
         HStack {
             StatusBarView_ViewMode().padding(5)
-            StatusBarView_PdfPage()
-            StatusBarView_Tabs(viewMode: $store.viewMode, currentTab: $store.currentTab)
-            StatusBarView_Zoom()
+            Group {
+                StatusBarView_PdfPage()
+                StatusBarView_Tabs(viewMode: $store.viewMode, currentTab: $store.currentTab)
+                StatusBarView_Zoom()
+            }
             StatusBarView_Voice().padding([.top, .bottom], 5)
             StatusBarView_Safari()
             StatusBarView_Bookmarks()
             StatusBarView_ViewsEnabler()
             openPDFPanelView
 //            gTranslatorNavbarView
-            speakView
+            speechHandler
+            playbackRateView
         }.padding(.trailing, 20)
     }
 
-    private var speakView: some View {
+    private var speechHandler: some View {
         if case let .speak(text) = self.store.translateAction {
             self.store.translateAction.next()
             SpeechSynthesizer.speak(text: text)
         }
 
         return EmptyView()
+    }
+
+    private var playbackRateView: some View {
+        return Group {
+            if store.viewMode == .safari {
+                Text(String(format: "PlaybackRate: %.2f", store.playbackRate as Float))
+            } else {
+                EmptyView()
+            }
+        }
     }
 
     private var openPDFPanelView: some View {

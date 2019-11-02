@@ -23,6 +23,7 @@ struct DOMEvent: Decodable, Equatable {
         let keyCode: Int?
 
         let selectedText: String?
+        let playbackRate: Float?
     }
 
     let name: String

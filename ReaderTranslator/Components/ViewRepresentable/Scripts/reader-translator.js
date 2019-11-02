@@ -60,6 +60,7 @@
                 which: e.which || keysStatus.which,
                 keyCode: e.keyCode || keysStatus.keyCode,
                 selectedText: text || sourceValue || entryValue,
+                playbackRate: (e.extra || {}).playbackRate
             }
         }
  
@@ -130,14 +131,6 @@
                 video.paused ? video.play() : video.pause()
                 return false
             }
-            if(event.key == 't') {
-                event.preventDefault()
-
-                let text = lastElm.text.trim()
-
-                sendIn1000('selectionchange', 'document', event, text)
-                return false
-            }
             if(event.key == 'f') {
                 event.preventDefault()
 
@@ -162,6 +155,14 @@
                 }
                 return false
             }
+            if(event.keyCode == 190) { // "." key
+                event.preventDefault()
+
+                let text = lastElm.text.trim()
+
+                sendIn1000('selectionchange', 'document', event, text)
+                return false
+            }
             if(event.keyCode == 188) { // "<" key
                 event.preventDefault()
 
@@ -174,10 +175,14 @@
             if(event.key == 'ArrowUp') {
                 event.preventDefault()
                 video.playbackRate += 0.05
+                event.extra = { playbackRate: video.playbackRate}
+                sendIn1000('playbackRate', 'video', event)
             }
             if(event.key == 'ArrowDown') {
                 event.preventDefault()
                 video.playbackRate -= 0.05
+                event.extra = { playbackRate: video.playbackRate}
+                sendIn1000('playbackRate', 'video', event)
             }
         })
     })
