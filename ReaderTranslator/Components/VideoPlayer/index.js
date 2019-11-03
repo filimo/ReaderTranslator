@@ -12,7 +12,7 @@
     Array.from(document.querySelectorAll('[start]')).forEach(item => {
       item.addEventListener('click', function(event) {
         let start = event.currentTarget.getAttribute("start")
-        $video.currentTime = parseInt(start)/1000
+        $video.currentTime = parseInt(start)/1000 - 1
       })
     })
 

@@ -128,7 +128,15 @@
 
             if(event.key == 'p') {
                 event.preventDefault()
-                video.paused ? video.play() : video.pause()
+                if(video.paused) {
+                    sendIn100('stop', 'video', event, '')
+                    lastElm.click()
+                    video.play()
+                }else{
+                    let text = lastElm.text.trim()
+                    sendIn100('selectionchange', 'document', event, text)
+                    video.pause() 
+                }
                 return false
             }
             if(event.key == 'f') {
@@ -168,10 +176,11 @@
                 event.preventDefault()
 
                 if(!lastElm) return false
+                video.pause()
                 let text = (lastElm.previousElementSibling || {}).text.trim()
                 text += ` ${lastElm.text.trim()}`
                 sendIn100('selectionchange', 'document', event, text)
-                video.pause()
+                if(lastElm.previousElementSibling) lastElm.previousElementSibling.click()
                 return false
             }
             if(event.key == 'ArrowUp') {
@@ -193,26 +202,28 @@
     document.addEventListener("DOMContentLoaded", (event) => {
         if(!location.href.includes('http://localhost:8080')) return
 
-        let video = document.querySelector('video')
-                              
-        window.addEventListener('keydown', (event) => {
-          if(event.key == 'p') {
+        let $video = document.querySelector('video')
+        let $play = document.querySelector('#play')
+
+        function play(event) {
             event.preventDefault()
             let $elm = document.querySelector('[current=true]')
-            if(video.paused) {
-              document.querySelector('[current=true]').click()
-              video.play()
-              sendIn100('stop', 'video', event, '')
+            if($video.paused) {
+                document.querySelector('[current=true]').click()
+                $video.play()
+                sendIn100('stop', 'video', event, '')
             }else{
-              if($elm) {
-                let text = $elm.textContent.replace('\n', ' ')
-                sendIn100('selectionchange', 'document', event, text)
-                video.pause()
-              }
+                if($elm) {
+                    let text = $elm.textContent.replace('\n', ' ')
+                    sendIn100('selectionchange', 'document', event, text)
+                    $video.pause()
+                }
             }
-
-            return false
-          }
+        }
+                     
+        $play.addEventListener('click', event => play(event))                      
+        window.addEventListener('keydown', event => {
+            if(event.key == 'p') play(event)
         })
     })
  })()
