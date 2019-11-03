@@ -160,7 +160,8 @@
 
                 let text = lastElm.text.trim()
 
-                sendIn1000('selectionchange', 'document', event, text)
+                sendIn100('selectionchange', 'document', event, text)
+                video.pause()
                 return false
             }
             if(event.keyCode == 188) { // "<" key
@@ -169,7 +170,8 @@
                 if(!lastElm) return false
                 let text = (lastElm.previousElementSibling || {}).text.trim()
                 text += ` ${lastElm.text.trim()}`
-                sendIn1000('selectionchange', 'document', event, text)
+                sendIn100('selectionchange', 'document', event, text)
+                video.pause()
                 return false
             }
             if(event.key == 'ArrowUp') {
@@ -184,6 +186,33 @@
                 event.extra = { playbackRate: video.playbackRate}
                 sendIn1000('playbackRate', 'video', event)
             }
+        })
+    })
+
+    //Local videos
+    document.addEventListener("DOMContentLoaded", (event) => {
+        if(!location.href.includes('http://localhost:8080')) return
+
+        let video = document.querySelector('video')
+                              
+        window.addEventListener('keydown', (event) => {
+          if(event.key == 'p') {
+            event.preventDefault()
+            let $elm = document.querySelector('[current=true]')
+            if(video.paused) {
+              document.querySelector('[current=true]').click()
+              video.play()
+              sendIn100('stop', 'video', event, '')
+            }else{
+              if($elm) {
+                let text = $elm.textContent.replace('\n', ' ')
+                sendIn100('selectionchange', 'document', event, text)
+                video.pause()
+              }
+            }
+
+            return false
+          }
         })
     })
  })()

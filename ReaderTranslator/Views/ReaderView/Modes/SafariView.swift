@@ -33,8 +33,11 @@ struct SafariView: View {
         switch event.name {
         case "keydown": onMessageChanged_keydown(event: event)
         case "selectionchange": onMessageChanged_selectionchange(event: event)
-        case "playbackRate": onMessageChanged_player(event: event)
-        default: os_log("DOMEvent %@ is not recognized", type: .debug, event.name)
+        default: os_log("DOMEvent name: %@ is not recognized", type: .debug, event.name)
+        }
+        switch event.source {
+        case "video": onMessageChanged_player(event: event)
+        default: os_log("DOMEvent source: %@ is not recognized", type: .debug, event.name)
         }
     }
 
@@ -64,9 +67,10 @@ struct SafariView: View {
     private func onMessageChanged_player(event: DOMEvent) {
         guard let extra = event.extra else { return }
 
-        if event.name == "playbackRate" && event.source == "video" {
-            if let playbackRate = extra.playbackRate { store.playbackRate = playbackRate }
-            return
+        switch event.name {
+        case "playbackRate": if let playbackRate = extra.playbackRate { store.playbackRate = playbackRate }
+        case "play": SpeechSynthesizer.stop()
+        default: os_log("DOMEvent player: %@ is not recognized", type: .debug, event.name)
         }
     }
 
