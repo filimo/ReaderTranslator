@@ -61,6 +61,8 @@
 		F0814BA423562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F08CE13A236EA9F200610342 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = F08CE138236EA9F200610342 /* index.html */; };
 		F08CE13B236EA9F200610342 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = F08CE139236EA9F200610342 /* index.js */; };
+		F09AD47E23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
+		F09AD47F23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F0A001C623587121009E9CD6 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */; };
 		F0A001C723587121009E9CD6 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */; };
 		F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A0232E9710007CC07B /* AppDelegate.swift */; };
@@ -229,6 +231,7 @@
 		F0814BA123562AF300212F52 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		F08CE138236EA9F200610342 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		F08CE139236EA9F200610342 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		F09AD47D23702DF100FFBF6A /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
 		F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
 		F0A9F35A2349228A00970C97 /* Reverso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reverso.swift; sourceTree = "<group>"; };
 		F0AA699D232E9710007CC07B /* ReaderTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,6 +359,7 @@
 		F0753E5B236DF9EA00D0C2D9 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				F09AD47D23702DF100FFBF6A /* jquery.js */,
 				F08CE138236EA9F200610342 /* index.html */,
 				F08CE139236EA9F200610342 /* index.js */,
 			);
@@ -707,6 +711,7 @@
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
 				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
 				F0A001C723587121009E9CD6 /* reverso-reverso-speaker.js in Resources */,
+				F09AD47E23702DF100FFBF6A /* jquery.js in Resources */,
 				F075443E234479DB00E1D88E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,6 +720,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09AD47F23702DF100FFBF6A /* jquery.js in Resources */,
 				F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */,
 				F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */,
 				F075445A23447A2800E1D88E /* reader-translator.js in Resources */,
