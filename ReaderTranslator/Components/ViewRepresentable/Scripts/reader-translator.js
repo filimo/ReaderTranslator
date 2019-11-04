@@ -90,9 +90,11 @@
 
     document.addEventListener('selectionchange', (event) => {
         let selection = document.getSelection()
+                    
+        if(!selection) return
                               
         //Reverso selects text in `search-input` tag after the page loaded
-        if(document.getSelection().focusNode.id == 'search-input') return
+        if(selection.focusNode.id == 'search-input') return
                               
         if(selection.toString().trim()) {
             sendIn1000('selectionchange', 'document', event)
@@ -130,7 +132,7 @@
                 event.preventDefault()
                 if(video.paused) {
                     sendIn100('stop', 'video', event, '')
-                    lastElm.click()
+                    if(lastElm) lastElm.click()
                     video.play()
                 }else{
                     let text = lastElm.text.trim()
@@ -139,7 +141,7 @@
                 }
                 return false
             }
-            if(event.keyCode == 70) { // 'f' key
+            if(event.keyCode == 79) { // 'o' key
                 event.preventDefault()
 
                 let text = [...lastElm.parentElement.children]
