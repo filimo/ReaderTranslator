@@ -128,7 +128,7 @@
             let tagName = event.target.tagName.toLocaleLowerCase()
             if(['textarea', 'input'].includes(tagName)) return
 
-            if(event.keyCode == 80) { // 'p' key
+            if(event.keyCode == 190) { // '>' key
                 event.preventDefault()
                 if(video.paused) {
                     sendIn100('stop', 'video', event, '')
@@ -141,18 +141,39 @@
                 }
                 return false
             }
-            if(event.keyCode == 79) { // 'o' key
+            if(event.keyCode == 188) { // '<' key
                 event.preventDefault()
-
-                let text = [...lastElm.parentElement.children]
+                
+                let elm = lastElm.previousElementSibling
+                lastElm.style.color=""
+                if(elm) {
+                	lastElm = elm
+                	elm = elm.previousElementSibling
+                }
+                while(true) {
+                	if(!elm) {
+                		elm = lastElm
+                		break
+                	}
+                	if(elm) {
+                		lastElm = elm
+                        if(elm.text.includes(".") || elm.text.includes("!") || elm.text.includes("?")) {
+                            elm = elm.nextElementSibling
+                            break
+                        }
+                	}
+                	elm = elm.previousElementSibling
+                }
+                video.pause()
+                elm.click()
+                             
+                let text = [...elm.parentElement.children]
                     .map(item=>{ return item.text.trim() })
                     .join(' ')
                     .match(/[^\.!\?]+[\.!\?]+/g)
-                    .find(item=>item.includes(lastElm.text.trim()))
+                    .find(item=>item.includes(elm.text.trim()))
                     .trim()
-                             
-                video.pause()
-                sendIn1000('selectionchange', 'document', event, text)
+                sendIn100('selectionchange', 'document', event, text)
                 return false
             }
             if(event.key == 'ArrowLeft') {
@@ -162,41 +183,50 @@
                 if(lastElm.previousElementSibling) {
                     lastElm = lastElm.previousElementSibling
                     lastElm.click()
-                    video.play()
                 }
                 return false
             }
-            if(event.keyCode == 190) { // "." key
+            if(event.key == 'ArrowRight') {
                 event.preventDefault()
 
-                let text = lastElm.text.trim()
-
-                sendIn100('selectionchange', 'document', event, text)
-                video.pause()
+                if(lastElm) lastElm.style.color = ""
+                if(lastElm.nextElementSibling) {
+                    lastElm = lastElm.nextElementSibling
+                    lastElm.click()
+                }
                 return false
             }
-            if(event.keyCode == 188) { // "<" key
-                event.preventDefault()
-
-                if(!lastElm) return false
-                video.pause()
-                let text = (lastElm.previousElementSibling || {}).text.trim()
-                text += ` ${lastElm.text.trim()}`
-                sendIn100('selectionchange', 'document', event, text)
-                if(lastElm.previousElementSibling) lastElm.previousElementSibling.click()
-                return false
-            }
+//            if(event.keyCode == 190) { // "." key
+//                event.preventDefault()
+//
+//                let text = lastElm.text.trim()
+//
+//                sendIn100('selectionchange', 'document', event, text)
+//                video.pause()
+//                return false
+//            }
+//            if(event.keyCode == 188) { // "<" key
+//                event.preventDefault()
+//
+//                if(!lastElm) return false
+//                video.pause()
+//                let text = (lastElm.previousElementSibling || {}).text.trim()
+//                text += ` ${lastElm.text.trim()}`
+//                sendIn100('selectionchange', 'document', event, text)
+//                if(lastElm.previousElementSibling) lastElm.previousElementSibling.click()
+//                return false
+//            }
             if(event.key == 'ArrowUp') {
                 event.preventDefault()
                 video.playbackRate += 0.05
                 event.extra = { playbackRate: video.playbackRate}
-                sendIn1000('playbackRate', 'video', event)
+                sendIn100('playbackRate', 'video', event)
             }
             if(event.key == 'ArrowDown') {
                 event.preventDefault()
                 video.playbackRate -= 0.05
                 event.extra = { playbackRate: video.playbackRate}
-                sendIn1000('playbackRate', 'video', event)
+                sendIn100('playbackRate', 'video', event)
             }
         })
     })
