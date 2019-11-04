@@ -126,7 +126,7 @@
             let tagName = event.target.tagName.toLocaleLowerCase()
             if(['textarea', 'input'].includes(tagName)) return
 
-            if(event.key == 'p') {
+            if(event.keyCode == 80) { // 'p' key
                 event.preventDefault()
                 if(video.paused) {
                     sendIn100('stop', 'video', event, '')
@@ -139,7 +139,7 @@
                 }
                 return false
             }
-            if(event.key == 'f') {
+            if(event.keyCode == 70) { // 'f' key
                 event.preventDefault()
 
                 let text = [...lastElm.parentElement.children]
@@ -148,7 +148,8 @@
                     .match(/[^\.!\?]+[\.!\?]+/g)
                     .find(item=>item.includes(lastElm.text.trim()))
                     .trim()
-                                
+                             
+                video.pause()
                 sendIn1000('selectionchange', 'document', event, text)
                 return false
             }
@@ -223,7 +224,18 @@
                      
         $play.addEventListener('click', event => play(event))                      
         window.addEventListener('keydown', event => {
-            if(event.key == 'p') play(event)
+            if(event.keyCode == 80) play(event) // 'p' key
+            if(event.keyCode == 188) { // "<" key
+                event.preventDefault()
+                let $elm = document.querySelector('[current=true]')
+                let $prevElm = $elm.previousElementSibling
+
+                let text = `${($elm.prevElm || {}).textContent} ${$elm.textContent}`
+
+                $video.pause()
+                sendIn100('selectionchange', 'document', event, text)
+                if($elm.previousElementSibling) $elm.previousElementSibling.click()
+            }                
         })
     })
  })()
