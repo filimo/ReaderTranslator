@@ -73,6 +73,11 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**1.6.10** 
+- Apple videos features: Improved shortcuts functionality.
+
+![](files/Release_1.6.10.png)
+
 **1.6.9** 
  - Apple videos features: Send the current and previous phrase by "<" key to ReaderTranslator
 
