@@ -113,6 +113,38 @@
         let video = document.querySelector('video')
         let lastElm
 
+        video.autoplay = false
+
+        function lastElementSiblingInPreviousParagraph() {
+        	let elm = lastElm.parentElement.previousElementSibling
+            if(elm) return elm.lastElementChild
+        	return lastElm
+        }
+
+        function previousElementSibling() {
+            let elm = lastElm.previousElementSibling
+            lastElm.style.color=""
+            if(!elm) elm = lastElementSiblingInPreviousParagraph()
+            if(elm) {
+	            lastElm = elm	
+            	if(elm.previousElementSibling) {
+	            	lastElm = elm = elm.previousElementSibling
+	        	}else{
+	                elm = lastElementSiblingInPreviousParagraph()	        		
+	        	}
+            }
+            return elm
+        }
+
+        function getWholeSentence() {
+        	return [...lastElm.parentElement.children]
+                    .map(item=>{ return item.text.trim() })
+                    .join(' ')
+                    .match(/[^\.!\?]+[\.!\?]+/g)
+                    .find(item=>item.includes(lastElm.text.trim()))
+                    .trim()
+        }
+                              
         video.ontimeupdate = function() {
             let time = parseInt(video.currentTime)
             let elm = document.querySelector(`[href$="?time=${time}"]`)
@@ -144,12 +176,7 @@
             if(event.keyCode == 188) { // '<' key
                 event.preventDefault()
                 
-                let elm = lastElm.previousElementSibling
-                lastElm.style.color=""
-                if(elm) {
-                	lastElm = elm
-                	elm = elm.previousElementSibling
-                }
+                let elm = previousElementSibling()
                 while(true) {
                 	if(!elm) {
                 		elm = lastElm
@@ -159,31 +186,23 @@
                 		lastElm = elm
                         if(elm.text.includes(".") || elm.text.includes("!") || elm.text.includes("?")) {
                             elm = elm.nextElementSibling
+                            if(elm) lastElm = elm
                             break
                         }
                 	}
                 	elm = elm.previousElementSibling
                 }
                 video.pause()
-                elm.click()
+                lastElm.click()
                              
-                let text = [...elm.parentElement.children]
-                    .map(item=>{ return item.text.trim() })
-                    .join(' ')
-                    .match(/[^\.!\?]+[\.!\?]+/g)
-                    .find(item=>item.includes(elm.text.trim()))
-                    .trim()
-                sendIn100('selectionchange', 'document', event, text)
+                sendIn100('selectionchange', 'document', event, getWholeSentence())
                 return false
             }
             if(event.key == 'ArrowLeft') {
                 event.preventDefault()
 
-                if(lastElm) lastElm.style.color = ""
-                if(lastElm.previousElementSibling) {
-                    lastElm = lastElm.previousElementSibling
-                    lastElm.click()
-                }
+                previousElementSibling()
+                lastElm.click()
                 return false
             }
             if(event.key == 'ArrowRight') {
