@@ -192,8 +192,8 @@
                 	}
                 	elm = elm.previousElementSibling
                 }
-                video.pause()
                 lastElm.click()
+                video.pause()
                              
                 sendIn100('selectionchange', 'document', event, getWholeSentence())
                 return false
