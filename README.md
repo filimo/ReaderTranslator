@@ -73,6 +73,9 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**1.6.11** 
+- Apple videos features: Add the previous phrase to ReaderTranslator by pressing Shift + LeftArrow buttons.
+
 **1.6.10** 
 - Apple videos features: Improved shortcuts functionality.
 
