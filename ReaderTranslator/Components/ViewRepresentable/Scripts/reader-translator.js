@@ -130,7 +130,7 @@
             	if(elm.previousElementSibling) {
 	            	lastElm = elm = elm.previousElementSibling
 	        	}else{
-	                elm = lastElementSiblingInPreviousParagraph()	        		
+	        		elm = undefined
 	        	}
             }
             return elm
@@ -201,7 +201,14 @@
             if(event.key == 'ArrowLeft') {
                 event.preventDefault()
 
-                previousElementSibling()
+	            let elm = lastElm.previousElementSibling
+	            lastElm.style.color=""
+	            if(elm) {
+	            	lastElm = elm
+	            }else{
+	            	elm = lastElementSiblingInPreviousParagraph()
+	            	if(elm) lastElm = elm
+	            }
                 lastElm.click()
                 return false
             }
@@ -211,30 +218,13 @@
                 if(lastElm) lastElm.style.color = ""
                 if(lastElm.nextElementSibling) {
                     lastElm = lastElm.nextElementSibling
-                    lastElm.click()
+                }else{
+		        	let elm = lastElm.parentElement.nextElementSibling
+		            if(elm) lastElm = elm.firstElementChild
                 }
+                lastElm.click()
                 return false
             }
-//            if(event.keyCode == 190) { // "." key
-//                event.preventDefault()
-//
-//                let text = lastElm.text.trim()
-//
-//                sendIn100('selectionchange', 'document', event, text)
-//                video.pause()
-//                return false
-//            }
-//            if(event.keyCode == 188) { // "<" key
-//                event.preventDefault()
-//
-//                if(!lastElm) return false
-//                video.pause()
-//                let text = (lastElm.previousElementSibling || {}).text.trim()
-//                text += ` ${lastElm.text.trim()}`
-//                sendIn100('selectionchange', 'document', event, text)
-//                if(lastElm.previousElementSibling) lastElm.previousElementSibling.click()
-//                return false
-//            }
             if(event.key == 'ArrowUp') {
                 event.preventDefault()
                 video.playbackRate += 0.05
