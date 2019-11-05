@@ -201,15 +201,25 @@
             if(event.key == 'ArrowLeft') {
                 event.preventDefault()
 
-	            let elm = lastElm.previousElementSibling
-	            lastElm.style.color=""
-	            if(elm) {
-	            	lastElm = elm
-	            }else{
-	            	elm = lastElementSiblingInPreviousParagraph()
-	            	if(elm) lastElm = elm
-	            }
-                lastElm.click()
+                if(event.shiftKey) {
+		            let elm = lastElm.previousElementSibling
+		            if(!elm) elm = lastElementSiblingInPreviousParagraph()
+		            if(elm) {
+		            	sendIn100('addNewPhrase', 'document', event, elm.text.trim())
+		            	lastElm = elm
+		            	lastElm.click()
+		        	}
+                }else{
+		            let elm = lastElm.previousElementSibling
+		            lastElm.style.color=""
+		            if(elm) {
+		            	lastElm = elm
+		            }else{
+		            	elm = lastElementSiblingInPreviousParagraph()
+		            	if(elm) lastElm = elm
+		            }
+	                lastElm.click()
+            	}
                 return false
             }
             if(event.key == 'ArrowRight') {
@@ -223,6 +233,7 @@
 		            if(elm) lastElm = elm.firstElementChild
                 }
                 lastElm.click()
+                video.pause()
                 return false
             }
             if(event.key == 'ArrowUp') {
