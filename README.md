@@ -73,8 +73,8 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
-**1.6.10** 
-- Apple videos features: Improved shortcuts functionality.
+**1.6.10** Apple videos features
+- Improved shortcuts functionality to convenience navigation, voicing and translations of phrases in `developer.apple.com/videos/play/` resources.
 
 ![](files/Release_1.6.10.png)
 
