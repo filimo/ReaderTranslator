@@ -76,6 +76,8 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 **1.6.11** 
 - Apple videos features: Add the previous phrase to ReaderTranslator by pressing Shift + LeftArrow buttons.
 
+![](files/Release_1.6.11.gif)
+
 **1.6.10** Apple videos features
 - Improved shortcuts functionality to convenience navigation, voicing and translations of phrases in `developer.apple.com/videos/play/` resources.
 
