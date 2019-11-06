@@ -112,8 +112,17 @@
 
         let video = document.querySelector('video')
         let lastElm
+    	let isVideoPaused = true
 
-        video.autoplay = false
+        function playVideo() {
+        	isVideoPaused = false
+        	video.play()
+        }
+
+        function pauseVideo() {
+        	isVideoPaused = true
+        	video.pause()
+        }
 
         function lastElementSiblingInPreviousParagraph() {
         	let elm = lastElm.parentElement.previousElementSibling
@@ -123,12 +132,13 @@
 
         function previousElementSibling() {
             let elm = lastElm.previousElementSibling
-            lastElm.style.color=""
             if(!elm) elm = lastElementSiblingInPreviousParagraph()
             if(elm) {
+	            elm.style.color = "yellow"
 	            lastElm = elm	
             	if(elm.previousElementSibling) {
 	            	lastElm = elm = elm.previousElementSibling
+		            elm.style.color = "yellow"
 	        	}else{
 	        		elm = undefined
 	        	}
@@ -148,6 +158,8 @@
         video.ontimeupdate = function() {
             let time = parseInt(video.currentTime)
             let elm = document.querySelector(`[href$="?time=${time}"]`)
+
+            if(isVideoPaused) pauseVideo()
             if(elm) {
                 if(lastElm) lastElm.style.color = ""
                 elm.style.color="yellow"
@@ -160,22 +172,26 @@
             let tagName = event.target.tagName.toLocaleLowerCase()
             if(['textarea', 'input'].includes(tagName)) return
 
-            if(event.keyCode == 190) { // '>' key
+            if(event.keyCode == 191) { // '?' key
                 event.preventDefault()
                 if(video.paused) {
                     sendIn100('stop', 'video', event, '')
                     if(lastElm) lastElm.click()
-                    video.play()
+                    playVideo()
                 }else{
                     let text = lastElm.text.trim()
                     sendIn100('selectionchange', 'document', event, text)
-                    video.pause() 
+                    pauseVideo()
                 }
                 return false
+        	}
+
+            if(event.keyCode == 190) { // '>' key
             }
             if(event.keyCode == 188) { // '<' key
                 event.preventDefault()
                 
+				pauseVideo()
                 let elm = previousElementSibling()
                 while(true) {
                 	if(!elm) {
@@ -184,16 +200,19 @@
                 	}
                 	if(elm) {
                 		lastElm = elm
+                		elm.style.color="yellow"
                         if(elm.text.includes(".") || elm.text.includes("!") || elm.text.includes("?")) {
                             elm = elm.nextElementSibling
-                            if(elm) lastElm = elm
+                            if(elm) {
+                            	elm.style.color="yellow"
+                            	lastElm = elm
+                            }
                             break
                         }
                 	}
                 	elm = elm.previousElementSibling
                 }
                 lastElm.click()
-                video.pause()
                              
                 sendIn100('selectionchange', 'document', event, getWholeSentence())
                 return false
@@ -218,6 +237,7 @@
 		            	elm = lastElementSiblingInPreviousParagraph()
 		            	if(elm) lastElm = elm
 		            }
+	                sendIn100('selectionchange', 'document', event, lastElm.text.trim())
 	                lastElm.click()
             	}
                 return false
@@ -225,6 +245,7 @@
             if(event.key == 'ArrowRight') {
                 event.preventDefault()
 
+				pauseVideo()
                 if(lastElm) lastElm.style.color = ""
                 if(lastElm.nextElementSibling) {
                     lastElm = lastElm.nextElementSibling
@@ -232,18 +253,22 @@
 		        	let elm = lastElm.parentElement.nextElementSibling
 		            if(elm) lastElm = elm.firstElementChild
                 }
+                sendIn100('selectionchange', 'document', event, lastElm.text.trim())
                 lastElm.click()
-                video.pause()
                 return false
             }
-            if(event.key == 'ArrowUp') {
+            if(event.keyCode == 187) { // "+" key
                 event.preventDefault()
+                
+				pauseVideo()
                 video.playbackRate += 0.05
                 event.extra = { playbackRate: video.playbackRate}
                 sendIn100('playbackRate', 'video', event)
             }
-            if(event.key == 'ArrowDown') {
+            if(event.keyCode == 189) { // "-" key
                 event.preventDefault()
+            
+				pauseVideo()
                 video.playbackRate -= 0.05
                 event.extra = { playbackRate: video.playbackRate}
                 sendIn100('playbackRate', 'video', event)
