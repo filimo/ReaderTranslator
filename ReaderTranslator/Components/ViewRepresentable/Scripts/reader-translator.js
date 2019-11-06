@@ -219,41 +219,42 @@
             }
             if(event.key == 'ArrowLeft') {
                 event.preventDefault()
+				
+                if(!lastElm) return
+				pauseVideo()
 
-                if(event.shiftKey) {
-		            let elm = lastElm.previousElementSibling
-		            if(!elm) elm = lastElementSiblingInPreviousParagraph()
-		            if(elm) {
-		            	sendIn100('addNewPhrase', 'document', event, elm.text.trim())
-		            	lastElm = elm
-		            	lastElm.click()
-		        	}
-                }else{
-		            let elm = lastElm.previousElementSibling
-		            lastElm.style.color=""
-		            if(elm) {
-		            	lastElm = elm
-		            }else{
-		            	elm = lastElementSiblingInPreviousParagraph()
-		            	if(elm) lastElm = elm
-		            }
-	                sendIn100('selectionchange', 'document', event, lastElm.text.trim())
-	                lastElm.click()
-            	}
+				if(!event.shiftKey) lastElm.style.color=""
+	            let elm = lastElm.previousElementSibling
+	            if(!elm) elm = lastElementSiblingInPreviousParagraph()
+	            if(elm) {
+	            	if(event.shiftKey) {
+	            		sendIn100('addNewPhraseBefore', 'document', event, elm.text.trim())
+	            	}else{
+	                	sendIn100('selectionchange', 'document', event, elm.text.trim())
+	            	}
+	            	lastElm = elm
+	            	lastElm.click()
+	        	}
                 return false
             }
             if(event.key == 'ArrowRight') {
                 event.preventDefault()
-
+				
+                if(!lastElm) return
 				pauseVideo()
-                if(lastElm) lastElm.style.color = ""
+
+				if(!event.shiftKey) lastElm.style.color=""
                 if(lastElm.nextElementSibling) {
                     lastElm = lastElm.nextElementSibling
                 }else{
 		        	let elm = lastElm.parentElement.nextElementSibling
 		            if(elm) lastElm = elm.firstElementChild
                 }
-                sendIn100('selectionchange', 'document', event, lastElm.text.trim())
+            	if(event.shiftKey) {
+            		sendIn100('addNewPhraseAfter', 'document', event, lastElm.text.trim())
+            	}else{
+                	sendIn100('selectionchange', 'document', event, lastElm.text.trim())
+            	}
                 lastElm.click()
                 return false
             }
