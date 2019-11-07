@@ -1,4 +1,5 @@
 (function() {
+    var test = 14
     var keysStatus = {}
 
     function debounce(func, wait, immediate) {
