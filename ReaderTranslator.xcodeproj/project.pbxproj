@@ -614,7 +614,8 @@
 				F0754434234479DA00E1D88E /* Frameworks */,
 				F0754435234479DA00E1D88E /* Resources */,
 				F075446423447A2800E1D88E /* Embed App Extensions */,
-				F0562E1023633FCD0074ACF5 /* ShellScript */,
+				F0562E1023633FCD0074ACF5 /* SwiftLint */,
+				F07B03AB2374722F006EDFF9 /* Incremental Build */,
 			);
 			buildRules = (
 			);
@@ -747,7 +748,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F0562E1023633FCD0074ACF5 /* ShellScript */ = {
+		F0562E1023633FCD0074ACF5 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -756,6 +757,7 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -774,6 +776,24 @@
 			inputPaths = (
 			);
 			name = "Increment Build";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+		F07B03AB2374722F006EDFF9 /* Incremental Build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Incremental Build";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -984,7 +1004,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslatorMac/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1012,7 +1032,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslatorMac/Preview Content\"";
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1047,7 +1067,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1072,7 +1092,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

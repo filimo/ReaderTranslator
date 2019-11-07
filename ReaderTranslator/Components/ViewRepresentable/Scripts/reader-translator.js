@@ -157,7 +157,7 @@
                               
         video.ontimeupdate = function() {
             let time = parseInt(video.currentTime)
-            let elm = document.querySelector(`[href$="?time=${time}"]`)
+            let elm = [...document.querySelectorAll((`[href$="?time=${time}"]`))].reverse()[0]
 
             if(isVideoPaused) pauseVideo()
             if(elm) {
@@ -279,7 +279,7 @@
 
     //Local videos
     document.addEventListener("DOMContentLoaded", (event) => {
-        if(!location.href.includes('http://localhost:8080')) return
+        if(!location.href.includes('http://localhost')) return
 
         let $video = document.querySelector('video')
         let $play = document.querySelector('#play')
@@ -323,7 +323,11 @@
                 let $elm = document.querySelector('[current=true]')
                 let $prevElm = $elm.previousElementSibling
 
-                if($prevElm) $prevElm.click()
+                if($prevElm) {
+                    sendIn100('selectionchange', 'document', event, $prevElm.textContent)
+                    $video.pause()
+                    $prevElm.click()
+                }
             }
 
             if(event.key == 'ArrowRight') {
@@ -331,7 +335,11 @@
                 let $elm = document.querySelector('[current=true]')
                 let $nextElm = $elm.nextElementSibling
 
-                if($nextElm) $nextElm.click()
+                if($nextElm) {
+                    sendIn100('selectionchange', 'document', event, $nextElm.textContent)
+                    $video.pause()
+                    $nextElm.click()
+                }
             }
         })
     })

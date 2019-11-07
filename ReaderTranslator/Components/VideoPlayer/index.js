@@ -57,10 +57,12 @@
       })
     })
 
+    srt = srt.reverse()
+
     $video.ontimeupdate = function() {
         let time = parseInt($video.currentTime)
         let elm = srt.find(item=> {
-          return time >= item.start && time < item.end
+          return time >= item.start && time <= item.end
         })
         if(elm) {
           let $elm = $srt.querySelector(`[start="${elm.start}"]`)
