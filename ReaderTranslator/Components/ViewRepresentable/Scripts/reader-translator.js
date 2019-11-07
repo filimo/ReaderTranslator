@@ -300,20 +300,39 @@
             }
         }
                      
-        $play.addEventListener('click', event => play(event))                      
+        $play.addEventListener('click', event => play(event))   
+
         window.addEventListener('keydown', event => {
-            if(event.keyCode == 80) play(event) // 'p' key
+            if(event.keyCode == 191) play(event) // '?' key
             if(event.keyCode == 188) { // "<" key
                 event.preventDefault()
                 let $elm = document.querySelector('[current=true]')
                 let $prevElm = $elm.previousElementSibling
 
-                let text = `${($elm.prevElm || {}).textContent} ${$elm.textContent}`
+                if($prevElm) {
+                    let text = `${$prevElm.textContent} ${$elm.textContent}`
 
-                $video.pause()
-                sendIn100('selectionchange', 'document', event, text)
-                if($elm.previousElementSibling) $elm.previousElementSibling.click()
-            }                
+                    $video.pause()
+                    sendIn100('selectionchange', 'document', event, text)
+                    $prevElm.click()
+                }
+            }
+
+            if(event.key == 'ArrowLeft') {
+                event.preventDefault() //
+                let $elm = document.querySelector('[current=true]')
+                let $prevElm = $elm.previousElementSibling
+
+                if($prevElm) $prevElm.click()
+            }
+
+            if(event.key == 'ArrowRight') {
+                event.preventDefault()
+                let $elm = document.querySelector('[current=true]')
+                let $nextElm = $elm.nextElementSibling
+
+                if($nextElm) $nextElm.click()
+            }
         })
     })
  })()

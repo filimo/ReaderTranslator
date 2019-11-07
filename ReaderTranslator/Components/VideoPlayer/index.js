@@ -14,13 +14,13 @@
 
   var parseSRT = function(f) {
     var matches
-    var pattern = /(\d+)\n([\d:,]+)\s+-{2}\>\s+([\d:,]+)\n([\s\S]*?(?=\n{2}|$))/gm;
+    var pattern = /(\d+)\n([\d:,]+)\s+-{2}\>\s+([\d:,]+)\n([\s\S]*?\n(?=\n{2}|$))/gm;
     var toLineObj = function(group) {
       return {
         line: group[1],
         start: toTime(group[2]),
         end: toTime(group[3]),
-        content: group[4]
+        content: group[4].replace(/\n/gm, ' ')
       };
     }
 
@@ -39,7 +39,7 @@
   }
 
   let start = async function() {
-    let srtData = await $.get('videos/Timeless - 1x01 - Pilot.HDTV.KILLERS.en.srt')
+    let srtData = await $.get(srtPath)
     let srt = parseSRT(srtData)
 
     let $srt = document.querySelector('#srt')
@@ -60,7 +60,7 @@
     $video.ontimeupdate = function() {
         let time = parseInt($video.currentTime)
         let elm = srt.find(item=> {
-          return time >= item.start && time <= item.end
+          return time >= item.start && time < item.end
         })
         if(elm) {
           let $elm = $srt.querySelector(`[start="${elm.start}"]`)
