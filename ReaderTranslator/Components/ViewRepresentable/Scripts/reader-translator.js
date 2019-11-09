@@ -44,7 +44,7 @@
       }
     }
 
-    function _send(name, source, e, text) {
+    function send(name, source, e, text) {
         text = text || document.getSelection().toString().trim()
         let sourceValue = (document.querySelector("#source") || {}).value
         let entryValue = (document.querySelector("#entry") || {}).value
@@ -71,9 +71,9 @@
          }
     }
  
-    let sendIn100 = debounce(_send, 100)
-    let sendIn500 = debounce(_send, 500)
-    let sendIn1000 = debounce(_send, 1000)
+    let sendIn100 = debounce(send, 100)
+    let sendIn500 = debounce(send, 500)
+    let sendIn1000 = debounce(send, 1000)
 
     document.addEventListener("DOMContentLoaded", (event) => {
         //disabled: sometimes this event occurs after press keys
@@ -116,11 +116,13 @@
 
         function playVideo() {
         	isVideoPaused = false
+            send('play', 'video', event, '')
         	video.play()
         }
 
         function pauseVideo() {
         	isVideoPaused = true
+            send('pause', 'video', event, '')
         	video.pause()
         }
 
@@ -134,11 +136,9 @@
             let elm = lastElm.previousElementSibling
             if(!elm) elm = lastElementSiblingInPreviousParagraph()
             if(elm) {
-	            elm.style.color = "yellow"
 	            lastElm = elm	
             	if(elm.previousElementSibling) {
 	            	lastElm = elm = elm.previousElementSibling
-		            elm.style.color = "yellow"
 	        	}else{
 	        		elm = undefined
 	        	}
@@ -147,12 +147,24 @@
         }
 
         function getWholeSentence() {
-        	return [...lastElm.parentElement.children]
+            return [...lastElm.parentElement.children]
                     .map(item=>{ return item.text.trim() })
                     .join(' ')
                     .match(/[^\.!\?]+[\.!\?]+/g)
                     .find(item=>item.includes(lastElm.text.trim()))
                     .trim()
+        }
+
+        function getSelectedPhrases() {
+            return [...document.querySelectorAll('[style="color: yellow;"]')]
+            .map(elm => elm.text.trim())
+            .join(' ')
+        }
+
+        function clearAllSelections() {
+            document.querySelectorAll('[style="color: yellow;"]').forEach(elm => {
+                elm.style.color = ""
+            })
         }
                               
         video.ontimeupdate = function() {
@@ -174,24 +186,32 @@
 
             if(event.keyCode == 191) { // '?' key
                 event.preventDefault()
+
                 if(video.paused) {
-                    sendIn100('stop', 'video', event, '')
                     if(lastElm) lastElm.click()
                     playVideo()
+                    clearAllSelections()
                 }else{
                     let text = lastElm.text.trim()
                     sendIn100('selectionchange', 'document', event, text)
                     pauseVideo()
                 }
-                return false
         	}
 
             if(event.keyCode == 190) { // '>' key
+                event.preventDefault()
+                
+                pauseVideo()
+                clearAllSelections()
+                sendIn100('selectionchange', 'document', event, getWholeSentence())
+                lastElm.click()
             }
+
             if(event.keyCode == 188) { // '<' key
                 event.preventDefault()
                 
 				pauseVideo()
+                clearAllSelections()
                 let elm = previousElementSibling()
                 while(true) {
                 	if(!elm) {
@@ -200,11 +220,10 @@
                 	}
                 	if(elm) {
                 		lastElm = elm
-                		elm.style.color="yellow"
-                        if(elm.text.includes(".") || elm.text.includes("!") || elm.text.includes("?")) {
+                        if(elm.text.endsWith(".") || elm.text.endsWith("!") || elm.text.endsWith("?")) {
+                            elm.style.color=""
                             elm = elm.nextElementSibling
                             if(elm) {
-                            	elm.style.color="yellow"
                             	lastElm = elm
                             }
                             break
@@ -215,7 +234,6 @@
                 lastElm.click()
                              
                 sendIn100('selectionchange', 'document', event, getWholeSentence())
-                return false
             }
             if(event.key == 'ArrowLeft') {
                 event.preventDefault()
@@ -223,19 +241,20 @@
                 if(!lastElm) return
 				pauseVideo()
 
-				if(!event.shiftKey) lastElm.style.color=""
 	            let elm = lastElm.previousElementSibling
 	            if(!elm) elm = lastElementSiblingInPreviousParagraph()
 	            if(elm) {
 	            	if(event.shiftKey) {
-	            		sendIn100('addNewPhraseBefore', 'document', event, elm.text.trim())
+                        elm.style.color = "yellow"
+	            		sendIn1000('selectionchange', 'document', event, getSelectedPhrases())
 	            	}else{
-	                	sendIn100('selectionchange', 'document', event, elm.text.trim())
+                        clearAllSelections()
+                        elm.style.color = "yellow"
+	                	sendIn1000('selectionchange', 'document', event, elm.text.trim())
 	            	}
 	            	lastElm = elm
 	            	lastElm.click()
 	        	}
-                return false
             }
             if(event.key == 'ArrowRight') {
                 event.preventDefault()
@@ -243,7 +262,6 @@
                 if(!lastElm) return
 				pauseVideo()
 
-				if(!event.shiftKey) lastElm.style.color=""
                 if(lastElm.nextElementSibling) {
                     lastElm = lastElm.nextElementSibling
                 }else{
@@ -251,12 +269,14 @@
 		            if(elm) lastElm = elm.firstElementChild
                 }
             	if(event.shiftKey) {
-            		sendIn100('addNewPhraseAfter', 'document', event, lastElm.text.trim())
+                    lastElm.style.color = "yellow"
+                    sendIn1000('selectionchange', 'document', event, getSelectedPhrases())
             	}else{
-                	sendIn100('selectionchange', 'document', event, lastElm.text.trim())
+                    clearAllSelections()
+                    lastElm.style.color = "yellow"
+                	sendIn1000('selectionchange', 'document', event, lastElm.text.trim())
             	}
                 lastElm.click()
-                return false
             }
             if(event.keyCode == 187) { // "+" key
                 event.preventDefault()
@@ -290,7 +310,6 @@
             if($video.paused) {
                 document.querySelector('[current=true]').click()
                 $video.play()
-                sendIn100('stop', 'video', event, '')
             }else{
                 if($elm) {
                     let text = $elm.textContent.replace('\n', ' ')

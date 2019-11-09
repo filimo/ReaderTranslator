@@ -71,8 +71,8 @@ struct SafariView: View {
 
         switch event.name {
         case "playbackRate": if let playbackRate = extra.playbackRate { store.playbackRate = playbackRate }
-        case "play": SpeechSynthesizer.speak()
-        case "stop": SpeechSynthesizer.stop()
+//        case "pause": SpeechSynthesizer.speak()
+        case "play": SpeechSynthesizer.stop()
         default: os_log("DOMEvent player: %@ is not recognized", type: .debug, event.name)
         }
     }
