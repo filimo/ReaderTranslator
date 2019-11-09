@@ -81,6 +81,9 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 - Prevent to start playing video after you stop it and start to navigate through phrases
 - Speed up or down speech rate by pressing "-" or "+" keys 
 
+**1.6.13** 
+Apple videos features: Improve functionality.
+
 **1.6.11** 
 - Apple videos features: Add the previous phrase to ReaderTranslator by pressing Shift + LeftArrow buttons.
 
