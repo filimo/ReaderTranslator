@@ -303,6 +303,7 @@
 
         let $video = document.querySelector('video')
         let $play = document.querySelector('#play')
+        let $srt = document.querySelector('#srt')
 
         function play(event) {
             event.preventDefault()
@@ -319,10 +320,26 @@
             }
         }
                      
-        $play.addEventListener('click', event => play(event))   
+        $play.addEventListener('click', event => play(event)) 
+
+        $video.ontimeupdate = function() {
+            if($video.dataset.stop) {
+                delete $video.dataset.stop
+                $video.pause()
+                let $elm = document.querySelector('[current=true]')
+                if($elm) sendIn100('selectionchange', 'document', event, $elm.textContent)
+            }
+        }  
 
         window.addEventListener('keydown', event => {
             if(event.keyCode == 191) play(event) // '?' key
+            if(event.keyCode == 190) { // '>' key
+                event.preventDefault()
+
+                let $elm = document.querySelector('[current=true]')
+                $elm.nextElementSibling.dataset.stop = true
+                play(event)
+            }
             if(event.keyCode == 188) { // "<" key
                 event.preventDefault()
                 let $elm = document.querySelector('[current=true]')

@@ -57,7 +57,7 @@
       })
     })
 
-    srt = srt.reverse()
+    $video.srt = srt.reverse()
 
     $video.ontimeupdate = function() {
         let time = parseInt($video.currentTime)
@@ -75,6 +75,10 @@
               $elm.style.color="yellow"
               $elm.scrollIntoViewIfNeeded()
               $lastElm = $elm
+              if($elm.dataset.stop) {
+                delete $elm.dataset.stop
+                $video.dataset.stop = true
+              }
           }
         }
     }
