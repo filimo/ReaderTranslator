@@ -72,6 +72,7 @@
     }
  
     let sendIn100 = debounce(send, 100)
+    let sendIn200 = debounce(send, 200)
     let sendIn500 = debounce(send, 500)
     let sendIn1000 = debounce(send, 1000)
 
@@ -299,7 +300,7 @@
 
     //Local videos
     document.addEventListener("DOMContentLoaded", (event) => {
-        if(!location.href.includes('http://localhost')) return
+        if(location.hostname == "localhost" && location.pathname.includes('videos')) { } else { return }
 
         let $video = document.querySelector('video')
         let $play = document.querySelector('#play')
@@ -334,14 +335,11 @@
         window.addEventListener('keydown', event => {
             if(event.keyCode == 191) play(event) // '?' key
             if(event.keyCode == 190) { // '>' key
-                event.preventDefault()
-
                 let $elm = document.querySelector('[current=true]')
                 $elm.nextElementSibling.dataset.stop = true
                 play(event)
             }
             if(event.keyCode == 188) { // "<" key
-                event.preventDefault()
                 let $elm = document.querySelector('[current=true]')
                 let $prevElm = $elm.previousElementSibling
 
@@ -379,4 +377,109 @@
             }
         })
     })
+
+    //Local audiobook
+    document.addEventListener("DOMContentLoaded", (event) => {
+        if(location.hostname == "localhost" && location.pathname.includes('audiobooks')) { } else { return }
+
+        var $time = document.createElement('input')
+        $time.style.cssText = 'position:fixed;width:100px;top:0;left:0'
+        $time.value = "0"
+        document.body.appendChild($time)
+
+        let audio = new Audio("../audiobook.m4a")
+
+        audio.oncanplay = function() { 
+            audio.currentTime = localStorage.getItem('currentTime') 
+        }
+
+        function init() {
+            [...document.querySelectorAll('p')].forEach(item=>{
+                let html = (item.textContent.match(/[^\.!\?]+[\.!\?]+/g) || [])
+                    .map(item=>`<span class="sentence">${item.trim()}</span>`)
+                    .join('\n')
+                item.innerHTML = html
+            })
+
+            var style=document.createElement('style')
+            style.type='text/css'
+            style.appendChild(document.createTextNode('.sentence:hover { background-color: yellow; }'))
+            document.getElementsByTagName('head')[0].appendChild(style)
+
+            document.addEventListener('dblclick', event => {
+                let elm = event.target
+                if(elm.className == 'sentence') {
+                    elm.removeAttribute('time')
+                }
+            })
+
+            document.addEventListener('click', event => {
+                let elm = event.target
+                if(elm.className == 'sentence') {
+                    let time = elm.getAttribute('time')
+                    if(time) {
+                        audio.currentTime = time
+                    }else{
+                        audio.pause()
+                        elm.setAttribute('time', audio.currentTime)
+                        sendIn100('selectionchange', 'document', event, elm.textContent)
+                        sendIn200('play', 'video', event, '')
+                        return
+                    }
+
+                    if(audio.paused) {
+                        send('play', 'video', event, '')
+                        audio.play()
+                    }else{
+                        audio.pause()
+                        sendIn100('selectionchange', 'document', event, elm.textContent)
+                        sendIn200('play', 'video', event, '')
+                    }
+                }
+            })              
+        }
+
+        function tapped() {
+//            audio.play()
+//            document.body.removeEventListener("click", tapped, false)
+        }
+
+//        document.body.addEventListener('click', tapped, false)
+
+        audio.ontimeupdate = function() {
+            localStorage.setItem('currentTime', audio.currentTime)
+            $time.value = Math.round(audio.currentTime * 10) / 10
+        }
+        $time.addEventListener('change', event => {
+            audio.currentTime = event.currentTarget.value
+        })
+
+        window.addEventListener('keydown', event => {
+            function play(event) {
+                event.preventDefault()
+                if(audio.paused) {
+                    send('pause', 'video', event, '')
+                    audio.play()
+                }else{
+                    audio.pause()
+                }
+            }           
+            
+            if(event.keyCode == 191) { // `?` key
+                play(event)
+            }
+            if(event.key == 'ArrowLeft') { audio.currentTime -= 1 }
+            if(event.key == 'ArrowRight') { audio.currentTime += 1 }
+            if(event.keyCode == 222) { // `'` key
+            }
+            if(event.keyCode == 188) { // `<`` key
+                audio.play()
+            }
+            if(event.keyCode == 68) { // `d` key
+
+            }            
+        })
+
+        init()
+    })    
  })()

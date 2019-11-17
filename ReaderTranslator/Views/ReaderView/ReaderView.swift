@@ -17,12 +17,15 @@ struct ReaderView: View {
             #if os(macOS)
             SafariView()
             #endif
-            if store.enabledViews.contains(.wikipedia) { WikipediaView() }
-            if store.enabledViews.contains(.macmillan) { MacmillanView() }
-            if store.enabledViews.contains(.collins) { CollinsView() }
-            if store.enabledViews.contains(.longman) { LongmanView() }
-            if store.enabledViews.contains(.reverso) { ReversoView() }
-            if store.enabledViews.contains(.translator) { GTranslatorView() }
+            Group {
+                if store.enabledViews.contains(.wikipedia) { WikipediaView() }
+                if store.enabledViews.contains(.macmillan) { MacmillanView() }
+                if store.enabledViews.contains(.collins) { CollinsView() }
+                if store.enabledViews.contains(.longman) { LongmanView() }
+                if store.enabledViews.contains(.reverso) { ReversoView() }
+                if store.enabledViews.contains(.gTranslator) { GTranslatorView() }
+                if store.enabledViews.contains(.yTranslator) { YTranslatorView() }
+            }
             ReaderView_PDF()
             ReaderView_Web()
         }

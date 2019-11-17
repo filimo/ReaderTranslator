@@ -47,7 +47,7 @@ struct StatusBarView_Bookmarks: View {
                 ScrollView {
                     ForEach(self.store.bookmarks, id: \.self) { text in
                         Text("\(text)").onTapGesture {
-                            self.store.translateAction.add(.translator(text: text))
+                            self.store.translateAction.add(.gTranslator(text: text))
                             self.show = false
                         }
                     }

@@ -55,7 +55,7 @@ struct SafariView: View {
             if extra.altKey == true && extra.keyCode == 83 { // Alt+s
                 store.canSafariSendSelectedText.toggle()
                 if store.canSafariSendSelectedText {
-                    store.translateAction.add(.translator(text: event.extra?.selectedText ?? ""))
+                    store.translateAction.add(.gTranslator(text: event.extra?.selectedText ?? ""))
                 }
                 return
             }

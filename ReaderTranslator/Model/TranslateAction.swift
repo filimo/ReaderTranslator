@@ -14,7 +14,8 @@ enum TranslateAction: Equatable {
     case none(text: String)
     case speak(text: String)
     case reverso(text: String)
-    case translator(text: String)
+    case gTranslator(text: String)
+    case yTranslator(text: String)
     case longman(text: String)
     case macmillan(text: String)
     case collins(text: String)
@@ -29,7 +30,8 @@ enum TranslateAction: Equatable {
         case .none(let text),
              .speak(let text),
              .reverso(let text),
-             .translator(let text),
+             .gTranslator(let text),
+             .yTranslator(let text),
              .longman(let text),
              .macmillan(let text),
              .collins(let text),
@@ -64,7 +66,8 @@ enum TranslateAction: Equatable {
                      .macmillan,
                      .wikipedia: if count < 4 { return true }
                 case .reverso: if count < 10 { return true }
-                case .translator: return true
+                case .gTranslator: return true
+                case .yTranslator: return true
                 }
                 return false
             }

@@ -10,14 +10,14 @@ import Combine
 import SwiftUI
 import WebKit
 
-struct GTranslator: ViewRepresentable, WKScriptsSetup {
+struct YTranslator: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
 
     static var coorinator: Coordinator?
     static var pageView: WKPageView?
 
     @ObservedObject private var store = Store.shared
-    private let defaultUrl = "https://translate.google.com?op=translate&sl=auto&tl=ru"
+    private let defaultUrl = "https://translate.yandex.ru/?lang=en-ru"
 
     class Coordinator: WKCoordinator {
         @Published var selectedText = TranslateAction.gTranslator(text: "")
@@ -33,7 +33,7 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
                     let text = action.getText()
                     if text != "" {
                         print("\(self.theClassName)_$selectedText")
-                        self.store.translateAction.addAll(text: text, except: .gTranslator)
+                        self.store.translateAction.addAll(text: text, except: .yTranslator)
                     }
                 }
                 .store(in: &cancellableSet)
@@ -51,23 +51,20 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
-        setupScript(view: view, file: "gtranslator-reverso-speaker")
 
         return view
     }
 
     func updateView(_ view: WKPageView, context: Context) {
-        if case let .gTranslator(text) = selectedText {
+        if case let .yTranslator(text) = selectedText {
             Store.shared.translateAction.next()
 
             print("\(theClassName)_updateView_update", text)
 
-            let (slValue, tlValue) = getParams(url: view.url)
+            let (lang) = getParams(url: view.url)
             guard var urlComponent = URLComponents(string: defaultUrl) else { return }
             urlComponent.queryItems = [
-                .init(name: "op", value: "translate"),
-                .init(name: "sl", value: slValue),
-                .init(name: "tl", value: tlValue),
+                .init(name: "lang", value: lang),
                 .init(name: "text", value: text)
             ]
 
@@ -80,21 +77,19 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
         }
     }
 
-    private func getParams(url: URL?) -> (String?, String?) {
-        let lastUrl = url?.absoluteString.replacingOccurrences(of: "#view=home", with: "")
-        let url = lastUrl ?? defaultUrl
+    private func getParams(url: URL?) -> (String?) {
+        let url = url?.absoluteString ?? defaultUrl
 
-        guard let urlComponent = URLComponents(string: url) else { return (nil, nil) }
+        guard let urlComponent = URLComponents(string: url) else { return (nil) }
         let queryItems = urlComponent.queryItems
 
-        let slValue = queryItems?.last(where: { $0.name == "sl" })?.value
-        let tlValue = queryItems?.last(where: { $0.name == "tl" })?.value
+        let lang = queryItems?.last(where: { $0.name == "lang" })?.value
 
-        return (slValue, tlValue)
+        return (lang)
     }
 }
 
-extension GTranslator.Coordinator: WKScriptMessageHandler {
+extension YTranslator.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
         var text: String { event.extra?.selectedText ?? "" }

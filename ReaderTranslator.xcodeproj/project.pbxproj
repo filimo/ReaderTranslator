@@ -18,6 +18,10 @@
 		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F026B1E82344830200E032B9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* SafariView.swift */; };
 		F02989EC2360488800DF722E /* OpenPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02989EB2360488800DF722E /* OpenPanel.swift */; };
+		F0305FD123812710002AC5F5 /* YTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */; };
+		F0305FD223812711002AC5F5 /* YTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */; };
+		F0305FD32381271A002AC5F5 /* YTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062029423812264002EEAEE /* YTranslator.swift */; };
+		F0305FD42381271A002AC5F5 /* YTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062029423812264002EEAEE /* YTranslator.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
 		F049244F2341F54800F3C728 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
@@ -198,6 +202,7 @@
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
 		F026B1E72344830200E032B9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F02989EB2360488800DF722E /* OpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPanel.swift; sourceTree = "<group>"; };
+		F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorView.swift; sourceTree = "<group>"; };
 		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -207,6 +212,7 @@
 		F04C8312236187D6003A25B4 /* Macmillan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macmillan.swift; sourceTree = "<group>"; };
 		F0505C522360D37C004F2D50 /* Longman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Longman.swift; sourceTree = "<group>"; };
 		F0505C532360D3DA004F2D50 /* LongmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanView.swift; sourceTree = "<group>"; };
+		F062029423812264002EEAEE /* YTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslator.swift; sourceTree = "<group>"; };
 		F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
 		F06DB1032344975E00C2DE90 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNSTextRepresentable.swift; sourceTree = "<group>"; };
@@ -329,6 +335,7 @@
 				F0FCDD442361A7650016F23F /* Collins.swift */,
 				F0505C522360D37C004F2D50 /* Longman.swift */,
 				F0A9F35A2349228A00970C97 /* Reverso.swift */,
+				F062029423812264002EEAEE /* YTranslator.swift */,
 				F0AA69DB232E97AF007CC07B /* GTranslator.swift */,
 				F0D2E333234BA49000D95994 /* Safari.swift */,
 				F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */,
@@ -546,6 +553,7 @@
 				F0505C532360D3DA004F2D50 /* LongmanView.swift */,
 				F01A50E823492398001DCC11 /* ReversoView.swift */,
 				F0D31C5023491C23003CF86B /* GTranslatorView.swift */,
+				F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */,
 				F0AB12A2233F5798005B9F2A /* ReaderView_PDF.swift */,
 				F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */,
 				F026B1E72344830200E032B9 /* SafariView.swift */,
@@ -810,6 +818,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0BB43792344845000ADBEF1 /* StatusBarView_Tabs.swift in Sources */,
+				F0305FD42381271A002AC5F5 /* YTranslator.swift in Sources */,
 				F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */,
 				F0C4EDA52349260000CCD97A /* ReversoView.swift in Sources */,
 				F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */,
@@ -839,6 +848,7 @@
 				F0FCDD432361897E0016F23F /* Macmillan.swift in Sources */,
 				F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */,
 				F0562E0F2362026C0074ACF5 /* Wikipedia.swift in Sources */,
+				F0305FD223812711002AC5F5 /* YTranslatorView.swift in Sources */,
 				F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */,
 				F001A701235E095700617573 /* ServiceProvider.swift in Sources */,
 				F0FCDD472361A8070016F23F /* CollinsView.swift in Sources */,
@@ -905,6 +915,7 @@
 				F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
 				F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */,
 				F06DB0FF2344856300C2DE90 /* Store.swift in Sources */,
+				F0305FD123812710002AC5F5 /* YTranslatorView.swift in Sources */,
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
 				F0EDE34D23641B1300E0B81C /* Stack.swift in Sources */,
 				F0D2E334234BA49000D95994 /* Safari.swift in Sources */,
@@ -929,6 +940,7 @@
 				F0AB12AA233F58A2005B9F2A /* StatusBarView_Zoom.swift in Sources */,
 				F0505C562360D485004F2D50 /* LongmanView.swift in Sources */,
 				F0AB12AC233F5908005B9F2A /* StatusBarView_ViewMode.swift in Sources */,
+				F0305FD32381271A002AC5F5 /* YTranslator.swift in Sources */,
 				F04C830F23617BE6003A25B4 /* NSObject.swift in Sources */,
 				F0AD8B18236413DA0017C22F /* ViewMode.swift in Sources */,
 				F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */,

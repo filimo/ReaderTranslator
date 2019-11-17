@@ -19,7 +19,8 @@ struct StatusBarView_ViewsEnabler: View {
             button(.collins)
             button(.longman)
             button(.reverso)
-            button(.translator)
+            button(.gTranslator)
+            button(.yTranslator)
         }
     }
 

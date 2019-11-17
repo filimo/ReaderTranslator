@@ -18,7 +18,7 @@ class Store: ObservableObject {
 
     @Published var translateAction = TranslateAction()
 
-    @Published(key: "enabledViews") var enabledViews: Set<AvailableView> = [.reverso, .translator]
+    @Published(key: "enabledViews") var enabledViews: Set<AvailableView> = [.reverso, .gTranslator]
 
     @Published var currentPage = "1"
     @Published var pageCount = 0

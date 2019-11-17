@@ -74,7 +74,7 @@ struct StatusBarView: View {
         Group {
             Spacer()
             Button(action: {
-                self.store.translateAction.add(.translator(text: ""))
+                self.store.translateAction.add(.gTranslator(text: ""))
                 GTranslator.pageView?.goBack()
             }, label: { Image.sfSymbol("arrowshape.turn.up.left.fill") })
             Button(action: {

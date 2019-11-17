@@ -22,7 +22,7 @@ class ServiceProvider: NSObject {
             return
         }
 
-        store.translateAction.add(.translator(text: text))
+        store.translateAction.add(.gTranslator(text: text))
         openText(text: text)
     }
 

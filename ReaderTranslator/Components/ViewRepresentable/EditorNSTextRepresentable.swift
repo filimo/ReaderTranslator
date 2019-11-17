@@ -18,11 +18,11 @@ struct EditorNSTextRepresentable: NSViewRepresentable {
     @Binding var translateAction: TranslateAction
     private var text: String {
         get {
-            guard case let .translator(text) = translateAction else { return "" }
+            guard case let .gTranslator(text) = translateAction else { return "" }
             return text
         }
         set {
-            translateAction = .translator(text: newValue)
+            translateAction = .gTranslator(text: newValue)
         }
     }
 

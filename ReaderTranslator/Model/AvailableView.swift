@@ -11,7 +11,8 @@ import Foundation
 enum AvailableView: String, Codable, CaseIterable {
     case wikipedia = "Wikipedia"
     case reverso = "Reverso"
-    case translator = "GTranslator"
+    case gTranslator = "GTranslator"
+    case yTranslator = "YTranslator"
     case longman = "Longman"
     case macmillan = "Macmillan"
     case collins = "Collin's"
@@ -22,8 +23,10 @@ enum AvailableView: String, Codable, CaseIterable {
             return .wikipedia(text: text)
         case .reverso:
             return .reverso(text: text)
-        case .translator:
-            return .translator(text: text)
+        case .gTranslator:
+            return .gTranslator(text: text)
+        case .yTranslator:
+            return .yTranslator(text: text)
         case .longman:
             return .longman(text: text)
         case .macmillan:
