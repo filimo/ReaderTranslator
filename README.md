@@ -73,6 +73,9 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**1.6.14** 
+Added Yandex.Translate
+
 **1.6.12** New way to use ReaderTranslator with `https://developer.apple.com/videos/**`
 - Navigate backward or forward through phrases and send them to ReaderTranslator by pressing LeftArrow or RightArrows key
 - Go to the previous phrase, highlight it and add it to ReaderTranslator before the current text by Shift + the left arrow key
@@ -80,9 +83,6 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 - Send the current phrase to ReaderTranslator / Start playing the video pressing "/" key
 - Prevent to start playing video after you stop it and start to navigate through phrases
 - Speed up or down speech rate by pressing "-" or "+" keys 
-
-**1.6.13** 
-Apple videos features: Improve functionality.
 
 **1.6.11** 
 - Apple videos features: Add the previous phrase to ReaderTranslator by pressing Shift + LeftArrow buttons.
