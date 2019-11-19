@@ -71,6 +71,7 @@
          }
     }
  
+    let sendIn50 = debounce(send, 50)
     let sendIn100 = debounce(send, 100)
     let sendIn200 = debounce(send, 200)
     let sendIn500 = debounce(send, 500)
@@ -90,6 +91,8 @@
     })
 
     document.addEventListener('selectionchange', (event) => {
+        if(location.hostname == "localhost" && location.pathname.includes('audiobooks')) return
+
         let selection = document.getSelection()
                     
         if(!selection) return
@@ -393,6 +396,10 @@
             audio.currentTime = localStorage.getItem('currentTime') 
         }
 
+        function translateWithoutSpeaking(text) {
+            send('selectionchangeWithoutSpeaking', 'document', event, text)
+        }
+
         function init() {
             [...document.querySelectorAll('p')].forEach(item=>{
                 let html = (item.textContent.match(/[^\.!\?]+[\.!\?]+/g) || [])
@@ -400,10 +407,20 @@
                     .join('\n')
                 item.innerHTML = html
             })
+            let lastSentence = localStorage.getItem('lastSentence')
+            if(lastSentence) {
+                let elm = [...document.querySelectorAll('.sentence')]
+                            .find(item=>item.textContent==lastSentence)
+                
+                if(elm) {
+                    elm.scrollIntoViewIfNeeded()
+                    elm.style.backgroundColor = 'lightgrey'
+                }
+            }
 
             var style=document.createElement('style')
             style.type='text/css'
-            style.appendChild(document.createTextNode('.sentence:hover { background-color: yellow; }'))
+            style.appendChild(document.createTextNode('.sentence:hover { background-color: yellow; background-color: yellow !important; }'))
             document.getElementsByTagName('head')[0].appendChild(style)
 
             document.addEventListener('dblclick', event => {
@@ -414,6 +431,13 @@
             })
 
             document.addEventListener('click', event => {
+                let selectedText = getSelection().toString()
+
+                if(selectedText) {
+                    translateWithoutSpeaking(selectedText)
+                    return
+                }
+
                 let elm = event.target
                 if(elm.className == 'sentence') {
                     let time = elm.getAttribute('time')
@@ -421,9 +445,10 @@
                         audio.currentTime = time
                     }else{
                         audio.pause()
+                        localStorage.setItem('lastSentence', elm.textContent)
+                        elm.style.backgroundColor="lightgrey"
                         elm.setAttribute('time', audio.currentTime)
-                        sendIn100('selectionchange', 'document', event, elm.textContent)
-                        sendIn200('play', 'video', event, '')
+                        translateWithoutSpeaking(elm.textContent)
                         return
                     }
 
@@ -432,8 +457,7 @@
                         audio.play()
                     }else{
                         audio.pause()
-                        sendIn100('selectionchange', 'document', event, elm.textContent)
-                        sendIn200('play', 'video', event, '')
+                        translateWithoutSpeaking(elm.textContent)
                     }
                 }
             })              

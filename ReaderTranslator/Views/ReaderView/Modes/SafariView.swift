@@ -33,6 +33,7 @@ struct SafariView: View {
         switch event.name {
         case "keydown": onMessageChanged_keydown(event: event)
         case "selectionchange": onMessageChanged_selectionchange(event: event)
+        case "selectionchangeWithoutSpeaking": onMessageChanged_selectionchange(event: event, isSpeaking: false)
         case "addNewPhraseBefore": onMessageChanged_addNewPhraseBefore(event: event)
         case "addNewPhraseAfter": onMessageChanged_addNewPhraseAfter(event: event)
         default: os_log("DOMEvent name: %@ is not recognized", type: .debug, event.name)
@@ -77,13 +78,13 @@ struct SafariView: View {
         }
     }
 
-    private func onMessageChanged_selectionchange(event: DOMEvent) {
+    private func onMessageChanged_selectionchange(event: DOMEvent, isSpeaking: Bool = true) {
         if store.canSafariSendSelectedText {
             if let extra = event.extra,
                 extra.altKey != true && extra.metaKey != true {
 
                 let text = event.extra?.selectedText ?? ""
-                store.translateAction.addAll(text: text)
+                store.translateAction.addAll(text: text, isSpeaking: isSpeaking)
             }
         }
     }

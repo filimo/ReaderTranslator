@@ -41,20 +41,20 @@ enum TranslateAction: Equatable {
         }
     }
 
-    mutating func add(_ action: TranslateAction) {
-        add([.speak(text: action.getText()), action])
+    mutating func add(_ action: TranslateAction, isSpeaking: Bool = true) {
+        if isSpeaking { add([.speak(text: action.getText()), action]) }
         if stack.count == 1 { next() }
     }
 
-    mutating func add(_ actions: [TranslateAction]) {
+    mutating func add(_ actions: [TranslateAction], isSpeaking: Bool = true) {
         let isEmpty = stack.count == 0 ? true : false
 
         for action in actions { stack.push(action) }
-        stack.push(.speak(text: actions.first?.getText() ?? ""))
+        if isSpeaking { stack.push(.speak(text: actions.first?.getText() ?? "")) }
         if isEmpty { next() }
     }
 
-    mutating func addAll(text: String, except: AvailableView? = nil) {
+    mutating func addAll(text: String, except: AvailableView? = nil, isSpeaking: Bool = true) {
         let actions = Store.shared.enabledViews
             .filter {
                 guard $0 != except else { return false }
@@ -72,7 +72,7 @@ enum TranslateAction: Equatable {
                 return false
             }
             .map { $0.getAction(text: text) }
-        add(actions)
+        add(actions, isSpeaking: isSpeaking)
     }
 
     @discardableResult
