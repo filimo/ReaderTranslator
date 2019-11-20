@@ -90,12 +90,13 @@
         keysStatus = {}
     })
 
-    document.addEventListener('selectionchange', (event) => {
+    // Use click event instead of selectionchange to avoid firing the event when using text search on a page
+    document.addEventListener('click', (event) => {
         if(location.hostname == "localhost" && location.pathname.includes('audiobooks')) return
 
         let selection = document.getSelection()
                     
-        if(!selection) return
+        if(selection) {} else return
                               
         //Reverso selects text in `search-input` tag after the page loaded
         if(selection.focusNode.id == 'search-input') return
@@ -423,12 +424,12 @@
             style.appendChild(document.createTextNode('.sentence:hover { background-color: yellow; background-color: yellow !important; }'))
             document.getElementsByTagName('head')[0].appendChild(style)
 
-            document.addEventListener('dblclick', event => {
-                let elm = event.target
-                if(elm.className == 'sentence') {
-                    elm.removeAttribute('time')
-                }
-            })
+            // document.addEventListener('dblclick', event => {
+            //     let elm = event.target
+            //     if(elm.className == 'sentence') {
+            //         elm.removeAttribute('time')
+            //     }
+            // })
 
             document.addEventListener('click', event => {
                 let selectedText = getSelection().toString()
