@@ -12,9 +12,10 @@ struct ReaderView_PDF: View {
     @ObservedObject var store = Store.shared
 
     var body: some View {
-        Group {
+        VStack {
             if store.viewMode == .pdf {
                 PDFKitView()
+                PdfToolbarView().frame(height: 30)
             }
         }
     }

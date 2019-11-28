@@ -24,7 +24,6 @@ struct StatusBarView: View {
             StatusBarView_Safari()
             StatusBarView_Bookmarks()
             StatusBarView_ViewsEnabler()
-            openPDFPanelView
 //            gTranslatorNavbarView
             speechHandler
             playbackRateView
@@ -44,26 +43,6 @@ struct StatusBarView: View {
         return Group {
             if store.viewMode == .safari {
                 Text(String(format: "PlaybackRate: %.2f", store.playbackRate as Float))
-            } else {
-                EmptyView()
-            }
-        }
-    }
-
-    private var openPDFPanelView: some View {
-        Group {
-            if store.viewMode == .pdf {
-                Spacer()
-                Button(
-                    action: {
-                        OpenPanel.showChooseFileDialog(title: "Open PDF file", allowedFileTypes: ["pdf"]) { urlString in
-                            guard let url = urlString else { return }
-
-                            self.store.lastPdfPage = "1"
-                            self.store.lastPdf = url
-                        }
-                    },
-                    label: { Text("Open file") })
             } else {
                 EmptyView()
             }

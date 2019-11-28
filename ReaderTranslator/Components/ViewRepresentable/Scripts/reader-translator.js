@@ -102,7 +102,7 @@
         if(selection.focusNode.id == 'search-input') return
                               
         if(selection.toString().trim()) {
-            sendIn1000('selectionchange', 'document', event)
+            send('selectionchange', 'document', event)
         }
     })
 
@@ -387,11 +387,11 @@
         if(location.hostname == "localhost" && location.pathname.includes('audiobooks')) { } else { return }
 
         var $time = document.createElement('input')
-        $time.style.cssText = 'position:fixed;width:100px;top:0;left:0'
+        $time.style.cssText = 'position:fixed;width:50px;top:0;left:0'
         $time.value = "0"
         document.body.appendChild($time)
 
-        let audio = new Audio("../audiobook.m4a")
+        let audio = new Audio(localStorage.getItem('audio_file'))
 
         audio.oncanplay = function() { 
             audio.currentTime = localStorage.getItem('currentTime') 
@@ -404,8 +404,27 @@
         function init() {
             [...document.querySelectorAll('p')].forEach(item=>{
                 let html = (item.textContent.match(/[^\.!\?]+[\.!\?]+/g) || [])
-                    .map(item=>`<span class="sentence">${item.trim()}</span>`)
+                    .map(item=>{
+                        let text = item.trim()
+                        let time = localStorage.getItem(text)
+
+                        if(time) {
+                            return `<span class="sentence" time=${time}>${text}</span>`
+                        }else{
+                            return `<span class="sentence">${text}</span>`
+                        }
+                    })
                     .join('\n')
+                if(html == "") {
+                    let text = item.textContent.trim()
+                    let time = localStorage.getItem(text)
+
+                    if(time) {
+                        html = `<span class="sentence" time=${time}>${text}</span>`
+                    }else{
+                        html = `<span class="sentence">${text}</span>`
+                    }
+                }
                 item.innerHTML = html
             })
             let lastSentence = localStorage.getItem('lastSentence')
@@ -415,13 +434,12 @@
                 
                 if(elm) {
                     elm.scrollIntoViewIfNeeded()
-                    elm.style.backgroundColor = 'lightgrey'
                 }
             }
 
             var style=document.createElement('style')
             style.type='text/css'
-            style.appendChild(document.createTextNode('.sentence:hover { background-color: yellow; background-color: yellow !important; }'))
+            style.appendChild(document.createTextNode('[time] { background-color: lightgrey; }\n .sentence:hover { background-color: yellow; background-color: yellow !important; }'))
             document.getElementsByTagName('head')[0].appendChild(style)
 
             // document.addEventListener('dblclick', event => {
@@ -444,21 +462,20 @@
                     let time = elm.getAttribute('time')
                     if(time) {
                         audio.currentTime = time
+                        translateWithoutSpeaking(elm.textContent)
+                        if(audio.paused) {
+                            send('play', 'video', event, '')
+                            audio.play()
+                        }else{
+                            audio.pause()
+                        }
                     }else{
                         audio.pause()
                         localStorage.setItem('lastSentence', elm.textContent)
-                        elm.style.backgroundColor="lightgrey"
                         elm.setAttribute('time', audio.currentTime)
+                        localStorage.setItem(elm.textContent.trim(), audio.currentTime)
                         translateWithoutSpeaking(elm.textContent)
                         return
-                    }
-
-                    if(audio.paused) {
-                        send('play', 'video', event, '')
-                        audio.play()
-                    }else{
-                        audio.pause()
-                        translateWithoutSpeaking(elm.textContent)
                     }
                 }
             })              

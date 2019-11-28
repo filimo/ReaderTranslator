@@ -13,7 +13,7 @@ class OpenPanel {
     static func showChooseFileDialog(
         title: String,
         allowedFileTypes: [String],
-        onFinished: @escaping (_: String?) -> Void) {
+        onFinished: @escaping (_: URL?) -> Void) {
 
         let openPanel = NSOpenPanel()
 
@@ -26,9 +26,9 @@ class OpenPanel {
 
         openPanel.begin { result -> Void in
             if result == .OK {
-                onFinished(openPanel.url?.absoluteString ?? "")
+                onFinished(openPanel.url)
             } else {
-                onFinished("")
+                onFinished(nil)
             }
         }
     }

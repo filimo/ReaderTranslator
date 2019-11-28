@@ -64,7 +64,7 @@ struct PDFKitView: View {
     }
 
     private func start() {
-        self.store.$currentPage
+        self.store.$currentPdfPage
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { page in
@@ -79,7 +79,7 @@ struct PDFKitView: View {
             .receive(on: RunLoop.main)
             .sink { mode in
                 if mode == .pdf {
-                    if let page = Int(self.store.currentPage) {
+                    if let page = Int(self.store.currentPdfPage) {
                         print("debug: ", "willViewModeChanged: ", page)
                         self.goCurrentPage(page: page)
                     }
@@ -116,7 +116,7 @@ struct PDFKitView: View {
         let page = document.index(for: currentPage)
 
         print("debug: ", "PDFViewPageChanged: ", page + 1, document.pageCount)
-        self.store.currentPage = String(page + 1)
+        self.store.currentPdfPage = String(page + 1)
         self.store.lastPdfPage = String(page + 1)
     }
 

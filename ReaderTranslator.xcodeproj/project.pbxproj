@@ -38,6 +38,8 @@
 		F0562E0D2362025E0074ACF5 /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0229BE02362021200F12F47 /* WikipediaView.swift */; };
 		F0562E0E2362026C0074ACF5 /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */; };
 		F0562E0F2362026C0074ACF5 /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */; };
+		F0586482238FB03900E6DDFA /* PdfToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0586481238FB03900E6DDFA /* PdfToolbarView.swift */; };
+		F0586483238FB03900E6DDFA /* PdfToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0586481238FB03900E6DDFA /* PdfToolbarView.swift */; };
 		F06DB0FF2344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1042344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
@@ -212,6 +214,7 @@
 		F04C8312236187D6003A25B4 /* Macmillan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macmillan.swift; sourceTree = "<group>"; };
 		F0505C522360D37C004F2D50 /* Longman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Longman.swift; sourceTree = "<group>"; };
 		F0505C532360D3DA004F2D50 /* LongmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanView.swift; sourceTree = "<group>"; };
+		F0586481238FB03900E6DDFA /* PdfToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfToolbarView.swift; sourceTree = "<group>"; };
 		F062029423812264002EEAEE /* YTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslator.swift; sourceTree = "<group>"; };
 		F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
 		F06DB1032344975E00C2DE90 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
@@ -557,6 +560,7 @@
 				F0AB12A2233F5798005B9F2A /* ReaderView_PDF.swift */,
 				F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */,
 				F026B1E72344830200E032B9 /* SafariView.swift */,
+				F0586481238FB03900E6DDFA /* PdfToolbarView.swift */,
 			);
 			path = Modes;
 			sourceTree = "<group>";
@@ -821,6 +825,7 @@
 				F0305FD42381271A002AC5F5 /* YTranslator.swift in Sources */,
 				F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */,
 				F0C4EDA52349260000CCD97A /* ReversoView.swift in Sources */,
+				F0586483238FB03900E6DDFA /* PdfToolbarView.swift in Sources */,
 				F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */,
 				F0AD8B1C236413F60017C22F /* AvailableView.swift in Sources */,
 				F06DB10E23450B6000C2DE90 /* View.swift in Sources */,
@@ -905,6 +910,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0586482238FB03900E6DDFA /* PdfToolbarView.swift in Sources */,
 				F0AB12A8233F5802005B9F2A /* StatusBarView_Tabs.swift in Sources */,
 				F0AB12B4233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift in Sources */,
 				F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */,

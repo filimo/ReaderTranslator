@@ -17,11 +17,11 @@ struct StatusBarView_PdfPage: View {
                 Divider().fixedSize()
                 Text("Page:")
                 #if os(macOS)
-                TextField("   ", text: self.$store.currentPage)
+                TextField("   ", text: self.$store.currentPdfPage)
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 #else
-                TextField("   ", text: self.$store.currentPage)
+                TextField("   ", text: self.$store.currentPdfPage)
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)

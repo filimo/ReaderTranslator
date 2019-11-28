@@ -20,7 +20,7 @@ class Store: ObservableObject {
 
     @Published(key: "enabledViews") var enabledViews: Set<AvailableView> = [.reverso, .gTranslator]
 
-    @Published var currentPage = "1"
+    @Published var currentPdfPage = "1"
     @Published var pageCount = 0
 
     @Published(key: "currentTab") var currentTab = 0 {
@@ -42,7 +42,7 @@ class Store: ObservableObject {
     @Published
     var lastWebPage = "" { willSet { self.savedLastWebPage[self.currentTab] = newValue } }
 
-    var lastPdf: String = ""
+    @Published(key: "lastPdf") var lastPdf: String = ""
     @Published(key: "lastPdfPage") var lastPdfPage = "1"
 
     @Published(key: "zoom") var zoom: CGFloat = 1
