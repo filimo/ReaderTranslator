@@ -22,6 +22,7 @@ class Store: ObservableObject {
 
     @Published var currentPdfPage = "1"
     @Published var pageCount = 0
+    @Published(wrappedValue: nil, key: "pdfAudio") var pdfAudio: URL?
 
     @Published(key: "currentTab") var currentTab = 0 {
         didSet { self.lastWebPage = self.savedLastWebPage[self.currentTab] }

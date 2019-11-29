@@ -38,32 +38,39 @@ struct PdfToolbarView: View {
             Button(action: {
                 OpenPanel.showChooseFileDialog(title: "Open audio file", allowedFileTypes: ["mp3", "mov"]) { url in
                     guard let url = url else { return }
-                    do {
-                        player = try AVAudioPlayer(contentsOf: url)
-                        player?.enableRate = true
-                    } catch {
-                        print(error)
-                    }
+                    self.store.pdfAudio = url
+                    self.openAudio(url: url)
+                    self.audioRate = 1
                 }
             }, label: { Text("Open audio") })
 
+            Text("\(currentStatus)").frame(width: 100)
+
             Group {
                 Button(action: { player?.currentTime = 0 }, label: { Text("|<") })
-                Button(action: { player?.currentTime -= 100 }, label: { Text("-100") })
-                Button(action: { player?.currentTime -= 10 }, label: { Text("-10") })
-                Button(action: { player?.currentTime -= 5 }, label: { Text("-5") })
-                Button(action: { player?.currentTime -= 1 }, label: { Text("-1") })
+                rewindButton(label: "-100", step: -100)
+                rewindButton(label: "-10", step: -10)
+                rewindButton(label: "-5", step: -5)
+                rewindButton(label: "-1", step: -1)
             }
 
             Button(action: {
-                if self.isPlaying { player?.pause() } else { player?.play() }
-            }, label: { Text(isPlaying ? "Pause" : "Play") })
+                guard let player = player else { return }
+                if self.isPlaying {
+                    player.pause()
+                } else {
+                    //hack: currentTime jump forward for some time after an audio is continue to play
+                    let currentTime = player.currentTime
+                    player.play()
+                    player.currentTime = currentTime
+                }
+            }, label: { Text(isPlaying ? "Pause" : "Play ") })
 
             Group {
-                Button(action: { player?.currentTime += 1 }, label: { Text("+1") })
-                Button(action: { player?.currentTime += 5 }, label: { Text("+5") })
-                Button(action: { player?.currentTime += 10 }, label: { Text("+10") })
-                Button(action: { player?.currentTime += 100 }, label: { Text("+100") })
+                rewindButton(label: "+1", step: 1)
+                rewindButton(label: "+5", step: 5)
+                rewindButton(label: "+10", step: 10)
+                rewindButton(label: "+100", step: 100)
             }
 
             Group {
@@ -72,11 +79,6 @@ struct PdfToolbarView: View {
                 Text(String(format: "%.1f", arguments: [audioRate]))
                 Button(action: { self.audioRate += 0.1 }, label: { Text("+") })
             }
-
-            Group {
-                Divider()
-                Text("\(currentStatus)")
-            }
         }
         .onAppear {
             _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
@@ -84,7 +86,21 @@ struct PdfToolbarView: View {
                 self.currentStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
                 self.isPlaying = player.isPlaying
             }
+            if let url = self.store.pdfAudio { self.openAudio(url: url) }
         }
+    }
+
+    private func rewindButton(label: String, step: Double) -> some View {
+        Button(action: { player?.currentTime += step }, label: { Text(label) })
+    }
+
+    private func openAudio(url: URL) {
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+        } catch {
+            print(error)
+        }
+        player?.enableRate = true
     }
 }
 
