@@ -49,7 +49,6 @@ struct PdfToolbarView: View {
             Group {
                 Button(action: { player?.currentTime = 0 }, label: { Text("|<") })
                 rewindButton(label: "-100", step: -100)
-                rewindButton(label: "-10", step: -10)
                 rewindButton(label: "-5", step: -5)
                 rewindButton(label: "-1", step: -1)
             }
@@ -69,7 +68,6 @@ struct PdfToolbarView: View {
             Group {
                 rewindButton(label: "+1", step: 1)
                 rewindButton(label: "+5", step: 5)
-                rewindButton(label: "+10", step: 10)
                 rewindButton(label: "+100", step: 100)
             }
 

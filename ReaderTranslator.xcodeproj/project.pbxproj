@@ -13,6 +13,12 @@
 		F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
 		F00C7C87235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
 		F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
+		F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0120375239182DA008D0B47 /* AppDelegate.swift */; };
+		F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0120377239182DA008D0B47 /* SceneDelegate.swift */; };
+		F012037A239182DA008D0B47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0120379239182DA008D0B47 /* ContentView.swift */; };
+		F012037C239182DC008D0B47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F012037B239182DC008D0B47 /* Assets.xcassets */; };
+		F012037F239182DC008D0B47 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F012037E239182DC008D0B47 /* Preview Assets.xcassets */; };
+		F0120382239182DC008D0B47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0120380239182DC008D0B47 /* LaunchScreen.storyboard */; };
 		F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
@@ -199,6 +205,14 @@
 		F00644442341E22D006BCA94 /* ReaderTranslatorSafari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = ReaderTranslatorSafari.appex; path = "/Volumes/Macintosh HD/Users/filimo/MyProjects/SwiftUI/ReaderTranslator/build/Debug/ReaderTranslatorSafari.appex"; sourceTree = "<absolute>"; };
 		F00644462341E22D006BCA94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "gtranslator-reverso-speaker.js"; sourceTree = "<group>"; };
+		F0120373239182DA008D0B47 /* ReaderTranslatorPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0120375239182DA008D0B47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0120377239182DA008D0B47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F0120379239182DA008D0B47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F012037B239182DC008D0B47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F012037E239182DC008D0B47 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F0120381239182DC008D0B47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0120383239182DC008D0B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F01A50E823492398001DCC11 /* ReversoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoView.swift; sourceTree = "<group>"; };
 		F0229BE02362021200F12F47 /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
@@ -294,6 +308,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F0120370239182DA008D0B47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0754434234479DA00E1D88E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +346,28 @@
 				F00644462341E22D006BCA94 /* Cocoa.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0120374239182DA008D0B47 /* ReaderTranslatorPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				F0120375239182DA008D0B47 /* AppDelegate.swift */,
+				F0120377239182DA008D0B47 /* SceneDelegate.swift */,
+				F0120379239182DA008D0B47 /* ContentView.swift */,
+				F012037B239182DC008D0B47 /* Assets.xcassets */,
+				F0120380239182DC008D0B47 /* LaunchScreen.storyboard */,
+				F0120383239182DC008D0B47 /* Info.plist */,
+				F012037D239182DC008D0B47 /* Preview Content */,
+			);
+			path = ReaderTranslatorPlayer;
+			sourceTree = "<group>";
+		};
+		F012037D239182DC008D0B47 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F012037E239182DC008D0B47 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F02989EA2360486500DF722E /* ViewRepresentable */ = {
@@ -418,6 +461,7 @@
 				F0AA699F232E9710007CC07B /* ReaderTranslator */,
 				F0754438234479DA00E1D88E /* ReaderTranslatorMac */,
 				F075445023447A2800E1D88E /* ReaderTranslatorSafari */,
+				F0120374239182DA008D0B47 /* ReaderTranslatorPlayer */,
 				F00644452341E22D006BCA94 /* Frameworks */,
 				F0AA699E232E9710007CC07B /* Products */,
 				F04924372341F2F800F3C728 /* Recovered References */,
@@ -430,6 +474,7 @@
 				F0AA699D232E9710007CC07B /* ReaderTranslator.app */,
 				F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */,
 				F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */,
+				F0120373239182DA008D0B47 /* ReaderTranslatorPlayer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -618,6 +663,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0120386239182DC008D0B47 /* Build configuration list for PBXNativeTarget "ReaderTranslatorPlayer" */;
+			buildPhases = (
+				F012036F239182DA008D0B47 /* Sources */,
+				F0120370239182DA008D0B47 /* Frameworks */,
+				F0120371239182DA008D0B47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReaderTranslatorPlayer;
+			productName = ReaderTranslatorPlayer;
+			productReference = F0120373239182DA008D0B47 /* ReaderTranslatorPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F0754436234479DA00E1D88E /* ReaderTranslatorMac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0754447234479DB00E1D88E /* Build configuration list for PBXNativeTarget "ReaderTranslatorMac" */;
@@ -680,10 +742,13 @@
 		F0AA6995232E9710007CC07B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Viktor Kushnerov";
 				TargetAttributes = {
+					F0120372239182DA008D0B47 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 					F0754436234479DA00E1D88E = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -711,11 +776,22 @@
 				F0AA699C232E9710007CC07B /* ReaderTranslator */,
 				F0754436234479DA00E1D88E /* ReaderTranslatorMac */,
 				F075444D23447A2700E1D88E /* ReaderTranslatorSafari */,
+				F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F0120371239182DA008D0B47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0120382239182DC008D0B47 /* LaunchScreen.storyboard in Resources */,
+				F012037F239182DC008D0B47 /* Preview Assets.xcassets in Resources */,
+				F012037C239182DC008D0B47 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0754435234479DA00E1D88E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -817,6 +893,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F012036F239182DA008D0B47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */,
+				F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */,
+				F012037A239182DA008D0B47 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0754433234479DA00E1D88E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -986,6 +1072,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F0120380239182DC008D0B47 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0120381239182DC008D0B47 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		F0754442234479DB00E1D88E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1013,6 +1107,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F0120384239182DC008D0B47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslatorPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = B6QRXW5YF2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ReaderTranslatorPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0120385239182DC008D0B47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ReaderTranslatorPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = B6QRXW5YF2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ReaderTranslatorPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F0754448234479DB00E1D88E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1286,6 +1422,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F0120386239182DC008D0B47 /* Build configuration list for PBXNativeTarget "ReaderTranslatorPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0120384239182DC008D0B47 /* Debug */,
+				F0120385239182DC008D0B47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F0754447234479DB00E1D88E /* Build configuration list for PBXNativeTarget "ReaderTranslatorMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
