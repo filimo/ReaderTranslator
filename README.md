@@ -76,8 +76,8 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 **1.7** 
 Added audio player in PDF mode and audio player app for iOS [features](https://github.com/filimo/ReaderTranslator/issues/57)
 
-![](files/Release_1.7_1.gif)
-![](files/Release_1.7_2.gif)
+![](files/Release_1.7_1.png)
+![](files/Release_1.7_2.jpeg)
 
 **1.6.14** 
 Added Yandex.Translate
