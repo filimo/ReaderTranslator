@@ -24,30 +24,36 @@ struct ContentView: View {
     @State var files: [URL] = []
 
     private var playPauseButton: some View {
-        Button(action: {
-            guard let player = player else { return }
-            if self.isPlaying {
-                player.pause()
-            } else {
-                //hack: currentTime jump forward for some time after an audio is continue to play
-                let currentTime = player.currentTime
-                player.play()
-                player.currentTime = currentTime
-            }
-        }, label: { Text(isPlaying ? "Pause" : "Play ") })
+        Button(
+            action: {
+                guard let player = player else { return }
+                if self.isPlaying {
+                    player.pause()
+                } else {
+                    //hack: currentTime jump forward for some time after an audio is continue to play
+                    let currentTime = player.currentTime
+                    player.play()
+                    player.currentTime = currentTime
+                }
+            },
+            label: { Text(isPlaying ? "Pause" : "Play") })
+            .buttonStyle(DefaultButtonStyle())
     }
 
     private var audioRateView: some View {
         HStack {
-            Button(action: { self.audioRate -= 0.1 }, label: { Text("-") }).padding(5)
+            Button(action: { self.audioRate -= 0.1 }, label: { Text("-") })
+                .buttonStyle(DefaultButtonStyle())
             Text(String(format: "%.1f", arguments: [audioRate])).padding(5)
-            Button(action: { self.audioRate += 0.1 }, label: { Text("+") }).padding(5)
+            Button(action: { self.audioRate += 0.1 }, label: { Text("+") })
+                .buttonStyle(DefaultButtonStyle())
         }
     }
 
     private var rewindView: some View {
         HStack {
             Button(action: { player?.currentTime = 0 }, label: { Text("|<") })
+                .buttonStyle(DefaultButtonStyle())
             rewindButton(label: "-100", step: -100)
             rewindButton(label: "-5", step: -5)
             rewindButton(label: "-1", step: -1)
@@ -62,7 +68,8 @@ struct ContentView: View {
             ForEach(files, id: \.self) { url in
                 Button(action: {
                     self.store.lastAudio = url
-                    self.open(url: url)
+                    self.openAudio(url: url)
+                    player?.play()
                 }, label: {
                     Text("\(url.lastPathComponent)")
                     .foregroundColor(
@@ -110,6 +117,7 @@ struct ContentView: View {
             RunLoop.main.perform {
                 self.refresh()
             }
+            if let lastAudio = self.store.lastAudio { self.openAudio(url: lastAudio) }            
         }
     }
 
@@ -130,19 +138,19 @@ struct ContentView: View {
        }
     }
 
-    private func open(url: URL) {
+    private func openAudio(url: URL) {
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.enableRate = true
             player?.rate = self.audioRate
-            player?.play()
         } catch {
             print(error)
         }
     }
 
     private func rewindButton(label: String, step: Double) -> some View {
-        Button(action: { player?.currentTime += step }, label: { Text(label) }).padding(5)
+        Button(action: { player?.currentTime += step }, label: { Text(label) })
+            .buttonStyle(DefaultButtonStyle())
     }
 }
 

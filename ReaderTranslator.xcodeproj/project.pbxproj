@@ -23,6 +23,7 @@
 		F012038823928634008D0B47 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = F002C629232FF40C00D3FC04 /* Published.swift */; };
 		F012038B23928685008D0B47 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F012038D239286A2008D0B47 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012038C239286A2008D0B47 /* Store.swift */; };
+		F01203902392D586008D0B47 /* BackgroundButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012038F2392D586008D0B47 /* BackgroundButtonStyle.swift */; };
 		F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
@@ -217,6 +218,7 @@
 		F0120381239182DC008D0B47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0120383239182DC008D0B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F012038C239286A2008D0B47 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		F012038F2392D586008D0B47 /* BackgroundButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonStyle.swift; sourceTree = "<group>"; };
 		F01A50E823492398001DCC11 /* ReversoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoView.swift; sourceTree = "<group>"; };
 		F0229BE02362021200F12F47 /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 		F0120374239182DA008D0B47 /* ReaderTranslatorPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				F012038E2392D56F008D0B47 /* Styles */,
 				F01203892392865A008D0B47 /* Store */,
 				F0120375239182DA008D0B47 /* AppDelegate.swift */,
 				F0120377239182DA008D0B47 /* SceneDelegate.swift */,
@@ -381,6 +384,14 @@
 				F012038C239286A2008D0B47 /* Store.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		F012038E2392D56F008D0B47 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F012038F2392D586008D0B47 /* BackgroundButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		F02989EA2360486500DF722E /* ViewRepresentable */ = {
@@ -911,6 +922,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F012038723928631008D0B47 /* UserDefault.swift in Sources */,
+				F01203902392D586008D0B47 /* BackgroundButtonStyle.swift in Sources */,
 				F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */,
 				F012038823928634008D0B47 /* Published.swift in Sources */,
 				F012038D239286A2008D0B47 /* Store.swift in Sources */,
