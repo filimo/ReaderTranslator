@@ -12,15 +12,17 @@ import AVFoundation
 private var player: AVAudioPlayer?
 
 struct ContentView: View {
+    @ObservedObject var store = Store.shared
     @State var currentStatus = ""
     @State var isPlaying = false
-    @State var audioRate: Float = 1 {
+    @State var audioRate: Float = Store.shared.audioRate {
         didSet {
             player?.rate = audioRate
+            store.audioRate = audioRate
         }
     }
     @State var files: [URL] = []
-    
+
     private var playPauseButton: some View {
         Button(action: {
             guard let player = player else { return }
@@ -34,7 +36,7 @@ struct ContentView: View {
             }
         }, label: { Text(isPlaying ? "Pause" : "Play ") })
     }
-    
+
     private var audioRateView: some View {
         HStack {
             Button(action: { self.audioRate -= 0.1 }, label: { Text("-") }).padding(5)
@@ -42,7 +44,7 @@ struct ContentView: View {
             Button(action: { self.audioRate += 0.1 }, label: { Text("+") }).padding(5)
         }
     }
-    
+
     private var rewindView: some View {
         HStack {
             Button(action: { player?.currentTime = 0 }, label: { Text("|<") })
@@ -54,14 +56,17 @@ struct ContentView: View {
             rewindButton(label: "+100", step: 100)
         }
     }
-    
+
     private var fileList: some View {
         List {
-            ForEach(files, id: \.self) { file in
+            ForEach(files, id: \.self) { url in
                 Button(action: {
-                    self.open(url: file)
+                    self.store.lastAudio = url
+                    self.open(url: url)
                 }, label: {
-                    Text("\(file.lastPathComponent)")
+                    Text("\(url.lastPathComponent)")
+                    .foregroundColor(
+                        self.store.lastAudio?.lastPathComponent == url.lastPathComponent ? Color.yellow: Color.primary)
                 })
             }
             .onDelete { indexSet in
@@ -70,20 +75,20 @@ struct ContentView: View {
                 do {
                     try FileManager.default.removeItem(at: file)
                     self.refresh()
-                }catch{
+                } catch {
                     print(error)
                 }
             }
         }
     }
-    
+
     init() {
         do {
             let sharedInstance = AVAudioSession.sharedInstance()
-            
+
             try sharedInstance.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
             try sharedInstance.setActive(true)
-        }catch{
+        } catch {
             print(error)
         }
     }
@@ -107,34 +112,35 @@ struct ContentView: View {
             }
         }
     }
-    
+
     private func refresh() {
        guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             self.files = []
             return
        }
-       
+
        do {
            let inbox = documentsUrl.appendingPathComponent("/Inbox")
            let items = try FileManager.default.contentsOfDirectory(at: inbox, includingPropertiesForKeys: nil)
-                               
+
            self.files = items
-       }catch{
+       } catch {
            print(error)
            self.files = []
        }
     }
-    
+
     private func open(url: URL) {
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.enableRate = true
-            self.audioRate = 1
-        }catch{
+            player?.rate = self.audioRate
+            player?.play()
+        } catch {
             print(error)
         }
     }
-    
+
     private func rewindButton(label: String, step: Double) -> some View {
         Button(action: { player?.currentTime += step }, label: { Text(label) }).padding(5)
     }
