@@ -19,22 +19,8 @@ struct ContentView: View {
             player?.rate = audioRate
         }
     }
-    private var files: [URL] {
-        guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            return []
-        }
-        
-        do {
-            let inbox = documentsUrl.appendingPathComponent("/Inbox")
-            let items = try FileManager.default.contentsOfDirectory(at: inbox, includingPropertiesForKeys: nil)
-                                
-            return items
-
-        }catch{
-            print(error)
-            return []
-        }
-    }
+    @State var files: [URL] = []
+    
     private var playPauseButton: some View {
         Button(action: {
             guard let player = player else { return }
@@ -78,6 +64,16 @@ struct ContentView: View {
                     Text("\(file.lastPathComponent)")
                 })
             }
+            .onDelete { indexSet in
+                guard let first = indexSet.first else { return }
+                let file = self.files[first]
+                do {
+                    try FileManager.default.removeItem(at: file)
+                    self.refresh()
+                }catch{
+                    print(error)
+                }
+            }
         }
     }
     
@@ -106,7 +102,27 @@ struct ContentView: View {
                 self.currentStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
                 self.isPlaying = player.isPlaying
             }
+            RunLoop.main.perform {
+                self.refresh()
+            }
         }
+    }
+    
+    private func refresh() {
+       guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            self.files = []
+            return
+       }
+       
+       do {
+           let inbox = documentsUrl.appendingPathComponent("/Inbox")
+           let items = try FileManager.default.contentsOfDirectory(at: inbox, includingPropertiesForKeys: nil)
+                               
+           self.files = items
+       }catch{
+           print(error)
+           self.files = []
+       }
     }
     
     private func open(url: URL) {

@@ -39,7 +39,7 @@ If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac'
  - Watch videos with subtitles [#55](https://github.com/filimo/ReaderTranslator/issues/55)
 ![](files/Release_2.0.0_1.png)
 
-## Comming features in 1.7
+## Comming features in 1.9
 - Help page
 - App icon
 - Safari extension icon
@@ -72,6 +72,12 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
+
+**1.7** 
+Added audio player in PDF mode and audio player app for iOS [features](https://github.com/filimo/ReaderTranslator/issues/57)
+
+![](files/Release_1.7_1.gif)
+![](files/Release_1.7_2.gif)
 
 **1.6.14** 
 Added Yandex.Translate
