@@ -22,6 +22,7 @@ struct ContentView: View {
         }
     }
     @State var files: [URL] = []
+    @State var showSafari = false
 
     private var playPauseButton: some View {
         Button(
@@ -105,8 +106,17 @@ struct ContentView: View {
             Text("\(currentStatus)").frame(width: 100)
             audioRateView
             rewindView
-            playPauseButton
+            HStack {
+                Button(
+                    action: { self.showSafari = true },
+                    label: { Text("Safari") })
+                .buttonStyle(DefaultButtonStyle())
+                playPauseButton
+            }
             fileList
+        }
+        .sheet(isPresented: $showSafari) {
+            SafariView(url: .constant(URL(string: "https://www.ldoceonline.com")))
         }
         .onAppear {
             _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
@@ -117,7 +127,7 @@ struct ContentView: View {
             RunLoop.main.perform {
                 self.refresh()
             }
-            if let lastAudio = self.store.lastAudio { self.openAudio(url: lastAudio) }            
+            if let lastAudio = self.store.lastAudio { self.openAudio(url: lastAudio) }
         }
     }
 

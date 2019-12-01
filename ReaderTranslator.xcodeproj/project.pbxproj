@@ -61,6 +61,7 @@
 		F06DB1132345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */; };
 		F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB115234611BB00C2DE90 /* ExtensionManager.swift */; };
 		F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB115234611BB00C2DE90 /* ExtensionManager.swift */; };
+		F06EAF8F2393A4E100AAE1A4 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */; };
 		F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0754439234479DA00E1D88E /* AppDelegate.swift */; };
 		F075443E234479DB00E1D88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F075443D234479DB00E1D88E /* Assets.xcassets */; };
 		F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0754440234479DB00E1D88E /* Preview Assets.xcassets */; };
@@ -242,6 +243,7 @@
 		F06DB10C23450B6000C2DE90 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Toggle.swift; sourceTree = "<group>"; };
 		F06DB115234611BB00C2DE90 /* ExtensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionManager.swift; sourceTree = "<group>"; };
+		F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0754439234479DA00E1D88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F075443D234479DB00E1D88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			children = (
 				F012038E2392D56F008D0B47 /* Styles */,
 				F01203892392865A008D0B47 /* Store */,
+				F06EAF902393A7EF00AAE1A4 /* Components */,
 				F0120375239182DA008D0B47 /* AppDelegate.swift */,
 				F0120377239182DA008D0B47 /* SceneDelegate.swift */,
 				F0120379239182DA008D0B47 /* ContentView.swift */,
@@ -431,6 +434,14 @@
 				F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */,
 			);
 			path = StatusBarView_Voice;
+			sourceTree = "<group>";
+		};
+		F06EAF902393A7EF00AAE1A4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		F0753E5B236DF9EA00D0C2D9 /* VideoPlayer */ = {
@@ -925,6 +936,7 @@
 				F01203902392D586008D0B47 /* BackgroundButtonStyle.swift in Sources */,
 				F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */,
 				F012038823928634008D0B47 /* Published.swift in Sources */,
+				F06EAF8F2393A4E100AAE1A4 /* SafariView.swift in Sources */,
 				F012038D239286A2008D0B47 /* Store.swift in Sources */,
 				F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */,
 				F012037A239182DA008D0B47 /* ContentView.swift in Sources */,
