@@ -39,10 +39,14 @@ If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac'
  - Watch videos with subtitles [#55](https://github.com/filimo/ReaderTranslator/issues/55)
 ![](files/Release_2.0.0_1.png)
 
-## Comming features in 1.9
+## Comming features in 1.10
 - Help page
 - App icon
 - Safari extension icon
+
+## Comming features in **1.8** [New features for ReaderTranslatorPlayer](https://github.com/filimo/ReaderTranslator/issues/58)
+- Open web page (SFSafariViewController, WKWebView)
+- Synchronizing favorites words and phrases between the main app and player
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
