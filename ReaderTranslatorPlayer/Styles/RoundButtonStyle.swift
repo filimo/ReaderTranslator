@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-public struct DefaultButtonStyle: ButtonStyle {
+public struct RoundButtonStyle: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .foregroundColor(Color.blue)

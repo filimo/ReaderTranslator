@@ -23,7 +23,7 @@
 		F012038823928634008D0B47 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = F002C629232FF40C00D3FC04 /* Published.swift */; };
 		F012038B23928685008D0B47 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F012038D239286A2008D0B47 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012038C239286A2008D0B47 /* Store.swift */; };
-		F01203902392D586008D0B47 /* BackgroundButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012038F2392D586008D0B47 /* BackgroundButtonStyle.swift */; };
+		F01203902392D586008D0B47 /* RoundButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012038F2392D586008D0B47 /* RoundButtonStyle.swift */; };
 		F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
@@ -78,6 +78,7 @@
 		F0814BA423562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F08CE13A236EA9F200610342 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = F08CE138236EA9F200610342 /* index.html */; };
 		F08CE13B236EA9F200610342 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = F08CE139236EA9F200610342 /* index.js */; };
+		F08EBAED23943835009025D3 /* WKWebRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAEC23943835009025D3 /* WKWebRepresenter.swift */; };
 		F09AD47E23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F09AD47F23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F0A001C623587121009E9CD6 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */; };
@@ -219,7 +220,7 @@
 		F0120381239182DC008D0B47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0120383239182DC008D0B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F012038C239286A2008D0B47 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		F012038F2392D586008D0B47 /* BackgroundButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonStyle.swift; sourceTree = "<group>"; };
+		F012038F2392D586008D0B47 /* RoundButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonStyle.swift; sourceTree = "<group>"; };
 		F01A50E823492398001DCC11 /* ReversoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoView.swift; sourceTree = "<group>"; };
 		F0229BE02362021200F12F47 /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +263,7 @@
 		F0814BA123562AF300212F52 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		F08CE138236EA9F200610342 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		F08CE139236EA9F200610342 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		F08EBAEC23943835009025D3 /* WKWebRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebRepresenter.swift; sourceTree = "<group>"; };
 		F09AD47D23702DF100FFBF6A /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
 		F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
 		F0A9F35A2349228A00970C97 /* Reverso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reverso.swift; sourceTree = "<group>"; };
@@ -392,7 +394,7 @@
 		F012038E2392D56F008D0B47 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				F012038F2392D586008D0B47 /* BackgroundButtonStyle.swift */,
+				F012038F2392D586008D0B47 /* RoundButtonStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -440,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */,
+				F08EBAEC23943835009025D3 /* WKWebRepresenter.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -933,12 +936,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F012038723928631008D0B47 /* UserDefault.swift in Sources */,
-				F01203902392D586008D0B47 /* BackgroundButtonStyle.swift in Sources */,
+				F01203902392D586008D0B47 /* RoundButtonStyle.swift in Sources */,
 				F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */,
 				F012038823928634008D0B47 /* Published.swift in Sources */,
 				F06EAF8F2393A4E100AAE1A4 /* SafariView.swift in Sources */,
 				F012038D239286A2008D0B47 /* Store.swift in Sources */,
 				F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */,
+				F08EBAED23943835009025D3 /* WKWebRepresenter.swift in Sources */,
 				F012037A239182DA008D0B47 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

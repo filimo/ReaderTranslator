@@ -38,23 +38,23 @@ struct ContentView: View {
                 }
             },
             label: { Text(isPlaying ? "Pause" : "Play") })
-            .buttonStyle(DefaultButtonStyle())
+            .buttonStyle(RoundButtonStyle())
     }
 
     private var audioRateView: some View {
         HStack {
             Button(action: { self.audioRate -= 0.1 }, label: { Text("-") })
-                .buttonStyle(DefaultButtonStyle())
+                .buttonStyle(RoundButtonStyle())
             Text(String(format: "%.1f", arguments: [audioRate])).padding(5)
             Button(action: { self.audioRate += 0.1 }, label: { Text("+") })
-                .buttonStyle(DefaultButtonStyle())
+                .buttonStyle(RoundButtonStyle())
         }
     }
 
     private var rewindView: some View {
         HStack {
             Button(action: { player?.currentTime = 0 }, label: { Text("|<") })
-                .buttonStyle(DefaultButtonStyle())
+                .buttonStyle(RoundButtonStyle())
             rewindButton(label: "-100", step: -100)
             rewindButton(label: "-5", step: -5)
             rewindButton(label: "-1", step: -1)
@@ -112,9 +112,14 @@ struct ContentView: View {
                 Button(
                     action: { self.showSafari = true },
                     label: { Text("Safari") })
-                    .buttonStyle(DefaultButtonStyle())
+                    .buttonStyle(RoundButtonStyle())
             }
-            fileList
+            ScrollView(.horizontal) {
+                HStack {
+                    fileList.frame(width: UIScreen.main.bounds.width - 50)
+                    WKWebRepresenter().frame(width: UIScreen.main.bounds.width)
+                }
+            }
         }
         .sheet(isPresented: $showSafari) {
             SafariView(url: .constant(URL(string: "https://www.ldoceonline.com")))
@@ -161,7 +166,7 @@ struct ContentView: View {
 
     private func rewindButton(label: String, step: Double) -> some View {
         Button(action: { player?.currentTime += step }, label: { Text(label) })
-            .buttonStyle(DefaultButtonStyle())
+            .buttonStyle(RoundButtonStyle())
     }
 }
 
