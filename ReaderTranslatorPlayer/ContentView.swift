@@ -106,12 +106,13 @@ struct ContentView: View {
             Text("\(currentStatus)").frame(width: 100)
             audioRateView
             rewindView
-            HStack {
+            HStack(spacing: 40) {
+                Spacer()
+                playPauseButton
                 Button(
                     action: { self.showSafari = true },
                     label: { Text("Safari") })
-                .buttonStyle(DefaultButtonStyle())
-                playPauseButton
+                    .buttonStyle(DefaultButtonStyle())
             }
             fileList
         }
