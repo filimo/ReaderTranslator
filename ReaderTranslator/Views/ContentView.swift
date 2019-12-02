@@ -7,12 +7,17 @@
 //
 import SwiftUI
 
+private let name = "Game10"
+
 struct ContentView: View {
+    private var networkManager = NetworkManager()
+
     init() {
         #if os(macOS)
         NSApplication.shared.servicesProvider = ServiceProvider()
         NSUpdateDynamicServices()
         #endif
+        sharedListener = PeerListener(name: name, delegate: networkManager)
     }
 
     var body: some View {
