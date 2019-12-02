@@ -13,10 +13,8 @@ struct CollinsView: View {
     @State var width: CGFloat?
 
     var body: some View {
-        VStack {
-            /** Hack: it or `Divider()` required to display GTranslatorView properly `Divider()` takes more space **/
-            Text("").frame(height: 1)
-            Collins(selectedText: $store.translateAction)
+        WebViewContainer {
+            Collins(selectedText: self.$store.translateAction)
         }.frame(width: store.maxViewWidth)
     }
 }

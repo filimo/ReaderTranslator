@@ -79,6 +79,9 @@
 		F08CE13A236EA9F200610342 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = F08CE138236EA9F200610342 /* index.html */; };
 		F08CE13B236EA9F200610342 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = F08CE139236EA9F200610342 /* index.js */; };
 		F08EBAED23943835009025D3 /* WKWebRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAEC23943835009025D3 /* WKWebRepresenter.swift */; };
+		F08EBAF023952AD6009025D3 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */; };
+		F08EBAF123952AD6009025D3 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */; };
+		F08EBAF223952AD6009025D3 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */; };
 		F09AD47E23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F09AD47F23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F0A001C623587121009E9CD6 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */; };
@@ -264,6 +267,7 @@
 		F08CE138236EA9F200610342 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		F08CE139236EA9F200610342 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		F08EBAEC23943835009025D3 /* WKWebRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebRepresenter.swift; sourceTree = "<group>"; };
+		F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
 		F09AD47D23702DF100FFBF6A /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
 		F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
 		F0A9F35A2349228A00970C97 /* Reverso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reverso.swift; sourceTree = "<group>"; };
@@ -582,6 +586,7 @@
 				F0C36AA02359D50A001E396C /* Clipboard.swift */,
 				F001A700235E095700617573 /* ServiceProvider.swift */,
 				F02989EB2360488800DF722E /* OpenPanel.swift */,
+				F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -940,6 +945,7 @@
 				F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */,
 				F012038823928634008D0B47 /* Published.swift in Sources */,
 				F06EAF8F2393A4E100AAE1A4 /* SafariView.swift in Sources */,
+				F08EBAF223952AD6009025D3 /* WebViewContainer.swift in Sources */,
 				F012038D239286A2008D0B47 /* Store.swift in Sources */,
 				F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */,
 				F08EBAED23943835009025D3 /* WKWebRepresenter.swift in Sources */,
@@ -996,6 +1002,7 @@
 				F06DB1132345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */,
 				F0BB43832344846C00ADBEF1 /* ContentView.swift in Sources */,
 				F0BB43772344844800ADBEF1 /* WKRepresenter.swift in Sources */,
+				F08EBAF123952AD6009025D3 /* WebViewContainer.swift in Sources */,
 				F0BB436C2344842200ADBEF1 /* ReaderView.swift in Sources */,
 				F0FCDD41236189760016F23F /* MacmillanView.swift in Sources */,
 				F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */,
@@ -1056,6 +1063,7 @@
 				F0D2E334234BA49000D95994 /* Safari.swift in Sources */,
 				F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F0FCDD422361897D0016F23F /* Macmillan.swift in Sources */,
+				F08EBAF023952AD6009025D3 /* WebViewContainer.swift in Sources */,
 				F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */,
 				F0AA69D4232E9762007CC07B /* ReaderView.swift in Sources */,
 				F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */,

@@ -12,12 +12,12 @@ import SafariServices
 struct SafariRepresentable: UIViewControllerRepresentable {
     @Binding var url: URL
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<SafariRepresentable>) -> SFSafariViewController {
+    func makeUIViewController(context: Context) -> SFSafariViewController {
         SFSafariViewController(url: url)
     }
 
     func updateUIViewController(_ uiViewController: SFSafariViewController,
-                                context: UIViewControllerRepresentableContext<SafariRepresentable>) {
+                                context: Context) {
 
     }
 
@@ -31,7 +31,7 @@ struct SafariView: View {
         Group {
             if url != nil {
                 SafariRepresentable(url: Binding($url)!)
-            }else{
+            } else {
                 EmptyView()
             }
         }

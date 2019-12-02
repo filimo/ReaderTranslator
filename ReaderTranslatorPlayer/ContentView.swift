@@ -13,7 +13,7 @@ private var player: AVAudioPlayer?
 
 struct ContentView: View {
     @ObservedObject var store = Store.shared
-    @State var currentStatus = ""
+    @State var currentStatus = "0.0/0.0"
     @State var isPlaying = false
     @State var audioRate: Float = Store.shared.audioRate {
         didSet {
@@ -23,6 +23,7 @@ struct ContentView: View {
     }
     @State var files: [URL] = []
     @State var showSafari = false
+    private var playerControlHeight = UIScreen.main.bounds.height / 4
 
     private var playPauseButton: some View {
         Button(
@@ -90,18 +91,7 @@ struct ContentView: View {
         }
     }
 
-    init() {
-        do {
-            let sharedInstance = AVAudioSession.sharedInstance()
-
-            try sharedInstance.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
-            try sharedInstance.setActive(true)
-        } catch {
-            print(error)
-        }
-    }
-
-    var body: some View {
+    private var playerContols: some View {
         VStack(spacing: 10) {
             Text("\(currentStatus)").frame(width: 100)
             audioRateView
@@ -114,12 +104,27 @@ struct ContentView: View {
                     label: { Text("Safari") })
                     .buttonStyle(RoundButtonStyle())
             }
-            ScrollView(.horizontal) {
-                HStack {
-                    fileList.frame(width: UIScreen.main.bounds.width - 50)
-                    WKWebRepresenter().frame(width: UIScreen.main.bounds.width)
-                }
+        }
+    }
+
+    init() {
+        do {
+            let sharedInstance = AVAudioSession.sharedInstance()
+
+            try sharedInstance.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+            try sharedInstance.setActive(true)
+        } catch {
+            print(error)
+        }
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ScrollView {
+                WKWebRepresenter().frame(height: playerControlHeight * 2)
             }
+            playerContols.frame(height: playerControlHeight)
+            fileList.frame(height: playerControlHeight)
         }
         .sheet(isPresented: $showSafari) {
             SafariView(url: .constant(URL(string: "https://www.ldoceonline.com")))

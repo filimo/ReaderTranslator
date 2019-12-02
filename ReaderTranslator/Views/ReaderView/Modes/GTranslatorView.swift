@@ -26,10 +26,8 @@ struct GTranslatorView: View {
     @ObservedObject private var store = Store.shared
 
     var body: some View {
-        VStack {
-            /** Hack: it or `Divider()` required to display GTranslatorView properly `Divider()` takes more space **/
-            Text("").frame(height: 1)
-            GTranslator(selectedText: $store.translateAction)
+        WebViewContainer {
+            GTranslator(selectedText: self.$store.translateAction)
         }
     }
 }

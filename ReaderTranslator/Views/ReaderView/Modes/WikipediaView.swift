@@ -12,10 +12,8 @@ struct WikipediaView: View {
     @ObservedObject private var store = Store.shared
 
     var body: some View {
-        VStack {
-            /** Hack: it or `Divider()` required to display GTranslatorView properly `Divider()` takes more space **/
-            Text("").frame(height: 1)
-            Wikipedia(selectedText: $store.translateAction)
+        WebViewContainer {
+            Wikipedia(selectedText: self.$store.translateAction)
         }
     }
 }
