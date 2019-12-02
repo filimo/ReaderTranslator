@@ -47,7 +47,7 @@ If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac'
 ## Comming features in **1.8** [New features for ReaderTranslatorPlayer](https://github.com/filimo/ReaderTranslator/issues/58)
 - Open web page (SFSafariViewController, WKWebView)
 - Synchronizing favorites words and phrases between the main app and player
-![](files/Release_1.8_1.png)
+![](files/Release_1.8_1.jpeg)
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
