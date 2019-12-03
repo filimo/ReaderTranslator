@@ -23,7 +23,7 @@ struct PdfToolbarView: View {
     }
 
     var body: some View {
-        HStack {
+        HStack(spacing: 2) {
             Button(
                 action: {
                     OpenPanel.showChooseFileDialog(title: "Open PDF file", allowedFileTypes: ["pdf"]) { url in
@@ -46,36 +46,37 @@ struct PdfToolbarView: View {
 
             Text("\(currentStatus)").frame(width: 100)
 
-            Group {
+            HStack(spacing: 2) {
                 Button(action: { player?.currentTime = 0 }, label: { Text("|<") })
-                rewindButton(label: "-100", step: -100)
+                rewindButton(label: "-50", step: -50)
                 rewindButton(label: "-5", step: -5)
                 rewindButton(label: "-1", step: -1)
-            }
 
-            Button(action: {
-                guard let player = player else { return }
-                if self.isPlaying {
-                    player.pause()
-                } else {
-                    //hack: currentTime jump forward for some time after an audio is continue to play
-                    let currentTime = player.currentTime
-                    player.play()
-                    player.currentTime = currentTime
-                }
-            }, label: { Text(isPlaying ? "Pause" : "Play ") })
+                Button(action: {
+                    guard let player = player else { return }
+                    if self.isPlaying {
+                        player.pause()
+                    } else {
+                        //hack: currentTime jump forward for some time after an audio is continue to play
+                        let currentTime = player.currentTime
+                        player.play()
+                        player.currentTime = currentTime
+                    }
+                }, label: { Text(isPlaying ? "Pause" : "Play ") })
 
-            Group {
                 rewindButton(label: "+1", step: 1)
                 rewindButton(label: "+5", step: 5)
-                rewindButton(label: "+100", step: 100)
+                rewindButton(label: "+50", step: 50)
             }
 
-            Group {
+            HStack(spacing: 2) {
                 Divider()
+                Button(action: { self.audioRate = 0.2 }, label: { Text(".2") })
+                Button(action: { self.audioRate = 0.5 }, label: { Text(".5") })
                 Button(action: { self.audioRate -= 0.1 }, label: { Text("-") })
                 Text(String(format: "%.1f", arguments: [audioRate]))
                 Button(action: { self.audioRate += 0.1 }, label: { Text("+") })
+                Button(action: { self.audioRate = 1 }, label: { Text("1") })
             }
         }
         .onAppear {

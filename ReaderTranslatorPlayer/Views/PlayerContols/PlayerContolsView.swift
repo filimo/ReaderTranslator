@@ -34,7 +34,7 @@ struct PlayerControlsView: View {
         VStack(spacing: 10) {
             Text("\(currentStatus)").frame(width: 100)
             AudioRateView()
-            RewindView()
+            RewindButtonsView()
             HStack(spacing: 40) {
                 Spacer()
                 playPauseButton

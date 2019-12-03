@@ -8,28 +8,30 @@
 
 import SwiftUI
 
-struct RewindView: View {
+struct RewindButtonsView: View {
     var body: some View {
         HStack {
             Button(action: { player?.currentTime = 0 }, label: { Text("|<") })
                 .buttonStyle(RoundButtonStyle())
-            rewindButton(label: "-100", step: -100)
+            rewindButton(label: "-50", step: -50)
             rewindButton(label: "-5", step: -5)
             rewindButton(label: "-1", step: -1)
             rewindButton(label: "+1", step: 1)
             rewindButton(label: "+5", step: 5)
-            rewindButton(label: "+100", step: 100)
+            rewindButton(label: "+50", step: 50)
         }
     }
 
     private func rewindButton(label: String, step: Double) -> some View {
-        Button(action: { player?.currentTime += step }, label: { Text(label) })
+        Button(
+            action: { player?.currentTime += step },
+            label: { Text(label).frame(width: 35) })
             .buttonStyle(RoundButtonStyle())
     }
 }
 
 struct RewindView_Previews: PreviewProvider {
     static var previews: some View {
-        RewindView()
+        RewindButtonsView()
     }
 }

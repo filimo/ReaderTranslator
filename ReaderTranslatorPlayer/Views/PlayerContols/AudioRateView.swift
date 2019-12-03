@@ -20,12 +20,22 @@ struct AudioRateView: View {
 
     var body: some View {
         HStack {
-            Button(action: { self.audioRate -= 0.1 }, label: { Text("-") })
+            Button(action: { self.audioRate = 0.2 }, label: { textView(".2") })
+                .buttonStyle(RoundButtonStyle())
+            Button(action: { self.audioRate = 0.5 }, label: { textView(".5") })
+                .buttonStyle(RoundButtonStyle())
+            Button(action: { self.audioRate -= 0.1 }, label: { textView("-") })
                 .buttonStyle(RoundButtonStyle())
             Text(String(format: "%.1f", arguments: [audioRate])).padding(5)
-            Button(action: { self.audioRate += 0.1 }, label: { Text("+") })
+            Button(action: { self.audioRate += 0.1 }, label: { textView("+") })
+                .buttonStyle(RoundButtonStyle())
+            Button(action: { self.audioRate = 1 }, label: { textView("1") })
                 .buttonStyle(RoundButtonStyle())
         }
+    }
+
+    private func textView(_ text: String) -> some View {
+        Text(text).frame(width: 30)
     }
 }
 

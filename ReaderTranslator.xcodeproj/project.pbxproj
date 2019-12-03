@@ -54,6 +54,8 @@
 		F0562E0F2362026C0074ACF5 /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */; };
 		F0586482238FB03900E6DDFA /* PdfToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0586481238FB03900E6DDFA /* PdfToolbarView.swift */; };
 		F0586483238FB03900E6DDFA /* PdfToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0586481238FB03900E6DDFA /* PdfToolbarView.swift */; };
+		F058C7EE2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
+		F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1042344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
 		F06DB1052344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
@@ -92,7 +94,7 @@
 		F08EBB02239541FB009025D3 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB00239541FB009025D3 /* PeerConnection.swift */; };
 		F08EBB03239541FB009025D3 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB00239541FB009025D3 /* PeerConnection.swift */; };
 		F08EBB0523956202009025D3 /* FileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0423956202009025D3 /* FileListView.swift */; };
-		F08EBB0723956495009025D3 /* RewindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0623956495009025D3 /* RewindView.swift */; };
+		F08EBB0723956495009025D3 /* RewindButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0623956495009025D3 /* RewindButtonsView.swift */; };
 		F08EBB09239564F3009025D3 /* AudioRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB08239564F3009025D3 /* AudioRateView.swift */; };
 		F08EBB0B239565CC009025D3 /* PlayerContolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0A239565CC009025D3 /* PlayerContolsView.swift */; };
 		F08EBB0D23956A20009025D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0C23956A20009025D3 /* NetworkManager.swift */; };
@@ -100,8 +102,6 @@
 		F08EBB1123956D80009025D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0F23956D80009025D3 /* NetworkManager.swift */; };
 		F09AD47E23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F09AD47F23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
-		F0A001C623587121009E9CD6 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */; };
-		F0A001C723587121009E9CD6 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */; };
 		F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A0232E9710007CC07B /* AppDelegate.swift */; };
 		F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A2232E9710007CC07B /* SceneDelegate.swift */; };
 		F0AA69A5232E9710007CC07B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A4232E9710007CC07B /* ContentView.swift */; };
@@ -257,6 +257,8 @@
 		F0505C522360D37C004F2D50 /* Longman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Longman.swift; sourceTree = "<group>"; };
 		F0505C532360D3DA004F2D50 /* LongmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanView.swift; sourceTree = "<group>"; };
 		F0586481238FB03900E6DDFA /* PdfToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfToolbarView.swift; sourceTree = "<group>"; };
+		F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
+		F058C7F02396AD1E002C84F0 /* longman.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = longman.js; sourceTree = "<group>"; };
 		F062029423812264002EEAEE /* YTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslator.swift; sourceTree = "<group>"; };
 		F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
 		F06DB1032344975E00C2DE90 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
@@ -288,13 +290,12 @@
 		F08EBAF423953B0A009025D3 /* PeerBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerBrowser.swift; sourceTree = "<group>"; };
 		F08EBB00239541FB009025D3 /* PeerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
 		F08EBB0423956202009025D3 /* FileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListView.swift; sourceTree = "<group>"; };
-		F08EBB0623956495009025D3 /* RewindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewindView.swift; sourceTree = "<group>"; };
+		F08EBB0623956495009025D3 /* RewindButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewindButtonsView.swift; sourceTree = "<group>"; };
 		F08EBB08239564F3009025D3 /* AudioRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRateView.swift; sourceTree = "<group>"; };
 		F08EBB0A239565CC009025D3 /* PlayerContolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerContolsView.swift; sourceTree = "<group>"; };
 		F08EBB0C23956A20009025D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F08EBB0F23956D80009025D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F09AD47D23702DF100FFBF6A /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
-		F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
 		F0A9F35A2349228A00970C97 /* Reverso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reverso.swift; sourceTree = "<group>"; };
 		F0AA699D232E9710007CC07B /* ReaderTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AA69A0232E9710007CC07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -387,16 +388,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F00AD75223957264005FAFE1 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				F0120375239182DA008D0B47 /* AppDelegate.swift */,
+				F0120377239182DA008D0B47 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		F00AD753239627EB005FAFE1 /* PlayerContols */ = {
+			isa = PBXGroup;
+			children = (
+				F08EBB0623956495009025D3 /* RewindButtonsView.swift */,
+				F08EBB08239564F3009025D3 /* AudioRateView.swift */,
+				F08EBB0A239565CC009025D3 /* PlayerContolsView.swift */,
+			);
+			path = PlayerContols;
+			sourceTree = "<group>";
+		};
 		F0120374239182DA008D0B47 /* ReaderTranslatorPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				F00AD75223957264005FAFE1 /* Delegates */,
 				F012038E2392D56F008D0B47 /* Styles */,
 				F01203892392865A008D0B47 /* Store */,
 				F06EAF902393A7EF00AAE1A4 /* Components */,
 				F08EBB0E23956D32009025D3 /* Views */,
-				F0120375239182DA008D0B47 /* AppDelegate.swift */,
-				F0120377239182DA008D0B47 /* SceneDelegate.swift */,
-				F0120379239182DA008D0B47 /* ContentView.swift */,
 				F012037B239182DC008D0B47 /* Assets.xcassets */,
 				F0120380239182DC008D0B47 /* LaunchScreen.storyboard */,
 				F0120383239182DC008D0B47 /* Info.plist */,
@@ -534,11 +552,10 @@
 		F08EBB0E23956D32009025D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F00AD753239627EB005FAFE1 /* PlayerContols */,
 				F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */,
 				F08EBB0423956202009025D3 /* FileListView.swift */,
-				F08EBB0623956495009025D3 /* RewindView.swift */,
-				F08EBB08239564F3009025D3 /* AudioRateView.swift */,
-				F08EBB0A239565CC009025D3 /* PlayerContolsView.swift */,
+				F0120379239182DA008D0B47 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -678,9 +695,10 @@
 		F0C36AA32359FA13001E396C /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
 				F075445923447A2800E1D88E /* reader-translator.js */,
+				F058C7F02396AD1E002C84F0 /* longman.js */,
 				F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */,
-				F0A001C523587121009E9CD6 /* reverso-reverso-speaker.js */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -890,10 +908,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0C36AA7235ADF5E001E396C /* reader-translator.js in Resources */,
+				F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
 				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
-				F0A001C723587121009E9CD6 /* reverso-reverso-speaker.js in Resources */,
 				F09AD47E23702DF100FFBF6A /* jquery.js in Resources */,
 				F075443E234479DB00E1D88E /* Assets.xcassets in Resources */,
 			);
@@ -915,10 +933,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F08CE13B236EA9F200610342 /* index.js in Resources */,
+				F058C7EE2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
 				F040D57C2336BD97004567B8 /* README.md in Resources */,
 				F0C36AA8235ADF5E001E396C /* reader-translator.js in Resources */,
 				F0AA69AD232E9712007CC07B /* LaunchScreen.storyboard in Resources */,
-				F0A001C623587121009E9CD6 /* reverso-reverso-speaker.js in Resources */,
 				F00C7C87235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
 				F08CE13A236EA9F200610342 /* index.html in Resources */,
 				F0AA69AA232E9712007CC07B /* Preview Assets.xcassets in Resources */,
@@ -1000,7 +1018,7 @@
 				F08EBAF723953B0A009025D3 /* PeerBrowser.swift in Sources */,
 				F08EBAF223952AD6009025D3 /* WebViewContainer.swift in Sources */,
 				F08EBB09239564F3009025D3 /* AudioRateView.swift in Sources */,
-				F08EBB0723956495009025D3 /* RewindView.swift in Sources */,
+				F08EBB0723956495009025D3 /* RewindButtonsView.swift in Sources */,
 				F08EBB0B239565CC009025D3 /* PlayerContolsView.swift in Sources */,
 				F012038D239286A2008D0B47 /* Store.swift in Sources */,
 				F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */,
