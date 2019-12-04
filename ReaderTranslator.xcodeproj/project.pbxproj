@@ -56,6 +56,7 @@
 		F0586483238FB03900E6DDFA /* PdfToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0586481238FB03900E6DDFA /* PdfToolbarView.swift */; };
 		F058C7EE2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
 		F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
+		F058C7F22397A94D002C84F0 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1042344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
 		F06DB1052344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
@@ -258,7 +259,7 @@
 		F0505C532360D3DA004F2D50 /* LongmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanView.swift; sourceTree = "<group>"; };
 		F0586481238FB03900E6DDFA /* PdfToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfToolbarView.swift; sourceTree = "<group>"; };
 		F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
-		F058C7F02396AD1E002C84F0 /* longman.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = longman.js; sourceTree = "<group>"; };
+		F058C7F12397A180002C84F0 /* longman.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = longman.json; sourceTree = "<group>"; };
 		F062029423812264002EEAEE /* YTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslator.swift; sourceTree = "<group>"; };
 		F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
 		F06DB1032344975E00C2DE90 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
@@ -697,7 +698,7 @@
 			children = (
 				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
 				F075445923447A2800E1D88E /* reader-translator.js */,
-				F058C7F02396AD1E002C84F0 /* longman.js */,
+				F058C7F12397A180002C84F0 /* longman.json */,
 				F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */,
 			);
 			path = Scripts;
@@ -907,6 +908,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F058C7F22397A94D002C84F0 /* longman.json in Resources */,
 				F0C36AA7235ADF5E001E396C /* reader-translator.js in Resources */,
 				F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,

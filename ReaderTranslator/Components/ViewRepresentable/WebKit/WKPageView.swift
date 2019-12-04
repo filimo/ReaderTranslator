@@ -13,23 +13,18 @@ class WKPageView: WKWebView {
     @ObservedObject private var store = Store.shared
     private var zoomLevel: CGFloat = 1
 
-    @Published var newUrl: String
+    @Published var newUrl: String = ""
 
     private var cancellableSet: Set<AnyCancellable> = []
 
-    init(defaultUrl: String) {
+    init() {
         let config = WKWebViewConfiguration()
         let contentController = WKUserContentController()
 
         config.userContentController = contentController
         config.websiteDataStore = .nonPersistent()
 
-        self.newUrl = defaultUrl
         super.init(frame: .zero, configuration: config)
-
-        if let url = URL(string: defaultUrl) {
-            self.load(URLRequest(url: url))
-        }
 
         $newUrl
             .debounce(for: 0.5, scheduler: RunLoop.main)
@@ -45,6 +40,10 @@ class WKPageView: WKWebView {
                 }
             }
             .store(in: &cancellableSet)
+    }
+
+    func load(urlString: String) {
+        newUrl = urlString
     }
 
     deinit {

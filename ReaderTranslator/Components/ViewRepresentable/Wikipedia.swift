@@ -11,7 +11,7 @@ import WebKit
 
 struct Wikipedia: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
-    private let host = "https://en.wikipedia.org/wiki/Special:Search"
+    private let defaultURL = "https://en.wikipedia.org/wiki/Special:Search"
 
     static var pageView: WKPageView?
     static var coorinator: Coordinator?
@@ -27,7 +27,8 @@ struct Wikipedia: ViewRepresentable, WKScriptsSetup {
     func makeView(context: Context) -> WKPageView {
         if let view = Self.pageView { return view }
 
-        let view = WKPageView(defaultUrl: host)
+        let view = WKPageView()
+        view.load(urlString: defaultURL)
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
@@ -42,7 +43,7 @@ struct Wikipedia: ViewRepresentable, WKScriptsSetup {
 
         print("\(theClassName)_updateView_update", text)
 
-        guard var urlComponent = URLComponents(string: host) else { return }
+        guard var urlComponent = URLComponents(string: defaultURL) else { return }
         urlComponent.queryItems = [.init(name: "search", value: text)]
 
         if let url = urlComponent.url {

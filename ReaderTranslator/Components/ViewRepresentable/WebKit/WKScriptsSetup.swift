@@ -58,6 +58,32 @@ extension WKScriptsSetup {
         }
     }
 
+    func loadWithRuleList(urlString: String, view: WKPageView, file name: String) {
+        guard let jsonURL = Bundle.main.url(forResource: name, withExtension: "json") else { return }
+
+        do {
+            let json = try String(contentsOf: jsonURL)
+
+            WKContentRuleListStore.default()?.compileContentRuleList(
+                forIdentifier: "ContentBlockingRules",
+                encodedContentRuleList: json,
+                completionHandler: { (contentRuleList, error) in
+                    if let error = error {
+                        print(error)
+                        return
+                    }
+                    guard let contentRuleList = contentRuleList else { return }
+
+                    view.configuration.userContentController.add(contentRuleList)
+
+                    view.load(urlString: urlString)
+            })
+
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
     func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!) {}
     func goBack(_ webView: WKPageView) {}
 }

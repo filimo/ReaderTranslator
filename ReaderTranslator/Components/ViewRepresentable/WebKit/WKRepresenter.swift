@@ -43,7 +43,7 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
 
     func makeView(context: Context) -> WKPageView {
         if let view = Self.views[store.currentTab] { return view }
-        let view = WKPageView(defaultUrl: "")
+        let view = WKPageView()
         Self.views[self.store.currentTab] = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)

@@ -11,7 +11,7 @@ import WebKit
 
 struct Reverso: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
-    private let host = "https://context.reverso.net/translation/"
+    private let defaultURL = "https://context.reverso.net/translation/"
 
     static var coorinator: Coordinator?
     static var pageView: WKPageView?
@@ -27,7 +27,8 @@ struct Reverso: ViewRepresentable, WKScriptsSetup {
     func makeView(context: Context) -> WKPageView {
         if let view = Self.pageView { return view }
 
-        let view = WKPageView(defaultUrl: host)
+        let view = WKPageView()
+        view.load(urlString: defaultURL)
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
@@ -46,7 +47,7 @@ struct Reverso: ViewRepresentable, WKScriptsSetup {
         let search = text.replacingOccurrences(of: " ", with: "+")
         let groups = view.url?.absoluteString.groups(for: #"\/translation\/(\w+-\w+)\/"#)
         let language = groups?[safe: 0]?[safe: 1] ?? "english-russian"
-        let urlString = "\(host)\(language)/\(search)"
+        let urlString = "\(defaultURL)\(language)/\(search)"
 
         if view.url?.absoluteString == urlString { return }
 

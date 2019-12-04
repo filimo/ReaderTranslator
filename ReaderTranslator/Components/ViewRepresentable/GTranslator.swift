@@ -17,7 +17,7 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
     static var pageView: WKPageView?
 
     @ObservedObject private var store = Store.shared
-    private let defaultUrl = "https://translate.google.com?op=translate&sl=auto&tl=ru"
+    private let defaultURL = "https://translate.google.com?op=translate&sl=auto&tl=ru"
 
     class Coordinator: WKCoordinator {
         @Published var selectedText = TranslateAction.gTranslator(text: "")
@@ -47,7 +47,8 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
     func makeView(context: Context) -> WKPageView {
         if let view = Self.pageView { return view }
 
-        let view = WKPageView(defaultUrl: defaultUrl)
+        let view = WKPageView()
+        view.load(urlString: defaultURL)
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
@@ -63,7 +64,7 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
             print("\(theClassName)_updateView_update", text)
 
             let (slValue, tlValue) = getParams(url: view.url)
-            guard var urlComponent = URLComponents(string: defaultUrl) else { return }
+            guard var urlComponent = URLComponents(string: defaultURL) else { return }
             urlComponent.queryItems = [
                 .init(name: "op", value: "translate"),
                 .init(name: "sl", value: slValue),
@@ -82,7 +83,7 @@ struct GTranslator: ViewRepresentable, WKScriptsSetup {
 
     private func getParams(url: URL?) -> (String?, String?) {
         let lastUrl = url?.absoluteString.replacingOccurrences(of: "#view=home", with: "")
-        let url = lastUrl ?? defaultUrl
+        let url = lastUrl ?? defaultURL
 
         guard let urlComponent = URLComponents(string: url) else { return (nil, nil) }
         let queryItems = urlComponent.queryItems

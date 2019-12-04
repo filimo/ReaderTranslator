@@ -11,7 +11,7 @@ import WebKit
 
 struct Longman: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
-    private let host = "https://www.ldoceonline.com/dictionary/"
+    private let defaultURL = "https://www.ldoceonline.com/dictionary/"
 
     static var coorinator: Coordinator?
     static var pageView: WKPageView?
@@ -27,11 +27,12 @@ struct Longman: ViewRepresentable, WKScriptsSetup {
     func makeView(context: Context) -> WKPageView {
         if let view = Self.pageView { return view }
 
-        let view = WKPageView(defaultUrl: host)
+        let view = WKPageView()
+        self.loadWithRuleList(urlString: defaultURL, view: view, file: "longman")
+
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
-        setupScript(view: view, file: "longman")
 
         return view
     }
@@ -44,15 +45,13 @@ struct Longman: ViewRepresentable, WKScriptsSetup {
         print("\(theClassName)_updateView_update", text)
 
         let search = text.replacingOccurrences(of: " ", with: "-")
-        let urlString = "\(host)\(search)"
+        let urlString = "\(defaultURL)\(search)"
 
         if view.url?.absoluteString == urlString { return }
 
-        if let url = URL(string: urlString.encodeUrl) {
-            print("\(theClassName)_updateView_reload", url.absoluteString)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                view.load(URLRequest(url: url))
-            }
+        print("\(theClassName)_updateView_reload", urlString)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.loadWithRuleList(urlString: urlString.encodeUrl, view: view, file: "longman")
         }
     }
 }

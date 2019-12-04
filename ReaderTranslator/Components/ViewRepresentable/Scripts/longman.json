@@ -1,0 +1,18 @@
+[
+    {
+        "trigger": {
+            "url-filter": "https://tpc.googlesyndication.com/.*"
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": "//aax-eu.amazon-adsystem.com/.*"
+        },
+        "action": {
+            "type": "block"
+        }
+    }
+]

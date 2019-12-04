@@ -11,7 +11,7 @@ import WebKit
 
 struct Collins: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
-    private let host = "https://www.collinsdictionary.com/dictionary/english/"
+    private let defaultURL = "https://www.collinsdictionary.com/dictionary/english/"
 
     static var coorinator: Coordinator?
     static var pageView: WKPageView?
@@ -27,7 +27,8 @@ struct Collins: ViewRepresentable, WKScriptsSetup {
     func makeView(context: Context) -> WKPageView {
         if let view = Self.pageView { return view }
 
-        let view = WKPageView(defaultUrl: host)
+        let view = WKPageView()
+        view.load(urlString: defaultURL)
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
@@ -43,7 +44,7 @@ struct Collins: ViewRepresentable, WKScriptsSetup {
         print("\(theClassName)_updateView_update", text)
 
         let search = text.replacingOccurrences(of: " ", with: "-")
-        let urlString = "\(host)\(search)"
+        let urlString = "\(defaultURL)\(search)"
 
         if view.url?.absoluteString == urlString { return }
 

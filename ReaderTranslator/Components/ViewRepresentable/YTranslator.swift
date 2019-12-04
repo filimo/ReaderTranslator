@@ -17,7 +17,7 @@ struct YTranslator: ViewRepresentable, WKScriptsSetup {
     static var pageView: WKPageView?
 
     @ObservedObject private var store = Store.shared
-    private let defaultUrl = "https://translate.yandex.ru/?lang=en-ru"
+    private let defaultURL = "https://translate.yandex.ru/?lang=en-ru"
 
     class Coordinator: WKCoordinator {
         @Published var selectedText = TranslateAction.gTranslator(text: "")
@@ -47,7 +47,8 @@ struct YTranslator: ViewRepresentable, WKScriptsSetup {
     func makeView(context: Context) -> WKPageView {
         if let view = Self.pageView { return view }
 
-        let view = WKPageView(defaultUrl: defaultUrl)
+        let view = WKPageView()
+        view.load(urlString: defaultURL)
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
@@ -62,7 +63,7 @@ struct YTranslator: ViewRepresentable, WKScriptsSetup {
             print("\(theClassName)_updateView_update", text)
 
             let (lang) = getParams(url: view.url)
-            guard var urlComponent = URLComponents(string: defaultUrl) else { return }
+            guard var urlComponent = URLComponents(string: defaultURL) else { return }
             urlComponent.queryItems = [
                 .init(name: "lang", value: lang),
                 .init(name: "text", value: text)
@@ -78,7 +79,7 @@ struct YTranslator: ViewRepresentable, WKScriptsSetup {
     }
 
     private func getParams(url: URL?) -> (String?) {
-        let url = url?.absoluteString ?? defaultUrl
+        let url = url?.absoluteString ?? defaultURL
 
         guard let urlComponent = URLComponents(string: url) else { return (nil) }
         let queryItems = urlComponent.queryItems
