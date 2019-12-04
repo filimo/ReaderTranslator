@@ -10,6 +10,8 @@ import Foundation
 
 class Store: ObservableObject {
     static var shared = Store()
+    
+    var lastWebPage = ""
 
     @Published(wrappedValue: nil, key: "lastAudio") var lastAudio: URL?
     @Published(key: "audioRate") var audioRate: Float = 1

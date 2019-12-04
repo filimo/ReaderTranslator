@@ -57,6 +57,18 @@
 		F058C7EE2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
 		F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
 		F058C7F22397A94D002C84F0 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
+		F058C7F32397F968002C84F0 /* WKScriptsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */; };
+		F058C7F42397F9DB002C84F0 /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
+		F058C7F52397FA23002C84F0 /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
+		F058C7F62397FA3E002C84F0 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
+		F058C7F72397FA56002C84F0 /* WKCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53177234B3EE1003174B5 /* WKCoordinator.swift */; };
+		F058C7F82397FA67002C84F0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
+		F058C7F92397FA70002C84F0 /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
+		F058C7FA2397FA7C002C84F0 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830E23617BE6003A25B4 /* NSObject.swift */; };
+		F058C7FB2397FABD002C84F0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256BC233D309F00C9D719 /* String.swift */; };
+		F058C7FC2397FAD0002C84F0 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
+		F058C7FD2397FBCD002C84F0 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
+		F058C7FE2397FBCE002C84F0 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1042344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
 		F06DB1052344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
@@ -898,6 +910,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F058C7FD2397FBCD002C84F0 /* longman.json in Resources */,
 				F0120382239182DC008D0B47 /* LaunchScreen.storyboard in Resources */,
 				F012037F239182DC008D0B47 /* Preview Assets.xcassets in Resources */,
 				F012037C239182DC008D0B47 /* Assets.xcassets in Resources */,
@@ -938,6 +951,7 @@
 				F058C7EE2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
 				F040D57C2336BD97004567B8 /* README.md in Resources */,
 				F0C36AA8235ADF5E001E396C /* reader-translator.js in Resources */,
+				F058C7FE2397FBCE002C84F0 /* longman.json in Resources */,
 				F0AA69AD232E9712007CC07B /* LaunchScreen.storyboard in Resources */,
 				F00C7C87235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
 				F08CE13A236EA9F200610342 /* index.html in Resources */,
@@ -1011,14 +1025,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F08EBB0D23956A20009025D3 /* NetworkManager.swift in Sources */,
+				F058C7F32397F968002C84F0 /* WKScriptsSetup.swift in Sources */,
 				F012038723928631008D0B47 /* UserDefault.swift in Sources */,
+				F058C7FB2397FABD002C84F0 /* String.swift in Sources */,
 				F01203902392D586008D0B47 /* RoundButtonStyle.swift in Sources */,
 				F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */,
 				F012038823928634008D0B47 /* Published.swift in Sources */,
 				F03F1E33239570ED006F765D /* PeerListener.swift in Sources */,
 				F06EAF8F2393A4E100AAE1A4 /* SafariView.swift in Sources */,
+				F058C7F82397FA67002C84F0 /* View.swift in Sources */,
 				F08EBAF723953B0A009025D3 /* PeerBrowser.swift in Sources */,
 				F08EBAF223952AD6009025D3 /* WebViewContainer.swift in Sources */,
+				F058C7F72397FA56002C84F0 /* WKCoordinator.swift in Sources */,
+				F058C7FC2397FAD0002C84F0 /* Safari.swift in Sources */,
+				F058C7F52397FA23002C84F0 /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F08EBB09239564F3009025D3 /* AudioRateView.swift in Sources */,
 				F08EBB0723956495009025D3 /* RewindButtonsView.swift in Sources */,
 				F08EBB0B239565CC009025D3 /* PlayerContolsView.swift in Sources */,
@@ -1026,7 +1046,11 @@
 				F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */,
 				F08EBB0523956202009025D3 /* FileListView.swift in Sources */,
 				F08EBAED23943835009025D3 /* WKWebRepresenter.swift in Sources */,
+				F058C7F42397F9DB002C84F0 /* WKPageView.swift in Sources */,
+				F058C7FA2397FA7C002C84F0 /* NSObject.swift in Sources */,
 				F012037A239182DA008D0B47 /* ContentView.swift in Sources */,
+				F058C7F92397FA70002C84F0 /* DOMEvent.swift in Sources */,
+				F058C7F62397FA3E002C84F0 /* Set.swift in Sources */,
 				F08EBB03239541FB009025D3 /* PeerConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

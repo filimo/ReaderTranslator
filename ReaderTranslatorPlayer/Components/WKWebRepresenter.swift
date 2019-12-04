@@ -9,26 +9,13 @@
 import SwiftUI
 import WebKit
 
-struct WKWebRepresenter: UIViewRepresentable {
-    func makeUIView(context: Context) -> WKWebView {
-        WKWebView()
+struct WKWebRepresenter: UIViewRepresentable, WKScriptsSetup {
+    func makeUIView(context: Context) -> WKPageView {
+        let view = WKPageView()
+        loadWithRuleList(urlString: "https://www.ldoceonline.com", view: view, file: "longman")
+        return view
     }
 
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        guard let url = URL(string: "https://www.ldoceonline.com") else { return }
-        let script = """
-            document.addEventListener("DOMContentLoaded", (event) => {
-                document.getElementById('ad_topslot').remove()
-                document.getElementsByClassName('dictionary_intro')[0].remove()
-            })
-        """
-        let userScript = WKUserScript(
-            source: script,
-            injectionTime: .atDocumentEnd,
-            forMainFrameOnly: true
-        )
-        uiView.configuration.userContentController.addUserScript(userScript)
-
-        uiView.load(URLRequest(url: url))
+    func updateUIView(_ view: WKPageView, context: Context) {
     }
 }
