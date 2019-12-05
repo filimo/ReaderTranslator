@@ -32,8 +32,12 @@ struct StatusBarView_Bookmarks: View {
                     Button(action: { self.store.bookmarks.remove(object: text)},
                            label: { Image.sfSymbol("bookmark.fill") })
                 } else {
-                    Button(action: { self.store.bookmarks.append(text) },
-                           label: { Image.sfSymbol("bookmark") })
+                    Button(
+                        action: {
+                            self.store.bookmarks.append(text)
+                            self.store.translateAction.add(.bookmarks(text: text))
+                        },
+                        label: { Image.sfSymbol("bookmark") })
                 }
             } else {
                 EmptyView()

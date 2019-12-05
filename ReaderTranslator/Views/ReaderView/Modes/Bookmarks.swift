@@ -14,7 +14,14 @@ struct BookmarksView: View {
     @State var selectedWord = ""
 
     var bookmarks: [[String]] {
-        self.store.bookmarks.sorted { $0.lowercased() < $1.lowercased() }.chunked(into: 3)
+        if case let .bookmarks(text) = self.store.translateAction {
+            Store.shared.translateAction.next()
+            RunLoop.main.perform {
+                self.selectedWord = text
+            }
+        }
+
+        return self.store.bookmarks.sorted { $0.lowercased() < $1.lowercased() }.chunked(into: 3)
     }
 
     var body: some View {

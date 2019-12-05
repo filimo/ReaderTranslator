@@ -35,7 +35,7 @@ enum AvailableView: String, Codable, CaseIterable {
         case .collins:
             return .collins(text: text)
         case .bookmarks:
-            return .none(text: text)
+            return .bookmarks(text: text)
         }
     }
 }

@@ -20,6 +20,7 @@ enum TranslateAction: Equatable {
     case macmillan(text: String)
     case collins(text: String)
     case wikipedia(text: String)
+    case bookmarks(text: String)
 
     init() {
         self = .none(text: "")
@@ -35,6 +36,7 @@ enum TranslateAction: Equatable {
              .longman(let text),
              .macmillan(let text),
              .collins(let text),
+             .bookmarks(let text),
              .wikipedia(let text):
             return text
                 .trimmingCharacters(in: .whitespaces)
@@ -42,7 +44,7 @@ enum TranslateAction: Equatable {
     }
 
     mutating func add(_ action: TranslateAction, isSpeaking: Bool = true) {
-        if isSpeaking { add([.speak(text: action.getText()), action]) }
+        if isSpeaking { add([.speak(text: action.getText()), action], isSpeaking: false) }
         if stack.count == 1 { next() }
     }
 
@@ -66,8 +68,7 @@ enum TranslateAction: Equatable {
                      .macmillan,
                      .wikipedia: if count < 4 { return true }
                 case .reverso: if count < 10 { return true }
-                case .gTranslator, .yTranslator: return true
-                case .bookmarks: return false
+                case .gTranslator, .yTranslator, .bookmarks: return true
                 }
                 return false
             }
