@@ -33,7 +33,7 @@ struct FileListView: View {
                 Button(action: {
                     self.store.lastAudio = url
                     self.openAudio(url: url)
-                    player?.play()
+                    self.store.isPlaying = true
                 }, label: {
                     Text("\(url.lastPathComponent)")
                     .foregroundColor(

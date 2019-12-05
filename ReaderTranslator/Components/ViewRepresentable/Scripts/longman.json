@@ -1,7 +1,7 @@
 [
     {
         "trigger": {
-            "url-filter": "https://tpc.googlesyndication.com/.*"
+            "url-filter": "https://.*.google.*.com/.*"
         },
         "action": {
             "type": "block"
@@ -10,6 +10,38 @@
     {
         "trigger": {
             "url-filter": "//aax-eu.amazon-adsystem.com/.*"
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": "//.*.adtech.*/.*"
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": "https://fastlane.rubiconproject.com/.*"
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": "https://.*.amazon-adsystem.com"
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": "https://.*.facebook.ne"
         },
         "action": {
             "type": "block"

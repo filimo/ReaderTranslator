@@ -10,8 +10,22 @@ import Foundation
 
 class Store: ObservableObject {
     static var shared = Store()
-    
+
     var lastWebPage = ""
+
+    @Published var isPlaying = false {
+        willSet {
+            guard let player = player else { return }
+
+            if newValue {
+                let currentTime = player.currentTime
+                player.play()
+                player.currentTime = currentTime
+            }else{
+                player.pause()
+            }
+        }
+    }
 
     @Published(wrappedValue: nil, key: "lastAudio") var lastAudio: URL?
     @Published(key: "audioRate") var audioRate: Float = 1
