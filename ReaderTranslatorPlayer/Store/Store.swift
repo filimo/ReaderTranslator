@@ -21,7 +21,7 @@ class Store: ObservableObject {
                 let currentTime = player.currentTime
                 player.play()
                 player.currentTime = currentTime
-            }else{
+            } else {
                 player.pause()
             }
         }

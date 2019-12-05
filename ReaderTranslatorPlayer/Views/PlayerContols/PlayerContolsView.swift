@@ -12,7 +12,7 @@ private var timer: Timer?
 
 struct PlayerControlsView: View {
     @ObservedObject var store = Store.shared
-    
+
     @State var currentStatus = "0.0/0.0"
     @State var showSafari = false
 
@@ -41,17 +41,19 @@ struct PlayerControlsView: View {
             SafariView(url: .constant(URL(string: "https://www.ldoceonline.com")))
         }
     }
-    
+
     private var statusView: some View {
-        Group {
+        let status = Text("\(currentStatus)")
+
+        return Group {
             if store.isPlaying {
-                Text("\(currentStatus)").onAppear { self.startTimer() }
-            }else{
-                Text("\(currentStatus)").onAppear { timer?.invalidate() }
+                status.onAppear { self.startTimer() }
+            } else {
+                status.onAppear { timer?.invalidate() }
             }
         }
     }
-    
+
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
             guard let player = player else { return }

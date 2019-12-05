@@ -9,6 +9,7 @@
 import Foundation
 
 enum AvailableView: String, Codable, CaseIterable {
+    case bookmarks = "Bookmarks"
     case wikipedia = "Wikipedia"
     case reverso = "Reverso"
     case gTranslator = "GTranslator"
@@ -33,6 +34,8 @@ enum AvailableView: String, Codable, CaseIterable {
             return .macmillan(text: text)
         case .collins:
             return .collins(text: text)
+        case .bookmarks:
+            return .none(text: text)
         }
     }
 }

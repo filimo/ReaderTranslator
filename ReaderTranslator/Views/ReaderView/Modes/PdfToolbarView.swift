@@ -62,7 +62,7 @@ struct PdfToolbarView: View {
                         player.play()
                         player.currentTime = currentTime
                     }
-                }, label: { Text(isPlaying ? "Pause" : "Play ") })
+                }, label: { Text(isPlaying ? "Pause" : "Play").frame(width: 40) })
 
                 rewindButton(label: "+1", step: 1)
                 rewindButton(label: "+5", step: 5)

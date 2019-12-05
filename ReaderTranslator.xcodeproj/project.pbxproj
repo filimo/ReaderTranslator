@@ -69,6 +69,8 @@
 		F058C7FC2397FAD0002C84F0 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
 		F058C7FD2397FBCD002C84F0 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F058C7FE2397FBCE002C84F0 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
+		F058C800239930F2002C84F0 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058C7FF23992F92002C84F0 /* Bookmarks.swift */; };
+		F058C801239930F3002C84F0 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058C7FF23992F92002C84F0 /* Bookmarks.swift */; };
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F06DB1042344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
 		F06DB1052344975E00C2DE90 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1032344975E00C2DE90 /* StackView.swift */; };
@@ -272,6 +274,7 @@
 		F0586481238FB03900E6DDFA /* PdfToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfToolbarView.swift; sourceTree = "<group>"; };
 		F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
 		F058C7F12397A180002C84F0 /* longman.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = longman.json; sourceTree = "<group>"; };
+		F058C7FF23992F92002C84F0 /* Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
 		F062029423812264002EEAEE /* YTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslator.swift; sourceTree = "<group>"; };
 		F06D1C0D2361FFBC008A0C38 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
 		F06DB1032344975E00C2DE90 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
@@ -727,6 +730,7 @@
 				F0D31C5023491C23003CF86B /* GTranslatorView.swift */,
 				F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */,
 				F0AB12A2233F5798005B9F2A /* ReaderView_PDF.swift */,
+				F058C7FF23992F92002C84F0 /* Bookmarks.swift */,
 				F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */,
 				F026B1E72344830200E032B9 /* SafariView.swift */,
 				F0586481238FB03900E6DDFA /* PdfToolbarView.swift */,
@@ -1090,6 +1094,7 @@
 				F04C831023617BE6003A25B4 /* NSObject.swift in Sources */,
 				F0BB43752344844800ADBEF1 /* SpeechSynthesizer.swift in Sources */,
 				F06DB1052344975E00C2DE90 /* StackView.swift in Sources */,
+				F058C801239930F3002C84F0 /* Bookmarks.swift in Sources */,
 				F0FCDD432361897E0016F23F /* Macmillan.swift in Sources */,
 				F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */,
 				F0562E0F2362026C0074ACF5 /* Wikipedia.swift in Sources */,
@@ -1212,6 +1217,7 @@
 				F0562E0E2362026C0074ACF5 /* Wikipedia.swift in Sources */,
 				F0C36AA12359D50A001E396C /* Clipboard.swift in Sources */,
 				F04C830C23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
+				F058C800239930F2002C84F0 /* Bookmarks.swift in Sources */,
 				F0FCDD40236189750016F23F /* MacmillanView.swift in Sources */,
 				F0C4EDA42349260000CCD97A /* ReversoView.swift in Sources */,
 				F0562E0C2362025D0074ACF5 /* WikipediaView.swift in Sources */,

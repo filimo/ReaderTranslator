@@ -18,6 +18,7 @@ struct ReaderView: View {
             SafariView()
             #endif
             Group {
+                if store.enabledViews.contains(.bookmarks) { BookmarksView() }
                 if store.enabledViews.contains(.wikipedia) { WikipediaView() }
                 if store.enabledViews.contains(.macmillan) { MacmillanView() }
                 if store.enabledViews.contains(.collins) { CollinsView() }

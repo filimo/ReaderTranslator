@@ -14,6 +14,7 @@ struct StatusBarView_ViewsEnabler: View {
     var body: some View {
         HStack(spacing: 0) {
             Divider().fixedSize()
+            button(.bookmarks)
             button(.wikipedia)
             button(.macmillan)
             button(.collins)

@@ -42,13 +42,19 @@ struct StatusBarView_Bookmarks: View {
     }
 
     private var listView: some View {
-        VStack {
+        let bookmarks = self.store.bookmarks.sorted { $0.lowercased() < $1.lowercased() }.chunked(into: 8)
+
+        return VStack {
             HStack {
                 ScrollView {
-                    ForEach(self.store.bookmarks, id: \.self) { text in
-                        Text("\(text)").onTapGesture {
-                            self.store.translateAction.add(.gTranslator(text: text))
-                            self.show = false
+                    ForEach(bookmarks, id: \.self) { chunk in
+                        HStack {
+                            ForEach(chunk, id: \.self) { text in
+                                Text("\(text)").onTapGesture {
+                                    self.store.translateAction.addAll(text: text)
+                                    self.show = false
+                                }.frame(width: 100)
+                            }
                         }
                     }
                 }.frame(height: 800)
