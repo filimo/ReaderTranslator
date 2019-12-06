@@ -52,4 +52,8 @@ extension Array where Element == Bookmark {
         }
         .chunked(into: into)
     }
+
+    var sorted: [Element] {
+        self.sorted { $0.text < $1.text }
+    }
 }

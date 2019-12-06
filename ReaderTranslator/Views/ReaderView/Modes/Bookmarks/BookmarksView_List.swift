@@ -30,7 +30,7 @@ struct BookmarksView_List: View {
              bookmarks = bookmarks.filter { $0.text.contains(filter) }
         }
 
-        return bookmarks.chunked(into: 3)
+        return bookmarks.sorted.chunked(into: 3)
     }
 
     var body: some View {
