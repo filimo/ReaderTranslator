@@ -35,18 +35,6 @@ iPadOS project takes place to exist but I don't have iPad now. I going to buy it
 
 If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
 
-## Comming features in 2.0
- - Watch videos with subtitles [#55](https://github.com/filimo/ReaderTranslator/issues/55)
-![](files/Release_2.0.0_1.png)
-
-## Comming features
-[New features for ReaderTranslatorPlayer](https://github.com/filimo/ReaderTranslator/issues/58)
-[Bookmarks view](https://github.com/filimo/ReaderTranslator/issues/59)
-[Single mode for all views](https://github.com/filimo/ReaderTranslator/issues/60)
-
-![](files/Release_1.8_1.jpeg)
-![](files/Release_1.8_2.png)
-
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
 
@@ -77,6 +65,17 @@ I am going to dive into a new foreign language. I think I will get new ideas for
 ## Goals
 Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
+## Comming features in 2.0
+ - Watch videos with subtitles [#55](https://github.com/filimo/ReaderTranslator/issues/55)
+![](files/Release_2.0.0_1.png)
+
+## Comming features
+- [New features for ReaderTranslatorPlayer](https://github.com/filimo/ReaderTranslator/issues/58)
+- [Bookmarks view](https://github.com/filimo/ReaderTranslator/issues/59)
+- [Single mode for all views](https://github.com/filimo/ReaderTranslator/issues/60)
+
+![](files/Release_1.8_1.jpeg)
+![](files/Release_1.8_2.png)
 
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
