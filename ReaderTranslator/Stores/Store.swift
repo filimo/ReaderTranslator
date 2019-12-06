@@ -48,7 +48,7 @@ class Store: ObservableObject {
 
     @Published(key: "zoom") var zoom: CGFloat = 1
 
-    @Published(key: "bookmarks") var bookmarks: [String] = []
+    @Published(key: "bookmarks") var bookmarks: Bookmarks = []
 
     @Published(key: "playbackRate") var playbackRate: Float = 1.0
 

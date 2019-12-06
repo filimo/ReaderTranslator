@@ -44,8 +44,7 @@ enum TranslateAction: Equatable {
     }
 
     mutating func add(_ action: TranslateAction, isSpeaking: Bool = true) {
-        if isSpeaking { add([.speak(text: action.getText()), action], isSpeaking: false) }
-        if stack.count == 1 { next() }
+        add([action], isSpeaking: isSpeaking)
     }
 
     mutating func add(_ actions: [TranslateAction], isSpeaking: Bool = true) {
