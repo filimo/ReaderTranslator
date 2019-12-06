@@ -1,17 +1,16 @@
 //
-//  ReaderView_PDF.swift
+//  BookmarksView_List.swift
 //  ReaderTranslator
 //
-//  Created by Viktor Kushnerov on 9/28/19.
+//  Created by Viktor Kushnerov on 6/12/19.
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
 import SwiftUI
 
-struct BookmarksView: View {
+struct BookmarksView_List: View {
     @ObservedObject var store = Store.shared
-
-    @State var selectedWord = ""
+    @Binding var selectedWord: String
 
     var bookmarks: [Bookmarks] {
         if case let .bookmarks(text) = self.store.translateAction {
@@ -21,7 +20,7 @@ struct BookmarksView: View {
             }
         }
 
-        return self.store.bookmarks.sorted { $0.text.lowercased() < $1.text.lowercased() }.chunked(into: 3)
+        return self.store.bookmarks.chunked(into: 3)
     }
 
     var body: some View {
@@ -51,8 +50,8 @@ struct BookmarksView: View {
     }
 }
 
-struct BookmarksView_Previews: PreviewProvider {
+struct BookmarksView_List_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView()
+        BookmarksView_List(selectedWord: .constant(""))
     }
 }

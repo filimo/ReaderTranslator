@@ -27,6 +27,8 @@
 		F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
+		F023CEB2239A5674006DE5EA /* BookmarksView_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023CEB1239A5674006DE5EA /* BookmarksView_List.swift */; };
+		F023CEB3239A5674006DE5EA /* BookmarksView_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023CEB1239A5674006DE5EA /* BookmarksView_List.swift */; };
 		F026B1E82344830200E032B9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* SafariView.swift */; };
 		F02989EC2360488800DF722E /* OpenPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02989EB2360488800DF722E /* OpenPanel.swift */; };
 		F0305FD123812710002AC5F5 /* YTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */; };
@@ -261,6 +263,7 @@
 		F01A50E823492398001DCC11 /* ReversoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoView.swift; sourceTree = "<group>"; };
 		F0229BE02362021200F12F47 /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
+		F023CEB1239A5674006DE5EA /* BookmarksView_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_List.swift; sourceTree = "<group>"; };
 		F026B1E72344830200E032B9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F02989EB2360488800DF722E /* OpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPanel.swift; sourceTree = "<group>"; };
 		F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorView.swift; sourceTree = "<group>"; };
@@ -465,6 +468,15 @@
 				F012038F2392D586008D0B47 /* RoundButtonStyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		F023CEB0239A5648006DE5EA /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				F058C7FF23992F92002C84F0 /* BookmarksView.swift */,
+				F023CEB1239A5674006DE5EA /* BookmarksView_List.swift */,
+			);
+			path = Bookmarks;
 			sourceTree = "<group>";
 		};
 		F02989EA2360486500DF722E /* ViewRepresentable */ = {
@@ -735,7 +747,7 @@
 				F0D31C5023491C23003CF86B /* GTranslatorView.swift */,
 				F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */,
 				F0AB12A2233F5798005B9F2A /* ReaderView_PDF.swift */,
-				F058C7FF23992F92002C84F0 /* BookmarksView.swift */,
+				F023CEB0239A5648006DE5EA /* Bookmarks */,
 				F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */,
 				F026B1E72344830200E032B9 /* SafariView.swift */,
 				F0586481238FB03900E6DDFA /* PdfToolbarView.swift */,
@@ -1104,6 +1116,7 @@
 				F0FCDD432361897E0016F23F /* Macmillan.swift in Sources */,
 				F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */,
 				F0562E0F2362026C0074ACF5 /* Wikipedia.swift in Sources */,
+				F023CEB3239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F0305FD223812711002AC5F5 /* YTranslatorView.swift in Sources */,
 				F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */,
 				F08EBAF623953B0A009025D3 /* PeerBrowser.swift in Sources */,
@@ -1225,6 +1238,7 @@
 				F0562E0E2362026C0074ACF5 /* Wikipedia.swift in Sources */,
 				F0C36AA12359D50A001E396C /* Clipboard.swift in Sources */,
 				F04C830C23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
+				F023CEB2239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F058C800239930F2002C84F0 /* BookmarksView.swift in Sources */,
 				F0FCDD40236189750016F23F /* MacmillanView.swift in Sources */,
 				F0C4EDA42349260000CCD97A /* ReversoView.swift in Sources */,

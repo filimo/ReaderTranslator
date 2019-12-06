@@ -33,8 +33,23 @@ extension Array where Element == Bookmark {
         self.append(Bookmark(text: text))
     }
 
+    mutating func append(items: [Substring]) {
+        items.forEach { self.append(String($0)) }
+    }
+
     mutating func toggle(_ text: String) {
         guard let index = self.firstIndex(text: text) else { return }
         self[index].checked.toggle()
+    }
+
+    func joined(separator: String) -> String {
+        self.map { $0.text }.joined(separator: separator)
+    }
+
+    func chunked(into: Int) -> [Element] {
+        self.sorted {
+            $0.text.lowercased() < $1.text.lowercased()
+        }
+        .chunked(into: into)
     }
 }
