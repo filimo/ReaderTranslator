@@ -13,10 +13,14 @@ struct BookmarksView: View {
 
     @State var selectedWord = ""
     @State var showConfirm = false
+    @State var filter = ""
+
+    private let bookmarkWidth: CGFloat = 100
 
     var body: some View {
         VStack {
-            BookmarksView_List(selectedWord: $selectedWord)
+            TextField("", text: $filter).frame(width: bookmarkWidth * 3)
+            BookmarksView_List(width: bookmarkWidth, filter: $filter, selectedWord: $selectedWord)
             HStack {
                 Button(action: {
                     self.showConfirm = true
