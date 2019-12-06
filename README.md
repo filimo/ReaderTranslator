@@ -42,8 +42,10 @@ If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac'
 ## Comming features
 [New features for ReaderTranslatorPlayer](https://github.com/filimo/ReaderTranslator/issues/58)
 [Bookmarks view](https://github.com/filimo/ReaderTranslator/issues/59)
+[Single mode for all views](https://github.com/filimo/ReaderTranslator/issues/60)
 
 ![](files/Release_1.8_1.jpeg)
+![](files/Release_1.8_2.png)
 
 ## Status
 While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
