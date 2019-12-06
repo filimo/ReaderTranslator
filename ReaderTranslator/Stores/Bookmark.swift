@@ -56,4 +56,8 @@ extension Array where Element == Bookmark {
     var sorted: [Element] {
         self.sorted { $0.text < $1.text }
     }
+
+    var checked: [Element] {
+        self.filter { $0.checked }
+    }
 }

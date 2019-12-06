@@ -15,7 +15,7 @@ struct BookmarksView_Controls: View {
 
     var body: some View {
         HStack {
-            Text("\(store.bookmarks.count)")
+            Text("\(store.bookmarks.count)/\(store.bookmarks.checked.count)")
             Button(action: {
                 self.showConfirm = true
             }, label: { Text("Remove all") })
