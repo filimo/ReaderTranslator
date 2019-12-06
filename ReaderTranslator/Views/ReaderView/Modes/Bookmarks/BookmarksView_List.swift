@@ -11,6 +11,7 @@ import SwiftUI
 struct BookmarksView_List: View {
     @ObservedObject var store = Store.shared
 
+    var columnts: Int
     var width: CGFloat
     @Binding var filter: String
     @Binding var selectedWord: String
@@ -30,7 +31,7 @@ struct BookmarksView_List: View {
              bookmarks = bookmarks.filter { $0.text.contains(filter) }
         }
 
-        return bookmarks.sorted.chunked(into: 3)
+        return bookmarks.sorted.chunked(into: columnts)
     }
 
     var body: some View {
@@ -66,6 +67,6 @@ struct BookmarksView_List: View {
 
 struct BookmarksView_List_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView_List(width: 100, filter: .constant(""), selectedWord: .constant(""))
+        BookmarksView_List(columnts: 2, width: 100, filter: .constant(""), selectedWord: .constant(""))
     }
 }
