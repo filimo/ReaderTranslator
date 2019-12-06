@@ -16,16 +16,20 @@ struct BookmarksView_Controls: View {
     var body: some View {
         HStack {
             Text("\(store.bookmarks.checked.count)/\(store.bookmarks.count)")
-            Button(action: {
-                self.showConfirm = true
-            }, label: { Text("Remove all") })
-            Button(action: {
-                let items = Clipboard.string.split(separator: "\n")
-                self.store.bookmarks.append(items: items)
-            }, label: { Text("Paste to") })
-            Button(action: {
-                Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))
-            }, label: { Text("Copy to") })
+            MenuButton("Actions") {
+                Button(action: {
+                    Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))
+                }, label: { Text("Copy bookmarks to Clipboard") })
+                Button(action: {
+                    let items = Clipboard.string.split(separator: "\n")
+                    self.store.bookmarks.append(items: items)
+                }, label: { Text("Paste bookmarks separated by \\n from Clipboard") })
+                Button(action: {
+                    self.showConfirm = true
+                }, label: { Text("Remove all bookmarks") })
+            }
+            .fixedSize()
+            .menuButtonStyle(BorderlessButtonMenuButtonStyle())
         }
         .alert(isPresented: $showConfirm) {
             Alert(
