@@ -193,6 +193,8 @@
 		F0C53179234B3EE1003174B5 /* WKCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53177234B3EE1003174B5 /* WKCoordinator.swift */; };
 		F0C6657C2351A70B0087B6F2 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C6657B2351A70B0087B6F2 /* Collection.swift */; };
 		F0C6657D2351A70B0087B6F2 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C6657B2351A70B0087B6F2 /* Collection.swift */; };
+		F0C706D0239ACE610061F790 /* BookmarksView_Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */; };
+		F0C706D1239ACE620061F790 /* BookmarksView_Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */; };
 		F0D2E334234BA49000D95994 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
 		F0D2E335234BA49000D95994 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
 		F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
@@ -356,6 +358,7 @@
 		F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKScriptsSetup.swift; sourceTree = "<group>"; };
 		F0C53177234B3EE1003174B5 /* WKCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinator.swift; sourceTree = "<group>"; };
 		F0C6657B2351A70B0087B6F2 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_Controls.swift; sourceTree = "<group>"; };
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
 		F0EDE34C23641B1300E0B81C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -474,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				F058C7FF23992F92002C84F0 /* BookmarksView.swift */,
+				F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */,
 				F023CEB1239A5674006DE5EA /* BookmarksView_List.swift */,
 			);
 			path = Bookmarks;
@@ -1123,6 +1127,7 @@
 				F08EBB1123956D80009025D3 /* NetworkManager.swift in Sources */,
 				F001A701235E095700617573 /* ServiceProvider.swift in Sources */,
 				F0FCDD472361A8070016F23F /* CollinsView.swift in Sources */,
+				F0C706D1239ACE620061F790 /* BookmarksView_Controls.swift in Sources */,
 				F0562E0D2362025E0074ACF5 /* WikipediaView.swift in Sources */,
 				F0FCDD492361A80D0016F23F /* Collins.swift in Sources */,
 				F0BB43822344846700ADBEF1 /* ReaderView_Web.swift in Sources */,
@@ -1183,6 +1188,7 @@
 				F0418B98239A32FD00B59C66 /* Bookmark.swift in Sources */,
 				F0AB12B4233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift in Sources */,
 				F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */,
+				F0C706D0239ACE610061F790 /* BookmarksView_Controls.swift in Sources */,
 				F0F256BD233D309F00C9D719 /* String.swift in Sources */,
 				F0AB12A3233F5798005B9F2A /* ReaderView_PDF.swift in Sources */,
 				F0AD8B1E236414070017C22F /* TranslateAction.swift in Sources */,
