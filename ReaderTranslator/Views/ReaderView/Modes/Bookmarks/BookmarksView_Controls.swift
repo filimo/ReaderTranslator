@@ -31,8 +31,7 @@ struct BookmarksView_Controls: View {
             .fixedSize()
             .menuButtonStyle(BorderlessButtonMenuButtonStyle())
             .padding([.leading, .trailing], 5)
-            .background(RoundedRectangle(cornerRadius: 20)
-            .foregroundColor(Color.gray))
+            .background(RoundedRectangle(cornerRadius: 3).foregroundColor(Color(NSColor.controlColor)))
         }
         .alert(isPresented: $showConfirm) {
             Alert(

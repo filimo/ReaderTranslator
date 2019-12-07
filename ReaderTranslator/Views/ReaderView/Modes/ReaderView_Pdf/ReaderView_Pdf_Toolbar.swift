@@ -88,8 +88,9 @@ struct ReaderView_Pdf_Toolbar: View {
             HStack {
                 openPdfButton
                 openAudioButton
-
+                Spacer()
                 Text("\(currentStatus)").frame(width: 100)
+                Spacer()
             }
             HStack {
                 rewindButtonsView
