@@ -13,7 +13,7 @@ struct MacmillanView: View {
 
     var body: some View {
         WebViewContainer {
-            Macmillan(selectedText: self.$store.translateAction)
+            MacmillanRepresenter(selectedText: self.$store.translateAction)
         }.frame(width: store.maxViewWidth)
     }
 }

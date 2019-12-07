@@ -52,6 +52,9 @@ class Store: ObservableObject {
 
     @Published(key: "playbackRate") var playbackRate: Float = 1.0
 
+    @Published var longmanSentences: LongmanSentences = []
+    @Published var longmanSelectedBookmark = ""
+
     private init() {
         ({ currentTab = currentTab })() //call didSet
     }

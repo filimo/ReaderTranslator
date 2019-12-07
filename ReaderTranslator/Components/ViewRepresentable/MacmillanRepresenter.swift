@@ -9,7 +9,7 @@
 import SwiftUI
 import WebKit
 
-struct Macmillan: ViewRepresentable, WKScriptsSetup {
+struct MacmillanRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://www.macmillandictionary.com/dictionary/british/"
 
@@ -57,7 +57,7 @@ struct Macmillan: ViewRepresentable, WKScriptsSetup {
     }
 }
 
-extension Macmillan.Coordinator: WKScriptMessageHandler {
+extension MacmillanRepresenter.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
         var text: String { event.extra?.selectedText ?? "" }

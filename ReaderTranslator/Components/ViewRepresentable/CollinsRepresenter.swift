@@ -9,7 +9,7 @@
 import SwiftUI
 import WebKit
 
-struct Collins: ViewRepresentable, WKScriptsSetup {
+struct CollinsRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://www.collinsdictionary.com/dictionary/english/"
 
@@ -57,7 +57,7 @@ struct Collins: ViewRepresentable, WKScriptsSetup {
     }
 }
 
-extension Collins.Coordinator: WKScriptMessageHandler {
+extension CollinsRepresenter.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
         var text: String { event.extra?.selectedText ?? "" }

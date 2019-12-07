@@ -9,7 +9,7 @@
 import SwiftUI
 import WebKit
 
-struct Longman: ViewRepresentable, WKScriptsSetup {
+struct LongmanRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://www.ldoceonline.com/dictionary/"
 
@@ -56,7 +56,7 @@ struct Longman: ViewRepresentable, WKScriptsSetup {
     }
 }
 
-extension Longman.Coordinator: WKScriptMessageHandler {
+extension LongmanRepresenter.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
         var text: String { event.extra?.selectedText ?? "" }

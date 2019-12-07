@@ -13,7 +13,7 @@ struct ReversoView: View {
 
     var body: some View {
         WebViewContainer {
-            Reverso(selectedText: self.$store.translateAction)
+            ReversoRepresenter(selectedText: self.$store.translateAction)
         }
     }
 }

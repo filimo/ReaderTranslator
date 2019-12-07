@@ -9,7 +9,7 @@
 import SwiftUI
 import WebKit
 
-struct Wikipedia: ViewRepresentable, WKScriptsSetup {
+struct WikipediaRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://en.wikipedia.org/wiki/Special:Search"
 
@@ -55,7 +55,7 @@ struct Wikipedia: ViewRepresentable, WKScriptsSetup {
     }
 }
 
-extension Wikipedia.Coordinator: WKScriptMessageHandler {
+extension WikipediaRepresenter.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
         var text: String { event.extra?.selectedText ?? "" }

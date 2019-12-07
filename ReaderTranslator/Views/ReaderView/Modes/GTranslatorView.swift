@@ -27,7 +27,7 @@ struct GTranslatorView: View {
 
     var body: some View {
         WebViewContainer {
-            GTranslator(selectedText: self.$store.translateAction)
+            GTranslatorRepresenter(selectedText: self.$store.translateAction)
         }
     }
 }

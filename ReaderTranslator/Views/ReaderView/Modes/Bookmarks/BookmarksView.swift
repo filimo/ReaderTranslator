@@ -11,18 +11,18 @@ import SwiftUI
 struct BookmarksView: View {
     @ObservedObject var store = Store.shared
 
-    @State var selectedWord = ""
     @State var filter = ""
 
     private let bookmarkWidth: CGFloat = 100
-    private let columnts = 2
+    private let columnts = 3
+    private var width: CGFloat { bookmarkWidth * CGFloat(columnts) }
 
     var body: some View {
         VStack {
             TextField("", text: $filter).frame(width: bookmarkWidth * CGFloat(columnts))
-            BookmarksView_List(columnts: 2, width: bookmarkWidth, filter: $filter, selectedWord: $selectedWord)
+            BookmarksView_List(columnts: columnts, width: bookmarkWidth, filter: $filter)
             BookmarksView_Controls()
-        }
+        }.frame(width: (bookmarkWidth + 50) * CGFloat(columnts))
     }
 }
 

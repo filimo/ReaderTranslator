@@ -9,7 +9,7 @@
 import SwiftUI
 import WebKit
 
-struct Reverso: ViewRepresentable, WKScriptsSetup {
+struct ReversoRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://context.reverso.net/translation/"
 
@@ -60,7 +60,7 @@ struct Reverso: ViewRepresentable, WKScriptsSetup {
     }
 }
 
-extension Reverso.Coordinator: WKScriptMessageHandler {
+extension ReversoRepresenter.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
         var text: String { event.extra?.selectedText ?? "" }

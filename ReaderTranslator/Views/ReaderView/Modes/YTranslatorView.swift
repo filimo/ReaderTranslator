@@ -13,7 +13,7 @@ struct YTranslatorView: View {
 
     var body: some View {
         WebViewContainer {
-            YTranslator(selectedText: self.$store.translateAction)
+            YTranslatorRepresenter(selectedText: self.$store.translateAction)
         }
     }
 }

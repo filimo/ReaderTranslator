@@ -13,7 +13,7 @@ struct WikipediaView: View {
 
     var body: some View {
         WebViewContainer {
-            Wikipedia(selectedText: self.$store.translateAction)
+            WikipediaRepresenter(selectedText: self.$store.translateAction)
         }
     }
 }
