@@ -27,7 +27,7 @@ struct ReaderView: View {
                 if store.enabledViews.contains(.gTranslator) { GTranslatorView() }
                 if store.enabledViews.contains(.yTranslator) { YTranslatorView() }
             }
-            ReaderView_PDF()
+            ReaderView_Pdf()
             ReaderView_Web()
         }
     }

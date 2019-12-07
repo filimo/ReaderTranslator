@@ -8,21 +8,21 @@
 
 import SwiftUI
 
-struct ReaderView_PDF: View {
+struct ReaderView_Pdf: View {
     @ObservedObject var store = Store.shared
 
     var body: some View {
         VStack {
             if store.viewMode == .pdf {
-                PDFKitView()
-                PdfToolbarView().frame(height: 30)
+                PDFKitView().padding(.bottom)
+                ReaderView_Pdf_Toolbar().frame(height: 30)
             }
         }
     }
 }
 
-struct ReaderView_PDF_Previews: PreviewProvider {
+struct ReaderView_Pdf_Previews: PreviewProvider {
     static var previews: some View {
-        ReaderView_PDF()
+        ReaderView_Pdf()
     }
 }
