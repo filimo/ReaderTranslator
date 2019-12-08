@@ -35,9 +35,6 @@ iPadOS project takes place to exist but I don't have iPad now. I going to buy it
 
 If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
 
-## Status
-While I am waiting for the commercial **SwiftUI** projects I decided to dedicate my free time to build this open-source project.
-
 ## Goals
 This project targets to attract attention serious projects to SwiftUI and show its powerful. I develop this project in my free time so it would be imposible to craft such app in a short time if I used UIKit. I also use new features that announced on WWDC 2019 to show how much they are needed in morden apps.
 
