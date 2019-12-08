@@ -1,5 +1,25 @@
 # ReaderTranslator 
-**using SwiftUI, Combine and Catalyst**
+**using SwiftUI, Combine, Catalyst and others new features that annonced at WWDC 2019**
+
+## Goals
+This project targets to attract attention serious projects to SwiftUI and show its powerful. I develop this project in my free time so it would be imposible to craft such app in a short time if I used UIKit. I also use new features that announced at WWDC 2019 to show how much they are needed in morden apps.
+
+## Base idea
+
+> “If you can’t explain it simply, you don’t understand it well enough.” 
+> by Albert Einstein
+
+<p>Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate and Reverso
+to understand unfamiliar idioms, words or to find a sutable expressions or words in my native language.
+And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate and Reverso.</p>
+<p>Although this process is simple I would like to make it as more comfortable as possible.
+Sometimes I am lazy to look into the translator and I make an assumption about the meaning of a word or idiom and it can lead to a missunderstanding which turns into even greater loss of my time.</p>
+<p>Another useful feature is to write text in Safari to check and listen to it with a simple selection of text.</p>
+
+** update **
+As the project progressed I am not feeling to back to UIKit. Being able to craft a new idea in a few minutes on SwiftUI inspire me to continue developing this project. The ability to concentrate on ideas rather than realizations gives freedom to my creativity. 
+As I see now this project, when it already has enough useful features that I use every day. Most likely it will be the ecosystem with various services and additional apps that will help you get the language in. The project that helps to avoid the routine while you read, listen and browse info in your chosen language. Everyone can choose own convenient way to get into the foreign language. I like to move forward all time. If I can not do well now I can do it best tomorrow. I like to choose a convenient way to dive into a foreign language. I don't like to study but I like to explore.
+I am going to dive into a new foreign language. I think I will get new ideas for new features to use some foreign language from scratch.
 
 ## Projects
  - macOS
@@ -34,26 +54,6 @@ iOS project seems less useful as it has a small screen to fit 3 views.
 iPadOS project takes place to exist but I don't have iPad now. I going to buy it with a pencil and continue experimenting with usability.
 
 If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac' target. I keep to support Catalyst version for macOS but nowadays it has some unfixed issues noted above.
-
-## Goals
-This project targets to attract attention serious projects to SwiftUI and show its powerful. I develop this project in my free time so it would be imposible to craft such app in a short time if I used UIKit. I also use new features that announced on WWDC 2019 to show how much they are needed in morden apps.
-
-## Base idea
-
-> “If you can’t explain it simply, you don’t understand it well enough.” 
-> by Albert Einstein
-
-<p>Since I read a lot of books or articles in a foreign language I periodically turn to Google Translate and Reverso
-to understand unfamiliar idioms, words or to find a sutable expressions or words in my native language.
-And I like to listen to how a word or sentence is pronounced through the voice engine of the system or Google Translate and Reverso.</p>
-<p>Although this process is simple I would like to make it as more comfortable as possible.
-Sometimes I am lazy to look into the translator and I make an assumption about the meaning of a word or idiom and it can lead to a missunderstanding which turns into even greater loss of my time.</p>
-<p>Another useful feature is to write text in Safari to check and listen to it with a simple selection of text.</p>
-
-** update **
-As the project progressed I am not feeling to back to UIKit. Being able to craft a new idea in a few minutes on SwiftUI inspire me to continue developing this project. The ability to concentrate on ideas rather than realizations gives freedom to my creativity. 
-As I see now this project, when it already has enough useful features that I use every day. Most likely it will be the ecosystem with various services and additional apps that will help you get the language in. The project that helps to avoid the routine while you read, listen and browse info in your chosen language. Everyone can choose own convenient way to get into the foreign language. I like to move forward all time. If I can not do well now I can do it best tomorrow. I like to choose a convenient way to dive into a foreign language. I don't like to study but I like to explore.
-I am going to dive into a new foreign language. I think I will get new ideas for new features to use some foreign language from scratch.
 
 ## Features
 - Support MacOS, ipadOS, iOS
