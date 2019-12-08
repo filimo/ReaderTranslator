@@ -22,6 +22,30 @@ struct ReaderView_Pdf_Toolbar: View {
         }
     }
 
+    var body: some View {
+        VStack {
+            HStack {
+                openPdfButton
+                openAudioButton
+                Spacer()
+                Text("\(currentStatus)").frame(width: 100)
+                Spacer()
+            }
+            HStack {
+                rewindButtonsView
+                audioRateButtonsView
+            }
+        }
+        .onAppear {
+            _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
+                guard let player = player else { return }
+                self.currentStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
+                self.isPlaying = player.isPlaying
+            }
+            if let url = self.store.pdfAudio { self.openAudio(url: url) }
+        }
+    }
+
     private var openPdfButton: some View {
         Button(
             action: {
@@ -80,30 +104,6 @@ struct ReaderView_Pdf_Toolbar: View {
             Text(String(format: "%.1f", arguments: [audioRate]))
             Button(action: { self.audioRate += 0.1 }, label: { Text("+") })
             Button(action: { self.audioRate = 1 }, label: { Text("1") })
-        }
-    }
-
-    var body: some View {
-        VStack {
-            HStack {
-                openPdfButton
-                openAudioButton
-                Spacer()
-                Text("\(currentStatus)").frame(width: 100)
-                Spacer()
-            }
-            HStack {
-                rewindButtonsView
-                audioRateButtonsView
-            }
-        }
-        .onAppear {
-            _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
-                guard let player = player else { return }
-                self.currentStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
-                self.isPlaying = player.isPlaying
-            }
-            if let url = self.store.pdfAudio { self.openAudio(url: url) }
         }
     }
 

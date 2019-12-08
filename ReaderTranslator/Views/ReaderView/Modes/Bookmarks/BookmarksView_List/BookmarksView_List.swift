@@ -35,7 +35,7 @@ struct BookmarksView_List: View {
         ScrollView {
             VStack {
                 ForEach(bookmarks, id: \.self) { chunk in
-                    BookmarksView_List_Chunk(bookmarks: chunk, width: self.width)
+                    BookmarksView_List_Row(bookmarks: chunk, width: self.width)
                 }
             }
         }
@@ -44,6 +44,6 @@ struct BookmarksView_List: View {
 
 struct BookmarksView_List_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView_List(columnts: 2, width: 100, filter: .constant(""))
+        BookmarksView_List(columnts: 3, width: 100, filter: .constant(""))
     }
 }

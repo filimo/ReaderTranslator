@@ -53,7 +53,6 @@ class LongmanStore: NSObject {
 
     func addAudio(url: URL) {
         self.audioUrls.push(url)
-        if self.audioUrls.count == 1 { next() }
     }
 
     private func addSentences(document: Document) {
@@ -95,14 +94,17 @@ class LongmanStore: NSObject {
             do {
                 player = try AVAudioPlayer(data: data)
                 player?.delegate = self
+                player?.enableRate = true
+                player?.rate = self.store.longmanAudioRate
                 player?.play()
             } catch {
-                print(error)
+                self.next()
+                print("\(self.theClassName)_\(#function)", error)
             }
         }.resume()
     }
 
-    private func next() {
+    func next() {
         if audioUrls.count == 0 { return }
         play(url: audioUrls.pop())
     }
@@ -110,6 +112,10 @@ class LongmanStore: NSObject {
 
 extension LongmanStore: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        next()
+    }
+
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         next()
     }
 }

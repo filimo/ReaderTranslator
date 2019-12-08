@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-struct BookmarksView_List_Chunk: View {
+struct BookmarksView_List_Row: View {
     @ObservedObject var store = Store.shared
 
     @State var selectSentence = ""
@@ -24,7 +24,9 @@ struct BookmarksView_List_Chunk: View {
     var body: some View {
         VStack(alignment: .leading) {
             bookmarksView
-            if showDetail { detailView }
+            if showDetail {
+                BookmarksView_List_Detail(selectSentence: $selectSentence)
+            }
         }
     }
 
@@ -47,25 +49,8 @@ struct BookmarksView_List_Chunk: View {
         .frame(width: self.width, alignment: .leading)
         .foregroundColor(self.store.longmanSelectedBookmark == bookmark.text ? Color.yellow : Color.primary)
         .onTapGesture {
-            self.store.longmanSentences = []
             self.store.longmanSelectedBookmark = bookmark.text
             self.store.translateAction.addAll(text: bookmark.text, except: .bookmarks, isSpeaking: false)
-            LongmanStore.share.fetchInfo(text: bookmark.text)
-        }
-    }
-
-    private var detailView: some View {
-        ScrollView(.horizontal) {
-            VStack(alignment: .leading) {
-                ForEach(store.longmanSentences, id: \.self) { sentence in
-                    Text("\(sentence.text)")
-                    .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)
-                    .onTapGesture {
-                        self.selectSentence = sentence.text
-                        LongmanStore.share.addAudio(url: sentence.url )
-                    }
-                }
-            }.padding(.bottom)
         }
     }
 }
