@@ -83,9 +83,7 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 - [Longman features](https://github.com/filimo/ReaderTranslator/issues/61)
 
 ![](files/Release_1.8_1.jpeg)
-![](files/Release_1.8_2.png)
-![](files/Release_1.8_4.png)
-![](files/Release_1.8_5.png)
+![](files/Release_1.8_2.gif)
 
 **1.7** 
 Added audio player in PDF mode and audio player app for iOS [features](https://github.com/filimo/ReaderTranslator/issues/57)
