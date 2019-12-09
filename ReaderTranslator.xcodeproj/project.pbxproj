@@ -208,6 +208,8 @@
 		F0EDE34B236418E000E0B81C /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EDE34D23641B1300E0B81C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE34C23641B1300E0B81C /* Stack.swift */; };
 		F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE34C23641B1300E0B81C /* Stack.swift */; };
+		F0EDFB1F239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */; };
+		F0EDFB20239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */; };
 		F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
 		F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
@@ -369,6 +371,7 @@
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
 		F0EDE34C23641B1300E0B81C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_Controls_ActionMenu.swift; sourceTree = "<group>"; };
 		F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMEvent.swift; sourceTree = "<group>"; };
 		F0EE0A152347BF09004A5EAD /* WKPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKPageView.swift; sourceTree = "<group>"; };
 		F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Safari.swift; sourceTree = "<group>"; };
@@ -487,7 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				F058C7FF23992F92002C84F0 /* BookmarksView.swift */,
-				F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */,
+				F0EDFB1D239E2EFE0048CFD1 /* BookmarksView_Controls */,
 				F08D9406239C2BA000147ECE /* BookmarksView_List */,
 			);
 			path = Bookmarks;
@@ -785,6 +788,15 @@
 				F0586481238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift */,
 			);
 			path = ReaderView_Pdf;
+			sourceTree = "<group>";
+		};
+		F0EDFB1D239E2EFE0048CFD1 /* BookmarksView_Controls */ = {
+			isa = PBXGroup;
+			children = (
+				F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */,
+				F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */,
+			);
+			path = BookmarksView_Controls;
 			sourceTree = "<group>";
 		};
 		F0EE0A142347BEDB004A5EAD /* WebKit */ = {
@@ -1134,6 +1146,7 @@
 				F08EBB02239541FB009025D3 /* PeerConnection.swift in Sources */,
 				F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */,
 				F0AD8B1C236413F60017C22F /* AvailableView.swift in Sources */,
+				F0EDFB20239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */,
 				F06DB10E23450B6000C2DE90 /* View.swift in Sources */,
 				F04C830D23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
 				F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */,
@@ -1248,6 +1261,7 @@
 				F08EBAF023952AD6009025D3 /* WebViewContainer.swift in Sources */,
 				F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */,
 				F0AA69D4232E9762007CC07B /* ReaderView.swift in Sources */,
+				F0EDFB1F239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */,
 				F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */,
 				F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */,
 				F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */,

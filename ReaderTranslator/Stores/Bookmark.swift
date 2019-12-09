@@ -15,6 +15,15 @@ struct Bookmark: Codable, Hashable {
 
 typealias Bookmarks = [Bookmark]
 
+extension Bookmarks {
+    func selectedAll() {
+        for var bookmark in self { bookmark.checked = true }
+    }
+    func clearSelectedAll() {
+        for var bookmark in self { bookmark.checked = false }
+    }
+}
+
 extension Array where Element == Bookmark {
     func contains(text: String) -> Bool {
         self.first { $0.text == text } != nil
