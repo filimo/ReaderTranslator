@@ -145,7 +145,6 @@
 		F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DD232E97B0007CC07B /* PDFKitView.swift */; };
 		F0AB12A3233F5798005B9F2A /* ReaderView_Pdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A2233F5798005B9F2A /* ReaderView_Pdf.swift */; };
 		F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */; };
-		F0AB12A8233F5802005B9F2A /* StatusBarView_Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */; };
 		F0AB12AA233F58A2005B9F2A /* StatusBarView_Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */; };
 		F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */; };
 		F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
@@ -166,7 +165,6 @@
 		F0BB43762344844800ADBEF1 /* GTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DB232E97AF007CC07B /* GTranslatorRepresenter.swift */; };
 		F0BB43772344844800ADBEF1 /* WKRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DC232E97B0007CC07B /* WKRepresenter.swift */; };
 		F0BB43782344845000ADBEF1 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D3232E9762007CC07B /* StatusBarView.swift */; };
-		F0BB43792344845000ADBEF1 /* StatusBarView_Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */; };
 		F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */; };
 		F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */; };
 		F0BB437E2344845000ADBEF1 /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
@@ -353,7 +351,6 @@
 		F0AA69E5232E989F007CC07B /* ReaderTranslator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranslator.entitlements; sourceTree = "<group>"; };
 		F0AB12A2233F5798005B9F2A /* ReaderView_Pdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Pdf.swift; sourceTree = "<group>"; };
 		F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Web.swift; sourceTree = "<group>"; };
-		F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Tabs.swift; sourceTree = "<group>"; };
 		F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Zoom.swift; sourceTree = "<group>"; };
 		F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice.swift; sourceTree = "<group>"; };
 		F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Select.swift; sourceTree = "<group>"; };
@@ -748,7 +745,6 @@
 				F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */,
 				F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */,
 				F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */,
-				F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */,
 				F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */,
 				F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */,
 			);
@@ -1141,7 +1137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0BB43792344845000ADBEF1 /* StatusBarView_Tabs.swift in Sources */,
 				F0305FD42381271A002AC5F5 /* YTranslatorRepresenter.swift in Sources */,
 				F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */,
 				F0C4EDA52349260000CCD97A /* ReversoView.swift in Sources */,
@@ -1243,7 +1238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0586482238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift in Sources */,
-				F0AB12A8233F5802005B9F2A /* StatusBarView_Tabs.swift in Sources */,
 				F0418B98239A32FD00B59C66 /* Bookmark.swift in Sources */,
 				F0AB12B4233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift in Sources */,
 				F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */,
