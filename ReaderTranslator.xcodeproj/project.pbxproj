@@ -147,7 +147,6 @@
 		F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */; };
 		F0AB12A8233F5802005B9F2A /* StatusBarView_Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */; };
 		F0AB12AA233F58A2005B9F2A /* StatusBarView_Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */; };
-		F0AB12AE233F5950005B9F2A /* StatusBarView_PdfPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */; };
 		F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */; };
 		F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
 		F0AB12B4233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */; };
@@ -169,7 +168,6 @@
 		F0BB43782344845000ADBEF1 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D3232E9762007CC07B /* StatusBarView.swift */; };
 		F0BB43792344845000ADBEF1 /* StatusBarView_Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */; };
 		F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */; };
-		F0BB437C2344845000ADBEF1 /* StatusBarView_PdfPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */; };
 		F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */; };
 		F0BB437E2344845000ADBEF1 /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
 		F0BB437F2344845000ADBEF1 /* StatusBarView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */; };
@@ -210,6 +208,10 @@
 		F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE34C23641B1300E0B81C /* Stack.swift */; };
 		F0EDFB1F239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */; };
 		F0EDFB20239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */; };
+		F0EDFB22239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFB21239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift */; };
+		F0EDFB23239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFB21239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift */; };
+		F0EDFB25239E49480048CFD1 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFB24239E49480048CFD1 /* AudioPlayer.swift */; };
+		F0EDFB26239E49480048CFD1 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFB24239E49480048CFD1 /* AudioPlayer.swift */; };
 		F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
 		F0EE0A172347BF09004A5EAD /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
@@ -353,7 +355,6 @@
 		F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Web.swift; sourceTree = "<group>"; };
 		F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Tabs.swift; sourceTree = "<group>"; };
 		F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Zoom.swift; sourceTree = "<group>"; };
-		F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_PdfPage.swift; sourceTree = "<group>"; };
 		F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice.swift; sourceTree = "<group>"; };
 		F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Select.swift; sourceTree = "<group>"; };
 		F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Favorite.swift; sourceTree = "<group>"; };
@@ -372,6 +373,8 @@
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
 		F0EDE34C23641B1300E0B81C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_Controls_ActionMenu.swift; sourceTree = "<group>"; };
+		F0EDFB21239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Pdf_Toolbar_PlayButtons.swift; sourceTree = "<group>"; };
+		F0EDFB24239E49480048CFD1 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMEvent.swift; sourceTree = "<group>"; };
 		F0EE0A152347BF09004A5EAD /* WKPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKPageView.swift; sourceTree = "<group>"; };
 		F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Safari.swift; sourceTree = "<group>"; };
@@ -715,6 +718,7 @@
 				F02989EB2360488800DF722E /* OpenPanel.swift */,
 				F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */,
 				F08EBB0F23956D80009025D3 /* NetworkManager.swift */,
+				F0EDFB24239E49480048CFD1 /* AudioPlayer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -746,7 +750,6 @@
 				F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */,
 				F0AB12A7233F5802005B9F2A /* StatusBarView_Tabs.swift */,
 				F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */,
-				F0AB12AD233F5950005B9F2A /* StatusBarView_PdfPage.swift */,
 				F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */,
 			);
 			path = StatusBarView;
@@ -786,6 +789,7 @@
 			children = (
 				F0AB12A2233F5798005B9F2A /* ReaderView_Pdf.swift */,
 				F0586481238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift */,
+				F0EDFB21239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift */,
 			);
 			path = ReaderView_Pdf;
 			sourceTree = "<group>";
@@ -1174,6 +1178,7 @@
 				F0562E0F2362026C0074ACF5 /* WikipediaRepresenter.swift in Sources */,
 				F023CEB3239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F0305FD223812711002AC5F5 /* YTranslatorView.swift in Sources */,
+				F0EDFB26239E49480048CFD1 /* AudioPlayer.swift in Sources */,
 				F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */,
 				F08EBAF623953B0A009025D3 /* PeerBrowser.swift in Sources */,
 				F08EBB1123956D80009025D3 /* NetworkManager.swift in Sources */,
@@ -1185,6 +1190,7 @@
 				F0FCDD492361A80D0016F23F /* CollinsRepresenter.swift in Sources */,
 				F0BB43822344846700ADBEF1 /* ReaderView_Web.swift in Sources */,
 				F0BB437E2344845000ADBEF1 /* StatusBarView_Voice_Select.swift in Sources */,
+				F0EDFB23239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift in Sources */,
 				F0BB436E2344843400ADBEF1 /* String.swift in Sources */,
 				F0BB43702344843900ADBEF1 /* Published.swift in Sources */,
 				F08D9405239C0E4400147ECE /* BookmarksView_List_Row.swift in Sources */,
@@ -1203,7 +1209,6 @@
 				F0418B99239A32FD00B59C66 /* Bookmark.swift in Sources */,
 				F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
-				F0BB437C2344845000ADBEF1 /* StatusBarView_PdfPage.swift in Sources */,
 				F026B1E82344830200E032B9 /* SafariView.swift in Sources */,
 				F0C53175234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F0C36AA22359D50A001E396C /* Clipboard.swift in Sources */,
@@ -1243,10 +1248,12 @@
 				F0AB12B4233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift in Sources */,
 				F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */,
 				F0C706D0239ACE610061F790 /* BookmarksView_Controls.swift in Sources */,
+				F0EDFB22239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift in Sources */,
 				F0F256BD233D309F00C9D719 /* String.swift in Sources */,
 				F0AB12A3233F5798005B9F2A /* ReaderView_Pdf.swift in Sources */,
 				F08D9404239C0E4400147ECE /* BookmarksView_List_Row.swift in Sources */,
 				F0AD8B1E236414070017C22F /* TranslateAction.swift in Sources */,
+				F0EDFB25239E49480048CFD1 /* AudioPlayer.swift in Sources */,
 				F0C53174234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F08EBB1023956D80009025D3 /* NetworkManager.swift in Sources */,
 				F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
@@ -1290,7 +1297,6 @@
 				F06DB1122345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */,
 				F0C6657C2351A70B0087B6F2 /* Collection.swift in Sources */,
 				F0FCDD482361A80C0016F23F /* CollinsRepresenter.swift in Sources */,
-				F0AB12AE233F5950005B9F2A /* StatusBarView_PdfPage.swift in Sources */,
 				F0FCDD462361A8060016F23F /* CollinsView.swift in Sources */,
 				F0AA69DE232E97B0007CC07B /* SpeechSynthesizer.swift in Sources */,
 				F0C4EDA92349271C00CCD97A /* ViewRepresentable.swift in Sources */,

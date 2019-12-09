@@ -28,7 +28,8 @@ struct BookmarksView_List_Detail: View {
                     }
                 }
             }
-            .padding()
+            .padding(.leading, 5)
+            .padding(.bottom, 15)
         }
     }
 }
