@@ -13,10 +13,8 @@ struct ReaderView_Pdf: View {
 
     var body: some View {
         VStack {
-            if store.viewMode == .pdf {
-                PDFKitView().padding(.bottom)
-                ReaderView_Pdf_Toolbar().frame(height: 30)
-            }
+            PDFKitView().padding(.bottom)
+            ReaderView_Pdf_Toolbar().frame(height: 30)
         }
     }
 }

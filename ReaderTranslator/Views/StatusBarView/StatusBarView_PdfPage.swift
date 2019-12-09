@@ -13,7 +13,7 @@ struct StatusBarView_PdfPage: View {
 
     var body: some View {
         return Group {
-            if store.viewMode == .pdf {
+            if store.enabledViews.contains(.pdf) {
                 Divider().fixedSize()
                 Text("Page:")
                 #if os(macOS)

@@ -10,22 +10,28 @@ import SwiftUI
 
 struct StatusBarView_ViewsEnabler: View {
     @ObservedObject var store = Store.shared
+    private let buttons: [AvailableView] = [
+        .bookmarks,
+        .wikipedia,
+        .macmillan,
+        .collins,
+        .longman,
+        .reverso,
+        .gTranslator,
+        .yTranslator,
+        .pdf,
+        .web,
+        .safari
+    ]
 
     var body: some View {
         HStack(spacing: 0) {
             Divider().fixedSize()
-            button(.bookmarks)
-            button(.wikipedia)
-            button(.macmillan)
-            button(.collins)
-            button(.longman)
-            button(.reverso)
-            button(.gTranslator)
-            button(.yTranslator)
+            ForEach(buttons, id: \.self) { self.buttonView($0) }
         }
     }
 
-    private func button(_ view: AvailableView) -> some View {
+    private func buttonView(_ view: AvailableView) -> some View {
         Group {
             Text(view.rawValue)
                 .background(store.enabledViews.contains(view) ? Color.red : Color.clear)

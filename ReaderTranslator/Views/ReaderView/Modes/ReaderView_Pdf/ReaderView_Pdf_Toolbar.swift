@@ -21,19 +21,20 @@ struct ReaderView_Pdf_Toolbar: View {
             player?.rate = audioRate
         }
     }
+    private var audioRateString: String {
+        String(format: "%.1f", arguments: [audioRate])
+    }
 
     var body: some View {
         VStack {
             HStack {
                 openPdfButton
                 openAudioButton
-                Spacer()
                 Text("\(currentStatus)").frame(width: 100)
-                Spacer()
+                audioRateButtonsView
             }
             HStack {
                 rewindButtonsView
-                audioRateButtonsView
             }
         }
         .onAppear {
@@ -56,7 +57,7 @@ struct ReaderView_Pdf_Toolbar: View {
                     self.store.lastPdf = url
                 }
             },
-            label: { Text("Open PDF") })
+            label: { Text("📂 PDF") })
     }
 
     private var openAudioButton: some View {
@@ -67,7 +68,7 @@ struct ReaderView_Pdf_Toolbar: View {
                 self.openAudio(url: url)
                 self.audioRate = 1
             }
-        }, label: { Text("Open audio") })
+        }, label: { Text("📂 audio") })
     }
 
     private var rewindButtonsView: some View {
@@ -77,17 +78,7 @@ struct ReaderView_Pdf_Toolbar: View {
             rewindButton(label: "-5", step: -5)
             rewindButton(label: "-1", step: -1)
 
-            Button(action: {
-                guard let player = player else { return }
-                if self.isPlaying {
-                    player.pause()
-                } else {
-                    //hack: currentTime jump forward for some time after an audio is continue to play
-                    let currentTime = player.currentTime
-                    player.play()
-                    player.currentTime = currentTime
-                }
-            }, label: { Text(isPlaying ? "Pause" : "Play").frame(width: 40) })
+            playButtonView
 
             rewindButton(label: "+1", step: 1)
             rewindButton(label: "+5", step: 5)
@@ -95,13 +86,26 @@ struct ReaderView_Pdf_Toolbar: View {
         }
     }
 
+    private var playButtonView: some View {
+        Button(action: {
+            guard let player = player else { return }
+            if self.isPlaying {
+                player.pause()
+            } else {
+                //hack: currentTime jump forward for some time after an audio is continue to play
+                let currentTime = player.currentTime
+                player.play()
+                player.currentTime = currentTime
+            }
+        }, label: { Text(isPlaying ? "Pause" : "Play").frame(width: 40) })
+    }
+
     private var audioRateButtonsView: some View {
         HStack(spacing: 2) {
-            Divider()
             Button(action: { self.audioRate = 0.2 }, label: { Text(".2") })
             Button(action: { self.audioRate = 0.5 }, label: { Text(".5") })
             Button(action: { self.audioRate -= 0.1 }, label: { Text("-") })
-            Text(String(format: "%.1f", arguments: [audioRate]))
+            Text(audioRateString)
             Button(action: { self.audioRate += 0.1 }, label: { Text("+") })
             Button(action: { self.audioRate = 1 }, label: { Text("1") })
         }

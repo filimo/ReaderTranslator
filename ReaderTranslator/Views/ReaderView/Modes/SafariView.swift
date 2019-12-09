@@ -14,9 +14,7 @@ struct SafariView: View {
 
     var body: some View {
         Group {
-            if store.viewMode == .safari {
-                Text("").frame(width: 1)
-            }
+            Text("").frame(width: 1)
         }
         .onAppear {
             SafariExtensionManager()

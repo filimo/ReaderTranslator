@@ -28,8 +28,6 @@ class Store: ObservableObject {
         didSet { self.lastWebPage = self.savedLastWebPage[self.currentTab] }
     }
 
-    @Published(key: "viewMode") var viewMode = ViewMode.pdf
-
     @Published(key: "favoriteVoiceNames") var favoriteVoiceNames: [FavoriteVoiceName] = []
     @Published(key: "voiceLanguage") var voiceLanguage = "Select language"
     @Published(key: "voiceName")  var voiceName = "Select voice"

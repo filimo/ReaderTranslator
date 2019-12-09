@@ -14,10 +14,9 @@ struct StatusBarView: View {
 
     var body: some View {
         HStack {
-            StatusBarView_ViewMode().padding(5)
             Group {
                 StatusBarView_PdfPage()
-                StatusBarView_Tabs(viewMode: $store.viewMode, currentTab: $store.currentTab)
+                StatusBarView_Tabs()
                 StatusBarView_Zoom()
             }
             StatusBarView_Voice().padding([.top, .bottom], 5)
@@ -40,11 +39,9 @@ struct StatusBarView: View {
     }
 
     private var playbackRateView: some View {
-        return Group {
-            if store.viewMode == .safari {
-                Text(String(format: "PlaybackRate: %.2f", store.playbackRate as Float))
-            } else {
-                EmptyView()
+        Group {
+            if store.enabledViews.contains(.safari) {
+                Text(String(format: "PlaybackRate: %.2f", [store.playbackRate]))
             }
         }
     }

@@ -17,8 +17,11 @@ enum AvailableView: String, Codable, CaseIterable {
     case longman = "Longman"
     case macmillan = "Macmillan"
     case collins = "Collin's"
+    case pdf = "PDF"
+    case web = "Web"
+    case safari = "Safari"
 
-    func getAction(text: String = TranslateAction.getText(Store.shared.translateAction)()) -> TranslateAction {
+    func getAction(text: String = Store.shared.translateAction.getText()) -> TranslateAction {
         switch self {
         case .wikipedia:
             return .wikipedia(text: text)
@@ -36,6 +39,12 @@ enum AvailableView: String, Codable, CaseIterable {
             return .collins(text: text)
         case .bookmarks:
             return .bookmarks(text: text)
+        case .pdf:
+            return .none(text: text)
+        case .web:
+            return .none(text: text)
+        case .safari:
+            return .none(text: text)
         }
     }
 }

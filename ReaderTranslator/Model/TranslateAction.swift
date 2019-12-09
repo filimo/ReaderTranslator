@@ -68,6 +68,7 @@ enum TranslateAction: Equatable {
                      .wikipedia: if count < 4 { return true }
                 case .reverso: if count < 10 { return true }
                 case .gTranslator, .yTranslator, .bookmarks: return true
+                case .pdf, .web, .safari: return false
                 }
                 return false
             }
