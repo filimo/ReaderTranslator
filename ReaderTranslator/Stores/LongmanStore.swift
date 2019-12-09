@@ -96,6 +96,7 @@ class LongmanStore: NSObject {
                 player?.delegate = self
                 player?.enableRate = true
                 player?.rate = self.store.longmanAudioRate
+                player?.volume = self.store.voiceVolume
                 player?.play()
             } catch {
                 self.next()
