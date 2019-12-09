@@ -18,10 +18,12 @@ struct BookmarksView_Controls: View {
     }
 
     var body: some View {
-        HStack {
-            Text("\(store.bookmarks.checked.count)/\(store.bookmarks.count)")
+        VStack {
+            HStack {
+                Text("\(store.bookmarks.checked.count)/\(store.bookmarks.count)")
+                actionMenuView
+            }
             audioRateButtonsView
-            actionMenuView
         }
         .alert(isPresented: $showConfirm) {
             Alert(
@@ -33,7 +35,7 @@ struct BookmarksView_Controls: View {
     }
 
     private var audioRateButtonsView: some View {
-        Group {
+        HStack {
             Button(action: { self.store.longmanAudioRate = 0.2 }, label: { Text(".2") })
             Button(action: { self.store.longmanAudioRate = 0.5 }, label: { Text(".5") })
             Button(action: { self.store.longmanAudioRate -= 0.1 }, label: { Text("-") })

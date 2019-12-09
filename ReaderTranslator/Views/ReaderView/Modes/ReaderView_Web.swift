@@ -12,7 +12,7 @@ struct ReaderView_Web: View {
     @ObservedObject private var store = Store.shared
 
     var body: some View {
-        Group {
+        VStack {
             if store.enabledViews.contains(.web) {
                 VStack {
                     HStack {
@@ -29,6 +29,7 @@ struct ReaderView_Web: View {
                     webView(1)
                     webView(2)
                 }
+                StatusBarView_Tabs()
             }
         }
     }

@@ -14,7 +14,7 @@ struct ReaderView_Pdf: View {
     var body: some View {
         VStack {
             PDFKitView().padding(.bottom)
-            ReaderView_Pdf_Toolbar().frame(height: 30)
+            ReaderView_Pdf_Toolbar().frame(height: 50)
         }
     }
 }

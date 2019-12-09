@@ -14,11 +14,8 @@ struct StatusBarView: View {
 
     var body: some View {
         HStack {
-            Group {
-                StatusBarView_PdfPage()
-                StatusBarView_Tabs()
-                StatusBarView_Zoom()
-            }
+            StatusBarView_Zoom()
+
             StatusBarView_Voice().padding([.top, .bottom], 5)
             StatusBarView_Safari()
             StatusBarView_Bookmarks()

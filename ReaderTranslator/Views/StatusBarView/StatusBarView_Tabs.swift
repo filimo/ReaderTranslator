@@ -12,19 +12,16 @@ struct StatusBarView_Tabs: View {
     @ObservedObject var store = Store.shared
 
     var body: some View {
-        Group {
-            if store.enabledViews.contains(.web) {
-                Divider().fixedSize()
-                Button(
-                    action: { self.store.currentTab = 0 },
-                    label: { Image.sfSymbol("1.circle\(iconStatus(0))") })
-                Button(
-                    action: { self.store.currentTab = 1 },
-                    label: { Image.sfSymbol("2.circle\(iconStatus(1))") })
-                Button(
-                    action: { self.store.currentTab = 2 },
-                    label: { Image.sfSymbol("3.circle\(iconStatus(2))") })
-            }
+        HStack {
+            Button(
+                action: { self.store.currentTab = 0 },
+                label: { Image.sfSymbol("1.circle\(iconStatus(0))") })
+            Button(
+                action: { self.store.currentTab = 1 },
+                label: { Image.sfSymbol("2.circle\(iconStatus(1))") })
+            Button(
+                action: { self.store.currentTab = 2 },
+                label: { Image.sfSymbol("3.circle\(iconStatus(2))") })
         }
     }
 

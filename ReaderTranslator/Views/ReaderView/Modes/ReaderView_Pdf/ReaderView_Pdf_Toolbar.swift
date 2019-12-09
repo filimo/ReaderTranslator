@@ -30,6 +30,9 @@ struct ReaderView_Pdf_Toolbar: View {
             HStack {
                 openPdfButton
                 openAudioButton
+                StatusBarView_PdfPage()
+            }
+            HStack {
                 Text("\(currentStatus)").frame(width: 100)
                 audioRateButtonsView
             }

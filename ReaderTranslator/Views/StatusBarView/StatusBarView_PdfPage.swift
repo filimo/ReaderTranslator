@@ -12,22 +12,19 @@ struct StatusBarView_PdfPage: View {
     @ObservedObject var store = Store.shared
 
     var body: some View {
-        return Group {
-            if store.enabledViews.contains(.pdf) {
-                Divider().fixedSize()
-                Text("Page:")
-                #if os(macOS)
-                TextField("   ", text: self.$store.currentPdfPage)
-                    .fixedSize()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                #else
-                TextField("   ", text: self.$store.currentPdfPage)
-                    .fixedSize()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.numberPad)
-                #endif
-                Text(" / \(self.store.pageCount)")
-            }
+        HStack {
+            Text("Page:")
+            #if os(macOS)
+            TextField("   ", text: self.$store.currentPdfPage)
+                .fixedSize()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            #else
+            TextField("   ", text: self.$store.currentPdfPage)
+                .fixedSize()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.numberPad)
+            #endif
+            Text(" / \(self.store.pageCount)")
         }
     }
 }
