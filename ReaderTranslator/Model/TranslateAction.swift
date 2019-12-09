@@ -50,7 +50,10 @@ enum TranslateAction: Equatable {
     mutating func add(_ actions: [TranslateAction], isSpeaking: Bool = true) {
         let isEmpty = stack.count == 0 ? true : false
 
-        for action in actions { stack.push(action) }
+        for action in actions {
+            if case .none(_) = action { continue }
+            stack.push(action)
+        }
         if isSpeaking { stack.push(.speak(text: actions.first?.getText() ?? "")) }
         if isEmpty { next() }
     }
