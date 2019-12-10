@@ -20,6 +20,7 @@ struct BookmarksView_List_Detail: View {
                 ForEach(store.longmanSentences, id: \.self) { sentence in
                     Text("\(sentence.text)")
                     .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)
+                    .font(.subheadline)
                     .onTapGesture {
                         self.selectSentence = sentence.text
                         LongmanStore.share.addAudio(url: sentence.url )
