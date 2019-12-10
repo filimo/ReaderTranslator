@@ -744,12 +744,12 @@
 		F0AB12A6233F57EB005B9F2A /* StatusBarView */ = {
 			isa = PBXGroup;
 			children = (
+				F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */,
 				F0AA69D3232E9762007CC07B /* StatusBarView.swift */,
 				F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */,
 				F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */,
 				F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */,
 				F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */,
-				F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */,
 				F058D6B3239EDF3C00195338 /* SettingsView.swift */,
 			);
 			path = StatusBarView;

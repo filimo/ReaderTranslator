@@ -14,26 +14,18 @@ struct SettingsView: View {
     @State var isShow = false
 
     var body: some View {
-        Button(action: { self.isShow = true }, label: { Text("Size") })
+        Button(action: { self.isShow = true }, label: { Text("Settings") })
         .sheet(isPresented: $isShow) {
             VStack {
-//                List {
-//                    ForEach(AvailableView.resiableViews, id: \.self) { view in
-//                        Text(view.text).frame(width: 50, height: 10)
-//                    }
-//                    .onMove { (_, _) in
-//
-//                    }
-//                }.frame(width: 200, height: 200)
-
-//                ForEach(AvailableView.resiableViews, id: \.self) { view in
-//                    HStack {
-//                        Text(view.text)
-//                        Spacer()
-//                        TextField("", text: view.width).frame(width: 50)
-//                    }
-//                    .frame(width: 200)
-//                }
+                ForEach(AvailableView.resiableViews, id: \.self) { view in
+                    HStack {
+                        TextField("", text: view.order).frame(width: 20)
+                        Text(view.text)
+                        Spacer()
+                        TextField("", text: view.width).frame(width: 50)
+                    }
+                    .frame(width: 200)
+                }
 
                 Button(action: { self.isShow = false }, label: { Text("Close") }).padding()
             }.padding()

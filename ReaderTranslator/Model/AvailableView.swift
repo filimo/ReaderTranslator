@@ -34,8 +34,48 @@ enum AvailableView: String, Codable, CaseIterable {
         )
     }
 
+    var order: Binding<String> {
+        Binding<String>(
+            get: { "\(Store.shared.viewOrder[self] ?? 0)" },
+            set: {
+                Store.shared.viewOrder[self] = $0.intValue
+            }
+        )
+    }
+
+    var orderInt: Int {
+        self.order.wrappedValue.intValue
+    }
+
+    var view: some View {
+        switch self {
+        case .wikipedia:
+            return AnyView(WikipediaView())
+        case .reverso:
+            return AnyView(ReversoView())
+        case .gTranslator:
+            return AnyView(GTranslatorView())
+        case .yTranslator:
+            return AnyView(YTranslatorView())
+        case .longman:
+            return AnyView(LongmanView())
+        case .macmillan:
+            return AnyView(MacmillanView())
+        case .collins:
+            return AnyView(CollinsView())
+        case .bookmarks:
+            return AnyView(BookmarksView())
+        case .pdf:
+            return AnyView(ReaderView_Pdf())
+        case .web:
+            return AnyView(ReaderView_Web())
+        case .safari:
+            return AnyView(SafariView())
+        }
+    }
+
     static var resiableViews: [Self] {
-        [
+        let views: [Self] = [
             .bookmarks,
             .wikipedia,
             .macmillan,
@@ -47,32 +87,20 @@ enum AvailableView: String, Codable, CaseIterable {
             .pdf,
             .web
         ]
+        return views.sorted { $0.orderInt < $1.orderInt }
     }
 
     func getAction(text: String = Store.shared.translateAction.getText()) -> TranslateAction {
         switch self {
-        case .wikipedia:
-            return .wikipedia(text: text)
-        case .reverso:
-            return .reverso(text: text)
-        case .gTranslator:
-            return .gTranslator(text: text)
-        case .yTranslator:
-            return .yTranslator(text: text)
-        case .longman:
-            return .longman(text: text)
-        case .macmillan:
-            return .macmillan(text: text)
-        case .collins:
-            return .collins(text: text)
-        case .bookmarks:
-            return .bookmarks(text: text)
-        case .pdf:
-            return .none(text: text)
-        case .web:
-            return .none(text: text)
-        case .safari:
-            return .none(text: text)
+        case .wikipedia: return .wikipedia(text: text)
+        case .reverso: return .reverso(text: text)
+        case .gTranslator: return .gTranslator(text: text)
+        case .yTranslator: return .yTranslator(text: text)
+        case .longman: return .longman(text: text)
+        case .macmillan: return .macmillan(text: text)
+        case .collins: return .collins(text: text)
+        case .bookmarks: return .bookmarks(text: text)
+        case .pdf, .web, .safari: return .none(text: text)
         }
     }
 }

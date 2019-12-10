@@ -48,4 +48,11 @@ extension String {
             return 0
         }
     }
+    var intValue: Int {
+        if let width = NumberFormatter().number(from: self) {
+            return Int(width.intValue)
+        } else {
+            return 0
+        }
+    }
 }
