@@ -76,6 +76,7 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 - [Broadcast station](https://github.com/filimo/ReaderTranslator/issues/63)
 
 ![](files/Release_1.8_3.gif)
+![](files/Release_1.8_4.gif)
 
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
