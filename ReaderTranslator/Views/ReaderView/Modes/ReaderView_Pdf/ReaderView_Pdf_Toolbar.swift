@@ -19,8 +19,8 @@ struct ReaderView_Pdf_Toolbar: View {
         VStack {
             ReaderView_Pdf_Toolbar_PlayButtons(
                 player: $player,
-                isPlaying: $isPlaying,
-                currentStatus: $currentStatus)
+                currentStatus: $currentStatus,
+                isPlaying: $isPlaying)
             HStack {
                 statusView
                 audioRateButtonsView
@@ -34,7 +34,7 @@ struct ReaderView_Pdf_Toolbar: View {
     }
 
     private var statusView: some View {
-        Text("\(currentStatus)").frame(width: 100)
+        Text(currentStatus).frame(width: 100)
     }
 
     private var openPdfButton: some View {

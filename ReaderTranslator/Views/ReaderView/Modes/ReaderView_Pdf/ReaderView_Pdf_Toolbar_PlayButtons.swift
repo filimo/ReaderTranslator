@@ -12,8 +12,16 @@ private var timer: Timer?
 
 struct ReaderView_Pdf_Toolbar_PlayButtons: View {
     @Binding var player: AudioPlayer
-    @Binding var isPlaying: Bool
     @Binding var currentStatus: String
+    @Binding var isPlaying: Bool {
+        willSet {
+            if newValue {
+                self.startTimer()
+            } else {
+                timer?.invalidate()
+            }
+        }
+    }
 
     @ObservedObject var store = Store.shared
 
@@ -43,9 +51,7 @@ struct ReaderView_Pdf_Toolbar_PlayButtons: View {
             guard let player = self.player.player else { return }
             if self.isPlaying {
                 player.pause()
-                timer?.invalidate()
             } else {
-                self.startTimer()
                 //hack: currentTime jump forward for some time after an audio is continue to play
                 let currentTime = player.currentTime
                 player.play()
@@ -56,15 +62,24 @@ struct ReaderView_Pdf_Toolbar_PlayButtons: View {
     }
 
     private func rewindButton(label: String, step: Double) -> some View {
-        Button(action: { self.player.player?.currentTime += step }, label: { Text(label) })
+        Button(action: {
+            self.player.player?.currentTime += step
+            self.updateStatus()
+
+        }, label: { Text(label) })
     }
 
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
             guard let player = self.player.player else { return }
-            self.currentStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
+            self.updateStatus()
             player.volume = self.store.voiceVolume
+            if self.isPlaying != player.isPlaying { self.isPlaying = player.isPlaying }
         }
     }
 
+    private func updateStatus() {
+        guard let player = self.player.player else { return }
+        self.currentStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
+    }
 }
