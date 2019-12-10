@@ -14,7 +14,7 @@ struct WikipediaView: View {
     var body: some View {
         WebViewContainer {
             WikipediaRepresenter(selectedText: self.$store.translateAction)
-        }
+        }.frame(width: AvailableView.wikipedia.width.wrappedValue.cgFloatValue)
     }
 }
 

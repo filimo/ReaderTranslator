@@ -15,7 +15,9 @@ extension String {
     var decodeUrl: String {
         return self.removingPercentEncoding!
     }
+}
 
+extension String {
     func groups(for regexPattern: String) -> [[String]] {
         do {
             let text = self
@@ -34,6 +36,16 @@ extension String {
         } catch let error {
             print("invalid regex: \(error.localizedDescription)")
             return []
+        }
+    }
+}
+
+extension String {
+    var cgFloatValue: CGFloat {
+        if let width = NumberFormatter().number(from: self) {
+            return CGFloat(width.floatValue)
+        } else {
+            return 0
         }
     }
 }

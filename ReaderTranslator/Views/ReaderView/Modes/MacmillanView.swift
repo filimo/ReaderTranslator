@@ -14,7 +14,7 @@ struct MacmillanView: View {
     var body: some View {
         WebViewContainer {
             MacmillanRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: store.maxViewWidth)
+        }.frame(width: AvailableView.macmillan.width.wrappedValue.cgFloatValue)
     }
 }
 

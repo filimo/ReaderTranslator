@@ -28,7 +28,7 @@ struct GTranslatorView: View {
     var body: some View {
         WebViewContainer {
             GTranslatorRepresenter(selectedText: self.$store.translateAction)
-        }
+        }.frame(width: AvailableView.gTranslator.width.wrappedValue.cgFloatValue)
     }
 }
 

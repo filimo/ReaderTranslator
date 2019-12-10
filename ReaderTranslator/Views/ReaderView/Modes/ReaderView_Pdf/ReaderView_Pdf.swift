@@ -13,9 +13,9 @@ struct ReaderView_Pdf: View {
 
     var body: some View {
         VStack {
-            PDFKitView().padding(.bottom)
-            ReaderView_Pdf_Toolbar().frame(height: 50)
-        }
+            PDFKitView()
+            ReaderView_Pdf_Toolbar()
+        }.frame(width: AvailableView.pdf.width.wrappedValue.cgFloatValue)
     }
 }
 

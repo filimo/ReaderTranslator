@@ -14,7 +14,7 @@ struct LongmanView: View {
     var body: some View {
         WebViewContainer {
             LongmanRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: store.maxViewWidth)
+        }.frame(width: AvailableView.longman.width.wrappedValue.cgFloatValue)
     }
 }
 

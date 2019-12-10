@@ -14,7 +14,7 @@ struct YTranslatorView: View {
     var body: some View {
         WebViewContainer {
             YTranslatorRepresenter(selectedText: self.$store.translateAction)
-        }
+        }.frame(width: AvailableView.yTranslator.width.wrappedValue.cgFloatValue)
     }
 }
 

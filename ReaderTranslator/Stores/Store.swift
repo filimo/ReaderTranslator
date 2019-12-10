@@ -19,6 +19,9 @@ class Store: ObservableObject {
     @Published var translateAction = TranslateAction()
 
     @Published(key: "enabledViews") var enabledViews: Set<AvailableView> = [.reverso, .gTranslator]
+    @Published(key: "viewWidth") var viewWidth: [AvailableView: CGFloat] = [
+        .wikipedia: 300
+    ]
 
     @Published var currentPdfPage = "1"
     @Published var pageCount = 0

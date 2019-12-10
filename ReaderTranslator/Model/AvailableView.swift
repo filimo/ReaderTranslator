@@ -6,7 +6,7 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 enum AvailableView: String, Codable, CaseIterable {
     case bookmarks = "Bookmarks"
@@ -20,6 +20,34 @@ enum AvailableView: String, Codable, CaseIterable {
     case pdf = "PDF"
     case web = "Web"
     case safari = "Safari"
+
+    var text: String {
+        self.rawValue
+    }
+
+    var width: Binding<String> {
+        Binding<String>(
+            get: { "\(Store.shared.viewWidth[self] ?? 500)" },
+            set: {
+                Store.shared.viewWidth[self] = $0.cgFloatValue
+            }
+        )
+    }
+
+    static var resiableViews: [Self] {
+        [
+            .bookmarks,
+            .wikipedia,
+            .macmillan,
+            .collins,
+            .longman,
+            .reverso,
+            .yTranslator,
+            .gTranslator,
+            .pdf,
+            .web
+        ]
+    }
 
     func getAction(text: String = Store.shared.translateAction.getText()) -> TranslateAction {
         switch self {
