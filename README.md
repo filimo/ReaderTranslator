@@ -75,6 +75,8 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 - [Voicing selected words and phrases by Longman speakers](https://github.com/filimo/ReaderTranslator/issues/62)
 - [Broadcast station](https://github.com/filimo/ReaderTranslator/issues/63)
 
+![](files/Release_1.8_3.gif)
+
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
