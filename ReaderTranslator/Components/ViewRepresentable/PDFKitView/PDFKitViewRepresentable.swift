@@ -22,25 +22,25 @@ struct PDFKitViewRepresentable: NSViewRepresentable {
         }
     }
 
-    func makeCoordinator() -> PDFKitViewRepresentable.Coordinator {
+    func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
 
     func makeNSView(context: Context) -> PDFView {
-        PDFKitViewRepresentable.pdfView
+        Self.pdfView
     }
 
     func updateNSView(_ uiView: PDFView, context: Context) {
-        if url == "" || PDFKitViewRepresentable.pdfView.document?.documentURL?.absoluteString == url { return }
+        if url == "" || Self.pdfView.document?.documentURL?.absoluteString == url { return }
         if let url = URL(string: url) {
-            PDFKitViewRepresentable.pdfView.autoScales = true
-            PDFKitViewRepresentable.pdfView.document = PDFDocument(url: url)
-            PDFKitViewRepresentable.pdfView.delegate = context.coordinator
+            Self.pdfView.autoScales = true
+            Self.pdfView.document = PDFDocument(url: url)
+            Self.pdfView.delegate = context.coordinator
         }
     }
 
     static func getSelectedText() -> String {
-        guard let selections = PDFKitViewRepresentable.pdfView.currentSelection?.selectionsByLine() else { return "" }
+        guard let selections = Self.pdfView.currentSelection?.selectionsByLine() else { return "" }
 
         return selections
             .map { selection in selection.string! }
@@ -60,26 +60,26 @@ struct PDFKitViewRepresentable: UIViewRepresentable {
         }
     }
 
-    func makeCoordinator() -> PDFKitViewRepresentable.Coordinator {
+    func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
 
     func makeUIView(context: Context) -> PDFView {
-        PDFKitViewRepresentable.pdfView
+        Self.pdfView
     }
 
     func updateUIView(_ uiView: PDFView, context: Context) {
-        if PDFKitViewRepresentable.pdfView.document != nil { return }
+        if Self.pdfView.document != nil { return }
         if let url = url {
-            PDFKitViewRepresentable.pdfView.autoresizingMask = [.flexibleWidth]
-            PDFKitViewRepresentable.pdfView.autoScales = true
-            PDFKitViewRepresentable.pdfView.document = PDFDocument(url: url)
-            PDFKitViewRepresentable.pdfView.delegate = context.coordinator
+            Self.pdfView.autoresizingMask = [.flexibleWidth]
+            Self.pdfView.autoScales = true
+            Self.pdfView.document = PDFDocument(url: url)
+            Self.pdfView.delegate = context.coordinator
         }
     }
 
     static func getSelectedText() -> String {
-        guard let selections = PDFKitViewRepresentable.pdfView.currentSelection?.selectionsByLine() else { return "" }
+        guard let selections = Self.pdfView.currentSelection?.selectionsByLine() else { return "" }
 
         return selections
             .map { selection in selection.string! }
