@@ -70,16 +70,18 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ![](files/Release_2.0.0_1.png)
 
 ## Comming features
-- [New features for ReaderTranslatorPlayer](https://github.com/filimo/ReaderTranslator/issues/58)
 - [Single mode for all views](https://github.com/filimo/ReaderTranslator/issues/60)
 - [Voicing selected words and phrases by Longman speakers](https://github.com/filimo/ReaderTranslator/issues/62)
 - [Broadcast station](https://github.com/filimo/ReaderTranslator/issues/63)
 
-![](files/Release_1.8_3.gif)
-![](files/Release_1.8_4.gif)
-
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
+
+**1.8.1**
+- [New features for ReaderTranslatorPlayer](https://github.com/filimo/ReaderTranslator/issues/58)
+
+![](files/Release_1.8_3.gif)
+![](files/Release_1.8_4.gif)
 
 **1.8.0**
 - [Bookmarks view](https://github.com/filimo/ReaderTranslator/issues/59)
