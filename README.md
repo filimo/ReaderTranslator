@@ -1,6 +1,11 @@
 # ReaderTranslator 
 **using SwiftUI, Combine, Catalyst and others new features that annonced at WWDC 2019**
 
+## Support
+I created Telegram group https://t.me/ReaderTranslator to support this project.
+Where you can ask help questions and offer new features.
+Welcome are board.
+
 ## Goals
 This project targets to attract attention serious projects to SwiftUI and show its powerful. I develop this project in my free time so it would be imposible to craft such app in a short time if I used UIKit. I also use new features that announced at WWDC 2019 to show how much they are needed in morden apps.
 
