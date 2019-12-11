@@ -15,15 +15,15 @@ struct BookmarksView_Controls_ActionMenu: View {
     var body: some View {
         MenuButton("Actions") {
             Button(action: {
-                self.store.bookmarks.clearAllCounters()
-            }, label: { Text("Clear all counters") })
-            Button(action: {
                 Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))
             }, label: { Text("Copy bookmarks to Clipboard") })
             Button(action: {
                 let items = Clipboard.string.split(separator: .BackslashN)
                 self.store.bookmarks.append(items: items)
             }, label: { Text("Paste bookmarks separated by \\n from Clipboard") })
+            Button(action: {
+                self.store.bookmarks.clearAllCounters()
+            }, label: { Text("Clear all counters") })
             Button(action: {
                 self.showConfirm = true
             }, label: { Text("Remove all bookmarks") })

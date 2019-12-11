@@ -11,6 +11,7 @@ import Foundation
 struct Bookmark: Codable, Hashable {
     var counter: Int = 0
     let text: String
+    let created: Date
     var changed: Date
 }
 
@@ -39,7 +40,7 @@ extension Array where Element == Bookmark {
     }
 
     mutating func append(_ text: String) {
-        self.append(Bookmark(text: text, changed: Date()))
+        self.append(Bookmark(text: text, created: Date(), changed: Date()))
     }
 
     mutating func append(items: [Substring]) {

@@ -14,17 +14,27 @@ struct BookmarksView_List_Detail: View {
 
     @Binding var selectSentence: String
 
-    var bookmarkChangedTime: String {
+    var changedTime: String {
         guard let bookmark = self.store.bookmarks.first(text: self.store.longmanSelectedBookmark) else { return "" }
         let formatter = RelativeDateTimeFormatter()
 
         return formatter.localizedString(for: Date(), relativeTo: bookmark.changed)
     }
 
+    var createTime: String {
+        guard let bookmark = self.store.bookmarks.first(text: self.store.longmanSelectedBookmark) else { return "" }
+        let formatter = RelativeDateTimeFormatter()
+
+        return formatter.localizedString(for: Date(), relativeTo: bookmark.created)
+    }
+
     var body: some View {
         ScrollView(.horizontal) {
             VStack(alignment: .leading) {
-                Text("counter changed: \(bookmarkChangedTime)").foregroundColor(Color.purple)
+                HStack {
+                    Text("counter changed: \(changedTime)").foregroundColor(Color.purple)
+                    Text("create: \(createTime)")
+                }
                 ForEach(store.longmanSentences, id: \.self) { sentence in
                     Text("\(sentence.text)")
                     .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)
