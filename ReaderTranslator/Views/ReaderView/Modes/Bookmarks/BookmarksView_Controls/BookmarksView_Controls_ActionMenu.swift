@@ -15,11 +15,8 @@ struct BookmarksView_Controls_ActionMenu: View {
     var body: some View {
         MenuButton("Actions") {
             Button(action: {
-                self.store.bookmarks.selectedAll()
-            }, label: { Text("Select all bookmarks") })
-            Button(action: {
-                self.store.bookmarks.clearSelectedAll()
-            }, label: { Text("Deselect all bookmarks") })
+                self.store.bookmarks.clearAllCounters()
+            }, label: { Text("Clear all counters") })
             Button(action: {
                 Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))
             }, label: { Text("Copy bookmarks to Clipboard") })

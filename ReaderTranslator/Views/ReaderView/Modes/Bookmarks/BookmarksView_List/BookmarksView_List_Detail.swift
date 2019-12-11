@@ -14,9 +14,17 @@ struct BookmarksView_List_Detail: View {
 
     @Binding var selectSentence: String
 
+    var bookmarkChangedTime: String {
+        guard let bookmark = self.store.bookmarks.first(text: self.store.longmanSelectedBookmark) else { return "" }
+        let formatter = RelativeDateTimeFormatter()
+
+        return formatter.localizedString(for: Date(), relativeTo: bookmark.changed)
+    }
+
     var body: some View {
         ScrollView(.horizontal) {
             VStack(alignment: .leading) {
+                Text("counter changed: \(bookmarkChangedTime)").foregroundColor(Color.purple)
                 ForEach(store.longmanSentences, id: \.self) { sentence in
                     Text("\(sentence.text)")
                     .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)
