@@ -22,13 +22,13 @@ struct BookmarksView_Controls: View {
     var body: some View {
         VStack {
             HStack {
-                MenuButton("counter \(self.store.bookmarksCounterFilter)") {
-                    ForEach(0...5, id: \.self) { counter in
+                MenuButton("counter \(filterString(self.store.bookmarksCounterFilter))") {
+                    ForEach(-1...5, id: \.self) { counter in
                         Button(
                             action: {
                                 self.store.bookmarksCounterFilter = counter
                             },
-                           label: { Text("\(counter)") })
+                            label: { Text(self.filterString(counter)) })
                     }
                 }.fixedSize()
                 Text("\(bookmarks.count)/\(store.bookmarks.count)")
@@ -47,6 +47,10 @@ struct BookmarksView_Controls: View {
             Button(action: { self.store.longmanAudioRate += 0.1 }, label: { Text("+") })
             Button(action: { self.store.longmanAudioRate = 1 }, label: { Text("1") })
         }
+    }
+
+    private func filterString(_ counter: Int) -> String {
+        "\(counter == -1 ? "All" : String(counter))"
     }
 }
 

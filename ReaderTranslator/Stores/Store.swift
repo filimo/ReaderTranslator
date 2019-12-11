@@ -51,7 +51,7 @@ class Store: ObservableObject {
     @Published(key: "playbackRate") var playbackRate: Float = 1.0
 
     @Published(key: "bookmarks") var bookmarks: Bookmarks = []
-    @Published var bookmarksCounterFilter = 0
+    @Published var bookmarksCounterFilter = -1
     @Published var longmanSentences: LongmanSentences = []
     @Published var longmanSelectedBookmark = "" {
         willSet {

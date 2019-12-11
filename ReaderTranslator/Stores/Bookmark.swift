@@ -56,8 +56,8 @@ extension Array where Element == Bookmark {
         .chunked(into: into)
     }
 
-    func filter(counter: Int?) -> [Element] {
-        guard let counter = counter else { return self }
+    func filter(counter: Int) -> [Element] {
+        if counter == -1 { return self }
         return self.filter { $0.counter == counter }
     }
 

@@ -29,8 +29,8 @@ struct BookmarksView_List: View {
         }
 
         return bookmarks
-            .sorted
             .filter(counter: self.store.bookmarksCounterFilter)
+            .sorted
             .chunked(into: columnts)
     }
 
