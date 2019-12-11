@@ -21,6 +21,11 @@ struct AudioPlayer {
         String(format: "%.1f", arguments: [rate])
     }
 
+    var status: String {
+        guard let player = player else { return "" }
+        return String(format: "%.1f/%.1f", player.currentTime, player.duration)
+    }
+
     mutating func openAudio(url: URL) {
         do {
             self.player = try AVAudioPlayer(contentsOf: url)

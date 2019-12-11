@@ -18,7 +18,7 @@ struct ReaderView_Pdf_Toolbar: View {
     var body: some View {
         VStack {
             ReaderView_Pdf_Toolbar_PlayButtons(
-                player: $player,
+                audioPlayer: $player,
                 currentStatus: $currentStatus,
                 isPlaying: $isPlaying)
             HStack {
@@ -57,6 +57,7 @@ struct ReaderView_Pdf_Toolbar: View {
                 self.store.pdfAudio = url
                 self.player.openAudio(url: url)
                 self.player.rate = 1
+                self.currentStatus = self.player.status
             }
         }, label: { Text("📂 audio") })
     }
