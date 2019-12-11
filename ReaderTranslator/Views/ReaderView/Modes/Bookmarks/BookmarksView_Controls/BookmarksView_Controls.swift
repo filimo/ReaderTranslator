@@ -15,18 +15,23 @@ struct BookmarksView_Controls: View {
         String(format: "%.1f", arguments: [self.store.longmanAudioRate])
     }
 
+    private var bookmarks: Bookmarks {
+        self.store.bookmarks.filter(counter: self.store.bookmarksCounterFilter)
+    }
+
     var body: some View {
         VStack {
             HStack {
-                MenuButton("counter") {
-                    Text("0")
-                    Text("1")
-                    Text("2")
-                    Text("3")
-                    Text("4")
-                    Text("5")
+                MenuButton("counter \(self.store.bookmarksCounterFilter)") {
+                    ForEach(0...5, id: \.self) { counter in
+                        Button(
+                            action: {
+                                self.store.bookmarksCounterFilter = counter
+                            },
+                           label: { Text("\(counter)") })
+                    }
                 }.fixedSize()
-                Text("\(store.bookmarks.filter(counter: nil).count)/\(store.bookmarks.count)")
+                Text("\(bookmarks.count)/\(store.bookmarks.count)")
                 BookmarksView_Controls_ActionMenu()
             }
             audioRateButtonsView

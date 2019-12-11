@@ -28,7 +28,10 @@ struct BookmarksView_List: View {
              bookmarks = bookmarks.filter { $0.text.contains(filter) }
         }
 
-        return bookmarks.sorted.chunked(into: columnts)
+        return bookmarks
+            .sorted
+            .filter(counter: self.store.bookmarksCounterFilter)
+            .chunked(into: columnts)
     }
 
     var body: some View {
