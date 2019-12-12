@@ -12,7 +12,7 @@ install:
     security set-key-partition-list -S apple-tool:,apple: -s -k travis build.keychain
 
 script:
-    - xcodebuild clean build -project ReaderTranslator.xcodeproj -scheme 'ReaderTranslatorPlayer' -sdk iphoneos13.2 -configuration Debug -derivedDataPath ./build | xcpretty -c
+    - xcodebuild clean build -project ReaderTranslator.xcodeproj -scheme 'ReaderTranslatorPlayer' -sdk iphoneos13.2 -configuration Debug -derivedDataPath ./build -allowProvisioningUpdates | xcpretty -c
     - xcodebuild clean build -project ReaderTranslator.xcodeproj -scheme 'ReaderTranslatorMac' -sdk macosx -configuration Debug -derivedDataPath ./build | xcpretty -c
     - cp -R build/Build/Products/Debug/ReaderTranslatorMac.app .
     - create-dmg --volname "Application Installer" --hide-extension "Application.app" --app-drop-link 600 185 "ReaderTranslatorMac.dmg" "ReaderTranslatorMac.app/"
