@@ -53,6 +53,8 @@
 		F0305FD223812711002AC5F5 /* YTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */; };
 		F0305FD32381271A002AC5F5 /* YTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062029423812264002EEAEE /* YTranslatorRepresenter.swift */; };
 		F0305FD42381271A002AC5F5 /* YTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062029423812264002EEAEE /* YTranslatorRepresenter.swift */; };
+		F0369E3223A2D92C00C33139 /* StatusBarView_Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0369E3123A2D92C00C33139 /* StatusBarView_Listener.swift */; };
+		F0369E3323A2D92C00C33139 /* StatusBarView_Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0369E3123A2D92C00C33139 /* StatusBarView_Listener.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
 		F0418B98239A32FD00B59C66 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0418B97239A32FD00B59C66 /* Bookmark.swift */; };
@@ -293,6 +295,7 @@
 		F02B04BE23A2898300F93B84 /* PeerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
 		F02B04C223A2930D00F93B84 /* HostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostsView.swift; sourceTree = "<group>"; };
 		F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorView.swift; sourceTree = "<group>"; };
+		F0369E3123A2D92C00C33139 /* StatusBarView_Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Listener.swift; sourceTree = "<group>"; };
 		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -759,6 +762,7 @@
 			children = (
 				F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */,
 				F0AA69D3232E9762007CC07B /* StatusBarView.swift */,
+				F0369E3123A2D92C00C33139 /* StatusBarView_Listener.swift */,
 				F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */,
 				F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */,
 				F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */,
@@ -1193,6 +1197,7 @@
 				F0562E0F2362026C0074ACF5 /* WikipediaRepresenter.swift in Sources */,
 				F023CEB3239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F0305FD223812711002AC5F5 /* YTranslatorView.swift in Sources */,
+				F0369E3323A2D92C00C33139 /* StatusBarView_Listener.swift in Sources */,
 				F0EDFB26239E49480048CFD1 /* AudioPlayer.swift in Sources */,
 				F02B04B023A2844700F93B84 /* NWParameters.swift in Sources */,
 				F02B04B823A2894700F93B84 /* PeerBrowser.swift in Sources */,
@@ -1291,6 +1296,7 @@
 				F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */,
 				F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */,
 				F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */,
+				F0369E3223A2D92C00C33139 /* StatusBarView_Listener.swift in Sources */,
 				F0C36A9D2359C78A001E396C /* Array.swift in Sources */,
 				F0553728239BE3C700BA24BA /* LongmanStore.swift in Sources */,
 				F06DB10D23450B6000C2DE90 /* View.swift in Sources */,

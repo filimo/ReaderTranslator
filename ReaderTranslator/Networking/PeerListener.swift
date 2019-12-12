@@ -70,6 +70,11 @@ class PeerListener {
         }
     }
 
+    func stopListening() {
+        self.listener?.cancel()
+        sharedConnection = nil
+    }
+
     // If the user changes their name, update the advertised name.
     func resetName(_ name: String) {
         self.name = name
