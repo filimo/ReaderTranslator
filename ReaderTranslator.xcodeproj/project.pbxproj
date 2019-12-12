@@ -31,13 +31,28 @@
 		F023CEB3239A5674006DE5EA /* BookmarksView_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023CEB1239A5674006DE5EA /* BookmarksView_List.swift */; };
 		F026B1E82344830200E032B9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* SafariView.swift */; };
 		F02989EC2360488800DF722E /* OpenPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02989EB2360488800DF722E /* OpenPanel.swift */; };
+		F02B04AF23A2844700F93B84 /* NWParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04AE23A2844700F93B84 /* NWParameters.swift */; };
+		F02B04B023A2844700F93B84 /* NWParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04AE23A2844700F93B84 /* NWParameters.swift */; };
+		F02B04B123A2844700F93B84 /* NWParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04AE23A2844700F93B84 /* NWParameters.swift */; };
+		F02B04B323A2847700F93B84 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B223A2847700F93B84 /* GameProtocol.swift */; };
+		F02B04B423A2847700F93B84 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B223A2847700F93B84 /* GameProtocol.swift */; };
+		F02B04B523A2847700F93B84 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B223A2847700F93B84 /* GameProtocol.swift */; };
+		F02B04B723A2894700F93B84 /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B623A2894700F93B84 /* PeerBrowser.swift */; };
+		F02B04B823A2894700F93B84 /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B623A2894700F93B84 /* PeerBrowser.swift */; };
+		F02B04B923A2894700F93B84 /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B623A2894700F93B84 /* PeerBrowser.swift */; };
+		F02B04BB23A2896900F93B84 /* PeerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04BA23A2896900F93B84 /* PeerListener.swift */; };
+		F02B04BC23A2896900F93B84 /* PeerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04BA23A2896900F93B84 /* PeerListener.swift */; };
+		F02B04BD23A2896900F93B84 /* PeerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04BA23A2896900F93B84 /* PeerListener.swift */; };
+		F02B04BF23A2898300F93B84 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04BE23A2898300F93B84 /* PeerConnection.swift */; };
+		F02B04C023A2898300F93B84 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04BE23A2898300F93B84 /* PeerConnection.swift */; };
+		F02B04C123A2898300F93B84 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04BE23A2898300F93B84 /* PeerConnection.swift */; };
+		F02B04C323A2930D00F93B84 /* HostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04C223A2930D00F93B84 /* HostsView.swift */; };
+		F02B04C423A2930D00F93B84 /* HostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04C223A2930D00F93B84 /* HostsView.swift */; };
+		F02B04C523A2930D00F93B84 /* HostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04C223A2930D00F93B84 /* HostsView.swift */; };
 		F0305FD123812710002AC5F5 /* YTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */; };
 		F0305FD223812711002AC5F5 /* YTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */; };
 		F0305FD32381271A002AC5F5 /* YTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062029423812264002EEAEE /* YTranslatorRepresenter.swift */; };
 		F0305FD42381271A002AC5F5 /* YTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062029423812264002EEAEE /* YTranslatorRepresenter.swift */; };
-		F03F1E31239570ED006F765D /* PeerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F1E30239570ED006F765D /* PeerListener.swift */; };
-		F03F1E32239570ED006F765D /* PeerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F1E30239570ED006F765D /* PeerListener.swift */; };
-		F03F1E33239570ED006F765D /* PeerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F1E30239570ED006F765D /* PeerListener.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
 		F0418B98239A32FD00B59C66 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0418B97239A32FD00B59C66 /* Bookmark.swift */; };
@@ -117,12 +132,6 @@
 		F08EBAF023952AD6009025D3 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */; };
 		F08EBAF123952AD6009025D3 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */; };
 		F08EBAF223952AD6009025D3 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */; };
-		F08EBAF523953B0A009025D3 /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAF423953B0A009025D3 /* PeerBrowser.swift */; };
-		F08EBAF623953B0A009025D3 /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAF423953B0A009025D3 /* PeerBrowser.swift */; };
-		F08EBAF723953B0A009025D3 /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBAF423953B0A009025D3 /* PeerBrowser.swift */; };
-		F08EBB01239541FB009025D3 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB00239541FB009025D3 /* PeerConnection.swift */; };
-		F08EBB02239541FB009025D3 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB00239541FB009025D3 /* PeerConnection.swift */; };
-		F08EBB03239541FB009025D3 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB00239541FB009025D3 /* PeerConnection.swift */; };
 		F08EBB0523956202009025D3 /* FileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0423956202009025D3 /* FileListView.swift */; };
 		F08EBB0723956495009025D3 /* RewindButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0623956495009025D3 /* RewindButtonsView.swift */; };
 		F08EBB09239564F3009025D3 /* AudioRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB08239564F3009025D3 /* AudioRateView.swift */; };
@@ -277,9 +286,14 @@
 		F023CEB1239A5674006DE5EA /* BookmarksView_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_List.swift; sourceTree = "<group>"; };
 		F026B1E72344830200E032B9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F02989EB2360488800DF722E /* OpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPanel.swift; sourceTree = "<group>"; };
+		F02B04AE23A2844700F93B84 /* NWParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWParameters.swift; sourceTree = "<group>"; };
+		F02B04B223A2847700F93B84 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		F02B04B623A2894700F93B84 /* PeerBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerBrowser.swift; sourceTree = "<group>"; };
+		F02B04BA23A2896900F93B84 /* PeerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerListener.swift; sourceTree = "<group>"; };
+		F02B04BE23A2898300F93B84 /* PeerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
+		F02B04C223A2930D00F93B84 /* HostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostsView.swift; sourceTree = "<group>"; };
 		F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorView.swift; sourceTree = "<group>"; };
 		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
-		F03F1E30239570ED006F765D /* PeerListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerListener.swift; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F0418B97239A32FD00B59C66 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
@@ -325,8 +339,6 @@
 		F08D9403239C0E4400147ECE /* BookmarksView_List_Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_List_Row.swift; sourceTree = "<group>"; };
 		F08EBAEC23943835009025D3 /* WKWebRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebRepresenter.swift; sourceTree = "<group>"; };
 		F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
-		F08EBAF423953B0A009025D3 /* PeerBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerBrowser.swift; sourceTree = "<group>"; };
-		F08EBB00239541FB009025D3 /* PeerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
 		F08EBB0423956202009025D3 /* FileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListView.swift; sourceTree = "<group>"; };
 		F08EBB0623956495009025D3 /* RewindButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewindButtonsView.swift; sourceTree = "<group>"; };
 		F08EBB08239564F3009025D3 /* AudioRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRateView.swift; sourceTree = "<group>"; };
@@ -603,9 +615,10 @@
 		F08EBAF323953AF0009025D3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				F03F1E30239570ED006F765D /* PeerListener.swift */,
-				F08EBAF423953B0A009025D3 /* PeerBrowser.swift */,
-				F08EBB00239541FB009025D3 /* PeerConnection.swift */,
+				F02B04B623A2894700F93B84 /* PeerBrowser.swift */,
+				F02B04BA23A2896900F93B84 /* PeerListener.swift */,
+				F02B04BE23A2898300F93B84 /* PeerConnection.swift */,
+				F02B04B223A2847700F93B84 /* GameProtocol.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -616,6 +629,7 @@
 				F00AD753239627EB005FAFE1 /* PlayerContols */,
 				F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */,
 				F08EBB0423956202009025D3 /* FileListView.swift */,
+				F02B04C223A2930D00F93B84 /* HostsView.swift */,
 				F0120379239182DA008D0B47 /* ContentView.swift */,
 			);
 			path = Views;
@@ -836,6 +850,7 @@
 				F0C6657B2351A70B0087B6F2 /* Collection.swift */,
 				F0814BA123562AF300212F52 /* Set.swift */,
 				F04C830E23617BE6003A25B4 /* NSObject.swift */,
+				F02B04AE23A2844700F93B84 /* NWParameters.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -1108,30 +1123,33 @@
 				F012038723928631008D0B47 /* UserDefault.swift in Sources */,
 				F058C7FB2397FABD002C84F0 /* String.swift in Sources */,
 				F0418B9A239A32FD00B59C66 /* Bookmark.swift in Sources */,
+				F02B04B923A2894700F93B84 /* PeerBrowser.swift in Sources */,
 				F01203902392D586008D0B47 /* RoundButtonStyle.swift in Sources */,
 				F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */,
+				F02B04C123A2898300F93B84 /* PeerConnection.swift in Sources */,
 				F012038823928634008D0B47 /* Published.swift in Sources */,
-				F03F1E33239570ED006F765D /* PeerListener.swift in Sources */,
+				F02B04B123A2844700F93B84 /* NWParameters.swift in Sources */,
 				F06EAF8F2393A4E100AAE1A4 /* SafariView.swift in Sources */,
 				F058C7F82397FA67002C84F0 /* View.swift in Sources */,
-				F08EBAF723953B0A009025D3 /* PeerBrowser.swift in Sources */,
 				F08EBAF223952AD6009025D3 /* WebViewContainer.swift in Sources */,
 				F058C7F72397FA56002C84F0 /* WKCoordinator.swift in Sources */,
 				F058C7FC2397FAD0002C84F0 /* Safari.swift in Sources */,
 				F058C7F52397FA23002C84F0 /* WKCoordinatorNavigationDelegate.swift in Sources */,
+				F02B04B523A2847700F93B84 /* GameProtocol.swift in Sources */,
 				F08EBB09239564F3009025D3 /* AudioRateView.swift in Sources */,
 				F08EBB0723956495009025D3 /* RewindButtonsView.swift in Sources */,
 				F08EBB0B239565CC009025D3 /* PlayerContolsView.swift in Sources */,
 				F012038D239286A2008D0B47 /* Store.swift in Sources */,
+				F02B04C523A2930D00F93B84 /* HostsView.swift in Sources */,
 				F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */,
 				F08EBB0523956202009025D3 /* FileListView.swift in Sources */,
+				F02B04BD23A2896900F93B84 /* PeerListener.swift in Sources */,
 				F08EBAED23943835009025D3 /* WKWebRepresenter.swift in Sources */,
 				F058C7F42397F9DB002C84F0 /* WKPageView.swift in Sources */,
 				F058C7FA2397FA7C002C84F0 /* NSObject.swift in Sources */,
 				F012037A239182DA008D0B47 /* ContentView.swift in Sources */,
 				F058C7F92397FA70002C84F0 /* DOMEvent.swift in Sources */,
 				F058C7F62397FA3E002C84F0 /* Set.swift in Sources */,
-				F08EBB03239541FB009025D3 /* PeerConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1144,7 +1162,6 @@
 				F0C4EDA52349260000CCD97A /* ReversoView.swift in Sources */,
 				F0586483238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift in Sources */,
 				F06B0947239CB8FA00A39A86 /* BookmarksView_List_Detail.swift in Sources */,
-				F08EBB02239541FB009025D3 /* PeerConnection.swift in Sources */,
 				F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */,
 				F0AD8B1C236413F60017C22F /* AvailableView.swift in Sources */,
 				F0EDFB20239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */,
@@ -1155,6 +1172,7 @@
 				F0C36A9E2359C78A001E396C /* Array.swift in Sources */,
 				F0BB437F2344845000ADBEF1 /* StatusBarView_Voice_Favorite.swift in Sources */,
 				F0C6657D2351A70B0087B6F2 /* Collection.swift in Sources */,
+				F02B04C023A2898300F93B84 /* PeerConnection.swift in Sources */,
 				F0BB43762344844800ADBEF1 /* GTranslatorRepresenter.swift in Sources */,
 				F0C4EDA7234926D400CCD97A /* ReversoRepresenter.swift in Sources */,
 				F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */,
@@ -1163,7 +1181,6 @@
 				F06DB1002344856300C2DE90 /* Store.swift in Sources */,
 				F0BB43742344844800ADBEF1 /* PDFKitView.swift in Sources */,
 				F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */,
-				F03F1E32239570ED006F765D /* PeerListener.swift in Sources */,
 				F0BB43782344845000ADBEF1 /* StatusBarView.swift in Sources */,
 				F0BB436F2344843400ADBEF1 /* Image.swift in Sources */,
 				F0BB43802344845000ADBEF1 /* StatusBarView_Voice_Volume.swift in Sources */,
@@ -1177,8 +1194,9 @@
 				F023CEB3239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F0305FD223812711002AC5F5 /* YTranslatorView.swift in Sources */,
 				F0EDFB26239E49480048CFD1 /* AudioPlayer.swift in Sources */,
+				F02B04B023A2844700F93B84 /* NWParameters.swift in Sources */,
+				F02B04B823A2894700F93B84 /* PeerBrowser.swift in Sources */,
 				F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */,
-				F08EBAF623953B0A009025D3 /* PeerBrowser.swift in Sources */,
 				F08EBB1123956D80009025D3 /* NetworkManager.swift in Sources */,
 				F001A701235E095700617573 /* ServiceProvider.swift in Sources */,
 				F0FCDD472361A8070016F23F /* CollinsView.swift in Sources */,
@@ -1203,11 +1221,13 @@
 				F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
 				F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */,
 				F0BB43722344843D00ADBEF1 /* FavoriteVoiceName.swift in Sources */,
+				F02B04BC23A2896900F93B84 /* PeerListener.swift in Sources */,
 				F0814BA323562AF300212F52 /* Set.swift in Sources */,
 				F0418B99239A32FD00B59C66 /* Bookmark.swift in Sources */,
 				F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
 				F026B1E82344830200E032B9 /* SafariView.swift in Sources */,
+				F02B04C423A2930D00F93B84 /* HostsView.swift in Sources */,
 				F0C53175234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F0C36AA22359D50A001E396C /* Clipboard.swift in Sources */,
 				F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */,
@@ -1218,6 +1238,7 @@
 				F0505C552360D475004F2D50 /* LongmanRepresenter.swift in Sources */,
 				F0D2E335234BA49000D95994 /* Safari.swift in Sources */,
 				F0505C572360D485004F2D50 /* LongmanView.swift in Sources */,
+				F02B04B423A2847700F93B84 /* GameProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1251,10 +1272,10 @@
 				F08D9404239C0E4400147ECE /* BookmarksView_List_Row.swift in Sources */,
 				F0AD8B1E236414070017C22F /* TranslateAction.swift in Sources */,
 				F0EDFB25239E49480048CFD1 /* AudioPlayer.swift in Sources */,
+				F02B04B723A2894700F93B84 /* PeerBrowser.swift in Sources */,
 				F0C53174234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F08EBB1023956D80009025D3 /* NetworkManager.swift in Sources */,
 				F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
-				F08EBB01239541FB009025D3 /* PeerConnection.swift in Sources */,
 				F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */,
 				F0305FD123812710002AC5F5 /* YTranslatorView.swift in Sources */,
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
@@ -1276,12 +1297,11 @@
 				F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0AA69DF232E97B0007CC07B /* GTranslatorRepresenter.swift in Sources */,
 				F0505C542360D474004F2D50 /* LongmanRepresenter.swift in Sources */,
-				F08EBAF523953B0A009025D3 /* PeerBrowser.swift in Sources */,
 				F012038B23928685008D0B47 /* Store.swift in Sources */,
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
-				F03F1E31239570ED006F765D /* PeerListener.swift in Sources */,
 				F06DB1042344975E00C2DE90 /* StackView.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WKRepresenter.swift in Sources */,
+				F02B04C323A2930D00F93B84 /* HostsView.swift in Sources */,
 				F0C4EDA6234926D400CCD97A /* ReversoRepresenter.swift in Sources */,
 				F058D6B4239EDF3C00195338 /* SettingsView.swift in Sources */,
 				F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */,
@@ -1297,6 +1317,7 @@
 				F0FCDD482361A80C0016F23F /* CollinsRepresenter.swift in Sources */,
 				F0FCDD462361A8060016F23F /* CollinsView.swift in Sources */,
 				F0AA69DE232E97B0007CC07B /* SpeechSynthesizer.swift in Sources */,
+				F02B04B323A2847700F93B84 /* GameProtocol.swift in Sources */,
 				F0C4EDA92349271C00CCD97A /* ViewRepresentable.swift in Sources */,
 				F0C53178234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
 				F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */,
@@ -1304,10 +1325,13 @@
 				F0C36AA12359D50A001E396C /* Clipboard.swift in Sources */,
 				F04C830C23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
 				F023CEB2239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
+				F02B04BF23A2898300F93B84 /* PeerConnection.swift in Sources */,
 				F058C800239930F2002C84F0 /* BookmarksView.swift in Sources */,
 				F0FCDD40236189750016F23F /* MacmillanView.swift in Sources */,
 				F0C4EDA42349260000CCD97A /* ReversoView.swift in Sources */,
 				F0562E0C2362025D0074ACF5 /* WikipediaView.swift in Sources */,
+				F02B04AF23A2844700F93B84 /* NWParameters.swift in Sources */,
+				F02B04BB23A2896900F93B84 /* PeerListener.swift in Sources */,
 				F0AA69A5232E9710007CC07B /* ContentView.swift in Sources */,
 				F0814BA223562AF300212F52 /* Set.swift in Sources */,
 				F0C36A962359AF75001E396C /* StatusBarView_Bookmarks.swift in Sources */,

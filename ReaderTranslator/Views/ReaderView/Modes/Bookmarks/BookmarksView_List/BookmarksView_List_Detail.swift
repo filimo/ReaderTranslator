@@ -35,6 +35,7 @@ struct BookmarksView_List_Detail: View {
                     Text("counter changed: \(changedTime)").foregroundColor(Color.purple)
                     Text("create: \(createTime)")
                 }
+                Text(store.longmanSelectedBookmark).font(.title)
                 ForEach(store.longmanSentences, id: \.self) { sentence in
                     Text("\(sentence.text)")
                     .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)

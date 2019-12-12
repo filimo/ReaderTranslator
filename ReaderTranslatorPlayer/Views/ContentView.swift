@@ -9,14 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    private var networkManager = NetworkManager()
-
     @ObservedObject var store = Store.shared
-    private var playerControlHeight = UIScreen.main.bounds.height / 4
 
-    init() {
-        sharedBrowser = PeerBrowser(delegate: networkManager)
-    }
+    @State var showHosts = false
+
+    private var playerControlHeight = UIScreen.main.bounds.height / 4
 
     var body: some View {
         VStack(spacing: 0) {
@@ -25,7 +22,12 @@ struct ContentView: View {
             }
             PlayerControlsView().frame(height: playerControlHeight)
             FileListView().frame(height: playerControlHeight)
+            Image(systemName: "wifi")
+            .onTapGesture {
+                self.showHosts = true
+            }
         }
+        .sheet(isPresented: $showHosts) { HostsView() }
     }
 }
 

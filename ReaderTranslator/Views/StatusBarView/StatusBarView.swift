@@ -12,6 +12,8 @@ import Combine
 struct StatusBarView: View {
     @ObservedObject var store = Store.shared
 
+    let passcode: String
+
     var body: some View {
         HStack {
             StatusBarView_Zoom()
@@ -24,6 +26,7 @@ struct StatusBarView: View {
             speechHandler
             playbackRateView
             SettingsView()
+            Text("passcode: \(passcode)")
         }.padding(.trailing, 20)
     }
 
@@ -60,6 +63,6 @@ struct StatusBarView: View {
 
 struct StatusBarView_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView()
+        StatusBarView(passcode: "1234")
     }
 }
