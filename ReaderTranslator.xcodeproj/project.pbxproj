@@ -46,8 +46,6 @@
 		F02B04BF23A2898300F93B84 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04BE23A2898300F93B84 /* PeerConnection.swift */; };
 		F02B04C023A2898300F93B84 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04BE23A2898300F93B84 /* PeerConnection.swift */; };
 		F02B04C123A2898300F93B84 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04BE23A2898300F93B84 /* PeerConnection.swift */; };
-		F02B04C323A2930D00F93B84 /* HostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04C223A2930D00F93B84 /* HostsView.swift */; };
-		F02B04C423A2930D00F93B84 /* HostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04C223A2930D00F93B84 /* HostsView.swift */; };
 		F02B04C523A2930D00F93B84 /* HostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04C223A2930D00F93B84 /* HostsView.swift */; };
 		F0305FD123812710002AC5F5 /* YTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */; };
 		F0305FD223812711002AC5F5 /* YTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */; };
@@ -1240,7 +1238,6 @@
 				F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
 				F026B1E82344830200E032B9 /* SafariView.swift in Sources */,
-				F02B04C423A2930D00F93B84 /* HostsView.swift in Sources */,
 				F0C53175234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F0C36AA22359D50A001E396C /* Clipboard.swift in Sources */,
 				F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */,
@@ -1316,7 +1313,6 @@
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
 				F06DB1042344975E00C2DE90 /* StackView.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WKRepresenter.swift in Sources */,
-				F02B04C323A2930D00F93B84 /* HostsView.swift in Sources */,
 				F0C4EDA6234926D400CCD97A /* ReversoRepresenter.swift in Sources */,
 				F058D6B4239EDF3C00195338 /* SettingsView.swift in Sources */,
 				F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */,

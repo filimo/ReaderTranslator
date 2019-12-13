@@ -12,6 +12,7 @@ import Network
 struct HostsView: View {
     class Coordinator: ObservableObject {
         @Published var hosts = [NWBrowser.Result]()
+        @Published var status = ConnectionClientStatus.none
     }
 
     @ObservedObject var coordinator = Coordinator()
@@ -27,7 +28,15 @@ struct HostsView: View {
         List {
             TextField("Enter pass code", text: $passcode)
             ForEach(coordinator.hosts, id: \.self) { host in
-                Button(action: { self.join(host: host) }, label: { Text(self.hostInfo(host)) })
+                Button(
+                    action: { self.join(host: host) },
+                    label: {
+                        HStack {
+                            Text(self.hostInfo(host))
+                            Spacer()
+                            Text(self.coordinator.status.status)
+                        }
+                })
             }
         }
     }
@@ -52,17 +61,18 @@ struct HostsView: View {
 
 extension HostsView.Coordinator: PeerBrowserDelegate {
     func refreshResults(results: Set<NWBrowser.Result>) {
+        status = .none
         hosts = results.map { $0 }
     }
 }
 
 extension HostsView.Coordinator: PeerConnectionDelegate {
     func connectionReady() {
-        print("\(#function)")
+        status = .connected
     }
 
     func connectionFailed() {
-        print("\(#function)")
+        status = .failed(error: "failed")
     }
 
     func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {

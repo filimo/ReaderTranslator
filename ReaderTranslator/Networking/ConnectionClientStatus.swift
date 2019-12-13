@@ -19,7 +19,7 @@ enum ConnectionClientStatus {
     var status: String {
         switch self {
         case .none:
-            return ""
+            return "none"
         case .ready:
             return "ready"
         case .preparing:
