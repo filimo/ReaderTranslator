@@ -50,27 +50,27 @@ enum AvailableView: String, Codable, CaseIterable {
     var view: some View {
         switch self {
         case .wikipedia:
-            return AnyView(WikipediaView())
+            return WikipediaView().any
         case .reverso:
-            return AnyView(ReversoView())
+            return ReversoView().any
         case .gTranslator:
-            return AnyView(GTranslatorView())
+            return GTranslatorView().any
         case .yTranslator:
-            return AnyView(YTranslatorView())
+            return YTranslatorView().any
         case .longman:
-            return AnyView(LongmanView())
+            return LongmanView().any
         case .macmillan:
-            return AnyView(MacmillanView())
+            return MacmillanView().any
         case .collins:
-            return AnyView(CollinsView())
+            return CollinsView().any
         case .bookmarks:
-            return AnyView(BookmarksView())
+            return BookmarksView().any
         case .pdf:
-            return AnyView(ReaderView_Pdf())
+            return ReaderView_Pdf().any
         case .web:
-            return AnyView(ReaderView_Web())
+            return ReaderView_Web().any
         case .safari:
-            return AnyView(SafariView())
+            return SafariView().any
         }
     }
 

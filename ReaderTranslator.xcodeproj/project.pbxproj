@@ -66,6 +66,9 @@
 		F04C830F23617BE6003A25B4 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830E23617BE6003A25B4 /* NSObject.swift */; };
 		F04C831023617BE6003A25B4 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830E23617BE6003A25B4 /* NSObject.swift */; };
 		F04C831123617BE6003A25B4 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830E23617BE6003A25B4 /* NSObject.swift */; };
+		F04D5D3F23A3677800424479 /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D5D3E23A3677800424479 /* ConnectionStatus.swift */; };
+		F04D5D4023A3677800424479 /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D5D3E23A3677800424479 /* ConnectionStatus.swift */; };
+		F04D5D4123A3677800424479 /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D5D3E23A3677800424479 /* ConnectionStatus.swift */; };
 		F0505C542360D474004F2D50 /* LongmanRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */; };
 		F0505C552360D475004F2D50 /* LongmanRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */; };
 		F0505C562360D485004F2D50 /* LongmanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C532360D3DA004F2D50 /* LongmanView.swift */; };
@@ -304,6 +307,7 @@
 		F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_ViewsEnabler.swift; sourceTree = "<group>"; };
 		F04C830E23617BE6003A25B4 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		F04C8312236187D6003A25B4 /* MacmillanRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacmillanRepresenter.swift; sourceTree = "<group>"; };
+		F04D5D3E23A3677800424479 /* ConnectionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
 		F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanRepresenter.swift; sourceTree = "<group>"; };
 		F0505C532360D3DA004F2D50 /* LongmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanView.swift; sourceTree = "<group>"; };
 		F0553727239BE3C700BA24BA /* LongmanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanStore.swift; sourceTree = "<group>"; };
@@ -622,6 +626,7 @@
 				F02B04BA23A2896900F93B84 /* PeerListener.swift */,
 				F02B04BE23A2898300F93B84 /* PeerConnection.swift */,
 				F02B04B223A2847700F93B84 /* GameProtocol.swift */,
+				F04D5D3E23A3677800424479 /* ConnectionStatus.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -1124,6 +1129,7 @@
 			files = (
 				F08EBB0D23956A20009025D3 /* NetworkManager.swift in Sources */,
 				F058C7F32397F968002C84F0 /* WKScriptsSetup.swift in Sources */,
+				F04D5D4123A3677800424479 /* ConnectionStatus.swift in Sources */,
 				F012038723928631008D0B47 /* UserDefault.swift in Sources */,
 				F058C7FB2397FABD002C84F0 /* String.swift in Sources */,
 				F0418B9A239A32FD00B59C66 /* Bookmark.swift in Sources */,
@@ -1238,6 +1244,7 @@
 				F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */,
 				F0C36A972359AF76001E396C /* StatusBarView_Bookmarks.swift in Sources */,
 				F02989EC2360488800DF722E /* OpenPanel.swift in Sources */,
+				F04D5D4023A3677800424479 /* ConnectionStatus.swift in Sources */,
 				F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */,
 				F0C53179234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
 				F0505C552360D475004F2D50 /* LongmanRepresenter.swift in Sources */,
@@ -1332,6 +1339,7 @@
 				F04C830C23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
 				F023CEB2239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F02B04BF23A2898300F93B84 /* PeerConnection.swift in Sources */,
+				F04D5D3F23A3677800424479 /* ConnectionStatus.swift in Sources */,
 				F058C800239930F2002C84F0 /* BookmarksView.swift in Sources */,
 				F0FCDD40236189750016F23F /* MacmillanView.swift in Sources */,
 				F0C4EDA42349260000CCD97A /* ReversoView.swift in Sources */,

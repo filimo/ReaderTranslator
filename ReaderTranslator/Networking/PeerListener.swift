@@ -23,11 +23,10 @@ class PeerListener {
         self.delegate = delegate
         self.name = name
         self.passcode = passcode
-        startListening()
     }
 
     // Start listening and advertising.
-    func startListening() {
+    func startListening(stateUpdateHandler: ((NWListener.State) -> Void)?) {
         do {
             // Create the listener object.
             let listener = try NWListener(using: NWParameters(passcode: passcode))
@@ -35,20 +34,6 @@ class PeerListener {
 
             // Set the service to advertise.
             listener.service = NWListener.Service(name: self.name, type: "_reader_translator._tcp")
-
-            listener.stateUpdateHandler = { newState in
-                switch newState {
-                case .ready:
-                    print("Listener ready on \(String(describing: listener.port))")
-                case .failed(let error):
-                    // If the listener fails, re-start.
-                    print("Listener failed with \(error), restarting")
-                    listener.cancel()
-                    self.startListening()
-                default:
-                    break
-                }
-            }
 
             listener.newConnectionHandler = { newConnection in
                 if let delegate = self.delegate {
