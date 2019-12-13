@@ -16,7 +16,7 @@ struct StatusBarView_Listener: View {
         private var randomInt: Int { Int.random(in: 0...9) }
 
         @Published var connectionCount = 0
-        @Published var status = ConnectionStatus.none
+        @Published var status = ConnectionServerStatus.none
         @Published var passcode = ""
     }
 
@@ -45,7 +45,7 @@ extension StatusBarView_Listener.Coordinator {
     }
 
     func start() {
-        self.passcode = self.generatePasscode
+        self.passcode = "1111" //self.generatePasscode
         self.connectionCount += 1
         sharedListener?.stopListening()
 

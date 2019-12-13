@@ -52,12 +52,7 @@ struct HostsView: View {
 
 extension HostsView.Coordinator: PeerBrowserDelegate {
     func refreshResults(results: Set<NWBrowser.Result>) {
-        var items = [NWBrowser.Result]()
-        print(results)
-        for item in results {
-            items.append(item)
-        }
-        hosts = items
+        hosts = results.map { $0 }
     }
 }
 

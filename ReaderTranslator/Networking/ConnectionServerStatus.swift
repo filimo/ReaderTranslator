@@ -8,7 +8,7 @@
 
 import Network
 
-enum ErrorConnection: Error {
+enum ErrorServerConnection: Error {
     case listener(error: NWError)
     case connection(text: String)
 
@@ -22,12 +22,12 @@ enum ErrorConnection: Error {
     }
 }
 
-enum ConnectionStatus {
+enum ConnectionServerStatus {
     case none
     case started(name: String, passcode: String)
     case ready
     case connected
-    case failed(error: ErrorConnection)
+    case failed(error: ErrorServerConnection)
 
     var status: String {
         switch self {
