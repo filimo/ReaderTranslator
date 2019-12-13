@@ -34,9 +34,9 @@
 		F02B04AF23A2844700F93B84 /* NWParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04AE23A2844700F93B84 /* NWParameters.swift */; };
 		F02B04B023A2844700F93B84 /* NWParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04AE23A2844700F93B84 /* NWParameters.swift */; };
 		F02B04B123A2844700F93B84 /* NWParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04AE23A2844700F93B84 /* NWParameters.swift */; };
-		F02B04B323A2847700F93B84 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B223A2847700F93B84 /* GameProtocol.swift */; };
-		F02B04B423A2847700F93B84 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B223A2847700F93B84 /* GameProtocol.swift */; };
-		F02B04B523A2847700F93B84 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B223A2847700F93B84 /* GameProtocol.swift */; };
+		F02B04B323A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B223A2847700F93B84 /* ReaderTranslatorProtocol.swift */; };
+		F02B04B423A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B223A2847700F93B84 /* ReaderTranslatorProtocol.swift */; };
+		F02B04B523A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B223A2847700F93B84 /* ReaderTranslatorProtocol.swift */; };
 		F02B04B723A2894700F93B84 /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B623A2894700F93B84 /* PeerBrowser.swift */; };
 		F02B04B823A2894700F93B84 /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B623A2894700F93B84 /* PeerBrowser.swift */; };
 		F02B04B923A2894700F93B84 /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04B623A2894700F93B84 /* PeerBrowser.swift */; };
@@ -290,7 +290,7 @@
 		F026B1E72344830200E032B9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F02989EB2360488800DF722E /* OpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPanel.swift; sourceTree = "<group>"; };
 		F02B04AE23A2844700F93B84 /* NWParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWParameters.swift; sourceTree = "<group>"; };
-		F02B04B223A2847700F93B84 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		F02B04B223A2847700F93B84 /* ReaderTranslatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTranslatorProtocol.swift; sourceTree = "<group>"; };
 		F02B04B623A2894700F93B84 /* PeerBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerBrowser.swift; sourceTree = "<group>"; };
 		F02B04BA23A2896900F93B84 /* PeerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerListener.swift; sourceTree = "<group>"; };
 		F02B04BE23A2898300F93B84 /* PeerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
@@ -624,7 +624,7 @@
 				F02B04B623A2894700F93B84 /* PeerBrowser.swift */,
 				F02B04BA23A2896900F93B84 /* PeerListener.swift */,
 				F02B04BE23A2898300F93B84 /* PeerConnection.swift */,
-				F02B04B223A2847700F93B84 /* GameProtocol.swift */,
+				F02B04B223A2847700F93B84 /* ReaderTranslatorProtocol.swift */,
 				F04D5D3E23A3677800424479 /* ConnectionServerStatus.swift */,
 				F046182D23A3A4AF0041E726 /* ConnectionClientStatus.swift */,
 			);
@@ -1144,7 +1144,7 @@
 				F058C7F72397FA56002C84F0 /* WKCoordinator.swift in Sources */,
 				F058C7FC2397FAD0002C84F0 /* Safari.swift in Sources */,
 				F058C7F52397FA23002C84F0 /* WKCoordinatorNavigationDelegate.swift in Sources */,
-				F02B04B523A2847700F93B84 /* GameProtocol.swift in Sources */,
+				F02B04B523A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */,
 				F08EBB09239564F3009025D3 /* AudioRateView.swift in Sources */,
 				F08EBB0723956495009025D3 /* RewindButtonsView.swift in Sources */,
 				F08EBB0B239565CC009025D3 /* PlayerContolsView.swift in Sources */,
@@ -1249,7 +1249,7 @@
 				F0505C552360D475004F2D50 /* LongmanRepresenter.swift in Sources */,
 				F0D2E335234BA49000D95994 /* Safari.swift in Sources */,
 				F0505C572360D485004F2D50 /* LongmanView.swift in Sources */,
-				F02B04B423A2847700F93B84 /* GameProtocol.swift in Sources */,
+				F02B04B423A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1328,7 +1328,7 @@
 				F0FCDD482361A80C0016F23F /* CollinsRepresenter.swift in Sources */,
 				F0FCDD462361A8060016F23F /* CollinsView.swift in Sources */,
 				F0AA69DE232E97B0007CC07B /* SpeechSynthesizer.swift in Sources */,
-				F02B04B323A2847700F93B84 /* GameProtocol.swift in Sources */,
+				F02B04B323A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */,
 				F0C4EDA92349271C00CCD97A /* ViewRepresentable.swift in Sources */,
 				F0C53178234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
 				F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */,

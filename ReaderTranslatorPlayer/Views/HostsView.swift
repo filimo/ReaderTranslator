@@ -69,6 +69,7 @@ extension HostsView.Coordinator: PeerBrowserDelegate {
 extension HostsView.Coordinator: PeerConnectionDelegate {
     func connectionReady() {
         status = .connected
+        sharedConnection?.sendMove("Let's go")
     }
 
     func connectionFailed() {

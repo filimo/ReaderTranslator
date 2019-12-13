@@ -25,7 +25,7 @@ extension NWParameters {
         self.includePeerToPeer = true
 
         // Add your custom game protocol to support game messages.
-        let gameOptions = NWProtocolFramer.Options(definition: GameProtocol.definition)
+        let gameOptions = NWProtocolFramer.Options(definition: ReaderTranslatorProtocol.definition)
         self.defaultProtocolStack.applicationProtocols.insert(gameOptions, at: 0)
     }
 

@@ -67,7 +67,14 @@ extension StatusBarView_Listener.Coordinator: PeerConnectionDelegate {
         status = .failed(error: .connection(text: "connection failed"))
     }
     func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
-        print(2)
+        guard let content = content else { return }
+        print(content)
+        logMessage(content)
+    }
+    func logMessage(_ content: Data) {
+        if let text = String(data: content, encoding: .unicode) {
+            print(text)
+        }
     }
 }
 

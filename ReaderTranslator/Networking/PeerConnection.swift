@@ -95,7 +95,7 @@ class PeerConnection {
         }
 
         // Create a message object to hold the command type.
-        let message = NWProtocolFramer.Message(gameMessageType: .selectedCharacter)
+        let message = NWProtocolFramer.Message(readerTranslatorMessageType: .selectedCharacter)
         let context = NWConnection.ContentContext(identifier: "SelectCharacter",
                                                   metadata: [message])
 
@@ -114,7 +114,7 @@ class PeerConnection {
         }
 
         // Create a message object to hold the command type.
-        let message = NWProtocolFramer.Message(gameMessageType: .move)
+        let message = NWProtocolFramer.Message(readerTranslatorMessageType: .move)
         let context = NWConnection.ContentContext(identifier: "Move",
                                                   metadata: [message])
 
@@ -134,9 +134,9 @@ class PeerConnection {
 
         connection.receiveMessage { (content, context, _, error) in
             // Extract your message type from the received context.
-            let gameMessage = context?.protocolMetadata(definition: GameProtocol.definition)
-            if let gameMessage = gameMessage as? NWProtocolFramer.Message {
-                self.delegate?.receivedMessage(content: content, message: gameMessage)
+            let message = context?.protocolMetadata(definition: ReaderTranslatorProtocol.definition)
+            if let message = message as? NWProtocolFramer.Message {
+                self.delegate?.receivedMessage(content: content, message: message)
             }
             if error == nil {
                 // Continue to receive more messages until you receive and error.

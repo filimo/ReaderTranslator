@@ -1,5 +1,5 @@
 //
-//  GameProtocol.swift
+//  ReaderTranslatorProtocol.swift
 //  ReaderTranslator
 //
 //  Created by Viktor Kushnerov on 12/12/19.
@@ -10,20 +10,20 @@ import Foundation
 import Network
 
 // Define the types of commands your game will use.
-enum GameMessageType: UInt32 {
+enum ReaderTranslatorMessageType: UInt32 {
     case invalid = 0
     case selectedCharacter = 1
     case move = 2
 }
 
 // Create a class that implements a framing protocol.
-class GameProtocol: NWProtocolFramerImplementation {
+class ReaderTranslatorProtocol: NWProtocolFramerImplementation {
 
     // Create a global definition of your game protocol to add to connections.
-    static let definition = NWProtocolFramer.Definition(implementation: GameProtocol.self)
+    static let definition = NWProtocolFramer.Definition(implementation: ReaderTranslatorProtocol.self)
 
     // Set a name for your protocol for use in debugging.
-    static var label: String { return "TicTacToe" }
+    static var label: String { return "ReaderTranslator" }
 
     // Set the default behavior for most framing protocol functions.
     required init(framer: NWProtocolFramer.Instance) { }
@@ -39,10 +39,10 @@ class GameProtocol: NWProtocolFramerImplementation {
         messageLength: Int,
         isComplete: Bool) {
         // Extract the type of message.
-        let type = message.gameMessageType
+        let type = message.readerTranslatorMessageType
 
         // Create a header using the type and length.
-        let header = GameProtocolHeader(type: type.rawValue, length: UInt32(messageLength))
+        let header = ReaderTranslatorProtocolHeader(type: type.rawValue, length: UInt32(messageLength))
 
         // Write the header.
         framer.writeOutput(data: header.encodedData)
@@ -59,8 +59,8 @@ class GameProtocol: NWProtocolFramerImplementation {
     func handleInput(framer: NWProtocolFramer.Instance) -> Int {
         while true {
             // Try to read out a single header.
-            var tempHeader: GameProtocolHeader?
-            let headerSize = GameProtocolHeader.encodedSize
+            var tempHeader: ReaderTranslatorProtocolHeader?
+            let headerSize = ReaderTranslatorProtocolHeader.encodedSize
             let parsed = framer.parseInput(minimumIncompleteLength: headerSize,
                                            maximumLength: headerSize) { (buffer, _) -> Int in
                 guard let buffer = buffer else {
@@ -69,7 +69,7 @@ class GameProtocol: NWProtocolFramerImplementation {
                 if buffer.count < headerSize {
                     return 0
                 }
-                tempHeader = GameProtocolHeader(buffer)
+                tempHeader = ReaderTranslatorProtocolHeader(buffer)
                 return headerSize
             }
 
@@ -79,11 +79,11 @@ class GameProtocol: NWProtocolFramerImplementation {
             }
 
             // Create an object to deliver the message.
-            var messageType = GameMessageType.invalid
-            if let parsedMessageType = GameMessageType(rawValue: header.type) {
+            var messageType = ReaderTranslatorMessageType.invalid
+            if let parsedMessageType = ReaderTranslatorMessageType(rawValue: header.type) {
                 messageType = parsedMessageType
             }
-            let message = NWProtocolFramer.Message(gameMessageType: messageType)
+            let message = NWProtocolFramer.Message(readerTranslatorMessageType: messageType)
 
             // Deliver the body of the message, along with the message object.
             if !framer.deliverInputNoCopy(length: Int(header.length), message: message, isComplete: true) {
@@ -95,27 +95,27 @@ class GameProtocol: NWProtocolFramerImplementation {
 
 // Extend framer messages to handle storing your command types in the message metadata.
 extension NWProtocolFramer.Message {
-    convenience init(gameMessageType: GameMessageType) {
-        self.init(definition: GameProtocol.definition)
-        self.gameMessageType = gameMessageType
+    convenience init(readerTranslatorMessageType: ReaderTranslatorMessageType) {
+        self.init(definition: ReaderTranslatorProtocol.definition)
+        self.readerTranslatorMessageType = readerTranslatorMessageType
     }
 
-    var gameMessageType: GameMessageType {
+    var readerTranslatorMessageType: ReaderTranslatorMessageType {
         get {
-            if let type = self["GameMessageType"] as? GameMessageType {
+            if let type = self["ReaderTranslatorMessageType"] as? ReaderTranslatorMessageType {
                 return type
             } else {
                 return .invalid
             }
         }
         set {
-            self["GameMessageType"] = newValue
+            self["ReaderTranslatorMessageType"] = newValue
         }
     }
 }
 
 // Define a protocol header struct to help encode and decode bytes.
-struct GameProtocolHeader: Codable {
+struct ReaderTranslatorProtocolHeader: Codable {
     let type: UInt32
     let length: UInt32
 
