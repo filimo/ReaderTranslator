@@ -29,4 +29,6 @@ class Store: ObservableObject {
 
     @Published(wrappedValue: nil, key: "lastAudio") var lastAudio: URL?
     @Published(key: "audioRate") var audioRate: Float = 1
+
+    @Published(key: "bookmarks") var bookmarks: Bookmarks = []
 }

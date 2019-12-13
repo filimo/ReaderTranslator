@@ -10,6 +10,8 @@ import SwiftUI
 import Network
 
 struct StatusBarView_Listener: View {
+    @ObservedObject var store = Store.shared
+
     class Coordinator: ObservableObject {
         var name: String { "ReaderTranslator_\(connectionCount)" }
         var generatePasscode: String { String("\(randomInt)\(randomInt)\(randomInt)\(randomInt)") }
@@ -23,7 +25,21 @@ struct StatusBarView_Listener: View {
     @ObservedObject var coordinator: Coordinator = Coordinator()
 
     var body: some View {
-        Text(coordinator.status.status).onTapGesture(perform: coordinator.start)
+        HStack {
+            Text(coordinator.status.status).onTapGesture(perform: coordinator.start)
+            if coordinator.status == .connected {
+                Button(action: {
+                    do {
+                        let jsonData = try JSONEncoder().encode(self.store.bookmarks)
+                        if let jsonString = String(data: jsonData, encoding: .utf8) {
+                            sharedConnection?.sendMove(jsonString)
+                        }
+                    } catch {
+                        print("\(self.theClassName)_\(#function)", error)
+                    }
+                }, label: { Text("Send bookmarks") })
+            }
+        }
     }
 }
 
@@ -68,10 +84,6 @@ extension StatusBarView_Listener.Coordinator: PeerConnectionDelegate {
     }
     func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
         guard let content = content else { return }
-        print(content)
-        logMessage(content)
-    }
-    func logMessage(_ content: Data) {
         if let text = String(data: content, encoding: .unicode) {
             print(text)
         }

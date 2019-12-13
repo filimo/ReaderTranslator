@@ -13,8 +13,10 @@ struct HostsView: View {
     class Coordinator: ObservableObject {
         @Published var hosts = [NWBrowser.Result]()
         @Published var status = ConnectionClientStatus.none
+        @ObservedObject var store = Store.shared
     }
 
+    @ObservedObject var store = Store.shared
     @ObservedObject var coordinator = Coordinator()
     @State var passcode = ""
 
@@ -25,18 +27,25 @@ struct HostsView: View {
     }
 
     var body: some View {
-        List {
+        VStack {
             TextField("Enter pass code", text: $passcode)
-            ForEach(coordinator.hosts, id: \.self) { host in
-                Button(
-                    action: { self.join(host: host) },
-                    label: {
-                        HStack {
-                            Text(self.hostInfo(host))
-                            Spacer()
-                            Text(self.coordinator.status.status)
-                        }
-                })
+            List {
+                ForEach(coordinator.hosts, id: \.self) { host in
+                    Button(
+                        action: { self.join(host: host) },
+                        label: {
+                            HStack {
+                                Text(self.hostInfo(host))
+                                Spacer()
+                                Text(self.coordinator.status.status)
+                            }
+                    })
+                }
+            }
+            List {
+                ForEach(store.bookmarks, id: \.self) { bookmark in
+                    Text("\(bookmark.text)")
+                }
             }
         }
     }
@@ -69,7 +78,6 @@ extension HostsView.Coordinator: PeerBrowserDelegate {
 extension HostsView.Coordinator: PeerConnectionDelegate {
     func connectionReady() {
         status = .connected
-        sharedConnection?.sendMove("Let's go")
     }
 
     func connectionFailed() {
@@ -77,7 +85,15 @@ extension HostsView.Coordinator: PeerConnectionDelegate {
     }
 
     func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
-        print("\(#function)")
+        guard let content = content else { return }
+        if let data = String(data: content, encoding: .unicode) {
+            guard let jsonData = data.data(using: .utf8) else { return }
+            do {
+                store.bookmarks = try JSONDecoder().decode(Bookmarks.self, from: jsonData)
+            } catch {
+                print("HostsView.Coordinator_\(#function)", error)
+            }
+        }
     }
 }
 

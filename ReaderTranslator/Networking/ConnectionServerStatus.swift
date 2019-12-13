@@ -22,7 +22,19 @@ enum ErrorServerConnection: Error {
     }
 }
 
-enum ConnectionServerStatus {
+enum ConnectionServerStatus: Equatable {
+    static func == (lhs: ConnectionServerStatus, rhs: ConnectionServerStatus) -> Bool {
+        switch (lhs, rhs) {
+        case (.none, .none): return true
+        case (.ready, .ready): return true
+        case (let .started(lName, lPasscode), let .started(rName, rPasscode)):
+            return lName == rName && lPasscode == rPasscode
+        case (.connected, .connected): return true
+        case (let .failed(lError), let .failed(rError)): return lError.status == rError.status
+        default: return false
+        }
+    }
+
     case none
     case started(name: String, passcode: String)
     case ready
