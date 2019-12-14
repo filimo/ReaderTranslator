@@ -12,9 +12,9 @@ import WebKit
 private var view: WKPageView?
 
 struct LongmanRepresenter: UIViewRepresentable, WKScriptsSetup {
-    @ObservedObject var store = APStore.shared
+    @ObservedObject var store = Store.shared
     private let defaultURL = "https://www.ldoceonline.com/dictionary/"
-    
+
     func makeUIView(context: Context) -> WKPageView {
         if view == nil { view = WKPageView() }
         guard let view = view else { return WKPageView() }

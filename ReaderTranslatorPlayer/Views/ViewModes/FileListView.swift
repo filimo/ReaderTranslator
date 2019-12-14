@@ -9,14 +9,13 @@
 import SwiftUI
 import AVFoundation
 
-
 struct FileListView: View {
-    @ObservedObject var store = APStore.shared
+    @ObservedObject var store = Store.shared
 
     @State var files: [URL] = []
 
     static var player: AVAudioPlayer?
-    
+
     init() {
         do {
             let sharedInstance = AVAudioSession.sharedInstance()

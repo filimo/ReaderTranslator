@@ -11,7 +11,7 @@ import WebKit
 
 class WKCoordinator: NSObject {
     let parent: WKScriptsSetup
-    @ObservedObject var store = APStore.shared
+    @ObservedObject var store = Store.shared
     var cancellableSet: Set<AnyCancellable> = []
 
     init(_ parent: WKScriptsSetup) {

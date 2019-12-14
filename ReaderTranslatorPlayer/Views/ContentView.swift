@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var store = APStore.shared
+    @ObservedObject var store = Store.shared
 
     var body: some View {
         NavigationView {
@@ -26,8 +26,8 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @ObservedObject var store = APStore.shared
-    
+    @ObservedObject var store = Store.shared
+
     init() {
 //        let bookmarks: Bookmarks = [
 //            .init(counter: 1, text: "work 1", created: Date(), changed: Date()),
@@ -36,7 +36,7 @@ struct ContentView_Previews: PreviewProvider {
 //        ]
 //        if store.bookmarks.isEmpty { store.bookmarks = bookmarks }
     }
-    
+
     static var previews: some View {
         ContentView()
     }

@@ -25,7 +25,7 @@ typealias LongmanSentences = [LongmanSentence]
 class LongmanStore: NSObject {
     static let share = LongmanStore()
 
-    @ObservedObject var store = APStore.shared
+    @ObservedObject var store = Store.shared
 
     private let defaultURL = "https://www.ldoceonline.com/dictionary/"
     private var audioUrls = Stack<URL>()

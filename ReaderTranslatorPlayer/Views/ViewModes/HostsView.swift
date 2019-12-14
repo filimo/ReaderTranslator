@@ -13,10 +13,10 @@ struct HostsView: View {
     class Coordinator: ObservableObject {
         @Published var hosts = [NWBrowser.Result]()
         @Published var status = ConnectionClientStatus.none
-        @ObservedObject var store = APStore.shared
+        @ObservedObject var store = Store.shared
     }
 
-    @ObservedObject var store = APStore.shared
+    @ObservedObject var store = Store.shared
     @ObservedObject var coordinator = Coordinator()
     @State var passcode = ""
 

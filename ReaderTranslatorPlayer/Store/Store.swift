@@ -8,11 +8,11 @@
 
 import Foundation
 
-class APStore: ObservableObject {
-    static var shared = APStore()
+class Store: ObservableObject {
+    static var shared = Store()
 
     @Published var hideNavBar = true
-    
+
     var lastWebPage = ""
 
     @Published var isPlaying = false {
@@ -34,7 +34,6 @@ class APStore: ObservableObject {
     @Published(key: "audioRate") var audioRate: Float = 1
 
     @Published(key: "bookmarks") var bookmarks: Bookmarks = []
-
 
     @Published var longmanSentences: LongmanSentences = []
     @Published var longmanSelectedBookmark = "" {

@@ -11,7 +11,7 @@ import SwiftUI
 private var timer: Timer?
 
 struct PlayerControlsView: View {
-    @ObservedObject var store = APStore.shared
+    @ObservedObject var store = Store.shared
 
     @State var currentStatus = "0.0/0.0"
     @State var showSafari = false

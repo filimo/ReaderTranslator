@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct SentencesView: View {
-    @ObservedObject var store = APStore.shared
+    @ObservedObject var store = Store.shared
     var bookmark: String
-    
+
     var body: some View {
         VStack {
             List {

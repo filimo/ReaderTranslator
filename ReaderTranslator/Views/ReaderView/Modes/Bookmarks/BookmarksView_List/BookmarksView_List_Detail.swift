@@ -42,7 +42,7 @@ struct BookmarksView_List_Detail: View {
             .padding(.bottom, 15)
         }
     }
-    
+
     var sentencesView: some View {
         ForEach(store.longmanSentences, id: \.self) { sentence in
             Text("\(sentence.text)")

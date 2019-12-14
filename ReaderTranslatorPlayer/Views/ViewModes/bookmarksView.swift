@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct BookmarksView: View {
-    @ObservedObject var store = APStore.shared
-    
+    @ObservedObject var store = Store.shared
+
     var body: some View {
         VStack {
             ScrollView {
@@ -32,7 +32,7 @@ struct BookmarksView: View {
             }
         }.padding()
     }
-    
+
     private var bookmarksIco: some View {
         return Image(systemName: "book.circle")
             .resizable()
