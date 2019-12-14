@@ -36,20 +36,24 @@ struct BookmarksView_List_Detail: View {
                     Text("create: \(createTime)")
                 }
                 Text(store.longmanSelectedBookmark).font(.title)
-                ForEach(store.longmanSentences, id: \.self) { sentence in
-                    Text("\(sentence.text)")
-                    .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)
-                    .font(.subheadline)
-                    .onTapGesture {
-                        self.selectSentence = sentence.text
-                        LongmanStore.share.addAudio(url: sentence.url )
-                        LongmanStore.share.next()
-                        self.store.translateAction.add(.gTranslator(text: sentence.text), isSpeaking: false)
-                    }
-                }
+                sentencesView
             }
             .padding(.leading, 5)
             .padding(.bottom, 15)
+        }
+    }
+    
+    var sentencesView: some View {
+        ForEach(store.longmanSentences, id: \.self) { sentence in
+            Text("\(sentence.text)")
+            .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)
+            .font(.subheadline)
+            .onTapGesture {
+                self.selectSentence = sentence.text
+                LongmanStore.share.addAudio(url: sentence.url )
+                LongmanStore.share.next()
+                self.store.translateAction.add(.gTranslator(text: sentence.text), isSpeaking: false)
+            }
         }
     }
 }

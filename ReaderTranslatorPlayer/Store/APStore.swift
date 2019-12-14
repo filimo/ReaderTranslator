@@ -8,14 +8,16 @@
 
 import Foundation
 
-class Store: ObservableObject {
-    static var shared = Store()
+class APStore: ObservableObject {
+    static var shared = APStore()
 
+    @Published var hideNavBar = true
+    
     var lastWebPage = ""
 
     @Published var isPlaying = false {
         willSet {
-            guard let player = player else { return }
+            guard let player = FileListView.player else { return }
 
             if newValue {
                 let currentTime = player.currentTime
@@ -28,7 +30,18 @@ class Store: ObservableObject {
     }
 
     @Published(wrappedValue: nil, key: "lastAudio") var lastAudio: URL?
+    @Published(key: "voiceVolume")  var voiceVolume: Float = 1
     @Published(key: "audioRate") var audioRate: Float = 1
 
     @Published(key: "bookmarks") var bookmarks: Bookmarks = []
+
+
+    @Published var longmanSentences: LongmanSentences = []
+    @Published var longmanSelectedBookmark = "" {
+        willSet {
+            self.longmanSentences = []
+            LongmanStore.share.fetchInfo(text: newValue)
+        }
+    }
+    @Published var longmanAudioRate: Float = 1
 }

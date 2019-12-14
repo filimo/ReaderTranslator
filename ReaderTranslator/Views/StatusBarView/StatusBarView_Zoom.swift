@@ -12,10 +12,10 @@ struct StatusBarView_Zoom: View {
     @ObservedObject var store = Store.shared
     #if !os(macOS)
     let zoom = Binding<String>(
-        get: { String(format: "%.02f", CGFloat(Store.shared.zoom)) },
+        get: { String(format: "%.02f", CGFloat(APStore.shared.zoom)) },
         set: {
             if let value = NumberFormatter().number(from: $0) {
-                Store.shared.zoom = CGFloat(truncating: value)
+                APStore.shared.zoom = CGFloat(truncating: value)
             }
         }
     )

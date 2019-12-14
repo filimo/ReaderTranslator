@@ -10,7 +10,7 @@ import SwiftUI
 import WebKit
 
 class WKPageView: WKWebView {
-    @ObservedObject private var store = Store.shared
+    @ObservedObject private var store = APStore.shared
     private var zoomLevel: CGFloat = 1
 
     @Published var newUrl: String = ""

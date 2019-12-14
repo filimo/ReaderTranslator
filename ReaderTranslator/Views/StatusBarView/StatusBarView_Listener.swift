@@ -81,6 +81,7 @@ extension StatusBarView_Listener.Coordinator: PeerConnectionDelegate {
     // Ignore connection failures and messages prior to starting a game.
     func connectionFailed() {
         status = .failed(error: .connection(text: "connection failed"))
+        start()
     }
     func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
         guard let content = content else { return }

@@ -9,29 +9,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var store = Store.shared
-
-    @State var showHosts = false
-
-    private var playerControlHeight = UIScreen.main.bounds.height / 4
+    @ObservedObject var store = APStore.shared
 
     var body: some View {
-        VStack(spacing: 0) {
-            ScrollView {
-                WKWebRepresenter().frame(height: playerControlHeight * 2)
+        NavigationView {
+            VStack(spacing: 0) {
+                PlayerControlsView()
+                FileListView()
+                BookmarksView()
             }
-            PlayerControlsView().frame(height: playerControlHeight)
-            FileListView().frame(height: playerControlHeight)
-            Image(systemName: "wifi")
-            .onTapGesture {
-                self.showHosts = true
-            }
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarHidden(store.hideNavBar)
+            .onAppear { self.store.hideNavBar = true }
         }
-        .sheet(isPresented: $showHosts) { HostsView() }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @ObservedObject var store = APStore.shared
+    
+    init() {
+//        let bookmarks: Bookmarks = [
+//            .init(counter: 1, text: "work 1", created: Date(), changed: Date()),
+//            .init(counter: 1, text: "work 2", created: Date(), changed: Date()),
+//            .init(counter: 1, text: "work 3", created: Date(), changed: Date())
+//        ]
+//        if store.bookmarks.isEmpty { store.bookmarks = bookmarks }
+    }
+    
     static var previews: some View {
         ContentView()
     }

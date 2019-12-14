@@ -11,10 +11,11 @@ import SwiftUI
 private var timer: Timer?
 
 struct PlayerControlsView: View {
-    @ObservedObject var store = Store.shared
+    @ObservedObject var store = APStore.shared
 
     @State var currentStatus = "0.0/0.0"
     @State var showSafari = false
+    @State var showHosts = false
 
     private var playPauseButton: some View {
         Button(
@@ -29,17 +30,21 @@ struct PlayerControlsView: View {
             AudioRateView()
             RewindButtonsView()
             HStack(spacing: 40) {
+                Button(action: {
+                    self.showHosts = true
+                }, label: { Image(systemName: "wifi") })
+                    .padding(.leading)
+                    .buttonStyle(RoundButtonStyle())
                 Spacer()
                 playPauseButton
-                Button(
-                    action: { self.showSafari = true },
-                    label: { Text("Safari") })
+                Button(action: { self.showSafari = true }, label: { Text("Safari") })
                     .buttonStyle(RoundButtonStyle())
             }
         }
         .sheet(isPresented: $showSafari) {
             SafariView(url: .constant(URL(string: "https://www.ldoceonline.com")))
         }
+        .sheet(isPresented: $showHosts) { HostsView() }
     }
 
     private var statusView: some View {
@@ -56,7 +61,7 @@ struct PlayerControlsView: View {
 
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
-            guard let player = player else { return }
+            guard let player = FileListView.player else { return }
             self.currentStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
         }
     }

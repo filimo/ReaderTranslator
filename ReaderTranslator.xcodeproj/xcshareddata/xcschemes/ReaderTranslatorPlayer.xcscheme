@@ -20,20 +20,6 @@
                ReferencedContainer = "container:ReaderTranslator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F0754436234479DA00E1D88E"
-               BuildableName = "ReaderTranslatorMac.app"
-               BlueprintName = "ReaderTranslatorMac"
-               ReferencedContainer = "container:ReaderTranslator.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

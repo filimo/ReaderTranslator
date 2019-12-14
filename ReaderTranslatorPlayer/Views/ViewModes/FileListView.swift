@@ -9,13 +9,14 @@
 import SwiftUI
 import AVFoundation
 
-var player: AVAudioPlayer?
 
 struct FileListView: View {
-    @ObservedObject var store = Store.shared
+    @ObservedObject var store = APStore.shared
 
     @State var files: [URL] = []
 
+    static var player: AVAudioPlayer?
+    
     init() {
         do {
             let sharedInstance = AVAudioSession.sharedInstance()
@@ -78,9 +79,9 @@ struct FileListView: View {
 
     private func openAudio(url: URL) {
         do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.enableRate = true
-            player?.rate = store.audioRate
+            Self.player = try AVAudioPlayer(contentsOf: url)
+            Self.player?.enableRate = true
+            Self.player?.rate = store.audioRate
         } catch {
             print(error)
         }
