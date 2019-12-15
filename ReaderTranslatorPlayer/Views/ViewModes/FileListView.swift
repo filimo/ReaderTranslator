@@ -15,6 +15,7 @@ struct FileListView: View {
     @State var files: [URL] = []
 
     static var player: AVAudioPlayer?
+    static var directoryObserver: DirectoryObserver?
 
     init() {
         do {
@@ -51,26 +52,31 @@ struct FileListView: View {
             }
         }
         .onAppear {
-            RunLoop.main.perform {
-                self.refresh()
+            if let url = self.folderUrl {
+                RunLoop.main.perform { self.refresh() }
+                Self.directoryObserver = DirectoryObserver(URL: url) { self.refresh() }
             }
             if let lastAudio = self.store.lastAudio { self.openAudio(url: lastAudio) }
         }
     }
+
+    private let folderUrl: URL? = {
+        guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        return documentsUrl.appendingPathComponent("/Inbox")
+    }()
 
     private func getColor(url: URL) -> Color {
         store.lastAudio?.lastPathComponent == url.lastPathComponent ? Color.yellow : Color.primary
     }
 
     private func refresh() {
-        guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            files = []
-            return
-        }
+        files = []
+        guard let url = folderUrl else { return }
 
         do {
-            let inbox = documentsUrl.appendingPathComponent("/Inbox")
-            let items = try FileManager.default.contentsOfDirectory(at: inbox, includingPropertiesForKeys: nil)
+            let items = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
 
             files = items
         } catch {
