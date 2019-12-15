@@ -18,11 +18,11 @@ struct BookmarksView: View {
                     ForEach(store.bookmarks, id: \.self) { bookmark in
                         HStack {
                             NavigationLink(
-                                destination: LongmanView(phrase: bookmark.text),
+                                destination: SentencesView(bookmark: bookmark.text),
                                 label: { Text(bookmark.text).font(.largeTitle) }
                             )
                             NavigationLink(
-                                destination: SentencesView(bookmark: bookmark.text),
+                                destination: LongmanView(phrase: bookmark.text),
                                 label: { self.bookmarksIco }
                             )
                             Spacer()

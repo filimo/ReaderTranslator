@@ -98,6 +98,7 @@
 		F058C801239930F3002C84F0 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058C7FF23992F92002C84F0 /* BookmarksView.swift */; };
 		F058D6B4239EDF3C00195338 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058D6B3239EDF3C00195338 /* SettingsView.swift */; };
 		F058D6B5239EDF3C00195338 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058D6B3239EDF3C00195338 /* SettingsView.swift */; };
+		F0667CF023A6B2E70063BAC6 /* GTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0667CEF23A6B2E70063BAC6 /* GTranslatorRepresenter.swift */; };
 		F06B0946239CB8FA00A39A86 /* BookmarksView_List_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */; };
 		F06B0947239CB8FA00A39A86 /* BookmarksView_List_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */; };
 		F06DB1002344856300C2DE90 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
@@ -111,6 +112,7 @@
 		F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB115234611BB00C2DE90 /* ExtensionManager.swift */; };
 		F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB115234611BB00C2DE90 /* ExtensionManager.swift */; };
 		F06EAF8F2393A4E100AAE1A4 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */; };
+		F073289323A6C7A0008CB539 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F073289223A6C7A0008CB539 /* BookmarksView.swift */; };
 		F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0754439234479DA00E1D88E /* AppDelegate.swift */; };
 		F075443E234479DB00E1D88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F075443D234479DB00E1D88E /* Assets.xcassets */; };
 		F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0754440234479DB00E1D88E /* Preview Assets.xcassets */; };
@@ -164,7 +166,6 @@
 		F0AB12B4233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */; };
 		F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */; };
 		F0AB182523A5504200A71CA6 /* SentencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB182423A5504200A71CA6 /* SentencesView.swift */; };
-		F0AB182723A5508500A71CA6 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB182623A5508500A71CA6 /* BookmarksView.swift */; };
 		F0AD8B1B236413F60017C22F /* AvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1A236413F60017C22F /* AvailableView.swift */; };
 		F0AD8B1C236413F60017C22F /* AvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1A236413F60017C22F /* AvailableView.swift */; };
 		F0AD8B1E236414070017C22F /* TranslateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1D236414070017C22F /* TranslateAction.swift */; };
@@ -217,6 +218,7 @@
 		F0D2E335234BA49000D95994 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
 		F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
+		F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */; };
 		F0DADAE5239BE8C200CFE2B1 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F0DADAE4239BE8C200CFE2B1 /* SwiftSoup */; };
 		F0EDE34B236418E000E0B81C /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EDE34D23641B1300E0B81C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE34C23641B1300E0B81C /* Stack.swift */; };
@@ -321,6 +323,7 @@
 		F058C7FF23992F92002C84F0 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F058D6B3239EDF3C00195338 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F062029423812264002EEAEE /* YTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorRepresenter.swift; sourceTree = "<group>"; };
+		F0667CEF23A6B2E70063BAC6 /* GTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorRepresenter.swift; sourceTree = "<group>"; };
 		F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_List_Detail.swift; sourceTree = "<group>"; };
 		F06D1C0D2361FFBC008A0C38 /* WikipediaRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaRepresenter.swift; sourceTree = "<group>"; };
 		F06DB1032344975E00C2DE90 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
@@ -329,6 +332,7 @@
 		F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Toggle.swift; sourceTree = "<group>"; };
 		F06DB115234611BB00C2DE90 /* ExtensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionManager.swift; sourceTree = "<group>"; };
 		F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		F073289223A6C7A0008CB539 /* BookmarksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0754439234479DA00E1D88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F075443D234479DB00E1D88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -382,7 +386,6 @@
 		F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Favorite.swift; sourceTree = "<group>"; };
 		F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Volume.swift; sourceTree = "<group>"; };
 		F0AB182423A5504200A71CA6 /* SentencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentencesView.swift; sourceTree = "<group>"; };
-		F0AB182623A5508500A71CA6 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F0AD8B1A236413F60017C22F /* AvailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableView.swift; sourceTree = "<group>"; };
 		F0AD8B1D236414070017C22F /* TranslateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAction.swift; sourceTree = "<group>"; };
 		F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Bookmarks.swift; sourceTree = "<group>"; };
@@ -395,6 +398,7 @@
 		F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_Controls.swift; sourceTree = "<group>"; };
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
+		F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
 		F0EDE34C23641B1300E0B81C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_Controls_ActionMenu.swift; sourceTree = "<group>"; };
 		F0EDFB21239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Pdf_Toolbar_PlayButtons.swift; sourceTree = "<group>"; };
@@ -566,6 +570,7 @@
 		F06EAF902393A7EF00AAE1A4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F0667CEF23A6B2E70063BAC6 /* GTranslatorRepresenter.swift */,
 				F08EBAEC23943835009025D3 /* LongmanRepresenter.swift */,
 				F08EBB0C23956A20009025D3 /* NetworkManager.swift */,
 			);
@@ -786,11 +791,12 @@
 		F0AB182323A5501C00A71CA6 /* ViewModes */ = {
 			isa = PBXGroup;
 			children = (
+				F073289223A6C7A0008CB539 /* BookmarksView.swift */,
 				F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */,
 				F08EBB0423956202009025D3 /* FileListView.swift */,
 				F02B04C223A2930D00F93B84 /* HostsView.swift */,
 				F0AB182423A5504200A71CA6 /* SentencesView.swift */,
-				F0AB182623A5508500A71CA6 /* BookmarksView.swift */,
+				F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */,
 				F0F506CC23A6701F003367BD /* LongmanView.swift */,
 			);
 			path = ViewModes;
@@ -905,7 +911,6 @@
 				F0120370239182DA008D0B47 /* Frameworks */,
 				F0120371239182DA008D0B47 /* Resources */,
 				F01F89DB23A5F7800082153E /* SwiftLint */,
-				F01F89DC23A5F7A30082153E /* SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -928,7 +933,6 @@
 				F0754435234479DA00E1D88E /* Resources */,
 				F075446423447A2800E1D88E /* Embed App Extensions */,
 				F0562E1023633FCD0074ACF5 /* SwiftLint */,
-				F01F89DA23A5F65A0082153E /* SwiftFormat */,
 				F07B03AB2374722F006EDFF9 /* Incremental Build */,
 			);
 			buildRules = (
@@ -1088,24 +1092,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F01F89DA23A5F65A0082153E /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5.1 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
 		F01F89DB23A5F7800082153E /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1123,24 +1109,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		F01F89DC23A5F7A30082153E /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5.1 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 		F0562E1023633FCD0074ACF5 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1221,21 +1189,23 @@
 				F08EBAF223952AD6009025D3 /* WebViewContainer.swift in Sources */,
 				F058C7F72397FA56002C84F0 /* WKCoordinator.swift in Sources */,
 				F0B5362023A52F0900E68E74 /* Stack.swift in Sources */,
+				F073289323A6C7A0008CB539 /* BookmarksView.swift in Sources */,
 				F058C7FC2397FAD0002C84F0 /* Safari.swift in Sources */,
 				F058C7F52397FA23002C84F0 /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F02B04B523A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */,
 				F08EBB09239564F3009025D3 /* AudioRateView.swift in Sources */,
 				F0AB182523A5504200A71CA6 /* SentencesView.swift in Sources */,
 				F08EBB0723956495009025D3 /* RewindButtonsView.swift in Sources */,
+				F0667CF023A6B2E70063BAC6 /* GTranslatorRepresenter.swift in Sources */,
 				F08EBB0B239565CC009025D3 /* PlayerContolsView.swift in Sources */,
 				F012038D239286A2008D0B47 /* Store.swift in Sources */,
 				F02B04C523A2930D00F93B84 /* HostsView.swift in Sources */,
+				F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */,
 				F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */,
 				F08EBB0523956202009025D3 /* FileListView.swift in Sources */,
 				F046182E23A3A4AF0041E726 /* ConnectionClientStatus.swift in Sources */,
 				F02B04BD23A2896900F93B84 /* PeerListener.swift in Sources */,
 				F08EBAED23943835009025D3 /* LongmanRepresenter.swift in Sources */,
-				F0AB182723A5508500A71CA6 /* BookmarksView.swift in Sources */,
 				F058C7F42397F9DB002C84F0 /* WKPageView.swift in Sources */,
 				F058C7FA2397FA7C002C84F0 /* NSObject.swift in Sources */,
 				F012037A239182DA008D0B47 /* ContentView.swift in Sources */,

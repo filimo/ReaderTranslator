@@ -85,7 +85,7 @@ enum AvailableView: String, Codable, CaseIterable {
             .yTranslator,
             .gTranslator,
             .pdf,
-            .web,
+            .web
         ]
         return views.sorted { $0.orderInt < $1.orderInt }
     }

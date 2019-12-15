@@ -31,7 +31,7 @@ class ServiceProvider: NSObject {
         let defaultUrl = "https://translate.google.com"
         guard var urlComponent = URLComponents(string: defaultUrl) else { return }
         urlComponent.queryItems = [
-            .init(name: "text", value: text),
+            .init(name: "text", value: text)
         ]
 
         if let url = urlComponent.url { Safari.openSafari(url) }

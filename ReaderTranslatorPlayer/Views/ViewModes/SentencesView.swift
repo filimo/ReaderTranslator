@@ -12,22 +12,30 @@ struct SentencesView: View {
     @ObservedObject var store = Store.shared
     var bookmark: String
     @State var sentence = ""
+    @State var showGTranlator: LongmanSentence?
+    @State var showLongmanView = false
 
     var body: some View {
         VStack {
             List {
                 ForEach(store.longmanSentences, id: \.self) { sentence in
-                    HStack {
-                        NavigationLink(destination: LongmanView(phrase: self.store.longmanSelectedBookmark), label: {
-                            Text(sentence.text)
-                            self.soundIco
-                                .onTapGesture {
-                                    LongmanStore.share.addAudio(url: sentence.url)
-                                    LongmanStore.share.next()
-                                }
-                        })
+                    VStack {
+                        self.controlView(sentence: sentence)
                     }
                 }
+            }
+            if showGTranlator != nil {
+                NavigationLink(
+                    destination: GTranslatorView(
+                        sentence: showGTranlator ?? LongmanSentence.empty),
+                    isActive: .constant(true),
+                    label: { EmptyView() })
+            }
+            if showLongmanView {
+                NavigationLink(
+                    destination: LongmanView(phrase: store.longmanSelectedBookmark),
+                    isActive: .constant(true),
+                    label: { EmptyView() })
             }
         }
         .onAppear {
@@ -37,6 +45,23 @@ struct SentencesView: View {
                     self.store.longmanSelectedBookmark = self.bookmark
                 }
             }
+            self.showGTranlator = nil
+            self.showLongmanView = false
+        }
+    }
+
+    private func controlView(sentence: LongmanSentence) -> some View {
+        HStack {
+            self.soundIco
+                .onTapGesture {
+                    LongmanStore.share.addAudio(url: sentence.url)
+                    LongmanStore.share.next()
+                }
+            Text(sentence.text).onTapGesture {
+                self.showGTranlator = sentence
+            }
+            Spacer()
+            longmanIco.onTapGesture { self.showLongmanView = true }
         }
     }
 
@@ -48,7 +73,7 @@ struct SentencesView: View {
             .padding(.trailing, 10)
     }
 
-    private var bookmarksIco: some View {
+    private var longmanIco: some View {
         Image(systemName: "book.circle")
             .resizable()
             .aspectRatio(contentMode: .fit)

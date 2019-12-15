@@ -66,7 +66,7 @@ struct YTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
             guard var urlComponent = URLComponents(string: defaultURL) else { return }
             urlComponent.queryItems = [
                 .init(name: "lang", value: lang),
-                .init(name: "text", value: text),
+                .init(name: "text", value: text)
             ]
 
             if let url = urlComponent.url {

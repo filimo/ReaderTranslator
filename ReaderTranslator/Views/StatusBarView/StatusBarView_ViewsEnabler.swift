@@ -21,7 +21,7 @@ struct StatusBarView_ViewsEnabler: View {
         .yTranslator,
         .pdf,
         .web,
-        .safari,
+        .safari
     ]
 
     var body: some View {

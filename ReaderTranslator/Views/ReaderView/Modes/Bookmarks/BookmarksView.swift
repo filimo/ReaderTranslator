@@ -44,7 +44,7 @@ struct BookmarksView_Previews: PreviewProvider {
             LongmanSentence(text: "Sentence 3", url: url),
             LongmanSentence(text: "Sentence 4", url: url),
             LongmanSentence(text: "Sentence 5", url: url),
-            LongmanSentence(text: "Sentence 6", url: url),
+            LongmanSentence(text: "Sentence 6", url: url)
         ]
 
         return BookmarksView()

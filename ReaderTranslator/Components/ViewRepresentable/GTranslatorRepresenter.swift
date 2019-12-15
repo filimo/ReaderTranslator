@@ -69,7 +69,7 @@ struct GTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
                 .init(name: "op", value: "translate"),
                 .init(name: "sl", value: slValue),
                 .init(name: "tl", value: tlValue),
-                .init(name: "text", value: text),
+                .init(name: "text", value: text)
             ]
 
             if let url = urlComponent.url {
