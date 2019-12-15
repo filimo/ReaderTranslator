@@ -9,18 +9,25 @@
 import SwiftUI
 
 struct LongmanView: View {
+    var phrase: String
+
     @ObservedObject var store = Store.shared
 
     var body: some View {
-        LongmanRepresenter()
+        LongmanRepresenter(phrase: phrase)
             .onAppear {
                 self.store.hideNavBar = false
+                if self.store.longmanSelectedBookmark != self.phrase {
+                    RunLoop.main.perform {
+                        self.store.longmanSelectedBookmark = self.phrase
+                    }
+                }
             }
     }
 }
 
 struct LongmanView_Previews: PreviewProvider {
     static var previews: some View {
-        LongmanView()
+        LongmanView(phrase: "test")
     }
 }

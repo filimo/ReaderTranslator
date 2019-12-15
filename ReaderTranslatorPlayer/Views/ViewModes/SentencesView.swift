@@ -18,13 +18,13 @@ struct SentencesView: View {
             List {
                 ForEach(store.longmanSentences, id: \.self) { sentence in
                     HStack {
-                        NavigationLink(destination: LongmanRepresenter(), label: {
+                        NavigationLink(destination: LongmanView(phrase: self.store.longmanSelectedBookmark), label: {
                             Text(sentence.text)
                             self.soundIco
                                 .onTapGesture {
                                     LongmanStore.share.addAudio(url: sentence.url)
                                     LongmanStore.share.next()
-                            }
+                                }
                         })
                     }
                 }

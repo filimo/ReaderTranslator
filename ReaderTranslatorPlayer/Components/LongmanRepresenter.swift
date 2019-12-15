@@ -12,14 +12,14 @@ import WebKit
 private var view: WKPageView?
 
 struct LongmanRepresenter: UIViewRepresentable, WKScriptsSetup {
-    @ObservedObject var store = Store.shared
+    var phrase: String
     private let defaultURL = "https://www.ldoceonline.com/dictionary/"
 
     func makeUIView(context _: Context) -> WKPageView {
         if view == nil { view = WKPageView() }
         guard let view = view else { return WKPageView() }
 
-        let search = store.longmanSelectedBookmark.replacingOccurrences(of: " ", with: "-")
+        let search = phrase.replacingOccurrences(of: " ", with: "-")
         let urlString = "\(defaultURL)\(search)"
 
         loadWithRuleList(urlString: urlString, view: view, file: "longman")
