@@ -23,24 +23,24 @@ extension Array where Element == Bookmark {
     }
 
     func contains(text: String) -> Bool {
-        self.first { $0.text == text } != nil
+        first { $0.text == text } != nil
     }
 
     func firstIndex(text: String) -> Int? {
-        self.firstIndex { $0.text == text }
+        firstIndex { $0.text == text }
     }
 
     func first(text: String) -> Element? {
-        self.first { $0.text == text }
+        first { $0.text == text }
     }
 
     mutating func remove(text: String) {
         guard let index = self.firstIndex(text: text) else { return }
-        self.remove(at: index)
+        remove(at: index)
     }
 
     mutating func append(_ text: String) {
-        self.append(Bookmark(text: text, created: Date(), changed: Date()))
+        append(Bookmark(text: text, created: Date(), changed: Date()))
     }
 
     mutating func append(items: [Substring]) {
@@ -48,18 +48,17 @@ extension Array where Element == Bookmark {
     }
 
     func joined(separator: String) -> String {
-        self.map { $0.text }.joined(separator: separator)
+        map { $0.text }.joined(separator: separator)
     }
 
     func chunked(into: Int) -> [Element] {
-        self
-        .sorted { $0.text.lowercased() < $1.text.lowercased() }
-        .chunked(into: into)
+        sorted { $0.text.lowercased() < $1.text.lowercased() }
+            .chunked(into: into)
     }
 
     func filter(counter: Int) -> [Element] {
         if counter == -1 { return self }
-        return self.filter { $0.counter == counter }
+        return filter { $0.counter == counter }
     }
 
     mutating func increase(bookmark: Element) {
@@ -75,7 +74,7 @@ extension Array where Element == Bookmark {
     }
 
     mutating func clearAllCounters() {
-        for index in self.indices {
+        for index in indices {
             self[index].counter = 0
             self[index].changed = Date()
         }

@@ -56,17 +56,17 @@ struct YTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
         return view
     }
 
-    func updateView(_ view: WKPageView, context: Context) {
+    func updateView(_ view: WKPageView, context _: Context) {
         if case let .yTranslator(text) = selectedText {
             Store.shared.translateAction.next()
 
             print("\(theClassName)_updateView_update", text)
 
-            let (lang) = getParams(url: view.url)
+            let lang = getParams(url: view.url)
             guard var urlComponent = URLComponents(string: defaultURL) else { return }
             urlComponent.queryItems = [
                 .init(name: "lang", value: lang),
-                .init(name: "text", value: text)
+                .init(name: "text", value: text),
             ]
 
             if let url = urlComponent.url {
@@ -91,7 +91,7 @@ struct YTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
 }
 
 extension YTranslatorRepresenter.Coordinator: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
         var text: String { event.extra?.selectedText ?? "" }
 
@@ -100,7 +100,7 @@ extension YTranslatorRepresenter.Coordinator: WKScriptMessageHandler {
             guard let text = event.extra?.selectedText else { return }
             selectedText = .reverso(text: text)
         case "keydown":
-            if event.extra?.keyCode == 18 { //Alt
+            if event.extra?.keyCode == 18 { // Alt
                 SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)
             }
         default:

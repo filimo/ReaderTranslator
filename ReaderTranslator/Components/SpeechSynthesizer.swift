@@ -24,7 +24,7 @@ extension Array where Element: Hashable {
 }
 
 class SpeechSynthesizer {
-    static private var speechSynthesizer = AVSpeechSynthesizer()
+    private static var speechSynthesizer = AVSpeechSynthesizer()
     static var languages: [String] = {
         var items = AVSpeechSynthesisVoice.speechVoices().map { $0.language }.unique
         items.sort { left, right -> Bool in
@@ -33,17 +33,18 @@ class SpeechSynthesizer {
         return items
     }()
 
-    private init() { }
+    private init() {}
 
     static func getVoices(language: String) -> [VoiceInfo] {
         AVSpeechSynthesisVoice.speechVoices()
-            .filter({ $0.language == language })
+            .filter { $0.language == language }
             .map { voice in
                 .init(
                     name: voice.name,
                     premium: voice.description.contains("premium"),
                     language: voice.language,
-                    voice: voice)
+                    voice: voice
+                )
             }
     }
 
@@ -63,8 +64,8 @@ class SpeechSynthesizer {
         text: String = Store.shared.translateAction.getText(),
         voiceName: String = Store.shared.voiceName,
         stopSpeaking: Bool = false,
-        isVoiceEnabled: Bool = Store.shared.isVoiceEnabled) {
-
+        isVoiceEnabled: Bool = Store.shared.isVoiceEnabled
+    ) {
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
 
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })

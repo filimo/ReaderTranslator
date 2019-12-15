@@ -6,10 +6,10 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import Foundation
-import Combine
-import SwiftSoup
 import AVFoundation
+import Combine
+import Foundation
+import SwiftSoup
 import SwiftUI
 
 private var cancellableSet: Set<AnyCancellable> = []
@@ -52,13 +52,13 @@ class LongmanStore: NSObject {
     }
 
     func addAudio(url: URL) {
-        self.audioUrls.push(url)
+        audioUrls.push(url)
     }
 
     private func addSentences(document: Document) {
         do {
             let sentences = try document.select(".exafile")
-            sentences.forEach { elm  in
+            sentences.forEach { elm in
                 do {
                     let string = try elm.attr("data-src-mp3")
                     guard let url = URL(string: string) else { return }
@@ -84,7 +84,7 @@ class LongmanStore: NSObject {
 
             addAudio(url: url)
         } catch {
-          print(error)
+            print(error)
         }
     }
 
@@ -112,11 +112,11 @@ class LongmanStore: NSObject {
 }
 
 extension LongmanStore: AVAudioPlayerDelegate {
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully _: Bool) {
         next()
     }
 
-    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+    func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) {
         next()
     }
 }

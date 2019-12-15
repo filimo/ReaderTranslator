@@ -15,14 +15,14 @@ struct StatusBarView_Voice_Volume: View {
         Group {
             Text("Rate:")
             #if os(macOS)
-            TextField("   ", text: self.$store.voiceRate, onCommit: { SpeechSynthesizer.speak() })
-                .fixedSize()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("   ", text: self.$store.voiceRate, onCommit: { SpeechSynthesizer.speak() })
+                    .fixedSize()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             #else
-            TextField("   ", text: self.$store.voiceRate)
-                .fixedSize()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.numberPad)
+                TextField("   ", text: self.$store.voiceRate)
+                    .fixedSize()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
             #endif
         }
     }

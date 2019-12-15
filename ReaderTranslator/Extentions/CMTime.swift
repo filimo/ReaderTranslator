@@ -10,13 +10,12 @@ import Foundation
 
 extension CMTime {
     static func + (lhs: CMTime, rhs: TimeInterval) -> CMTime {
-        return CMTime(seconds: lhs.seconds + rhs,
-                      preferredTimescale: lhs.timescale)
+        CMTime(seconds: lhs.seconds + rhs,
+               preferredTimescale: lhs.timescale)
     }
 
     static func += (lhs: inout CMTime, rhs: TimeInterval) {
         lhs = CMTime(seconds: lhs.seconds + rhs,
-                      preferredTimescale: lhs.timescale)
+                     preferredTimescale: lhs.timescale)
     }
-
 }

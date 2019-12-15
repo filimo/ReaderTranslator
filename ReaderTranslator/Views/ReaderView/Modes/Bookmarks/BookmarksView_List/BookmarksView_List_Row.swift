@@ -6,8 +6,8 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 struct BookmarksView_List_Row: View {
     @ObservedObject var store = Store.shared
@@ -18,7 +18,7 @@ struct BookmarksView_List_Row: View {
     var width: CGFloat
 
     var showDetail: Bool {
-        self.bookmarks.contains(text: self.store.longmanSelectedBookmark)
+        bookmarks.contains(text: store.longmanSelectedBookmark)
     }
 
     var body: some View {
@@ -49,11 +49,11 @@ struct BookmarksView_List_Row: View {
 
     private func bookmarkView(bookmark: Bookmark) -> some View {
         Text("\(bookmark.text)")
-        .frame(width: self.width, alignment: .leading)
-        .foregroundColor(self.store.longmanSelectedBookmark == bookmark.text ? Color.yellow : Color.primary)
-        .onTapGesture {
-            self.store.longmanSelectedBookmark = bookmark.text
-            self.store.translateAction.addAll(text: bookmark.text, except: .bookmarks, isSpeaking: false)
-        }
+            .frame(width: width, alignment: .leading)
+            .foregroundColor(store.longmanSelectedBookmark == bookmark.text ? Color.yellow : Color.primary)
+            .onTapGesture {
+                self.store.longmanSelectedBookmark = bookmark.text
+                self.store.translateAction.addAll(text: bookmark.text, except: .bookmarks, isSpeaking: false)
+            }
     }
 }

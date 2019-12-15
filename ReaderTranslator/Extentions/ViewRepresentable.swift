@@ -9,9 +9,9 @@
 import SwiftUI
 
 #if os(macOS)
-typealias ViewRepresentableType = NSViewRepresentable
+    typealias ViewRepresentableType = NSViewRepresentable
 #else
-typealias ViewRepresentableType = UIViewRepresentable
+    typealias ViewRepresentableType = UIViewRepresentable
 #endif
 
 protocol ViewRepresentable: ViewRepresentableType {
@@ -26,23 +26,26 @@ protocol ViewRepresentable: ViewRepresentableType {
 
 extension ViewRepresentable {
     #if os(macOS)
-    func makeNSView(context: Context) -> ViewType {
-        print("\(theClassName)_makeView")
-        return makeView(context: context)
-    }
-    func updateNSView(_ view: ViewType, context: Context) {
-        print("\(theClassName)_updateView")
-        updateView(view, context: context)
-    }
+        func makeNSView(context: Context) -> ViewType {
+            print("\(theClassName)_makeView")
+            return makeView(context: context)
+        }
+
+        func updateNSView(_ view: ViewType, context: Context) {
+            print("\(theClassName)_updateView")
+            updateView(view, context: context)
+        }
+
     #else
-    func makeUIView(context: Context) -> ViewType {
-        print("\(theClassName)_makeView")
-        return makeView(context: context)
-    }
-    func updateUIView(_ view: ViewType, context: Context) {
-        print("\(theClassName)_updateView")
-        updateView(view, context: context)
-    }
+        func makeUIView(context: Context) -> ViewType {
+            print("\(theClassName)_makeView")
+            return makeView(context: context)
+        }
+
+        func updateUIView(_ view: ViewType, context: Context) {
+            print("\(theClassName)_updateView")
+            updateView(view, context: context)
+        }
     #endif
 }
 

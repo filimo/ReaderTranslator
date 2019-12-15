@@ -14,19 +14,20 @@ struct StatusBarView_Voice_Favorite: View {
     var body: some View {
         Group {
             button()
-            .contextMenu {
-                ForEach(store.favoriteVoiceNames, id: \.id) { item in
-                    Button(
-                        action: {
-                            self.store.voiceLanguage = item.language
-                            self.store.voiceName = item.voice
-                            SpeechSynthesizer.speak(isVoiceEnabled: true)
-                        },
-                        label: {
-                            Text("\(item.language) \(item.voice)")
-                    })
+                .contextMenu {
+                    ForEach(store.favoriteVoiceNames, id: \.id) { item in
+                        Button(
+                            action: {
+                                self.store.voiceLanguage = item.language
+                                self.store.voiceName = item.voice
+                                SpeechSynthesizer.speak(isVoiceEnabled: true)
+                            },
+                            label: {
+                                Text("\(item.language) \(item.voice)")
+                            }
+                        )
+                    }
                 }
-            }
         }
     }
 
@@ -38,7 +39,8 @@ struct StatusBarView_Voice_Favorite: View {
                 },
                 label: {
                     Image.sfSymbol("star.fill")
-            })
+                }
+            )
         } else {
             return Button(
                 action: {
@@ -46,7 +48,8 @@ struct StatusBarView_Voice_Favorite: View {
                 },
                 label: {
                     Image.sfSymbol("star")
-            })
+                }
+            )
         }
     }
 }

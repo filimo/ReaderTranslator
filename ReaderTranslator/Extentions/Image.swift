@@ -8,15 +8,15 @@
 import SwiftUI
 
 #if os(macOS)
-extension Image {
-    static func sfSymbol(_ systemName: String) -> some View {
-        Image(systemName)
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .colorInvert()
-        .frame(height: 20)
+    extension Image {
+        static func sfSymbol(_ systemName: String) -> some View {
+            Image(systemName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .colorInvert()
+                .frame(height: 20)
+        }
     }
-}
 #endif
 
 struct ImageView_Previews: PreviewProvider {

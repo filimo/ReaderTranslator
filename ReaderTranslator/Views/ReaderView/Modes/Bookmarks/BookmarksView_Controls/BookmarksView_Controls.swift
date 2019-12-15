@@ -16,19 +16,20 @@ struct BookmarksView_Controls: View {
     }
 
     private var bookmarks: Bookmarks {
-        self.store.bookmarks.filter(counter: self.store.bookmarksCounterFilter)
+        store.bookmarks.filter(counter: store.bookmarksCounterFilter)
     }
 
     var body: some View {
         VStack {
             HStack {
                 MenuButton("counter \(filterString(self.store.bookmarksCounterFilter))") {
-                    ForEach(-1...5, id: \.self) { counter in
+                    ForEach(-1 ... 5, id: \.self) { counter in
                         Button(
                             action: {
                                 self.store.bookmarksCounterFilter = counter
                             },
-                            label: { Text(self.filterString(counter)) })
+                            label: { Text(self.filterString(counter)) }
+                        )
                     }
                 }.fixedSize()
                 Text("\(bookmarks.count)/\(store.bookmarks.count)")

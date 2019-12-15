@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     init() {
         #if os(macOS)
-        NSApplication.shared.servicesProvider = ServiceProvider()
-        NSUpdateDynamicServices()
+            NSApplication.shared.servicesProvider = ServiceProvider()
+            NSUpdateDynamicServices()
         #endif
     }
 

@@ -16,7 +16,7 @@ struct ReaderView: View {
         ScrollView(.horizontal) {
             HStack {
                 #if os(macOS)
-                SafariView()
+                    SafariView()
                 #endif
                 ForEach(AvailableView.resiableViews, id: \.self) { view in
                     Group {

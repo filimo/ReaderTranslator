@@ -20,7 +20,8 @@ struct ReaderView_Pdf_Toolbar: View {
             ReaderView_Pdf_Toolbar_PlayButtons(
                 audioPlayer: $player,
                 currentStatus: $currentStatus,
-                isPlaying: $isPlaying)
+                isPlaying: $isPlaying
+            )
             HStack {
                 statusView
                 audioRateButtonsView
@@ -47,7 +48,8 @@ struct ReaderView_Pdf_Toolbar: View {
                     self.store.lastPdf = url
                 }
             },
-            label: { Text("📂 PDF") })
+            label: { Text("📂 PDF") }
+        )
     }
 
     private var openAudioButton: some View {
@@ -77,14 +79,14 @@ struct ReaderView_Pdf_Toolbar: View {
         HStack {
             Text("Page:")
             #if os(macOS)
-            TextField("   ", text: self.$store.currentPdfPage)
-                .fixedSize()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("   ", text: self.$store.currentPdfPage)
+                    .fixedSize()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             #else
-            TextField("   ", text: self.$store.currentPdfPage)
-                .fixedSize()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.numberPad)
+                TextField("   ", text: self.$store.currentPdfPage)
+                    .fixedSize()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
             #endif
             Text(" / \(self.store.pageCount)")
         }

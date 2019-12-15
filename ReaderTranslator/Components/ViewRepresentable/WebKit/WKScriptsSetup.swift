@@ -25,7 +25,7 @@ extension WKScriptsSetup {
             userContentController.add(coordinator, name: "send")
 
             #if os(macOS)
-            view.allowsMagnification = true
+                view.allowsMagnification = true
             #endif
             view.navigationDelegate = coordinator
 
@@ -67,7 +67,7 @@ extension WKScriptsSetup {
             WKContentRuleListStore.default()?.compileContentRuleList(
                 forIdentifier: "ContentBlockingRules",
                 encodedContentRuleList: json,
-                completionHandler: { (contentRuleList, error) in
+                completionHandler: { contentRuleList, error in
                     if let error = error {
                         print(error)
                         return
@@ -77,13 +77,14 @@ extension WKScriptsSetup {
                     view.configuration.userContentController.add(contentRuleList)
 
                     view.load(urlString: urlString)
-            })
+                }
+            )
 
         } catch {
             print(error.localizedDescription)
         }
     }
 
-    func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!) {}
-    func goBack(_ webView: WKPageView) {}
+    func webView(_: WKPageView, didFinish _: WKNavigation!) {}
+    func goBack(_: WKPageView) {}
 }

@@ -38,12 +38,12 @@ class WKCoordinator: NSObject {
 
 extension WKCoordinator: WKNavigationDelegate {
     func webView(
-        _ webView: WKWebView,
+        _: WKWebView,
         decidePolicyFor navigationAction: WKNavigationAction,
-        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-
+        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+    ) {
         if let url = navigationAction.request.url {
-            if url.absoluteString == self.store.lastWebPage {
+            if url.absoluteString == store.lastWebPage {
                 decisionHandler(.allow)
             } else {
                 Safari.openSafari(url)
@@ -57,10 +57,11 @@ extension WKCoordinator: WKNavigationDelegate {
     }
 
     func webView(
-        _ webView: WKWebView,
+        _: WKWebView,
         decidePolicyFor navigationAction: WKNavigationAction,
         preferences: WKWebpagePreferences,
-        decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
+        decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void
+    ) {
         guard navigationAction.targetFrame?.isMainFrame == true else {
             decisionHandler(.allow, preferences)
             return
@@ -68,7 +69,7 @@ extension WKCoordinator: WKNavigationDelegate {
         decisionHandler(.allow, preferences)
     }
 
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+    func webView(_: WKWebView, didFailProvisionalNavigation _: WKNavigation!, withError error: Error) {
         print(error)
     }
 }

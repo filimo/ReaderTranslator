@@ -16,20 +16,20 @@ struct BookmarksView_List: View {
     @Binding var filter: String
 
     private var bookmarks: [Bookmarks] {
-        if case let .bookmarks(text) = self.store.translateAction {
+        if case let .bookmarks(text) = store.translateAction {
             Store.shared.translateAction.next()
             Store.shared.longmanSelectedBookmark = text
         }
 
-        var bookmarks = self.store.bookmarks
+        var bookmarks = store.bookmarks
         let filter = self.filter.trimmingCharacters(in: .whitespaces)
 
         if !filter.isEmpty {
-             bookmarks = bookmarks.filter { $0.text.contains(filter) }
+            bookmarks = bookmarks.filter { $0.text.contains(filter) }
         }
 
         return bookmarks
-            .filter(counter: self.store.bookmarksCounterFilter)
+            .filter(counter: store.bookmarksCounterFilter)
             .sorted
             .chunked(into: columnts)
     }

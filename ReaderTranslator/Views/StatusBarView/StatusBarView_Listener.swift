@@ -6,8 +6,8 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SwiftUI
 import Network
+import SwiftUI
 
 struct StatusBarView_Listener: View {
     @ObservedObject var store = Store.shared
@@ -15,7 +15,7 @@ struct StatusBarView_Listener: View {
     class Coordinator: ObservableObject {
         var name: String { "ReaderTranslator_\(connectionCount)" }
         var generatePasscode: String { String("\(randomInt)\(randomInt)\(randomInt)\(randomInt)") }
-        private var randomInt: Int { Int.random(in: 0...9) }
+        private var randomInt: Int { Int.random(in: 0 ... 9) }
 
         @Published var connectionCount = 0
         @Published var status = ConnectionServerStatus.none
@@ -48,7 +48,7 @@ extension StatusBarView_Listener.Coordinator {
         switch newState {
         case .ready:
             status = .ready
-        case .failed(let error):
+        case let .failed(error):
             status = .failed(error: .listener(error: error))
             // If the listener fails, re-start.
             print("Listener failed with \(error), restarting")
@@ -61,12 +61,12 @@ extension StatusBarView_Listener.Coordinator {
     }
 
     func start() {
-        self.passcode = "1111" //self.generatePasscode
-        self.connectionCount += 1
+        passcode = "1111" // self.generatePasscode
+        connectionCount += 1
         sharedListener?.stopListening()
 
         status = .started(name: name, passcode: passcode)
-        sharedListener = PeerListener(name: name, passcode: self.passcode, delegate: self)
+        sharedListener = PeerListener(name: name, passcode: passcode, delegate: self)
         sharedListener?.startListening(stateUpdateHandler: stateUpdateHandler)
     }
 }
@@ -74,7 +74,7 @@ extension StatusBarView_Listener.Coordinator {
 extension StatusBarView_Listener.Coordinator: PeerConnectionDelegate {
     // When a connection becomes ready, move into game mode.
     func connectionReady() {
-        //navigationController?.performSegue(withIdentifier: "showGameSegue", sender: nil)
+        // navigationController?.performSegue(withIdentifier: "showGameSegue", sender: nil)
         status = .connected
     }
 
@@ -83,7 +83,8 @@ extension StatusBarView_Listener.Coordinator: PeerConnectionDelegate {
         status = .failed(error: .connection(text: "connection failed"))
         start()
     }
-    func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
+
+    func receivedMessage(content: Data?, message _: NWProtocolFramer.Message) {
         guard let content = content else { return }
         if let text = String(data: content, encoding: .unicode) {
             print(text)

@@ -13,13 +13,13 @@ struct DOMEvent: Decodable, Equatable {
         let ctrlKey: Bool?
         let altKey: Bool?
         let metaKey: Bool? /* Returns a Boolean that is true if the Meta key
-                              (on Mac keyboards, the ⌘ Command key;
-                              on Windows keyboards, the Windows key (⊞))
-                              was active when the key event was generated.*/
+         (on Mac keyboards, the ⌘ Command key;
+         on Windows keyboards, the Windows key (⊞))
+         was active when the key event was generated.*/
         let shiftKey: Bool?
-        let which: Int?   /* Returns a Number representing a system and implementation dependent numeric
-                            code identifying the unmodified value of the pressed key;
-                            this is usually the same as keyCode. */
+        let which: Int? /* Returns a Number representing a system and implementation dependent numeric
+         code identifying the unmodified value of the pressed key;
+         this is usually the same as keyCode. */
         let keyCode: Int?
 
         let selectedText: String?

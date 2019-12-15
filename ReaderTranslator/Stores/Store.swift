@@ -27,21 +27,21 @@ class Store: ObservableObject {
     @Published(wrappedValue: nil, key: "pdfAudio") var pdfAudio: URL?
 
     @Published(key: "currentTab") var currentTab = 0 {
-        didSet { self.lastWebPage = self.savedLastWebPage[self.currentTab] }
+        didSet { lastWebPage = savedLastWebPage[self.currentTab] }
     }
 
     @Published(key: "favoriteVoiceNames") var favoriteVoiceNames: [FavoriteVoiceName] = []
     @Published(key: "voiceLanguage") var voiceLanguage = "Select language"
-    @Published(key: "voiceName")  var voiceName = "Select voice"
+    @Published(key: "voiceName") var voiceName = "Select voice"
     @Published(key: "isVoiceEnabled") var isVoiceEnabled = true { didSet { SpeechSynthesizer.speak() } }
-    @Published(key: "voiceRate")  var voiceRate = "0.4"
-    @Published(key: "voiceVolume")  var voiceVolume: Float = 1
+    @Published(key: "voiceRate") var voiceRate = "0.4"
+    @Published(key: "voiceVolume") var voiceVolume: Float = 1
 
     @Published var canGoBack = false
     @UserDefault(key: "lastWebPage")
     private var savedLastWebPage = ["https://google.com", "", ""]
     @Published
-    var lastWebPage = "" { willSet { self.savedLastWebPage[self.currentTab] = newValue } }
+    var lastWebPage = "" { willSet { savedLastWebPage[self.currentTab] = newValue } }
 
     @Published(key: "lastPdf") var lastPdf: String = ""
     @Published(key: "lastPdfPage") var lastPdfPage = "1"
@@ -55,13 +55,14 @@ class Store: ObservableObject {
     @Published var longmanSentences: LongmanSentences = []
     @Published var longmanSelectedBookmark = "" {
         willSet {
-            self.longmanSentences = []
+            longmanSentences = []
             LongmanStore.share.fetchInfo(text: newValue)
         }
     }
+
     @Published var longmanAudioRate: Float = 1
 
     private init() {
-        ({ currentTab = currentTab })() //call didSet
+        ({ currentTab = currentTab })() // call didSet
     }
 }

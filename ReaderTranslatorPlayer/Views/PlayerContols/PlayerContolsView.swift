@@ -20,8 +20,9 @@ struct PlayerControlsView: View {
     private var playPauseButton: some View {
         Button(
             action: { self.store.isPlaying.toggle() },
-            label: { Text(store.isPlaying ? "Pause" : "Play") })
-            .buttonStyle(RoundButtonStyle())
+            label: { Text(store.isPlaying ? "Pause" : "Play") }
+        )
+        .buttonStyle(RoundButtonStyle())
     }
 
     var body: some View {

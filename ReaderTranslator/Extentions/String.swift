@@ -6,15 +6,16 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
+import Foundation
 
 extension String {
     var encodeUrl: String {
-        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+        addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
     }
+
     var decodeUrl: String {
-        return self.removingPercentEncoding!
+        removingPercentEncoding!
     }
 }
 
@@ -26,7 +27,7 @@ extension String {
             let matches = regex.matches(in: text,
                                         range: NSRange(text.startIndex..., in: text))
             return matches.map { match in
-                return (0..<match.numberOfRanges).map {
+                (0 ..< match.numberOfRanges).map {
                     let rangeBounds = match.range(at: $0)
                     guard let range = Range(rangeBounds, in: text) else {
                         return ""
@@ -34,7 +35,7 @@ extension String {
                     return String(text[range])
                 }
             }
-        } catch let error {
+        } catch {
             print("invalid regex: \(error.localizedDescription)")
             return []
         }
@@ -49,6 +50,7 @@ extension String {
             return 0
         }
     }
+
     var intValue: Int {
         if let width = NumberFormatter().number(from: self) {
             return Int(width.intValue)

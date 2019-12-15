@@ -13,8 +13,8 @@ class OpenPanel {
     static func showChooseFileDialog(
         title: String,
         allowedFileTypes: [String],
-        onFinished: @escaping (_: URL?) -> Void) {
-
+        onFinished: @escaping (_: URL?) -> Void
+    ) {
         let openPanel = NSOpenPanel()
 
         openPanel.allowsMultipleSelection = false

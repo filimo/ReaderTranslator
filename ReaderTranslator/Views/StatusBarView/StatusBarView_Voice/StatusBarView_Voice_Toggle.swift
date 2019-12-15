@@ -20,9 +20,9 @@ struct StatusBarView_Voice_Toggle: View {
                 .onTapGesture {
                     SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true)
                 }
-            .contextMenu {
-                Slider(value: $store.voiceVolume, in: 0.1...1.0).frame(width: 100, height: 50)
-            }
+                .contextMenu {
+                    Slider(value: $store.voiceVolume, in: 0.1 ... 1.0).frame(width: 100, height: 50)
+                }
         }
     }
 }

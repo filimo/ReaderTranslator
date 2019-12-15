@@ -6,8 +6,8 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 struct BookmarksView_List_Detail: View {
     @ObservedObject var store = Store.shared
@@ -46,14 +46,14 @@ struct BookmarksView_List_Detail: View {
     var sentencesView: some View {
         ForEach(store.longmanSentences, id: \.self) { sentence in
             Text("\(sentence.text)")
-            .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)
-            .font(.subheadline)
-            .onTapGesture {
-                self.selectSentence = sentence.text
-                LongmanStore.share.addAudio(url: sentence.url )
-                LongmanStore.share.next()
-                self.store.translateAction.add(.gTranslator(text: sentence.text), isSpeaking: false)
-            }
+                .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)
+                .font(.subheadline)
+                .onTapGesture {
+                    self.selectSentence = sentence.text
+                    LongmanStore.share.addAudio(url: sentence.url)
+                    LongmanStore.share.next()
+                    self.store.translateAction.add(.gTranslator(text: sentence.text), isSpeaking: false)
+                }
         }
     }
 }

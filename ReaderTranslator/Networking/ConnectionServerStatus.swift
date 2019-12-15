@@ -14,9 +14,9 @@ enum ErrorServerConnection: Error {
 
     var status: String {
         switch self {
-        case .listener(let error):
+        case let .listener(error):
             return "\(error)"
-        case .connection(let text):
+        case let .connection(text):
             return text
         }
     }
@@ -30,7 +30,7 @@ enum ConnectionServerStatus: Equatable {
         case (let .started(lName, lPasscode), let .started(rName, rPasscode)):
             return lName == rName && lPasscode == rPasscode
         case (.connected, .connected): return true
-        case (let .failed(lError), let .failed(rError)): return lError.status == rError.status
+        case let (.failed(lError), .failed(rError)): return lError.status == rError.status
         default: return false
         }
     }
@@ -47,11 +47,11 @@ enum ConnectionServerStatus: Equatable {
             return "Start the server"
         case .ready:
             return "The server is ready"
-        case .started(let name, let passcode):
+        case let .started(name, passcode):
             return "Pass code for \(name): \(passcode)"
         case .connected:
             return "The server is connected"
-        case .failed(let error):
+        case let .failed(error):
             return "The server: \(error.status)"
         }
     }

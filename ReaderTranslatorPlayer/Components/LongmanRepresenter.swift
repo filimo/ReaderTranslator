@@ -15,7 +15,7 @@ struct LongmanRepresenter: UIViewRepresentable, WKScriptsSetup {
     @ObservedObject var store = Store.shared
     private let defaultURL = "https://www.ldoceonline.com/dictionary/"
 
-    func makeUIView(context: Context) -> WKPageView {
+    func makeUIView(context _: Context) -> WKPageView {
         if view == nil { view = WKPageView() }
         guard let view = view else { return WKPageView() }
 
@@ -27,6 +27,5 @@ struct LongmanRepresenter: UIViewRepresentable, WKScriptsSetup {
         return view
     }
 
-    func updateUIView(_ view: WKPageView, context: Context) {
-    }
+    func updateUIView(_: WKPageView, context _: Context) {}
 }

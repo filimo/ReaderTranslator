@@ -6,8 +6,8 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SwiftUI
 import os.log
+import SwiftUI
 
 struct SafariView: View {
     @ObservedObject private var store = Store.shared
@@ -22,7 +22,7 @@ struct SafariView: View {
         }
     }
 
-    private func onMessageChanged(notificationName: String) {
+    private func onMessageChanged(notificationName _: String) {
         guard let event = SharedContainer.getEvent() else {
             os_log("🐞🐞🐞DOMEvent is nil", type: .error)
             return
@@ -46,12 +46,11 @@ struct SafariView: View {
         if let extra = event.extra,
             extra.shiftKey != true,
             extra.metaKey != true {
-
-            if extra.altKey == true && extra.keyCode == 65 { // Alt+a
+            if extra.altKey == true, extra.keyCode == 65 { // Alt+a
                 store.isVoiceEnabled.toggle()
                 return
             }
-            if extra.altKey == true && extra.keyCode == 83 { // Alt+s
+            if extra.altKey == true, extra.keyCode == 83 { // Alt+s
                 store.canSafariSendSelectedText.toggle()
                 if store.canSafariSendSelectedText {
                     store.translateAction.add(.gTranslator(text: event.extra?.selectedText ?? ""))
@@ -79,8 +78,7 @@ struct SafariView: View {
     private func onMessageChanged_selectionchange(event: DOMEvent, isSpeaking: Bool = true) {
         if store.canSafariSendSelectedText {
             if let extra = event.extra,
-                extra.altKey != true && extra.metaKey != true {
-
+                extra.altKey != true, extra.metaKey != true {
                 let text = event.extra?.selectedText ?? ""
                 store.translateAction.addAll(text: text, isSpeaking: isSpeaking)
             }

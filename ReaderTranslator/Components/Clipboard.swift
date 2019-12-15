@@ -7,28 +7,29 @@
 //
 
 #if os(macOS)
-import AppKit
+    import AppKit
 
-struct Clipboard {
-    static var string: String {
-        NSPasteboard.general.string(forType: .string) ?? ""
+    struct Clipboard {
+        static var string: String {
+            NSPasteboard.general.string(forType: .string) ?? ""
+        }
+
+        static func copy(_ text: String) {
+            NSPasteboard.general.clearContents()
+            NSPasteboard.general.setString(text, forType: .string)
+        }
     }
 
-    static func copy(_ text: String) {
-        NSPasteboard.general.clearContents()
-        NSPasteboard.general.setString(text, forType: .string)
-    }
-}
 #else
-import UIKit
+    import UIKit
 
-struct Clipboard {
-    static var string: String {
-        return UIPasteboard.general.string ?? ""
-    }
+    struct Clipboard {
+        static var string: String {
+            UIPasteboard.general.string ?? ""
+        }
 
-    static func copy(_ text: String) {
-        UIPasteboard.general.string = text
+        static func copy(_ text: String) {
+            UIPasteboard.general.string = text
+        }
     }
-}
 #endif

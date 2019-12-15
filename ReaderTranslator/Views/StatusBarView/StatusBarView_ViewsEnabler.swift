@@ -21,7 +21,7 @@ struct StatusBarView_ViewsEnabler: View {
         .yTranslator,
         .pdf,
         .web,
-        .safari
+        .safari,
     ]
 
     var body: some View {
@@ -49,9 +49,9 @@ struct StatusBarView_ViewsEnabler: View {
 
     private func toggle(_ view: AvailableView) {
         if store.enabledViews.contains(view) {
-           store.enabledViews.remove(view)
+            store.enabledViews.remove(view)
         } else {
-            self.store.translateAction.add(view.getAction())
+            store.translateAction.add(view.getAction())
             store.enabledViews.insert(view)
         }
     }

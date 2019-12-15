@@ -21,9 +21,10 @@ struct StatusBarView_Voice_Select: View {
                                 self.store.voiceLanguage = language
                                 self.store.voiceName = "Select voice"
                             },
-                            label: { Text(language) })
+                            label: { Text(language) }
+                        )
                     }
-            }
+                }
             Text(store.voiceName)
                 .contextMenu {
                     ForEach(SpeechSynthesizer.getVoices(language: store.voiceLanguage), id: \.id) { voice in
@@ -34,9 +35,10 @@ struct StatusBarView_Voice_Select: View {
                             },
                             label: {
                                 Text("\(voice.name) \(voice.premium ? "(premium)" : "")")
-                            })
+                            }
+                        )
                     }
-            }
+                }
         }
     }
 }

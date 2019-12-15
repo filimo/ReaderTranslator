@@ -6,11 +6,10 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import Network
 import CryptoKit
+import Network
 
 extension NWParameters {
-
     // Create parameters for use in PeerConnection and PeerListener.
     convenience init(passcode: String) {
         // Customize TCP options to enable keepalives.
@@ -22,11 +21,11 @@ extension NWParameters {
         self.init(tls: NWParameters.tlsOptions(passcode: passcode), tcp: tcpOptions)
 
         // Enable using a peer-to-peer link.
-        self.includePeerToPeer = true
+        includePeerToPeer = true
 
         // Add your custom game protocol to support game messages.
         let gameOptions = NWProtocolFramer.Options(definition: ReaderTranslatorProtocol.definition)
-        self.defaultProtocolStack.applicationProtocols.insert(gameOptions, at: 0)
+        defaultProtocolStack.applicationProtocols.insert(gameOptions, at: 0)
     }
 
     // Create TLS options using a passcode to derive a pre-shared key.
@@ -36,7 +35,8 @@ extension NWParameters {
         let authenticationKey = SymmetricKey(data: passcode.data(using: .utf8)!)
         var authenticationCode = HMAC<SHA256>.authenticationCode(
             for: "TicTacToe".data(using: .utf8)!,
-            using: authenticationKey)
+            using: authenticationKey
+        )
 
         let authenticationDispatchData = withUnsafeBytes(of: &authenticationCode) { (ptr: UnsafeRawBufferPointer) in
             DispatchData(bytes: ptr)
@@ -47,7 +47,8 @@ extension NWParameters {
                                                 stringToDispatchData("TicTacToe")! as __DispatchData)
         sec_protocol_options_append_tls_ciphersuite(
             tlsOptions.securityProtocolOptions,
-            tls_ciphersuite_t(rawValue: UInt16(TLS_PSK_WITH_AES_128_GCM_SHA256))!)
+            tls_ciphersuite_t(rawValue: UInt16(TLS_PSK_WITH_AES_128_GCM_SHA256))!
+        )
 
         return tlsOptions
     }

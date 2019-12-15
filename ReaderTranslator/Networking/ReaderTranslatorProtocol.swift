@@ -18,26 +18,26 @@ enum ReaderTranslatorMessageType: UInt32 {
 
 // Create a class that implements a framing protocol.
 class ReaderTranslatorProtocol: NWProtocolFramerImplementation {
-
     // Create a global definition of your game protocol to add to connections.
     static let definition = NWProtocolFramer.Definition(implementation: ReaderTranslatorProtocol.self)
 
     // Set a name for your protocol for use in debugging.
-    static var label: String { return "ReaderTranslator" }
+    static var label: String { "ReaderTranslator" }
 
     // Set the default behavior for most framing protocol functions.
-    required init(framer: NWProtocolFramer.Instance) { }
-    func start(framer: NWProtocolFramer.Instance) -> NWProtocolFramer.StartResult { return .ready }
-    func wakeup(framer: NWProtocolFramer.Instance) { }
-    func stop(framer: NWProtocolFramer.Instance) -> Bool { return true }
-    func cleanup(framer: NWProtocolFramer.Instance) { }
+    required init(framer _: NWProtocolFramer.Instance) {}
+    func start(framer _: NWProtocolFramer.Instance) -> NWProtocolFramer.StartResult { .ready }
+    func wakeup(framer _: NWProtocolFramer.Instance) {}
+    func stop(framer _: NWProtocolFramer.Instance) -> Bool { true }
+    func cleanup(framer _: NWProtocolFramer.Instance) {}
 
     // Whenever the application sends a message, add your protocol header and forward the bytes.
     func handleOutput(
         framer: NWProtocolFramer.Instance,
         message: NWProtocolFramer.Message,
         messageLength: Int,
-        isComplete: Bool) {
+        isComplete _: Bool
+    ) {
         // Extract the type of message.
         let type = message.readerTranslatorMessageType
 
@@ -50,7 +50,7 @@ class ReaderTranslatorProtocol: NWProtocolFramerImplementation {
         // Ask the connection to insert the content of the application message after your header.
         do {
             try framer.writeOutputNoCopy(length: messageLength)
-        } catch let error {
+        } catch {
             print("Hit error writing \(error)")
         }
     }
@@ -136,7 +136,9 @@ struct ReaderTranslatorProtocolHeader: Codable {
             lengthPtr.copyMemory(
                 from: UnsafeRawBufferPointer(
                     start: buffer.baseAddress!.advanced(by: MemoryLayout<UInt32>.size),
-                    count: MemoryLayout<UInt32>.size))
+                    count: MemoryLayout<UInt32>.size
+                )
+            )
         }
 
         type = tempType
@@ -152,6 +154,6 @@ struct ReaderTranslatorProtocolHeader: Codable {
     }
 
     static var encodedSize: Int {
-        return MemoryLayout<UInt32>.size * 2
+        MemoryLayout<UInt32>.size * 2
     }
 }

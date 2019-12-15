@@ -14,9 +14,9 @@ struct EditorNSTextView: View {
     var body: some View {
         Group {
             #if os(macOS)
-            EditorNSTextRepresentable(translateAction: $store.translateAction)
+                EditorNSTextRepresentable(translateAction: $store.translateAction)
             #else
-            EmptyView()
+                EmptyView()
             #endif
         }
     }

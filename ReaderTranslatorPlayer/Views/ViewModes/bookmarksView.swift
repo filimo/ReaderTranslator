@@ -19,10 +19,12 @@ struct BookmarksView: View {
                         HStack {
                             NavigationLink(
                                 destination: LongmanRepresenter().navigationBarHidden(false),
-                                label: {  Text(bookmark.text).font(.largeTitle) })
+                                label: { Text(bookmark.text).font(.largeTitle) }
+                            )
                             NavigationLink(
                                 destination: SentencesView(bookmark: bookmark.text),
-                                label: {  self.bookmarksIco })
+                                label: { self.bookmarksIco }
+                            )
                             Spacer()
                             self.counterImageIco(counter: bookmark.counter)
                                 .onTapGesture { self.store.bookmarks.increase(bookmark: bookmark) }
@@ -34,7 +36,7 @@ struct BookmarksView: View {
     }
 
     private var bookmarksIco: some View {
-        return Image(systemName: "book.circle")
+        Image(systemName: "book.circle")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(height: 25)

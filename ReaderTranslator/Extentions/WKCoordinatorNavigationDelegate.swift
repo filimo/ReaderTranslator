@@ -8,11 +8,10 @@
 
 import WebKit
 
-protocol WKCoordinatorNavigationDelegate: class {
+protocol WKCoordinatorNavigationDelegate: AnyObject {
     func goBack(_ webView: WKWebView)
 }
 
 extension WKCoordinatorNavigationDelegate {
-    func goBack(_ webView: WKWebView) {
-    }
+    func goBack(_: WKWebView) {}
 }

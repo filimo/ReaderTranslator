@@ -37,7 +37,8 @@ struct BookmarksView_Controls_ActionMenu: View {
                 title: Text("Are you sure?"),
                 message: Text("Remove all bookmarks?"),
                 primaryButton: .cancel(),
-                secondaryButton: .default(Text("Ok")) {  self.store.bookmarks.removeAll() })
+                secondaryButton: .default(Text("Ok")) { self.store.bookmarks.removeAll() }
+            )
         }
     }
 }

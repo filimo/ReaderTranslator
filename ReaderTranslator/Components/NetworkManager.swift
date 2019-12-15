@@ -20,6 +20,6 @@ extension NetworkManager: PeerConnectionDelegate {
     }
 
     // Ignore connection failures and messages prior to starting a game.
-    func connectionFailed() { }
-    func receivedMessage(content: Data?, message: NWProtocolFramer.Message) { }
+    func connectionFailed() {}
+    func receivedMessage(content _: Data?, message _: NWProtocolFramer.Message) {}
 }

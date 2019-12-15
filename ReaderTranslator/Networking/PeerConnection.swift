@@ -11,22 +11,21 @@ import Network
 
 var sharedConnection: PeerConnection?
 
-protocol PeerConnectionDelegate: class {
+protocol PeerConnectionDelegate: AnyObject {
     func connectionReady()
     func connectionFailed()
     func receivedMessage(content: Data?, message: NWProtocolFramer.Message)
 }
 
 class PeerConnection {
-
     weak var delegate: PeerConnectionDelegate?
     var connection: NWConnection?
     let initiatedConnection: Bool
 
     // Create an outbound connection when the user initiates a game.
-    init(endpoint: NWEndpoint, interface: NWInterface?, passcode: String) {
+    init(endpoint: NWEndpoint, interface _: NWInterface?, passcode: String) {
 //        self.delegate = delegate
-        self.initiatedConnection = true
+        initiatedConnection = true
 
         let connection = NWConnection(to: endpoint, using: NWParameters(passcode: passcode))
         self.connection = connection
@@ -38,7 +37,7 @@ class PeerConnection {
     init(connection: NWConnection, delegate: PeerConnectionDelegate) {
         self.delegate = delegate
         self.connection = connection
-        self.initiatedConnection = false
+        initiatedConnection = false
 
         startConnection()
     }
@@ -69,7 +68,7 @@ class PeerConnection {
                 if let delegate = self.delegate {
                     delegate.connectionReady()
                 }
-            case .failed(let error):
+            case let .failed(error):
                 print("\(connection) failed with \(error)")
 
                 // Cancel the connection upon a failure.
@@ -104,7 +103,8 @@ class PeerConnection {
             content: character.data(using: .unicode),
             contentContext: context,
             isComplete: true,
-            completion: .idempotent)
+            completion: .idempotent
+        )
     }
 
     // Handle sending a "move" message.
@@ -123,7 +123,8 @@ class PeerConnection {
             content: move.data(using: .unicode),
             contentContext: context,
             isComplete: true,
-            completion: .idempotent)
+            completion: .idempotent
+        )
     }
 
     // Receive a message, deliver it to your delegate, and continue receiving more messages.
@@ -132,7 +133,7 @@ class PeerConnection {
             return
         }
 
-        connection.receiveMessage { (content, context, _, error) in
+        connection.receiveMessage { content, context, _, error in
             // Extract your message type from the received context.
             let message = context?.protocolMetadata(definition: ReaderTranslatorProtocol.definition)
             if let message = message as? NWProtocolFramer.Message {

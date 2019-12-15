@@ -10,8 +10,8 @@ import Foundation
 
 struct SharedContainer {
     private static let key = "SharedContainer.Message"
-    static private let bundleIdentifier = "by.filimo.ReaderTranslatorMac"
-    static private var appIdentifierPrefix: String? = {
+    private static let bundleIdentifier = "by.filimo.ReaderTranslatorMac"
+    private static var appIdentifierPrefix: String? = {
         Bundle.main.infoDictionary!["AppIdentifierPrefix"] as? String
     }()
 

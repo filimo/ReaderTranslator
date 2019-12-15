@@ -12,12 +12,11 @@ import SwiftUI
 var sharedBrowser: PeerBrowser?
 
 // Update the UI when you receive new browser results.
-protocol PeerBrowserDelegate: class {
+protocol PeerBrowserDelegate: AnyObject {
     func refreshResults(results: Set<NWBrowser.Result>)
 }
 
 class PeerBrowser {
-
     weak var delegate: PeerBrowserDelegate?
     var browser: NWBrowser?
 
@@ -38,7 +37,7 @@ class PeerBrowser {
         self.browser = browser
         browser.stateUpdateHandler = { newState in
             switch newState {
-            case .failed(let error):
+            case let .failed(error):
                 // Restart the browser if it fails.
                 print("Browser failed with \(error), restarting")
                 browser.cancel()
@@ -49,7 +48,7 @@ class PeerBrowser {
         }
 
         // When the list of discovered endpoints changes, refresh the delegate.
-        browser.browseResultsChangedHandler = { results, changes in
+        browser.browseResultsChangedHandler = { results, _ in
             self.delegate?.refreshResults(results: results)
         }
 

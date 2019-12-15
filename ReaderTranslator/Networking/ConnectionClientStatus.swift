@@ -28,7 +28,7 @@ enum ConnectionClientStatus {
             return "connected"
         case .cancelled:
             return "cancelled"
-        case .failed(let error):
+        case let .failed(error):
             return error
         }
     }

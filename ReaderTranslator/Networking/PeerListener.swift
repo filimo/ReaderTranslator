@@ -11,7 +11,6 @@ import Network
 var sharedListener: PeerListener?
 
 class PeerListener {
-
     weak var delegate: PeerConnectionDelegate?
     var listener: NWListener?
     var name: String
@@ -26,14 +25,14 @@ class PeerListener {
     }
 
     // Start listening and advertising.
-    func startListening(stateUpdateHandler: ((NWListener.State) -> Void)?) {
+    func startListening(stateUpdateHandler _: ((NWListener.State) -> Void)?) {
         do {
             // Create the listener object.
             let listener = try NWListener(using: NWParameters(passcode: passcode))
             self.listener = listener
 
             // Set the service to advertise.
-            listener.service = NWListener.Service(name: self.name, type: "_reader_translator._tcp")
+            listener.service = NWListener.Service(name: name, type: "_reader_translator._tcp")
 
             listener.newConnectionHandler = { newConnection in
                 if let delegate = self.delegate {
@@ -56,7 +55,7 @@ class PeerListener {
     }
 
     func stopListening() {
-        self.listener?.cancel()
+        listener?.cancel()
         sharedConnection = nil
     }
 

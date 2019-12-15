@@ -6,14 +6,14 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import Foundation
 import AVFoundation
+import Foundation
 
 struct AudioPlayer {
     var player: AVAudioPlayer?
     var rate: Float = 1 {
         willSet {
-            self.player?.rate = newValue
+            player?.rate = newValue
         }
     }
 
@@ -28,7 +28,7 @@ struct AudioPlayer {
 
     mutating func openAudio(url: URL) {
         do {
-            self.player = try AVAudioPlayer(contentsOf: url)
+            player = try AVAudioPlayer(contentsOf: url)
         } catch {
             print(error)
         }

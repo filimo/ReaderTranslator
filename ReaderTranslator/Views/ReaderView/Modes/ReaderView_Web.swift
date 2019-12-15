@@ -23,7 +23,8 @@ struct ReaderView_Web: View {
                         pasteClipbord()
                         Button(
                             action: { self.store.lastWebPage = "" },
-                            label: { Image.sfSymbol("xmark.circle") })
+                            label: { Image.sfSymbol("xmark.circle") }
+                        )
                     }.padding(5)
                     webView(0)
                     webView(1)
@@ -38,24 +39,27 @@ struct ReaderView_Web: View {
         HStack {
             Button(
                 action: { self.store.currentTab = 0 },
-                label: { Image.sfSymbol("1.circle\(iconStatus(0))") })
+                label: { Image.sfSymbol("1.circle\(iconStatus(0))") }
+            )
             Button(
                 action: { self.store.currentTab = 1 },
-                label: { Image.sfSymbol("2.circle\(iconStatus(1))") })
+                label: { Image.sfSymbol("2.circle\(iconStatus(1))") }
+            )
             Button(
                 action: { self.store.currentTab = 2 },
-                label: { Image.sfSymbol("3.circle\(iconStatus(2))") })
+                label: { Image.sfSymbol("3.circle\(iconStatus(2))") }
+            )
         }
     }
 
     private func iconStatus(_ tab: Int) -> String {
-        self.store.currentTab == tab ? ".fill" : ""
+        store.currentTab == tab ? ".fill" : ""
     }
 }
 
 extension ReaderView_Web {
     private func webView(_ currentTab: Int) -> some View {
-        if self.store.currentTab == currentTab {
+        if store.currentTab == currentTab {
             let view = WKRepresenter(lastWebPage: $store.lastWebPage)
             return view.any
         } else {
@@ -70,7 +74,8 @@ extension ReaderView_Web {
                     Safari.openSafari(url)
                 }
             },
-            label: { Image.sfSymbol("safari") })
+            label: { Image.sfSymbol("safari") }
+        )
     }
 
     fileprivate func pasteClipbord() -> some View {
@@ -78,7 +83,8 @@ extension ReaderView_Web {
             action: {
                 self.store.lastWebPage = Clipboard.string
             },
-            label: { Image.sfSymbol("doc.on.clipboard") })
+            label: { Image.sfSymbol("doc.on.clipboard") }
+        )
     }
 }
 

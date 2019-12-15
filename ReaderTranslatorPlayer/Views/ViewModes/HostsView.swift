@@ -6,8 +6,8 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SwiftUI
 import Network
+import SwiftUI
 
 struct HostsView: View {
     class Coordinator: ObservableObject {
@@ -39,7 +39,8 @@ struct HostsView: View {
                                 Spacer()
                                 Text(self.coordinator.status.status)
                             }
-                    })
+                        }
+                    )
                 }
             }
             List {
@@ -62,7 +63,8 @@ struct HostsView: View {
         sharedConnection = PeerConnection(
             endpoint: host.endpoint,
             interface: host.interfaces.first,
-            passcode: self.passcode)
+            passcode: passcode
+        )
         sharedConnection?.delegate = coordinator
         sharedConnection?.startConnection()
     }
@@ -84,7 +86,7 @@ extension HostsView.Coordinator: PeerConnectionDelegate {
         status = .failed(error: "failed")
     }
 
-    func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
+    func receivedMessage(content: Data?, message _: NWProtocolFramer.Message) {
         guard let content = content else { return }
         if let data = String(data: content, encoding: .unicode) {
             guard let jsonData = data.data(using: .utf8) else { return }

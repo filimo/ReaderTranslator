@@ -14,9 +14,9 @@ struct StatusBarView_Safari: View {
     var body: some View {
         Group {
             #if os(macOS)
-            Text("Safari plugin: \(store.canSafariSendSelectedText ? "on" : "off")")
-                .foregroundColor(store.canSafariSendSelectedText ? .green : .red)
-                .onTapGesture { self.store.canSafariSendSelectedText.toggle() }
+                Text("Safari plugin: \(store.canSafariSendSelectedText ? "on" : "off")")
+                    .foregroundColor(store.canSafariSendSelectedText ? .green : .red)
+                    .onTapGesture { self.store.canSafariSendSelectedText.toggle() }
             #endif
         }
     }

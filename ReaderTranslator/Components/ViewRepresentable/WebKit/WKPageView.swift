@@ -50,35 +50,36 @@ class WKPageView: WKWebView {
         cancellableSet.cancelAndRemoveAll()
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     func goBack() {
         super.goBack()
-        (self.navigationDelegate as? WKCoordinatorNavigationDelegate)?.goBack(self)
+        (navigationDelegate as? WKCoordinatorNavigationDelegate)?.goBack(self)
     }
 }
 
 #if os(macOS)
-extension WKPageView {
+    extension WKPageView {
 //    override func layout() {
 //        super.layout()
 //        self.frame.size = CGSize(width: frame.width * (1/zoomLevel), height: frame.height * (1/zoomLevel))
 //        self.layer?.transform = CATransform3DMakeScale(zoomLevel, zoomLevel, 1)
 //    }
 //
-    func setZoom(zoomLevel: CGFloat) {
+        func setZoom(zoomLevel _: CGFloat) {
 //        self.zoomLevel = zoomLevel
 //        self.needsLayout = true
+        }
     }
-}
+
 #else
-extension WKPageView {
-    func setZoom(zoomLevel: CGFloat) {
-        self.scrollView.setZoomScale(zoomLevel, animated: true)
-        self.scrollView.minimumZoomScale = zoomLevel
-//TODO: I don't know to need call it        self.setNeedsDisplay(self.bounds)
+    extension WKPageView {
+        func setZoom(zoomLevel: CGFloat) {
+            scrollView.setZoomScale(zoomLevel, animated: true)
+            scrollView.minimumZoomScale = zoomLevel
+            // TODO: I don't know to need call it        self.setNeedsDisplay(self.bounds)
+        }
     }
-}
 #endif

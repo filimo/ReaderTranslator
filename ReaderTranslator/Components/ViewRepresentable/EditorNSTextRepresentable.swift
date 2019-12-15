@@ -60,8 +60,8 @@ extension EditorNSTextRepresentable {
                 return
             }
 
-            self.parent.text = textView.string
-            self.parent.onEditingChanged()
+            parent.text = textView.string
+            parent.onEditingChanged()
         }
 
         func textDidChange(_ notification: Notification) {
@@ -69,8 +69,8 @@ extension EditorNSTextRepresentable {
                 return
             }
 
-            self.parent.text = textView.string
-            self.selectedRanges = textView.selectedRanges
+            parent.text = textView.string
+            selectedRanges = textView.selectedRanges
         }
 
         func textDidEndEditing(_ notification: Notification) {
@@ -78,8 +78,8 @@ extension EditorNSTextRepresentable {
                 return
             }
 
-            self.parent.text = textView.string
-            self.parent.onCommit()
+            parent.text = textView.string
+            parent.onCommit()
         }
     }
 }
@@ -134,35 +134,36 @@ final class CustomNSTextView: NSView {
 
         layoutManager.addTextContainer(textContainer)
 
-        let textView                     = NSTextView(frame: .zero, textContainer: textContainer)
-        textView.autoresizingMask        = .width
-        textView.backgroundColor         = NSColor.textBackgroundColor
-        textView.delegate                = self.delegate
-        textView.drawsBackground         = true
-        textView.font                    = self.font
-        textView.isEditable              = self.isEditable
+        let textView = NSTextView(frame: .zero, textContainer: textContainer)
+        textView.autoresizingMask = .width
+        textView.backgroundColor = NSColor.textBackgroundColor
+        textView.delegate = self.delegate
+        textView.drawsBackground = true
+        textView.font = self.font
+        textView.isEditable = self.isEditable
         textView.isHorizontallyResizable = false
-        textView.isVerticallyResizable   = true
-        textView.maxSize                 = NSSize(width: CGFloat.greatestFiniteMagnitude,
-                                                  height: CGFloat.greatestFiniteMagnitude)
-        textView.minSize                 = NSSize(width: 0, height: contentSize.height)
-        textView.textColor               = NSColor.labelColor
+        textView.isVerticallyResizable = true
+        textView.maxSize = NSSize(width: CGFloat.greatestFiniteMagnitude,
+                                  height: CGFloat.greatestFiniteMagnitude)
+        textView.minSize = NSSize(width: 0, height: contentSize.height)
+        textView.textColor = NSColor.labelColor
 
         return textView
     }()
 
     // MARK: - Init
+
     init(text: String,
          isEditable: Bool = true,
          font: NSFont = NSFont.systemFont(ofSize: 32, weight: .ultraLight)) {
-        self.font       = font
+        self.font = font
         self.isEditable = isEditable
-        self.text       = text
+        self.text = text
 
         super.init(frame: .zero)
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -184,7 +185,7 @@ final class CustomNSTextView: NSView {
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor)
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
         ])
     }
 

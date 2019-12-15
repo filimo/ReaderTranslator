@@ -6,26 +6,23 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SwiftUI
 import SafariServices
+import SwiftUI
 
 struct SafariRepresentable: UIViewControllerRepresentable {
     @Binding var url: URL
 
-    func makeUIViewController(context: Context) -> SFSafariViewController {
+    func makeUIViewController(context _: Context) -> SFSafariViewController {
         SFSafariViewController(url: url)
     }
 
-    func updateUIViewController(_ uiViewController: SFSafariViewController,
-                                context: Context) {
-
-    }
-
+    func updateUIViewController(_: SFSafariViewController,
+                                context _: Context) {}
 }
 
 struct SafariView: View {
     @Binding var url: URL?
-    static private var view: SafariRepresentable?
+    private static var view: SafariRepresentable?
 
     var body: some View {
         Group {

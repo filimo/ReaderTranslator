@@ -15,21 +15,21 @@ struct SettingsView: View {
 
     var body: some View {
         Button(action: { self.isShow = true }, label: { Text("Settings") })
-        .sheet(isPresented: $isShow) {
-            VStack {
-                ForEach(AvailableView.resiableViews, id: \.self) { view in
-                    HStack {
-                        TextField("", text: view.order).frame(width: 20)
-                        Text(view.text)
-                        Spacer()
-                        TextField("", text: view.width).frame(width: 50)
+            .sheet(isPresented: $isShow) {
+                VStack {
+                    ForEach(AvailableView.resiableViews, id: \.self) { view in
+                        HStack {
+                            TextField("", text: view.order).frame(width: 20)
+                            Text(view.text)
+                            Spacer()
+                            TextField("", text: view.width).frame(width: 50)
+                        }
+                        .frame(width: 200)
                     }
-                    .frame(width: 200)
-                }
 
-                Button(action: { self.isShow = false }, label: { Text("Close") }).padding()
-            }.padding()
-        }
+                    Button(action: { self.isShow = false }, label: { Text("Close") }).padding()
+                }.padding()
+            }
     }
 }
 

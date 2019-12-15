@@ -22,7 +22,7 @@ enum AvailableView: String, Codable, CaseIterable {
     case safari = "Safari"
 
     var text: String {
-        self.rawValue
+        rawValue
     }
 
     var width: Binding<String> {
@@ -44,7 +44,7 @@ enum AvailableView: String, Codable, CaseIterable {
     }
 
     var orderInt: Int {
-        self.order.wrappedValue.intValue
+        order.wrappedValue.intValue
     }
 
     var view: some View {
@@ -85,7 +85,7 @@ enum AvailableView: String, Codable, CaseIterable {
             .yTranslator,
             .gTranslator,
             .pdf,
-            .web
+            .web,
         ]
         return views.sorted { $0.orderInt < $1.orderInt }
     }

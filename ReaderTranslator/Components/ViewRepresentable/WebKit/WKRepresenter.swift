@@ -18,7 +18,7 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     static var hasSentTranslateAction = false
 
     @ObservedObject private var store = Store.shared
-    static private var views = [Int: WKPageView]()
+    private static var views = [Int: WKPageView]()
 
     class Coordinator: WKCoordinator {
         @Published var selectedText = ""
@@ -32,8 +32,8 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
                 .removeDuplicates()
                 .sink { text in
                     if text != "" { self.store.translateAction.addAll(text: text) }
-            }
-            .store(in: &cancellableSet)
+                }
+                .store(in: &cancellableSet)
         }
     }
 
@@ -52,20 +52,20 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
         return view
     }
 
-    func updateView(_ view: WKPageView, context: Context) {
+    func updateView(_ view: WKPageView, context _: Context) {
         #if os(macOS)
 //        TODO: view.scrollView.zoomScale = store.zoom
 //        view.setNeedsDisplay(view.bounds)
         #else
-        view.setZoom(zoomLevel: store.zoom)
+            view.setZoom(zoomLevel: store.zoom)
         #endif
         if view.newUrl != lastWebPage { view.newUrl = lastWebPage }
     }
 
-    func webView(_ webView: WKPageView, didFinish navigation: WKNavigation!) {
+    func webView(_ webView: WKPageView, didFinish _: WKNavigation!) {
         if let url = webView.url?.absoluteString { store.lastWebPage = url.decodeUrl }
         store.canGoBack = webView.canGoBack
-        webView.setZoom(zoomLevel: self.store.zoom)
+        webView.setZoom(zoomLevel: store.zoom)
     }
 
     func goBack(_ webView: WKPageView) {
@@ -77,15 +77,15 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
 }
 
 extension WKRepresenter.Coordinator: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
 
         switch event.name {
         case "selectionchange":
-            self.selectedText = event.extra?.selectedText ?? ""
+            selectedText = event.extra?.selectedText ?? ""
         case "keydown":
-            if event.extra?.keyCode == 18 { //Alt
-                SpeechSynthesizer.speak(text: self.selectedText, stopSpeaking: true, isVoiceEnabled: true)
+            if event.extra?.keyCode == 18 { // Alt
+                SpeechSynthesizer.speak(text: selectedText, stopSpeaking: true, isVoiceEnabled: true)
             }
         default:
             print("webkit.messageHandlers.\(event.name).postMessage() isn't found")

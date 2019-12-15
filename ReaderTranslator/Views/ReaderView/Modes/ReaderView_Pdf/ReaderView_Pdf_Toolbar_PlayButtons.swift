@@ -16,7 +16,7 @@ struct ReaderView_Pdf_Toolbar_PlayButtons: View {
     @Binding var isPlaying: Bool {
         willSet {
             if newValue {
-                self.startTimer()
+                startTimer()
             } else {
                 timer?.invalidate()
             }
@@ -52,7 +52,7 @@ struct ReaderView_Pdf_Toolbar_PlayButtons: View {
             if self.isPlaying {
                 player.pause()
             } else {
-                //hack: currentTime jump forward for some time after an audio is continue to play
+                // hack: currentTime jump forward for some time after an audio is continue to play
                 let currentTime = player.currentTime
                 player.play()
                 player.currentTime = currentTime

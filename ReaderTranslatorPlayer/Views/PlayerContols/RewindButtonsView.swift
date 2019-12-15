@@ -25,8 +25,9 @@ struct RewindButtonsView: View {
     private func rewindButton(label: String, step: Double) -> some View {
         Button(
             action: { FileListView.player?.currentTime += step },
-            label: { Text(label).frame(width: 35) })
-            .buttonStyle(RoundButtonStyle())
+            label: { Text(label).frame(width: 35) }
+        )
+        .buttonStyle(RoundButtonStyle())
     }
 }
 

@@ -6,8 +6,8 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 struct StatusBarView: View {
     @ObservedObject var store = Store.shared

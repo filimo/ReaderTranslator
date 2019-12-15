@@ -28,16 +28,16 @@ enum TranslateAction: Equatable {
 
     func getText() -> String {
         switch self {
-        case .none(let text),
-             .speak(let text),
-             .reverso(let text),
-             .gTranslator(let text),
-             .yTranslator(let text),
-             .longman(let text),
-             .macmillan(let text),
-             .collins(let text),
-             .bookmarks(let text),
-             .wikipedia(let text):
+        case let .none(text),
+             let .speak(text),
+             let .reverso(text),
+             let .gTranslator(text),
+             let .yTranslator(text),
+             let .longman(text),
+             let .macmillan(text),
+             let .collins(text),
+             let .bookmarks(text),
+             let .wikipedia(text):
             return text
                 .trimmingCharacters(in: .whitespaces)
         }
@@ -51,7 +51,7 @@ enum TranslateAction: Equatable {
         let isEmpty = stack.count == 0 ? true : false
 
         for action in actions {
-            if case .none(_) = action { continue }
+            if case .none = action { continue }
             stack.push(action)
         }
         if isSpeaking { stack.push(.speak(text: actions.first?.getText() ?? "")) }

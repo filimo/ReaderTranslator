@@ -37,7 +37,7 @@ struct ReversoRepresenter: ViewRepresentable, WKScriptsSetup {
         return view
     }
 
-    func updateView(_ view: WKPageView, context: Context) {
+    func updateView(_ view: WKPageView, context _: Context) {
         guard case var .reverso(text) = selectedText else { return }
         text = text.replacingOccurrences(of: "\n", with: " ")
         Store.shared.translateAction.next()
@@ -61,17 +61,17 @@ struct ReversoRepresenter: ViewRepresentable, WKScriptsSetup {
 }
 
 extension ReversoRepresenter.Coordinator: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
         var text: String { event.extra?.selectedText ?? "" }
 
         switch event.name {
         case "selectionchange":
             guard let text = event.extra?.selectedText else { return }
-            self.selectedText = text
+            selectedText = text
             store.translateAction.addAll(text: text, except: .reverso)
         case "keydown":
-            if event.extra?.keyCode == 18 { //Alt
+            if event.extra?.keyCode == 18 { // Alt
                 SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)
             }
         default:

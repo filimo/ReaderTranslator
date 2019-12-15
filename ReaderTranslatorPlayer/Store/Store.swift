@@ -30,7 +30,7 @@ class Store: ObservableObject {
     }
 
     @Published(wrappedValue: nil, key: "lastAudio") var lastAudio: URL?
-    @Published(key: "voiceVolume")  var voiceVolume: Float = 1
+    @Published(key: "voiceVolume") var voiceVolume: Float = 1
     @Published(key: "audioRate") var audioRate: Float = 1
 
     @Published(key: "bookmarks") var bookmarks: Bookmarks = []
@@ -38,9 +38,10 @@ class Store: ObservableObject {
     @Published var longmanSentences: LongmanSentences = []
     @Published var longmanSelectedBookmark = "" {
         willSet {
-            self.longmanSentences = []
+            longmanSentences = []
             LongmanStore.share.fetchInfo(text: newValue)
         }
     }
+
     @Published var longmanAudioRate: Float = 1
 }

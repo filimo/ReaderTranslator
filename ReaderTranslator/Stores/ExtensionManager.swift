@@ -11,11 +11,11 @@ import Foundation
 class SafariExtensionManager {
     typealias OnMessageChangedType = (_ name: String) -> Void
 
-    static private let center = CFNotificationCenterGetDarwinNotifyCenter()
+    private static let center = CFNotificationCenterGetDarwinNotifyCenter()
 
-    static private let domainName = "by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari"
-    static private let notificationName = "onMessagedChanged"
-    static private var eventName: CFString { "\(domainName).\(notificationName)" as CFString }
+    private static let domainName = "by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari"
+    private static let notificationName = "onMessagedChanged"
+    private static var eventName: CFString { "\(domainName).\(notificationName)" as CFString }
 
     private var onMessageChanged: OnMessageChangedType?
 
@@ -27,14 +27,15 @@ class SafariExtensionManager {
             callBack,
             Self.eventName,
             nil,
-            .deliverImmediately)
+            .deliverImmediately
+        )
     }
 
     deinit {
         CFNotificationCenterRemoveEveryObserver(Self.center, Unmanaged.passRetained(self).toOpaque())
     }
 
-    private var callBack: CFNotificationCallback = { (_, observer, name, object, _) -> Void in
+    private var callBack: CFNotificationCallback = { (_, observer, name, _, _) -> Void in
         if let observer = observer, let name = name {
             let managerSelf = Unmanaged<SafariExtensionManager>.fromOpaque(observer).takeUnretainedValue()
             managerSelf.onMessageChanged?(name.rawValue as String)

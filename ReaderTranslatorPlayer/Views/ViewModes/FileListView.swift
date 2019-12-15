@@ -6,8 +6,8 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SwiftUI
 import AVFoundation
+import SwiftUI
 
 struct FileListView: View {
     @ObservedObject var store = Store.shared
@@ -36,8 +36,7 @@ struct FileListView: View {
                     self.store.isPlaying = true
                 }, label: {
                     Text("\(url.lastPathComponent)")
-                    .foregroundColor(
-                        self.store.lastAudio?.lastPathComponent == url.lastPathComponent ? Color.yellow: Color.primary)
+                        .foregroundColor(self.getColor(url: url))
                 })
             }
             .onDelete { indexSet in
@@ -59,21 +58,25 @@ struct FileListView: View {
         }
     }
 
+    private func getColor(url: URL) -> Color {
+        store.lastAudio?.lastPathComponent == url.lastPathComponent ? Color.yellow : Color.primary
+    }
+
     private func refresh() {
-       guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            self.files = []
+        guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            files = []
             return
-       }
+        }
 
-       do {
-           let inbox = documentsUrl.appendingPathComponent("/Inbox")
-           let items = try FileManager.default.contentsOfDirectory(at: inbox, includingPropertiesForKeys: nil)
+        do {
+            let inbox = documentsUrl.appendingPathComponent("/Inbox")
+            let items = try FileManager.default.contentsOfDirectory(at: inbox, includingPropertiesForKeys: nil)
 
-           self.files = items
-       } catch {
-           print(error)
-           self.files = []
-       }
+            files = items
+        } catch {
+            print(error)
+            files = []
+        }
     }
 
     private func openAudio(url: URL) {

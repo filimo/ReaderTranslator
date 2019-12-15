@@ -6,9 +6,9 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
-import SafariServices
 import Combine
 import os.log
+import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
     typealias EventType = PassthroughSubject<String, Never>
@@ -44,21 +44,21 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         }
     }
 
-    override func toolbarItemClicked(in window: SFSafariWindow) {
+    override func toolbarItemClicked(in _: SFSafariWindow) {
         // This method will be called when your toolbar item is clicked.
         NSLog("The extension's toolbar item was clicked")
     }
 
     override func validateToolbarItem(
-        in window: SFSafariWindow,
-        validationHandler: @escaping ((Bool, String) -> Void)) {
+        in _: SFSafariWindow,
+        validationHandler: @escaping ((Bool, String) -> Void)
+    ) {
         // This is called when Safari's state changed in some way
         // that would require the extension's toolbar item to be validated again.
         validationHandler(true, "")
     }
 
     override func popoverViewController() -> SFSafariExtensionViewController {
-        return SafariExtensionViewController.shared
+        SafariExtensionViewController.shared
     }
-
 }
