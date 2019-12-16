@@ -193,6 +193,9 @@
 		F0BB43812344846200ADBEF1 /* ReaderView_Pdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A2233F5798005B9F2A /* ReaderView_Pdf.swift */; };
 		F0BB43822344846700ADBEF1 /* ReaderView_Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */; };
 		F0BB43832344846C00ADBEF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A4232E9710007CC07B /* ContentView.swift */; };
+		F0C0040823A899EA002B6060 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0040723A899EA002B6060 /* CircleButton.swift */; };
+		F0C0040923A899EA002B6060 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0040723A899EA002B6060 /* CircleButton.swift */; };
+		F0C0040A23A899EA002B6060 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0040723A899EA002B6060 /* CircleButton.swift */; };
 		F0C36A962359AF75001E396C /* StatusBarView_Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */; };
 		F0C36A972359AF76001E396C /* StatusBarView_Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */; };
 		F0C36A9D2359C78A001E396C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A9C2359C78A001E396C /* Array.swift */; };
@@ -392,6 +395,7 @@
 		F0AB182423A5504200A71CA6 /* SentencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentencesView.swift; sourceTree = "<group>"; };
 		F0AD8B1A236413F60017C22F /* AvailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableView.swift; sourceTree = "<group>"; };
 		F0AD8B1D236414070017C22F /* TranslateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAction.swift; sourceTree = "<group>"; };
+		F0C0040723A899EA002B6060 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Bookmarks.swift; sourceTree = "<group>"; };
 		F0C36A9C2359C78A001E396C /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		F0C36AA02359D50A001E396C /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
@@ -765,6 +769,7 @@
 				F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */,
 				F08EBB0F23956D80009025D3 /* NetworkManager.swift */,
 				F0EDFB24239E49480048CFD1 /* AudioPlayer.swift */,
+				F0C0040723A899EA002B6060 /* CircleButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1225,6 +1230,7 @@
 				F058C7F42397F9DB002C84F0 /* WKPageView.swift in Sources */,
 				F058C7FA2397FA7C002C84F0 /* NSObject.swift in Sources */,
 				F012037A239182DA008D0B47 /* ContentView.swift in Sources */,
+				F0C0040A23A899EA002B6060 /* CircleButton.swift in Sources */,
 				F058C7F92397FA70002C84F0 /* DOMEvent.swift in Sources */,
 				F058C7F62397FA3E002C84F0 /* Set.swift in Sources */,
 			);
@@ -1297,6 +1303,7 @@
 				F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */,
 				F0BB43812344846200ADBEF1 /* ReaderView_Pdf.swift in Sources */,
 				F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
+				F0C0040923A899EA002B6060 /* CircleButton.swift in Sources */,
 				F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */,
 				F0BB43722344843D00ADBEF1 /* FavoriteVoiceName.swift in Sources */,
 				F02B04BC23A2896900F93B84 /* PeerListener.swift in Sources */,
@@ -1363,6 +1370,7 @@
 				F0FCDD422361897D0016F23F /* MacmillanRepresenter.swift in Sources */,
 				F08EBAF023952AD6009025D3 /* WebViewContainer.swift in Sources */,
 				F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */,
+				F0C0040823A899EA002B6060 /* CircleButton.swift in Sources */,
 				F0AA69D4232E9762007CC07B /* ReaderView.swift in Sources */,
 				F0EDFB1F239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */,
 				F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */,

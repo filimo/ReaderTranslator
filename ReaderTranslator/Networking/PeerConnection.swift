@@ -87,40 +87,20 @@ class PeerConnection {
         connection.start(queue: .main)
     }
 
-    // Handle sending a "select character" message.
-    func selectCharacter(_ character: String) {
+    // Handle sending a "send" message.
+    func sendBookmarks(_ bookmarks: String) {
         guard let connection = connection else {
             return
         }
 
         // Create a message object to hold the command type.
-        let message = NWProtocolFramer.Message(readerTranslatorMessageType: .selectedCharacter)
-        let context = NWConnection.ContentContext(identifier: "SelectCharacter",
+        let message = NWProtocolFramer.Message(readerTranslatorMessageType: .send)
+        let context = NWConnection.ContentContext(identifier: "Send bookmarks",
                                                   metadata: [message])
 
         // Send the application content along with the message.
         connection.send(
-            content: character.data(using: .unicode),
-            contentContext: context,
-            isComplete: true,
-            completion: .idempotent
-        )
-    }
-
-    // Handle sending a "move" message.
-    func sendMove(_ move: String) {
-        guard let connection = connection else {
-            return
-        }
-
-        // Create a message object to hold the command type.
-        let message = NWProtocolFramer.Message(readerTranslatorMessageType: .move)
-        let context = NWConnection.ContentContext(identifier: "Move",
-                                                  metadata: [message])
-
-        // Send the application content along with the message.
-        connection.send(
-            content: move.data(using: .unicode),
+            content: bookmarks.data(using: .unicode),
             contentContext: context,
             isComplete: true,
             completion: .idempotent

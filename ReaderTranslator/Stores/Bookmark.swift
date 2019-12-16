@@ -8,11 +8,60 @@
 
 import Foundation
 
+struct Log: Codable, Hashable {
+    let created: Date
+}
+
+typealias Logs = [Log]
+
 struct Bookmark: Codable, Hashable {
     var counter: Int = 0
     let text: String
     let created: Date
-    var changed: Date
+    var changed: Date? // deprecated
+    var logs: Logs = [] {
+        didSet {
+             counter = logs.count
+        }
+    }
+
+    var lastCreatedLog: Date {
+        guard let log = (logs.max { $0.created < $1.created }) else { return Date() }
+        return log.created
+    }
+
+    init(counter: Int = 0, text: String, created: Date = Date(), changed: Date? = nil) {
+        self.counter = counter
+        self.text = text
+        self.created = created
+        self.changed = changed
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let counter = try values.decode(Int.self, forKey: .counter)
+
+        text = try values.decode(String.self, forKey: .text)
+        created = try values.decode(Date.self, forKey: .created)
+
+        do {
+            changed = try values.decode(Date?.self, forKey: .changed)
+        } catch {
+        }
+
+        if let changed = changed {
+            if counter > 0 {
+                logs = (1...counter).map { _ in Log(created: changed) }
+            }
+            self.changed = nil
+        } else {
+            do {
+                logs = try values.decode(Logs.self, forKey: .logs)
+            } catch {
+            }
+        }
+        self.counter = logs.count
+    }
 }
 
 typealias Bookmarks = [Bookmark]
@@ -40,7 +89,7 @@ extension Array where Element == Bookmark {
     }
 
     mutating func append(_ text: String) {
-        append(Bookmark(text: text, created: Date(), changed: Date()))
+        append(Bookmark(text: text, created: Date()))
     }
 
     mutating func append(items: [Substring]) {
@@ -63,20 +112,14 @@ extension Array where Element == Bookmark {
 
     mutating func increase(bookmark: Element) {
         guard let index = self.firstIndex(of: bookmark) else { return }
-        let counter = self[index].counter
 
-        if counter > 4 {
-            self[index].counter = 0
-        } else {
-            self[index].counter += 1
-        }
+        self[index].logs.append(Log(created: Date()))
         self[index].changed = Date()
     }
 
     mutating func clearAllCounters() {
         for index in indices {
-            self[index].counter = 0
-            self[index].changed = Date()
+            self[index].logs = []
         }
     }
 
@@ -92,19 +135,54 @@ extension Array where Element == Bookmark {
         return "[]"
     }
 
-    mutating func save(data: Data?) {
-        guard let content = data else { return }
-        if let jsonString = String(data: content, encoding: .unicode) {
-            self.save(jsonString: jsonString)
-        }
-    }
-
-    mutating func save(jsonString: String) {
-        guard let jsonData = jsonString.data(using: .utf8) else { return }
+    func parse(jsonString: String) -> [Element] {
+        guard let jsonData = jsonString.data(using: .utf8) else { return [] }
         do {
-            self = try JSONDecoder().decode(Bookmarks.self, from: jsonData)
+            return try JSONDecoder().decode(Bookmarks.self, from: jsonData)
         } catch {
             print("Bookmarks_\(#function)", error)
         }
+        return []
+    }
+
+    func parse(data: Data?) -> [Element] {
+        guard let content = data else { return [] }
+        if let jsonString = String(data: content, encoding: .unicode) {
+            return parse(jsonString: jsonString)
+        }
+        return []
+    }
+
+    mutating func merge(data: Data?) {
+        let bookmarks = parse(data: data)
+        var newBookmarks: Bookmarks = []
+
+        // new item
+        // update item and increase counter
+        // remove item if deleted date > created item
+        // get new items from local bookmarks
+        for bookmark in bookmarks {
+            guard let index = self.firstIndex(text: bookmark.text) else {
+                append(bookmark)
+                continue
+            }
+
+//            if self[index].changed < bookmark.changed {
+//                self[index].changed = bookmark.changed
+//                self[index].counter = bookmark.counter
+//            } else if self[index].changed > bookmark.changed {
+//                newBookmarks.append(self[index])
+//            }
+
+            let diff = bookmarks.difference(from: self)
+        }
+    }
+
+    mutating func save(data: Data?) {
+        self = parse(data: data)
+    }
+
+    mutating func save(jsonString: String) {
+        self = parse(jsonString: jsonString)
     }
 }

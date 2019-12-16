@@ -34,17 +34,14 @@ struct BookmarksView_List_Row: View {
         HStack {
             ForEach(bookmarks, id: \.self) { bookmark in
                 HStack {
-                    self.counterImageView(counter: bookmark.counter)
-                        .onTapGesture { self.store.bookmarks.increase(bookmark: bookmark) }
-                    self.bookmarkView(bookmark: bookmark)
+                    CircleButton { Text("\(bookmark.counter)") }
+                        .onTapGesture {
+                            self.store.bookmarks.increase(bookmark: bookmark)
+                        }
+                    self.bookmarkView(bookmark: bookmark).font(.headline)
                 }
             }
         }
-    }
-
-    private func counterImageView(counter: Int) -> some View {
-        let name = counter == 0 ? "0.circle" : "\(counter).circle.fill"
-        return Image.sfSymbol(name)
     }
 
     private func bookmarkView(bookmark: Bookmark) -> some View {

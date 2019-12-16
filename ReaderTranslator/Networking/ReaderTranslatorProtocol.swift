@@ -12,8 +12,7 @@ import Network
 // Define the types of commands your game will use.
 enum ReaderTranslatorMessageType: UInt32 {
     case invalid = 0
-    case selectedCharacter = 1
-    case move = 2
+    case send = 1
 }
 
 // Create a class that implements a framing protocol.

@@ -86,8 +86,11 @@ extension HostsView.Coordinator: PeerConnectionDelegate {
         status = .failed(error: "failed")
     }
 
-    func receivedMessage(content: Data?, message _: NWProtocolFramer.Message) {
-        store.bookmarks.save(data: content)
+    func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
+        switch message.readerTranslatorMessageType {
+        case .invalid: print("Received invalid message")
+        case .send: store.bookmarks.merge(data: content)
+        }
     }
 }
 

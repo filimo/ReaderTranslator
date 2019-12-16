@@ -29,8 +29,8 @@ struct StatusBarView_Listener: View {
             Text(coordinator.status.status).onTapGesture(perform: coordinator.start)
             if coordinator.status == .connected {
                 Button(action: {
-                    sharedConnection?.sendMove(self.store.bookmarks.json)
-                }, label: { Text("Send bookmarks") })
+                    sharedConnection?.sendBookmarks(self.store.bookmarks.json)
+                }, label: { Text("Sync bookmarks") })
             }
         }
     }

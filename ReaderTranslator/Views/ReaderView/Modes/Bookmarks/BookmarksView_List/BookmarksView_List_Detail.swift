@@ -18,7 +18,7 @@ struct BookmarksView_List_Detail: View {
         guard let bookmark = self.store.bookmarks.first(text: self.store.longmanSelectedBookmark) else { return "" }
         let formatter = RelativeDateTimeFormatter()
 
-        return formatter.localizedString(for: Date(), relativeTo: bookmark.changed)
+        return formatter.localizedString(for: Date(), relativeTo: bookmark.lastCreatedLog)
     }
 
     var createTime: String {
