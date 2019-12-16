@@ -30,7 +30,6 @@ struct BookmarksView_List: View {
 
         return bookmarks
             .filter(counter: store.bookmarksCounterFilter)
-            .sorted
             .chunked(into: columnts)
     }
 

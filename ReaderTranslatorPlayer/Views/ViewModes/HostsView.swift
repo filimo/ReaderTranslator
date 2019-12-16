@@ -87,15 +87,7 @@ extension HostsView.Coordinator: PeerConnectionDelegate {
     }
 
     func receivedMessage(content: Data?, message _: NWProtocolFramer.Message) {
-        guard let content = content else { return }
-        if let data = String(data: content, encoding: .unicode) {
-            guard let jsonData = data.data(using: .utf8) else { return }
-            do {
-                store.bookmarks = try JSONDecoder().decode(Bookmarks.self, from: jsonData)
-            } catch {
-                print("HostsView.Coordinator_\(#function)", error)
-            }
-        }
+        store.bookmarks.save(data: content)
     }
 }
 

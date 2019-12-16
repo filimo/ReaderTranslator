@@ -15,12 +15,11 @@ struct BookmarksView_Controls_ActionMenu: View {
     var body: some View {
         MenuButton("Actions") {
             Button(action: {
-                Clipboard.copy(self.store.bookmarks.joined(separator: "\n"))
+                Clipboard.copy(self.store.bookmarks.json)
             }, label: { Text("Copy bookmarks to Clipboard") })
             Button(action: {
-                let items = Clipboard.string.split(separator: .BackslashN)
-                self.store.bookmarks.append(items: items)
-            }, label: { Text("Paste bookmarks separated by \\n from Clipboard") })
+                self.store.bookmarks.save(jsonString: Clipboard.string)
+            }, label: { Text("Paste bookmarks from Clipboard") })
             Button(action: {
                 self.store.bookmarks.clearAllCounters()
             }, label: { Text("Clear all counters") })

@@ -29,14 +29,7 @@ struct StatusBarView_Listener: View {
             Text(coordinator.status.status).onTapGesture(perform: coordinator.start)
             if coordinator.status == .connected {
                 Button(action: {
-                    do {
-                        let jsonData = try JSONEncoder().encode(self.store.bookmarks)
-                        if let jsonString = String(data: jsonData, encoding: .utf8) {
-                            sharedConnection?.sendMove(jsonString)
-                        }
-                    } catch {
-                        print("\(self.theClassName)_\(#function)", error)
-                    }
+                    sharedConnection?.sendMove(self.store.bookmarks.json)
                 }, label: { Text("Send bookmarks") })
             }
         }

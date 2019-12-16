@@ -79,4 +79,32 @@ extension Array where Element == Bookmark {
             self[index].changed = Date()
         }
     }
+
+    var json: String {
+        do {
+            let jsonData = try JSONEncoder().encode(self)
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                return jsonString
+            }
+        } catch {
+            print("Bookmarks_\(#function)", error)
+        }
+        return "[]"
+    }
+
+    mutating func save(data: Data?) {
+        guard let content = data else { return }
+        if let jsonString = String(data: content, encoding: .unicode) {
+            self.save(jsonString: jsonString)
+        }
+    }
+
+    mutating func save(jsonString: String) {
+        guard let jsonData = jsonString.data(using: .utf8) else { return }
+        do {
+            self = try JSONDecoder().decode(Bookmarks.self, from: jsonData)
+        } catch {
+            print("Bookmarks_\(#function)", error)
+        }
+    }
 }
