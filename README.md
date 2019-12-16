@@ -1,8 +1,9 @@
 # ReaderTranslator 
-**using SwiftUI, Combine, Catalyst and others new features that annonced at WWDC 2019**
+### using SwiftUI, Combine, Catalyst and others new features that annonced at WWDC 2019
 
 ## Help
-### If you like this project you can ✭ it. It will allow to pay attention other developers. Perhaps they will be interesting to know more about SwiftUI, Combine and other WWDC 2019 features in practice or using the features offered by this project. <br> I see 100 regualr visits and 10 clones pre day.
+***If you mark this project with ✭. It will allow to easy find this project for other developers. Perhaps they already find more information about SwiftUI, Combine and other WWDC 2019 features in practice.
+This project will allow them to get rid of wrong opinion that SwiftUI has a lot of issues and it can not be used in real projects thereby you can bring the time where requests exceed offers.***
 
 ## Support
 I created Telegram group https://t.me/ReaderTranslator to support this project.
