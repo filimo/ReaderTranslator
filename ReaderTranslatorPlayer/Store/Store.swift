@@ -35,7 +35,7 @@ class Store: ObservableObject {
 
     @Published(key: "bookmarks") var bookmarks: Bookmarks = []
 
-    @Published var longmanSentences: LongmanSentences = []
+    @Published var longmanSentences: LongmanSentences = [LongmanSentence.empty]
     @Published var longmanSelectedBookmark = "" {
         willSet {
             longmanSentences = []

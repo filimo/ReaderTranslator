@@ -26,8 +26,9 @@ struct BookmarksView: View {
                                 label: { self.bookmarksIco }
                             )
                             Spacer()
-                            self.counterImageIco(counter: bookmark.counter)
-                                .onTapGesture { self.store.bookmarks.increase(bookmark: bookmark) }
+                            Button(
+                                action: { self.store.bookmarks.increase(bookmark: bookmark) },
+                                label: { self.counterImageIco(counter: bookmark.counter) })
                         }
                     }
                 }

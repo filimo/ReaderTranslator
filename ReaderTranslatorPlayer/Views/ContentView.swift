@@ -14,8 +14,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                PlayerControlsView()
                 FileListView()
+                PlayerControlsView()
                 BookmarksView()
             }
             .navigationBarTitle("", displayMode: .inline)
