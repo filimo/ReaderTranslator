@@ -35,16 +35,18 @@ struct BookmarksView_List_Row: View {
             ForEach(bookmarks, id: \.self) { bookmark in
                 HStack {
                     CircleButton { Text("\(bookmark.counter)") }
+                        .aspectRatio(contentMode: .fill)
+                        .fixedSize(horizontal: true, vertical: false)
                         .onTapGesture {
                             self.store.bookmarks.increase(bookmark: bookmark)
                         }
-                    self.bookmarkView(bookmark: bookmark).font(.headline)
+                    self.bookmarkItemView(bookmark: bookmark).font(.headline)
                 }
             }
         }
     }
 
-    private func bookmarkView(bookmark: Bookmark) -> some View {
+    private func bookmarkItemView(bookmark: Bookmark) -> some View {
         Text("\(bookmark.text)")
             .frame(width: width, alignment: .leading)
             .foregroundColor(store.longmanSelectedBookmark == bookmark.text ? Color.yellow : Color.primary)
@@ -52,5 +54,11 @@ struct BookmarksView_List_Row: View {
                 self.store.longmanSelectedBookmark = bookmark.text
                 self.store.translateAction.addAll(text: bookmark.text, except: .bookmarks, isSpeaking: false)
             }
+    }
+}
+
+struct BookmarksView_List_Row_Previews: PreviewProvider {
+    static var previews: some View {
+        BookmarksView_List_Row(bookmarks: [.init(text: "test")], width: 100)
     }
 }

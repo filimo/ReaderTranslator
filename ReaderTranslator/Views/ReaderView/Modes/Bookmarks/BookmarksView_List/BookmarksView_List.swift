@@ -14,6 +14,7 @@ struct BookmarksView_List: View {
     var columnts: Int
     var width: CGFloat
     @Binding var filter: String
+    var debug = false
 
     private var bookmarks: [Bookmarks] {
         if case let .bookmarks(text) = store.translateAction {
@@ -21,7 +22,7 @@ struct BookmarksView_List: View {
             Store.shared.longmanSelectedBookmark = text
         }
 
-        var bookmarks = store.bookmarks
+        var bookmarks = debug ? [.init(text: "test")] : store.bookmarks
         let filter = self.filter.trimmingCharacters(in: .whitespaces)
 
         if !filter.isEmpty {
@@ -46,6 +47,6 @@ struct BookmarksView_List: View {
 
 struct BookmarksView_List_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView_List(columnts: 3, width: 100, filter: .constant(""))
+        BookmarksView_List(columnts: 3, width: 100, filter: .constant(""), debug: true)
     }
 }

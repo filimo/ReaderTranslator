@@ -7,9 +7,12 @@
 //
 
 import AVFoundation
+import Dispatch
 import SwiftUI
 
 struct FileListView: View {
+    var debug: Bool
+
     @ObservedObject var store = Store.shared
 
     @State var files: [URL] = []
@@ -17,7 +20,8 @@ struct FileListView: View {
     static var player: AVAudioPlayer?
     static var directoryObserver: DirectoryObserver?
 
-    init() {
+    init(debug: Bool = false) {
+        self.debug = debug
         do {
             let sharedInstance = AVAudioSession.sharedInstance()
 
@@ -45,7 +49,7 @@ struct FileListView: View {
                 let file = self.files[first]
                 do {
                     try FileManager.default.removeItem(at: file)
-                    self.refresh()
+//                    self.refresh()
                 } catch {
                     print(error)
                 }
@@ -53,7 +57,13 @@ struct FileListView: View {
         }
         .onAppear {
             if let url = self.folderUrl {
-                RunLoop.main.perform { self.refresh() }
+                RunLoop.main.perform {
+                    if self.debug {
+                        self.files = [Bundle.main.bundleURL.appendingPathComponent("test audio")]
+                    } else {
+                        self.refresh()
+                    }
+                }
                 Self.directoryObserver = DirectoryObserver(URL: url) { self.refresh() }
             }
             if let lastAudio = self.store.lastAudio { self.openAudio(url: lastAudio) }
@@ -98,6 +108,6 @@ struct FileListView: View {
 
 struct FileListView_Previews: PreviewProvider {
     static var previews: some View {
-        FileListView()
+        FileListView(debug: true)
     }
 }

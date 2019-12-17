@@ -10,22 +10,24 @@ import Foundation
 
 class DirectoryObserver {
     private let fileDescriptor: CInt
-    private let source: DispatchSourceProtocol
+    private var source: DispatchSourceProtocol?
 
     deinit {
-        self.source.cancel()
+        source?.cancel()
         close(fileDescriptor)
     }
 
     init(URL: URL, block: @escaping () -> Void) {
-        self.fileDescriptor = open(URL.path, O_EVTONLY)
-        self.source = DispatchSource.makeFileSystemObjectSource(
-            fileDescriptor: self.fileDescriptor,
-            eventMask: .all,
-            queue: DispatchQueue.global())
-        self.source.setEventHandler {
-            block()
+        fileDescriptor = open(URL.path, O_EVTONLY)
+        if fileDescriptor != -1 {
+            source = DispatchSource.makeFileSystemObjectSource(
+                fileDescriptor: fileDescriptor,
+                eventMask: .all,
+                queue: DispatchQueue.global())
+            source?.setEventHandler {
+                block()
+            }
+            source?.resume()
         }
-        self.source.resume()
     }
 }

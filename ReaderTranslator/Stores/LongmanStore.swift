@@ -16,7 +16,7 @@ private var cancellableSet: Set<AnyCancellable> = []
 private var player: AVAudioPlayer?
 
 struct LongmanSentence: Hashable {
-    static let empty = Self(text: "No sentences", url: URL(string: "about:blank")!)
+    static let empty = Self(text: "No sentences", url: URL.empty)
 
     let text: String
     let url: URL

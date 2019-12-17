@@ -11,6 +11,15 @@ import SwiftUI
 struct BookmarksView: View {
     @ObservedObject var store = Store.shared
 
+    struct ButtonModifier: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .aspectRatio(contentMode: .fit)
+                .fixedSize(horizontal: true, vertical: false)
+                .padding([.top, .bottom], 8)
+        }
+    }
+
     var body: some View {
         VStack {
             ScrollView {
@@ -19,16 +28,20 @@ struct BookmarksView: View {
                         HStack {
                             NavigationLink(
                                 destination: SentencesView(bookmark: bookmark.text),
-                                label: { Text(bookmark.text).font(.largeTitle) }
-                            )
-                            NavigationLink(
-                                destination: LongmanView(phrase: bookmark.text),
-                                label: { self.bookmarksIco }
-                            )
+                                label: {
+                                    Text(bookmark.text)
+                                        .font(.largeTitle)
+                                        .lineLimit(1)
+                                }
+                            ).layoutPriority(2)
+                            self.bookmarksIco(text: bookmark.text)
+
                             Spacer()
+
                             CircleButton {
-                                self.counterImageIco(counter: bookmark.counter)
+                                Text("\(bookmark.counter)")
                             }
+                            .modifier(ButtonModifier())
                             .onTapGesture {
                                 self.store.bookmarks.increase(bookmark: bookmark)
                             }
@@ -39,20 +52,21 @@ struct BookmarksView: View {
         }.padding()
     }
 
-    private var bookmarksIco: some View {
-        Image(systemName: "book.circle")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(height: 25)
-            .padding(.trailing, 10)
+    private func bookmarksIco(text: String) -> some View {
+        NavigationLink(
+            destination: LongmanView(phrase: text),
+            label: {
+                Image(systemName: "book.circle")
+                    .resizable()
+                    .modifier(ButtonModifier())
+            }
+        )
     }
+}
 
-    private func counterImageIco(counter: Int) -> some View {
-        let name = counter == 0 ? "0.circle" : "\(counter).circle.fill"
-        return Image(systemName: name)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(height: 25)
-            .padding(.trailing, 5)
+struct BookmarksView_Previews: PreviewProvider {
+    static var previews: some View {
+        Store.shared.bookmarks = [.init(text: "test bookmark test test")]
+        return BookmarksView()
     }
 }
