@@ -13,6 +13,7 @@
 		F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0039EC223447E24002F3F95 /* SharedContainer.swift */; };
 		F00C7C87235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
 		F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
+		F00EFE1723A95A6D0071D962 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A9C2359C78A001E396C /* Array.swift */; };
 		F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0120375239182DA008D0B47 /* AppDelegate.swift */; };
 		F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0120377239182DA008D0B47 /* SceneDelegate.swift */; };
 		F012037A239182DA008D0B47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0120379239182DA008D0B47 /* ContentView.swift */; };
@@ -148,6 +149,8 @@
 		F08EBB1123956D80009025D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0F23956D80009025D3 /* NetworkManager.swift */; };
 		F09AD47E23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F09AD47F23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
+		F0A2179B23A9355E00968133 /* ReaderTranslatorMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2179A23A9355E00968133 /* ReaderTranslatorMacTests.swift */; };
+		F0A217A223A935F700968133 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0418B97239A32FD00B59C66 /* Bookmark.swift */; };
 		F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A0232E9710007CC07B /* AppDelegate.swift */; };
 		F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A2232E9710007CC07B /* SceneDelegate.swift */; };
 		F0AA69A5232E9710007CC07B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A4232E9710007CC07B /* ContentView.swift */; };
@@ -266,6 +269,13 @@
 			remoteGlobalIDString = F075444D23447A2700E1D88E;
 			remoteInfo = ReaderTranslatorSafari;
 		};
+		F0A2179D23A9355E00968133 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0754436234479DA00E1D88E;
+			remoteInfo = ReaderTranslatorMac;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -372,6 +382,9 @@
 		F08EBB0C23956A20009025D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F08EBB0F23956D80009025D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F09AD47D23702DF100FFBF6A /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		F0A2179823A9355E00968133 /* ReaderTranslatorMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReaderTranslatorMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0A2179A23A9355E00968133 /* ReaderTranslatorMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTranslatorMacTests.swift; sourceTree = "<group>"; };
+		F0A2179C23A9355E00968133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0A9F35A2349228A00970C97 /* ReversoRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversoRepresenter.swift; sourceTree = "<group>"; };
 		F0AA699D232E9710007CC07B /* ReaderTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AA69A0232E9710007CC07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -450,6 +463,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F075444F23447A2700E1D88E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0A2179523A9355E00968133 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +697,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F0A2179923A9355E00968133 /* ReaderTranslatorMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0A2179A23A9355E00968133 /* ReaderTranslatorMacTests.swift */,
+				F0A2179C23A9355E00968133 /* Info.plist */,
+			);
+			path = ReaderTranslatorMacTests;
+			sourceTree = "<group>";
+		};
 		F0AA6994232E9710007CC07B = {
 			isa = PBXGroup;
 			children = (
@@ -686,6 +715,7 @@
 				F0754438234479DA00E1D88E /* ReaderTranslatorMac */,
 				F075445023447A2800E1D88E /* ReaderTranslatorSafari */,
 				F0120374239182DA008D0B47 /* ReaderTranslatorPlayer */,
+				F0A2179923A9355E00968133 /* ReaderTranslatorMacTests */,
 				F00644452341E22D006BCA94 /* Frameworks */,
 				F0AA699E232E9710007CC07B /* Products */,
 				F04924372341F2F800F3C728 /* Recovered References */,
@@ -699,6 +729,7 @@
 				F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */,
 				F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */,
 				F0120373239182DA008D0B47 /* ReaderTranslatorPlayer.app */,
+				F0A2179823A9355E00968133 /* ReaderTranslatorMacTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -991,6 +1022,24 @@
 			productReference = F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		F0A2179723A9355E00968133 /* ReaderTranslatorMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0A217A123A9355E00968133 /* Build configuration list for PBXNativeTarget "ReaderTranslatorMacTests" */;
+			buildPhases = (
+				F0A2179423A9355E00968133 /* Sources */,
+				F0A2179523A9355E00968133 /* Frameworks */,
+				F0A2179623A9355E00968133 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0A2179E23A9355E00968133 /* PBXTargetDependency */,
+			);
+			name = ReaderTranslatorMacTests;
+			productName = ReaderTranslatorMacTests;
+			productReference = F0A2179823A9355E00968133 /* ReaderTranslatorMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F0AA699C232E9710007CC07B /* ReaderTranslator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0AA69C7232E9712007CC07B /* Build configuration list for PBXNativeTarget "ReaderTranslator" */;
@@ -1017,7 +1066,7 @@
 		F0AA6995232E9710007CC07B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Viktor Kushnerov";
 				TargetAttributes = {
@@ -1029,6 +1078,10 @@
 					};
 					F075444D23447A2700E1D88E = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					F0A2179723A9355E00968133 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = F0754436234479DA00E1D88E;
 					};
 					F0AA699C232E9710007CC07B = {
 						CreatedOnToolsVersion = 11.0;
@@ -1055,6 +1108,7 @@
 				F0754436234479DA00E1D88E /* ReaderTranslatorMac */,
 				F075444D23447A2700E1D88E /* ReaderTranslatorSafari */,
 				F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */,
+				F0A2179723A9355E00968133 /* ReaderTranslatorMacTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1094,6 +1148,13 @@
 				F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */,
 				F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */,
 				F075445A23447A2800E1D88E /* reader-translator.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0A2179623A9355E00968133 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1351,6 +1412,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0A2179423A9355E00968133 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F00EFE1723A95A6D0071D962 /* Array.swift in Sources */,
+				F0A2179B23A9355E00968133 /* ReaderTranslatorMacTests.swift in Sources */,
+				F0A217A223A935F700968133 /* Bookmark.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0AA6999232E9710007CC07B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1445,6 +1516,11 @@
 			isa = PBXTargetDependency;
 			target = F075444D23447A2700E1D88E /* ReaderTranslatorSafari */;
 			targetProxy = F075445E23447A2800E1D88E /* PBXContainerItemProxy */;
+		};
+		F0A2179E23A9355E00968133 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0754436234479DA00E1D88E /* ReaderTranslatorMac */;
+			targetProxy = F0A2179D23A9355E00968133 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1629,6 +1705,50 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F0A2179F23A9355E00968133 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = B6QRXW5YF2;
+				INFOPLIST_FILE = ReaderTranslatorMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReaderTranslatorMac.app/Contents/MacOS/ReaderTranslatorMac";
+			};
+			name = Debug;
+		};
+		F0A217A023A9355E00968133 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = B6QRXW5YF2;
+				INFOPLIST_FILE = ReaderTranslatorMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReaderTranslatorMac.app/Contents/MacOS/ReaderTranslatorMac";
 			};
 			name = Release;
 		};
@@ -1822,6 +1942,15 @@
 			buildConfigurations = (
 				F075446223447A2800E1D88E /* Debug */,
 				F075446323447A2800E1D88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0A217A123A9355E00968133 /* Build configuration list for PBXNativeTarget "ReaderTranslatorMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0A2179F23A9355E00968133 /* Debug */,
+				F0A217A023A9355E00968133 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

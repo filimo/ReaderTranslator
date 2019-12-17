@@ -110,11 +110,11 @@ extension Array where Element == Bookmark {
         return filter { $0.counter == counter }
     }
 
-    mutating func increase(bookmark: Element) {
+    mutating func increase(bookmark: Element?) {
+        guard let bookmark = bookmark else { return }
         guard let index = self.firstIndex(of: bookmark) else { return }
 
         self[index].logs.append(Log(created: Date()))
-        self[index].changed = Date()
     }
 
     mutating func clearAllCounters() {
@@ -153,30 +153,30 @@ extension Array where Element == Bookmark {
         return []
     }
 
-    mutating func merge(data: Data?) {
-        let bookmarks = parse(data: data)
-        var newBookmarks: Bookmarks = []
-
-        // new item
-        // update item and increase counter
-        // remove item if deleted date > created item
-        // get new items from local bookmarks
-        for bookmark in bookmarks {
-            guard let index = self.firstIndex(text: bookmark.text) else {
-                append(bookmark)
-                continue
-            }
-
-//            if self[index].changed < bookmark.changed {
-//                self[index].changed = bookmark.changed
-//                self[index].counter = bookmark.counter
-//            } else if self[index].changed > bookmark.changed {
-//                newBookmarks.append(self[index])
+//    mutating func merge(data: Data?) {
+//        let bookmarks = parse(data: data)
+//        var newBookmarks: Bookmarks = []
+//
+//        // new item
+//        // update item and increase counter
+//        // remove item if deleted date > created item
+//        // get new items from local bookmarks
+//        for bookmark in bookmarks {
+//            guard let index = self.firstIndex(text: bookmark.text) else {
+//                append(bookmark)
+//                continue
 //            }
-
-            let diff = bookmarks.difference(from: self)
-        }
-    }
+//
+////            if self[index].changed < bookmark.changed {
+////                self[index].changed = bookmark.changed
+////                self[index].counter = bookmark.counter
+////            } else if self[index].changed > bookmark.changed {
+////                newBookmarks.append(self[index])
+////            }
+//
+//            let diff = bookmarks.difference(from: self)
+//        }
+//    }
 
     mutating func save(data: Data?) {
         self = parse(data: data)
@@ -184,5 +184,15 @@ extension Array where Element == Bookmark {
 
     mutating func save(jsonString: String) {
         self = parse(jsonString: jsonString)
+    }
+
+    mutating func merge<C: Collection>(newElements: C) where C.Iterator.Element == Element {
+        for element in newElements {
+            if let index = self.firstIndex(text: element.text) {
+                self[index].logs.merge(newElements: element.logs)
+            } else {
+                append(element)
+            }
+        }
     }
 }
