@@ -21,13 +21,13 @@ struct StatusBarView_Bookmarks: View {
 
         return Group {
             if text != "" {
-                if self.store.bookmarks.contains(text: text) {
-                    Button(action: { self.store.bookmarks.remove(text: text) },
+                if self.store.bookmarks.items.contains(text: text) {
+                    Button(action: { self.store.bookmarks.items.remove(text: text) },
                            label: { Image.sfSymbol("bookmark.fill") })
                 } else {
                     Button(
                         action: {
-                            self.store.bookmarks.append(text)
+                            self.store.bookmarks.items.append(text)
                             self.store.translateAction.add(.bookmarks(text: text))
                         },
                         label: { Image.sfSymbol("bookmark") }

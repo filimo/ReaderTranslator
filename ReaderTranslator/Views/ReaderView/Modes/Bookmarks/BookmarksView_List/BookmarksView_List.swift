@@ -16,13 +16,13 @@ struct BookmarksView_List: View {
     @Binding var filter: String
     var debug = false
 
-    private var bookmarks: [Bookmarks] {
+    private var bookmarks: [BookmarksStore.Bookmarks] {
         if case let .bookmarks(text) = store.translateAction {
             Store.shared.translateAction.next()
             Store.shared.longmanSelectedBookmark = text
         }
 
-        var bookmarks = debug ? [.init(text: "test")] : store.bookmarks
+        var bookmarks = debug ? [.init(text: "test")] : store.bookmarks.items
         let filter = self.filter.trimmingCharacters(in: .whitespaces)
 
         if !filter.isEmpty {
@@ -30,7 +30,7 @@ struct BookmarksView_List: View {
         }
 
         return bookmarks
-            .filter(counter: store.bookmarksCounterFilter)
+            .filter(counter: store.bookmarks.filterCounter)
             .chunked(into: columnts)
     }
 

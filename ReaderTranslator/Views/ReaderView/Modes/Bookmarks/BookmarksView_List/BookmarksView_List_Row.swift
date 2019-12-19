@@ -14,7 +14,7 @@ struct BookmarksView_List_Row: View {
 
     @State var selectSentence = ""
 
-    var bookmarks: Bookmarks
+    var bookmarks: BookmarksStore.Bookmarks
     var width: CGFloat
 
     var showDetail: Bool {
@@ -38,7 +38,7 @@ struct BookmarksView_List_Row: View {
                         .aspectRatio(contentMode: .fill)
                         .fixedSize(horizontal: true, vertical: false)
                         .onTapGesture {
-                            self.store.bookmarks.increase(bookmark: bookmark)
+                            self.store.bookmarks.items.increase(bookmark: bookmark)
                         }
                     self.bookmarkItemView(bookmark: bookmark).font(.headline)
                 }
@@ -46,7 +46,7 @@ struct BookmarksView_List_Row: View {
         }
     }
 
-    private func bookmarkItemView(bookmark: Bookmark) -> some View {
+    private func bookmarkItemView(bookmark: BookmarksStore.Bookmark) -> some View {
         Text("\(bookmark.text)")
             .frame(width: width, alignment: .leading)
             .foregroundColor(store.longmanSelectedBookmark == bookmark.text ? Color.yellow : Color.primary)

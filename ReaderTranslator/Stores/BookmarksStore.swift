@@ -8,65 +8,73 @@
 
 import Foundation
 
-struct Log: Codable, Hashable {
-    let created: Date
-}
+final class BookmarksStore: ObservableObject {
+    private init() {}
+    static let shared = BookmarksStore()
 
-typealias Logs = [Log]
+    typealias Bookmarks = [Bookmark]
 
-struct Bookmark: Codable, Hashable {
-    var counter: Int = 0
-    let text: String
-    let created: Date
-    var changed: Date? // deprecated
-    var logs: Logs = [] {
-        didSet {
-             counter = logs.count
-        }
+    @Published(key: "bookmarks") var items = Bookmarks()
+    @Published var filterCounter = -1
+
+    struct Log: Codable, Hashable {
+        let created: Date
     }
 
-    var lastCreatedLog: Date {
-        guard let log = (logs.max { $0.created < $1.created }) else { return Date() }
-        return log.created
-    }
+    typealias Logs = [Log]
 
-    init(counter: Int = 0, text: String, created: Date = Date(), changed: Date? = nil) {
-        self.counter = counter
-        self.text = text
-        self.created = created
-        self.changed = changed
-    }
-
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        let counter = try values.decode(Int.self, forKey: .counter)
-
-        text = try values.decode(String.self, forKey: .text)
-        created = try values.decode(Date.self, forKey: .created)
-
-        do {
-            changed = try values.decode(Date?.self, forKey: .changed)
-        } catch {
-        }
-
-        if let changed = changed {
-            if counter > 0 {
-                logs = (1...counter).map { _ in Log(created: changed) }
+    struct Bookmark: Codable, Hashable {
+        var counter: Int = 0
+        let text: String
+        let created: Date
+        var changed: Date? // deprecated
+        var logs: Logs = [] {
+            didSet {
+                 counter = logs.count
             }
-            self.changed = nil
-        } else {
+        }
+
+        var lastCreatedLog: Date {
+            guard let log = (logs.max { $0.created < $1.created }) else { return Date() }
+            return log.created
+        }
+
+        init(counter: Int = 0, text: String, created: Date = Date(), changed: Date? = nil) {
+            self.counter = counter
+            self.text = text
+            self.created = created
+            self.changed = changed
+        }
+
+        init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            let counter = try values.decode(Int.self, forKey: .counter)
+
+            text = try values.decode(String.self, forKey: .text)
+            created = try values.decode(Date.self, forKey: .created)
+
             do {
-                logs = try values.decode(Logs.self, forKey: .logs)
+                changed = try values.decode(Date?.self, forKey: .changed)
             } catch {
             }
+
+            if let changed = changed {
+                if counter > 0 {
+                    logs = (1...counter).map { _ in Log(created: changed) }
+                }
+                self.changed = nil
+            } else {
+                do {
+                    logs = try values.decode(Logs.self, forKey: .logs)
+                } catch {
+                }
+            }
+            self.counter = logs.count
         }
-        self.counter = logs.count
     }
 }
 
-typealias Bookmarks = [Bookmark]
-
-extension Array where Element == Bookmark {
+extension Array where Element == BookmarksStore.Bookmark {
     var sorted: [Element] {
         self.sorted { $0.text < $1.text }
     }
@@ -89,7 +97,7 @@ extension Array where Element == Bookmark {
     }
 
     mutating func append(_ text: String) {
-        append(Bookmark(text: text, created: Date()))
+        append(BookmarksStore.Bookmark(text: text, created: Date()))
     }
 
     mutating func append(items: [Substring]) {
@@ -114,7 +122,7 @@ extension Array where Element == Bookmark {
         guard let bookmark = bookmark else { return }
         guard let index = self.firstIndex(of: bookmark) else { return }
 
-        self[index].logs.append(Log(created: Date()))
+        self[index].logs.append(BookmarksStore.Log(created: Date()))
     }
 
     mutating func clearAllCounters() {
@@ -138,7 +146,7 @@ extension Array where Element == Bookmark {
     func parse(jsonString: String) -> [Element] {
         guard let jsonData = jsonString.data(using: .utf8) else { return [] }
         do {
-            return try JSONDecoder().decode(Bookmarks.self, from: jsonData)
+            return try JSONDecoder().decode(Self.self, from: jsonData)
         } catch {
             print("Bookmarks_\(#function)", error)
         }

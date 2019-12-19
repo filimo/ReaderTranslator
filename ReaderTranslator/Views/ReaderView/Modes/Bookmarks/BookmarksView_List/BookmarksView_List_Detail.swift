@@ -15,14 +15,14 @@ struct BookmarksView_List_Detail: View {
     @Binding var selectSentence: String
 
     var changedTime: String {
-        guard let bookmark = self.store.bookmarks.first(text: self.store.longmanSelectedBookmark) else { return "" }
+        guard let bookmark = self.store.bookmarks.items.first(text: self.store.longmanSelectedBookmark) else { return "" }
         let formatter = RelativeDateTimeFormatter()
 
         return formatter.localizedString(for: Date(), relativeTo: bookmark.lastCreatedLog)
     }
 
     var createTime: String {
-        guard let bookmark = self.store.bookmarks.first(text: self.store.longmanSelectedBookmark) else { return "" }
+        guard let bookmark = self.store.bookmarks.items.first(text: self.store.longmanSelectedBookmark) else { return "" }
         let formatter = RelativeDateTimeFormatter()
 
         return formatter.localizedString(for: Date(), relativeTo: bookmark.created)

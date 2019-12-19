@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-class Store: ObservableObject {
+final class Store: ObservableObject {
     static var shared = Store()
 
     var maxViewWidth: CGFloat = 400
@@ -50,8 +50,6 @@ class Store: ObservableObject {
 
     @Published(key: "playbackRate") var playbackRate: Float = 1.0
 
-    @Published(key: "bookmarks") var bookmarks: Bookmarks = []
-    @Published var bookmarksCounterFilter = -1
     @Published var longmanSentences: LongmanSentences = []
     @Published var longmanSelectedBookmark = "" {
         willSet {
@@ -59,6 +57,8 @@ class Store: ObservableObject {
             LongmanStore.share.fetchInfo(text: newValue)
         }
     }
+
+    @Published var bookmarks = BookmarksStore.shared
 
     @Published var longmanAudioRate: Float = 1
 

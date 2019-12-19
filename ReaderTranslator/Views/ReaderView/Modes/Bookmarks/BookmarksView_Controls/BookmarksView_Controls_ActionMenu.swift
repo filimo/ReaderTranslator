@@ -15,15 +15,15 @@ struct BookmarksView_Controls_ActionMenu: View {
     var body: some View {
         MenuButton("Actions") {
             Button(action: {
-                Clipboard.copy(self.store.bookmarks.json)
+                Clipboard.copy(self.store.bookmarks.items.json)
             }, label: { Text("Copy bookmarks to Clipboard") })
             Button(action: {
                 RunLoop.main.perform {
-                    self.store.bookmarks.save(jsonString: Clipboard.string)
+                    self.store.bookmarks.items.save(jsonString: Clipboard.string)
                 }
             }, label: { Text("Paste bookmarks from Clipboard") })
             Button(action: {
-                self.store.bookmarks.clearAllCounters()
+                self.store.bookmarks.items.clearAllCounters()
             }, label: { Text("Clear all counters") })
             Button(action: {
                 self.showConfirm = true
@@ -38,7 +38,7 @@ struct BookmarksView_Controls_ActionMenu: View {
                 title: Text("Are you sure?"),
                 message: Text("Remove all bookmarks?"),
                 primaryButton: .cancel(),
-                secondaryButton: .default(Text("Ok")) { self.store.bookmarks.removeAll() }
+                secondaryButton: .default(Text("Ok")) { self.store.bookmarks.items.removeAll() }
             )
         }
     }

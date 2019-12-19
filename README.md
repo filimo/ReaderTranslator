@@ -74,7 +74,7 @@ If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac'
 ## Goals
 Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
-## Comming features in 2.0
+## Upcoming features in 2.0
  - Watch videos with subtitles [#55](https://github.com/filimo/ReaderTranslator/issues/55)
 ![](files/Release_2.0.0_1.png)
 
