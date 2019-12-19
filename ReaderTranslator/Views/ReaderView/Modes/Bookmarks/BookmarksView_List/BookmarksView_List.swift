@@ -16,10 +16,10 @@ struct BookmarksView_List: View {
     @Binding var filter: String
     var debug = false
 
-    private var bookmarks: [BookmarksStore.Bookmarks] {
+    private var bookmarkItems: [BookmarksStore.Bookmarks] {
         if case let .bookmarks(text) = store.translateAction {
-            Store.shared.translateAction.next()
-            Store.shared.longmanSelectedBookmark = text
+            self.store.translateAction.next()
+            store.bookmarks.longmanSelectedBookmark = text
         }
 
         var bookmarks = debug ? [.init(text: "test")] : store.bookmarks.items
@@ -37,8 +37,8 @@ struct BookmarksView_List: View {
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(bookmarks, id: \.self) { chunk in
-                    BookmarksView_List_Row(bookmarks: chunk, width: self.width)
+                ForEach(bookmarkItems, id: \.self) { chunk in
+                    BookmarksView_List_Row(items: chunk, width: self.width)
                 }
             }
         }

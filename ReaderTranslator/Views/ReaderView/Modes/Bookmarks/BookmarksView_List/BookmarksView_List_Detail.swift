@@ -15,14 +15,18 @@ struct BookmarksView_List_Detail: View {
     @Binding var selectSentence: String
 
     var changedTime: String {
-        guard let bookmark = self.store.bookmarks.items.first(text: self.store.longmanSelectedBookmark) else { return "" }
+        guard let bookmark = store.bookmarks.items.first(text: store.bookmarks.longmanSelectedBookmark) else {
+            return ""
+        }
         let formatter = RelativeDateTimeFormatter()
 
         return formatter.localizedString(for: Date(), relativeTo: bookmark.lastCreatedLog)
     }
 
     var createTime: String {
-        guard let bookmark = self.store.bookmarks.items.first(text: self.store.longmanSelectedBookmark) else { return "" }
+        guard let bookmark = store.bookmarks.items.first(text: store.bookmarks.longmanSelectedBookmark) else {
+            return ""
+        }
         let formatter = RelativeDateTimeFormatter()
 
         return formatter.localizedString(for: Date(), relativeTo: bookmark.created)
@@ -35,7 +39,7 @@ struct BookmarksView_List_Detail: View {
                     Text("counter changed: \(changedTime)").foregroundColor(Color.purple)
                     Text("create: \(createTime)")
                 }
-                Text(store.longmanSelectedBookmark).font(.title)
+                Text(store.bookmarks.longmanSelectedBookmark).font(.title)
                 sentencesView
             }
             .padding(.leading, 5)
@@ -44,7 +48,7 @@ struct BookmarksView_List_Detail: View {
     }
 
     var sentencesView: some View {
-        ForEach(store.longmanSentences, id: \.self) { sentence in
+        ForEach(store.bookmarks.longmanSentences, id: \.self) { sentence in
             Text("\(sentence.text)")
                 .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)
                 .font(.subheadline)

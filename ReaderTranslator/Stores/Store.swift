@@ -50,14 +50,6 @@ final class Store: ObservableObject {
 
     @Published(key: "playbackRate") var playbackRate: Float = 1.0
 
-    @Published var longmanSentences: LongmanSentences = []
-    @Published var longmanSelectedBookmark = "" {
-        willSet {
-            longmanSentences = []
-            LongmanStore.share.fetchInfo(text: newValue)
-        }
-    }
-
     @Published var bookmarks = BookmarksStore.shared
 
     @Published var longmanAudioRate: Float = 1

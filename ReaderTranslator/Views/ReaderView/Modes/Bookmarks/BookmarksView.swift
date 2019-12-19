@@ -30,8 +30,8 @@ struct BookmarksView_Previews: PreviewProvider {
     static var previews: some View {
         let store = Store.shared
         let url = URL(fileURLWithPath: "")
-        store.longmanSelectedBookmark = "aunt"
-        store.longmanSentences = [
+        store.bookmarks.longmanSelectedBookmark = "aunt"
+        store.bookmarks.longmanSentences = [
             LongmanSentence(text: "Sentence 1", url: url),
             LongmanSentence(
                 text: """

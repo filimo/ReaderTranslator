@@ -67,7 +67,7 @@ class LongmanStore: NSObject {
                     guard let text = try elm.parent()?.text() else { return }
 
                     RunLoop.main.perform {
-                        self.store.longmanSentences.append(LongmanSentence(text: text, url: url))
+                        self.store.bookmarks.longmanSentences.append(.init(text: text, url: url))
                     }
                 } catch {
                     print(error)

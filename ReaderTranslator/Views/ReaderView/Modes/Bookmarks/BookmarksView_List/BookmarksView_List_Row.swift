@@ -14,11 +14,11 @@ struct BookmarksView_List_Row: View {
 
     @State var selectSentence = ""
 
-    var bookmarks: BookmarksStore.Bookmarks
+    var items: BookmarksStore.Bookmarks
     var width: CGFloat
 
     var showDetail: Bool {
-        bookmarks.contains(text: store.longmanSelectedBookmark)
+        items.contains(text: store.bookmarks.longmanSelectedBookmark)
     }
 
     var body: some View {
@@ -32,7 +32,7 @@ struct BookmarksView_List_Row: View {
 
     private var bookmarksView: some View {
         HStack {
-            ForEach(bookmarks, id: \.self) { bookmark in
+            ForEach(items, id: \.self) { bookmark in
                 HStack {
                     CircleButton { Text("\(bookmark.counter)") }
                         .aspectRatio(contentMode: .fill)
@@ -49,9 +49,9 @@ struct BookmarksView_List_Row: View {
     private func bookmarkItemView(bookmark: BookmarksStore.Bookmark) -> some View {
         Text("\(bookmark.text)")
             .frame(width: width, alignment: .leading)
-            .foregroundColor(store.longmanSelectedBookmark == bookmark.text ? Color.yellow : Color.primary)
+            .foregroundColor(store.bookmarks.longmanSelectedBookmark == bookmark.text ? Color.yellow : Color.primary)
             .onTapGesture {
-                self.store.longmanSelectedBookmark = bookmark.text
+                self.store.bookmarks.longmanSelectedBookmark = bookmark.text
                 self.store.translateAction.addAll(text: bookmark.text, except: .bookmarks, isSpeaking: false)
             }
     }
@@ -59,6 +59,6 @@ struct BookmarksView_List_Row: View {
 
 struct BookmarksView_List_Row_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView_List_Row(bookmarks: [.init(text: "test")], width: 100)
+        BookmarksView_List_Row(items: [.init(text: "test")], width: 100)
     }
 }
