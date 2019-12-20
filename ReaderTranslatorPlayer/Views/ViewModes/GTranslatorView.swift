@@ -15,8 +15,8 @@ struct GTranslatorView: View {
         GTranslatorRepresenter(sentence: sentence.text)
             .navigationBarItems(trailing:
                 Button(action: {
-                    LongmanStore.share.addAudio(url: self.sentence.url)
-                    LongmanStore.share.next()
+                    LongmanStore.shared.addAudio(url: self.sentence.url)
+                    LongmanStore.shared.next()
                 }, label: { self.soundIco })
             )
     }

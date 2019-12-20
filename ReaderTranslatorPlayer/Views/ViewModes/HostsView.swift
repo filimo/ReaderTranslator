@@ -87,10 +87,10 @@ extension HostsView.Coordinator: PeerConnectionDelegate {
     }
 
     func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
-        switch message.readerTranslatorMessageType {
-        case .invalid: print("Received invalid message")
-        case .send: store.bookmarks.merge(data: content)
-        }
+//        switch message.readerTranslatorMessageType {
+//        case .invalid: print("Received invalid message")
+//        case .send: store.bookmarks.merge(data: content)
+//        }
     }
 }
 

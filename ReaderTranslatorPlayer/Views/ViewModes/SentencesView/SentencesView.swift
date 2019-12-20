@@ -30,9 +30,9 @@ struct SentencesView: View {
         }
         .onAppear {
             self.store.hideNavBar = false
-            if self.store.bookmarks.longmanSelectedBookmark != self.bookmark {
+            if self.store.longmanSelectedBookmark != self.bookmark {
                 RunLoop.main.perform {
-                    self.store.bookmarks.longmanSelectedBookmark = self.bookmark
+                    self.store.longmanSelectedBookmark = self.bookmark
                 }
             }
             self.showGTranlator = nil
@@ -50,7 +50,7 @@ struct SentencesView: View {
             }
             if showLongmanView {
                 NavigationLink(
-                    destination: LongmanView(phrase: store.bookmarks.longmanSelectedBookmark),
+                    destination: LongmanView(phrase: store.longmanSelectedBookmark),
                     isActive: .constant(true),
                     label: { EmptyView() })
             }

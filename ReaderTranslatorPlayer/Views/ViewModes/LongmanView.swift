@@ -17,9 +17,9 @@ struct LongmanView: View {
         LongmanRepresenter(phrase: phrase)
             .onAppear {
                 self.store.hideNavBar = false
-                if self.store.bookmarks.longmanSelectedBookmark != self.phrase {
+                if self.store.longmanSelectedBookmark != self.phrase {
                     RunLoop.main.perform {
-                        self.store.bookmarks.longmanSelectedBookmark = self.phrase
+                        self.store.longmanSelectedBookmark = self.phrase
                     }
                 }
             }

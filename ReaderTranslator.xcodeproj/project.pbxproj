@@ -207,6 +207,8 @@
 		F099424723AD461D003CF1EB /* BookmarksView_List_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */; };
 		F099424823AD4623003CF1EB /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0040723A899EA002B6060 /* CircleButton.swift */; };
 		F099424923AD46F8003CF1EB /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C6657B2351A70B0087B6F2 /* Collection.swift */; };
+		F099424A23AD549C003CF1EB /* BookmarksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0418B97239A32FD00B59C66 /* BookmarksStore.swift */; };
+		F099424C23AD56D4003CF1EB /* ReaderTranslatorPlayer.app in Resources */ = {isa = PBXBuildFile; fileRef = F0120373239182DA008D0B47 /* ReaderTranslatorPlayer.app */; };
 		F09AD47E23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F09AD47F23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F0A2179B23A9355E00968133 /* ReaderTranslatorMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2179A23A9355E00968133 /* ReaderTranslatorMacTests.swift */; };
@@ -321,12 +323,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F065095423AD5724003D2410 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0120372239182DA008D0B47;
+			remoteInfo = ReaderTranslatorPlayer;
+		};
 		F075445E23447A2800E1D88E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F075444D23447A2700E1D88E;
 			remoteInfo = ReaderTranslatorSafari;
+		};
+		F099424D23AD56D4003CF1EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0120372239182DA008D0B47;
+			remoteInfo = ReaderTranslatorPlayer;
+		};
+		F099424F23AD56DE003CF1EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0120372239182DA008D0B47;
+			remoteInfo = ReaderTranslatorPlayer;
+		};
+		F099425123AD5712003CF1EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0120372239182DA008D0B47;
+			remoteInfo = ReaderTranslatorPlayer;
 		};
 		F0A2179D23A9355E00968133 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1054,6 +1084,10 @@
 			);
 			dependencies = (
 				F075445F23447A2800E1D88E /* PBXTargetDependency */,
+				F099424E23AD56D4003CF1EB /* PBXTargetDependency */,
+				F099425023AD56DE003CF1EB /* PBXTargetDependency */,
+				F099425223AD5712003CF1EB /* PBXTargetDependency */,
+				F065095523AD5724003D2410 /* PBXTargetDependency */,
 			);
 			name = ReaderTranslatorMac;
 			packageProductDependencies = (
@@ -1148,7 +1182,7 @@
 				};
 			};
 			buildConfigurationList = F0AA6998232E9710007CC07B /* Build configuration list for PBXProject "ReaderTranslator" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1163,10 +1197,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F0AA699C232E9710007CC07B /* ReaderTranslator */,
 				F0754436234479DA00E1D88E /* ReaderTranslatorMac */,
-				F075444D23447A2700E1D88E /* ReaderTranslatorSafari */,
 				F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */,
+				F0AA699C232E9710007CC07B /* ReaderTranslator */,
+				F075444D23447A2700E1D88E /* ReaderTranslatorSafari */,
 				F0A2179723A9355E00968133 /* ReaderTranslatorMacTests */,
 			);
 		};
@@ -1194,6 +1228,7 @@
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
 				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
+				F099424C23AD56D4003CF1EB /* ReaderTranslatorPlayer.app in Resources */,
 				F09AD47E23702DF100FFBF6A /* jquery.js in Resources */,
 				F075443E234479DB00E1D88E /* Assets.xcassets in Resources */,
 			);
@@ -1324,6 +1359,7 @@
 				F02B04B923A2894700F93B84 /* PeerBrowser.swift in Sources */,
 				F01203902392D586008D0B47 /* RoundButtonStyle.swift in Sources */,
 				F033F41523A75B5600605325 /* SentencesView_Row.swift in Sources */,
+				F099424A23AD549C003CF1EB /* BookmarksStore.swift in Sources */,
 				F0B4843F23A8C6860031A811 /* URL.swift in Sources */,
 				F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */,
 				F02B04C123A2898300F93B84 /* PeerConnection.swift in Sources */,
@@ -1630,10 +1666,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F065095523AD5724003D2410 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */;
+			targetProxy = F065095423AD5724003D2410 /* PBXContainerItemProxy */;
+		};
 		F075445F23447A2800E1D88E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F075444D23447A2700E1D88E /* ReaderTranslatorSafari */;
 			targetProxy = F075445E23447A2800E1D88E /* PBXContainerItemProxy */;
+		};
+		F099424E23AD56D4003CF1EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */;
+			targetProxy = F099424D23AD56D4003CF1EB /* PBXContainerItemProxy */;
+		};
+		F099425023AD56DE003CF1EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */;
+			targetProxy = F099424F23AD56DE003CF1EB /* PBXContainerItemProxy */;
+		};
+		F099425223AD5712003CF1EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */;
+			targetProxy = F099425123AD5712003CF1EB /* PBXContainerItemProxy */;
 		};
 		F0A2179E23A9355E00968133 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

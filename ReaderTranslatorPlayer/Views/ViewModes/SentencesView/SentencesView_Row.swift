@@ -18,8 +18,8 @@ struct SentencesView_Row: View {
     var body: some View {
         HStack {
             Button(action: {
-                LongmanStore.share.addAudio(url: self.sentence.url)
-                LongmanStore.share.next()
+                LongmanStore.shared.addAudio(url: self.sentence.url)
+                LongmanStore.shared.next()
             }, label: { self.soundIco })
             Button(
                 action: { self.showGTranlator = self.sentence },
