@@ -13,16 +13,16 @@ struct BookmarksView: View {
 
     @State var filter = ""
 
-    private let bookmarkWidth: CGFloat = 100
+    private let bookmarkWidth: CGFloat = 120
     private let columnts = 3
     private var width: CGFloat { bookmarkWidth * CGFloat(columnts) }
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             TextField("", text: $filter).frame(width: bookmarkWidth * CGFloat(columnts))
             BookmarksView_List(columnts: columnts, width: bookmarkWidth, filter: $filter)
             BookmarksView_Controls()
-        }.frame(width: (bookmarkWidth + 45) * CGFloat(columnts))
+        }.frame(width: store.viewWidth[.bookmarks])
     }
 }
 
@@ -30,10 +30,10 @@ struct BookmarksView_Previews: PreviewProvider {
     static var previews: some View {
         let store = Store.shared
         let url = URL(fileURLWithPath: "")
-        store.bookmarks.longmanSelectedBookmark = "aunt"
-        store.bookmarks.longmanSentences = [
-            LongmanSentence(text: "Sentence 1", url: url),
-            LongmanSentence(
+        store.longman.word = "aunt"
+        store.longman.sentences = [
+            .init(text: "Sentence 1", url: url),
+            .init(
                 text: """
                 Sentence2 long1 long2 long3 long4 long5
                 long6 long7 long8 long9 long10 long11
@@ -41,10 +41,10 @@ struct BookmarksView_Previews: PreviewProvider {
                 """.replacingOccurrences(of: "\n", with: ""),
                 url: url
             ),
-            LongmanSentence(text: "Sentence 3", url: url),
-            LongmanSentence(text: "Sentence 4", url: url),
-            LongmanSentence(text: "Sentence 5", url: url),
-            LongmanSentence(text: "Sentence 6", url: url)
+            .init(text: "Sentence 3", url: url),
+            .init(text: "Sentence 4", url: url),
+            .init(text: "Sentence 5", url: url),
+            .init(text: "Sentence 6", url: url)
         ]
 
         return BookmarksView()

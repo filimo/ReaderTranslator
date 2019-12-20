@@ -22,14 +22,14 @@ class ReaderTranslatorMacTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
-        let bookmark1 = Bookmark(text: "bookmark1")
-        let bookmark2 = Bookmark(text: "bookmark2")
-        let bookmark3 = Bookmark(text: "bookmark3")
-        let bookmark4 = Bookmark(text: "bookmark4")
-        let bookmark5 = Bookmark(text: "bookmark5")
-        let bookmark6 = Bookmark(text: "bookmark6")
+        let bookmark1 = BookmarksStore.Bookmark(text: "bookmark1")
+        let bookmark2 = BookmarksStore.Bookmark(text: "bookmark2")
+        let bookmark3 = BookmarksStore.Bookmark(text: "bookmark3")
+        let bookmark4 = BookmarksStore.Bookmark(text: "bookmark4")
+        let bookmark5 = BookmarksStore.Bookmark(text: "bookmark5")
+        let bookmark6 = BookmarksStore.Bookmark(text: "bookmark6")
 
-        var macBookmarks: Bookmarks = [
+        var macBookmarks: BookmarksStore.Bookmarks = [
             bookmark1,
             bookmark2,
             bookmark3,

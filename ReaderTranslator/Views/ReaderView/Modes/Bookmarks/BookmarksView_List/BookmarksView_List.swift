@@ -19,7 +19,7 @@ struct BookmarksView_List: View {
     private var bookmarkItems: [BookmarksStore.Bookmarks] {
         if case let .bookmarks(text) = store.translateAction {
             self.store.translateAction.next()
-            store.bookmarks.longmanSelectedBookmark = text
+            store.longman.word = text
         }
 
         var bookmarks = debug ? [.init(text: "test")] : store.bookmarks.items
@@ -41,7 +41,7 @@ struct BookmarksView_List: View {
                     BookmarksView_List_Row(items: chunk, width: self.width)
                 }
             }
-        }
+        }.border(Color.black, width: 1)
     }
 }
 

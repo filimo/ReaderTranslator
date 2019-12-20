@@ -18,7 +18,7 @@ struct BookmarksView_List_Row: View {
     var width: CGFloat
 
     var showDetail: Bool {
-        items.contains(text: store.bookmarks.longmanSelectedBookmark)
+        items.contains(text: store.longman.word)
     }
 
     var body: some View {
@@ -49,9 +49,9 @@ struct BookmarksView_List_Row: View {
     private func bookmarkItemView(bookmark: BookmarksStore.Bookmark) -> some View {
         Text("\(bookmark.text)")
             .frame(width: width, alignment: .leading)
-            .foregroundColor(store.bookmarks.longmanSelectedBookmark == bookmark.text ? Color.yellow : Color.primary)
+            .foregroundColor(store.longman.word == bookmark.text ? Color.yellow : Color.primary)
             .onTapGesture {
-                self.store.bookmarks.longmanSelectedBookmark = bookmark.text
+                self.store.longman.word = bookmark.text
                 self.store.translateAction.addAll(text: bookmark.text, except: .bookmarks, isSpeaking: false)
             }
     }

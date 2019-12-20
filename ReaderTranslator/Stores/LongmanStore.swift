@@ -24,10 +24,23 @@ struct LongmanSentence: Hashable {
 
 typealias LongmanSentences = [LongmanSentence]
 
-class LongmanStore: NSObject {
-    static let share = LongmanStore()
+final class LongmanStore: NSObject, ObservableObject {
+    private override init() { super.init() }
+    static var shared = LongmanStore()
 
-    @ObservedObject var store = Store.shared
+    @Published var audioRate: Float = 1
+    @Published var word = "" {
+        willSet {
+            sentences.removeAll()
+            LongmanStore.shared.fetchInfo(text: newValue)
+        }
+    }
+
+    @Published var sentences: LongmanSentences = [] {
+        didSet {
+            print("longmanSentences: ", sentences)
+        }
+    }
 
     private let defaultURL = "https://www.ldoceonline.com/dictionary/"
     private var audioUrls = Stack<URL>()
@@ -52,30 +65,35 @@ class LongmanStore: NSObject {
             }
         }.resume()
     }
+}
 
-    func addAudio(url: URL) {
-        audioUrls.push(url)
-    }
-
+extension LongmanStore {
     private func addSentences(document: Document) {
         do {
             let sentences = try document.select(".exafile")
-            sentences.forEach { elm in
+
+            let longmanSentences = sentences.map { elm -> LongmanSentence? in
                 do {
                     let string = try elm.attr("data-src-mp3")
-                    guard let url = URL(string: string) else { return }
-                    guard let text = try elm.parent()?.text() else { return }
+                    guard let url = URL(string: string) else { return nil }
+                    guard let text = try elm.parent()?.text() else { return nil }
 
-                    RunLoop.main.perform {
-                        self.store.bookmarks.longmanSentences.append(.init(text: text, url: url))
-                    }
+                    return LongmanSentence(text: text, url: url)
                 } catch {
                     print(error)
+                    return nil
                 }
+            }.compactMap { $0 }
+            RunLoop.main.perform {
+                self.sentences = longmanSentences
             }
         } catch {
             print(error)
         }
+    }
+
+    func addAudio(url: URL) {
+        audioUrls.push(url)
     }
 
     private func addAudio(selector: String, document: Document) {
@@ -89,17 +107,24 @@ class LongmanStore: NSObject {
             print(error)
         }
     }
+}
 
+extension LongmanStore {
     private func play(url: URL) {
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        URLSession.shared.dataTask(with: url) { data, _, _ in
             guard let data = data else { return }
             do {
-                player = try AVAudioPlayer(data: data)
-                player?.delegate = self
-                player?.enableRate = true
-                player?.rate = self.store.longmanAudioRate
-                player?.volume = self.store.voiceVolume
-                player?.play()
+                if Store.shared.isVoiceEnabled {
+                    player = nil
+                    player = try AVAudioPlayer(data: data)
+                    if let player = player {
+                        player.delegate = self
+                        player.enableRate = true
+                        player.rate = self.audioRate
+                        player.volume = Store.shared.voiceVolume
+                        player.play()
+                    }
+                }
             } catch {
                 self.next()
                 print("\(self.theClassName)_\(#function)", error)

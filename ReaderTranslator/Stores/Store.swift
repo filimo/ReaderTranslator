@@ -50,9 +50,8 @@ final class Store: ObservableObject {
 
     @Published(key: "playbackRate") var playbackRate: Float = 1.0
 
-    @Published var bookmarks = BookmarksStore.shared
-
-    @Published var longmanAudioRate: Float = 1
+    @ObservedObject var bookmarks = BookmarksStore.shared
+    @ObservedObject var longman = LongmanStore.shared
 
     private init() {
         ({ currentTab = currentTab })() // call didSet

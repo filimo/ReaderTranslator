@@ -17,14 +17,6 @@ final class BookmarksStore: ObservableObject {
     @Published(key: "bookmarks") var items = Bookmarks()
     @Published var filterCounter = -1
 
-    @Published var longmanSentences: LongmanSentences = []
-    @Published var longmanSelectedBookmark = "" {
-        willSet {
-            longmanSentences = []
-            LongmanStore.share.fetchInfo(text: newValue)
-        }
-    }
-
     struct Log: Codable, Hashable {
         let created: Date
     }

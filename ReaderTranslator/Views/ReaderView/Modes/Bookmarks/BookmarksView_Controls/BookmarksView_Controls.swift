@@ -12,7 +12,7 @@ struct BookmarksView_Controls: View {
     @ObservedObject var store = Store.shared
 
     private var audioRateString: String {
-        String(format: "%.1f", arguments: [self.store.longmanAudioRate])
+        String(format: "%.1f", arguments: [self.store.longman.audioRate])
     }
 
     private var bookmarks: BookmarksStore.Bookmarks {
@@ -41,12 +41,12 @@ struct BookmarksView_Controls: View {
 
     private var audioRateButtonsView: some View {
         HStack {
-            Button(action: { self.store.longmanAudioRate = 0.2 }, label: { Text(".2") })
-            Button(action: { self.store.longmanAudioRate = 0.5 }, label: { Text(".5") })
-            Button(action: { self.store.longmanAudioRate -= 0.1 }, label: { Text("-") })
+            Button(action: { self.store.longman.audioRate = 0.2 }, label: { Text(".2") })
+            Button(action: { self.store.longman.audioRate = 0.5 }, label: { Text(".5") })
+            Button(action: { self.store.longman.audioRate -= 0.1 }, label: { Text("-") })
             Text(audioRateString)
-            Button(action: { self.store.longmanAudioRate += 0.1 }, label: { Text("+") })
-            Button(action: { self.store.longmanAudioRate = 1 }, label: { Text("1") })
+            Button(action: { self.store.longman.audioRate += 0.1 }, label: { Text("+") })
+            Button(action: { self.store.longman.audioRate = 1 }, label: { Text("1") })
         }
     }
 
