@@ -12,14 +12,15 @@ struct LongmanView: View {
     var phrase: String
 
     @ObservedObject var store = Store.shared
+    @ObservedObject var longmanStore = LongmanStore.shared
 
     var body: some View {
         LongmanRepresenter(phrase: phrase)
             .onAppear {
                 self.store.hideNavBar = false
-                if self.store.longmanSelectedBookmark != self.phrase {
+                if self.longmanStore.word != self.phrase {
                     RunLoop.main.perform {
-                        self.store.longmanSelectedBookmark = self.phrase
+                        self.longmanStore.word = self.phrase
                     }
                 }
             }

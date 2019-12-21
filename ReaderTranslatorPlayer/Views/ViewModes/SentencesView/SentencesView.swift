@@ -9,8 +9,11 @@
 import SwiftUI
 
 struct SentencesView: View {
-    @ObservedObject var store = Store.shared
     let bookmark: String
+
+    @ObservedObject var store = Store.shared
+    @ObservedObject var longmanStore = LongmanStore.shared
+
     @State var showGTranlator: LongmanSentence?
     @State var showLongmanView = false
 
@@ -18,7 +21,7 @@ struct SentencesView: View {
         VStack {
             ScrollView {
                 VStack {
-                    ForEach(store.longmanSentences, id: \.self) { sentence in
+                    ForEach(longmanStore.sentences, id: \.self) { sentence in
                         SentencesView_Row(
                             sentence: sentence,
                             showGTranlator: self.$showGTranlator,
@@ -30,9 +33,9 @@ struct SentencesView: View {
         }
         .onAppear {
             self.store.hideNavBar = false
-            if self.store.longmanSelectedBookmark != self.bookmark {
+            if self.longmanStore.word != self.bookmark {
                 RunLoop.main.perform {
-                    self.store.longmanSelectedBookmark = self.bookmark
+                    self.longmanStore.word = self.bookmark
                 }
             }
             self.showGTranlator = nil
@@ -50,7 +53,7 @@ struct SentencesView: View {
             }
             if showLongmanView {
                 NavigationLink(
-                    destination: LongmanView(phrase: store.longmanSelectedBookmark),
+                    destination: LongmanView(phrase: longmanStore.word),
                     isActive: .constant(true),
                     label: { EmptyView() })
             }
