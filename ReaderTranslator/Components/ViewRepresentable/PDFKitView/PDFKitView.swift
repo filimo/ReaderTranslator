@@ -17,10 +17,12 @@ private var pdfViewSelectionChangedObserver: NSObjectProtocol?
 
 struct PDFKitView: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var pdfStore = PdfStore.shared
+
     var selectedText = PassthroughSubject<String, Never>()
 
     var body: some View {
-        PDFKitViewRepresentable(url: $store.lastPdf)
+        PDFKitViewRepresentable(url: $pdfStore.lastPdf)
             .onAppear {
                 pdfViewDocumentChangedObserver = NotificationCenter.default.addObserver(
                     forName: .PDFViewDocumentChanged,
@@ -51,7 +53,7 @@ struct PDFKitView: View {
 
                 // TODO: [Fix PDFView issue] Set the current page after PDFView is rendered
                 // otherwise .PDFViewPageChanged will be invoked many times.
-                if let lastPage = Int(self.store.lastPdfPage) {
+                if let lastPage = Int(self.pdfStore.lastPdfPage) {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         self.goCurrentPage(page: lastPage)
                     }
@@ -66,7 +68,7 @@ struct PDFKitView: View {
     }
 
     private func start() {
-        store.$currentPdfPage
+        pdfStore.$currentPdfPage
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { page in
@@ -76,7 +78,7 @@ struct PDFKitView: View {
             }
             .store(in: &cancellableSet)
 
-        print("debug: ", "Bundle.main.url: ", store.lastPdfPage)
+        print("debug: ", "Bundle.main.url: ", pdfStore.lastPdfPage)
     }
 
     private func goCurrentPage(page: Int) {
@@ -92,8 +94,8 @@ struct PDFKitView: View {
         guard let pdfView = event.object as? PDFView else { return }
         guard let document = pdfView.document else { return }
 
-        print("debug: ", "PDFViewDocumentChanged: ", store.lastPdfPage)
-        store.pageCount = document.pageCount
+        print("debug: ", "PDFViewDocumentChanged: ", pdfStore.lastPdfPage)
+        pdfStore.pageCount = document.pageCount
     }
 
     private func pdfViewPageChanged(event: Notification) {
@@ -104,8 +106,8 @@ struct PDFKitView: View {
         let page = document.index(for: currentPage)
 
         print("debug: ", "PDFViewPageChanged: ", page + 1, document.pageCount)
-        store.currentPdfPage = String(page + 1)
-        store.lastPdfPage = String(page + 1)
+        pdfStore.currentPdfPage = String(page + 1)
+        pdfStore.lastPdfPage = String(page + 1)
     }
 
     private func pdfViewSelectionChanged(event _: Notification) {

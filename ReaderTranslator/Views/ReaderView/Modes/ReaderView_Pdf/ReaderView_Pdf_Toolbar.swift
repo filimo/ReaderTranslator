@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ReaderView_Pdf_Toolbar: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var pdfStore = PdfStore.shared
 
     @State var player = AudioPlayer()
     @State var currentStatus = ""
@@ -44,8 +45,8 @@ struct ReaderView_Pdf_Toolbar: View {
                 OpenPanel.showChooseFileDialog(title: "Open PDF file", allowedFileTypes: ["pdf"]) { url in
                     guard let url = url?.absoluteString else { return }
 
-                    self.store.lastPdfPage = "1"
-                    self.store.lastPdf = url
+                    self.pdfStore.lastPdfPage = "1"
+                    self.pdfStore.lastPdf = url
                 }
             },
             label: { Text("📂 PDF") }
@@ -56,7 +57,7 @@ struct ReaderView_Pdf_Toolbar: View {
         Button(action: {
             OpenPanel.showChooseFileDialog(title: "Open audio file", allowedFileTypes: ["mp3", "mov"]) { url in
                 guard let url = url else { return }
-                self.store.pdfAudio = url
+                self.pdfStore.pdfAudio = url
                 self.player.openAudio(url: url)
                 self.player.rate = 1
                 self.currentStatus = self.player.status
@@ -79,7 +80,7 @@ struct ReaderView_Pdf_Toolbar: View {
         HStack {
             Text("Page:")
             #if os(macOS)
-                TextField("   ", text: self.$store.currentPdfPage)
+                TextField("   ", text: self.$pdfStore.currentPdfPage)
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             #else
@@ -88,7 +89,7 @@ struct ReaderView_Pdf_Toolbar: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)
             #endif
-            Text(" / \(self.store.pageCount)")
+            Text(" / \(self.pdfStore.pageCount)")
         }
     }
 }

@@ -14,10 +14,13 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var lastWebPage: String
 
     static var coorinator: Coordinator?
-    static var pageView: WKPageView { views[Store.shared.currentTab]! }
+    static var pageView: WKPageView { views[WebStore.shared.currentTab]! }
     static var hasSentTranslateAction = false
 
     @ObservedObject private var store = Store.shared
+    @ObservedObject var pdfStore = PdfStore.shared
+    @ObservedObject var webStore = WebStore.shared
+
     private static var views = [Int: WKPageView]()
 
     class Coordinator: WKCoordinator {
@@ -42,12 +45,12 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     }
 
     func makeView(context: Context) -> WKPageView {
-        if let view = Self.views[store.currentTab] { return view }
+        if let view = Self.views[webStore.currentTab] { return view }
         let view = WKPageView()
-        Self.views[self.store.currentTab] = view
+        Self.views[self.webStore.currentTab] = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
-        store.canGoBack = view.canGoBack
+        webStore.canGoBack = view.canGoBack
 
         return view
     }
@@ -63,15 +66,15 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     }
 
     func webView(_ webView: WKPageView, didFinish _: WKNavigation!) {
-        if let url = webView.url?.absoluteString { store.lastWebPage = url.decodeUrl }
-        store.canGoBack = webView.canGoBack
-        webView.setZoom(zoomLevel: store.zoom)
+        if let url = webView.url?.absoluteString { webStore.lastWebPage = url.decodeUrl }
+        webStore.canGoBack = webView.canGoBack
+        webView.setZoom(zoomLevel: pdfStore.zoom)
     }
 
     func goBack(_ webView: WKPageView) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if let url = webView.url?.absoluteString { webView.newUrl = url }
-            self.store.canGoBack = webView.canGoBack
+            self.webStore.canGoBack = webView.canGoBack
         }
     }
 }

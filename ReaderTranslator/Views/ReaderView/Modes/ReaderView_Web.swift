@@ -11,19 +11,20 @@ import SwiftUI
 struct ReaderView_Web: View {
     @ObservedObject private var store = Store.shared
     @ObservedObject var viewsStore = ViewsStore.shared
+    @ObservedObject var webStore = WebStore.shared
 
     var body: some View {
         VStack {
             if viewsStore.enabledViews.contains(.web) {
                 VStack {
                     HStack {
-                        Image.sfSymbol("arrowshape.turn.up.left\(store.canGoBack ? ".fill" : "")")
+                        Image.sfSymbol("arrowshape.turn.up.left\(webStore.canGoBack ? ".fill" : "")")
                             .onTapGesture { WKRepresenter.pageView.goBack() }
-                        TextField("Enter website name", text: self.$store.lastWebPage)
+                        TextField("Enter website name", text: self.$webStore.lastWebPage)
                         openInSafari()
                         pasteClipbord()
                         Button(
-                            action: { self.store.lastWebPage = "" },
+                            action: { self.webStore.lastWebPage = "" },
                             label: { Image.sfSymbol("xmark.circle") }
                         )
                     }.padding(5)
@@ -39,29 +40,29 @@ struct ReaderView_Web: View {
     var tabsView: some View {
         HStack {
             Button(
-                action: { self.store.currentTab = 0 },
+                action: { self.webStore.currentTab = 0 },
                 label: { Image.sfSymbol("1.circle\(iconStatus(0))") }
             )
             Button(
-                action: { self.store.currentTab = 1 },
+                action: { self.webStore.currentTab = 1 },
                 label: { Image.sfSymbol("2.circle\(iconStatus(1))") }
             )
             Button(
-                action: { self.store.currentTab = 2 },
+                action: { self.webStore.currentTab = 2 },
                 label: { Image.sfSymbol("3.circle\(iconStatus(2))") }
             )
         }
     }
 
     private func iconStatus(_ tab: Int) -> String {
-        store.currentTab == tab ? ".fill" : ""
+        webStore.currentTab == tab ? ".fill" : ""
     }
 }
 
 extension ReaderView_Web {
     private func webView(_ currentTab: Int) -> some View {
-        if store.currentTab == currentTab {
-            let view = WKRepresenter(lastWebPage: $store.lastWebPage)
+        if webStore.currentTab == currentTab {
+            let view = WKRepresenter(lastWebPage: $webStore.lastWebPage)
             return view.any
         } else {
             return EmptyView().any
@@ -71,7 +72,7 @@ extension ReaderView_Web {
     fileprivate func openInSafari() -> some View {
         Button(
             action: {
-                if let url = URL(string: self.store.lastWebPage) {
+                if let url = URL(string: self.webStore.lastWebPage) {
                     Safari.openSafari(url)
                 }
             },
@@ -82,7 +83,7 @@ extension ReaderView_Web {
     fileprivate func pasteClipbord() -> some View {
         Button(
             action: {
-                self.store.lastWebPage = Clipboard.string
+                self.webStore.lastWebPage = Clipboard.string
             },
             label: { Image.sfSymbol("doc.on.clipboard") }
         )

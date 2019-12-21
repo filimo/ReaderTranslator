@@ -108,6 +108,13 @@
 		F065095E23AE03F0003D2410 /* ViewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095D23AE0353003D2410 /* ViewsStore.swift */; };
 		F065095F23AE03F3003D2410 /* ViewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095D23AE0353003D2410 /* ViewsStore.swift */; };
 		F065096023AE03F4003D2410 /* ViewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095D23AE0353003D2410 /* ViewsStore.swift */; };
+		F065096223AE0C67003D2410 /* PdfStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065096123AE0C11003D2410 /* PdfStore.swift */; };
+		F065096423AE0C6A003D2410 /* PdfStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065096123AE0C11003D2410 /* PdfStore.swift */; };
+		F065096523AE0C6B003D2410 /* PdfStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065096123AE0C11003D2410 /* PdfStore.swift */; };
+		F065096723AE0DB9003D2410 /* WebStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065096623AE0D39003D2410 /* WebStore.swift */; };
+		F065096823AE0DBA003D2410 /* WebStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065096623AE0D39003D2410 /* WebStore.swift */; };
+		F065096923AE0DBD003D2410 /* WebStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065096623AE0D39003D2410 /* WebStore.swift */; };
+		F065096E23AE0F9E003D2410 /* ReaderTranslatorSafari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F0667CF023A6B2E70063BAC6 /* GTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0667CEF23A6B2E70063BAC6 /* GTranslatorRepresenter.swift */; };
 		F06B0946239CB8FA00A39A86 /* BookmarksView_List_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */; };
 		F06B0947239CB8FA00A39A86 /* BookmarksView_List_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */; };
@@ -133,7 +140,6 @@
 		F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F075445523447A2800E1D88E /* SafariExtensionViewController.xib */; };
 		F075445A23447A2800E1D88E /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */; };
-		F075446023447A2800E1D88E /* ReaderTranslatorSafari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F0814BA223562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F0814BA323562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F0814BA423562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
@@ -215,7 +221,6 @@
 		F099424823AD4623003CF1EB /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0040723A899EA002B6060 /* CircleButton.swift */; };
 		F099424923AD46F8003CF1EB /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C6657B2351A70B0087B6F2 /* Collection.swift */; };
 		F099424A23AD549C003CF1EB /* BookmarksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0418B97239A32FD00B59C66 /* BookmarksStore.swift */; };
-		F099424C23AD56D4003CF1EB /* ReaderTranslatorPlayer.app in Resources */ = {isa = PBXBuildFile; fileRef = F0120373239182DA008D0B47 /* ReaderTranslatorPlayer.app */; };
 		F09AD47E23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F09AD47F23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F0A2179B23A9355E00968133 /* ReaderTranslatorMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2179A23A9355E00968133 /* ReaderTranslatorMacTests.swift */; };
@@ -330,40 +335,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F065095423AD5724003D2410 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F0120372239182DA008D0B47;
-			remoteInfo = ReaderTranslatorPlayer;
-		};
-		F075445E23447A2800E1D88E /* PBXContainerItemProxy */ = {
+		F065096F23AE0F9E003D2410 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F075444D23447A2700E1D88E;
 			remoteInfo = ReaderTranslatorSafari;
-		};
-		F099424D23AD56D4003CF1EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F0120372239182DA008D0B47;
-			remoteInfo = ReaderTranslatorPlayer;
-		};
-		F099424F23AD56DE003CF1EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F0120372239182DA008D0B47;
-			remoteInfo = ReaderTranslatorPlayer;
-		};
-		F099425123AD5712003CF1EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0AA6995232E9710007CC07B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F0120372239182DA008D0B47;
-			remoteInfo = ReaderTranslatorPlayer;
 		};
 		F0A2179D23A9355E00968133 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -375,13 +352,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F075446423447A2800E1D88E /* Embed App Extensions */ = {
+		F065097123AE0F9E003D2410 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F075446023447A2800E1D88E /* ReaderTranslatorSafari.appex in Embed App Extensions */,
+				F065096E23AE0F9E003D2410 /* ReaderTranslatorSafari.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +420,8 @@
 		F065095623ADF6A3003D2410 /* AudioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStore.swift; sourceTree = "<group>"; };
 		F065095B23ADF971003D2410 /* AudioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStore.swift; sourceTree = "<group>"; };
 		F065095D23AE0353003D2410 /* ViewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsStore.swift; sourceTree = "<group>"; };
+		F065096123AE0C11003D2410 /* PdfStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfStore.swift; sourceTree = "<group>"; };
+		F065096623AE0D39003D2410 /* WebStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebStore.swift; sourceTree = "<group>"; };
 		F0667CEF23A6B2E70063BAC6 /* GTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorRepresenter.swift; sourceTree = "<group>"; };
 		F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_List_Detail.swift; sourceTree = "<group>"; };
 		F06D1C0D2361FFBC008A0C38 /* WikipediaRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaRepresenter.swift; sourceTree = "<group>"; };
@@ -886,6 +865,8 @@
 			children = (
 				F0AA69D7232E978E007CC07B /* Store.swift */,
 				F065095623ADF6A3003D2410 /* AudioStore.swift */,
+				F065096123AE0C11003D2410 /* PdfStore.swift */,
+				F065096623AE0D39003D2410 /* WebStore.swift */,
 				F065095D23AE0353003D2410 /* ViewsStore.swift */,
 				F0418B97239A32FD00B59C66 /* BookmarksStore.swift */,
 				F0553727239BE3C700BA24BA /* LongmanStore.swift */,
@@ -1089,18 +1070,14 @@
 				F0754433234479DA00E1D88E /* Sources */,
 				F0754434234479DA00E1D88E /* Frameworks */,
 				F0754435234479DA00E1D88E /* Resources */,
-				F075446423447A2800E1D88E /* Embed App Extensions */,
 				F0562E1023633FCD0074ACF5 /* SwiftLint */,
 				F07B03AB2374722F006EDFF9 /* Incremental Build */,
+				F065097123AE0F9E003D2410 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F075445F23447A2800E1D88E /* PBXTargetDependency */,
-				F099424E23AD56D4003CF1EB /* PBXTargetDependency */,
-				F099425023AD56DE003CF1EB /* PBXTargetDependency */,
-				F099425223AD5712003CF1EB /* PBXTargetDependency */,
-				F065095523AD5724003D2410 /* PBXTargetDependency */,
+				F065097023AE0F9E003D2410 /* PBXTargetDependency */,
 			);
 			name = ReaderTranslatorMac;
 			packageProductDependencies = (
@@ -1241,7 +1218,6 @@
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
 				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
-				F099424C23AD56D4003CF1EB /* ReaderTranslatorPlayer.app in Resources */,
 				F09AD47E23702DF100FFBF6A /* jquery.js in Resources */,
 				F075443E234479DB00E1D88E /* Assets.xcassets in Resources */,
 			);
@@ -1389,6 +1365,7 @@
 				F058C7FC2397FAD0002C84F0 /* Safari.swift in Sources */,
 				F058C7F52397FA23002C84F0 /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F02B04B523A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */,
+				F065096823AE0DBA003D2410 /* WebStore.swift in Sources */,
 				F08EBB09239564F3009025D3 /* AudioRateView.swift in Sources */,
 				F0AB182523A5504200A71CA6 /* SentencesView.swift in Sources */,
 				F08EBB0723956495009025D3 /* RewindButtonsView.swift in Sources */,
@@ -1425,6 +1402,7 @@
 				F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */,
 				F0AD8B1C236413F60017C22F /* AvailableView.swift in Sources */,
 				F0EDFB20239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */,
+				F065096223AE0C67003D2410 /* PdfStore.swift in Sources */,
 				F06DB10E23450B6000C2DE90 /* View.swift in Sources */,
 				F04C830D23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
 				F058D6B5239EDF3C00195338 /* SettingsView.swift in Sources */,
@@ -1493,6 +1471,7 @@
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
 				F026B1E82344830200E032B9 /* SafariView.swift in Sources */,
 				F0C53175234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
+				F065096723AE0DB9003D2410 /* WebStore.swift in Sources */,
 				F0C36AA22359D50A001E396C /* Clipboard.swift in Sources */,
 				F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */,
 				F0C36A972359AF76001E396C /* StatusBarView_Bookmarks.swift in Sources */,
@@ -1533,6 +1512,7 @@
 				F099421123AD4315003CF1EB /* FavoriteVoiceName.swift in Sources */,
 				F099424523AD4603003CF1EB /* CollinsRepresenter.swift in Sources */,
 				F099421323AD4352003CF1EB /* Published.swift in Sources */,
+				F065096923AE0DBD003D2410 /* WebStore.swift in Sources */,
 				F065096023AE03F4003D2410 /* ViewsStore.swift in Sources */,
 				F099423823AD4569003CF1EB /* YTranslatorRepresenter.swift in Sources */,
 				F099423723AD455F003CF1EB /* PDFKitViewRepresentable.swift in Sources */,
@@ -1553,6 +1533,7 @@
 				F099422B23AD44AF003CF1EB /* DOMEvent.swift in Sources */,
 				F099423F23AD45C3003CF1EB /* BookmarksView_Controls.swift in Sources */,
 				F0A2179B23A9355E00968133 /* ReaderTranslatorMacTests.swift in Sources */,
+				F065096523AE0C6B003D2410 /* PdfStore.swift in Sources */,
 				F099422523AD4466003CF1EB /* GTranslatorRepresenter.swift in Sources */,
 				F099423623AD4558003CF1EB /* WikipediaRepresenter.swift in Sources */,
 				F065095923ADF6A3003D2410 /* AudioStore.swift in Sources */,
@@ -1658,6 +1639,7 @@
 				F0FCDD462361A8060016F23F /* CollinsView.swift in Sources */,
 				F0AA69DE232E97B0007CC07B /* SpeechSynthesizer.swift in Sources */,
 				F02B04B323A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */,
+				F065096423AE0C6A003D2410 /* PdfStore.swift in Sources */,
 				F0C4EDA92349271C00CCD97A /* ViewRepresentable.swift in Sources */,
 				F0C53178234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
 				F0AA69E1232E97B0007CC07B /* PDFKitView.swift in Sources */,
@@ -1686,30 +1668,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F065095523AD5724003D2410 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */;
-			targetProxy = F065095423AD5724003D2410 /* PBXContainerItemProxy */;
-		};
-		F075445F23447A2800E1D88E /* PBXTargetDependency */ = {
+		F065097023AE0F9E003D2410 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F075444D23447A2700E1D88E /* ReaderTranslatorSafari */;
-			targetProxy = F075445E23447A2800E1D88E /* PBXContainerItemProxy */;
-		};
-		F099424E23AD56D4003CF1EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */;
-			targetProxy = F099424D23AD56D4003CF1EB /* PBXContainerItemProxy */;
-		};
-		F099425023AD56DE003CF1EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */;
-			targetProxy = F099424F23AD56DE003CF1EB /* PBXContainerItemProxy */;
-		};
-		F099425223AD5712003CF1EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */;
-			targetProxy = F099425123AD5712003CF1EB /* PBXContainerItemProxy */;
+			targetProxy = F065096F23AE0F9E003D2410 /* PBXContainerItemProxy */;
 		};
 		F0A2179E23A9355E00968133 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1799,7 +1761,6 @@
 		F0754448234479DB00E1D88E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorMac/ReaderTranslatorMac.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1827,7 +1788,6 @@
 		F0754449234479DB00E1D88E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ReaderTranslatorMac/ReaderTranslatorMac.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";

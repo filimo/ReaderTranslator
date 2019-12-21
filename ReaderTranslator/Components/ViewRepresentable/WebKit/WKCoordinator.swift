@@ -11,7 +11,10 @@ import WebKit
 
 class WKCoordinator: NSObject {
     let parent: WKScriptsSetup
+
     @ObservedObject var store = Store.shared
+    @ObservedObject var webStore = WebStore.shared
+
     var cancellableSet: Set<AnyCancellable> = []
 
     init(_ parent: WKScriptsSetup) {
@@ -43,7 +46,7 @@ extension WKCoordinator: WKNavigationDelegate {
         decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
     ) {
         if let url = navigationAction.request.url {
-            if url.absoluteString == store.lastWebPage {
+            if url.absoluteString == webStore.lastWebPage {
                 decisionHandler(.allow)
             } else {
                 Safari.openSafari(url)

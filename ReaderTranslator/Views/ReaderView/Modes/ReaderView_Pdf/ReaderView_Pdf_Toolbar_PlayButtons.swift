@@ -12,6 +12,7 @@ private var timer: Timer?
 
 struct ReaderView_Pdf_Toolbar_PlayButtons: View {
     @ObservedObject var audioStore = AudioStore.shared
+    @ObservedObject var pdfStore = PdfStore.shared
 
     @Binding var audioPlayer: AudioPlayer
     @Binding var currentStatus: String
@@ -41,7 +42,7 @@ struct ReaderView_Pdf_Toolbar_PlayButtons: View {
             rewindButton(label: "+50", step: 50)
         }
         .onAppear {
-            if let url = self.store.pdfAudio { self.audioPlayer.openAudio(url: url) }
+            if let url = self.pdfStore.pdfAudio { self.audioPlayer.openAudio(url: url) }
         }
         .onDisappear {
             timer?.invalidate()
