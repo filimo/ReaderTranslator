@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StatusBarView_Voice_Favorite: View {
-    @ObservedObject var store = Store.shared
+    @ObservedObject var store = AudioStore.shared
 
     var body: some View {
         Group {
@@ -18,7 +18,7 @@ struct StatusBarView_Voice_Favorite: View {
                     ForEach(store.favoriteVoiceNames, id: \.id) { item in
                         Button(
                             action: {
-                                self.store.voiceLanguage = item.language
+                                self.store.language = item.language
                                 self.store.voiceName = item.voice
                                 SpeechSynthesizer.speak(isVoiceEnabled: true)
                             },

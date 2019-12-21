@@ -10,6 +10,9 @@ import Foundation
 import SwiftUI
 
 final class Store: ObservableObject {
+    private init() {
+        ({ currentTab = currentTab })() // call didSet
+    }
     static var shared = Store()
 
     var maxViewWidth: CGFloat = 400
@@ -30,13 +33,6 @@ final class Store: ObservableObject {
         didSet { lastWebPage = savedLastWebPage[self.currentTab] }
     }
 
-    @Published(key: "favoriteVoiceNames") var favoriteVoiceNames: [FavoriteVoiceName] = []
-    @Published(key: "voiceLanguage") var voiceLanguage = "Select language"
-    @Published(key: "voiceName") var voiceName = "Select voice"
-    @Published(key: "isVoiceEnabled") var isVoiceEnabled = true { didSet { SpeechSynthesizer.speak() } }
-    @Published(key: "voiceRate") var voiceRate = "0.4"
-    @Published(key: "voiceVolume") var voiceVolume: Float = 1
-
     @Published var canGoBack = false
     @UserDefault(key: "lastWebPage")
     private var savedLastWebPage = ["https://google.com", "", ""]
@@ -45,15 +41,9 @@ final class Store: ObservableObject {
 
     @Published(key: "lastPdf") var lastPdf: String = ""
     @Published(key: "lastPdfPage") var lastPdfPage = "1"
-
     @Published(key: "zoom") var zoom: CGFloat = 1
-
-    @Published(key: "playbackRate") var playbackRate: Float = 1.0
 
     @ObservedObject var bookmarks = BookmarksStore.shared
     @ObservedObject var longman = LongmanStore.shared
-
-    private init() {
-        ({ currentTab = currentTab })() // call didSet
-    }
+    @ObservedObject var audio = AudioStore.shared
 }

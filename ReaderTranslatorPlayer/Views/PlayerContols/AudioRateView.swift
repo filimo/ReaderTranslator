@@ -11,10 +11,10 @@ import SwiftUI
 struct AudioRateView: View {
     @ObservedObject var store = Store.shared
 
-    @State var audioRate: Float = Store.shared.audioRate {
+    @State var audioRate: Float = Store.shared.audio.rate {
         didSet {
             FileListView.player?.rate = audioRate
-            store.audioRate = audioRate
+            store.audio.rate = audioRate
         }
     }
 

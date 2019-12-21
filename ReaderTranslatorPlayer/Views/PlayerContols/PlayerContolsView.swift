@@ -19,8 +19,8 @@ struct PlayerControlsView: View {
 
     private var playPauseButton: some View {
         Button(
-            action: { self.store.isPlaying.toggle() },
-            label: { Text(store.isPlaying ? "Pause" : "Play") }
+            action: { self.store.audio.isPlaying.toggle() },
+            label: { Text(store.audio.isPlaying ? "Pause" : "Play") }
         )
         .buttonStyle(RoundButtonStyle())
     }
@@ -52,7 +52,7 @@ struct PlayerControlsView: View {
         let status = Text("\(currentStatus)")
 
         return Group {
-            if store.isPlaying {
+            if store.audio.isPlaying {
                 status.onAppear { self.startTimer() }
             } else {
                 status.onAppear { timer?.invalidate() }

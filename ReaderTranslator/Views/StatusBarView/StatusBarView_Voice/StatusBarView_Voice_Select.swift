@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct StatusBarView_Voice_Select: View {
-    @ObservedObject var store = Store.shared
+    @ObservedObject var store = AudioStore.shared
 
     var body: some View {
         Group {
-            Text(store.voiceLanguage)
+            Text(store.language)
                 .contextMenu {
                     ForEach(SpeechSynthesizer.languages, id: \.self) { language in
                         Button(
                             action: {
-                                self.store.voiceLanguage = language
+                                self.store.language = language
                                 self.store.voiceName = "Select voice"
                             },
                             label: { Text(language) }
@@ -27,7 +27,7 @@ struct StatusBarView_Voice_Select: View {
                 }
             Text(store.voiceName)
                 .contextMenu {
-                    ForEach(SpeechSynthesizer.getVoices(language: store.voiceLanguage), id: \.id) { voice in
+                    ForEach(SpeechSynthesizer.getVoices(language: store.language), id: \.id) { voice in
                         Button(
                             action: {
                                 self.store.voiceName = voice.name

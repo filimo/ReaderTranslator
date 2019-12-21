@@ -9,19 +9,19 @@
 import SwiftUI
 
 struct StatusBarView_Voice_Toggle: View {
-    @ObservedObject var store = Store.shared
+    @ObservedObject var audio = AudioStore.shared
 
     var body: some View {
         Group {
-            Toggle(isOn: $store.isVoiceEnabled) {
+            Toggle(isOn: $audio.isEnabled) {
                 Text("On:")
             }.fixedSize()
-            Image.sfSymbol(store.isVoiceEnabled ? "speaker.3.fill" : "speaker")
+            Image.sfSymbol(audio.isEnabled ? "speaker.3.fill" : "speaker")
                 .onTapGesture {
                     SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true)
                 }
                 .contextMenu {
-                    Slider(value: $store.voiceVolume, in: 0.1 ... 1.0).frame(width: 100, height: 50)
+                    Slider(value: $audio.volume, in: 0.1 ... 1.0).frame(width: 100, height: 50)
                 }
         }
     }

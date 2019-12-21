@@ -40,7 +40,7 @@ struct StatusBarView: View {
     private var playbackRateView: some View {
         Group {
             if store.enabledViews.contains(.safari) {
-                Text(String(format: "PlaybackRate: %.2f", [store.playbackRate]))
+                Text(String(format: "PlaybackRate: %.2f", [store.audio.playbackRate]))
             }
         }
     }

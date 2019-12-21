@@ -9,17 +9,17 @@
 import SwiftUI
 
 struct StatusBarView_Voice_Volume: View {
-    @ObservedObject var store = Store.shared
+    @ObservedObject var store = AudioStore.shared
 
     var body: some View {
         Group {
             Text("Rate:")
             #if os(macOS)
-                TextField("   ", text: self.$store.voiceRate, onCommit: { SpeechSynthesizer.speak() })
+                TextField("   ", text: self.$store.rate, onCommit: { SpeechSynthesizer.speak() })
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             #else
-                TextField("   ", text: self.$store.voiceRate)
+                TextField("   ", text: self.$store.rate)
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)

@@ -47,7 +47,7 @@ struct SafariView: View {
             extra.shiftKey != true,
             extra.metaKey != true {
             if extra.altKey == true, extra.keyCode == 65 { // Alt+a
-                store.isVoiceEnabled.toggle()
+                store.audio.isEnabled.toggle()
                 return
             }
             if extra.altKey == true, extra.keyCode == 83 { // Alt+s
@@ -68,7 +68,7 @@ struct SafariView: View {
         guard let extra = event.extra else { return }
 
         switch event.name {
-        case "playbackRate": if let playbackRate = extra.playbackRate { store.playbackRate = playbackRate }
+        case "playbackRate": if let playbackRate = extra.playbackRate { store.audio.playbackRate = playbackRate }
 //        case "pause": SpeechSynthesizer.speak()
         case "play": SpeechSynthesizer.stop()
         default: os_log("DOMEvent player: %@ is not recognized", type: .debug, event.name)

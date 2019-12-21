@@ -101,6 +101,10 @@
 		F058C801239930F3002C84F0 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058C7FF23992F92002C84F0 /* BookmarksView.swift */; };
 		F058D6B4239EDF3C00195338 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058D6B3239EDF3C00195338 /* SettingsView.swift */; };
 		F058D6B5239EDF3C00195338 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058D6B3239EDF3C00195338 /* SettingsView.swift */; };
+		F065095723ADF6A3003D2410 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095623ADF6A3003D2410 /* AudioStore.swift */; };
+		F065095823ADF6A3003D2410 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095623ADF6A3003D2410 /* AudioStore.swift */; };
+		F065095923ADF6A3003D2410 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095623ADF6A3003D2410 /* AudioStore.swift */; };
+		F065095C23ADF971003D2410 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095B23ADF971003D2410 /* AudioStore.swift */; };
 		F0667CF023A6B2E70063BAC6 /* GTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0667CEF23A6B2E70063BAC6 /* GTranslatorRepresenter.swift */; };
 		F06B0946239CB8FA00A39A86 /* BookmarksView_List_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */; };
 		F06B0947239CB8FA00A39A86 /* BookmarksView_List_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */; };
@@ -433,6 +437,8 @@
 		F058C7FF23992F92002C84F0 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F058D6B3239EDF3C00195338 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F062029423812264002EEAEE /* YTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorRepresenter.swift; sourceTree = "<group>"; };
+		F065095623ADF6A3003D2410 /* AudioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStore.swift; sourceTree = "<group>"; };
+		F065095B23ADF971003D2410 /* AudioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStore.swift; sourceTree = "<group>"; };
 		F0667CEF23A6B2E70063BAC6 /* GTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorRepresenter.swift; sourceTree = "<group>"; };
 		F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_List_Detail.swift; sourceTree = "<group>"; };
 		F06D1C0D2361FFBC008A0C38 /* WikipediaRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaRepresenter.swift; sourceTree = "<group>"; };
@@ -628,6 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				F012038C239286A2008D0B47 /* Store.swift */,
+				F065095B23ADF971003D2410 /* AudioStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -874,6 +881,7 @@
 			isa = PBXGroup;
 			children = (
 				F0AA69D7232E978E007CC07B /* Store.swift */,
+				F065095623ADF6A3003D2410 /* AudioStore.swift */,
 				F0418B97239A32FD00B59C66 /* BookmarksStore.swift */,
 				F0553727239BE3C700BA24BA /* LongmanStore.swift */,
 				F0039EC223447E24002F3F95 /* SharedContainer.swift */,
@@ -1351,6 +1359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F065095C23ADF971003D2410 /* AudioStore.swift in Sources */,
 				F0B5361F23A52E5900E68E74 /* LongmanStore.swift in Sources */,
 				F08EBB0D23956A20009025D3 /* NetworkManager.swift in Sources */,
 				F058C7F32397F968002C84F0 /* WKScriptsSetup.swift in Sources */,
@@ -1435,6 +1444,7 @@
 				F06DB1052344975E00C2DE90 /* StackView.swift in Sources */,
 				F058C801239930F3002C84F0 /* BookmarksView.swift in Sources */,
 				F0FCDD432361897E0016F23F /* MacmillanRepresenter.swift in Sources */,
+				F065095723ADF6A3003D2410 /* AudioStore.swift in Sources */,
 				F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */,
 				F0562E0F2362026C0074ACF5 /* WikipediaRepresenter.swift in Sources */,
 				F023CEB3239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
@@ -1538,6 +1548,7 @@
 				F0A2179B23A9355E00968133 /* ReaderTranslatorMacTests.swift in Sources */,
 				F099422523AD4466003CF1EB /* GTranslatorRepresenter.swift in Sources */,
 				F099423623AD4558003CF1EB /* WikipediaRepresenter.swift in Sources */,
+				F065095923ADF6A3003D2410 /* AudioStore.swift in Sources */,
 				F099423523AD4551003CF1EB /* Clipboard.swift in Sources */,
 				F099421723AD43AF003CF1EB /* ReversoView.swift in Sources */,
 				F099423D23AD459D003CF1EB /* WKCoordinatorNavigationDelegate.swift in Sources */,
@@ -1616,6 +1627,7 @@
 				F0C36A9D2359C78A001E396C /* Array.swift in Sources */,
 				F0553728239BE3C700BA24BA /* LongmanStore.swift in Sources */,
 				F06DB10D23450B6000C2DE90 /* View.swift in Sources */,
+				F065095823ADF6A3003D2410 /* AudioStore.swift in Sources */,
 				F0EE0A19234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0AA69DF232E97B0007CC07B /* GTranslatorRepresenter.swift in Sources */,
 				F0505C542360D474004F2D50 /* LongmanRepresenter.swift in Sources */,
