@@ -10,6 +10,7 @@ import SwiftUI
 
 struct StatusBarView_Bookmarks: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var bookmarksStore = BookmarksStore.shared
     @State var show: Bool = false
 
     var body: some View {
@@ -21,13 +22,13 @@ struct StatusBarView_Bookmarks: View {
 
         return Group {
             if text != "" {
-                if self.store.bookmarks.items.contains(text: text) {
-                    Button(action: { self.store.bookmarks.items.remove(text: text) },
+                if self.bookmarksStore.items.contains(text: text) {
+                    Button(action: { self.bookmarksStore.items.remove(text: text) },
                            label: { Image.sfSymbol("bookmark.fill") })
                 } else {
                     Button(
                         action: {
-                            self.store.bookmarks.items.append(text)
+                            self.bookmarksStore.items.append(text)
                             self.store.translateAction.add(.bookmarks(text: text))
                         },
                         label: { Image.sfSymbol("bookmark") }

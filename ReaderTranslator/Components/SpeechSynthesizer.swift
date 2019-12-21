@@ -62,15 +62,15 @@ class SpeechSynthesizer {
      */
     static func speak(
         text: String = Store.shared.translateAction.getText(),
-        voiceName: String = Store.shared.audio.voiceName,
+        voiceName: String = AudioStore.shared.voiceName,
         stopSpeaking: Bool = false,
-        isVoiceEnabled: Bool = Store.shared.audio.isEnabled
+        isVoiceEnabled: Bool = AudioStore.shared.isEnabled
     ) {
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
 
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })
-        speechUtterance.volume = Store.shared.audio.volume
-        speechUtterance.rate = (Store.shared.audio.rate as NSString).floatValue
+        speechUtterance.volume = AudioStore.shared.volume
+        speechUtterance.rate = (AudioStore.shared.rate as NSString).floatValue
         if speechSynthesizer.isSpeaking {
             SpeechSynthesizer.stop()
             if stopSpeaking { return }

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct BookmarksView: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var viewsStore = ViewsStore.shared
 
     @State var filter = ""
 
@@ -22,16 +23,17 @@ struct BookmarksView: View {
             TextField("", text: $filter).frame(width: bookmarkWidth * CGFloat(columnts))
             BookmarksView_List(columnts: columnts, width: bookmarkWidth, filter: $filter)
             BookmarksView_Controls()
-        }.frame(width: store.viewWidth[.bookmarks])
+        }.frame(width: viewsStore.viewWidth[.bookmarks])
     }
 }
 
 struct BookmarksView_Previews: PreviewProvider {
     static var previews: some View {
-        let store = Store.shared
+        let longmanStore = LongmanStore.shared
         let url = URL(fileURLWithPath: "")
-        store.longman.word = "aunt"
-        store.longman.sentences = [
+
+        longmanStore.word = "aunt"
+        longmanStore.sentences = [
             .init(text: "Sentence 1", url: url),
             .init(
                 text: """

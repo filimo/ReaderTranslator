@@ -13,7 +13,7 @@ import SwiftUI
 struct FileListView: View {
     var debug: Bool
 
-    @ObservedObject var store = Store.shared
+    @ObservedObject var audioStore = AudioStore.shared
 
     @State var files: [URL] = []
 
@@ -36,9 +36,9 @@ struct FileListView: View {
         List {
             ForEach(files, id: \.self) { url in
                 Button(action: {
-                    self.store.audio.lastAudio = url
+                    self.audioStore.lastAudio = url
                     self.openAudio(url: url)
-                    self.store.audio.isPlaying = true
+                    self.audioStore.isPlaying = true
                 }, label: {
                     Text("\(url.lastPathComponent)")
                         .foregroundColor(self.getColor(url: url))
@@ -66,7 +66,7 @@ struct FileListView: View {
                 }
                 Self.directoryObserver = DirectoryObserver(URL: url) { self.refresh() }
             }
-            if let lastAudio = self.store.audio.lastAudio { self.openAudio(url: lastAudio) }
+            if let lastAudio = self.audioStore.lastAudio { self.openAudio(url: lastAudio) }
         }
     }
 
@@ -78,7 +78,7 @@ struct FileListView: View {
     }()
 
     private func getColor(url: URL) -> Color {
-        store.audio.lastAudio?.lastPathComponent == url.lastPathComponent ? Color.yellow : Color.primary
+        audioStore.lastAudio?.lastPathComponent == url.lastPathComponent ? Color.yellow : Color.primary
     }
 
     private func refresh() {
@@ -99,7 +99,7 @@ struct FileListView: View {
         do {
             Self.player = try AVAudioPlayer(contentsOf: url)
             Self.player?.enableRate = true
-            Self.player?.rate = store.audio.rate
+            Self.player?.rate = audioStore.rate
         } catch {
             print(error)
         }

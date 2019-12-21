@@ -10,10 +10,11 @@ import SwiftUI
 
 struct ReaderView_Web: View {
     @ObservedObject private var store = Store.shared
+    @ObservedObject var viewsStore = ViewsStore.shared
 
     var body: some View {
         VStack {
-            if store.enabledViews.contains(.web) {
+            if viewsStore.enabledViews.contains(.web) {
                 VStack {
                     HStack {
                         Image.sfSymbol("arrowshape.turn.up.left\(store.canGoBack ? ".fill" : "")")

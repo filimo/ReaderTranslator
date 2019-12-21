@@ -10,6 +10,8 @@ import SwiftUI
 
 struct StatusBarView_ViewsEnabler: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var viewsStore = ViewsStore.shared
+
     private let buttons: [AvailableView] = [
         .bookmarks,
         .wikipedia,
@@ -34,7 +36,7 @@ struct StatusBarView_ViewsEnabler: View {
     private func buttonView(_ view: AvailableView) -> some View {
         Group {
             Text(view.rawValue)
-                .background(store.enabledViews.contains(view) ? Color.red : Color.clear)
+                .background(viewsStore.enabledViews.contains(view) ? Color.red : Color.clear)
                 .onTapGesture {
                     self.toggle(view)
                 }
@@ -42,17 +44,17 @@ struct StatusBarView_ViewsEnabler: View {
                 .padding(.trailing, 5)
                 .onTapGesture(count: 1) {
                     self.store.translateAction.add(view.getAction())
-                    self.store.enabledViews.insert(view)
+                    self.viewsStore.enabledViews.insert(view)
                 }
         }
     }
 
     private func toggle(_ view: AvailableView) {
-        if store.enabledViews.contains(view) {
-            store.enabledViews.remove(view)
+        if viewsStore.enabledViews.contains(view) {
+            viewsStore.enabledViews.remove(view)
         } else {
             store.translateAction.add(view.getAction())
-            store.enabledViews.insert(view)
+            viewsStore.enabledViews.insert(view)
         }
     }
 }

@@ -12,18 +12,19 @@ import SwiftUI
 struct BookmarksView_List_Detail: View {
     @ObservedObject var store = Store.shared
     @ObservedObject var longmanStore = LongmanStore.shared
+    @ObservedObject var bookmarksStore = BookmarksStore.shared
 
     @Binding var selectSentence: String
 
     var changedTime: String {
-        guard let bookmark = store.bookmarks.items.first(text: store.longman.word) else {
+        guard let bookmark = bookmarksStore.items.first(text: longmanStore.word) else {
             return ""
         }
         return RelativeDateTimeFormatter().localizedString(for: Date(), relativeTo: bookmark.lastCreatedLog)
     }
 
     var createTime: String {
-        guard let bookmark = store.bookmarks.items.first(text: store.longman.word) else {
+        guard let bookmark = bookmarksStore.items.first(text: longmanStore.word) else {
             return ""
         }
         return RelativeDateTimeFormatter().localizedString(for: Date(), relativeTo: bookmark.created)
@@ -36,8 +37,8 @@ struct BookmarksView_List_Detail: View {
                     Text("counter changed: \(changedTime)").foregroundColor(Color.purple)
                     Text("create: \(createTime)")
                 }
-                Text(store.longman.word).font(.title)
-                if store.longman.sentences.isEmpty {
+                Text(longmanStore.word).font(.title)
+                if longmanStore.sentences.isEmpty {
                 } else {
                     ScrollView(.horizontal) {
                         sentencesView
@@ -51,7 +52,7 @@ struct BookmarksView_List_Detail: View {
 
     var sentencesView: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ForEach(store.longman.sentences, id: \.self) { sentence in
+            ForEach(longmanStore.sentences, id: \.self) { sentence in
                 Text("\(sentence.text)")
                     .foregroundColor(self.selectSentence == sentence.text ? Color.yellow : Color.primary)
                     .font(.subheadline)
@@ -68,8 +69,8 @@ struct BookmarksView_List_Detail: View {
 
 struct BookmarksView_List_Detail_Preview: PreviewProvider {
     static var previews: some View {
-        Store.shared.longman.word = "sanctuary"
-        Store.shared.longman.sentences = [
+        LongmanStore.shared.word = "sanctuary"
+        LongmanStore.shared.sentences = [
             .init(text: "The park is the largest wildlife sanctuary in the US.", url: URL.empty),
             .init(text: "a sanctuary for tigers", url: URL.empty)
         ]

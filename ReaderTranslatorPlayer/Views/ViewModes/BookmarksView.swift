@@ -10,6 +10,7 @@ import SwiftUI
 
 struct BookmarksView: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var bookmarksStore = BookmarksStore.shared
 
     struct ButtonModifier: ViewModifier {
         func body(content: Content) -> some View {
@@ -43,7 +44,7 @@ struct BookmarksView: View {
                             }
                             .modifier(ButtonModifier())
                             .onTapGesture {
-                                self.store.bookmarks.increase(bookmark: bookmark)
+                                self.bookmarksStore.items.increase(bookmark: bookmark)
                             }
                         }
                     }

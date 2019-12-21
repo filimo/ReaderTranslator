@@ -11,7 +11,7 @@ import SwiftUI
 private var timer: Timer?
 
 struct PlayerControlsView: View {
-    @ObservedObject var store = Store.shared
+    @ObservedObject var audioStore = AudioStore.shared
 
     @State var currentStatus = "0.0/0.0"
     @State var showSafari = false
@@ -19,8 +19,8 @@ struct PlayerControlsView: View {
 
     private var playPauseButton: some View {
         Button(
-            action: { self.store.audio.isPlaying.toggle() },
-            label: { Text(store.audio.isPlaying ? "Pause" : "Play") }
+            action: { self.audioStore.isPlaying.toggle() },
+            label: { Text(audioStore.isPlaying ? "Pause" : "Play") }
         )
         .buttonStyle(RoundButtonStyle())
     }
@@ -52,7 +52,7 @@ struct PlayerControlsView: View {
         let status = Text("\(currentStatus)")
 
         return Group {
-            if store.audio.isPlaying {
+            if audioStore.isPlaying {
                 status.onAppear { self.startTimer() }
             } else {
                 status.onAppear { timer?.invalidate() }

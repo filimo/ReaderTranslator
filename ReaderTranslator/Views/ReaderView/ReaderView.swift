@@ -11,6 +11,7 @@ import WebKit
 
 struct ReaderView: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var viewsStore = ViewsStore.shared
 
     var body: some View {
         ScrollView(.horizontal) {
@@ -20,7 +21,7 @@ struct ReaderView: View {
                 #endif
                 ForEach(AvailableView.resiableViews, id: \.self) { view in
                     Group {
-                        if self.store.enabledViews.contains(view) { view.view }
+                        if self.viewsStore.enabledViews.contains(view) { view.view }
                     }
                 }
             }.padding(.bottom, 20)

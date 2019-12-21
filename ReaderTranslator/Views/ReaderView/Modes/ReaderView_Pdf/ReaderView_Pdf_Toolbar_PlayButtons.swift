@@ -11,6 +11,8 @@ import SwiftUI
 private var timer: Timer?
 
 struct ReaderView_Pdf_Toolbar_PlayButtons: View {
+    @ObservedObject var audioStore = AudioStore.shared
+
     @Binding var audioPlayer: AudioPlayer
     @Binding var currentStatus: String
     @Binding var isPlaying: Bool {
@@ -73,7 +75,7 @@ struct ReaderView_Pdf_Toolbar_PlayButtons: View {
         timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
             guard let player = self.audioPlayer.player else { return }
             self.currentStatus = self.audioPlayer.status
-            player.volume = self.store.audio.volume
+            player.volume = self.audioStore.volume
             if self.isPlaying != player.isPlaying { self.isPlaying = player.isPlaying }
         }
     }

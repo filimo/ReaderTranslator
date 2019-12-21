@@ -11,6 +11,7 @@ import SwiftUI
 
 struct StatusBarView_Listener: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var bookmarksStore = BookmarksStore.shared
 
     class Coordinator: ObservableObject {
         var name: String { "ReaderTranslator_\(connectionCount)" }
@@ -29,7 +30,7 @@ struct StatusBarView_Listener: View {
             Text(coordinator.status.status).onTapGesture(perform: coordinator.start)
             if coordinator.status == .connected {
                 Button(action: {
-                    sharedConnection?.sendBookmarks(self.store.bookmarks.items.json)
+                    sharedConnection?.sendBookmarks(self.bookmarksStore.items.json)
                 }, label: { Text("Sync bookmarks") })
             }
         }

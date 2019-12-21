@@ -114,14 +114,14 @@ extension LongmanStore {
         URLSession.shared.dataTask(with: url) { data, _, _ in
             guard let data = data else { return }
             do {
-                if Store.shared.audio.isEnabled {
+                if AudioStore.shared.isEnabled {
                     player = nil
                     player = try AVAudioPlayer(data: data)
                     if let player = player {
                         player.delegate = self
                         player.enableRate = true
                         player.rate = self.audioRate
-                        player.volume = Store.shared.audio.volume
+                        player.volume = AudioStore.shared.volume
                         player.play()
                     }
                 }

@@ -105,6 +105,9 @@
 		F065095823ADF6A3003D2410 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095623ADF6A3003D2410 /* AudioStore.swift */; };
 		F065095923ADF6A3003D2410 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095623ADF6A3003D2410 /* AudioStore.swift */; };
 		F065095C23ADF971003D2410 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095B23ADF971003D2410 /* AudioStore.swift */; };
+		F065095E23AE03F0003D2410 /* ViewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095D23AE0353003D2410 /* ViewsStore.swift */; };
+		F065095F23AE03F3003D2410 /* ViewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095D23AE0353003D2410 /* ViewsStore.swift */; };
+		F065096023AE03F4003D2410 /* ViewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095D23AE0353003D2410 /* ViewsStore.swift */; };
 		F0667CF023A6B2E70063BAC6 /* GTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0667CEF23A6B2E70063BAC6 /* GTranslatorRepresenter.swift */; };
 		F06B0946239CB8FA00A39A86 /* BookmarksView_List_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */; };
 		F06B0947239CB8FA00A39A86 /* BookmarksView_List_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */; };
@@ -439,6 +442,7 @@
 		F062029423812264002EEAEE /* YTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorRepresenter.swift; sourceTree = "<group>"; };
 		F065095623ADF6A3003D2410 /* AudioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStore.swift; sourceTree = "<group>"; };
 		F065095B23ADF971003D2410 /* AudioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStore.swift; sourceTree = "<group>"; };
+		F065095D23AE0353003D2410 /* ViewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsStore.swift; sourceTree = "<group>"; };
 		F0667CEF23A6B2E70063BAC6 /* GTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorRepresenter.swift; sourceTree = "<group>"; };
 		F06B0945239CB88000A39A86 /* BookmarksView_List_Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_List_Detail.swift; sourceTree = "<group>"; };
 		F06D1C0D2361FFBC008A0C38 /* WikipediaRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaRepresenter.swift; sourceTree = "<group>"; };
@@ -882,6 +886,7 @@
 			children = (
 				F0AA69D7232E978E007CC07B /* Store.swift */,
 				F065095623ADF6A3003D2410 /* AudioStore.swift */,
+				F065095D23AE0353003D2410 /* ViewsStore.swift */,
 				F0418B97239A32FD00B59C66 /* BookmarksStore.swift */,
 				F0553727239BE3C700BA24BA /* LongmanStore.swift */,
 				F0039EC223447E24002F3F95 /* SharedContainer.swift */,
@@ -1454,6 +1459,7 @@
 				F02B04B023A2844700F93B84 /* NWParameters.swift in Sources */,
 				F02B04B823A2894700F93B84 /* PeerBrowser.swift in Sources */,
 				F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */,
+				F065095E23AE03F0003D2410 /* ViewsStore.swift in Sources */,
 				F08EBB1123956D80009025D3 /* NetworkManager.swift in Sources */,
 				F001A701235E095700617573 /* ServiceProvider.swift in Sources */,
 				F0FCDD472361A8070016F23F /* CollinsView.swift in Sources */,
@@ -1527,6 +1533,7 @@
 				F099421123AD4315003CF1EB /* FavoriteVoiceName.swift in Sources */,
 				F099424523AD4603003CF1EB /* CollinsRepresenter.swift in Sources */,
 				F099421323AD4352003CF1EB /* Published.swift in Sources */,
+				F065096023AE03F4003D2410 /* ViewsStore.swift in Sources */,
 				F099423823AD4569003CF1EB /* YTranslatorRepresenter.swift in Sources */,
 				F099423723AD455F003CF1EB /* PDFKitViewRepresentable.swift in Sources */,
 				F099423223AD451A003CF1EB /* URL.swift in Sources */,
@@ -1667,6 +1674,7 @@
 				F02B04AF23A2844700F93B84 /* NWParameters.swift in Sources */,
 				F02B04BB23A2896900F93B84 /* PeerListener.swift in Sources */,
 				F0AA69A5232E9710007CC07B /* ContentView.swift in Sources */,
+				F065095F23AE03F3003D2410 /* ViewsStore.swift in Sources */,
 				F0814BA223562AF300212F52 /* Set.swift in Sources */,
 				F0C36A962359AF75001E396C /* StatusBarView_Bookmarks.swift in Sources */,
 				F06B0946239CB8FA00A39A86 /* BookmarksView_List_Detail.swift in Sources */,

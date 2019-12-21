@@ -25,6 +25,4 @@ class Store: ObservableObject {
         }
     }
     @Published var longmanAudioRate: Float = 1
-
-    @ObservedObject var audio = AudioStore.shared
 }

@@ -11,6 +11,8 @@ import SwiftUI
 
 struct StatusBarView: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var viewsStore = ViewsStore.shared
+    @ObservedObject var audioStore = AudioStore.shared
 
     var body: some View {
         HStack {
@@ -39,8 +41,8 @@ struct StatusBarView: View {
 
     private var playbackRateView: some View {
         Group {
-            if store.enabledViews.contains(.safari) {
-                Text(String(format: "PlaybackRate: %.2f", [store.audio.playbackRate]))
+            if viewsStore.enabledViews.contains(.safari) {
+                Text(String(format: "PlaybackRate: %.2f", [audioStore.playbackRate]))
             }
         }
     }

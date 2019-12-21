@@ -10,6 +10,8 @@ import SwiftUI
 
 struct BookmarksView_List: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var longmanStore = LongmanStore.shared
+    @ObservedObject var bookmarksStore = BookmarksStore.shared
 
     var columnts: Int
     var width: CGFloat
@@ -19,10 +21,10 @@ struct BookmarksView_List: View {
     private var bookmarkItems: [BookmarksStore.Bookmarks] {
         if case let .bookmarks(text) = store.translateAction {
             self.store.translateAction.next()
-            store.longman.word = text
+            longmanStore.word = text
         }
 
-        var bookmarks = debug ? [.init(text: "test")] : store.bookmarks.items
+        var bookmarks = debug ? [.init(text: "test")] : bookmarksStore.items
         let filter = self.filter.trimmingCharacters(in: .whitespaces)
 
         if !filter.isEmpty {
@@ -30,7 +32,7 @@ struct BookmarksView_List: View {
         }
 
         return bookmarks
-            .filter(counter: store.bookmarks.filterCounter)
+            .filter(counter: bookmarksStore.filterCounter)
             .chunked(into: columnts)
     }
 

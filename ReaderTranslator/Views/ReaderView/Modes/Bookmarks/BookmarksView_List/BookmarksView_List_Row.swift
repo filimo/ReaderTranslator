@@ -11,6 +11,8 @@ import SwiftUI
 
 struct BookmarksView_List_Row: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var longmanStore = LongmanStore.shared
+    @ObservedObject var bookmarksStore = BookmarksStore.shared
 
     @State var selectSentence = ""
 
@@ -18,7 +20,7 @@ struct BookmarksView_List_Row: View {
     var width: CGFloat
 
     var showDetail: Bool {
-        items.contains(text: store.longman.word)
+        items.contains(text: longmanStore.word)
     }
 
     var body: some View {
@@ -38,7 +40,7 @@ struct BookmarksView_List_Row: View {
                         .aspectRatio(contentMode: .fill)
                         .fixedSize(horizontal: true, vertical: false)
                         .onTapGesture {
-                            self.store.bookmarks.items.increase(bookmark: bookmark)
+                            self.bookmarksStore.items.increase(bookmark: bookmark)
                         }
                     self.bookmarkItemView(bookmark: bookmark).font(.headline)
                 }
@@ -49,9 +51,9 @@ struct BookmarksView_List_Row: View {
     private func bookmarkItemView(bookmark: BookmarksStore.Bookmark) -> some View {
         Text("\(bookmark.text)")
             .frame(width: width, alignment: .leading)
-            .foregroundColor(store.longman.word == bookmark.text ? Color.yellow : Color.primary)
+            .foregroundColor(longmanStore.word == bookmark.text ? Color.yellow : Color.primary)
             .onTapGesture {
-                self.store.longman.word = bookmark.text
+                self.longmanStore.word = bookmark.text
                 self.store.translateAction.addAll(text: bookmark.text, except: .bookmarks, isSpeaking: false)
             }
     }

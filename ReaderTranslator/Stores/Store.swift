@@ -21,10 +21,6 @@ final class Store: ObservableObject {
 
     @Published var translateAction = TranslateAction()
 
-    @Published(key: "enabledViews") var enabledViews: Set<AvailableView> = [.reverso, .gTranslator]
-    @Published(key: "viewWidth") var viewWidth: [AvailableView: CGFloat] = [:]
-    @Published(key: "viewOrder") var viewOrder: [AvailableView: Int] = [:]
-
     @Published var currentPdfPage = "1"
     @Published var pageCount = 0
     @Published(wrappedValue: nil, key: "pdfAudio") var pdfAudio: URL?
@@ -42,8 +38,4 @@ final class Store: ObservableObject {
     @Published(key: "lastPdf") var lastPdf: String = ""
     @Published(key: "lastPdfPage") var lastPdfPage = "1"
     @Published(key: "zoom") var zoom: CGFloat = 1
-
-    @ObservedObject var bookmarks = BookmarksStore.shared
-    @ObservedObject var longman = LongmanStore.shared
-    @ObservedObject var audio = AudioStore.shared
 }

@@ -16,21 +16,21 @@ struct FavoriteVoiceName: Identifiable, Codable {
 
 extension FavoriteVoiceName {
     static var isFavorite: Bool {
-        Store.shared.audio.favoriteVoiceNames.first { $0.voice == Store.shared.audio.voiceName } != nil
+        AudioStore.shared.favoriteVoiceNames.first { $0.voice == AudioStore.shared.voiceName } != nil
     }
 
     static func addCurrentVoice() {
-        let store = Store.shared
+        let store = AudioStore.shared
 
         FavoriteVoiceName.removeCurrentVoice()
-        store.audio.favoriteVoiceNames.append(.init(language: store.audio.language, voice: store.audio.voiceName))
+        store.favoriteVoiceNames.append(.init(language: store.language, voice: store.voiceName))
     }
 
     static func removeCurrentVoice() {
-        let store = Store.shared
+        let store = AudioStore.shared
 
-        if let index = store.audio.favoriteVoiceNames.firstIndex(where: { $0.voice == store.audio.voiceName }) {
-            store.audio.favoriteVoiceNames.remove(at: index)
+        if let index = store.favoriteVoiceNames.firstIndex(where: { $0.voice == store.voiceName }) {
+            store.favoriteVoiceNames.remove(at: index)
         }
     }
 }

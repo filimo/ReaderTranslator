@@ -27,18 +27,18 @@ enum AvailableView: String, Codable, CaseIterable {
 
     var width: Binding<String> {
         Binding<String>(
-            get: { "\(Store.shared.viewWidth[self] ?? 500)" },
+            get: { "\(ViewsStore.shared.viewWidth[self] ?? 500)" },
             set: {
-                Store.shared.viewWidth[self] = $0.cgFloatValue
+                ViewsStore.shared.viewWidth[self] = $0.cgFloatValue
             }
         )
     }
 
     var order: Binding<String> {
         Binding<String>(
-            get: { "\(Store.shared.viewOrder[self] ?? 0)" },
+            get: { "\(ViewsStore.shared.viewOrder[self] ?? 0)" },
             set: {
-                Store.shared.viewOrder[self] = $0.intValue
+                ViewsStore.shared.viewOrder[self] = $0.intValue
             }
         )
     }

@@ -10,29 +10,31 @@ import SwiftUI
 
 struct BookmarksView_Controls: View {
     @ObservedObject var store = Store.shared
+    @ObservedObject var bookmarksStore = BookmarksStore.shared
+    @ObservedObject var longmanStore = LongmanStore.shared
 
     private var audioRateString: String {
-        String(format: "%.1f", arguments: [self.store.longman.audioRate])
+        String(format: "%.1f", arguments: [self.longmanStore.audioRate])
     }
 
     private var bookmarks: BookmarksStore.Bookmarks {
-        store.bookmarks.items.filter(counter: store.bookmarks.filterCounter)
+        bookmarksStore.items.filter(counter: bookmarksStore.filterCounter)
     }
 
     var body: some View {
         VStack {
             HStack {
-                MenuButton("counter \(filterString(self.store.bookmarks.filterCounter))") {
+                MenuButton("counter \(filterString(self.bookmarksStore.filterCounter))") {
                     ForEach(-1 ... 5, id: \.self) { counter in
                         Button(
                             action: {
-                                self.store.bookmarks.filterCounter = counter
+                                self.bookmarksStore.filterCounter = counter
                             },
                             label: { Text(self.filterString(counter)) }
                         )
                     }
                 }.fixedSize()
-                Text("\(bookmarks.count)/\(store.bookmarks.items.count)")
+                Text("\(bookmarks.count)/\(bookmarksStore.items.count)")
                 BookmarksView_Controls_ActionMenu()
             }
             audioRateButtonsView
@@ -41,12 +43,12 @@ struct BookmarksView_Controls: View {
 
     private var audioRateButtonsView: some View {
         HStack {
-            Button(action: { self.store.longman.audioRate = 0.2 }, label: { Text(".2") })
-            Button(action: { self.store.longman.audioRate = 0.5 }, label: { Text(".5") })
-            Button(action: { self.store.longman.audioRate -= 0.1 }, label: { Text("-") })
+            Button(action: { self.longmanStore.audioRate = 0.2 }, label: { Text(".2") })
+            Button(action: { self.longmanStore.audioRate = 0.5 }, label: { Text(".5") })
+            Button(action: { self.longmanStore.audioRate -= 0.1 }, label: { Text("-") })
             Text(audioRateString)
-            Button(action: { self.store.longman.audioRate += 0.1 }, label: { Text("+") })
-            Button(action: { self.store.longman.audioRate = 1 }, label: { Text("1") })
+            Button(action: { self.longmanStore.audioRate += 0.1 }, label: { Text("+") })
+            Button(action: { self.longmanStore.audioRate = 1 }, label: { Text("1") })
         }
     }
 

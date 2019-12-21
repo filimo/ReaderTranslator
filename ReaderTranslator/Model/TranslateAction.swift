@@ -59,7 +59,7 @@ enum TranslateAction: Equatable {
     }
 
     mutating func addAll(text: String, except: AvailableView? = nil, isSpeaking: Bool = true) {
-        let actions = Store.shared.enabledViews
+        let actions = ViewsStore.shared.enabledViews
             .filter {
                 guard $0 != except else { return false }
 
