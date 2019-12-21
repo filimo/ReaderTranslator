@@ -45,7 +45,7 @@ struct PlayerControlsView: View {
         .sheet(isPresented: $showSafari) {
             SafariView(url: .constant(URL(string: "https://www.ldoceonline.com")))
         }
-        .sheet(isPresented: $showHosts) { HostsView() }
+        .sheet(isPresented: $showHosts) { ConnectionView() }
     }
 
     private var statusView: some View {

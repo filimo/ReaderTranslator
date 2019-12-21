@@ -19,10 +19,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ReaderTranslatorMac_Player_Test.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>ReaderTranslatorPlayer.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>ReaderTranslatorPlayer_Mac_Test.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>ReaderTranslatorSafari.xcscheme_^#shared#^_</key>
 		<dict>
@@ -43,6 +53,11 @@
 			<true/>
 		</dict>
 		<key>F075444D23447A2700E1D88E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0A2179723A9355E00968133</key>
 		<dict>
 			<key>primary</key>
 			<true/>

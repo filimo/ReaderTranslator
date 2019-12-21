@@ -26,7 +26,7 @@ struct StatusBarView: View {
             speechHandler
             playbackRateView
             SettingsView()
-            StatusBarView_Listener()
+            StatusBarView_Sync()
         }.padding(.trailing, 20)
     }
 

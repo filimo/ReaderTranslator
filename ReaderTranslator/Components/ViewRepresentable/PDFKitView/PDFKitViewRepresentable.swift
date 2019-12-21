@@ -53,7 +53,7 @@ import SwiftUI
         @Binding var url: URL?
         static let pdfView = PDFView()
 
-        class Coordinator: NSObject, PDFViewDelegate {
+        class Server: NSObject, PDFViewDelegate {
             var parent: PDFKitViewRepresentable
 
             init(_ parent: PDFKitViewRepresentable) {
@@ -61,8 +61,8 @@ import SwiftUI
             }
         }
 
-        func makeCoordinator() -> Coordinator {
-            Coordinator(self)
+        func makeCoordinator() -> Server {
+            Server(self)
         }
 
         func makeUIView(context _: Context) -> PDFView {
@@ -75,7 +75,7 @@ import SwiftUI
                 Self.pdfView.autoresizingMask = [.flexibleWidth]
                 Self.pdfView.autoScales = true
                 Self.pdfView.document = PDFDocument(url: url)
-                Self.pdfView.delegate = context.coordinator
+                Self.pdfView.delegate = context.server
             }
         }
 

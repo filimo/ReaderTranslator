@@ -78,15 +78,16 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
  - Watch videos with subtitles [#55](https://github.com/filimo/ReaderTranslator/issues/55)
 ![](files/Release_2.0.0_1.png)
 
-## Comming features
+## Coming features
 - [Voicing selected words and phrases by Longman speakers](https://github.com/filimo/ReaderTranslator/issues/62)
 - [New features for ReaderTranslatorPlayer](https://github.com/filimo/ReaderTranslator/issues/58)
-- [Broadcast between macOS and mobile apps](https://github.com/filimo/ReaderTranslator/issues/63)
+- [Sync bookmarks between macOS and mobile apps](https://github.com/filimo/ReaderTranslator/issues/63)
 - [Bookmarks for mobile version](https://github.com/filimo/ReaderTranslator/issues/66)
 
 ![](files/Release_1.9_1.gif)
 ![](files/Release_1.9_2.gif)
 ![](files/Release_1.9_3.gif)
+![](files/Release_1.9_4.png)
 
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 

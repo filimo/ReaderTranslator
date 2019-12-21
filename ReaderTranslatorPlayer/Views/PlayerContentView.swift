@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct PlayerContentView: View {
     @ObservedObject var store = Store.shared
 
     var body: some View {
@@ -25,10 +25,10 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct PlayerContentView_Previews: PreviewProvider {
     @ObservedObject var store = Store.shared
 
     static var previews: some View {
-        ContentView()
+        PlayerContentView()
     }
 }

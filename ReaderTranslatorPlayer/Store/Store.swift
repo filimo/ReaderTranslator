@@ -8,12 +8,12 @@
 
 import SwiftUI
 
-class Store: ObservableObject {
+final class Store: ObservableObject {
+    private init() {}
     static var shared = Store()
-
-    @Published var hideNavBar = true
 
     var lastWebPage = ""
 
+    @Published var hideNavBar = true
     @Published(key: "bookmarks") var bookmarks: BookmarksStore.Bookmarks = []
 }

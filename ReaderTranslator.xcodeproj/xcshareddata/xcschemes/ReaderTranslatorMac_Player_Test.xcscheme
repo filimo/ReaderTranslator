@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1110"
-   version = "1.7">
+   LastUpgradeVersion = "1130"
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -17,6 +17,34 @@
                BlueprintIdentifier = "F0754436234479DA00E1D88E"
                BuildableName = "ReaderTranslatorMac.app"
                BlueprintName = "ReaderTranslatorMac"
+               ReferencedContainer = "container:ReaderTranslator.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F0120372239182DA008D0B47"
+               BuildableName = "ReaderTranslatorPlayer.app"
+               BlueprintName = "ReaderTranslatorPlayer"
+               ReferencedContainer = "container:ReaderTranslator.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F0A2179723A9355E00968133"
+               BuildableName = "ReaderTranslatorMacTests.xctest"
+               BlueprintName = "ReaderTranslatorMacTests"
                ReferencedContainer = "container:ReaderTranslator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -37,10 +65,6 @@
                BlueprintName = "ReaderTranslatorMacTests"
                ReferencedContainer = "container:ReaderTranslator.xcodeproj">
             </BuildableReference>
-            <LocationScenarioReference
-               identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
-               referenceType = "1">
-            </LocationScenarioReference>
          </TestableReference>
       </Testables>
    </TestAction>
