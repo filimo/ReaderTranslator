@@ -6,6 +6,7 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 import Network
+import os.log
 import SwiftUI
 
 class Server: ObservableObject {
@@ -20,7 +21,7 @@ class Server: ObservableObject {
 
 extension Server {
     func stateUpdateHandler(newState: NWListener.State) {
-        Logger.debug("P2P", "\(Self.self)", "\(#function)", "\(newState)")
+        Logger.debug(log: .p2p, value: newState)
         switch newState {
         case .ready:
             status = .ready
@@ -29,7 +30,7 @@ extension Server {
             // If the listener fails, re-start.
             print("Listener failed with \(error), restarting")
             sharedListener?.listener?.cancel()
-            sharedListener?.startListening(stateUpdateHandler: stateUpdateHandler)
+            sharedListener?.startListening()
 
         default:
             break
@@ -37,34 +38,34 @@ extension Server {
     }
 
     func start() {
-        Logger.debug("P2P", "\(Self.self)", "\(#function)")
+        Logger.debug(log: .p2p)
         passcode = "1111" // self.generatePasscode
         connectionCount += 1
         sharedListener?.stopListening()
 
         status = .started(name: name, passcode: passcode)
         sharedListener = PeerListener(name: name, passcode: passcode, delegate: self)
-        sharedListener?.startListening(stateUpdateHandler: stateUpdateHandler)
+        sharedListener?.startListening()
     }
 }
 
 extension Server: PeerConnectionDelegate {
     // When a connection becomes ready, move into game mode.
     func connectionReady() {
-        Logger.debug("P2P", "\(Self.self)", "PeerConnectionDelegate", "\(#function)")
+        Logger.debug(log: .p2p, delegate: "PeerConnectionDelegate")
         // navigationController?.performSegue(withIdentifier: "showGameSegue", sender: nil)
         status = .connected
     }
 
     // Ignore connection failures and messages prior to starting a game.
     func connectionFailed() {
-        Logger.debug("P2P", "\(Self.self)", "PeerConnectionDelegate", "\(#function)")
+        Logger.debug(log: .p2p, delegate: "PeerConnectionDelegate")
         status = .failed(error: .connection(text: "connection failed"))
         start()
     }
 
     func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
-        Logger.debug("P2P", "\(Self.self)", "PeerConnectionDelegate", "\(#function)", "\(message)")
+        Logger.debug(log: .p2p, delegate: "PeerConnectionDelegate", value: message)
         guard let content = content else { return }
         if let text = String(data: content, encoding: .unicode) {
             print(text)

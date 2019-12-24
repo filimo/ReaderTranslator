@@ -37,7 +37,7 @@ class ReaderTranslatorProtocol: NWProtocolFramerImplementation {
         messageLength: Int,
         isComplete _: Bool
     ) {
-        Logger.debug("P2P", "\(Self.self)", "\(#function)", value: "\(message)")
+        Logger.debug(log: .p2p, value: message)
         // Extract the type of message.
         let type = message.readerTranslatorMessageType
 
@@ -84,7 +84,7 @@ class ReaderTranslatorProtocol: NWProtocolFramerImplementation {
                 messageType = parsedMessageType
             }
             let message = NWProtocolFramer.Message(readerTranslatorMessageType: messageType)
-            Logger.debug("P2P", "\(Self.self)", "\(#function)", value: "\(message)")
+            Logger.debug(log: .p2p, value: message)
 
             // Deliver the body of the message, along with the message object.
             if !framer.deliverInputNoCopy(length: Int(header.length), message: message, isComplete: true) {

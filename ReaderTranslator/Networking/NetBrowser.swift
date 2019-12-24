@@ -22,7 +22,7 @@ class NetBrowser: ObservableObject {
     }
 
     func connectToServer(server: NWBrowser.Result, passcode: String) {
-        Logger.debug("P2P", "\(Self.self)", "\(#function)")
+        Logger.debug(log: .p2p)
         sharedConnection = PeerConnection(
             endpoint: server.endpoint,
             interface: server.interfaces.first,
@@ -35,7 +35,7 @@ class NetBrowser: ObservableObject {
 
 extension NetBrowser: PeerBrowserDelegate {
     func refreshResults(results: Set<NWBrowser.Result>) {
-        Logger.debug("P2P", "\(Self.self)", "PeerBrowserDelegate", "\(#function)")
+        Logger.debug(log: .p2p, delegate: "PeerBrowserDelegate")
         status = .none
         servers = results.map { $0 }
     }
@@ -43,17 +43,17 @@ extension NetBrowser: PeerBrowserDelegate {
 
 extension NetBrowser: PeerConnectionDelegate {
     func connectionReady() {
-        Logger.debug("P2P", "\(Self.self)", "PeerBrowserDelegate", "\(#function)")
+        Logger.debug(log: .p2p, delegate: "PeerBrowserDelegate")
         status = .connected
     }
 
     func connectionFailed() {
-        Logger.debug("P2P", "\(Self.self)", "PeerBrowserDelegate", "\(#function)")
+        Logger.debug(log: .p2p, delegate: "PeerBrowserDelegate")
         status = .failed(error: "failed")
     }
 
     func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
-        Logger.debug("P2P", "\(Self.self)", "PeerBrowserDelegate", "\(#function)")
+        Logger.debug(log: .p2p, delegate: "PeerBrowserDelegate")
 //        switch message.readerTranslatorMessageType {
 //        case .invalid: print("Received invalid message")
 //        case .send: store.bookmarks.merge(data: content)

@@ -5,30 +5,30 @@
 //  Created by Viktor Kushnerov on 22/12/19.
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
-
+import os.log
 import Foundation
 
 final class Logger {
-    static var appName: String {
-        guard let dictionary = Bundle.main.infoDictionary else {
-            return ""
-        }
-        if let version: String = dictionary["CFBundleName"] as? String {
-            return version
-        } else {
-            return ""
-        }
-    }
+    static func debug(
+        log: OSLog,
+        className: AnyClass? = nil,
+        callback: String = "",
+        delegate: String = "",
+        value: Any? = nil,
+        file: String = #file,
+        line: Int = #line,
+        function: String = #function
+        ) {
 
-    static func debug(_ prefix: String, _ texts: String..., value: String? = nil) {
-        let format = DateFormatter()
-        format.dateFormat = "HH:mm:ss.SSS"
-        let date = format.string(from: Date())
+        let file = file.replacingOccurrences(
+            of: "/Users/filimo/MyProjects/ReaderTranslator/ReaderTranslator/",
+            with: "")
+        let callback = callback.isEmpty ? "" : ".\(callback)"
+        let delegate = delegate.isEmpty ? "" : ".\(delegate)"
+        let className = className == nil ? "" : String(describing: className!)
+        let value = value == nil ? "" : ": \(String(describing: value!))"
 
-        let value = value != nil ? ": \(value!)" : ""
-
-        let text = texts.joined(separator: ".")
-        let message = "\(date) \(prefix) \(Logger.appName).\(text)\(value)"
-        print(message)
+        os_log("%s:%i %s%s%s.%s%s", log: log, type: .debug,
+               file, line, className, delegate, callback, function, value)
     }
 }
