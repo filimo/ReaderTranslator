@@ -119,6 +119,18 @@
         let lastElm
     	let isVideoPaused = true
 
+        let $playbackRate = document.createElement('span')
+        document.querySelector('.footer-breadcrumbs').append($playbackRate)
+        $playbackRate.innerHTML = "1.00"
+                   
+        function updateStatus() {
+            let playbackRate = video.playbackRate.toFixed(2)
+            let currentTime = video.currentTime.toFixed(0)
+            let duration = video.duration.toFixed(0)
+
+            $playbackRate.innerHTML = `playbackRate:${playbackRate} player:${currentTime}/${duration}`
+        }
+
         function playVideo() {
         	isVideoPaused = false
             send('play', 'video', event, '')
@@ -176,6 +188,7 @@
             let time = parseInt(video.currentTime)
             let elm = [...document.querySelectorAll((`[href$="?time=${time}"]`))].reverse()[0]
 
+            updateStatus()
             if(isVideoPaused) pauseVideo()
             if(elm) {
                 if(lastElm) lastElm.style.color = ""
@@ -251,11 +264,11 @@
 	            if(elm) {
 	            	if(event.shiftKey) {
                         elm.style.color = "yellow"
-	            		sendIn1000('selectionchange', 'document', event, getSelectedPhrases())
+	            		sendIn200('selectionchange', 'document', event, getSelectedPhrases())
 	            	}else{
                         clearAllSelections()
                         elm.style.color = "yellow"
-	                	sendIn1000('selectionchange', 'document', event, elm.text.trim())
+	                	sendIn200('selectionchange', 'document', event, elm.text.trim())
 	            	}
 	            	lastElm = elm
 	            	lastElm.click()
@@ -275,11 +288,11 @@
                 }
             	if(event.shiftKey) {
                     lastElm.style.color = "yellow"
-                    sendIn1000('selectionchange', 'document', event, getSelectedPhrases())
+                    sendIn200('selectionchange', 'document', event, getSelectedPhrases())
             	}else{
                     clearAllSelections()
                     lastElm.style.color = "yellow"
-                	sendIn1000('selectionchange', 'document', event, lastElm.text.trim())
+                	sendIn200('selectionchange', 'document', event, lastElm.text.trim())
             	}
                 lastElm.click()
             }
@@ -288,6 +301,7 @@
                 
 				pauseVideo()
                 video.playbackRate += 0.05
+                updateStatus()
                 event.extra = { playbackRate: video.playbackRate}
                 sendIn100('playbackRate', 'video', event)
             }
@@ -296,6 +310,8 @@
             
 				pauseVideo()
                 video.playbackRate -= 0.05
+                updateStatus()
+                console.log('video.playbackRate', video.playbackRate)
                 event.extra = { playbackRate: video.playbackRate}
                 sendIn100('playbackRate', 'video', event)
             }
