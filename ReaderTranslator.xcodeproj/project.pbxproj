@@ -319,6 +319,7 @@
 		F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */; };
+		F0DAB5E323B66DE400C1A4D3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DAB5E223B66DE400C1A4D3 /* TestView.swift */; };
 		F0DADAE5239BE8C200CFE2B1 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F0DADAE4239BE8C200CFE2B1 /* SwiftSoup */; };
 		F0EDE34B236418E000E0B81C /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EDE34D23641B1300E0B81C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE34C23641B1300E0B81C /* Stack.swift */; };
@@ -524,6 +525,7 @@
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
 		F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
+		F0DAB5E223B66DE400C1A4D3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		F0EDE34C23641B1300E0B81C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_Controls_ActionMenu.swift; sourceTree = "<group>"; };
 		F0EDFB21239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Pdf_Toolbar_PlayButtons.swift; sourceTree = "<group>"; };
@@ -805,6 +807,7 @@
 				F00AD753239627EB005FAFE1 /* PlayerContols */,
 				F0AB182323A5501C00A71CA6 /* ViewModes */,
 				F0120379239182DA008D0B47 /* PlayerContentView.swift */,
+				F0DAB5E223B66DE400C1A4D3 /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1414,6 +1417,7 @@
 				F02B04C523A2930D00F93B84 /* ConnectionView.swift in Sources */,
 				F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */,
 				F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */,
+				F0DAB5E323B66DE400C1A4D3 /* TestView.swift in Sources */,
 				F033F41223A6D3A800605325 /* DirectoryObserver.swift in Sources */,
 				F08EBB0523956202009025D3 /* FileListView.swift in Sources */,
 				F046182E23A3A4AF0041E726 /* ConnectionClientStatus.swift in Sources */,

@@ -11,7 +11,7 @@ import SwiftUI
 struct RewindButtonsView: View {
     var body: some View {
         HStack {
-            Button(action: { FileListView.player?.currentTime = 0 }, label: { Text("|<") })
+            Button(action: { AudioStore.shared.player?.currentTime = 0 }, label: { Text("|<") })
                 .buttonStyle(RoundButtonStyle())
             rewindButton(label: "-50", step: -50)
             rewindButton(label: "-5", step: -5)
@@ -24,7 +24,7 @@ struct RewindButtonsView: View {
 
     private func rewindButton(label: String, step: Double) -> some View {
         Button(
-            action: { FileListView.player?.currentTime += step },
+            action: { AudioStore.shared.player?.currentTime += step },
             label: { Text(label).frame(width: 35) }
         )
         .buttonStyle(RoundButtonStyle())

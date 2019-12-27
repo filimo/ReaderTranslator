@@ -8,62 +8,80 @@
 
 import SwiftUI
 
-private var timer: Timer?
-
 struct PlayerControlsView: View {
     @ObservedObject var audioStore = AudioStore.shared
 
-    @State var currentStatus = "0.0/0.0"
     @State var showSafari = false
     @State var showHosts = false
-
-    private var playPauseButton: some View {
-        Button(
-            action: { self.audioStore.isPlaying.toggle() },
-            label: { Text(audioStore.isPlaying ? "Pause" : "Play") }
-        )
-        .buttonStyle(RoundButtonStyle())
-    }
+    @State var showTimer = false
 
     var body: some View {
         VStack(spacing: 10) {
-            statusView.frame(width: 100)
+            Text("\(audioStore.currentStatus)").frame(width: 100)
             AudioRateView()
             RewindButtonsView()
-            HStack(spacing: 40) {
-                Button(action: {
-                    self.showHosts = true
-                }, label: { Image(systemName: "wifi") })
-                    .padding(.leading)
-                    .buttonStyle(RoundButtonStyle())
+            HStack(spacing: 20) {
+                timerButton
+                hostsButton
                 Spacer()
                 playPauseButton
-                Button(action: { self.showSafari = true }, label: { Text("Safari") })
-                    .buttonStyle(RoundButtonStyle())
-            }
+                safariButton
+            }.padding([.leading, .trailing], 20)
         }
         .sheet(isPresented: $showSafari) {
             SafariView(url: .constant(URL(string: "https://www.ldoceonline.com")))
         }
         .sheet(isPresented: $showHosts) { ConnectionView() }
-    }
-
-    private var statusView: some View {
-        let status = Text("\(currentStatus)")
-
-        return Group {
-            if audioStore.isPlaying {
-                status.onAppear { self.startTimer() }
-            } else {
-                status.onAppear { timer?.invalidate() }
-            }
+        .actionSheet(isPresented: $showTimer) {
+            ActionSheet(
+                title: Text("Sleep timer"),
+                message: Text(self.audioStore.remainTimerTime),
+                buttons: timerValueButtons
+            )
         }
     }
 
-    private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
-            guard let player = FileListView.player else { return }
-            self.currentStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
+    private var playPauseButton: some View {
+        Button(
+            action: { self.audioStore.isPlaying.toggle() },
+            label: { Text(audioStore.isPlaying ? "Pause" : "Play") }
+        ).buttonStyle(RoundButtonStyle())
+    }
+
+    private var timerButton: some View {
+        Button(
+            action: { self.showTimer = true },
+            label: { Image(systemName: "timer") }
+        ).buttonStyle(RoundButtonStyle())
+    }
+
+    private var hostsButton: some View {
+        Button(
+            action: { self.showHosts = true },
+            label: { Image(systemName: "wifi") }
+        ).buttonStyle(RoundButtonStyle())
+    }
+
+    private var safariButton: some View {
+        Button(
+            action: { self.showSafari = true },
+            label: { Text("Safari") }
+        ).buttonStyle(RoundButtonStyle())
+    }
+
+    private var timerValueButtons: [ActionSheet.Button] {
+        Array(-1...20).map { val in
+            if val == -1 { return .cancel() }
+            
+            let val = val * 10
+            let value = val == 0 ? "Off" : String(describing: val)
+            let action = {
+                if val == 0 {
+                    self.audioStore.stopSleepTimer()
+                    
+                } else { self.audioStore.setSleepTimer(minutes: val * 60) }
+            }
+            return .default(Text("\(value)"), action: action)
         }
     }
 }

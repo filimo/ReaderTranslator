@@ -15,9 +15,6 @@ struct FileListView: View {
 
     @ObservedObject var audioStore = AudioStore.shared
 
-    @State var files: [URL] = []
-
-    static var player: AVAudioPlayer?
     static var directoryObserver: DirectoryObserver?
 
     init(debug: Bool = false) {
@@ -34,10 +31,10 @@ struct FileListView: View {
 
     var body: some View {
         List {
-            ForEach(files, id: \.self) { url in
+            ForEach(audioStore.files, id: \.self) { url in
                 Button(action: {
                     self.audioStore.lastAudio = url
-                    self.openAudio(url: url)
+                    self.audioStore.openAudio(url: url)
                     self.audioStore.isPlaying = true
                 }, label: {
                     Text("\(url.lastPathComponent)")
@@ -46,7 +43,7 @@ struct FileListView: View {
             }
             .onDelete { indexSet in
                 guard let first = indexSet.first else { return }
-                let file = self.files[first]
+                let file = self.audioStore.files[first]
                 do {
                     try FileManager.default.removeItem(at: file)
 //                    self.refresh()
@@ -59,14 +56,16 @@ struct FileListView: View {
             if let url = self.folderUrl {
                 RunLoop.main.perform {
                     if self.debug {
-                        self.files = [Bundle.main.bundleURL.appendingPathComponent("test audio")]
+                        self.audioStore.files = [Bundle.main.bundleURL.appendingPathComponent("test audio")]
                     } else {
                         self.refresh()
                     }
                 }
                 Self.directoryObserver = DirectoryObserver(URL: url) { self.refresh() }
             }
-            if let lastAudio = self.audioStore.lastAudio { self.openAudio(url: lastAudio) }
+            if self.audioStore.player == nil {
+                if let lastAudio = self.audioStore.lastAudio { self.audioStore.openAudio(url: lastAudio) }
+            }
         }
     }
 
@@ -82,26 +81,16 @@ struct FileListView: View {
     }
 
     private func refresh() {
-        files = []
+        audioStore.files = []
         guard let url = folderUrl else { return }
 
         do {
             let items = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
 
-            files = items
+            audioStore.files = items
         } catch {
             print(error)
-            files = []
-        }
-    }
-
-    private func openAudio(url: URL) {
-        do {
-            Self.player = try AVAudioPlayer(contentsOf: url)
-            Self.player?.enableRate = true
-            Self.player?.rate = audioStore.rate
-        } catch {
-            print(error)
+            audioStore.files = []
         }
     }
 }

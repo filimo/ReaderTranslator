@@ -11,7 +11,7 @@ import SwiftUI
 struct AudioRateView: View {
     @State var audioRate: Float = AudioStore.shared.rate {
         didSet {
-            FileListView.player?.rate = audioRate
+            AudioStore.shared.player?.rate = audioRate
             AudioStore.shared.rate = audioRate
         }
     }
