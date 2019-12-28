@@ -92,6 +92,20 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**1.8.5**
+[Add english.stackexchange.com](https://github.com/filimo/ReaderTranslator/issues/70)
+
+![](files/Release_1.8.5_1.png)
+
+**1.8.4**
+[AudioPlayer features](https://github.com/filimo/ReaderTranslator/issues/65)
+
+![](files/Release_1.8.4_1.png)
+
+- Play next audio automatically
+- Sleep timer
+
+
 **1.8.2**
 - [Bookmarks view new features](https://github.com/filimo/ReaderTranslator/issues/65)
 
