@@ -17,6 +17,7 @@ struct StatusBarView_ViewsEnabler: View {
         .wikipedia,
         .macmillan,
         .collins,
+        .stackExchange,
         .longman,
         .reverso,
         .gTranslator,

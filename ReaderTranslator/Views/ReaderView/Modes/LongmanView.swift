@@ -10,11 +10,12 @@ import SwiftUI
 
 struct LongmanView: View {
     @ObservedObject private var store = Store.shared
+    @ObservedObject private var viewsStore = ViewsStore.shared
 
     var body: some View {
         WebViewContainer {
             LongmanRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: AvailableView.longman.width.wrappedValue.cgFloatValue)
+        }.frame(width: viewsStore.viewWidth[.longman])
     }
 }
 

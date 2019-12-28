@@ -11,6 +11,7 @@ import SwiftUI
 enum AvailableView: String, Codable, CaseIterable {
     case bookmarks = "Bookmarks"
     case wikipedia = "Wikipedia"
+    case stackExchange = "StackExchange"
     case reverso = "Reverso"
     case gTranslator = "GTranslator"
     case yTranslator = "YTranslator"
@@ -51,6 +52,8 @@ enum AvailableView: String, Codable, CaseIterable {
         switch self {
         case .wikipedia:
             return WikipediaView().any
+        case .stackExchange:
+            return StackExchangeView().any
         case .reverso:
             return ReversoView().any
         case .gTranslator:
@@ -80,6 +83,7 @@ enum AvailableView: String, Codable, CaseIterable {
             .wikipedia,
             .macmillan,
             .collins,
+            .stackExchange,
             .longman,
             .reverso,
             .yTranslator,
@@ -93,6 +97,7 @@ enum AvailableView: String, Codable, CaseIterable {
     func getAction(text: String = Store.shared.translateAction.getText()) -> TranslateAction {
         switch self {
         case .wikipedia: return .wikipedia(text: text)
+        case .stackExchange: return .stackExchange(text: text)
         case .reverso: return .reverso(text: text)
         case .gTranslator: return .gTranslator(text: text)
         case .yTranslator: return .yTranslator(text: text)

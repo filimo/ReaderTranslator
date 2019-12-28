@@ -10,12 +10,13 @@ import SwiftUI
 
 struct CollinsView: View {
     @ObservedObject private var store = Store.shared
+    @ObservedObject private var viewsStore = ViewsStore.shared
     @State var width: CGFloat?
 
     var body: some View {
         WebViewContainer {
             CollinsRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: AvailableView.collins.width.wrappedValue.cgFloatValue)
+        }.frame(width: viewsStore.viewWidth[.collins])
     }
 }
 

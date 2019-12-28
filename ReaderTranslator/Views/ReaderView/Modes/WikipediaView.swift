@@ -10,11 +10,12 @@ import SwiftUI
 
 struct WikipediaView: View {
     @ObservedObject private var store = Store.shared
+    @ObservedObject private var viewsStore = ViewsStore.shared
 
     var body: some View {
         WebViewContainer {
             WikipediaRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: AvailableView.wikipedia.width.wrappedValue.cgFloatValue)
+        }.frame(width: viewsStore.viewWidth[.wikipedia])
     }
 }
 

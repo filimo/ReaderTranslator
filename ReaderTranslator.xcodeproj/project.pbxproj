@@ -30,6 +30,10 @@
 		F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */; };
 		F023CEB2239A5674006DE5EA /* BookmarksView_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023CEB1239A5674006DE5EA /* BookmarksView_List.swift */; };
 		F023CEB3239A5674006DE5EA /* BookmarksView_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023CEB1239A5674006DE5EA /* BookmarksView_List.swift */; };
+		F025D61D23B73C8B004A1D6B /* StackExchangeRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025D61C23B73C8B004A1D6B /* StackExchangeRepresenter.swift */; };
+		F025D61E23B73C8B004A1D6B /* StackExchangeRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025D61C23B73C8B004A1D6B /* StackExchangeRepresenter.swift */; };
+		F025D62023B73FB1004A1D6B /* StackExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025D61F23B73FB1004A1D6B /* StackExchangeView.swift */; };
+		F025D62123B73FB1004A1D6B /* StackExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025D61F23B73FB1004A1D6B /* StackExchangeView.swift */; };
 		F026B1E82344830200E032B9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* SafariView.swift */; };
 		F02989EC2360488800DF722E /* OpenPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02989EB2360488800DF722E /* OpenPanel.swift */; };
 		F02B04AF23A2844700F93B84 /* NWParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B04AE23A2844700F93B84 /* NWParameters.swift */; };
@@ -402,6 +406,8 @@
 		F0229BE02362021200F12F47 /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
 		F022B6E2234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinatorNavigationDelegate.swift; sourceTree = "<group>"; };
 		F023CEB1239A5674006DE5EA /* BookmarksView_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_List.swift; sourceTree = "<group>"; };
+		F025D61C23B73C8B004A1D6B /* StackExchangeRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackExchangeRepresenter.swift; sourceTree = "<group>"; };
+		F025D61F23B73FB1004A1D6B /* StackExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackExchangeView.swift; sourceTree = "<group>"; };
 		F026B1E72344830200E032B9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F02989EB2360488800DF722E /* OpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPanel.swift; sourceTree = "<group>"; };
 		F02B04AE23A2844700F93B84 /* NWParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWParameters.swift; sourceTree = "<group>"; };
@@ -676,6 +682,7 @@
 				F0A9F35A2349228A00970C97 /* ReversoRepresenter.swift */,
 				F062029423812264002EEAEE /* YTranslatorRepresenter.swift */,
 				F0AA69DB232E97AF007CC07B /* GTranslatorRepresenter.swift */,
+				F025D61C23B73C8B004A1D6B /* StackExchangeRepresenter.swift */,
 				F0D2E333234BA49000D95994 /* Safari.swift */,
 				F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */,
 			);
@@ -993,6 +1000,7 @@
 				F0229BE02362021200F12F47 /* WikipediaView.swift */,
 				F0FCDD3F2361890C0016F23F /* MacmillanView.swift */,
 				F0FCDD452361A7BF0016F23F /* CollinsView.swift */,
+				F025D61F23B73FB1004A1D6B /* StackExchangeView.swift */,
 				F0505C532360D3DA004F2D50 /* LongmanView.swift */,
 				F01A50E823492398001DCC11 /* ReversoView.swift */,
 				F0D31C5023491C23003CF86B /* GTranslatorView.swift */,
@@ -1510,6 +1518,7 @@
 				F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
 				F0C0040923A899EA002B6060 /* CircleButton.swift in Sources */,
 				F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */,
+				F025D61D23B73C8B004A1D6B /* StackExchangeRepresenter.swift in Sources */,
 				F0BB43722344843D00ADBEF1 /* FavoriteVoiceName.swift in Sources */,
 				F02B04BC23A2896900F93B84 /* PeerListener.swift in Sources */,
 				F0814BA323562AF300212F52 /* Set.swift in Sources */,
@@ -1517,6 +1526,7 @@
 				F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
 				F026B1E82344830200E032B9 /* SafariView.swift in Sources */,
+				F025D62023B73FB1004A1D6B /* StackExchangeView.swift in Sources */,
 				F0C53175234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F065096723AE0DB9003D2410 /* WebStore.swift in Sources */,
 				F0C36AA22359D50A001E396C /* Clipboard.swift in Sources */,
@@ -1644,6 +1654,7 @@
 				F0EDFB25239E49480048CFD1 /* AudioPlayer.swift in Sources */,
 				F02B04B723A2894700F93B84 /* PeerBrowser.swift in Sources */,
 				F0C53174234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
+				F025D62123B73FB1004A1D6B /* StackExchangeView.swift in Sources */,
 				F08EBB1023956D80009025D3 /* NetworkManager.swift in Sources */,
 				F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
 				F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */,
@@ -1702,6 +1713,7 @@
 				F023CEB2239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F02B04BF23A2898300F93B84 /* PeerConnection.swift in Sources */,
 				F04D5D3F23A3677800424479 /* ConnectionServerStatus.swift in Sources */,
+				F025D61E23B73C8B004A1D6B /* StackExchangeRepresenter.swift in Sources */,
 				F0C02D3823B26A3800B393A5 /* OSLog.swift in Sources */,
 				F058C800239930F2002C84F0 /* BookmarksView.swift in Sources */,
 				F0FCDD40236189750016F23F /* MacmillanView.swift in Sources */,

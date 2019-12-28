@@ -13,6 +13,7 @@ private var stack = Stack<TranslateAction>()
 enum TranslateAction: Equatable {
     case none(text: String)
     case speak(text: String)
+    case stackExchange(text: String)
     case reverso(text: String)
     case gTranslator(text: String)
     case yTranslator(text: String)
@@ -30,6 +31,7 @@ enum TranslateAction: Equatable {
         switch self {
         case let .none(text),
              let .speak(text),
+             let .stackExchange(text),
              let .reverso(text),
              let .gTranslator(text),
              let .yTranslator(text),
@@ -66,6 +68,7 @@ enum TranslateAction: Equatable {
                 let count = text.split(separator: " ").count
                 switch $0 {
                 case .collins,
+                     .stackExchange,
                      .longman,
                      .macmillan,
                      .wikipedia: if count < 4 { return true }

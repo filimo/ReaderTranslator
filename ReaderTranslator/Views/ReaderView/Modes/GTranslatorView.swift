@@ -8,27 +8,14 @@
 
 import SwiftUI
 
-struct EditorNSTextView: View {
-    @ObservedObject var store = Store.shared
-
-    var body: some View {
-        Group {
-            #if os(macOS)
-                EditorNSTextRepresentable(translateAction: $store.translateAction)
-            #else
-                EmptyView()
-            #endif
-        }
-    }
-}
-
 struct GTranslatorView: View {
     @ObservedObject private var store = Store.shared
+    @ObservedObject private var viewsStore = ViewsStore.shared
 
     var body: some View {
         WebViewContainer {
             GTranslatorRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: AvailableView.gTranslator.width.wrappedValue.cgFloatValue)
+        }.frame(width: viewsStore.viewWidth[.gTranslator])
     }
 }
 

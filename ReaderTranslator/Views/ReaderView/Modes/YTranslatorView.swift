@@ -10,11 +10,12 @@ import SwiftUI
 
 struct YTranslatorView: View {
     @ObservedObject private var store = Store.shared
+    @ObservedObject private var viewsStore = ViewsStore.shared
 
     var body: some View {
         WebViewContainer {
             YTranslatorRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: AvailableView.yTranslator.width.wrappedValue.cgFloatValue)
+        }.frame(width: viewsStore.viewWidth[.yTranslator])
     }
 }
 

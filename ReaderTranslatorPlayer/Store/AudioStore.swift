@@ -32,6 +32,7 @@ final class AudioStore: NSObject, ObservableObject {
             } else {
                 player.pause()
                 invalidate()
+                stopSleepTimer()
             }
         }
     }
