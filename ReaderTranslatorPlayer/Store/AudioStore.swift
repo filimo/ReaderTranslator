@@ -39,7 +39,11 @@ final class AudioStore: NSObject, ObservableObject {
     @Published(wrappedValue: nil, key: "lastAudio") var lastAudio: URL?
     @Published(key: "isVoiceEnabled") var isEnabled = true
     @Published(key: "voiceVolume") var volume: Float = 1
-    @Published(key: "audioRate") var rate: Float = 1
+    @Published(key: "audioRate") var rate: Float = 1 {
+        didSet {
+            setupNowPlaying()
+        }
+    }
     @Published var sleepAfter = 0
 
     private override init() {
@@ -60,7 +64,9 @@ final class AudioStore: NSObject, ObservableObject {
         
         initMPRemoteCommandCenter()
     }
-    
+}
+
+extension AudioStore {
     private func initMPRemoteCommandCenter() {
         let commandCenter = MPRemoteCommandCenter.shared()
         
@@ -87,6 +93,17 @@ final class AudioStore: NSObject, ObservableObject {
             self.nextPlay()
             return .success
         }
+    }
+    
+    private func setupNowPlaying() {
+        var nowPlayingInfo = [String: Any]()
+        
+        nowPlayingInfo[MPMediaItemPropertyTitle] = player?.url?.lastPathComponent
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = player?.currentTime
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = player?.duration
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = player?.rate
+        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
 }
 
@@ -135,13 +152,14 @@ extension AudioStore {
         }
     }
     
-    func play(_ url: URL?) {
-        guard let url = url else {
+    func play(_ url: URL? = nil) {
+        guard let url = url ?? lastAudio else {
             isPlaying = false
             return
         }
         openAudio(url: url)
         isPlaying = true
+        setupNowPlaying()
     }
     
     func prevPlay() {

@@ -18,8 +18,7 @@ struct FileListView: View {
         List {
             ForEach(fileStore.files, id: \.self) { url in
                 Button(action: {
-                    self.audioStore.openAudio(url: url)
-                    self.audioStore.isPlaying = true
+                    self.audioStore.play(url)
                 }, label: {
                     Text("\(url.lastPathComponent)")
                         .foregroundColor(self.getColor(url: url))
