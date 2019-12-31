@@ -5,7 +5,7 @@
 //  Created by Viktor Kushnerov on 13/12/19.
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
-
+import Foundation
 import Network
 
 enum ErrorServerConnection: Error {
@@ -56,3 +56,6 @@ enum ConnectionServerStatus: Equatable {
         }
     }
 }
+
+
+

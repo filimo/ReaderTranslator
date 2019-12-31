@@ -37,7 +37,9 @@ enum AvailableView: String, Codable, CaseIterable {
 
     var order: Binding<String> {
         Binding<String>(
-            get: { "\(ViewsStore.shared.viewOrder[self] ?? 0)" },
+            get: {
+                "\(ViewsStore.shared.viewOrder[self] ?? 0)"
+            },
             set: {
                 ViewsStore.shared.viewOrder[self] = $0.intValue
             }
@@ -45,7 +47,7 @@ enum AvailableView: String, Codable, CaseIterable {
     }
 
     var orderInt: Int {
-        order.wrappedValue.intValue
+        ViewsStore.shared.viewOrder[self] ?? 0
     }
 
     var view: some View {

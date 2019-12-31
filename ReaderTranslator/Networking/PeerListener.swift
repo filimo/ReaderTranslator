@@ -26,7 +26,7 @@ class PeerListener {
 
     // Start listening and advertising.
     func startListening() {
-        Logger.debug(log: .p2p)
+        Logger.log(log: .p2p)
         do {
             // Create the listener object.
             let listener = try NWListener(using: NWParameters(passcode: passcode))
@@ -36,7 +36,7 @@ class PeerListener {
             listener.service = NWListener.Service(name: name, type: "_reader_translator._tcp")
 
             listener.newConnectionHandler = { newConnection in
-                Logger.debug(log: .p2p, callback: "newConnectionHandler", value: newConnection)
+                Logger.log(log: .p2p, callback: "newConnectionHandler", value: newConnection)
                 if let delegate = self.delegate {
                     if sharedConnection == nil {
                         // Accept a new connection.
@@ -57,14 +57,14 @@ class PeerListener {
     }
 
     func stopListening() {
-        Logger.debug(log: .p2p)
+        Logger.log(log: .p2p)
         listener?.cancel()
         sharedConnection = nil
     }
 
     // If the user changes their name, update the advertised name.
     func resetName(_ name: String) {
-        Logger.debug(log: .p2p, value: name)
+        Logger.log(log: .p2p, value: name)
         self.name = name
         if let listener = listener {
             // Reset the service to advertise.

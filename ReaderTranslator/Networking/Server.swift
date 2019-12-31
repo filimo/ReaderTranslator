@@ -21,7 +21,7 @@ class Server: ObservableObject {
 
 extension Server {
     func stateUpdateHandler(newState: NWListener.State) {
-        Logger.debug(log: .p2p, value: newState)
+        Logger.log(log: .p2p, value: newState)
         switch newState {
         case .ready:
             status = .ready
@@ -38,7 +38,7 @@ extension Server {
     }
 
     func start() {
-        Logger.debug(log: .p2p)
+        Logger.log(log: .p2p)
         passcode = "1111" // self.generatePasscode
         connectionCount += 1
         sharedListener?.stopListening()
@@ -52,20 +52,20 @@ extension Server {
 extension Server: PeerConnectionDelegate {
     // When a connection becomes ready, move into game mode.
     func connectionReady() {
-        Logger.debug(log: .p2p, delegate: "PeerConnectionDelegate")
+        Logger.log(log: .p2p, delegate: "PeerConnectionDelegate")
         // navigationController?.performSegue(withIdentifier: "showGameSegue", sender: nil)
         status = .connected
     }
 
     // Ignore connection failures and messages prior to starting a game.
     func connectionFailed() {
-        Logger.debug(log: .p2p, delegate: "PeerConnectionDelegate")
+        Logger.log(log: .p2p, delegate: "PeerConnectionDelegate")
         status = .failed(error: .connection(text: "connection failed"))
         start()
     }
 
     func receivedMessage(content: Data?, message: NWProtocolFramer.Message) {
-        Logger.debug(log: .p2p, delegate: "PeerConnectionDelegate", value: message)
+        Logger.log(log: .p2p, delegate: "PeerConnectionDelegate", value: message)
         guard let content = content else { return }
         if let text = String(data: content, encoding: .unicode) {
             print(text)

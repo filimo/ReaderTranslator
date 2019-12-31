@@ -28,7 +28,7 @@ class PeerBrowser {
 
     // Start browsing for services.
     func startBrowsing() {
-        Logger.debug(log: .p2p)
+        Logger.log(log: .p2p)
         // Create parameters, and allow browsing over peer-to-peer link.
         let parameters = NWParameters()
         parameters.includePeerToPeer = true
@@ -37,11 +37,11 @@ class PeerBrowser {
         let browser = NWBrowser(for: .bonjour(type: "_reader_translator._tcp", domain: nil), using: parameters)
         self.browser = browser
         browser.stateUpdateHandler = { newState in
-            Logger.debug(log: .p2p, callback: "stateUpdateHandler", value: newState)
+            Logger.log(log: .p2p, callback: "stateUpdateHandler", value: newState)
             switch newState {
             case let .failed(error):
                 // Restart the browser if it fails.
-                Logger.debug(
+                Logger.log(
                     log: .p2p,
                     className: Self.self,
                     value: "Browser failed with \(error), restarting")
@@ -54,7 +54,7 @@ class PeerBrowser {
 
         // When the list of discovered endpoints changes, refresh the delegate.
         browser.browseResultsChangedHandler = { results, _ in
-            Logger.debug(log: .p2p, callback: "browseResultsChangedHandler")
+            Logger.log(log: .p2p, callback: "browseResultsChangedHandler")
             self.delegate?.refreshResults(results: results)
         }
 

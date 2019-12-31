@@ -73,13 +73,13 @@ struct PlayerControlsView: View {
         Array(-1...20).map { val in
             if val == -1 { return .cancel() }
             
-            let val = val * 10
-            let value = val == 0 ? "Off" : String(describing: val)
+            let minutes = val * 10
+            let value = minutes == 0 ? "Off" : String(describing: minutes)
             let action = {
-                if val == 0 {
+                if minutes == 0 {
                     self.audioStore.stopSleepTimer()
                     
-                } else { self.audioStore.setSleepTimer(minutes: val * 60) }
+                } else { self.audioStore.setSleepTimer(minutes: minutes) }
             }
             return .default(Text("\(value)"), action: action)
         }

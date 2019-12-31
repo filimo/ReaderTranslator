@@ -52,13 +52,13 @@ class PeerConnection {
 
     // Handle starting the peer-to-peer connection for both inbound and outbound connections.
     func startConnection() {
-        Logger.debug(log: .p2p)
+        Logger.log(log: .p2p)
         guard let connection = connection else {
             return
         }
 
         connection.stateUpdateHandler = { newState in
-            Logger.debug(log: .p2p, callback: "stateUpdateHandler", value: newState)
+            Logger.log(log: .p2p, callback: "stateUpdateHandler", value: newState)
             switch newState {
             case .ready:
                 print("\(connection) established")
@@ -91,7 +91,7 @@ class PeerConnection {
 
     // Handle sending a "send" message.
     func sendBookmarks(_ bookmarks: String) {
-        Logger.debug(log: .p2p)
+        Logger.log(log: .p2p)
         guard let connection = connection else {
             return
         }
@@ -112,13 +112,13 @@ class PeerConnection {
 
     // Receive a message, deliver it to your delegate, and continue receiving more messages.
     func receiveNextMessage() {
-        Logger.debug(log: .p2p)
+        Logger.log(log: .p2p)
         guard let connection = connection else {
             return
         }
 
         connection.receiveMessage { content, context, _, error in
-            Logger.debug(log: .p2p, callback: "receiveMessage")
+            Logger.log(log: .p2p, callback: "receiveMessage")
             // Extract your message type from the received context.
             let message = context?.protocolMetadata(definition: ReaderTranslatorProtocol.definition)
             if let message = message as? NWProtocolFramer.Message {

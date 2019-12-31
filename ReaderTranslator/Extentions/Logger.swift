@@ -9,8 +9,9 @@ import os.log
 import Foundation
 
 final class Logger {
-    static func debug(
-        log: OSLog,
+    static func log(
+        log: OSLog = .default,
+        type: OSLogType = .error,
         className: AnyClass? = nil,
         callback: String = "",
         delegate: String = "",
@@ -28,7 +29,7 @@ final class Logger {
         let className = className == nil ? "" : String(describing: className!)
         let value = value == nil ? "" : ": \(String(describing: value!))"
 
-        os_log("%s:%i %s%s%s.%s%s", log: log, type: .debug,
+        os_log("%s:%i %s%s%s.%s%s", log: log, type: type,
                file, line, className, delegate, callback, function, value)
     }
 }
