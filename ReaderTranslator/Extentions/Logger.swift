@@ -8,6 +8,8 @@
 import os.log
 import Foundation
 
+var PREVIEW_MODE: Bool = false
+
 final class Logger {
     static func log(
         log: OSLog = .default,

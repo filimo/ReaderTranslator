@@ -35,12 +35,20 @@ final class FileStore: ObservableObject {
         
     }
     
+    func prevFile(file: URL?) -> URL? {
+        guard let file = file else { return nil }
+        guard let current = files.firstIndex(of: file) else { return nil }
+        let index = files.index(before: current)
+        
+        return files.indices.contains(index) ? files[index] : nil
+    }
+
     func nextFile(file: URL?) -> URL? {
         guard let file = file else { return nil }
         guard let current = files.firstIndex(of: file) else { return nil }
-        let next = files.index(after: current)
+        let index = files.index(after: current)
         
-        return files.indices.contains(next) ? files[next] : nil
+        return files.indices.contains(index) ? files[index] : nil
     }
 }
 

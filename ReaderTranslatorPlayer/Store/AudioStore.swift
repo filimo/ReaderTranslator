@@ -7,9 +7,8 @@
 //
 
 import AVFoundation
+import MediaPlayer
 import SwiftUI
-
-var PREVIEW_MODE: Bool = false
 
 final class AudioStore: NSObject, ObservableObject {
     static let shared = AudioStore()
@@ -49,7 +48,7 @@ final class AudioStore: NSObject, ObservableObject {
         do {
             let sharedInstance = AVAudioSession.sharedInstance()
 
-            try sharedInstance.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+            try sharedInstance.setCategory(.playback, mode: .default, options: .init(rawValue: 0))
             try sharedInstance.setActive(true)
         } catch {
             Logger.log(type: .error, value: error)
@@ -57,6 +56,36 @@ final class AudioStore: NSObject, ObservableObject {
         
         if player == nil {
             if let lastAudio = lastAudio { openAudio(url: lastAudio) }
+        }
+        
+        initMPRemoteCommandCenter()
+    }
+    
+    private func initMPRemoteCommandCenter() {
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        commandCenter.previousTrackCommand.isEnabled = true
+        commandCenter.previousTrackCommand.addTarget { _ in
+            self.prevPlay()
+            return .success
+        }
+        
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.playCommand.addTarget { _ in
+            self.isPlaying = true
+            return .success
+        }
+        
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.pauseCommand.addTarget { _ in
+            self.isPlaying = false
+            return .success
+        }
+
+        commandCenter.nextTrackCommand.isEnabled = true
+        commandCenter.nextTrackCommand.addTarget { _ in
+            self.nextPlay()
+            return .success
         }
     }
 }
@@ -105,17 +134,29 @@ extension AudioStore {
             print(error)
         }
     }
+    
+    func play(_ url: URL?) {
+        guard let url = url else {
+            isPlaying = false
+            return
+        }
+        openAudio(url: url)
+        isPlaying = true
+    }
+    
+    func prevPlay() {
+        play(FileStore.shared.prevFile(file: lastAudio))
+    }
+
+    func nextPlay() {
+        play(FileStore.shared.nextFile(file: lastAudio))
+    }
 }
 
 extension AudioStore: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
-            guard let url = FileStore.shared.nextFile(file: lastAudio) else {
-                isPlaying = false
-                return
-            }
-            openAudio(url: url)
-            isPlaying = true
+            nextPlay()
         }
     }
 }
