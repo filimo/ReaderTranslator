@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var store = Store.shared
+    @ObservedObject var viewStore = ViewsStore.shared //TextField uses ViewsStore via enum AvailableView
 
     @State var isShow = false
 

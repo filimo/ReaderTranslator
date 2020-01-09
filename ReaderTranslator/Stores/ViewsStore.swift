@@ -10,7 +10,7 @@ import Foundation
 
 final class ViewsStore: ObservableObject {
     private init() {}
-    static var shared = ViewsStore()
+    static let shared = ViewsStore()
 
     @Published(key: "enabledViews") var enabledViews: Set<AvailableView> = [.reverso, .gTranslator]
     @Published(key: "viewWidth") var viewWidth: [AvailableView: CGFloat] = [:]
