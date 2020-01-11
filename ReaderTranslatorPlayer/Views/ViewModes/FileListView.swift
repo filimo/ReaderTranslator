@@ -13,10 +13,11 @@ import SwiftUI
 struct FileListView: View {
     @ObservedObject var fileStore = FileStore.shared
     @ObservedObject var audioStore = AudioStore.shared
+    @State var files = FileStore.shared.files
 
     var body: some View {
         List {
-            ForEach(fileStore.files, id: \.self) { url in
+            ForEach(files, id: \.self) { url in
                 Button(action: {
                     self.audioStore.play(url)
                 }, label: {
@@ -26,9 +27,10 @@ struct FileListView: View {
             }
             .onDelete { indexSet in
                 guard let first = indexSet.first else { return }
-                let file = self.fileStore.files[first]
+                let file = self.files[first]
                 do {
                     try FileManager.default.removeItem(at: file)
+                    self.files = self.fileStore.files
                 } catch {
                     print(error)
                 }
