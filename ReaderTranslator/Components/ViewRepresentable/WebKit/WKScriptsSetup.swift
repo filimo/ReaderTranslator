@@ -36,7 +36,7 @@ extension WKScriptsSetup {
             )
             userContentController.addUserScript(userScript)
         } catch {
-            print(error.localizedDescription)
+            Logger.log(type: .error, value: error)
         }
     }
 
@@ -54,7 +54,7 @@ extension WKScriptsSetup {
             )
             userContentController.addUserScript(userScript)
         } catch {
-            print(error.localizedDescription)
+            Logger.log(type: .error, value: error)
         }
     }
 
@@ -69,7 +69,7 @@ extension WKScriptsSetup {
                 encodedContentRuleList: json,
                 completionHandler: { contentRuleList, error in
                     if let error = error {
-                        print(error)
+                        Logger.log(type: .error, value: error)
                         return
                     }
                     guard let contentRuleList = contentRuleList else { return }
@@ -81,7 +81,7 @@ extension WKScriptsSetup {
             )
 
         } catch {
-            print(error.localizedDescription)
+            Logger.log(type: .error, value: error)
         }
     }
 

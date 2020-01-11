@@ -32,7 +32,7 @@ struct FileListView: View {
                     try FileManager.default.removeItem(at: file)
                     self.files = self.fileStore.files
                 } catch {
-                    print(error)
+                    Logger.log(type: .error, value: error)
                 }
             }
         }

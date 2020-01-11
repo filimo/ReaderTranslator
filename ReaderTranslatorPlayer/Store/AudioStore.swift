@@ -148,7 +148,7 @@ extension AudioStore {
             player.rate = rate
             lastAudio = url
         } catch {
-            print(error)
+            Logger.log(type: .error, value: error)
         }
     }
     

@@ -61,7 +61,7 @@ final class LongmanStore: NSObject, ObservableObject {
 
                 self.next()
             } catch {
-                print(error)
+                Logger.log(type: .error, value: error)
             }
         }.resume()
     }
@@ -80,7 +80,7 @@ extension LongmanStore {
 
                     return LongmanSentence(text: text, url: url)
                 } catch {
-                    print(error)
+                    Logger.log(type: .error, value: error)
                     return nil
                 }
             }.compactMap { $0 }
@@ -88,7 +88,7 @@ extension LongmanStore {
                 self.sentences = longmanSentences
             }
         } catch {
-            print(error)
+            Logger.log(type: .error, value: error)
         }
     }
 
@@ -104,7 +104,7 @@ extension LongmanStore {
 
             addAudio(url: url)
         } catch {
-            print(error)
+            Logger.log(type: .error, value: error)
         }
     }
 }

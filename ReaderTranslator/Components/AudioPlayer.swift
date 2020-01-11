@@ -30,7 +30,7 @@ struct AudioPlayer {
         do {
             player = try AVAudioPlayer(contentsOf: url)
         } catch {
-            print(error)
+            Logger.log(type: .error, value: error)
         }
         player?.enableRate = true
     }

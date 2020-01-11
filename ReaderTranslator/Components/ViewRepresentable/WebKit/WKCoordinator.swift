@@ -32,7 +32,7 @@ class WKCoordinator: NSObject {
             do {
                 return try JSONDecoder().decode(DOMEvent.self, from: Data(string.utf8))
             } catch {
-                print(error.localizedDescription)
+                Logger.log(type: .error, value: error)
             }
         }
         return nil
@@ -73,7 +73,7 @@ extension WKCoordinator: WKNavigationDelegate {
     }
 
     func webView(_: WKWebView, didFailProvisionalNavigation _: WKNavigation!, withError error: Error) {
-        print(error)
+        Logger.log(type: .error, value: error)
     }
 }
 
