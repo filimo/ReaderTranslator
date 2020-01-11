@@ -29,7 +29,9 @@ struct StatusBarView_Bookmarks: View {
                     Button(
                         action: {
                             self.bookmarksStore.items.append(text)
-                            self.store.translateAction.add(.bookmarks(text: text))
+                            if ViewsStore.shared.enabledViews.contains(.bookmarks) {
+                                self.store.translateAction.add(.bookmarks(text: text))
+                            }
                         },
                         label: { Image.sfSymbol("bookmark") }
                     )
