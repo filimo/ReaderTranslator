@@ -58,6 +58,9 @@ struct PDFKitView: View {
                         self.goCurrentPage(page: lastPage)
                     }
                 }
+                if let pageCount = PDFKitViewRepresentable.pdfView.document?.pageCount {
+                    self.pdfStore.pdfPageCount = pageCount
+                }
             }
             .onDisappear {
                 cancellableSet.cancelAndRemoveAll()
@@ -95,7 +98,7 @@ struct PDFKitView: View {
         guard let document = pdfView.document else { return }
 
         print("debug: ", "PDFViewDocumentChanged: ", pdfStore.lastPdfPage)
-        pdfStore.pageCount = document.pageCount
+        pdfStore.pdfPageCount = document.pageCount
     }
 
     private func pdfViewPageChanged(event: Notification) {

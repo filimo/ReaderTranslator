@@ -31,6 +31,7 @@ struct ReaderView_Pdf_Toolbar: View {
                 openPdfButton
                 openAudioButton
                 pagesView
+                zoomView
             }
         }
     }
@@ -89,7 +90,16 @@ struct ReaderView_Pdf_Toolbar: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)
             #endif
-            Text(" / \(self.pdfStore.pageCount)")
+            Text(" / \(self.pdfStore.pdfPageCount)")
+        }
+    }
+
+    private var zoomView: some View {
+        HStack {
+            Text(" Zoom: ")
+            TextField("   ", text: self.$pdfStore.pdfZoom)
+                .fixedSize()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
         }
     }
 }

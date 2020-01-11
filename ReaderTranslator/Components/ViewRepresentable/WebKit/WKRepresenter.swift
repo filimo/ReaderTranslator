@@ -18,7 +18,6 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     static var hasSentTranslateAction = false
 
     @ObservedObject private var store = Store.shared
-    @ObservedObject var pdfStore = PdfStore.shared
     @ObservedObject var webStore = WebStore.shared
 
     private static var views = [Int: WKPageView]()
@@ -68,7 +67,6 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     func webView(_ webView: WKPageView, didFinish _: WKNavigation!) {
         if let url = webView.url?.absoluteString { webStore.lastWebPage = url.decodeUrl }
         webStore.canGoBack = webView.canGoBack
-        webView.setZoom(zoomLevel: pdfStore.zoom)
     }
 
     func goBack(_ webView: WKPageView) {

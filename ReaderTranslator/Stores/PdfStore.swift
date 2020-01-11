@@ -13,9 +13,13 @@ final class PdfStore: ObservableObject {
     static var shared = PdfStore()
 
     @Published var currentPdfPage = "1"
-    @Published var pageCount = 0
+    @Published var pdfPageCount = 0
     @Published(wrappedValue: nil, key: "pdfAudio") var pdfAudio: URL?
     @Published(key: "lastPdf") var lastPdf: String = ""
     @Published(key: "lastPdfPage") var lastPdfPage = "1"
-    @Published(key: "zoom") var zoom: CGFloat = 1
+    @Published(key: "pdfZoom") var pdfZoom = "1" {
+        didSet {
+            PDFKitViewRepresentable.pdfView.scaleFactor = pdfZoom.cgFloatValue
+        }
+    }
 }
