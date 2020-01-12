@@ -12,8 +12,6 @@ final class FileStore: ObservableObject {
     private init() {}
     static let shared = FileStore()
     
-    static private var directoryObserver: DirectoryObserver?
-
     var files: [URL] {
         guard let url = folderUrl else { return [] }
 
@@ -25,7 +23,7 @@ final class FileStore: ObservableObject {
         }
     }
 
-    private let folderUrl: URL? = {
+    let folderUrl: URL? = {
         guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
         }

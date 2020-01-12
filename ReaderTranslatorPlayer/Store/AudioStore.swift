@@ -18,6 +18,8 @@ final class AudioStore: NSObject, ObservableObject {
     private(set) var player: AVAudioPlayer?
     private var someObservationContext = ""
 
+    private static var directoryObserver: DirectoryObserver?
+
     @Published private(set) var allAudioPlayers = [AVAudioPlayer]()
 
     @Published var timelineStatus = "0.0/0.0"
@@ -52,6 +54,25 @@ final class AudioStore: NSObject, ObservableObject {
     private override init() {
         super.init()
 
+        initDirectoryObserver()
+        initAudioSesssion()
+        saveAllAudioPlayer()
+        initMPRemoteCommandCenter()
+
+        if let lastAudio = lastAudio { openAudio(url: lastAudio) }
+    }
+}
+
+extension AudioStore {
+    private func initDirectoryObserver() {
+        if let url = FileStore.shared.folderUrl {
+            Self.directoryObserver = DirectoryObserver(URL: url) {
+                RunLoop.main.perform { self.saveAllAudioPlayer() }
+            }
+        }
+    }
+    
+    private func initAudioSesssion() {
         do {
             let sharedInstance = AVAudioSession.sharedInstance()
 
@@ -60,25 +81,18 @@ final class AudioStore: NSObject, ObservableObject {
         } catch {
             Logger.log(type: .error, value: error)
         }
-
-        saveAllAudioPlayer()
-            if let lastAudio = lastAudio { openAudio(url: lastAudio) }
-
-        initMPRemoteCommandCenter()
     }
-}
-
-extension AudioStore {
+    
     func updateTimeline(timer _: Timer? = nil) {
         guard let player = self.player else { return }
-        self.timelineStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
+        timelineStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
     }
 }
 
 extension AudioStore {
     func openAudio(url: URL?) {
         guard let url = url else { return }
-        
+
         if player != nil { player?.pause() }
         player = allAudioPlayers.first { $0.url == url }
         guard let player = player else { return }
@@ -123,9 +137,8 @@ extension AudioStore {
     }
 }
 
-
 extension AudioStore: AVAudioPlayerDelegate {
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             nextPlay()
         }

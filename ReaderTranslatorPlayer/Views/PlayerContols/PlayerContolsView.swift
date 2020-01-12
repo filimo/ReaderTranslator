@@ -43,10 +43,7 @@ struct PlayerControlsView: View {
 
     private var playPauseButton: some View {
         Button(
-            action: {
-                self.audioStore.saveAllAudioPlayer()
-                self.audioStore.isPlaying.toggle()
-            },
+            action: { self.audioStore.isPlaying.toggle() },
             label: { Text(audioStore.isPlaying ? "Pause" : "Play") }
         ).buttonStyle(RoundButtonStyle())
     }

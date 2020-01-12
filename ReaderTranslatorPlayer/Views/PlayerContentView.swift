@@ -18,8 +18,8 @@ struct PlayerContentView: View {
                 PlayerControlsView()
                 BookmarksView()
             }
-            .navigationBarTitle("", displayMode: .inline)
-            .navigationBarHidden(store.hideNavBar)
+            .navigationBarTitle("ReaderTranslator", displayMode: .inline)
+//            .navigationBarHidden(store.hideNavBar)
             .onAppear { self.store.hideNavBar = true }
         }
     }

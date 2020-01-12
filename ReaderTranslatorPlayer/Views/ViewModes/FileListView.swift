@@ -11,9 +11,9 @@ import Dispatch
 import SwiftUI
 
 struct FileListView: View {
-    @ObservedObject var fileStore = FileStore.shared
     @ObservedObject var audioStore = AudioStore.shared
-    @State var files = FileStore.shared.files
+    
+    @State var isEditMode: EditMode = .inactive
 
     var body: some View {
         List {
@@ -26,12 +26,13 @@ struct FileListView: View {
                 
                 do {
                     try FileManager.default.removeItem(at: url)
-                    self.audioStore.saveAllAudioPlayer()
                 } catch {
                     Logger.log(type: .error, value: error)
                 }
             }
         }
+        .navigationBarItems(trailing: EditButton())
+        .environment(\.editMode, $isEditMode)
     }
 
     private func buttonView(_ player: AVAudioPlayer) -> some View {

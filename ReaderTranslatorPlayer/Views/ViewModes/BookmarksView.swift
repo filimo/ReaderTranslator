@@ -31,7 +31,7 @@ struct BookmarksView: View {
                                 destination: SentencesView(bookmark: bookmark.text),
                                 label: {
                                     Text(bookmark.text)
-                                        .font(.largeTitle)
+                                        .font(.title)
                                         .lineLimit(1)
                                 }
                             ).layoutPriority(2)
@@ -40,7 +40,7 @@ struct BookmarksView: View {
                             Spacer()
 
                             CircleButton {
-                                Text("\(bookmark.counter)")
+                                Text("\(bookmark.counter)").font(.footnote)
                             }
                             .modifier(ButtonModifier())
                             .onTapGesture {
@@ -67,7 +67,7 @@ struct BookmarksView: View {
 
 struct BookmarksView_Previews: PreviewProvider {
     static var previews: some View {
-        Store.shared.bookmarks = [.init(text: "test bookmark test test")]
+        Store.shared.bookmarks = [.init(counter: 11, text: "test bookmark test test")]
         return BookmarksView()
     }
 }
