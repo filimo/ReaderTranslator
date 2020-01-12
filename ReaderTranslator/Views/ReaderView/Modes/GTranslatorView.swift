@@ -15,7 +15,7 @@ struct GTranslatorView: View {
     var body: some View {
         WebViewContainer {
             GTranslatorRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: viewsStore.viewWidth[.gTranslator])
+        }.frame(width: viewsStore.viewWidth[.gTranslator] ?? ViewsStore.defaultWidth)
     }
 }
 

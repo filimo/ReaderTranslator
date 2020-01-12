@@ -15,7 +15,7 @@ struct LongmanView: View {
     var body: some View {
         WebViewContainer {
             LongmanRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: viewsStore.viewWidth[.longman])
+        }.frame(width: viewsStore.viewWidth[.longman] ?? ViewsStore.defaultWidth)
     }
 }
 

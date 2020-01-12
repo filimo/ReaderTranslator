@@ -29,7 +29,7 @@ enum AvailableView: String, Codable, CaseIterable {
     var width: Binding<String> {
         Binding<String>(
             get: {
-                "\(ViewsStore.shared.viewWidth[self] ?? 500)"
+                "\(ViewsStore.shared.viewWidth[self] ?? ViewsStore.defaultWidth)"
             },
             set: {
                 ViewsStore.shared.viewWidth[self] = $0.cgFloatValue

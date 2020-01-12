@@ -16,7 +16,7 @@ struct CollinsView: View {
     var body: some View {
         WebViewContainer {
             CollinsRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: viewsStore.viewWidth[.collins])
+        }.frame(width: viewsStore.viewWidth[.collins] ?? ViewsStore.defaultWidth)
     }
 }
 

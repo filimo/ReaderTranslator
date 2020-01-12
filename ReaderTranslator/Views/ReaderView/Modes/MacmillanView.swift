@@ -15,7 +15,7 @@ struct MacmillanView: View {
     var body: some View {
         WebViewContainer {
             MacmillanRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: viewsStore.viewWidth[.macmillan])
+        }.frame(width: viewsStore.viewWidth[.macmillan] ?? ViewsStore.defaultWidth)
     }
 }
 

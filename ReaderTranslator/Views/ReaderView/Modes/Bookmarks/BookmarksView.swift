@@ -23,7 +23,7 @@ struct BookmarksView: View {
             TextField("", text: $filter).frame(width: bookmarkWidth * CGFloat(columnts))
             BookmarksView_List(columnts: columnts, width: bookmarkWidth, filter: $filter)
             BookmarksView_Controls()
-        }.frame(width: viewsStore.viewWidth[.bookmarks])
+        }.frame(width: viewsStore.viewWidth[.bookmarks] ?? ViewsStore.defaultWidth)
     }
 }
 

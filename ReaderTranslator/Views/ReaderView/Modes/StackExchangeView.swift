@@ -15,7 +15,7 @@ struct StackExchangeView: View {
     var body: some View {
         WebViewContainer {
             StackExchangeRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: viewsStore.viewWidth[.stackExchange])
+        }.frame(width: viewsStore.viewWidth[.stackExchange] ?? ViewsStore.defaultWidth)
     }
 }
 

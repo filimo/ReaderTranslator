@@ -16,7 +16,7 @@ struct ReaderView_Pdf: View {
         VStack {
             PDFKitView()
             ReaderView_Pdf_Toolbar()
-        }.frame(width: viewsStore.viewWidth[.pdf])
+        }.frame(width: viewsStore.viewWidth[.pdf] ?? ViewsStore.defaultWidth)
     }
 }
 

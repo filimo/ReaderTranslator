@@ -15,7 +15,7 @@ struct WikipediaView: View {
     var body: some View {
         WebViewContainer {
             WikipediaRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: viewsStore.viewWidth[.wikipedia])
+        }.frame(width: viewsStore.viewWidth[.wikipedia] ?? ViewsStore.defaultWidth)
     }
 }
 

@@ -15,7 +15,7 @@ struct ReversoView: View {
     var body: some View {
         WebViewContainer {
             ReversoRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: viewsStore.viewWidth[.reverso])
+        }.frame(width: viewsStore.viewWidth[.reverso] ?? ViewsStore.defaultWidth)
     }
 }
 
