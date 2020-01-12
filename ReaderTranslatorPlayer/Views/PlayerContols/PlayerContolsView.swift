@@ -17,7 +17,7 @@ struct PlayerControlsView: View {
 
     var body: some View {
         VStack(spacing: 10) {
-            Text("\(audioStore.currentStatus)")
+            Text("\(audioStore.timelineStatus)")
             AudioRateView()
             RewindButtonsView()
             HStack(spacing: 20) {

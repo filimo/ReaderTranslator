@@ -20,7 +20,7 @@ final class AudioStore: NSObject, ObservableObject {
 
     @Published private(set) var allAudioPlayers = [AVAudioPlayer]()
 
-    @Published var currentStatus = "0.0/0.0"
+    @Published var timelineStatus = "0.0/0.0"
     @Published var isPlaying = false {
         willSet {
             guard let player = player else { return }
@@ -65,6 +65,13 @@ final class AudioStore: NSObject, ObservableObject {
             if let lastAudio = lastAudio { openAudio(url: lastAudio) }
 
         initMPRemoteCommandCenter()
+    }
+}
+
+extension AudioStore {
+    func updateTimeline(timer _: Timer? = nil) {
+        guard let player = self.player else { return }
+        self.timelineStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
     }
 }
 
@@ -173,10 +180,7 @@ extension AudioStore {
 
     func startTimer() {
         invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
-            guard let player = self.player else { return }
-            self.currentStatus = String(format: "%.1f/%.1f", player.currentTime, player.duration)
-        }
+        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true, block: updateTimeline(timer:))
     }
 
     func setSleepTimer(minutes: Int) {
