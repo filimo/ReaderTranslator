@@ -17,20 +17,16 @@ struct FileListView: View {
 
     var body: some View {
         List {
-            ForEach(files, id: \.self) { url in
-                Button(action: {
-                    self.audioStore.play(url)
-                }, label: {
-                    Text("\(url.lastPathComponent)")
-                        .foregroundColor(self.getColor(url: url))
-                })
+            ForEach(audioStore.allAudioPlayers, id: \.url) { player in
+                self.buttonView(player)
             }
             .onDelete { indexSet in
                 guard let first = indexSet.first else { return }
-                let file = self.files[first]
+                guard let url = self.audioStore.allAudioPlayers[first].url else { return }
+                
                 do {
-                    try FileManager.default.removeItem(at: file)
-                    self.files = self.fileStore.files
+                    try FileManager.default.removeItem(at: url)
+                    self.audioStore.saveAllAudioPlayer()
                 } catch {
                     Logger.log(type: .error, value: error)
                 }
@@ -38,6 +34,16 @@ struct FileListView: View {
         }
     }
 
+    private func buttonView(_ player: AVAudioPlayer) -> some View {
+        guard let url = player.url else { return EmptyView().any }
+
+        return Button(action: {
+            self.audioStore.play(url)
+        }, label: {
+            Text("\(url.lastPathComponent)")
+                .foregroundColor(self.getColor(url: url))
+        }).any
+    }
 
     private func getColor(url: URL) -> Color {
         audioStore.lastAudio?.lastPathComponent == url.lastPathComponent ? Color.yellow : Color.primary
@@ -47,7 +53,7 @@ struct FileListView: View {
 struct FileListView_Previews: PreviewProvider {
     static var previews: some View {
         PREVIEW_MODE = true
-        
+
         return FileListView()
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 final class FileStore: ObservableObject {
+    private init() {}
     static let shared = FileStore()
     
     static private var directoryObserver: DirectoryObserver?
@@ -30,25 +31,19 @@ final class FileStore: ObservableObject {
         }
         return documentsUrl.appendingPathComponent("/Inbox")
     }()
-
-    private init() {
-        
-    }
     
     func prevFile(file: URL?) -> URL? {
         guard let file = file else { return nil }
         guard let current = files.firstIndex(of: file) else { return nil }
-        let index = files.index(before: current)
         
-        return files.indices.contains(index) ? files[index] : nil
+        return files.indices.contains(current - 1) ? files[current - 1] : nil
     }
 
     func nextFile(file: URL?) -> URL? {
         guard let file = file else { return nil }
         guard let current = files.firstIndex(of: file) else { return nil }
-        let index = files.index(after: current)
         
-        return files.indices.contains(index) ? files[index] : nil
+        return files.indices.contains(current + 1) ? files[current + 1] : nil
     }
 }
 

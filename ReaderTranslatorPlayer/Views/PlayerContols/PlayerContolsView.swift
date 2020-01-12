@@ -17,7 +17,7 @@ struct PlayerControlsView: View {
 
     var body: some View {
         VStack(spacing: 10) {
-            Text("\(audioStore.currentStatus)").frame(width: 100)
+            Text("\(audioStore.currentStatus)")
             AudioRateView()
             RewindButtonsView()
             HStack(spacing: 20) {
@@ -43,7 +43,10 @@ struct PlayerControlsView: View {
 
     private var playPauseButton: some View {
         Button(
-            action: { self.audioStore.isPlaying.toggle() },
+            action: {
+                self.audioStore.saveAllAudioPlayer()
+                self.audioStore.isPlaying.toggle()
+            },
             label: { Text(audioStore.isPlaying ? "Pause" : "Play") }
         ).buttonStyle(RoundButtonStyle())
     }
@@ -72,13 +75,13 @@ struct PlayerControlsView: View {
     private var timerValueButtons: [ActionSheet.Button] {
         Array(-1...20).map { val in
             if val == -1 { return .cancel() }
-            
+
             let minutes = val * 10
             let value = minutes == 0 ? "Off" : String(describing: minutes)
             let action = {
                 if minutes == 0 {
                     self.audioStore.stopSleepTimer()
-                    
+
                 } else { self.audioStore.setSleepTimer(minutes: minutes) }
             }
             return .default(Text("\(value)"), action: action)
