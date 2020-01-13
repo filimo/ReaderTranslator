@@ -106,6 +106,16 @@
 		F058C801239930F3002C84F0 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058C7FF23992F92002C84F0 /* BookmarksView.swift */; };
 		F058D6B4239EDF3C00195338 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058D6B3239EDF3C00195338 /* SettingsView.swift */; };
 		F058D6B5239EDF3C00195338 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058D6B3239EDF3C00195338 /* SettingsView.swift */; };
+		F064B4A423CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
+		F064B4A523CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
+		F064B4A623CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
+		F064B4A723CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
+		F064B4A823CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
+		F064B4AA23CC598400F28314 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A923CC598400F28314 /* NumberFormatter.swift */; };
+		F064B4AB23CC598400F28314 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A923CC598400F28314 /* NumberFormatter.swift */; };
+		F064B4AC23CC598400F28314 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A923CC598400F28314 /* NumberFormatter.swift */; };
+		F064B4AD23CC598400F28314 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A923CC598400F28314 /* NumberFormatter.swift */; };
+		F064B4AE23CC598400F28314 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A923CC598400F28314 /* NumberFormatter.swift */; };
 		F065095723ADF6A3003D2410 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095623ADF6A3003D2410 /* AudioStore.swift */; };
 		F065095823ADF6A3003D2410 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095623ADF6A3003D2410 /* AudioStore.swift */; };
 		F065095923ADF6A3003D2410 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095623ADF6A3003D2410 /* AudioStore.swift */; };
@@ -439,6 +449,8 @@
 		F058C7FF23992F92002C84F0 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F058D6B3239EDF3C00195338 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F062029423812264002EEAEE /* YTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorRepresenter.swift; sourceTree = "<group>"; };
+		F064B4A323CC569400F28314 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		F064B4A923CC598400F28314 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		F065095623ADF6A3003D2410 /* AudioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStore.swift; sourceTree = "<group>"; };
 		F065095B23ADF971003D2410 /* AudioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStore.swift; sourceTree = "<group>"; };
 		F065095D23AE0353003D2410 /* ViewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsStore.swift; sourceTree = "<group>"; };
@@ -1069,6 +1081,8 @@
 				F02B04AE23A2844700F93B84 /* NWParameters.swift */,
 				F0B4843B23A8C6860031A811 /* URL.swift */,
 				F0C02D3523B26A3800B393A5 /* OSLog.swift */,
+				F064B4A323CC569400F28314 /* CGFloat.swift */,
+				F064B4A923CC598400F28314 /* NumberFormatter.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -1323,7 +1337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\n#buildNumber=$(($buildNumber + 1))\n#/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
 		F01F89DB23A5F7800082153E /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1395,7 +1409,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\n#buildNumber=$(($buildNumber + 1))\n#/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1410,6 +1424,7 @@
 				F012038723928631008D0B47 /* UserDefault.swift in Sources */,
 				F058C7FB2397FABD002C84F0 /* String.swift in Sources */,
 				F02B04B923A2894700F93B84 /* PeerBrowser.swift in Sources */,
+				F064B4AB23CC598400F28314 /* NumberFormatter.swift in Sources */,
 				F06EE7C923AFF32700CF989E /* ConnectionView_Servers.swift in Sources */,
 				F01203902392D586008D0B47 /* RoundButtonStyle.swift in Sources */,
 				F033F41523A75B5600605325 /* SentencesView_Row.swift in Sources */,
@@ -1440,6 +1455,7 @@
 				F08EBB0723956495009025D3 /* RewindButtonsView.swift in Sources */,
 				F0667CF023A6B2E70063BAC6 /* GTranslatorRepresenter.swift in Sources */,
 				F08EBB0B239565CC009025D3 /* PlayerContolsView.swift in Sources */,
+				F064B4A523CC569400F28314 /* CGFloat.swift in Sources */,
 				F012038D239286A2008D0B47 /* Store.swift in Sources */,
 				F02B04C523A2930D00F93B84 /* ConnectionView.swift in Sources */,
 				F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */,
@@ -1477,6 +1493,7 @@
 				F0C02D3623B26A3800B393A5 /* OSLog.swift in Sources */,
 				F04C830D23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
 				F058D6B5239EDF3C00195338 /* SettingsView.swift in Sources */,
+				F064B4AA23CC598400F28314 /* NumberFormatter.swift in Sources */,
 				F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */,
 				F0C36A9E2359C78A001E396C /* Array.swift in Sources */,
 				F0BB437F2344845000ADBEF1 /* StatusBarView_Voice_Favorite.swift in Sources */,
@@ -1554,6 +1571,7 @@
 				F04D5D4023A3677800424479 /* ConnectionServerStatus.swift in Sources */,
 				F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */,
 				F0C53179234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
+				F064B4A423CC569400F28314 /* CGFloat.swift in Sources */,
 				F0505C552360D475004F2D50 /* LongmanRepresenter.swift in Sources */,
 				F0D2E335234BA49000D95994 /* Safari.swift in Sources */,
 				F0505C572360D485004F2D50 /* LongmanView.swift in Sources */,
@@ -1565,6 +1583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F064B4A723CC569400F28314 /* CGFloat.swift in Sources */,
 				F075445423447A2800E1D88E /* SafariExtensionViewController.swift in Sources */,
 				F04C831123617BE6003A25B4 /* NSObject.swift in Sources */,
 				F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */,
@@ -1574,6 +1593,7 @@
 				F0814BA423562AF300212F52 /* Set.swift in Sources */,
 				F0C02D4723B27CA100B393A5 /* Logger.swift in Sources */,
 				F075445223447A2800E1D88E /* SafariExtensionHandler.swift in Sources */,
+				F064B4AD23CC598400F28314 /* NumberFormatter.swift in Sources */,
 				F0B4843E23A8C6860031A811 /* URL.swift in Sources */,
 				F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */,
 			);
@@ -1619,6 +1639,7 @@
 				F099421723AD43AF003CF1EB /* ReversoView.swift in Sources */,
 				F099423D23AD459D003CF1EB /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F099423923AD4585003CF1EB /* NSObject.swift in Sources */,
+				F064B4A823CC569400F28314 /* CGFloat.swift in Sources */,
 				F099423323AD4529003CF1EB /* WKScriptsSetup.swift in Sources */,
 				F099424823AD4623003CF1EB /* CircleButton.swift in Sources */,
 				F099420D23AD4283003CF1EB /* LongmanStore.swift in Sources */,
@@ -1643,6 +1664,7 @@
 				F099422423AD445F003CF1EB /* WebViewContainer.swift in Sources */,
 				F099422923AD4498003CF1EB /* ReaderView_Pdf_Toolbar.swift in Sources */,
 				F099424123AD45E4003CF1EB /* ReversoRepresenter.swift in Sources */,
+				F064B4AE23CC598400F28314 /* NumberFormatter.swift in Sources */,
 				F099422E23AD44EE003CF1EB /* ReaderView_Pdf_Toolbar_PlayButtons.swift in Sources */,
 				F099424223AD45E9003CF1EB /* WKRepresenter.swift in Sources */,
 				F099422A23AD44A5003CF1EB /* View.swift in Sources */,
@@ -1682,6 +1704,7 @@
 				F0D2E334234BA49000D95994 /* Safari.swift in Sources */,
 				F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F0FCDD422361897D0016F23F /* MacmillanRepresenter.swift in Sources */,
+				F064B4A623CC569400F28314 /* CGFloat.swift in Sources */,
 				F08EBAF023952AD6009025D3 /* WebViewContainer.swift in Sources */,
 				F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */,
 				F0C0040823A899EA002B6060 /* CircleButton.swift in Sources */,
@@ -1728,6 +1751,7 @@
 				F0562E0E2362026C0074ACF5 /* WikipediaRepresenter.swift in Sources */,
 				F0C36AA12359D50A001E396C /* Clipboard.swift in Sources */,
 				F04C830C23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
+				F064B4AC23CC598400F28314 /* NumberFormatter.swift in Sources */,
 				F023CEB2239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F02B04BF23A2898300F93B84 /* PeerConnection.swift in Sources */,
 				F04D5D3F23A3677800424479 /* ConnectionServerStatus.swift in Sources */,

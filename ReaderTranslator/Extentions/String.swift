@@ -44,7 +44,8 @@ extension String {
 
 extension String {
     var cgFloatValue: CGFloat {
-        if let width = NumberFormatter().number(from: self) {
+        let formatter = NumberFormatter()
+        if let width = formatter.number(from: self) {
             return CGFloat(width.floatValue)
         } else {
             return 0
@@ -52,7 +53,8 @@ extension String {
     }
 
     var intValue: Int {
-        if let width = NumberFormatter().number(from: self) {
+        let formatter = NumberFormatter()
+        if let width = formatter.number(from: self) {
             return Int(width.intValue)
         } else {
             return 0

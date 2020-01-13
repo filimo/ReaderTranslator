@@ -19,10 +19,18 @@ struct SettingsView: View {
                 VStack {
                     ForEach(AvailableView.resiableViews, id: \.self) { view in
                         HStack {
-                            TextField("", text: view.order).frame(width: 20)
+                            TextField(
+                                "",
+                                value: view.order,
+                                formatter: NumberFormatter.localInt
+                            ).frame(width: 20)
                             Text(view.text)
                             Spacer()
-                            TextField("", text: view.width).frame(width: 50)
+                            TextField(
+                                "",
+                                value: view.width ,
+                                formatter: NumberFormatter.localCGFloat
+                            ).frame(width: 50)
                         }
                         .frame(width: 200)
                     }

@@ -26,24 +26,24 @@ enum AvailableView: String, Codable, CaseIterable {
         rawValue
     }
 
-    var width: Binding<String> {
-        Binding<String>(
+    var width: Binding<CGFloat> {
+        Binding<CGFloat>(
             get: {
-                "\(ViewsStore.shared.viewWidth[self] ?? ViewsStore.defaultWidth)"
+                ViewsStore.shared.viewWidth[self] ?? ViewsStore.defaultWidth
             },
             set: {
-                ViewsStore.shared.viewWidth[self] = $0.cgFloatValue
+                ViewsStore.shared.viewWidth[self] = $0
             }
         )
     }
 
-    var order: Binding<String> {
-        Binding<String>(
+    var order: Binding<Int> {
+        Binding<Int>(
             get: {
-                "\(ViewsStore.shared.viewOrder[self] ?? 0)"
+                ViewsStore.shared.viewOrder[self] ?? 0
             },
             set: {
-                ViewsStore.shared.viewOrder[self] = $0.intValue
+                ViewsStore.shared.viewOrder[self] = $0
             }
         )
     }
