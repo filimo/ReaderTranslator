@@ -19,4 +19,9 @@ extension NumberFormatter {
         formatter.numberStyle = .decimal
         return formatter
     }()
+    static var localFloat: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
 }

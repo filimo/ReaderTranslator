@@ -15,11 +15,18 @@ struct StatusBarView_Voice_Volume: View {
         Group {
             Text("Rate:")
             #if os(macOS)
-                TextField("   ", text: self.$store.rate, onCommit: { SpeechSynthesizer.speak() })
+                TextField(
+                    "",
+                    value: self.$store.rate,
+                    formatter: NumberFormatter.localFloat,
+                    onCommit: { SpeechSynthesizer.speak() })
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             #else
-                TextField("   ", text: self.$store.rate)
+                TextField(
+                    "",
+                    value: self.$store.rate,
+                    formatter: NumberFormatter.localFloat)
                     .fixedSize()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)
