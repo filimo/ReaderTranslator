@@ -33,7 +33,7 @@ import SwiftUI
         func updateNSView(_: PDFView, context: Context) {
             if url == "" || Self.pdfView.document?.documentURL?.absoluteString == url { return }
             if let url = URL(string: url) {
-                Self.pdfView.scaleFactor = PdfStore.shared.pdfZoom.cgFloatValue
+                Self.pdfView.scaleFactor = PdfStore.shared.pdfZoom
                 Self.pdfView.document = PDFDocument(url: url)
                 Self.pdfView.delegate = context.coordinator
             }

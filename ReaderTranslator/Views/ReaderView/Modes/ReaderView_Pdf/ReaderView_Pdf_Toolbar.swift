@@ -97,7 +97,7 @@ struct ReaderView_Pdf_Toolbar: View {
     private var zoomView: some View {
         HStack {
             Text(" Zoom: ")
-            TextField("   ", text: self.$pdfStore.pdfZoom)
+            TextField("www", value: self.$pdfStore.pdfZoom, formatter: NumberFormatter.localCGFloat)
                 .fixedSize()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
         }

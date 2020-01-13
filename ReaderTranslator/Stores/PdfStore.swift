@@ -17,9 +17,9 @@ final class PdfStore: ObservableObject {
     @Published(wrappedValue: nil, key: "pdfAudio") var pdfAudio: URL?
     @Published(key: "lastPdf") var lastPdf: String = ""
     @Published(key: "lastPdfPage") var lastPdfPage = "1"
-    @Published(key: "pdfZoom") var pdfZoom = "1" {
+    @Published(key: "pdfZoom") var pdfZoom: CGFloat = 1 {
         didSet {
-            PDFKitViewRepresentable.pdfView.scaleFactor = pdfZoom.cgFloatValue
+            PDFKitViewRepresentable.pdfView.scaleFactor = pdfZoom
         }
     }
 }
