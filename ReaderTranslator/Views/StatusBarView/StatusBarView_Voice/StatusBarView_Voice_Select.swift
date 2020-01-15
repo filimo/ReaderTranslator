@@ -13,32 +13,35 @@ struct StatusBarView_Voice_Select: View {
 
     var body: some View {
         Group {
-            Text(store.language)
-                .contextMenu {
-                    ForEach(SpeechSynthesizer.languages, id: \.self) { language in
-                        Button(
-                            action: {
-                                self.store.language = language
-                                self.store.voiceName = "Select voice"
-                            },
-                            label: { Text(language) }
-                        )
-                    }
+            MenuButton(store.language) {
+                ForEach(SpeechSynthesizer.languages, id: \.self) { language in
+                    Button(
+                        action: {
+                            self.store.language = language
+                            self.store.voiceName = "Select voice"
+                        },
+                        label: { Text(language) }
+                    )
+                }.fixedSize()
+            }
+            .menuButtonStyle(BorderlessButtonMenuButtonStyle())
+            .fixedSize()
+
+            MenuButton(store.voiceName) {
+                ForEach(SpeechSynthesizer.getVoices(language: store.language), id: \.id) { voice in
+                    Button(
+                        action: {
+                            self.store.voiceName = voice.name
+                            SpeechSynthesizer.speak(isVoiceEnabled: true)
+                        },
+                        label: {
+                            Text("\(voice.name) \(voice.premium ? "(premium)" : "")")
+                        }
+                    )
                 }
-            Text(store.voiceName)
-                .contextMenu {
-                    ForEach(SpeechSynthesizer.getVoices(language: store.language), id: \.id) { voice in
-                        Button(
-                            action: {
-                                self.store.voiceName = voice.name
-                                SpeechSynthesizer.speak(isVoiceEnabled: true)
-                            },
-                            label: {
-                                Text("\(voice.name) \(voice.premium ? "(premium)" : "")")
-                            }
-                        )
-                    }
-                }
+            }
+            .menuButtonStyle(BorderlessButtonMenuButtonStyle())
+            .fixedSize()
         }
     }
 }
