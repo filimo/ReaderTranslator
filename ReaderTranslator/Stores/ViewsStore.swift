@@ -17,4 +17,6 @@ final class ViewsStore: ObservableObject {
     @Published(key: "enabledViews") var enabledViews: Set<AvailableView> = [.reverso, .gTranslator]
     @Published(key: "viewWidth") var viewWidth: [AvailableView: CGFloat] = [:]
     @Published(key: "viewOrder") var viewOrder: [AvailableView: Int] = [:]
+    
+    @Published var showSettings = false
 }

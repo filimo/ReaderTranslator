@@ -9,9 +9,9 @@
 import Foundation
 
 
-extension CGFloat {
+//extension CGFloat {
 //    var localString: String {
 //        let formatter = NumberFormatter()
 //        formatter.string(from: NSNumber(value: self))
 //    }
-}
+//}

@@ -2,20 +2,18 @@
 //  SettingsView.swift
 //  ReaderTranslator
 //
-//  Created by Viktor Kushnerov on 9/12/19.
-//  Copyright © 2019 Viktor Kushnerov. All rights reserved.
+//  Created by Viktor Kushnerov on 18/1/20.
+//  Copyright © 2020 Viktor Kushnerov. All rights reserved.
 //
 
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var viewStore = ViewsStore.shared //TextField uses ViewsStore via enum AvailableView
-
-    @State var isShow = false
+    @ObservedObject var viewStore = ViewsStore.shared
 
     var body: some View {
-        Button(action: { self.isShow = true }, label: { Text("Settings") })
-            .sheet(isPresented: $isShow) {
+        Group {
+            if viewStore.showSettings {
                 VStack {
                     ForEach(AvailableView.resiableViews, id: \.self) { view in
                         HStack {
@@ -24,20 +22,26 @@ struct SettingsView: View {
                                 value: view.order,
                                 formatter: NumberFormatter.localInt
                             ).frame(width: 20)
-                            Text(view.text)
-                            Spacer()
+                            Text(view.text).frame(width: 150, alignment: .leading)
                             TextField(
                                 "",
-                                value: view.width ,
+                                value: view.width,
                                 formatter: NumberFormatter.localCGFloat
                             ).frame(width: 50)
                         }
-                        .frame(width: 200)
                     }
 
-                    Button(action: { self.isShow = false }, label: { Text("Close") }).padding()
-                }.padding()
+                    Button(
+                        action: { self.viewStore.showSettings = false },
+                        label: { Text("Close") }
+                    )
+                }
+                .padding()
+                .background(Color(NSColor.windowBackgroundColor))
+                .modifier(RoundedEdge(width: 2, color: .black, cornerRadius: 10))
+                .shadow(radius: 10)
             }
+        }
     }
 }
 
@@ -46,4 +50,3 @@ struct SettingsView_Previews: PreviewProvider {
         SettingsView()
     }
 }
-

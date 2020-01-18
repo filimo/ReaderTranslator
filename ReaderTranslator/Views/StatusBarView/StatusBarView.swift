@@ -25,7 +25,7 @@ struct StatusBarView: View {
 //            gTranslatorNavbarView
             speechHandler
             playbackRateView
-            SettingsView()
+            StatusBarView_SettingsView()
             StatusBarView_Sync()
         }.padding(.trailing, 20)
     }

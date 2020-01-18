@@ -12,15 +12,6 @@ struct BookmarksView: View {
     @ObservedObject var store = Store.shared
     @ObservedObject var bookmarksStore = BookmarksStore.shared
 
-    struct ButtonModifier: ViewModifier {
-        func body(content: Content) -> some View {
-            content
-                .aspectRatio(contentMode: .fit)
-                .fixedSize(horizontal: true, vertical: false)
-                .padding([.top, .bottom], 8)
-        }
-    }
-
     var body: some View {
         VStack {
             ScrollView {
