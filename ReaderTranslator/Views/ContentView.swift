@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewStore = ViewsStore.shared
+    
     init() {
         #if os(macOS)
             NSApplication.shared.servicesProvider = ServiceProvider()
@@ -16,9 +18,12 @@ struct ContentView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
-            ReaderView()
-            StatusBarView()
+        ZStack {
+            VStack(alignment: .leading) {
+                ReaderView().blur(radius: viewStore.showSettings ? 1 : 0)
+                StatusBarView()
+            }
+            SettingsView()
         }
     }
 }

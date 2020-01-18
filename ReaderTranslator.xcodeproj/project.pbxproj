@@ -68,6 +68,12 @@
 		F0418B99239A32FD00B59C66 /* BookmarksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0418B97239A32FD00B59C66 /* BookmarksStore.swift */; };
 		F046182E23A3A4AF0041E726 /* ConnectionClientStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F046182D23A3A4AF0041E726 /* ConnectionClientStatus.swift */; };
 		F049244F2341F54800F3C728 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049244E2341F54800F3C728 /* Image.swift */; };
+		F04B6AA923D379C200CEC7DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B6AA823D379C200CEC7DA /* SettingsView.swift */; };
+		F04B6AAA23D379C200CEC7DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B6AA823D379C200CEC7DA /* SettingsView.swift */; };
+		F04B6AAC23D37B2600CEC7DA /* StatusBarView_SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B6AAB23D37B2600CEC7DA /* StatusBarView_SettingsView.swift */; };
+		F04B6AAD23D37B2600CEC7DA /* StatusBarView_SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B6AAB23D37B2600CEC7DA /* StatusBarView_SettingsView.swift */; };
+		F04B6AAE23D37BE900CEC7DA /* StackExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025D61F23B73FB1004A1D6B /* StackExchangeView.swift */; };
+		F04B6AAF23D37C0800CEC7DA /* StackExchangeRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025D61C23B73C8B004A1D6B /* StackExchangeRepresenter.swift */; };
 		F04C830C23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */; };
 		F04C830D23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */; };
 		F04C830F23617BE6003A25B4 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C830E23617BE6003A25B4 /* NSObject.swift */; };
@@ -104,8 +110,6 @@
 		F058C7FE2397FBCE002C84F0 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F058C800239930F2002C84F0 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058C7FF23992F92002C84F0 /* BookmarksView.swift */; };
 		F058C801239930F3002C84F0 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058C7FF23992F92002C84F0 /* BookmarksView.swift */; };
-		F058D6B4239EDF3C00195338 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058D6B3239EDF3C00195338 /* SettingsView.swift */; };
-		F058D6B5239EDF3C00195338 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058D6B3239EDF3C00195338 /* SettingsView.swift */; };
 		F064B4A423CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
 		F064B4A523CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
 		F064B4A623CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
@@ -268,6 +272,14 @@
 		F0AD8B1C236413F60017C22F /* AvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1A236413F60017C22F /* AvailableView.swift */; };
 		F0AD8B1E236414070017C22F /* TranslateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1D236414070017C22F /* TranslateAction.swift */; };
 		F0AD8B1F236414070017C22F /* TranslateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1D236414070017C22F /* TranslateAction.swift */; };
+		F0AF8D0B23D37E7200E8E4E2 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF8D0A23D37E7200E8E4E2 /* ButtonModifier.swift */; };
+		F0AF8D0C23D37E7200E8E4E2 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF8D0A23D37E7200E8E4E2 /* ButtonModifier.swift */; };
+		F0AF8D0D23D37E7200E8E4E2 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF8D0A23D37E7200E8E4E2 /* ButtonModifier.swift */; };
+		F0AF8D0E23D37E7200E8E4E2 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF8D0A23D37E7200E8E4E2 /* ButtonModifier.swift */; };
+		F0AF8D1023D37E9000E8E4E2 /* RoundedEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF8D0F23D37E9000E8E4E2 /* RoundedEdge.swift */; };
+		F0AF8D1123D37E9000E8E4E2 /* RoundedEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF8D0F23D37E9000E8E4E2 /* RoundedEdge.swift */; };
+		F0AF8D1223D37E9000E8E4E2 /* RoundedEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF8D0F23D37E9000E8E4E2 /* RoundedEdge.swift */; };
+		F0AF8D1323D37E9000E8E4E2 /* RoundedEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF8D0F23D37E9000E8E4E2 /* RoundedEdge.swift */; };
 		F0B4843C23A8C6860031A811 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4843B23A8C6860031A811 /* URL.swift */; };
 		F0B4843D23A8C6860031A811 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4843B23A8C6860031A811 /* URL.swift */; };
 		F0B4843E23A8C6860031A811 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4843B23A8C6860031A811 /* URL.swift */; };
@@ -436,6 +448,8 @@
 		F0418B97239A32FD00B59C66 /* BookmarksStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksStore.swift; sourceTree = "<group>"; };
 		F046182D23A3A4AF0041E726 /* ConnectionClientStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionClientStatus.swift; sourceTree = "<group>"; };
 		F049244E2341F54800F3C728 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		F04B6AA823D379C200CEC7DA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F04B6AAB23D37B2600CEC7DA /* StatusBarView_SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView_SettingsView.swift; sourceTree = "<group>"; };
 		F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_ViewsEnabler.swift; sourceTree = "<group>"; };
 		F04C830E23617BE6003A25B4 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		F04C8312236187D6003A25B4 /* MacmillanRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacmillanRepresenter.swift; sourceTree = "<group>"; };
@@ -447,7 +461,6 @@
 		F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
 		F058C7F12397A180002C84F0 /* longman.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = longman.json; sourceTree = "<group>"; };
 		F058C7FF23992F92002C84F0 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
-		F058D6B3239EDF3C00195338 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F062029423812264002EEAEE /* YTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorRepresenter.swift; sourceTree = "<group>"; };
 		F064B4A323CC569400F28314 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		F064B4A923CC598400F28314 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
@@ -528,6 +541,8 @@
 		F0AB182423A5504200A71CA6 /* SentencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentencesView.swift; sourceTree = "<group>"; };
 		F0AD8B1A236413F60017C22F /* AvailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableView.swift; sourceTree = "<group>"; };
 		F0AD8B1D236414070017C22F /* TranslateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAction.swift; sourceTree = "<group>"; };
+		F0AF8D0A23D37E7200E8E4E2 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
+		F0AF8D0F23D37E9000E8E4E2 /* RoundedEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdge.swift; sourceTree = "<group>"; };
 		F0B4843B23A8C6860031A811 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		F0C0040723A899EA002B6060 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		F0C02D3523B26A3800B393A5 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
@@ -873,6 +888,7 @@
 				F08EBAF323953AF0009025D3 /* Networking */,
 				F0AA69D0232E9729007CC07B /* Delegates */,
 				F0F256BB233D307C00C9D719 /* Extentions */,
+				F0AF8D0923D37E5000E8E4E2 /* Modifiers */,
 				F0AA69E2232E97C7007CC07B /* Property Wrappers */,
 				F0F256C0233E6C2B00C9D719 /* Model */,
 				F0AA69D6232E9780007CC07B /* Stores */,
@@ -938,6 +954,7 @@
 				F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */,
 				F0C36AA02359D50A001E396C /* Clipboard.swift */,
 				F001A700235E095700617573 /* ServiceProvider.swift */,
+				F04B6AA823D379C200CEC7DA /* SettingsView.swift */,
 				F02989EB2360488800DF722E /* OpenPanel.swift */,
 				F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */,
 				F08EBB0F23956D80009025D3 /* NetworkManager.swift */,
@@ -970,12 +987,12 @@
 			children = (
 				F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */,
 				F0AA69D3232E9762007CC07B /* StatusBarView.swift */,
+				F04B6AAB23D37B2600CEC7DA /* StatusBarView_SettingsView.swift */,
 				F0369E3123A2D92C00C33139 /* StatusBarView_Sync.swift */,
 				F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */,
 				F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */,
 				F0C36A952359AF01001E396C /* StatusBarView_Bookmarks.swift */,
 				F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */,
-				F058D6B3239EDF3C00195338 /* SettingsView.swift */,
 			);
 			path = StatusBarView;
 			sourceTree = "<group>";
@@ -992,6 +1009,15 @@
 				F0F506CC23A6701F003367BD /* LongmanView.swift */,
 			);
 			path = ViewModes;
+			sourceTree = "<group>";
+		};
+		F0AF8D0923D37E5000E8E4E2 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F0AF8D0A23D37E7200E8E4E2 /* ButtonModifier.swift */,
+				F0AF8D0F23D37E9000E8E4E2 /* RoundedEdge.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		F0C36AA32359FA13001E396C /* Scripts */ = {
@@ -1460,6 +1486,7 @@
 				F02B04C523A2930D00F93B84 /* ConnectionView.swift in Sources */,
 				F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */,
 				F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */,
+				F0AF8D1123D37E9000E8E4E2 /* RoundedEdge.swift in Sources */,
 				F033F41223A6D3A800605325 /* DirectoryObserver.swift in Sources */,
 				F08EBB0523956202009025D3 /* FileListView.swift in Sources */,
 				F046182E23A3A4AF0041E726 /* ConnectionClientStatus.swift in Sources */,
@@ -1468,6 +1495,7 @@
 				F08EBAED23943835009025D3 /* LongmanRepresenter.swift in Sources */,
 				F058C7F42397F9DB002C84F0 /* WKPageView.swift in Sources */,
 				F058C7FA2397FA7C002C84F0 /* NSObject.swift in Sources */,
+				F0AF8D0C23D37E7200E8E4E2 /* ButtonModifier.swift in Sources */,
 				F065097423AE1146003D2410 /* LongmanStore.swift in Sources */,
 				F012037A239182DA008D0B47 /* PlayerContentView.swift in Sources */,
 				F0C0040A23A899EA002B6060 /* CircleButton.swift in Sources */,
@@ -1492,7 +1520,6 @@
 				F06DB10E23450B6000C2DE90 /* View.swift in Sources */,
 				F0C02D3623B26A3800B393A5 /* OSLog.swift in Sources */,
 				F04C830D23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
-				F058D6B5239EDF3C00195338 /* SettingsView.swift in Sources */,
 				F064B4AA23CC598400F28314 /* NumberFormatter.swift in Sources */,
 				F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */,
 				F0C36A9E2359C78A001E396C /* Array.swift in Sources */,
@@ -1508,6 +1535,7 @@
 				F0BB43742344844800ADBEF1 /* PDFKitView.swift in Sources */,
 				F022B6E4234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F0BB43782344845000ADBEF1 /* StatusBarView.swift in Sources */,
+				F0AF8D1023D37E9000E8E4E2 /* RoundedEdge.swift in Sources */,
 				F0BB436F2344843400ADBEF1 /* Image.swift in Sources */,
 				F0BB43802344845000ADBEF1 /* StatusBarView_Voice_Volume.swift in Sources */,
 				F04C831023617BE6003A25B4 /* NSObject.swift in Sources */,
@@ -1559,6 +1587,7 @@
 				F0814BA323562AF300212F52 /* Set.swift in Sources */,
 				F0418B99239A32FD00B59C66 /* BookmarksStore.swift in Sources */,
 				F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */,
+				F0AF8D0B23D37E7200E8E4E2 /* ButtonModifier.swift in Sources */,
 				F0BB43712344843900ADBEF1 /* UserDefault.swift in Sources */,
 				F026B1E82344830200E032B9 /* SafariView.swift in Sources */,
 				F025D62023B73FB1004A1D6B /* StackExchangeView.swift in Sources */,
@@ -1575,6 +1604,8 @@
 				F0505C552360D475004F2D50 /* LongmanRepresenter.swift in Sources */,
 				F0D2E335234BA49000D95994 /* Safari.swift in Sources */,
 				F0505C572360D485004F2D50 /* LongmanView.swift in Sources */,
+				F04B6AA923D379C200CEC7DA /* SettingsView.swift in Sources */,
+				F04B6AAC23D37B2600CEC7DA /* StatusBarView_SettingsView.swift in Sources */,
 				F02B04B423A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1612,11 +1643,13 @@
 				F0C02D3C23B26A7400B393A5 /* OSLog.swift in Sources */,
 				F065096923AE0DBD003D2410 /* WebStore.swift in Sources */,
 				F065096023AE03F4003D2410 /* ViewsStore.swift in Sources */,
+				F04B6AAF23D37C0800CEC7DA /* StackExchangeRepresenter.swift in Sources */,
 				F099423823AD4569003CF1EB /* YTranslatorRepresenter.swift in Sources */,
 				F099423723AD455F003CF1EB /* PDFKitViewRepresentable.swift in Sources */,
 				F099423223AD451A003CF1EB /* URL.swift in Sources */,
 				F099424923AD46F8003CF1EB /* Collection.swift in Sources */,
 				F099421423AD4374003CF1EB /* UserDefault.swift in Sources */,
+				F04B6AAE23D37BE900CEC7DA /* StackExchangeView.swift in Sources */,
 				F099421F23AD43FB003CF1EB /* ReaderView_Pdf.swift in Sources */,
 				F099422C23AD44D4003CF1EB /* LongmanRepresenter.swift in Sources */,
 				F00EFE1723A95A6D0071D962 /* Array.swift in Sources */,
@@ -1655,6 +1688,7 @@
 				F099421C23AD43E8003CF1EB /* MacmillanView.swift in Sources */,
 				F099423A23AD458A003CF1EB /* ExtensionManager.swift in Sources */,
 				F099422323AD4453003CF1EB /* EditorNSTextRepresentable.swift in Sources */,
+				F0AF8D1323D37E9000E8E4E2 /* RoundedEdge.swift in Sources */,
 				F099422823AD4491003CF1EB /* PDFKitView.swift in Sources */,
 				F099421A23AD43D8003CF1EB /* YTranslatorView.swift in Sources */,
 				F099422D23AD44E7003CF1EB /* AudioPlayer.swift in Sources */,
@@ -1671,6 +1705,7 @@
 				F099423C23AD4597003CF1EB /* Set.swift in Sources */,
 				F099421E23AD43F6003CF1EB /* BookmarksView.swift in Sources */,
 				F099422023AD4401003CF1EB /* ReaderView_Web.swift in Sources */,
+				F0AF8D0E23D37E7200E8E4E2 /* ButtonModifier.swift in Sources */,
 				F099421223AD431B003CF1EB /* SpeechSynthesizer.swift in Sources */,
 				F099423E23AD45BF003CF1EB /* BookmarksView_List.swift in Sources */,
 			);
@@ -1726,9 +1761,9 @@
 				F012038B23928685008D0B47 /* Store.swift in Sources */,
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
 				F06DB1042344975E00C2DE90 /* StackView.swift in Sources */,
+				F0AF8D1223D37E9000E8E4E2 /* RoundedEdge.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WKRepresenter.swift in Sources */,
 				F0C4EDA6234926D400CCD97A /* ReversoRepresenter.swift in Sources */,
-				F058D6B4239EDF3C00195338 /* SettingsView.swift in Sources */,
 				F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */,
 				F0AB12AA233F58A2005B9F2A /* StatusBarView_Zoom.swift in Sources */,
 				F0505C562360D485004F2D50 /* LongmanView.swift in Sources */,
@@ -1752,9 +1787,12 @@
 				F0C36AA12359D50A001E396C /* Clipboard.swift in Sources */,
 				F04C830C23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
 				F064B4AC23CC598400F28314 /* NumberFormatter.swift in Sources */,
+				F0AF8D0D23D37E7200E8E4E2 /* ButtonModifier.swift in Sources */,
 				F023CEB2239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F02B04BF23A2898300F93B84 /* PeerConnection.swift in Sources */,
 				F04D5D3F23A3677800424479 /* ConnectionServerStatus.swift in Sources */,
+				F04B6AAA23D379C200CEC7DA /* SettingsView.swift in Sources */,
+				F04B6AAD23D37B2600CEC7DA /* StatusBarView_SettingsView.swift in Sources */,
 				F025D61E23B73C8B004A1D6B /* StackExchangeRepresenter.swift in Sources */,
 				F0C02D3823B26A3800B393A5 /* OSLog.swift in Sources */,
 				F058C800239930F2002C84F0 /* BookmarksView.swift in Sources */,
