@@ -24,10 +24,12 @@ struct PreviewView: View {
                         label: { Text("Longman") }).buttonStyle(RoundButtonStyle()
                     )
                 }
-                ZStack {
-                    GTranslatorRepresenter(sentence: store.sentence)
-                    LongmanRepresenter(phrase: store.sentence)
-                        .offset(x: store.viewMode == .longman ? 0 : UIScreen.main.bounds.width)
+                GeometryReader { geo in
+                    ZStack {
+                        GTranslatorRepresenter(sentence: self.store.sentence)
+                        LongmanRepresenter(phrase: self.store.sentence)
+                            .offset(x: self.store.viewMode == .longman ? 0 : geo.size.width)
+                    }
                 }
             }
             .padding(.top)
