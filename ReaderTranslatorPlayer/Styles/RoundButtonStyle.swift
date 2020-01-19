@@ -13,6 +13,11 @@ public struct RoundButtonStyle: ButtonStyle {
         configuration.label
             .foregroundColor(Color.blue)
             .padding(5)
-            .overlay(RoundedRectangle(cornerRadius: 40).stroke(Color.blue))
+            .blur(radius: configuration.isPressed ? 4 : 0)
+            .overlay(
+                RoundedRectangle(cornerRadius: 40)
+                    .stroke(Color.blue)
+                    
+        )
     }
 }

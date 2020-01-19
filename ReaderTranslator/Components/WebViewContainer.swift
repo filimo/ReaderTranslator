@@ -18,7 +18,7 @@ struct WebViewContainer<Content>: View where Content: View {
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
-                self.content().frame(height: geometry.size.height)
+                self.content().frame(height: geometry.size.height).padding()
             }
         }
     }

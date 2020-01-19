@@ -7,30 +7,36 @@
 //
 
 import Foundation
-#if os(macOS)
-    import AppKit
+#if os(OSX)
+import AppKit
 #else
-    import UIKit
+import UIKit
 #endif
 
 struct Safari {
     private init() {}
 }
 
-#if os(macOS)
-    extension Safari {
-        @discardableResult
-        static func openSafari(_ url: URL) -> Bool {
-            NSWorkspace.shared.open(url)
-        }
-
-        // TODO: implement keyCommands and performCommand
+#if os(OSX)
+extension Safari {
+    @discardableResult
+    static func openSafari(_ url: URL) -> Bool {
+        NSWorkspace.shared.open(url)
     }
 
+    // TODO: implement keyCommands and performCommand
+}
+
+#elseif TARGET_IS_EXTENSION
+extension Safari {
+    static func openSafari(_ url: URL) {
+        UIApplication.shared.open(url)
+    }
+}
 #else
-    extension Safari {
-        static func openSafari(_ url: URL) {
-            UIApplication.shared.open(url)
-        }
+extension Safari {
+    static func openSafari(_ url: URL) {
     }
+}
 #endif
+
