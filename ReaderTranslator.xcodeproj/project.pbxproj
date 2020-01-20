@@ -185,6 +185,9 @@
 		F083C02223D40CF9004A7E01 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C02D4323B27CA100B393A5 /* Logger.swift */; };
 		F083C02323D40D00004A7E01 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F083C02423D40D09004A7E01 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
+		F087370823D62CA4001CFBE3 /* MerriamWebsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */; };
+		F087370923D62CA4001CFBE3 /* MerriamWebsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */; };
+		F087370A23D62CA4001CFBE3 /* MerriamWebsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */; };
 		F08CE13A236EA9F200610342 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = F08CE138236EA9F200610342 /* index.html */; };
 		F08CE13B236EA9F200610342 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = F08CE139236EA9F200610342 /* index.js */; };
 		F08D9400239BE94E00147ECE /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F08D93FF239BE94E00147ECE /* SwiftSoup */; };
@@ -372,6 +375,13 @@
 		F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */; };
 		F0DADAE5239BE8C200CFE2B1 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F0DADAE4239BE8C200CFE2B1 /* SwiftSoup */; };
+		F0E5BC6323D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */; };
+		F0E5BC6423D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */; };
+		F0E5BC6523D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */; };
+		F0E5BC6723D632AC004DACE5 /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
+		F0E5BC6823D632AD004DACE5 /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
+		F0E5BC6923D632AE004DACE5 /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
+		F0E5BC6A23D632B2004DACE5 /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
 		F0EDE34B236418E000E0B81C /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EDE34D23641B1300E0B81C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE34C23641B1300E0B81C /* Stack.swift */; };
 		F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE34C23641B1300E0B81C /* Stack.swift */; };
@@ -552,6 +562,7 @@
 		F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		F075445D23447A2800E1D88E /* ReaderTranslatorSafari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranslatorSafari.entitlements; sourceTree = "<group>"; };
 		F0814BA123562AF300212F52 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerriamWebsterView.swift; sourceTree = "<group>"; };
 		F08CE138236EA9F200610342 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		F08CE139236EA9F200610342 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		F08D9403239C0E4400147ECE /* BookmarksView_List_Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_List_Row.swift; sourceTree = "<group>"; };
@@ -618,6 +629,8 @@
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
 		F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
+		F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerriamWebsterRepresenter.swift; sourceTree = "<group>"; };
+		F0E5BC6623D630DF004DACE5 /* merriam-webster.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "merriam-webster.json"; sourceTree = "<group>"; };
 		F0EDE34C23641B1300E0B81C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_Controls_ActionMenu.swift; sourceTree = "<group>"; };
 		F0EDFB21239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Pdf_Toolbar_PlayButtons.swift; sourceTree = "<group>"; };
@@ -771,6 +784,7 @@
 				F0EE0A142347BEDB004A5EAD /* WebKit */,
 				F06D1C0D2361FFBC008A0C38 /* WikipediaRepresenter.swift */,
 				F04C8312236187D6003A25B4 /* MacmillanRepresenter.swift */,
+				F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */,
 				F0FCDD442361A7650016F23F /* CollinsRepresenter.swift */,
 				F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */,
 				F0A9F35A2349228A00970C97 /* ReversoRepresenter.swift */,
@@ -1133,6 +1147,7 @@
 				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
 				F075445923447A2800E1D88E /* reader-translator.js */,
 				F058C7F12397A180002C84F0 /* longman.json */,
+				F0E5BC6623D630DF004DACE5 /* merriam-webster.json */,
 				F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */,
 			);
 			path = Scripts;
@@ -1145,6 +1160,7 @@
 				F0FCDD3F2361890C0016F23F /* MacmillanView.swift */,
 				F0FCDD452361A7BF0016F23F /* CollinsView.swift */,
 				F025D61F23B73FB1004A1D6B /* StackExchangeView.swift */,
+				F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */,
 				F0505C532360D3DA004F2D50 /* LongmanView.swift */,
 				F01A50E823492398001DCC11 /* ReversoView.swift */,
 				F0D31C5023491C23003CF86B /* GTranslatorView.swift */,
@@ -1423,6 +1439,7 @@
 				F0120382239182DC008D0B47 /* LaunchScreen.storyboard in Resources */,
 				F012037F239182DC008D0B47 /* Preview Assets.xcassets in Resources */,
 				F012037C239182DC008D0B47 /* Assets.xcassets in Resources */,
+				F0E5BC6923D632AE004DACE5 /* merriam-webster.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1432,6 +1449,7 @@
 			files = (
 				F058C7F22397A94D002C84F0 /* longman.json in Resources */,
 				F0C36AA7235ADF5E001E396C /* reader-translator.js in Resources */,
+				F0E5BC6723D632AC004DACE5 /* merriam-webster.json in Resources */,
 				F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
@@ -1456,6 +1474,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E5BC6A23D632B2004DACE5 /* merriam-webster.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1463,6 +1482,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E5BC6823D632AD004DACE5 /* merriam-webster.json in Resources */,
 				F08CE13B236EA9F200610342 /* index.js in Resources */,
 				F058C7EE2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
 				F040D57C2336BD97004567B8 /* README.md in Resources */,
@@ -1741,11 +1761,13 @@
 				F04D5D4023A3677800424479 /* ConnectionServerStatus.swift in Sources */,
 				F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */,
 				F0C53179234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
+				F087370823D62CA4001CFBE3 /* MerriamWebsterView.swift in Sources */,
 				F074D42D23D5B80D00492922 /* AVAudioPlayer.swift in Sources */,
 				F064B4A423CC569400F28314 /* CGFloat.swift in Sources */,
 				F0505C552360D475004F2D50 /* LongmanRepresenter.swift in Sources */,
 				F0D2E335234BA49000D95994 /* Safari.swift in Sources */,
 				F0505C572360D485004F2D50 /* LongmanView.swift in Sources */,
+				F0E5BC6323D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */,
 				F04B6AA923D379C200CEC7DA /* SettingsView.swift in Sources */,
 				F04B6AAC23D37B2600CEC7DA /* StatusBarView_SettingsView.swift in Sources */,
 				F02B04B423A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */,
@@ -1799,10 +1821,12 @@
 				F099424323AD45F8003CF1EB /* Safari.swift in Sources */,
 				F099423423AD4536003CF1EB /* ViewRepresentable.swift in Sources */,
 				F099420F23AD42F7003CF1EB /* TranslateAction.swift in Sources */,
+				F0E5BC6523D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */,
 				F099421523AD4399003CF1EB /* String.swift in Sources */,
 				F099424423AD45FC003CF1EB /* BookmarksView_List_Row.swift in Sources */,
 				F099424723AD461D003CF1EB /* BookmarksView_List_Detail.swift in Sources */,
 				F099421D23AD43EF003CF1EB /* CollinsView.swift in Sources */,
+				F087370A23D62CA4001CFBE3 /* MerriamWebsterView.swift in Sources */,
 				F099422B23AD44AF003CF1EB /* DOMEvent.swift in Sources */,
 				F099423F23AD45C3003CF1EB /* BookmarksView_Controls.swift in Sources */,
 				F0A2179B23A9355E00968133 /* ReaderTranslatorMacTests.swift in Sources */,
@@ -1906,6 +1930,7 @@
 				F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */,
 				F06DB1042344975E00C2DE90 /* StackView.swift in Sources */,
 				F0AF8D1223D37E9000E8E4E2 /* RoundedEdge.swift in Sources */,
+				F0E5BC6423D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WKRepresenter.swift in Sources */,
 				F0C4EDA6234926D400CCD97A /* ReversoRepresenter.swift in Sources */,
 				F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */,
@@ -1931,6 +1956,7 @@
 				F0C36AA12359D50A001E396C /* Clipboard.swift in Sources */,
 				F04C830C23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
 				F064B4AC23CC598400F28314 /* NumberFormatter.swift in Sources */,
+				F087370923D62CA4001CFBE3 /* MerriamWebsterView.swift in Sources */,
 				F0AF8D0D23D37E7200E8E4E2 /* ButtonModifier.swift in Sources */,
 				F023CEB2239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F02B04BF23A2898300F93B84 /* PeerConnection.swift in Sources */,

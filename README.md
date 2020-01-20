@@ -92,10 +92,15 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**1.9.1**
+- [Merriam-Webster support #75](https://github.com/filimo/ReaderTranslator/issues/75)
+
+![](files/Release_1.9.1_1.png)
+
 **1.9.0**
 - [Actions share in ReaderTranslatorPlayer](https://github.com/filimo/ReaderTranslator/issues/74)
 
-![](files/Release_1.9_5.gif)
+![](files/Release_1.9.0_1.gif)
 
 **1.8.5**
 [Add english.stackexchange.com](https://github.com/filimo/ReaderTranslator/issues/70)

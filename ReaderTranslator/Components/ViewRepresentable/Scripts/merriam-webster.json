@@ -1,0 +1,34 @@
+[
+    {
+        "trigger": {
+            "url-filter": "https://.*.google.*.com/.*"
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": "//.*amazon-adsystem.com/.*"
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": "https://.*doubleclick.net/.*"
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": "https://.*heapanalytics.com"
+        },
+        "action": {
+            "type": "block"
+        }
+    }
+]
