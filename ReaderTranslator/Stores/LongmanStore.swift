@@ -126,8 +126,7 @@ extension LongmanStore {
                     }
                 }
             } catch {
-                self.next()
-                print("\(self.theClassName)_\(#function)", error)
+                self.audioPlayerCreateErrorDidOccur(error: error)
             }
         }.resume()
     }
@@ -146,4 +145,10 @@ extension LongmanStore: AVAudioPlayerDelegate {
     func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) {
         next()
     }
+
+    func audioPlayerCreateErrorDidOccur(error: Error) {
+        Logger.log(value: error)
+        next()
+    }
 }
+

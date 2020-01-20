@@ -33,7 +33,7 @@ struct GTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
                     let text = action.getText()
                     if text != "" {
                         print("\(self.theClassName)_$selectedText")
-                        self.store.translateAction.addAll(text: text)
+                        self.store.translateAction.addAll(text: text, except: .gTranslator)
                     }
                 }
                 .store(in: &cancellableSet)

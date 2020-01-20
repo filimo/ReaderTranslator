@@ -156,6 +156,9 @@
 		F06EE7CB23AFF33E00CF989E /* ConnectionView_Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EE7CA23AFF33E00CF989E /* ConnectionView_Bookmarks.swift */; };
 		F06F21B923D421480032E756 /* LongmanRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06F21B823D421480032E756 /* LongmanRepresenter.swift */; };
 		F073289323A6C7A0008CB539 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F073289223A6C7A0008CB539 /* BookmarksView.swift */; };
+		F074D42D23D5B80D00492922 /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074D42C23D5B80D00492922 /* AVAudioPlayer.swift */; };
+		F074D42E23D5B80D00492922 /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074D42C23D5B80D00492922 /* AVAudioPlayer.swift */; };
+		F074D42F23D5B80D00492922 /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074D42C23D5B80D00492922 /* AVAudioPlayer.swift */; };
 		F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0754439234479DA00E1D88E /* AppDelegate.swift */; };
 		F075443E234479DB00E1D88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F075443D234479DB00E1D88E /* Assets.xcassets */; };
 		F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0754440234479DB00E1D88E /* Preview Assets.xcassets */; };
@@ -532,6 +535,7 @@
 		F06EE7CA23AFF33E00CF989E /* ConnectionView_Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView_Bookmarks.swift; sourceTree = "<group>"; };
 		F06F21B823D421480032E756 /* LongmanRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanRepresenter.swift; sourceTree = "<group>"; };
 		F073289223A6C7A0008CB539 /* BookmarksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
+		F074D42C23D5B80D00492922 /* AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioPlayer.swift; sourceTree = "<group>"; };
 		F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0754439234479DA00E1D88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F075443D234479DB00E1D88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1212,6 +1216,7 @@
 				F0C02D3523B26A3800B393A5 /* OSLog.swift */,
 				F064B4A323CC569400F28314 /* CGFloat.swift */,
 				F064B4A923CC598400F28314 /* NumberFormatter.swift */,
+				F074D42C23D5B80D00492922 /* AVAudioPlayer.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -1736,6 +1741,7 @@
 				F04D5D4023A3677800424479 /* ConnectionServerStatus.swift in Sources */,
 				F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */,
 				F0C53179234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
+				F074D42D23D5B80D00492922 /* AVAudioPlayer.swift in Sources */,
 				F064B4A423CC569400F28314 /* CGFloat.swift in Sources */,
 				F0505C552360D475004F2D50 /* LongmanRepresenter.swift in Sources */,
 				F0D2E335234BA49000D95994 /* Safari.swift in Sources */,
@@ -1812,6 +1818,7 @@
 				F099423323AD4529003CF1EB /* WKScriptsSetup.swift in Sources */,
 				F099424823AD4623003CF1EB /* CircleButton.swift in Sources */,
 				F099420D23AD4283003CF1EB /* LongmanStore.swift in Sources */,
+				F074D42F23D5B80D00492922 /* AVAudioPlayer.swift in Sources */,
 				F099423B23AD458F003CF1EB /* SharedContainer.swift in Sources */,
 				F099422223AD442D003CF1EB /* SafariView.swift in Sources */,
 				F099422723AD4488003CF1EB /* Stack.swift in Sources */,
@@ -1884,6 +1891,7 @@
 				F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */,
 				F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */,
 				F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */,
+				F074D42E23D5B80D00492922 /* AVAudioPlayer.swift in Sources */,
 				F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */,
 				F0369E3223A2D92C00C33139 /* StatusBarView_Sync.swift in Sources */,
 				F0C36A9D2359C78A001E396C /* Array.swift in Sources */,
