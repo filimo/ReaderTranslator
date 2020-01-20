@@ -13,7 +13,7 @@ import SwiftSoup
 import SwiftUI
 
 private var cancellableSet: Set<AnyCancellable> = []
-private var player: AVAudioPlayer?
+private var player: AVAudioNetPlayer?
 
 struct LongmanSentence: Hashable {
     static let empty = Self(text: "No sentences", url: URL.empty)
@@ -111,24 +111,11 @@ extension LongmanStore {
 
 extension LongmanStore {
     private func play(url: URL) {
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else { return }
-            do {
-                if AudioStore.shared.isEnabled {
-                    player = nil
-                    player = try AVAudioPlayer(data: data)
-                    if let player = player {
-                        player.delegate = self
-                        player.enableRate = true
-                        player.rate = self.audioRate
-                        player.volume = AudioStore.shared.volume
-                        player.play()
-                    }
-                }
-            } catch {
-                self.audioPlayerCreateErrorDidOccur(error: error)
-            }
-        }.resume()
+        if AudioStore.shared.isEnabled {
+            player = AVAudioNetPlayer()
+            player?.delegate = self
+            player?.play(url: url)
+        }
     }
 
     func next() {
@@ -137,18 +124,19 @@ extension LongmanStore {
     }
 }
 
-extension LongmanStore: AVAudioPlayerDelegate {
-    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully _: Bool) {
-        next()
+extension LongmanStore: AVAudioNetPlayerDelegate {
+    func audioPlayerLoadDidFinishDidOccur() {}
+
+    func audioPlayerCreateSuccessOccur(player: AVAudioPlayer) {
+        player.enableRate = true
+        player.rate = audioRate
+        player.volume = AudioStore.shared.volume
+        player.play()
     }
 
-    func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) {
-        next()
-    }
+    func audioPlayerLoadErrorDidOccur() { next() }
+    func audioPlayerCreateErrorDidOccur() { next() }
 
-    func audioPlayerCreateErrorDidOccur(error: Error) {
-        Logger.log(value: error)
-        next()
-    }
+    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully _: Bool) { next() }
+    func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) { next() }
 }
-
