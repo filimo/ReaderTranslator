@@ -54,7 +54,7 @@ struct BookmarksView_List_Row: View {
             .foregroundColor(longmanStore.word == bookmark.text ? Color.yellow : Color.primary)
             .onTapGesture {
                 self.longmanStore.word = bookmark.text
-                self.store.translateAction.addAll(text: bookmark.text, except: .bookmarks, isSpeaking: false)
+                self.store.translateAction.addAll(text: bookmark.text, except: .bookmarks)
             }
     }
 }

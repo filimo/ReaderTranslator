@@ -12,7 +12,7 @@ import Foundation
 import SwiftSoup
 import SwiftUI
 
-private var cancellableSet: Set<AnyCancellable> = []
+private var cancellable: AnyCancellable?
 private var player: AVAudioNetPlayer?
 
 struct LongmanSentence: Hashable {
@@ -29,12 +29,7 @@ final class LongmanStore: NSObject, ObservableObject {
     static var shared = LongmanStore()
 
     @Published var audioRate: Float = 1
-    @Published var word = "" {
-        willSet {
-            sentences.removeAll()
-            LongmanStore.shared.fetchInfo(text: newValue)
-        }
-    }
+    @Published var word = ""
 
     @Published var sentences: LongmanSentences = [] {
         didSet {
@@ -45,25 +40,37 @@ final class LongmanStore: NSObject, ObservableObject {
     private let defaultURL = "https://www.ldoceonline.com/dictionary/"
     private var audioUrls = Stack<URL>()
 
-    func fetchInfo(text: String) {
+    func fetchInfo(text: String) -> AnyPublisher<Bool, Never> {
         let text = text.replacingOccurrences(of: " ", with: "-")
-        guard let url = URL(string: "\(defaultURL)\(text)") else { return }
+        guard let url = URL(string: "\(defaultURL)\(text)") else {
+            return Just(false).eraseToAnyPublisher()
+        }
 
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else { return }
-            guard let html = String(data: data, encoding: .utf8) else { return }
-            do {
-                let document = try SwiftSoup.parse(html)
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map {
+                guard let html = String(data: $0.data, encoding: .utf8) else { return false }
+                do {
+                    let document = try SwiftSoup.parse(html)
 
-                self.addAudio(selector: ".brefile", document: document)
-                self.addAudio(selector: ".amefile", document: document)
-                self.addSentences(document: document)
+                    let isBreExist = self.addAudio(selector: ".brefile", document: document)
+                    let isAmeExist = self.addAudio(selector: ".amefile", document: document)
+                    
+                    RunLoop.main.perform {
+                        self.sentences.removeAll()
+                        self.addSentences(document: document)
+                    }
 
-                self.play()
-            } catch {
-                Logger.log(type: .error, value: error)
+                    return isBreExist || isAmeExist
+                } catch {
+                    Logger.log(type: .error, value: error)
+                }
+
+                return false
             }
-        }.resume()
+            .catch { _ in
+                Just(false)
+            }
+            .eraseToAnyPublisher()
     }
 }
 
@@ -96,16 +103,18 @@ extension LongmanStore {
         audioUrls.push(url)
     }
 
-    private func addAudio(selector: String, document: Document) {
+    private func addAudio(selector: String, document: Document) -> Bool {
         do {
-            guard let elm = try document.select(selector).first else { return }
+            guard let elm = try document.select(selector).first else { return false }
             let string = try elm.attr("data-src-mp3")
-            guard let url = URL(string: string) else { return }
+            guard let url = URL(string: string) else { return false }
 
             addAudio(url: url)
+            return true
         } catch {
             Logger.log(type: .error, value: error)
         }
+        return false
     }
 }
 

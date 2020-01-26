@@ -8,6 +8,9 @@
 
 import Foundation
 import Speech
+import Combine
+
+private var cancellableLongmanSpeak: AnyCancellable?
 
 struct VoiceInfo {
     let id = UUID()
@@ -66,6 +69,22 @@ class SpeechSynthesizer {
         stopSpeaking: Bool = false,
         isVoiceEnabled: Bool = AudioStore.shared.isEnabled
     ) {
+        cancellableLongmanSpeak = LongmanStore.shared.fetchInfo(text: text)
+            .sink { isSoundExist in
+                if isSoundExist {
+                    LongmanStore.shared.play()
+                }else{
+                    speakByEngine(
+                        text: text,
+                        voiceName: voiceName,
+                        stopSpeaking: stopSpeaking,
+                        isVoiceEnabled: isVoiceEnabled)
+                }
+                
+        }
+    }
+    
+    static private func speakByEngine(text: String, voiceName: String, stopSpeaking: Bool, isVoiceEnabled: Bool) {
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
 
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })
