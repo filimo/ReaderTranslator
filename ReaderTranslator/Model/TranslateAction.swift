@@ -87,7 +87,11 @@ enum TranslateAction: Equatable {
 
     @discardableResult
     mutating func next() -> TranslateAction {
-        self = stack.count == 0 ? .none(text: getText()) : stack.pop()
+        if let action = stack.pop() {
+            self = action
+        }else{
+            self = .none(text: getText())
+        }
         return self
     }
 }

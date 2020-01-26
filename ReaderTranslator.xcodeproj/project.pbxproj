@@ -268,6 +268,7 @@
 		F099424A23AD549C003CF1EB /* BookmarksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0418B97239A32FD00B59C66 /* BookmarksStore.swift */; };
 		F09AD47E23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
 		F09AD47F23702DF100FFBF6A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = F09AD47D23702DF100FFBF6A /* jquery.js */; };
+		F09D329523D9C5CB0079C65B /* AVAudioNetPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */; };
 		F0A2179B23A9355E00968133 /* ReaderTranslatorMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2179A23A9355E00968133 /* ReaderTranslatorMacTests.swift */; };
 		F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A0232E9710007CC07B /* AppDelegate.swift */; };
 		F0AA69A3232E9710007CC07B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A2232E9710007CC07B /* SceneDelegate.swift */; };
@@ -1623,6 +1624,7 @@
 				F02B04C123A2898300F93B84 /* PeerConnection.swift in Sources */,
 				F012038823928634008D0B47 /* Published.swift in Sources */,
 				F02B04B123A2844700F93B84 /* NWParameters.swift in Sources */,
+				F09D329523D9C5CB0079C65B /* AVAudioNetPlayer.swift in Sources */,
 				F0C02D4523B27CA100B393A5 /* Logger.swift in Sources */,
 				F06EAF8F2393A4E100AAE1A4 /* SafariView.swift in Sources */,
 				F0F506CD23A6701F003367BD /* LongmanView.swift in Sources */,

@@ -59,7 +59,7 @@ final class LongmanStore: NSObject, ObservableObject {
                 self.addAudio(selector: ".amefile", document: document)
                 self.addSentences(document: document)
 
-                self.next()
+                self.play()
             } catch {
                 Logger.log(type: .error, value: error)
             }
@@ -110,17 +110,14 @@ extension LongmanStore {
 }
 
 extension LongmanStore {
-    private func play(url: URL) {
+    func play() {
+        guard let url = audioUrls.pop() else { return }
+
         if AudioStore.shared.isEnabled {
             player = AVAudioNetPlayer()
             player?.delegate = self
             player?.play(url: url)
         }
-    }
-
-    func next() {
-        if audioUrls.count == 0 { return }
-        play(url: audioUrls.pop())
     }
 }
 
@@ -134,9 +131,9 @@ extension LongmanStore: AVAudioNetPlayerDelegate {
         player.play()
     }
 
-    func audioPlayerLoadErrorDidOccur() { next() }
-    func audioPlayerCreateErrorDidOccur() { next() }
+    func audioPlayerLoadErrorDidOccur() { play() }
+    func audioPlayerCreateErrorDidOccur() { play() }
 
-    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully _: Bool) { next() }
-    func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) { next() }
+    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully _: Bool) { play() }
+    func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) { play() }
 }
