@@ -6,9 +6,9 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
+import Combine
 import Foundation
 import Speech
-import Combine
 
 private var cancellableLongmanSpeak: AnyCancellable?
 
@@ -69,31 +69,27 @@ class SpeechSynthesizer {
         stopSpeaking: Bool = false,
         isVoiceEnabled: Bool = AudioStore.shared.isEnabled
     ) {
+        if speechSynthesizer.isSpeaking {
+            SpeechSynthesizer.stop()
+            if stopSpeaking { return }
+        }
+
         cancellableLongmanSpeak = LongmanStore.shared.fetchInfo(text: text)
             .sink { isSoundExist in
                 if isSoundExist {
                     LongmanStore.shared.play()
-                }else{
-                    speakByEngine(
-                        text: text,
-                        voiceName: voiceName,
-                        stopSpeaking: stopSpeaking,
-                        isVoiceEnabled: isVoiceEnabled)
+                } else {
+                    speakByEngine(text: text, voiceName: voiceName, isVoiceEnabled: isVoiceEnabled)
                 }
-                
-        }
+            }
     }
-    
-    static private func speakByEngine(text: String, voiceName: String, stopSpeaking: Bool, isVoiceEnabled: Bool) {
+
+    private static func speakByEngine(text: String, voiceName: String, isVoiceEnabled: Bool) {
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
 
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })
         speechUtterance.volume = AudioStore.shared.volume
         speechUtterance.rate = AudioStore.shared.rate
-        if speechSynthesizer.isSpeaking {
-            SpeechSynthesizer.stop()
-            if stopSpeaking { return }
-        }
         if isVoiceEnabled {
             speechSynthesizer = AVSpeechSynthesizer()
             speechSynthesizer.speak(speechUtterance)

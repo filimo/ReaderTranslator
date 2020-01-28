@@ -89,7 +89,7 @@ enum TranslateAction: Equatable {
     mutating func next() -> TranslateAction {
         if let action = stack.pop() {
             self = action
-        }else{
+        } else {
             self = .none(text: getText())
         }
         return self
