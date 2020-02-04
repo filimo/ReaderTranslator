@@ -24,6 +24,7 @@ class WKPageView: WKWebView {
         config.websiteDataStore = .nonPersistent()
 
         super.init(frame: .zero, configuration: config)
+        self.allowsBackForwardNavigationGestures = true
 
         $newUrl
             .debounce(for: 0.5, scheduler: RunLoop.main)
