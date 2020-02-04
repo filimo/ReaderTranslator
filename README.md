@@ -1,6 +1,9 @@
 # ReaderTranslator 
 ### using SwiftUI, Combine, Catalyst and others new features that annonced at WWDC 2019
 
+
+### Russian telegram chat about SwiftUI & Combine: [here](https://t.me/swift_ui) 
+
 ## Help
 ***If you mark this project with ✭. It will allow to easy find this project for other developers. Perhaps they already find more information about SwiftUI, Combine and other WWDC 2019 features in practice.
 This project will allow them to get rid of wrong opinion that SwiftUI has a lot of issues and it can not be used in real projects thereby you can bring the time where requests exceed offers.***
