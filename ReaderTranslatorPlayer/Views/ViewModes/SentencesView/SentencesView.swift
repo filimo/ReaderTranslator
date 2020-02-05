@@ -6,7 +6,10 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
+import Combine
 import SwiftUI
+
+private var cancellableLongmanSpeak: AnyCancellable?
 
 struct SentencesView: View {
     let bookmark: String
@@ -27,17 +30,18 @@ struct SentencesView: View {
                             showGTranlator: self.$showGTranlator,
                             showLongmanView: self.$showLongmanView)
                     }
-                }
+                }.frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             navigationLinksView
         }
         .onAppear {
             self.store.hideNavBar = false
-            if self.longmanStore.word != self.bookmark {
-                RunLoop.main.perform {
-                    self.longmanStore.word = self.bookmark
+            cancellableLongmanSpeak = LongmanStore.shared.fetchInfo(text: self.bookmark)
+                .sink { isSoundExist in
+                    if isSoundExist {
+                        LongmanStore.shared.play()
+                    }
                 }
-            }
             self.showGTranlator = nil
             self.showLongmanView = false
         }
@@ -53,7 +57,7 @@ struct SentencesView: View {
             }
             if showLongmanView {
                 NavigationLink(
-                    destination: LongmanView(phrase: longmanStore.word),
+                    destination: LongmanView(phrase: self.bookmark),
                     isActive: .constant(true),
                     label: { EmptyView() })
             }

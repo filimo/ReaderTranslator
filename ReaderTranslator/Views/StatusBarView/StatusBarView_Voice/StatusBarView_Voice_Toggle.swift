@@ -27,14 +27,22 @@ struct StatusBarView_Voice_Toggle: View {
                     HStack {
                         Image.sfSymbol(audio.isSpeakSentences ? "speaker.3.fill" : "speaker")
                             .onTapGesture { self.audio.isSpeakSentences.toggle() }
-                        Slider(value: $audio.sentencesVolume, in: 0.1 ... 1.0).frame(width: 100)
+                        Slider(
+                            value: $audio.sentencesVolume,
+                            in: 0.1 ... 1.0,
+                            onEditingChanged: { _ in SpeechSynthesizer.speak() }
+                        ).frame(width: 100)
                     }
                     Divider()
                     Text("Speak words")
                     HStack {
                         Image.sfSymbol(audio.isSpeakWords ? "speaker.3.fill" : "speaker")
                             .onTapGesture { self.audio.isSpeakWords.toggle() }
-                        Slider(value: $audio.wordsVolume, in: 0.1 ... 1.0).frame(width: 100)
+                        Slider(
+                            value: $audio.wordsVolume,
+                            in: 0.1 ... 1.0,
+                            onEditingChanged: { _ in SpeechSynthesizer.speak() }
+                        ).frame(width: 100)
                     }
                 }
             }

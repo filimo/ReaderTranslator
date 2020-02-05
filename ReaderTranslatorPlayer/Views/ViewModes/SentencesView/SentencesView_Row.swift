@@ -19,7 +19,7 @@ struct SentencesView_Row: View {
         HStack {
             Button(action: {
                 LongmanStore.shared.addAudio(url: self.sentence.url)
-                LongmanStore.shared.next()
+                LongmanStore.shared.play()
             }, label: { self.soundIco })
             Button(
                 action: { self.showGTranlator = self.sentence },

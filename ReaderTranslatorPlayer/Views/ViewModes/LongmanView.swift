@@ -6,7 +6,10 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
+import Combine
 import SwiftUI
+
+private var cancellableLongmanSpeak: AnyCancellable?
 
 struct LongmanView: View {
     var phrase: String
@@ -18,9 +21,10 @@ struct LongmanView: View {
         LongmanRepresenter(phrase: phrase)
             .onAppear {
                 self.store.hideNavBar = false
-                if self.longmanStore.word != self.phrase {
-                    RunLoop.main.perform {
-                        self.longmanStore.word = self.phrase
+                cancellableLongmanSpeak = self.longmanStore.fetchInfo(text: self.phrase)
+                .sink { isSoundExist in
+                    if isSoundExist {
+                        LongmanStore.shared.play()
                     }
                 }
             }

@@ -16,7 +16,7 @@ struct GTranslatorView: View {
             .navigationBarItems(trailing:
                 Button(action: {
                     LongmanStore.shared.addAudio(url: self.sentence.url)
-                    LongmanStore.shared.next()
+                    LongmanStore.shared.play()
                 }, label: { self.soundIco })
             )
     }

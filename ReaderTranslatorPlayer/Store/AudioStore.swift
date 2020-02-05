@@ -41,8 +41,8 @@ final class AudioStore: NSObject, ObservableObject {
     }
 
     @Published(wrappedValue: nil, key: "lastAudio") var lastAudio: URL?
-    @Published(key: "isVoiceEnabled") var isEnabled = true
-    @Published(key: "voiceVolume") var volume: Float = 1
+    @Published(key: "isSpeakWords") var isSpeakWords = true
+    @Published(key: "wordsVolume") var wordsVolume: Float = 1
     @Published(key: "audioRate") var rate: Float = 1 {
         didSet {
             setupNowPlaying()
