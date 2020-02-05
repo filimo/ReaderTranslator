@@ -52,6 +52,7 @@ final class LongmanStore: NSObject, ObservableObject {
                 do {
                     let document = try SwiftSoup.parse(html)
 
+                    self.audioUrls.removeAll()
                     let isBreExist = self.addAudio(selector: ".brefile", document: document)
                     let isAmeExist = self.addAudio(selector: ".amefile", document: document)
                     
@@ -122,7 +123,7 @@ extension LongmanStore {
     func play() {
         guard let url = audioUrls.pop() else { return }
 
-        if AudioStore.shared.isEnabled {
+        if AudioStore.shared.isSpeakWords {
             player = AVAudioNetPlayer()
             player?.delegate = self
             player?.play(url: url)
@@ -136,7 +137,7 @@ extension LongmanStore: AVAudioNetPlayerDelegate {
     func audioPlayerCreateSuccessOccur(player: AVAudioPlayer) {
         player.enableRate = true
         player.rate = audioRate
-        player.volume = AudioStore.shared.volume
+        player.volume = AudioStore.shared.wordsVolume
         player.play()
     }
 

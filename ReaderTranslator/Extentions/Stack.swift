@@ -11,11 +11,17 @@ import Foundation
 struct Stack<Element> {
     private var items = [Element]()
 
+    var value: Element? { items.first }
+    var count: Int { items.count }
+    
     mutating func push(_ item: Element) { items.append(item) }
+
     mutating func pop() -> Element? {
         guard items.isEmpty == false else { return nil }
         return items.removeFirst()
     }
-    var value: Element? { items.first }
-    var count: Int { items.count }
+
+    mutating func removeAll() {
+        items.removeAll()
+    }
 }

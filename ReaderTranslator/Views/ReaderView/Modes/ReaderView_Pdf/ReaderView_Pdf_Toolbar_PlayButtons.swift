@@ -76,7 +76,7 @@ struct ReaderView_Pdf_Toolbar_PlayButtons: View {
         timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
             guard let player = self.audioPlayer.player else { return }
             self.currentStatus = self.audioPlayer.status
-            player.volume = self.audioStore.volume
+            player.volume = self.audioStore.sentencesVolume
             if self.isPlaying != player.isPlaying { self.isPlaying = player.isPlaying }
         }
     }

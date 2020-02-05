@@ -264,11 +264,11 @@
 	            if(elm) {
 	            	if(event.shiftKey) {
                         elm.style.color = "yellow"
-	            		sendIn200('selectionchange', 'document', event, getSelectedPhrases())
+	            		sendIn500('selectionchange', 'document', event, getSelectedPhrases())
 	            	}else{
                         clearAllSelections()
                         elm.style.color = "yellow"
-	                	sendIn200('selectionchange', 'document', event, elm.text.trim())
+	                	sendIn500('selectionchange', 'document', event, elm.text.trim())
 	            	}
 	            	lastElm = elm
 	            	lastElm.click()
@@ -288,11 +288,11 @@
                 }
             	if(event.shiftKey) {
                     lastElm.style.color = "yellow"
-                    sendIn200('selectionchange', 'document', event, getSelectedPhrases())
+                    sendIn500('selectionchange', 'document', event, getSelectedPhrases())
             	}else{
                     clearAllSelections()
                     lastElm.style.color = "yellow"
-                	sendIn200('selectionchange', 'document', event, lastElm.text.trim())
+                	sendIn500('selectionchange', 'document', event, lastElm.text.trim())
             	}
                 lastElm.click()
             }

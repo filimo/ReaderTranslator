@@ -67,7 +67,7 @@ class SpeechSynthesizer {
         text: String = Store.shared.translateAction.getText(),
         voiceName: String = AudioStore.shared.voiceName,
         stopSpeaking: Bool = false,
-        isVoiceEnabled: Bool = AudioStore.shared.isEnabled
+        isVoiceEnabled: Bool = AudioStore.shared.isSpeakSentences
     ) {
         if speechSynthesizer.isSpeaking {
             SpeechSynthesizer.stop()
@@ -88,7 +88,7 @@ class SpeechSynthesizer {
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
 
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })
-        speechUtterance.volume = AudioStore.shared.volume
+        speechUtterance.volume = AudioStore.shared.sentencesVolume
         speechUtterance.rate = AudioStore.shared.rate
         if isVoiceEnabled {
             speechSynthesizer = AVSpeechSynthesizer()

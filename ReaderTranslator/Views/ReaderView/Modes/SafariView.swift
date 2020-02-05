@@ -48,7 +48,7 @@ struct SafariView: View {
             extra.shiftKey != true,
             extra.metaKey != true {
             if extra.altKey == true, extra.keyCode == 65 { // Alt+a
-                audioStore.isEnabled.toggle()
+                audioStore.isSpeakSentences.toggle()
                 return
             }
             if extra.altKey == true, extra.keyCode == 83 { // Alt+s

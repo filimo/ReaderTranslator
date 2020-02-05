@@ -10,19 +10,36 @@ import SwiftUI
 
 struct StatusBarView_Voice_Toggle: View {
     @ObservedObject var audio = AudioStore.shared
+    
+    private var isSpeakSentencesSign: Character {
+        audio.isSpeakSentences ? "👍" : "👎"
+    }
+
+    private var isSpeakWordsSign: Character {
+        audio.isSpeakWords ? "👍" : "👎"
+    }
 
     var body: some View {
         Group {
-            Toggle(isOn: $audio.isEnabled) {
-                Text("On:")
-            }.fixedSize()
-            Image.sfSymbol(audio.isEnabled ? "speaker.3.fill" : "speaker")
-                .onTapGesture {
-                    SpeechSynthesizer.speak(stopSpeaking: true, isVoiceEnabled: true)
+            MenuButton("Speaker: \(isSpeakSentencesSign)\(isSpeakWordsSign)") {
+                VStack(spacing: 0) {
+                    Text("Speak sentences")
+                    HStack {
+                        Image.sfSymbol(audio.isSpeakSentences ? "speaker.3.fill" : "speaker")
+                            .onTapGesture { self.audio.isSpeakSentences.toggle() }
+                        Slider(value: $audio.sentencesVolume, in: 0.1 ... 1.0).frame(width: 100)
+                    }
+                    Divider()
+                    Text("Speak words")
+                    HStack {
+                        Image.sfSymbol(audio.isSpeakWords ? "speaker.3.fill" : "speaker")
+                            .onTapGesture { self.audio.isSpeakWords.toggle() }
+                        Slider(value: $audio.wordsVolume, in: 0.1 ... 1.0).frame(width: 100)
+                    }
                 }
-                .contextMenu {
-                    Slider(value: $audio.volume, in: 0.1 ... 1.0).frame(width: 100, height: 50)
-                }
+            }
+            .menuButtonStyle(BorderlessButtonMenuButtonStyle())
+            .fixedSize()
         }
     }
 }
