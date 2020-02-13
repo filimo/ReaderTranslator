@@ -29,7 +29,7 @@ struct BookmarksView_List_Row: View {
             if showDetail {
                 BookmarksView_List_Detail(selectSentence: $selectSentence)
             }
-        }
+        }.padding(5)
     }
 
     private var bookmarksView: some View {
@@ -50,7 +50,7 @@ struct BookmarksView_List_Row: View {
 
     private func bookmarkItemView(bookmark: BookmarksStore.Bookmark) -> some View {
         Text("\(bookmark.text)")
-            .frame(width: width, alignment: .leading)
+            .frame(alignment: .leading).lineLimit(1)
             .foregroundColor(longmanStore.word == bookmark.text ? Color.yellow : Color.primary)
             .onTapGesture {
                 self.longmanStore.word = bookmark.text
