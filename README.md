@@ -2,7 +2,11 @@
 ### using SwiftUI, Combine, Catalyst and others new features that annonced at WWDC 2019
 
 
-### Russian telegram chat about SwiftUI & Combine: [here](https://t.me/swift_ui) 
+## Каналы на русском о SwiftUI, Combine и Swift
+[Swift, Xcode разработка под iOS, macOS](https://t.me/usovswift) <br>
+[CocoaHeads Chat](https://t.me/cocoaheads_chat) <br>
+[The Swift Developers|Сообщество разработчиков](https://t.me/joinchat/BAn0BkLMGrfpDYy2cnysNg) <br>
+[SwiftUI Combine Swift 5.1+ newAppleFrameworks](https://t.me/swift_ui) <br> 
 
 ## Help
 ***If you mark this project with ✭. It will allow to easy find this project for other developers. Perhaps they already find more information about SwiftUI, Combine and other WWDC 2019 features in practice.
