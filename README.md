@@ -6,6 +6,7 @@
 [Swift, Xcode разработка под iOS, macOS](https://t.me/usovswift) <br>
 [CocoaHeads Chat](https://t.me/cocoaheads_chat) <br>
 [The Swift Developers|Сообщество разработчиков](https://t.me/joinchat/BAn0BkLMGrfpDYy2cnysNg) <br>
+[Server Side Swift Developer (SSSD) - russian/ukraine/etc. (сообщество Vapor, Kitura, Perfect, Smoke, Tris)](https://t.me/server_side_swift) <br>
 [SwiftUI Combine Swift 5.1+ newAppleFrameworks](https://t.me/swift_ui) <br> 
 
 ## Help
