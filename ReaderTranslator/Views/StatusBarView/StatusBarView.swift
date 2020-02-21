@@ -26,7 +26,7 @@ struct StatusBarView: View {
             speechHandler
             playbackRateView
             StatusBarView_SettingsView()
-            StatusBarView_Sync()
+//            StatusBarView_Sync()
         }.padding(.trailing, 20)
     }
 
@@ -42,7 +42,7 @@ struct StatusBarView: View {
     private var playbackRateView: some View {
         Group {
             if viewsStore.enabledViews.contains(.safari) {
-                Text(String(format: "PlaybackRate: %.2f", [audioStore.playbackRate]))
+                Text(String(format: "Apple: %.2f", [audioStore.playbackRate]))
             }
         }
     }

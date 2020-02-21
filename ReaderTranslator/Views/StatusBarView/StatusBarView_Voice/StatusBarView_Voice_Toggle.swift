@@ -21,7 +21,7 @@ struct StatusBarView_Voice_Toggle: View {
 
     var body: some View {
         Group {
-            MenuButton("Speaker: \(isSpeakSentencesSign)\(isSpeakWordsSign)") {
+            MenuButton("Speak: \(isSpeakSentencesSign)\(isSpeakWordsSign)") {
                 VStack(spacing: 0) {
                     Text("Speak sentences")
                     HStack {
