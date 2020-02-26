@@ -22,7 +22,9 @@ enum AvailableView: String, Codable, CaseIterable {
     case pdf = "PDF"
     case web = "Web"
     case safari = "Safari"
+}
 
+extension AvailableView {
     var text: String {
         rawValue
     }
@@ -100,6 +102,10 @@ enum AvailableView: String, Codable, CaseIterable {
             .web
         ]
         return views.sorted { $0.orderInt < $1.orderInt }
+    }
+    
+    var isEnabled: Bool {
+        ViewsStore.shared.enabledViews.contains(self)
     }
 
     func getAction(text: String = Store.shared.translateAction.getText()) -> TranslateAction {

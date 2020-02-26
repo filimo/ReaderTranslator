@@ -15,7 +15,7 @@ struct ReaderView_Web: View {
 
     var body: some View {
         VStack {
-            if viewsStore.enabledViews.contains(.web) {
+            if AvailableView.web.isEnabled {
                 VStack {
                     HStack {
                         Image.sfSymbol("arrowshape.turn.up.left\(webStore.canGoBack ? ".fill" : "")")

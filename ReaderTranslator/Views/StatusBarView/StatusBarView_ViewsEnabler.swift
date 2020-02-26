@@ -38,25 +38,16 @@ struct StatusBarView_ViewsEnabler: View {
     private func buttonView(_ view: AvailableView) -> some View {
         Group {
             Text(view.rawValue)
-                .background(viewsStore.enabledViews.contains(view) ? Color.red : Color.clear)
+                .background(view.isEnabled ? Color.red : Color.clear)
                 .onTapGesture {
-                    self.toggle(view)
+                    self.viewsStore.toggleView(view: view)
                 }
             Image.sfSymbol("square.and.arrow.down.fill")
                 .padding(.trailing, 5)
                 .onTapGesture(count: 1) {
                     self.store.translateAction.add(view.getAction())
-                    self.viewsStore.enabledViews.insert(view)
+                    self.viewsStore.enableView(view: view, enable: true)
                 }
-        }
-    }
-
-    private func toggle(_ view: AvailableView) {
-        if viewsStore.enabledViews.contains(view) {
-            viewsStore.enabledViews.remove(view)
-        } else {
-            store.translateAction.add(view.getAction())
-            viewsStore.enabledViews.insert(view)
         }
     }
 }

@@ -21,7 +21,7 @@ struct ReaderView: View {
                 #endif
                 ForEach(AvailableView.resiableViews, id: \.self) { view in
                     Group {
-                        if self.viewsStore.enabledViews.contains(view) { view.view }
+                        if view.isEnabled { view.view }
                     }
                 }
             }.padding(.bottom, 20)

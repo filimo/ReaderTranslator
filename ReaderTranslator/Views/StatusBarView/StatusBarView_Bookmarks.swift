@@ -29,7 +29,7 @@ struct StatusBarView_Bookmarks: View {
                     Button(
                         action: {
                             self.bookmarksStore.items.append(text)
-                            if ViewsStore.shared.enabledViews.contains(.bookmarks) {
+                            if AvailableView.bookmarks.isEnabled {
                                 self.store.translateAction.add(.bookmarks(text: text))
                             }
                         },

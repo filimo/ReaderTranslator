@@ -11,12 +11,27 @@ import Foundation
 final class ViewsStore: ObservableObject {
     private init() {}
     static let shared = ViewsStore()
-    
+
     static let defaultWidth: CGFloat = 500
 
     @Published(key: "enabledViews") var enabledViews: Set<AvailableView> = [.reverso, .gTranslator]
     @Published(key: "viewWidth") var viewWidth: [AvailableView: CGFloat] = [:]
     @Published(key: "viewOrder") var viewOrder: [AvailableView: Int] = [:]
-    
+
     @Published var showSettings = false
+}
+
+extension ViewsStore {
+    func enableView(view: AvailableView, enable: Bool) {
+        if enable {
+            enabledViews.insert(view)
+        } else {
+            enabledViews.remove(view)
+        }
+    }
+
+    func toggleView(view: AvailableView) {
+        let enabled = enabledViews.contains(view)
+        enableView(view: view, enable: !enabled)
+    }
 }
