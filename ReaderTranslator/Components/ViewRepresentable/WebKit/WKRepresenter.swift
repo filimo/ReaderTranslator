@@ -59,7 +59,7 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
 //        TODO: view.scrollView.zoomScale = store.zoom
 //        view.setNeedsDisplay(view.bounds)
         #else
-            view.setZoom(zoomLevel: store.zoom)
+//            view.setZoom(zoomLevel: store.zoom)
         #endif
         if view.newUrl != lastWebPage { view.newUrl = lastWebPage }
     }

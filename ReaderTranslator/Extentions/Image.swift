@@ -17,6 +17,16 @@ import SwiftUI
                 .frame(height: 20)
         }
     }
+#else
+extension Image {
+    static func sfSymbol(_ systemName: String) -> some View {
+        Image(systemName: systemName)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .colorInvert()
+            .frame(height: 20)
+    }
+}
 #endif
 
 struct ImageView_Previews: PreviewProvider {

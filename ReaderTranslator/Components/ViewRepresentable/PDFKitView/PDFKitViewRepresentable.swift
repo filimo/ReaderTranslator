@@ -75,7 +75,7 @@ import SwiftUI
                 Self.pdfView.autoresizingMask = [.flexibleWidth]
                 Self.pdfView.autoScales = true
                 Self.pdfView.document = PDFDocument(url: url)
-                Self.pdfView.delegate = context.server
+                Self.pdfView.delegate = context.coordinator
             }
         }
 

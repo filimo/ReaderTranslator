@@ -89,6 +89,16 @@
     document.addEventListener("mouseup", (event) => {
         keysStatus = {}
     })
+ 
+    document.addEventListener("selectionchange", (event) => {
+    	let selection = document.getSelection()
+
+    	if(selection) {} else return
+
+		if(selection.toString().trim()) {
+            sendIn1000('selectionchange', 'document', event)
+        }    		
+    })
 
     // Use click event instead of selectionchange to avoid firing the event when using text search on a page
     document.addEventListener('click', (event) => {

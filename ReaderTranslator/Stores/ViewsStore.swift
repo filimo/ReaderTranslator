@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 final class ViewsStore: ObservableObject {
     private init() {}

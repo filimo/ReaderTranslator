@@ -73,7 +73,7 @@ struct GTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
             ]
 
             if let url = urlComponent.url {
-                print("\(theClassName)_updateView_reload", url)
+                print("\(Self.self)_updateView_reload", url)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     view.load(URLRequest(url: url))
                 }

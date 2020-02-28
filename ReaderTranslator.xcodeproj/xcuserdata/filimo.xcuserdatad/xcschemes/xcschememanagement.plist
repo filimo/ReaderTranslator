@@ -12,7 +12,7 @@
 		<key>ReaderTranslator.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>ReaderTranslatorMac.xcscheme_^#shared#^_</key>
 		<dict>
@@ -22,7 +22,12 @@
 		<key>ReaderTranslatorMac_Player_Test.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>5</integer>
+		</dict>
+		<key>ReaderTranslatorMobile.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>ReaderTranslatorPlayer.xcscheme_^#shared#^_</key>
 		<dict>
@@ -32,17 +37,17 @@
 		<key>ReaderTranslatorPlayer_Mac_Test.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>ReaderTranslatorSafari.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>ReaderTranslatorShare.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -58,6 +63,11 @@
 			<true/>
 		</dict>
 		<key>F075444D23447A2700E1D88E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F09760B9240925680030F928</key>
 		<dict>
 			<key>primary</key>
 			<true/>
