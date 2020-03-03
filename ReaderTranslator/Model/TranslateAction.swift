@@ -21,8 +21,10 @@ enum TranslateAction: Equatable {
     case longman(text: String)
     case macmillan(text: String)
     case collins(text: String)
+    case cambridge(text: String)
     case wikipedia(text: String)
     case bookmarks(text: String)
+    
 
     init() {
         self = .none(text: "")
@@ -40,6 +42,7 @@ enum TranslateAction: Equatable {
              let .longman(text),
              let .macmillan(text),
              let .collins(text),
+             let .cambridge(text),
              let .bookmarks(text),
              let .wikipedia(text):
             return text
@@ -70,6 +73,7 @@ enum TranslateAction: Equatable {
                 let count = text.split(separator: " ").count
                 switch $0 {
                 case .collins,
+                     .cambridge,
                      .merriamWebster,
                      .stackExchange,
                      .longman,

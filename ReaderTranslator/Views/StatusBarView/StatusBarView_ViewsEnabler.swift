@@ -20,6 +20,7 @@ struct StatusBarView_ViewsEnabler: View {
         .merriamWebster,
         .stackExchange,
         .longman,
+        .cambridge,
         .reverso,
         .gTranslator,
         .yTranslator,
@@ -36,19 +37,12 @@ struct StatusBarView_ViewsEnabler: View {
     }
 
     private func buttonView(_ view: AvailableView) -> some View {
-        Group {
-            Text(view.rawValue)
-                .background(view.isEnabled ? Color.red : Color.clear)
-                .onTapGesture {
-                    self.viewsStore.toggleView(view: view)
-                }
-            Image.sfSymbol("square.and.arrow.down.fill")
-                .padding(.trailing, 5)
-                .onTapGesture(count: 1) {
-                    self.store.translateAction.add(view.getAction())
-                    self.viewsStore.enableView(view: view, enable: true)
-                }
-        }
+        Text(view.rawValue)
+            .background(view.isEnabled ? Color.red : Color.clear)
+            .padding(.trailing, 5)
+            .onTapGesture {
+                self.viewsStore.toggleView(view: view)
+            }
     }
 }
 

@@ -190,6 +190,7 @@
 		F087370A23D62CA4001CFBE3 /* MerriamWebsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */; };
 		F08CE13A236EA9F200610342 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = F08CE138236EA9F200610342 /* index.html */; };
 		F08CE13B236EA9F200610342 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = F08CE139236EA9F200610342 /* index.js */; };
+		F08D45BE240E9CDC00E7A08E /* cambridge.json in Resources */ = {isa = PBXBuildFile; fileRef = F08D45BD240E9B4D00E7A08E /* cambridge.json */; };
 		F08D9400239BE94E00147ECE /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F08D93FF239BE94E00147ECE /* SwiftSoup */; };
 		F08D9402239BE95D00147ECE /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F08D9401239BE95D00147ECE /* SwiftSoup */; };
 		F08D9404239C0E4400147ECE /* BookmarksView_List_Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D9403239C0E4400147ECE /* BookmarksView_List_Row.swift */; };
@@ -205,6 +206,14 @@
 		F08EBB0D23956A20009025D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0C23956A20009025D3 /* NetworkManager.swift */; };
 		F08EBB1023956D80009025D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0F23956D80009025D3 /* NetworkManager.swift */; };
 		F08EBB1123956D80009025D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EBB0F23956D80009025D3 /* NetworkManager.swift */; };
+		F08EE641240C04E5002CDB44 /* CambidgeRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459E3240C0465001EC43D /* CambidgeRepresenter.swift */; };
+		F08EE642240C04E7002CDB44 /* CambidgeRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459E3240C0465001EC43D /* CambidgeRepresenter.swift */; };
+		F08EE643240C04E8002CDB44 /* CambidgeRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459E3240C0465001EC43D /* CambidgeRepresenter.swift */; };
+		F08EE644240C04F0002CDB44 /* CambidgeRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459E3240C0465001EC43D /* CambidgeRepresenter.swift */; };
+		F08EE646240C0557002CDB44 /* CambidgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EE645240C053E002CDB44 /* CambidgeView.swift */; };
+		F08EE648240C055A002CDB44 /* CambidgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EE645240C053E002CDB44 /* CambidgeView.swift */; };
+		F08EE649240C055B002CDB44 /* CambidgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EE645240C053E002CDB44 /* CambidgeView.swift */; };
+		F08EE64A240C055E002CDB44 /* CambidgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08EE645240C053E002CDB44 /* CambidgeView.swift */; };
 		F094596E24092C6D001EC43D /* TranslateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1D236414070017C22F /* TranslateAction.swift */; };
 		F094596F24092C75001EC43D /* LongmanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0553727239BE3C700BA24BA /* LongmanStore.swift */; };
 		F094597124092C92001EC43D /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F094597024092C92001EC43D /* SwiftSoup */; };
@@ -657,6 +666,7 @@
 		F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerriamWebsterView.swift; sourceTree = "<group>"; };
 		F08CE138236EA9F200610342 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		F08CE139236EA9F200610342 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		F08D45BD240E9B4D00E7A08E /* cambridge.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cambridge.json; sourceTree = "<group>"; };
 		F08D9403239C0E4400147ECE /* BookmarksView_List_Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_List_Row.swift; sourceTree = "<group>"; };
 		F08EBAEC23943835009025D3 /* LongmanRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanRepresenter.swift; sourceTree = "<group>"; };
 		F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
@@ -666,6 +676,7 @@
 		F08EBB0A239565CC009025D3 /* PlayerContolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerContolsView.swift; sourceTree = "<group>"; };
 		F08EBB0C23956A20009025D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F08EBB0F23956D80009025D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F08EE645240C053E002CDB44 /* CambidgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CambidgeView.swift; sourceTree = "<group>"; };
 		F09459BC24093031001EC43D /* ReaderView_Pdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Pdf.swift; sourceTree = "<group>"; };
 		F09459BF24093073001EC43D /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F09459C3240930D8001EC43D /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
@@ -680,6 +691,7 @@
 		F09459D924093225001EC43D /* ReaderView_Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Web.swift; sourceTree = "<group>"; };
 		F09459DB24093230001EC43D /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F09459DD24093E57001EC43D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		F09459E3240C0465001EC43D /* CambidgeRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CambidgeRepresenter.swift; sourceTree = "<group>"; };
 		F09760BA240925680030F928 /* ReaderTranslatorMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09760BC240925680030F928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09760BE240925680030F928 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -908,6 +920,7 @@
 				F04C8312236187D6003A25B4 /* MacmillanRepresenter.swift */,
 				F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */,
 				F0FCDD442361A7650016F23F /* CollinsRepresenter.swift */,
+				F09459E3240C0465001EC43D /* CambidgeRepresenter.swift */,
 				F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */,
 				F0A9F35A2349228A00970C97 /* ReversoRepresenter.swift */,
 				F062029423812264002EEAEE /* YTranslatorRepresenter.swift */,
@@ -1323,6 +1336,7 @@
 				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
 				F075445923447A2800E1D88E /* reader-translator.js */,
 				F058C7F12397A180002C84F0 /* longman.json */,
+				F08D45BD240E9B4D00E7A08E /* cambridge.json */,
 				F0E5BC6623D630DF004DACE5 /* merriam-webster.json */,
 				F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */,
 			);
@@ -1335,6 +1349,7 @@
 				F0229BE02362021200F12F47 /* WikipediaView.swift */,
 				F0FCDD3F2361890C0016F23F /* MacmillanView.swift */,
 				F0FCDD452361A7BF0016F23F /* CollinsView.swift */,
+				F08EE645240C053E002CDB44 /* CambidgeView.swift */,
 				F025D61F23B73FB1004A1D6B /* StackExchangeView.swift */,
 				F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */,
 				F0505C532360D3DA004F2D50 /* LongmanView.swift */,
@@ -1647,6 +1662,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08D45BE240E9CDC00E7A08E /* cambridge.json in Resources */,
 				F058C7F22397A94D002C84F0 /* longman.json in Resources */,
 				F0C36AA7235ADF5E001E396C /* reader-translator.js in Resources */,
 				F0E5BC6723D632AC004DACE5 /* merriam-webster.json in Resources */,
@@ -1921,11 +1937,13 @@
 				F06DB1052344975E00C2DE90 /* StackView.swift in Sources */,
 				F058C801239930F3002C84F0 /* BookmarksView.swift in Sources */,
 				F0FCDD432361897E0016F23F /* MacmillanRepresenter.swift in Sources */,
+				F08EE646240C0557002CDB44 /* CambidgeView.swift in Sources */,
 				F065095723ADF6A3003D2410 /* AudioStore.swift in Sources */,
 				F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */,
 				F0562E0F2362026C0074ACF5 /* WikipediaRepresenter.swift in Sources */,
 				F023CEB3239A5674006DE5EA /* BookmarksView_List.swift in Sources */,
 				F0305FD223812711002AC5F5 /* YTranslatorView.swift in Sources */,
+				F08EE641240C04E5002CDB44 /* CambidgeRepresenter.swift in Sources */,
 				F0369E3323A2D92C00C33139 /* StatusBarView_Sync.swift in Sources */,
 				F0EDFB26239E49480048CFD1 /* AudioPlayer.swift in Sources */,
 				F02B04B023A2844700F93B84 /* NWParameters.swift in Sources */,
@@ -2022,6 +2040,7 @@
 				F094597F24092D1B001EC43D /* NSObject.swift in Sources */,
 				F094598924092D3C001EC43D /* BookmarksStore.swift in Sources */,
 				F094597724092CD8001EC43D /* UserDefault.swift in Sources */,
+				F08EE642240C04E7002CDB44 /* CambidgeRepresenter.swift in Sources */,
 				F094598E24092D7E001EC43D /* PeerListener.swift in Sources */,
 				F09760EA2409291D0030F928 /* Published.swift in Sources */,
 				F094598124092D1B001EC43D /* URL.swift in Sources */,
@@ -2053,6 +2072,7 @@
 				F094598424092D1B001EC43D /* NumberFormatter.swift in Sources */,
 				F094599224092D7E001EC43D /* ConnectionClientStatus.swift in Sources */,
 				F09760DD240927B60030F928 /* Safari.swift in Sources */,
+				F08EE648240C055A002CDB44 /* CambidgeView.swift in Sources */,
 				F094597624092CCD001EC43D /* WebStore.swift in Sources */,
 				F09760BD240925680030F928 /* AppDelegate.swift in Sources */,
 				F094599024092D7E001EC43D /* ReaderTranslatorProtocol.swift in Sources */,
@@ -2120,6 +2140,7 @@
 				F099421423AD4374003CF1EB /* UserDefault.swift in Sources */,
 				F04B6AAE23D37BE900CEC7DA /* StackExchangeView.swift in Sources */,
 				F099421F23AD43FB003CF1EB /* ReaderView_Pdf.swift in Sources */,
+				F08EE64A240C055E002CDB44 /* CambidgeView.swift in Sources */,
 				F099422C23AD44D4003CF1EB /* LongmanRepresenter.swift in Sources */,
 				F00EFE1723A95A6D0071D962 /* Array.swift in Sources */,
 				F099421623AD43AB003CF1EB /* WikipediaView.swift in Sources */,
@@ -2139,6 +2160,7 @@
 				F099422523AD4466003CF1EB /* GTranslatorRepresenter.swift in Sources */,
 				F099423623AD4558003CF1EB /* WikipediaRepresenter.swift in Sources */,
 				F065095923ADF6A3003D2410 /* AudioStore.swift in Sources */,
+				F08EE644240C04F0002CDB44 /* CambidgeRepresenter.swift in Sources */,
 				F099423523AD4551003CF1EB /* Clipboard.swift in Sources */,
 				F099421723AD43AF003CF1EB /* ReversoView.swift in Sources */,
 				F099423D23AD459D003CF1EB /* WKCoordinatorNavigationDelegate.swift in Sources */,
@@ -2210,6 +2232,7 @@
 				F0EDE34D23641B1300E0B81C /* Stack.swift in Sources */,
 				F0D2E334234BA49000D95994 /* Safari.swift in Sources */,
 				F022B6E3234E6663005CA0BB /* WKCoordinatorNavigationDelegate.swift in Sources */,
+				F08EE649240C055B002CDB44 /* CambidgeView.swift in Sources */,
 				F0FCDD422361897D0016F23F /* MacmillanRepresenter.swift in Sources */,
 				F064B4A623CC569400F28314 /* CGFloat.swift in Sources */,
 				F08EBAF023952AD6009025D3 /* WebViewContainer.swift in Sources */,
@@ -2241,6 +2264,7 @@
 				F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */,
 				F0AB12AA233F58A2005B9F2A /* StatusBarView_Zoom.swift in Sources */,
 				F0505C562360D485004F2D50 /* LongmanView.swift in Sources */,
+				F08EE643240C04E8002CDB44 /* CambidgeRepresenter.swift in Sources */,
 				F0305FD32381271A002AC5F5 /* YTranslatorRepresenter.swift in Sources */,
 				F04C830F23617BE6003A25B4 /* NSObject.swift in Sources */,
 				F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */,

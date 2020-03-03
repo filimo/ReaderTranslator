@@ -1,0 +1,10 @@
+[
+    {
+        "trigger": {
+            "url-filter": "https://.*.google.*.com/.*"
+        },
+        "action": {
+            "type": "block"
+        }
+    }
+]

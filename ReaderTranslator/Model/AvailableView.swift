@@ -19,6 +19,7 @@ enum AvailableView: String, Codable, CaseIterable {
     case longman = "Longman"
     case macmillan = "Macmillan"
     case collins = "Collin's"
+    case cambridge = "Cambridge"
     case pdf = "PDF"
     case web = "Web"
     case safari = "Safari"
@@ -75,6 +76,8 @@ extension AvailableView {
             return MacmillanView().any
         case .collins:
             return CollinsView().any
+        case .cambridge:
+            return CambidgeView().any
         case .bookmarks:
             return BookmarksView().any
         case .pdf:
@@ -95,6 +98,7 @@ extension AvailableView {
             .merriamWebster,
             .stackExchange,
             .longman,
+            .cambridge,
             .reverso,
             .yTranslator,
             .gTranslator,
@@ -119,6 +123,7 @@ extension AvailableView {
         case .longman: return .longman(text: text)
         case .macmillan: return .macmillan(text: text)
         case .collins: return .collins(text: text)
+        case .cambridge: return .collins(text: text)
         case .bookmarks: return .bookmarks(text: text)
         case .pdf, .web, .safari: return .none(text: text)
         }

@@ -91,17 +91,6 @@
     })
  
     document.addEventListener("selectionchange", (event) => {
-    	let selection = document.getSelection()
-
-    	if(selection) {} else return
-
-		if(selection.toString().trim()) {
-            sendIn1000('selectionchange', 'document', event)
-        }    		
-    })
-
-    // Use click event instead of selectionchange to avoid firing the event when using text search on a page
-    document.addEventListener('click', (event) => {
         if(location.hostname == "localhost" && location.pathname.includes('audiobooks')) return
 
         let selection = document.getSelection()
@@ -112,9 +101,25 @@
         if(selection.focusNode.id == 'search-input') return
                               
         if(selection.toString().trim()) {
-            send('selectionchange', 'document', event)
+            sendIn1000('selectionchange', 'document', event)
         }
     })
+
+    // // Use click event instead of selectionchange to avoid firing the event when using text search on a page
+    // document.addEventListener('click', (event) => {
+    //     if(location.hostname == "localhost" && location.pathname.includes('audiobooks')) return
+
+    //     let selection = document.getSelection()
+                    
+    //     if(selection) {} else return
+                              
+    //     //Reverso selects text in `search-input` tag after the page loaded
+    //     if(selection.focusNode.id == 'search-input') return
+                              
+    //     if(selection.toString().trim()) {
+    //         send('selectionchange', 'document', event)
+    //     }
+    // })
 
     window.addEventListener('keydown', (event) => {
         if(event.ctrlKey || event.altKey) sendIn500('keydown', 'window', event)
