@@ -61,6 +61,10 @@
 		F033F41523A75B5600605325 /* SentencesView_Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F41423A75B5600605325 /* SentencesView_Row.swift */; };
 		F0369E3223A2D92C00C33139 /* StatusBarView_Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0369E3123A2D92C00C33139 /* StatusBarView_Sync.swift */; };
 		F0369E3323A2D92C00C33139 /* StatusBarView_Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0369E3123A2D92C00C33139 /* StatusBarView_Sync.swift */; };
+		F038B00B241112D8006B8C1F /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00A241112D8006B8C1F /* gtranslator.js */; };
+		F038B00E2411337C006B8C1F /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00C24113331006B8C1F /* gtranslator.js */; };
+		F038B00F24113388006B8C1F /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00C24113331006B8C1F /* gtranslator.js */; };
+		F038B01724116964006B8C1F /* GTranslatorMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01624116964006B8C1F /* GTranslatorMiniView.swift */; };
 		F040512B23ABDBDB00A5240C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A9C2359C78A001E396C /* Array.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
@@ -604,6 +608,9 @@
 		F033F41123A6D3A800605325 /* DirectoryObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryObserver.swift; sourceTree = "<group>"; };
 		F033F41423A75B5600605325 /* SentencesView_Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentencesView_Row.swift; sourceTree = "<group>"; };
 		F0369E3123A2D92C00C33139 /* StatusBarView_Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Sync.swift; sourceTree = "<group>"; };
+		F038B00A241112D8006B8C1F /* gtranslator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gtranslator.js; sourceTree = "<group>"; };
+		F038B00C24113331006B8C1F /* gtranslator.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = gtranslator.js; sourceTree = "<group>"; };
+		F038B01624116964006B8C1F /* GTranslatorMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorMiniView.swift; sourceTree = "<group>"; };
 		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -941,6 +948,14 @@
 			path = SentencesView;
 			sourceTree = "<group>";
 		};
+		F038B00724111225006B8C1F /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				F038B00A241112D8006B8C1F /* gtranslator.js */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		F04924372341F2F800F3C728 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -1074,6 +1089,7 @@
 			isa = PBXGroup;
 			children = (
 				F09459C3240930D8001EC43D /* GTranslatorView.swift */,
+				F038B01624116964006B8C1F /* GTranslatorMiniView.swift */,
 				F09459BC24093031001EC43D /* ReaderView_Pdf.swift */,
 				F09459D52409320E001EC43D /* MacmillanView.swift */,
 				F09459DB24093230001EC43D /* SafariView.swift */,
@@ -1094,6 +1110,7 @@
 		F09760BB240925680030F928 /* ReaderTranslatorMobile */ = {
 			isa = PBXGroup;
 			children = (
+				F038B00724111225006B8C1F /* Scripts */,
 				F09760D5240926C40030F928 /* Delegates */,
 				F09459BB24093020001EC43D /* Views */,
 				F09760C0240925680030F928 /* ContentView.swift */,
@@ -1335,6 +1352,7 @@
 			children = (
 				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
 				F075445923447A2800E1D88E /* reader-translator.js */,
+				F038B00C24113331006B8C1F /* gtranslator.js */,
 				F058C7F12397A180002C84F0 /* longman.json */,
 				F08D45BD240E9B4D00E7A08E /* cambridge.json */,
 				F0E5BC6623D630DF004DACE5 /* merriam-webster.json */,
@@ -1650,6 +1668,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F038B00F24113388006B8C1F /* gtranslator.js in Resources */,
 				F058C7FD2397FBCD002C84F0 /* longman.json in Resources */,
 				F0120382239182DC008D0B47 /* LaunchScreen.storyboard in Resources */,
 				F012037F239182DC008D0B47 /* Preview Assets.xcassets in Resources */,
@@ -1662,6 +1681,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F038B00E2411337C006B8C1F /* gtranslator.js in Resources */,
 				F08D45BE240E9CDC00E7A08E /* cambridge.json in Resources */,
 				F058C7F22397A94D002C84F0 /* longman.json in Resources */,
 				F0C36AA7235ADF5E001E396C /* reader-translator.js in Resources */,
@@ -1690,6 +1710,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F038B00B241112D8006B8C1F /* gtranslator.js in Resources */,
 				F09760C92409256C0030F928 /* LaunchScreen.storyboard in Resources */,
 				F09760C62409256C0030F928 /* Preview Assets.xcassets in Resources */,
 				F09459A924092E0E001EC43D /* reverso-reverso-speaker.js in Resources */,
@@ -2098,6 +2119,7 @@
 				F09760C1240925680030F928 /* ContentView.swift in Sources */,
 				F09760E22409280E0030F928 /* String.swift in Sources */,
 				F094597D24092D1B001EC43D /* StackView.swift in Sources */,
+				F038B01724116964006B8C1F /* GTranslatorMiniView.swift in Sources */,
 				F09459CA240931AC001EC43D /* WikipediaView.swift in Sources */,
 				F09459D0240931E2001EC43D /* ReversoView.swift in Sources */,
 				F094599424092D7E001EC43D /* NetBrowser.swift in Sources */,

@@ -12,6 +12,9 @@ import WebKit
 
 struct GTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
+    static var isMiniMode: Bool = false {
+        didSet { setMiniMode() }
+    }
 
     static var coorinator: Coordinator?
     static var pageView: WKPageView?
@@ -53,6 +56,8 @@ struct GTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
         setupScript(view: view, file: "gtranslator-reverso-speaker")
+        setupScript(view: view, file: "gtranslator")
+        Self.setMiniMode()
 
         return view
     }
@@ -92,6 +97,11 @@ struct GTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
         let tlValue = queryItems?.last(where: { $0.name == "tl" })?.value
 
         return (slValue, tlValue)
+    }
+    
+    static private func setMiniMode() {
+        let mode = isMiniMode ? "mini" : "full"
+        GTranslatorRepresenter.pageView?.evaluateJavaScript("readerTranslatorMode('\(mode)')")
     }
 }
 

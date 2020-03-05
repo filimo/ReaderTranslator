@@ -13,6 +13,9 @@ struct GTranslatorView: View {
 
     var body: some View {
         GTranslatorRepresenter(selectedText: self.$store.translateAction)
+        .onAppear {
+            GTranslatorRepresenter.isMiniMode = false
+        }
     }
 }
 
