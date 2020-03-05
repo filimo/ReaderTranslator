@@ -99,6 +99,12 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**1.11.1**
+- [Google Translate implementation #78](https://github.com/filimo/ReaderTranslator/issues/76)
+
+![](files/Release_1.11.1_1.gif)
+
+
 **1.11.0**
 - [Cambridge dictionary #77](https://github.com/filimo/ReaderTranslator/issues/77)
 

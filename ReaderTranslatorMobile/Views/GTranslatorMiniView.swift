@@ -8,19 +8,19 @@
 
 import SwiftUI
 
-struct GTranslatorView: View {
+struct GTranslatorMiniView: View {
     @ObservedObject private var store = Store.shared
 
     var body: some View {
         GTranslatorRepresenter(selectedText: self.$store.translateAction)
         .onAppear {
-            GTranslatorRepresenter.isMiniMode = false
+            GTranslatorRepresenter.isMiniMode = true
         }
     }
 }
 
-struct GTranslatorView_Previews: PreviewProvider {
+struct GTranslatorMiniView_Previews: PreviewProvider {
     static var previews: some View {
-        GTranslatorView()
+        GTranslatorMiniView()
     }
 }
