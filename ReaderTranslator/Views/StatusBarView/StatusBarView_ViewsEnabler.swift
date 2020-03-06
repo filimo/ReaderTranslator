@@ -23,6 +23,7 @@ struct StatusBarView_ViewsEnabler: View {
         .cambridge,
         .reverso,
         .gTranslator,
+        .deepL,
         .yTranslator,
         .pdf,
         .web,

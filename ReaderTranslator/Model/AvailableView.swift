@@ -15,6 +15,7 @@ enum AvailableView: String, Codable, CaseIterable {
     case stackExchange = "StackExchange"
     case reverso = "Reverso"
     case gTranslator = "GTranslator"
+    case deepL = "DeepL"
     case yTranslator = "YTranslator"
     case longman = "Longman"
     case macmillan = "Macmillan"
@@ -68,6 +69,8 @@ extension AvailableView {
             return ReversoView().any
         case .gTranslator:
             return GTranslatorView().any
+        case .deepL:
+            return DeepLView().any
         case .yTranslator:
             return YTranslatorView().any
         case .longman:
@@ -102,6 +105,7 @@ extension AvailableView {
             .reverso,
             .yTranslator,
             .gTranslator,
+            .deepL,
             .pdf,
             .web
         ]
@@ -119,6 +123,7 @@ extension AvailableView {
         case .stackExchange: return .stackExchange(text: text)
         case .reverso: return .reverso(text: text)
         case .gTranslator: return .gTranslator(text: text)
+        case .deepL: return .deepL(text: text)
         case .yTranslator: return .yTranslator(text: text)
         case .longman: return .longman(text: text)
         case .macmillan: return .macmillan(text: text)

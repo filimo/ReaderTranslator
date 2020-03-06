@@ -65,6 +65,14 @@
 		F038B00E2411337C006B8C1F /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00C24113331006B8C1F /* gtranslator.js */; };
 		F038B00F24113388006B8C1F /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00C24113331006B8C1F /* gtranslator.js */; };
 		F038B01724116964006B8C1F /* GTranslatorMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01624116964006B8C1F /* GTranslatorMiniView.swift */; };
+		F038B01924124860006B8C1F /* DeepLRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01824124860006B8C1F /* DeepLRepresenter.swift */; };
+		F038B01A24124860006B8C1F /* DeepLRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01824124860006B8C1F /* DeepLRepresenter.swift */; };
+		F038B01B24124860006B8C1F /* DeepLRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01824124860006B8C1F /* DeepLRepresenter.swift */; };
+		F038B01C24124860006B8C1F /* DeepLRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01824124860006B8C1F /* DeepLRepresenter.swift */; };
+		F038B01E24124AC0006B8C1F /* DeepLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01D24124AC0006B8C1F /* DeepLView.swift */; };
+		F038B01F24124AC0006B8C1F /* DeepLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01D24124AC0006B8C1F /* DeepLView.swift */; };
+		F038B02024124AC0006B8C1F /* DeepLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01D24124AC0006B8C1F /* DeepLView.swift */; };
+		F038B02124124AC0006B8C1F /* DeepLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01D24124AC0006B8C1F /* DeepLView.swift */; };
 		F040512B23ABDBDB00A5240C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A9C2359C78A001E396C /* Array.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
@@ -611,6 +619,8 @@
 		F038B00A241112D8006B8C1F /* gtranslator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gtranslator.js; sourceTree = "<group>"; };
 		F038B00C24113331006B8C1F /* gtranslator.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = gtranslator.js; sourceTree = "<group>"; };
 		F038B01624116964006B8C1F /* GTranslatorMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorMiniView.swift; sourceTree = "<group>"; };
+		F038B01824124860006B8C1F /* DeepLRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLRepresenter.swift; sourceTree = "<group>"; };
+		F038B01D24124AC0006B8C1F /* DeepLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLView.swift; sourceTree = "<group>"; };
 		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -927,6 +937,7 @@
 				F04C8312236187D6003A25B4 /* MacmillanRepresenter.swift */,
 				F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */,
 				F0FCDD442361A7650016F23F /* CollinsRepresenter.swift */,
+				F038B01824124860006B8C1F /* DeepLRepresenter.swift */,
 				F09459E3240C0465001EC43D /* CambidgeRepresenter.swift */,
 				F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */,
 				F0A9F35A2349228A00970C97 /* ReversoRepresenter.swift */,
@@ -1367,6 +1378,7 @@
 				F0229BE02362021200F12F47 /* WikipediaView.swift */,
 				F0FCDD3F2361890C0016F23F /* MacmillanView.swift */,
 				F0FCDD452361A7BF0016F23F /* CollinsView.swift */,
+				F038B01D24124AC0006B8C1F /* DeepLView.swift */,
 				F08EE645240C053E002CDB44 /* CambidgeView.swift */,
 				F025D61F23B73FB1004A1D6B /* StackExchangeView.swift */,
 				F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */,
@@ -1959,6 +1971,7 @@
 				F058C801239930F3002C84F0 /* BookmarksView.swift in Sources */,
 				F0FCDD432361897E0016F23F /* MacmillanRepresenter.swift in Sources */,
 				F08EE646240C0557002CDB44 /* CambidgeView.swift in Sources */,
+				F038B01924124860006B8C1F /* DeepLRepresenter.swift in Sources */,
 				F065095723ADF6A3003D2410 /* AudioStore.swift in Sources */,
 				F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */,
 				F0562E0F2362026C0074ACF5 /* WikipediaRepresenter.swift in Sources */,
@@ -2010,6 +2023,7 @@
 				F0C53175234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F065096723AE0DB9003D2410 /* WebStore.swift in Sources */,
 				F0C36AA22359D50A001E396C /* Clipboard.swift in Sources */,
+				F038B01E24124AC0006B8C1F /* DeepLView.swift in Sources */,
 				F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */,
 				F0C36A972359AF76001E396C /* StatusBarView_Bookmarks.swift in Sources */,
 				F02989EC2360488800DF722E /* OpenPanel.swift in Sources */,
@@ -2095,6 +2109,7 @@
 				F09760DD240927B60030F928 /* Safari.swift in Sources */,
 				F08EE648240C055A002CDB44 /* CambidgeView.swift in Sources */,
 				F094597624092CCD001EC43D /* WebStore.swift in Sources */,
+				F038B01A24124860006B8C1F /* DeepLRepresenter.swift in Sources */,
 				F09760BD240925680030F928 /* AppDelegate.swift in Sources */,
 				F094599024092D7E001EC43D /* ReaderTranslatorProtocol.swift in Sources */,
 				F094598524092D26001EC43D /* ButtonModifier.swift in Sources */,
@@ -2130,6 +2145,7 @@
 				F094598624092D26001EC43D /* RoundedEdge.swift in Sources */,
 				F094597A24092D11001EC43D /* Stack.swift in Sources */,
 				F09459D62409320E001EC43D /* MacmillanView.swift in Sources */,
+				F038B01F24124AC0006B8C1F /* DeepLView.swift in Sources */,
 				F09459C1240930A4001EC43D /* Clipboard.swift in Sources */,
 				F094598724092D30001EC43D /* FavoriteVoiceName.swift in Sources */,
 				F09760E9240929040030F928 /* DirectoryObserver.swift in Sources */,
@@ -2160,6 +2176,7 @@
 				F099423223AD451A003CF1EB /* URL.swift in Sources */,
 				F099424923AD46F8003CF1EB /* Collection.swift in Sources */,
 				F099421423AD4374003CF1EB /* UserDefault.swift in Sources */,
+				F038B02124124AC0006B8C1F /* DeepLView.swift in Sources */,
 				F04B6AAE23D37BE900CEC7DA /* StackExchangeView.swift in Sources */,
 				F099421F23AD43FB003CF1EB /* ReaderView_Pdf.swift in Sources */,
 				F08EE64A240C055E002CDB44 /* CambidgeView.swift in Sources */,
@@ -2187,6 +2204,7 @@
 				F099421723AD43AF003CF1EB /* ReversoView.swift in Sources */,
 				F099423D23AD459D003CF1EB /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F099423923AD4585003CF1EB /* NSObject.swift in Sources */,
+				F038B01C24124860006B8C1F /* DeepLRepresenter.swift in Sources */,
 				F064B4A823CC569400F28314 /* CGFloat.swift in Sources */,
 				F099423323AD4529003CF1EB /* WKScriptsSetup.swift in Sources */,
 				F099424823AD4623003CF1EB /* CircleButton.swift in Sources */,
@@ -2261,6 +2279,7 @@
 				F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */,
 				F0C0040823A899EA002B6060 /* CircleButton.swift in Sources */,
 				F0AA69D4232E9762007CC07B /* ReaderView.swift in Sources */,
+				F038B01B24124860006B8C1F /* DeepLRepresenter.swift in Sources */,
 				F0EDFB1F239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */,
 				F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */,
 				F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */,
@@ -2281,6 +2300,7 @@
 				F06DB1042344975E00C2DE90 /* StackView.swift in Sources */,
 				F0AF8D1223D37E9000E8E4E2 /* RoundedEdge.swift in Sources */,
 				F0E5BC6423D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */,
+				F038B02024124AC0006B8C1F /* DeepLView.swift in Sources */,
 				F0AA69E0232E97B0007CC07B /* WKRepresenter.swift in Sources */,
 				F0C4EDA6234926D400CCD97A /* ReversoRepresenter.swift in Sources */,
 				F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */,
