@@ -73,6 +73,9 @@
 		F038B01F24124AC0006B8C1F /* DeepLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01D24124AC0006B8C1F /* DeepLView.swift */; };
 		F038B02024124AC0006B8C1F /* DeepLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01D24124AC0006B8C1F /* DeepLView.swift */; };
 		F038B02124124AC0006B8C1F /* DeepLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01D24124AC0006B8C1F /* DeepLView.swift */; };
+		F038B02324126D71006B8C1F /* deep-L.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B02224126BC9006B8C1F /* deep-L.js */; };
+		F038B02924126DB4006B8C1F /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
+		F038B02A24126DC1006B8C1F /* deep-L.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B02224126BC9006B8C1F /* deep-L.js */; };
 		F040512B23ABDBDB00A5240C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A9C2359C78A001E396C /* Array.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
@@ -621,6 +624,7 @@
 		F038B01624116964006B8C1F /* GTranslatorMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorMiniView.swift; sourceTree = "<group>"; };
 		F038B01824124860006B8C1F /* DeepLRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLRepresenter.swift; sourceTree = "<group>"; };
 		F038B01D24124AC0006B8C1F /* DeepLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLView.swift; sourceTree = "<group>"; };
+		F038B02224126BC9006B8C1F /* deep-L.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "deep-L.js"; sourceTree = "<group>"; };
 		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1363,6 +1367,7 @@
 			children = (
 				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
 				F075445923447A2800E1D88E /* reader-translator.js */,
+				F038B02224126BC9006B8C1F /* deep-L.js */,
 				F038B00C24113331006B8C1F /* gtranslator.js */,
 				F058C7F12397A180002C84F0 /* longman.json */,
 				F08D45BD240E9B4D00E7A08E /* cambridge.json */,
@@ -1682,6 +1687,7 @@
 			files = (
 				F038B00F24113388006B8C1F /* gtranslator.js in Resources */,
 				F058C7FD2397FBCD002C84F0 /* longman.json in Resources */,
+				F038B02A24126DC1006B8C1F /* deep-L.js in Resources */,
 				F0120382239182DC008D0B47 /* LaunchScreen.storyboard in Resources */,
 				F012037F239182DC008D0B47 /* Preview Assets.xcassets in Resources */,
 				F012037C239182DC008D0B47 /* Assets.xcassets in Resources */,
@@ -1700,6 +1706,7 @@
 				F0E5BC6723D632AC004DACE5 /* merriam-webster.json in Resources */,
 				F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
+				F038B02324126D71006B8C1F /* deep-L.js in Resources */,
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
 				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
 				F09AD47E23702DF100FFBF6A /* jquery.js in Resources */,
@@ -1739,6 +1746,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0E5BC6A23D632B2004DACE5 /* merriam-webster.json in Resources */,
+				F038B02924126DB4006B8C1F /* reader-translator.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

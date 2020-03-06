@@ -11,7 +11,7 @@ import WebKit
 
 struct DeepLRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
-    private let defaultURL = "https://www.deepl.com/ru/translator#en/ru/"
+    private let defaultURL = "https://www.deepl.com/en/translator#en/ru/"
 
     static var coorinator: Coordinator?
     static var pageView: WKPageView?
@@ -28,10 +28,15 @@ struct DeepLRepresenter: ViewRepresentable, WKScriptsSetup {
         if let view = Self.pageView { return view }
 
         let view = WKPageView()
-        view.load(urlString: defaultURL)
+        if let url = URL(string: defaultURL) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                view.load(URLRequest(url: url))
+            }
+        }
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
+        setupScript(view: view, file: "deep-L")
 
         return view
     }
