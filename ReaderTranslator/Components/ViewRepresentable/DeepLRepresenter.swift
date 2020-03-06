@@ -1,17 +1,17 @@
 //
-//  Collins.swift
-//  PdfTranslate
+//  DeepLRepresenter.swift
+//  ReaderTranslator
 //
-//  Created by Viktor Kushnerov on 9/9/19.
-//  Copyright © 2019 Viktor Kushnerov. All rights reserved.
+//  Created by Viktor Kushnerov on 6/3/20.
+//  Copyright © 2020 Viktor Kushnerov. All rights reserved.
 //
 
 import SwiftUI
 import WebKit
 
-struct CambidgeRepresenter: ViewRepresentable, WKScriptsSetup {
+struct DeepLRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
-    private let defaultURL = "https://dictionary.cambridge.org/dictionary/english-russian/"
+    private let defaultURL = "https://www.deepl.com/ru/translator#en/ru/"
 
     static var coorinator: Coordinator?
     static var pageView: WKPageView?
@@ -37,25 +37,27 @@ struct CambidgeRepresenter: ViewRepresentable, WKScriptsSetup {
     }
 
     func updateView(_ view: WKPageView, context _: Context) {
-        guard case var .collins(text) = selectedText else { return }
+        guard case var .deepL(text) = selectedText else { return }
         text = text.replacingOccurrences(of: "\n", with: " ")
         Store.shared.translateAction.next()
 
         print("\(theClassName)_updateView_update", text)
 
-        let search = text.replacingOccurrences(of: " ", with: "-")
+        let search = text.encodeUrl
         let urlString = "\(defaultURL)\(search)"
 
         if view.url?.absoluteString == urlString { return }
 
-        print("\(theClassName)_updateView_reload", urlString)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.loadWithRuleList(urlString: urlString, view: view, file: "cambridge")
+        if let url = URL(string: urlString) {
+            print("\(theClassName)_updateView_reload", urlString)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                view.load(URLRequest(url: url))
+            }
         }
     }
 }
 
-extension CambidgeRepresenter.Coordinator: WKScriptMessageHandler {
+extension DeepLRepresenter.Coordinator: WKScriptMessageHandler {
     func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let event = getEvent(data: message.body) else { return }
         var text: String { event.extra?.selectedText ?? "" }
@@ -64,7 +66,7 @@ extension CambidgeRepresenter.Coordinator: WKScriptMessageHandler {
         case "selectionchange":
             guard let text = event.extra?.selectedText else { return }
             selectedText = text
-            store.translateAction.addAll(text: text, except: .cambridge)
+            store.translateAction.addAll(text: text, except: .deepL)
         case "keydown":
             if event.extra?.keyCode == 18 { // Alt
                 SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)
