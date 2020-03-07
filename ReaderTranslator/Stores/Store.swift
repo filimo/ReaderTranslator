@@ -15,10 +15,5 @@ final class Store: ObservableObject {
 
     let maxViewWidth: CGFloat = 400
 
-    @Published(key: "canSafariSendSelectedText") var canSafariSendSelectedText: Bool = true {
-        didSet {
-            ViewsStore.shared.enableView(view: .safari, enable: canSafariSendSelectedText)
-        }
-    }
     @Published var translateAction = TranslateAction()
 }

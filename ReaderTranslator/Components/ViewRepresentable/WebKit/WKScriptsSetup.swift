@@ -15,7 +15,7 @@ protocol WKScriptsSetup {
 }
 
 extension WKScriptsSetup {
-    func setupScriptCoordinator<T: WKCoordinator>(view: WKPageView, coordinator: T) where T: WKScriptMessageHandler {
+    func setupScriptCoordinator<T>(view: WKPageView, coordinator: T) where T: WKCoordinator {
         let userContentController = view.configuration.userContentController
         guard let scriptUrl = Bundle.main.url(forResource: "reader-translator", withExtension: "js") else { return }
 

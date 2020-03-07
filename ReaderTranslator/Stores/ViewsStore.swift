@@ -23,6 +23,15 @@ final class ViewsStore: ObservableObject {
 }
 
 extension ViewsStore {
+    static var enabledSafari: Bool {
+        Self.shared.enabledViews.contains(.safari)
+    }
+    
+    static func toggleSafari() {
+        let status = Self.shared.enabledViews.contains(.safari)
+        Self.shared.enableView(view: .safari, enable: !status)
+    }
+    
     func enableView(view: AvailableView, enable: Bool) {
         if enable {
             enabledViews.insert(view)

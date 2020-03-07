@@ -11,14 +11,17 @@ import WebKit
 
 class WKCoordinator: NSObject {
     let parent: WKScriptsSetup
+    var selectedText = ""
+    private let currentView: AvailableView
 
     @ObservedObject var store = Store.shared
     @ObservedObject var webStore = WebStore.shared
 
     var cancellableSet: Set<AnyCancellable> = []
 
-    init(_ parent: WKScriptsSetup) {
+    init(_ parent: WKScriptsSetup, currentView: AvailableView) {
         self.parent = parent
+        self.currentView = currentView
         super.init()
         print("\(Self.self)_makeCoordinator")
     }
@@ -80,5 +83,25 @@ extension WKCoordinator: WKNavigationDelegate {
 extension WKCoordinator: WKCoordinatorNavigationDelegate {
     func goBack(_ webView: WKWebView) {
         if let webView = webView as? WKPageView { parent.goBack(webView) }
+    }
+}
+
+extension WKCoordinator: WKScriptMessageHandler {
+    func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
+        guard let event = getEvent(data: message.body) else { return }
+        var text: String { event.extra?.selectedText ?? "" }
+
+        switch event.name {
+        case "selectionchange":
+            guard let text = event.extra?.selectedText else { return }
+            selectedText = text
+            store.translateAction.addAll(text: text, except: currentView)
+        case "keydown":
+            if event.extra?.keyCode == 18 { // Alt
+                SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)
+            }
+        default:
+            print("webkit.messageHandlers.\(event.name).postMessage() isn't found")
+        }
     }
 }

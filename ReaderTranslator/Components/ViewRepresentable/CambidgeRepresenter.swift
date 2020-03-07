@@ -13,15 +13,11 @@ struct CambidgeRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://dictionary.cambridge.org/dictionary/english-russian/"
 
-    static var coorinator: Coordinator?
+    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
-    class Coordinator: WKCoordinator {
-        var selectedText = ""
-    }
-
-    func makeCoordinator() -> Coordinator {
-        makeCoordinator(coordinator: Coordinator(self))
+    func makeCoordinator() -> WKCoordinator {
+        makeCoordinator(coordinator: WKCoordinator(self, currentView: .cambridge))
     }
 
     func makeView(context: Context) -> WKPageView {
@@ -55,22 +51,3 @@ struct CambidgeRepresenter: ViewRepresentable, WKScriptsSetup {
     }
 }
 
-extension CambidgeRepresenter.Coordinator: WKScriptMessageHandler {
-    func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard let event = getEvent(data: message.body) else { return }
-        var text: String { event.extra?.selectedText ?? "" }
-
-        switch event.name {
-        case "selectionchange":
-            guard let text = event.extra?.selectedText else { return }
-            selectedText = text
-            store.translateAction.addAll(text: text, except: .cambridge)
-        case "keydown":
-            if event.extra?.keyCode == 18 { // Alt
-                SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)
-            }
-        default:
-            print("webkit.messageHandlers.\(event.name).postMessage() isn't found")
-        }
-    }
-}

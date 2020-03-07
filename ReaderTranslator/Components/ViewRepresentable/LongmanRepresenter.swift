@@ -13,15 +13,11 @@ struct LongmanRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://www.ldoceonline.com/dictionary/"
 
-    static var coorinator: Coordinator?
+    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
-    class Coordinator: WKCoordinator {
-        var selectedText = ""
-    }
-
-    func makeCoordinator() -> Coordinator {
-        makeCoordinator(coordinator: Coordinator(self))
+    func makeCoordinator() -> WKCoordinator {
+        makeCoordinator(coordinator: WKCoordinator(self, currentView: .longman))
     }
 
     func makeView(context: Context) -> WKPageView {
@@ -52,26 +48,6 @@ struct LongmanRepresenter: ViewRepresentable, WKScriptsSetup {
         print("\(theClassName)_updateView_reload", urlString)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.loadWithRuleList(urlString: urlString.encodeUrl, view: view, file: "longman")
-        }
-    }
-}
-
-extension LongmanRepresenter.Coordinator: WKScriptMessageHandler {
-    func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard let event = getEvent(data: message.body) else { return }
-        var text: String { event.extra?.selectedText ?? "" }
-
-        switch event.name {
-        case "selectionchange":
-            guard let text = event.extra?.selectedText else { return }
-            selectedText = text
-            store.translateAction.addAll(text: text, except: .longman)
-        case "keydown":
-            if event.extra?.keyCode == 18 { // Alt
-                SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)
-            }
-        default:
-            print("webkit.messageHandlers.\(event.name).postMessage() isn't found")
         }
     }
 }

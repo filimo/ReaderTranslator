@@ -13,35 +13,14 @@ import WebKit
 struct YTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
 
-    static var coorinator: Coordinator?
+    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     @ObservedObject private var store = Store.shared
     private let defaultURL = "https://translate.yandex.ru/?lang=en-ru"
 
-    class Coordinator: WKCoordinator {
-        @Published var selectedText = TranslateAction.gTranslator(text: "")
-
-        override init(_ parent: WKScriptsSetup) {
-            super.init(parent)
-
-            $selectedText
-                .debounce(for: 0.5, scheduler: RunLoop.main)
-                .removeDuplicates()
-                .sink { [weak self] action in
-                    guard let self = self else { return }
-                    let text = action.getText()
-                    if text != "" {
-                        print("\(self.theClassName)_$selectedText")
-                        self.store.translateAction.addAll(text: text, except: .yTranslator)
-                    }
-                }
-                .store(in: &cancellableSet)
-        }
-    }
-
-    func makeCoordinator() -> Coordinator {
-        makeCoordinator(coordinator: Coordinator(self))
+    func makeCoordinator() -> WKCoordinator {
+        makeCoordinator(coordinator: WKCoordinator(self, currentView: .yTranslator))
     }
 
     func makeView(context: Context) -> WKPageView {
@@ -87,24 +66,5 @@ struct YTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
         let lang = queryItems?.last(where: { $0.name == "lang" })?.value
 
         return (lang)
-    }
-}
-
-extension YTranslatorRepresenter.Coordinator: WKScriptMessageHandler {
-    func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard let event = getEvent(data: message.body) else { return }
-        var text: String { event.extra?.selectedText ?? "" }
-
-        switch event.name {
-        case "selectionchange":
-            guard let text = event.extra?.selectedText else { return }
-            selectedText = .reverso(text: text)
-        case "keydown":
-            if event.extra?.keyCode == 18 { // Alt
-                SpeechSynthesizer.speak(text: text, stopSpeaking: true, isVoiceEnabled: true)
-            }
-        default:
-            print("webkit.messageHandlers.\(event.name).postMessage() isn't found")
-        }
     }
 }

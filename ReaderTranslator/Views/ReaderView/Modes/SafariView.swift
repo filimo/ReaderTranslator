@@ -52,8 +52,8 @@ struct SafariView: View {
                 return
             }
             if extra.altKey == true, extra.keyCode == 83 { // Alt+s
-                store.canSafariSendSelectedText.toggle()
-                if store.canSafariSendSelectedText {
+                ViewsStore.toggleSafari()
+                if ViewsStore.enabledSafari {
                     store.translateAction.add(.gTranslator(text: event.extra?.selectedText ?? ""))
                 }
                 return
@@ -77,7 +77,7 @@ struct SafariView: View {
     }
 
     private func onMessageChanged_selectionchange(event: DOMEvent, isSpeaking: Bool = true) {
-        if store.canSafariSendSelectedText {
+        if ViewsStore.enabledSafari {
             if let extra = event.extra,
                 extra.altKey != true, extra.metaKey != true {
                 let text = event.extra?.selectedText ?? ""
@@ -87,14 +87,14 @@ struct SafariView: View {
     }
 
     private func onMessageChanged_addNewPhraseBefore(event: DOMEvent) {
-        if store.canSafariSendSelectedText {
+        if ViewsStore.enabledSafari {
             guard let text = event.extra?.selectedText else { return }
             store.translateAction.addAll(text: "\(text) \(store.translateAction.getText())")
         }
     }
 
     private func onMessageChanged_addNewPhraseAfter(event: DOMEvent) {
-        if store.canSafariSendSelectedText {
+        if ViewsStore.enabledSafari {
             guard let text = event.extra?.selectedText else { return }
             store.translateAction.addAll(text: "\(store.translateAction.getText()) \(text)")
         }

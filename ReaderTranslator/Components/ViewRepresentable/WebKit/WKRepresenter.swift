@@ -13,7 +13,7 @@ import WebKit
 struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var lastWebPage: String
 
-    static var coorinator: Coordinator?
+    static var coorinator: WKCoordinator?
     static var pageView: WKPageView { views[WebStore.shared.currentTab]! }
     static var hasSentTranslateAction = false
 
@@ -22,25 +22,8 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
 
     private static var views = [Int: WKPageView]()
 
-    class Coordinator: WKCoordinator {
-        @Published var selectedText = ""
-
-        override init(_ parent: WKScriptsSetup) {
-            super.init(parent)
-            print("\(theClassName)_Coordinator_init")
-
-            $selectedText
-                .debounce(for: 0.5, scheduler: RunLoop.main)
-                .removeDuplicates()
-                .sink { text in
-                    if text != "" { self.store.translateAction.addAll(text: text) }
-                }
-                .store(in: &cancellableSet)
-        }
-    }
-
-    func makeCoordinator() -> Coordinator {
-        makeCoordinator(coordinator: Coordinator(self))
+    func makeCoordinator() -> WKCoordinator {
+        makeCoordinator(coordinator: WKCoordinator(self, currentView: .web))
     }
 
     func makeView(context: Context) -> WKPageView {
@@ -73,23 +56,6 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if let url = webView.url?.absoluteString { webView.newUrl = url }
             self.webStore.canGoBack = webView.canGoBack
-        }
-    }
-}
-
-extension WKRepresenter.Coordinator: WKScriptMessageHandler {
-    func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard let event = getEvent(data: message.body) else { return }
-
-        switch event.name {
-        case "selectionchange":
-            selectedText = event.extra?.selectedText ?? ""
-        case "keydown":
-            if event.extra?.keyCode == 18 { // Alt
-                SpeechSynthesizer.speak(text: selectedText, stopSpeaking: true, isVoiceEnabled: true)
-            }
-        default:
-            print("webkit.messageHandlers.\(event.name).postMessage() isn't found")
         }
     }
 }
