@@ -74,9 +74,13 @@ class SpeechSynthesizer {
             if stopSpeaking { return }
         }
 
-        cancellableLongmanSpeak = LongmanStore.shared.fetchInfo(text: text)
-            .sink { isSoundExist in
-                if isSoundExist {
+        cancellableLongmanSpeak = Publishers.CombineLatest(
+            LongmanStore.shared.fetchInfo(text: text),
+            CambridgeStore.shared.fetchInfo(text: text))
+            .sink { isLongmanSoundExist, isCambridgeSoundExist in
+                if isCambridgeSoundExist {
+                    CambridgeStore.shared.play()
+                }else if isLongmanSoundExist {
                     LongmanStore.shared.play()
                 } else {
                     speakByEngine(text: text, voiceName: voiceName, isVoiceEnabled: isVoiceEnabled)

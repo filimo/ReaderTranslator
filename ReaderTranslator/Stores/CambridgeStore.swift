@@ -1,9 +1,9 @@
 //
-//  Longman.swift
+//  CambridgeStore.swift
 //  ReaderTranslator
 //
-//  Created by Viktor Kushnerov on 7/12/19.
-//  Copyright © 2019 Viktor Kushnerov. All rights reserved.
+//  Created by Viktor Kushnerov on 9/3/20.
+//  Copyright © 2020 Viktor Kushnerov. All rights reserved.
 //
 
 import AVFoundation
@@ -15,32 +15,27 @@ import SwiftUI
 private var cancellable: AnyCancellable?
 private var player: AVAudioNetPlayer?
 
-struct LongmanSentence: Hashable {
+struct CambridgeSentence: Hashable {
     static let empty = Self(text: "No sentences", url: URL.empty)
 
     let text: String
     let url: URL
 }
 
-typealias LongmanSentences = [LongmanSentence]
+typealias CambridgeSentences = [CambridgeSentence]
 
-final class LongmanStore: NSObject, ObservableObject {
+final class CambridgeStore: NSObject, ObservableObject {
     private override init() { super.init() }
-    static var shared = LongmanStore()
+    static var shared = CambridgeStore()
 
     @Published var audioRate: Float = 1
     @Published var word = ""
 
-    @Published var sentences: LongmanSentences = [] {
-        didSet {
-            print("longmanSentences: ", sentences)
-        }
-    }
-
-    private let defaultURL = "https://www.ldoceonline.com/dictionary/"
+    private let defaultURL = "https://dictionary.cambridge.org/dictionary/english-russian/"
+    private var audioUrls = Stack<URL>()
 
     func fetchInfo(text: String) -> AnyPublisher<Bool, Never> {
-        let text = text.replacingOccurrences(of: " ", with: "-")
+        let text = text.encodeUrl
         guard let url = URL(string: "\(defaultURL)\(text)") else {
             return Just(false).eraseToAnyPublisher()
         }
@@ -51,15 +46,10 @@ final class LongmanStore: NSObject, ObservableObject {
                 do {
                     let document = try SwiftSoup.parse(html)
 
-                    Store.shared.audioUrls.removeAll()
-                    let isBreExist = self.addAudio(selector: ".brefile", document: document)
-                    let isAmeExist = self.addAudio(selector: ".amefile", document: document)
+                    self.audioUrls.removeAll()
+                    let isBreExist = self.addAudio(selector: ".uk [type='audio/mpeg']", document: document)
+                    let isAmeExist = self.addAudio(selector: ".us [type='audio/mpeg']", document: document)
                     
-                    RunLoop.main.perform {
-                        self.sentences.removeAll()
-                        self.addSentences(document: document)
-                    }
-
                     return isBreExist || isAmeExist
                 } catch {
                     Logger.log(type: .error, value: error)
@@ -74,40 +64,16 @@ final class LongmanStore: NSObject, ObservableObject {
     }
 }
 
-extension LongmanStore {
-    private func addSentences(document: Document) {
-        do {
-            let sentences = try document.select(".exafile")
-
-            let longmanSentences = sentences.map { elm -> LongmanSentence? in
-                do {
-                    let string = try elm.attr("data-src-mp3")
-                    guard let url = URL(string: string) else { return nil }
-                    guard let text = try elm.parent()?.text() else { return nil }
-
-                    return LongmanSentence(text: text, url: url)
-                } catch {
-                    Logger.log(type: .error, value: error)
-                    return nil
-                }
-            }.compactMap { $0 }
-            RunLoop.main.perform {
-                self.sentences = longmanSentences
-            }
-        } catch {
-            Logger.log(type: .error, value: error)
-        }
-    }
-
+extension CambridgeStore {
     func addAudio(url: URL) {
-        Store.shared.audioUrls.push(url)
+        audioUrls.push(url)
     }
 
     private func addAudio(selector: String, document: Document) -> Bool {
         do {
             guard let elm = try document.select(selector).first else { return false }
-            let string = try elm.attr("data-src-mp3")
-            guard let url = URL(string: string) else { return false }
+            let string = try elm.attr("src")
+            guard let url = URL(string: "https://dictionary.cambridge.org/\(string)") else { return false }
 
             addAudio(url: url)
             return true
@@ -118,9 +84,9 @@ extension LongmanStore {
     }
 }
 
-extension LongmanStore {
+extension CambridgeStore {
     func play() {
-        guard let url = Store.shared.audioUrls.pop() else { return }
+        guard let url = audioUrls.pop() else { return }
 
         if AudioStore.shared.isSpeakWords {
             player = AVAudioNetPlayer()
@@ -130,7 +96,7 @@ extension LongmanStore {
     }
 }
 
-extension LongmanStore: AVAudioNetPlayerDelegate {
+extension CambridgeStore: AVAudioNetPlayerDelegate {
     func audioPlayerLoadDidFinishDidOccur() {}
 
     func audioPlayerCreateSuccessOccur(player: AVAudioPlayer) {

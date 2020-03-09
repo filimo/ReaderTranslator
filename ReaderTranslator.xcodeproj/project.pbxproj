@@ -125,6 +125,9 @@
 		F058C7FE2397FBCE002C84F0 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F058C800239930F2002C84F0 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058C7FF23992F92002C84F0 /* BookmarksView.swift */; };
 		F058C801239930F3002C84F0 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058C7FF23992F92002C84F0 /* BookmarksView.swift */; };
+		F0623E422416D1C2005BC86C /* CambridgeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0623E412416D1C2005BC86C /* CambridgeStore.swift */; };
+		F0623E432416D1CA005BC86C /* CambridgeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0623E412416D1C2005BC86C /* CambridgeStore.swift */; };
+		F0623E442416D1D6005BC86C /* CambridgeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0623E412416D1C2005BC86C /* CambridgeStore.swift */; };
 		F064B4A423CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
 		F064B4A523CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
 		F064B4A623CC569400F28314 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064B4A323CC569400F28314 /* CGFloat.swift */; };
@@ -645,6 +648,7 @@
 		F058C7F12397A180002C84F0 /* longman.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = longman.json; sourceTree = "<group>"; };
 		F058C7FF23992F92002C84F0 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F062029423812264002EEAEE /* YTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorRepresenter.swift; sourceTree = "<group>"; };
+		F0623E412416D1C2005BC86C /* CambridgeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CambridgeStore.swift; sourceTree = "<group>"; };
 		F064B4A323CC569400F28314 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		F064B4A923CC598400F28314 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		F065095623ADF6A3003D2410 /* AudioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStore.swift; sourceTree = "<group>"; };
@@ -1253,6 +1257,7 @@
 				F065095D23AE0353003D2410 /* ViewsStore.swift */,
 				F0418B97239A32FD00B59C66 /* BookmarksStore.swift */,
 				F0553727239BE3C700BA24BA /* LongmanStore.swift */,
+				F0623E412416D1C2005BC86C /* CambridgeStore.swift */,
 				F0039EC223447E24002F3F95 /* SharedContainer.swift */,
 				F06DB115234611BB00C2DE90 /* ExtensionManager.swift */,
 			);
@@ -1964,6 +1969,7 @@
 				F0C4EDA7234926D400CCD97A /* ReversoRepresenter.swift in Sources */,
 				F0EE0A1023478C86004A5EAD /* DOMEvent.swift in Sources */,
 				F0C4EDAA2349271C00CCD97A /* ViewRepresentable.swift in Sources */,
+				F0623E432416D1CA005BC86C /* CambridgeStore.swift in Sources */,
 				F0AD8B1F236414070017C22F /* TranslateAction.swift in Sources */,
 				F06DB1002344856300C2DE90 /* Store.swift in Sources */,
 				F0BB43742344844800ADBEF1 /* PDFKitView.swift in Sources */,
@@ -2235,6 +2241,7 @@
 				F099421A23AD43D8003CF1EB /* YTranslatorView.swift in Sources */,
 				F099422D23AD44E7003CF1EB /* AudioPlayer.swift in Sources */,
 				F0C02D4823B27CA100B393A5 /* Logger.swift in Sources */,
+				F0623E442416D1D6005BC86C /* CambridgeStore.swift in Sources */,
 				F099423123AD450A003CF1EB /* WKPageView.swift in Sources */,
 				F099422F23AD44F9003CF1EB /* OpenPanel.swift in Sources */,
 				F099422423AD445F003CF1EB /* WebViewContainer.swift in Sources */,
@@ -2267,6 +2274,7 @@
 				F0F256BD233D309F00C9D719 /* String.swift in Sources */,
 				F0AB12A3233F5798005B9F2A /* ReaderView_Pdf.swift in Sources */,
 				F08D9404239C0E4400147ECE /* BookmarksView_List_Row.swift in Sources */,
+				F0623E422416D1C2005BC86C /* CambridgeStore.swift in Sources */,
 				F0AD8B1E236414070017C22F /* TranslateAction.swift in Sources */,
 				F0EDFB25239E49480048CFD1 /* AudioPlayer.swift in Sources */,
 				F02B04B723A2894700F93B84 /* PeerBrowser.swift in Sources */,

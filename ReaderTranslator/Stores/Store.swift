@@ -12,7 +12,9 @@ import SwiftUI
 final class Store: ObservableObject {
     private init() {}
     static var shared = Store()
-
+    
+    var audioUrls = Stack<URL>()
+    
     let maxViewWidth: CGFloat = 400
 
     @Published var translateAction = TranslateAction()
