@@ -8,11 +8,11 @@
 
 import SwiftUI
 
-struct StatusBarView_Voice_Volume: View {
+struct SettingsView_Voice_Rate: View {
     @ObservedObject var store = AudioStore.shared
 
     var body: some View {
-        Group {
+        HStack {
             Text("Rate:")
             #if os(macOS)
                 TextField(
@@ -35,8 +35,8 @@ struct StatusBarView_Voice_Volume: View {
     }
 }
 
-struct StatusBarView_Voice_Volume_Previews: PreviewProvider {
+struct SettingsView_Voice_Volume_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_Voice_Volume()
+        SettingsView_Voice_Rate()
     }
 }

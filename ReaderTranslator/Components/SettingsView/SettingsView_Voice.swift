@@ -8,21 +8,21 @@
 
 import SwiftUI
 
-struct StatusBarView_Voice: View {
+struct SettingsView_Voice: View {
     var body: some View {
-        Group {
-            Divider().fixedSize()
-            Text("Voice: ")
-            StatusBarView_Voice_Select()
-            StatusBarView_Voice_Favorite()
-            StatusBarView_Voice_Toggle()
-            StatusBarView_Voice_Volume()
+        VStack {
+            HStack {
+                SettingsView_Voice_Select()
+                SettingsView_Voice_Favorite()
+            }
+            SettingsView_Voice_Toggle()
+            SettingsView_Voice_Rate()
         }
     }
 }
 
 struct StatusBarView_Voice_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_Voice()
+        SettingsView_Voice()
     }
 }

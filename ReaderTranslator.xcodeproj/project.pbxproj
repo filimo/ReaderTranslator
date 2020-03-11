@@ -162,8 +162,8 @@
 		F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */; };
 		F06DB10D23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
 		F06DB10E23450B6000C2DE90 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB10C23450B6000C2DE90 /* View.swift */; };
-		F06DB1122345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */; };
-		F06DB1132345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */; };
+		F06DB1122345ECC000C2DE90 /* SettingsView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* SettingsView_Voice_Toggle.swift */; };
+		F06DB1132345ECC000C2DE90 /* SettingsView_Voice_Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB1112345ECC000C2DE90 /* SettingsView_Voice_Toggle.swift */; };
 		F06DB117234611BB00C2DE90 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB115234611BB00C2DE90 /* ExtensionManager.swift */; };
 		F06DB1182346172D00C2DE90 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DB115234611BB00C2DE90 /* ExtensionManager.swift */; };
 		F06EAF8F2393A4E100AAE1A4 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */; };
@@ -403,10 +403,10 @@
 		F0AB12A3233F5798005B9F2A /* ReaderView_Pdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A2233F5798005B9F2A /* ReaderView_Pdf.swift */; };
 		F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */; };
 		F0AB12AA233F58A2005B9F2A /* StatusBarView_Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */; };
-		F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */; };
-		F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
-		F0AB12B4233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */; };
-		F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */; };
+		F0AB12B0233F5968005B9F2A /* SettingsView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* SettingsView_Voice.swift */; };
+		F0AB12B2233F597B005B9F2A /* SettingsView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* SettingsView_Voice_Select.swift */; };
+		F0AB12B4233F599C005B9F2A /* SettingsView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* SettingsView_Voice_Favorite.swift */; };
+		F0AB12B6233F59B4005B9F2A /* SettingsView_Voice_Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B5233F59B4005B9F2A /* SettingsView_Voice_Rate.swift */; };
 		F0AB182523A5504200A71CA6 /* SentencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB182423A5504200A71CA6 /* SentencesView.swift */; };
 		F0AB1E4023D4231C001D937D /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB1E3F23D4231C001D937D /* PreviewView.swift */; };
 		F0AB1E4323D42350001D937D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB1E4223D42350001D937D /* Store.swift */; };
@@ -445,10 +445,10 @@
 		F0BB43772344844800ADBEF1 /* WKRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DC232E97B0007CC07B /* WKRepresenter.swift */; };
 		F0BB43782344845000ADBEF1 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D3232E9762007CC07B /* StatusBarView.swift */; };
 		F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */; };
-		F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */; };
-		F0BB437E2344845000ADBEF1 /* StatusBarView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */; };
-		F0BB437F2344845000ADBEF1 /* StatusBarView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */; };
-		F0BB43802344845000ADBEF1 /* StatusBarView_Voice_Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */; };
+		F0BB437D2344845000ADBEF1 /* SettingsView_Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12AF233F5968005B9F2A /* SettingsView_Voice.swift */; };
+		F0BB437E2344845000ADBEF1 /* SettingsView_Voice_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B1233F597B005B9F2A /* SettingsView_Voice_Select.swift */; };
+		F0BB437F2344845000ADBEF1 /* SettingsView_Voice_Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B3233F599C005B9F2A /* SettingsView_Voice_Favorite.swift */; };
+		F0BB43802344845000ADBEF1 /* SettingsView_Voice_Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12B5233F59B4005B9F2A /* SettingsView_Voice_Rate.swift */; };
 		F0BB43812344846200ADBEF1 /* ReaderView_Pdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A2233F5798005B9F2A /* ReaderView_Pdf.swift */; };
 		F0BB43822344846700ADBEF1 /* ReaderView_Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */; };
 		F0BB43832344846C00ADBEF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69A4232E9710007CC07B /* ContentView.swift */; };
@@ -488,6 +488,8 @@
 		F0C6657D2351A70B0087B6F2 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C6657B2351A70B0087B6F2 /* Collection.swift */; };
 		F0C706D0239ACE610061F790 /* BookmarksView_Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */; };
 		F0C706D1239ACE620061F790 /* BookmarksView_Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */; };
+		F0C934A824187D0C0006E31D /* SettingsView_Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C934A724187D0C0006E31D /* SettingsView_Views.swift */; };
+		F0C934A924187D0C0006E31D /* SettingsView_Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C934A724187D0C0006E31D /* SettingsView_Views.swift */; };
 		F0D2E334234BA49000D95994 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
 		F0D2E335234BA49000D95994 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
 		F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
@@ -662,7 +664,7 @@
 		F06DB1032344975E00C2DE90 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		F06DB109234504FD00C2DE90 /* EditorNSTextRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNSTextRepresentable.swift; sourceTree = "<group>"; };
 		F06DB10C23450B6000C2DE90 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Toggle.swift; sourceTree = "<group>"; };
+		F06DB1112345ECC000C2DE90 /* SettingsView_Voice_Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView_Voice_Toggle.swift; sourceTree = "<group>"; };
 		F06DB115234611BB00C2DE90 /* ExtensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionManager.swift; sourceTree = "<group>"; };
 		F06EAF8E2393A4E100AAE1A4 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F06EE7C023AFE98000CF989E /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
@@ -749,10 +751,10 @@
 		F0AB12A2233F5798005B9F2A /* ReaderView_Pdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Pdf.swift; sourceTree = "<group>"; };
 		F0AB12A4233F57B3005B9F2A /* ReaderView_Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Web.swift; sourceTree = "<group>"; };
 		F0AB12A9233F58A2005B9F2A /* StatusBarView_Zoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Zoom.swift; sourceTree = "<group>"; };
-		F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice.swift; sourceTree = "<group>"; };
-		F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Select.swift; sourceTree = "<group>"; };
-		F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Favorite.swift; sourceTree = "<group>"; };
-		F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Voice_Volume.swift; sourceTree = "<group>"; };
+		F0AB12AF233F5968005B9F2A /* SettingsView_Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView_Voice.swift; sourceTree = "<group>"; };
+		F0AB12B1233F597B005B9F2A /* SettingsView_Voice_Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView_Voice_Select.swift; sourceTree = "<group>"; };
+		F0AB12B3233F599C005B9F2A /* SettingsView_Voice_Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView_Voice_Favorite.swift; sourceTree = "<group>"; };
+		F0AB12B5233F59B4005B9F2A /* SettingsView_Voice_Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView_Voice_Rate.swift; sourceTree = "<group>"; };
 		F0AB182423A5504200A71CA6 /* SentencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentencesView.swift; sourceTree = "<group>"; };
 		F0AB1E3F23D4231C001D937D /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		F0AB1E4223D42350001D937D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 		F0C53177234B3EE1003174B5 /* WKCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCoordinator.swift; sourceTree = "<group>"; };
 		F0C6657B2351A70B0087B6F2 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_Controls.swift; sourceTree = "<group>"; };
+		F0C934A724187D0C0006E31D /* SettingsView_Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView_Views.swift; sourceTree = "<group>"; };
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
 		F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
@@ -981,18 +984,6 @@
 				F00644442341E22D006BCA94 /* ReaderTranslatorSafari.appex */,
 			);
 			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */ = {
-			isa = PBXGroup;
-			children = (
-				F0AB12AF233F5968005B9F2A /* StatusBarView_Voice.swift */,
-				F0AB12B1233F597B005B9F2A /* StatusBarView_Voice_Select.swift */,
-				F0AB12B3233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift */,
-				F0AB12B5233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift */,
-				F06DB1112345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift */,
-			);
-			path = StatusBarView_Voice;
 			sourceTree = "<group>";
 		};
 		F06EAF902393A7EF00AAE1A4 /* Components */ = {
@@ -1269,10 +1260,10 @@
 			children = (
 				F0753E5B236DF9EA00D0C2D9 /* VideoPlayer */,
 				F02989EA2360486500DF722E /* ViewRepresentable */,
+				F0C934A624187CC90006E31D /* SettingsView */,
 				F0AA69DA232E97AF007CC07B /* SpeechSynthesizer.swift */,
 				F0C36AA02359D50A001E396C /* Clipboard.swift */,
 				F001A700235E095700617573 /* ServiceProvider.swift */,
-				F04B6AA823D379C200CEC7DA /* SettingsView.swift */,
 				F02989EB2360488800DF722E /* OpenPanel.swift */,
 				F08EBAEF23952AD6009025D3 /* WebViewContainer.swift */,
 				F08EBB0F23956D80009025D3 /* NetworkManager.swift */,
@@ -1303,7 +1294,6 @@
 		F0AB12A6233F57EB005B9F2A /* StatusBarView */ = {
 			isa = PBXGroup;
 			children = (
-				F06DB1142345ED3800C2DE90 /* StatusBarView_Voice */,
 				F0AA69D3232E9762007CC07B /* StatusBarView.swift */,
 				F04B6AAB23D37B2600CEC7DA /* StatusBarView_SettingsView.swift */,
 				F0369E3123A2D92C00C33139 /* StatusBarView_Sync.swift */,
@@ -1412,6 +1402,20 @@
 				F0EDFB21239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift */,
 			);
 			path = ReaderView_Pdf;
+			sourceTree = "<group>";
+		};
+		F0C934A624187CC90006E31D /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				F04B6AA823D379C200CEC7DA /* SettingsView.swift */,
+				F0C934A724187D0C0006E31D /* SettingsView_Views.swift */,
+				F0AB12AF233F5968005B9F2A /* SettingsView_Voice.swift */,
+				F0AB12B1233F597B005B9F2A /* SettingsView_Voice_Select.swift */,
+				F0AB12B3233F599C005B9F2A /* SettingsView_Voice_Favorite.swift */,
+				F0AB12B5233F59B4005B9F2A /* SettingsView_Voice_Rate.swift */,
+				F06DB1112345ECC000C2DE90 /* SettingsView_Voice_Toggle.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		F0EDFB1D239E2EFE0048CFD1 /* BookmarksView_Controls */ = {
@@ -1962,7 +1966,7 @@
 				F064B4AA23CC598400F28314 /* NumberFormatter.swift in Sources */,
 				F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */,
 				F0C36A9E2359C78A001E396C /* Array.swift in Sources */,
-				F0BB437F2344845000ADBEF1 /* StatusBarView_Voice_Favorite.swift in Sources */,
+				F0BB437F2344845000ADBEF1 /* SettingsView_Voice_Favorite.swift in Sources */,
 				F0C6657D2351A70B0087B6F2 /* Collection.swift in Sources */,
 				F02B04C023A2898300F93B84 /* PeerConnection.swift in Sources */,
 				F0BB43762344844800ADBEF1 /* GTranslatorRepresenter.swift in Sources */,
@@ -1977,7 +1981,7 @@
 				F0BB43782344845000ADBEF1 /* StatusBarView.swift in Sources */,
 				F0AF8D1023D37E9000E8E4E2 /* RoundedEdge.swift in Sources */,
 				F0BB436F2344843400ADBEF1 /* Image.swift in Sources */,
-				F0BB43802344845000ADBEF1 /* StatusBarView_Voice_Volume.swift in Sources */,
+				F0BB43802344845000ADBEF1 /* SettingsView_Voice_Rate.swift in Sources */,
 				F04C831023617BE6003A25B4 /* NSObject.swift in Sources */,
 				F0BB43752344844800ADBEF1 /* SpeechSynthesizer.swift in Sources */,
 				F0C02D4423B27CA100B393A5 /* Logger.swift in Sources */,
@@ -1996,23 +2000,24 @@
 				F0EDFB26239E49480048CFD1 /* AudioPlayer.swift in Sources */,
 				F02B04B023A2844700F93B84 /* NWParameters.swift in Sources */,
 				F02B04B823A2894700F93B84 /* PeerBrowser.swift in Sources */,
-				F0BB437D2344845000ADBEF1 /* StatusBarView_Voice.swift in Sources */,
+				F0BB437D2344845000ADBEF1 /* SettingsView_Voice.swift in Sources */,
 				F065095E23AE03F0003D2410 /* ViewsStore.swift in Sources */,
 				F08EBB1123956D80009025D3 /* NetworkManager.swift in Sources */,
 				F001A701235E095700617573 /* ServiceProvider.swift in Sources */,
 				F0FCDD472361A8070016F23F /* CollinsView.swift in Sources */,
 				F0553729239BE3C700BA24BA /* LongmanStore.swift in Sources */,
 				F0B4843D23A8C6860031A811 /* URL.swift in Sources */,
+				F0C934A824187D0C0006E31D /* SettingsView_Views.swift in Sources */,
 				F0C706D1239ACE620061F790 /* BookmarksView_Controls.swift in Sources */,
 				F0562E0D2362025E0074ACF5 /* WikipediaView.swift in Sources */,
 				F0FCDD492361A80D0016F23F /* CollinsRepresenter.swift in Sources */,
 				F0BB43822344846700ADBEF1 /* ReaderView_Web.swift in Sources */,
-				F0BB437E2344845000ADBEF1 /* StatusBarView_Voice_Select.swift in Sources */,
+				F0BB437E2344845000ADBEF1 /* SettingsView_Voice_Select.swift in Sources */,
 				F0EDFB23239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift in Sources */,
 				F0BB436E2344843400ADBEF1 /* String.swift in Sources */,
 				F0BB43702344843900ADBEF1 /* Published.swift in Sources */,
 				F08D9405239C0E4400147ECE /* BookmarksView_List_Row.swift in Sources */,
-				F06DB1132345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */,
+				F06DB1132345ECC000C2DE90 /* SettingsView_Voice_Toggle.swift in Sources */,
 				F0BB43832344846C00ADBEF1 /* ContentView.swift in Sources */,
 				F0BB43772344844800ADBEF1 /* WKRepresenter.swift in Sources */,
 				F08EBAF123952AD6009025D3 /* WebViewContainer.swift in Sources */,
@@ -2266,7 +2271,7 @@
 			files = (
 				F0586482238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift in Sources */,
 				F0418B98239A32FD00B59C66 /* BookmarksStore.swift in Sources */,
-				F0AB12B4233F599C005B9F2A /* StatusBarView_Voice_Favorite.swift in Sources */,
+				F0AB12B4233F599C005B9F2A /* SettingsView_Voice_Favorite.swift in Sources */,
 				F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */,
 				F0C706D0239ACE610061F790 /* BookmarksView_Controls.swift in Sources */,
 				F0B4843C23A8C6860031A811 /* URL.swift in Sources */,
@@ -2278,6 +2283,7 @@
 				F0AD8B1E236414070017C22F /* TranslateAction.swift in Sources */,
 				F0EDFB25239E49480048CFD1 /* AudioPlayer.swift in Sources */,
 				F02B04B723A2894700F93B84 /* PeerBrowser.swift in Sources */,
+				F0C934A924187D0C0006E31D /* SettingsView_Views.swift in Sources */,
 				F0C53174234B06D3003174B5 /* WKScriptsSetup.swift in Sources */,
 				F025D62123B73FB1004A1D6B /* StackExchangeView.swift in Sources */,
 				F08EBB1023956D80009025D3 /* NetworkManager.swift in Sources */,
@@ -2292,13 +2298,13 @@
 				F0FCDD422361897D0016F23F /* MacmillanRepresenter.swift in Sources */,
 				F064B4A623CC569400F28314 /* CGFloat.swift in Sources */,
 				F08EBAF023952AD6009025D3 /* WebViewContainer.swift in Sources */,
-				F0AB12B6233F59B4005B9F2A /* StatusBarView_Voice_Volume.swift in Sources */,
+				F0AB12B6233F59B4005B9F2A /* SettingsView_Voice_Rate.swift in Sources */,
 				F0C0040823A899EA002B6060 /* CircleButton.swift in Sources */,
 				F0AA69D4232E9762007CC07B /* ReaderView.swift in Sources */,
 				F038B01B24124860006B8C1F /* DeepLRepresenter.swift in Sources */,
 				F0EDFB1F239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */,
-				F0AB12B0233F5968005B9F2A /* StatusBarView_Voice.swift in Sources */,
-				F0AB12B2233F597B005B9F2A /* StatusBarView_Voice_Select.swift in Sources */,
+				F0AB12B0233F5968005B9F2A /* SettingsView_Voice.swift in Sources */,
+				F0AB12B2233F597B005B9F2A /* SettingsView_Voice_Select.swift in Sources */,
 				F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */,
 				F074D42E23D5B80D00492922 /* AVAudioNetPlayer.swift in Sources */,
 				F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */,
@@ -2328,7 +2334,7 @@
 				F0AB12A5233F57B3005B9F2A /* ReaderView_Web.swift in Sources */,
 				F002C62A232FF40C00D3FC04 /* Published.swift in Sources */,
 				F040D5782336A77D004567B8 /* UserDefault.swift in Sources */,
-				F06DB1122345ECC000C2DE90 /* StatusBarView_Voice_Toggle.swift in Sources */,
+				F06DB1122345ECC000C2DE90 /* SettingsView_Voice_Toggle.swift in Sources */,
 				F0C6657C2351A70B0087B6F2 /* Collection.swift in Sources */,
 				F0FCDD482361A80C0016F23F /* CollinsRepresenter.swift in Sources */,
 				F0FCDD462361A8060016F23F /* CollinsView.swift in Sources */,

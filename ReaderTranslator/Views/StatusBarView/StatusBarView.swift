@@ -18,7 +18,6 @@ struct StatusBarView: View {
         HStack {
             StatusBarView_Zoom()
 
-            StatusBarView_Voice().padding([.top, .bottom], 5)
             StatusBarView_Safari()
             StatusBarView_Bookmarks()
             StatusBarView_ViewsEnabler()
@@ -27,7 +26,7 @@ struct StatusBarView: View {
             playbackRateView
             StatusBarView_SettingsView()
 //            StatusBarView_Sync()
-        }.padding(.trailing, 20)
+        }.padding(5)
     }
 
     private var speechHandler: some View {

@@ -15,21 +15,8 @@ struct SettingsView: View {
         Group {
             if viewStore.showSettings {
                 VStack {
-                    ForEach(AvailableView.resiableViews, id: \.self) { view in
-                        HStack {
-                            TextField(
-                                "",
-                                value: view.order,
-                                formatter: NumberFormatter.localInt
-                            ).frame(width: 20)
-                            Text(view.text).frame(width: 150, alignment: .leading)
-                            TextField(
-                                "",
-                                value: view.width,
-                                formatter: NumberFormatter.localCGFloat
-                            ).frame(width: 50)
-                        }
-                    }
+                    SettingsView_Views()
+                    SettingsView_Voice().padding([.top, .bottom], 5)
 
                     Button(
                         action: { self.viewStore.showSettings = false },

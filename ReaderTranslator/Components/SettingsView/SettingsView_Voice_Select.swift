@@ -8,11 +8,12 @@
 
 import SwiftUI
 
-struct StatusBarView_Voice_Select: View {
+struct SettingsView_Voice_Select: View {
     @ObservedObject var store = AudioStore.shared
 
     var body: some View {
-        Group {
+        HStack {
+            Text("Language: ")
             MenuButton(store.language) {
                 ForEach(SpeechSynthesizer.languages, id: \.self) { language in
                     Button(
@@ -27,6 +28,7 @@ struct StatusBarView_Voice_Select: View {
             .menuButtonStyle(BorderlessButtonMenuButtonStyle())
             .fixedSize()
 
+            Text("Voice: ")
             MenuButton(store.voiceName) {
                 ForEach(SpeechSynthesizer.getVoices(language: store.language), id: \.id) { voice in
                     Button(
@@ -46,8 +48,8 @@ struct StatusBarView_Voice_Select: View {
     }
 }
 
-struct StatusBarView_Voice_Select_Previews: PreviewProvider {
+struct SettingsView_Voice_Select_Previews: PreviewProvider {
     static var previews: some View {
-        StatusBarView_Voice_Select()
+        SettingsView_Voice_Select()
     }
 }
