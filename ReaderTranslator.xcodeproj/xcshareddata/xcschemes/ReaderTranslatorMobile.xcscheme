@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F09760B9240925680030F928"
-               BuildableName = "ReaderTranslatorMobile.app"
+               BuildableName = "RTMobile.app"
                BlueprintName = "ReaderTranslatorMobile"
                ReferencedContainer = "container:ReaderTranslator.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F09760B9240925680030F928"
-            BuildableName = "ReaderTranslatorMobile.app"
+            BuildableName = "RTMobile.app"
             BlueprintName = "ReaderTranslatorMobile"
             ReferencedContainer = "container:ReaderTranslator.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F09760B9240925680030F928"
-            BuildableName = "ReaderTranslatorMobile.app"
+            BuildableName = "RTMobile.app"
             BlueprintName = "ReaderTranslatorMobile"
             ReferencedContainer = "container:ReaderTranslator.xcodeproj">
          </BuildableReference>

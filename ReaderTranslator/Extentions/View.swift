@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
     var any: AnyView {
-        AnyView(self)
+        .init(self)
     }
 
     var theClassName: String {

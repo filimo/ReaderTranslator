@@ -496,6 +496,7 @@
 		F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */; };
 		F0DADAE5239BE8C200CFE2B1 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F0DADAE4239BE8C200CFE2B1 /* SwiftSoup */; };
+		F0E59130241A317B00CC0AA6 /* CambridgeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0623E412416D1C2005BC86C /* CambridgeStore.swift */; };
 		F0E5BC6323D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */; };
 		F0E5BC6423D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */; };
 		F0E5BC6523D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */; };
@@ -595,7 +596,7 @@
 		F00644442341E22D006BCA94 /* ReaderTranslatorSafari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = ReaderTranslatorSafari.appex; path = "/Volumes/Macintosh HD/Users/filimo/MyProjects/SwiftUI/ReaderTranslator/build/Debug/ReaderTranslatorSafari.appex"; sourceTree = "<absolute>"; };
 		F00644462341E22D006BCA94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "gtranslator-reverso-speaker.js"; sourceTree = "<group>"; };
-		F0120373239182DA008D0B47 /* ReaderTranslatorPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0120373239182DA008D0B47 /* RTPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0120375239182DA008D0B47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0120377239182DA008D0B47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F0120379239182DA008D0B47 /* PlayerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerContentView.swift; sourceTree = "<group>"; };
@@ -719,7 +720,7 @@
 		F09459DB24093230001EC43D /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		F09459DD24093E57001EC43D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		F09459E3240C0465001EC43D /* CambidgeRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CambidgeRepresenter.swift; sourceTree = "<group>"; };
-		F09760BA240925680030F928 /* ReaderTranslatorMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09760BA240925680030F928 /* RTMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09760BC240925680030F928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09760BE240925680030F928 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F09760C0240925680030F928 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -1182,10 +1183,10 @@
 				F0AA699D232E9710007CC07B /* ReaderTranslator.app */,
 				F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */,
 				F075444E23447A2700E1D88E /* ReaderTranslatorSafari.appex */,
-				F0120373239182DA008D0B47 /* ReaderTranslatorPlayer.app */,
+				F0120373239182DA008D0B47 /* RTPlayer.app */,
 				F0A2179823A9355E00968133 /* ReaderTranslatorMacTests.xctest */,
 				F0AF8D1823D3907600E8E4E2 /* ReaderTranslatorShare.appex */,
-				F09760BA240925680030F928 /* ReaderTranslatorMobile.app */,
+				F09760BA240925680030F928 /* RTMobile.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1508,7 +1509,7 @@
 				F08D9401239BE95D00147ECE /* SwiftSoup */,
 			);
 			productName = ReaderTranslatorPlayer;
-			productReference = F0120373239182DA008D0B47 /* ReaderTranslatorPlayer.app */;
+			productReference = F0120373239182DA008D0B47 /* RTPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F0754436234479DA00E1D88E /* ReaderTranslatorMac */ = {
@@ -1570,7 +1571,7 @@
 				F094597024092C92001EC43D /* SwiftSoup */,
 			);
 			productName = ReaderTranslatorMobile;
-			productReference = F09760BA240925680030F928 /* ReaderTranslatorMobile.app */;
+			productReference = F09760BA240925680030F928 /* RTMobile.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F0A2179723A9355E00968133 /* ReaderTranslatorMacTests */ = {
@@ -2144,6 +2145,7 @@
 				F09760D32409263D0030F928 /* WKPageView.swift in Sources */,
 				F09760DF240927C60030F928 /* Logger.swift in Sources */,
 				F094599E24092DFA001EC43D /* MacmillanRepresenter.swift in Sources */,
+				F0E59130241A317B00CC0AA6 /* CambridgeStore.swift in Sources */,
 				F094598824092D3C001EC43D /* PdfStore.swift in Sources */,
 				F09760BF240925680030F928 /* SceneDelegate.swift in Sources */,
 				F09760EF24092C070030F928 /* Store.swift in Sources */,
@@ -2493,7 +2495,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorPlayer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RTPlayer;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2515,7 +2517,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorPlayer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RTPlayer;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2640,7 +2642,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMobile;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RTMobile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2661,7 +2663,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMobile;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RTMobile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

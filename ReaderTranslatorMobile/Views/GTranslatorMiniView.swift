@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct GTranslatorMiniView: View {
-    @ObservedObject private var store = Store.shared
+    @ObservedObject private var store: Store = .shared
 
     var body: some View {
         GTranslatorRepresenter(selectedText: self.$store.translateAction)
