@@ -22,20 +22,11 @@ struct StatusBarView: View {
             StatusBarView_Bookmarks()
             StatusBarView_ViewsEnabler()
 //            gTranslatorNavbarView
-            speechHandler
+            SpeechHandlerView()
             playbackRateView
             StatusBarView_SettingsView()
 //            StatusBarView_Sync()
         }.padding(5)
-    }
-
-    private var speechHandler: some View {
-        if case let .speak(text) = self.store.translateAction {
-            self.store.translateAction.next()
-            SpeechSynthesizer.speak(text: text)
-        }
-
-        return EmptyView()
     }
 
     private var playbackRateView: some View {
