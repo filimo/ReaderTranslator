@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         if case let .speak(text) = self.store.translateAction {
             store.translateAction.next()
-            SpeechSynthesizer.speak(text: text)
+            SpeechSynthesizer.speak(text: text, enabledSpeakByEngine: false)
         }
 
         return HStack {

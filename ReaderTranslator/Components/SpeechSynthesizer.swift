@@ -67,7 +67,8 @@ class SpeechSynthesizer {
         text: String = Store.shared.translateAction.getText(),
         voiceName: String = AudioStore.shared.voiceName,
         stopSpeaking: Bool = false,
-        isVoiceEnabled: Bool = AudioStore.shared.isSpeakSentences
+        isVoiceEnabled: Bool = AudioStore.shared.isSpeakSentences,
+        enabledSpeakByEngine: Bool = true
     ) {
         if speechSynthesizer.isSpeaking {
             SpeechSynthesizer.stop()
@@ -77,15 +78,17 @@ class SpeechSynthesizer {
         cancellableLongmanSpeak = Publishers.CombineLatest(
             LongmanStore.shared.fetchInfo(text: text),
             CambridgeStore.shared.fetchInfo(text: text))
-            .sink { isLongmanSoundExist, isCambridgeSoundExist in
-                if isCambridgeSoundExist {
-                    CambridgeStore.shared.play()
-                }else if isLongmanSoundExist {
-                    LongmanStore.shared.play()
-                } else {
+        .sink { isLongmanSoundExist, isCambridgeSoundExist in
+            if isCambridgeSoundExist {
+                CambridgeStore.shared.play()
+            } else if isLongmanSoundExist {
+                LongmanStore.shared.play()
+            } else {
+                if enabledSpeakByEngine {
                     speakByEngine(text: text, voiceName: voiceName, isVoiceEnabled: isVoiceEnabled)
                 }
             }
+        }
     }
 
     private static func speakByEngine(text: String, voiceName: String, isVoiceEnabled: Bool) {

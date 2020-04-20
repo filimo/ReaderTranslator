@@ -102,7 +102,6 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 **1.13.0**
 Implemeted iPadOS target project
 
-Release_1.13.0_1.jpeg
 ![](files/Release_1.13.0_1.jpeg)
 
 **1.12.2**
