@@ -24,6 +24,7 @@ struct ContentView: View {
         return HStack {
             WebView()
             GTranslatorView()
+                .aspectRatio(0.5, contentMode: .fit)
         }
     }
 }
@@ -31,5 +32,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewLayout(.fixed(width: 2388 / 3.0, height: 1668 / 3.0))
     }
 }
