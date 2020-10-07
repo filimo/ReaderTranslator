@@ -57,10 +57,10 @@ struct YTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
         }
     }
 
-    private func getParams(url: URL?) -> (String?) {
+    private func getParams(url: URL?) -> String? {
         let url = url?.absoluteString ?? defaultURL
 
-        guard let urlComponent = URLComponents(string: url) else { return (nil) }
+        guard let urlComponent = URLComponents(string: url) else { return nil }
         let queryItems = urlComponent.queryItems
 
         let lang = queryItems?.last(where: { $0.name == "lang" })?.value

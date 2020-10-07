@@ -17,7 +17,7 @@ struct SpeechHandlerView: View {
             SpeechSynthesizer.speak(text: text)
         }
 
-        return EmptyView()
+        return Text("")
     }
 }
 
