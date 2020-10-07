@@ -199,6 +199,8 @@
 		F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F075445523447A2800E1D88E /* SafariExtensionViewController.xib */; };
 		F075445A23447A2800E1D88E /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */; };
+		F07C3B45252D7F25002B8B1A /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07C3B44252D7F25002B8B1A /* Debug.swift */; };
+		F07C3B4E252D7F2E002B8B1A /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07C3B44252D7F25002B8B1A /* Debug.swift */; };
 		F07CD2D8244CDE0F00BCBF71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07CD2D7244CDE0F00BCBF71 /* AppDelegate.swift */; };
 		F07CD2DA244CDE0F00BCBF71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07CD2D9244CDE0F00BCBF71 /* SceneDelegate.swift */; };
 		F07CD2DC244CDE0F00BCBF71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07CD2DB244CDE0F00BCBF71 /* ContentView.swift */; };
@@ -763,6 +765,7 @@
 		F075445923447A2800E1D88E /* reader-translator.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "reader-translator.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		F075445D23447A2800E1D88E /* ReaderTranslatorSafari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderTranslatorSafari.entitlements; sourceTree = "<group>"; };
+		F07C3B44252D7F25002B8B1A /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		F07CD2D5244CDE0F00BCBF71 /* ReaderTranslatorIPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorIPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07CD2D7244CDE0F00BCBF71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F07CD2D9244CDE0F00BCBF71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1583,6 +1586,7 @@
 		F0F256BB233D307C00C9D719 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				F07C3B44252D7F25002B8B1A /* Debug.swift */,
 				F0C02D4323B27CA100B393A5 /* Logger.swift */,
 				F06DB10C23450B6000C2DE90 /* View.swift */,
 				F0EDE34C23641B1300E0B81C /* Stack.swift */,
@@ -2268,6 +2272,7 @@
 				F07CD307244CE47800BCBF71 /* BookmarksStore.swift in Sources */,
 				F07CD31C244CE57800BCBF71 /* DirectoryObserver.swift in Sources */,
 				F07CD312244CE50400BCBF71 /* NSObject.swift in Sources */,
+				F07C3B4E252D7F2E002B8B1A /* Debug.swift in Sources */,
 				F026D3AD244CE7780085BA72 /* WKRepresenter.swift in Sources */,
 				F07CD2FD244CE43000BCBF71 /* CollinsView.swift in Sources */,
 				F07CD310244CE4E200BCBF71 /* WebStore.swift in Sources */,
@@ -2515,6 +2520,7 @@
 				F0418B98239A32FD00B59C66 /* BookmarksStore.swift in Sources */,
 				F0AB12B4233F599C005B9F2A /* SettingsView_Voice_Favorite.swift in Sources */,
 				F0AA69A1232E9710007CC07B /* AppDelegate.swift in Sources */,
+				F07C3B45252D7F25002B8B1A /* Debug.swift in Sources */,
 				F0C706D0239ACE610061F790 /* BookmarksView_Controls.swift in Sources */,
 				F0B4843C23A8C6860031A811 /* URL.swift in Sources */,
 				F0EDFB22239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift in Sources */,
@@ -2885,7 +2891,7 @@
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReaderTranslatorIPad/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2906,7 +2912,7 @@
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReaderTranslatorIPad/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
