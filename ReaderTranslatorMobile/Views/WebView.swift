@@ -15,19 +15,49 @@ struct WebView: View {
     var body: some View {
         VStack {
             HStack {
+                Button(
+                    action: {
+                        WKRepresenter.currentWebView?.historyBack()
+                    },
+                    label: { Image(systemName: "chevron.left") }
+                )
+                .padding(5)
+                .border(Color.black)
+
+                Button(
+                    action: {
+                        WKRepresenter.currentWebView?.historyForward()
+                    },
+                    label: { Image(systemName: "chevron.right") }
+                )
+                .padding(5)
+                .border(Color.black)
+
                 TextField(
                     "URL",
                     text: $url,
-                    onCommit: { self.webStore.lastWebPage = self.url })
-                Button(action: {
-                    self.url = Clipboard.string
-                    self.webStore.lastWebPage = self.url
-                }, label: { Image(systemName: "doc.on.clipboard") })
+                    onCommit: { webStore.lastWebPage = url }
+                )
+
+
+                Button(
+                    action: {
+                        url = Clipboard.string
+                        webStore.lastWebPage = url
+                    },
+                    label: { Image(systemName: "doc.on.clipboard") }
+                )
+                .padding(5)
+                .border(Color.black)
             }
-            .padding([.leading, .trailing], 5)
+            .padding(.horizontal, 5)
+            .padding(.vertical, 2)
+            .background(Color.secondary)
+            .foregroundColor(.primary)
+
             WKRepresenter(lastWebPage: $webStore.lastWebPage)
         }
-        .onAppear { self.url = self.webStore.lastWebPage }
+        .onAppear { url = webStore.lastWebPage }
     }
 }
 

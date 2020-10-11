@@ -20,8 +20,12 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     @ObservedObject private var store = Store.shared
     @ObservedObject var webStore = WebStore.shared
 
-    private static var views = [Int: WKPageView]()
+    static private var views = [Int: WKPageView]()
 
+    static var currentWebView: WKPageView? {
+        Self.views[WebStore.shared.currentTab]
+    }
+    
     func makeCoordinator() -> WKCoordinator {
         makeCoordinator(coordinator: WKCoordinator(self, currentView: .web))
     }

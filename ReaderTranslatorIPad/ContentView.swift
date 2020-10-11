@@ -22,9 +22,12 @@ struct ContentView: View {
         }
 
         return HStack {
-            WebView()
-            GTranslatorView()
-                .aspectRatio(0.5, contentMode: .fit)
+            HStack {
+                GTranslatorView()
+                    .frame(width: 400)
+
+                WebView()
+            }
         }
     }
 }

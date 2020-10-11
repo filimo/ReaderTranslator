@@ -14,6 +14,11 @@
 		F00C7C87235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
 		F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
 		F00EFE1723A95A6D0071D962 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A9C2359C78A001E396C /* Array.swift */; };
+		F01002CE25333E3500217F17 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01002CD25333E3500217F17 /* WKWebView.swift */; };
+		F01002CF25333E3500217F17 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01002CD25333E3500217F17 /* WKWebView.swift */; };
+		F01002D025333E3500217F17 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01002CD25333E3500217F17 /* WKWebView.swift */; };
+		F01002D125333E3500217F17 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01002CD25333E3500217F17 /* WKWebView.swift */; };
+		F01002D225333E3500217F17 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01002CD25333E3500217F17 /* WKWebView.swift */; };
 		F0120376239182DA008D0B47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0120375239182DA008D0B47 /* AppDelegate.swift */; };
 		F0120378239182DA008D0B47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0120377239182DA008D0B47 /* SceneDelegate.swift */; };
 		F012037A239182DA008D0B47 /* PlayerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0120379239182DA008D0B47 /* PlayerContentView.swift */; };
@@ -670,6 +675,7 @@
 		F00644442341E22D006BCA94 /* ReaderTranslatorSafari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = ReaderTranslatorSafari.appex; path = "/Volumes/Macintosh HD/Users/filimo/MyProjects/SwiftUI/ReaderTranslator/build/Debug/ReaderTranslatorSafari.appex"; sourceTree = "<absolute>"; };
 		F00644462341E22D006BCA94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "gtranslator-reverso-speaker.js"; sourceTree = "<group>"; };
+		F01002CD25333E3500217F17 /* WKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
 		F0120373239182DA008D0B47 /* RTPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0120375239182DA008D0B47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0120377239182DA008D0B47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1605,6 +1611,7 @@
 				F064B4A323CC569400F28314 /* CGFloat.swift */,
 				F064B4A923CC598400F28314 /* NumberFormatter.swift */,
 				F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */,
+				F01002CD25333E3500217F17 /* WKWebView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -2119,6 +2126,7 @@
 				F065097423AE1146003D2410 /* LongmanStore.swift in Sources */,
 				F012037A239182DA008D0B47 /* PlayerContentView.swift in Sources */,
 				F0C0040A23A899EA002B6060 /* CircleButton.swift in Sources */,
+				F01002D025333E3500217F17 /* WKWebView.swift in Sources */,
 				F058C7F92397FA70002C84F0 /* DOMEvent.swift in Sources */,
 				F058C7F62397FA3E002C84F0 /* Set.swift in Sources */,
 			);
@@ -2183,6 +2191,7 @@
 				F001A701235E095700617573 /* ServiceProvider.swift in Sources */,
 				F0FCDD472361A8070016F23F /* CollinsView.swift in Sources */,
 				F0553729239BE3C700BA24BA /* LongmanStore.swift in Sources */,
+				F01002CE25333E3500217F17 /* WKWebView.swift in Sources */,
 				F0B4843D23A8C6860031A811 /* URL.swift in Sources */,
 				F0C934A824187D0C0006E31D /* SettingsView_Views.swift in Sources */,
 				F0C706D1239ACE620061F790 /* BookmarksView_Controls.swift in Sources */,
@@ -2301,6 +2310,7 @@
 				F07CD329244CE6AF00BCBF71 /* SafariView.swift in Sources */,
 				F07CD2F1244CE35000BCBF71 /* MerriamWebsterView.swift in Sources */,
 				F07CD2F2244CE35200BCBF71 /* StackExchangeView.swift in Sources */,
+				F01002CF25333E3500217F17 /* WKWebView.swift in Sources */,
 				F07CD325244CE65100BCBF71 /* FavoriteVoiceName.swift in Sources */,
 				F07CD30E244CE4BE00BCBF71 /* WKScriptsSetup.swift in Sources */,
 				F07CD2EB244CE2BA00BCBF71 /* StoreViewIPad.swift in Sources */,
@@ -2400,6 +2410,7 @@
 				F09760C1240925680030F928 /* ContentView.swift in Sources */,
 				F09760E22409280E0030F928 /* String.swift in Sources */,
 				F094597D24092D1B001EC43D /* StackView.swift in Sources */,
+				F01002D125333E3500217F17 /* WKWebView.swift in Sources */,
 				F038B01724116964006B8C1F /* GTranslatorMiniView.swift in Sources */,
 				F09459CA240931AC001EC43D /* WikipediaView.swift in Sources */,
 				F09459D0240931E2001EC43D /* ReversoView.swift in Sources */,
@@ -2537,6 +2548,7 @@
 				F08EBB1023956D80009025D3 /* NetworkManager.swift in Sources */,
 				F0EE0A1D2348A651004A5EAD /* PDFKitViewRepresentable.swift in Sources */,
 				F01B0198235C5EDF000CB5C1 /* DOMEvent.swift in Sources */,
+				F01002D225333E3500217F17 /* WKWebView.swift in Sources */,
 				F0305FD123812710002AC5F5 /* YTranslatorView.swift in Sources */,
 				F0AA69D5232E9762007CC07B /* StatusBarView.swift in Sources */,
 				F0EDE34D23641B1300E0B81C /* Stack.swift in Sources */,
