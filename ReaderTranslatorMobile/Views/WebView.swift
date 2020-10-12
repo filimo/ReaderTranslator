@@ -19,19 +19,21 @@ struct WebView: View {
                     action: {
                         WKRepresenter.currentWebView?.historyBack()
                     },
-                    label: { Image(systemName: "chevron.left") }
+                    label: {
+                        Image(systemName: "chevron.left")
+                            .styleButton()
+                    }
                 )
-                .padding(5)
-                .border(Color.black)
 
                 Button(
                     action: {
                         WKRepresenter.currentWebView?.historyForward()
                     },
-                    label: { Image(systemName: "chevron.right") }
+                    label: {
+                        Image(systemName: "chevron.right")
+                            .styleButton()
+                    }
                 )
-                .padding(5)
-                .border(Color.black)
 
                 TextField(
                     "URL",
@@ -39,25 +41,36 @@ struct WebView: View {
                     onCommit: { webStore.lastWebPage = url }
                 )
 
-
                 Button(
                     action: {
                         url = Clipboard.string
                         webStore.lastWebPage = url
                     },
-                    label: { Image(systemName: "doc.on.clipboard") }
+                    label: {
+                        Image(systemName: "doc.on.clipboard")
+                            .styleButton()
+                    }
                 )
-                .padding(5)
-                .border(Color.black)
             }
             .padding(.horizontal, 5)
             .padding(.vertical, 2)
-            .background(Color.secondary)
             .foregroundColor(.primary)
+            .background(Color.secondary)
 
             WKRepresenter(lastWebPage: $webStore.lastWebPage)
         }
         .onAppear { url = webStore.lastWebPage }
+    }
+}
+
+extension Image {
+    fileprivate func styleButton() -> some View {
+        resizable()
+        .scaledToFit()
+        .frame(width: 10, height: 15)
+        .padding(5)
+        .border(Color.black)
+
     }
 }
 
