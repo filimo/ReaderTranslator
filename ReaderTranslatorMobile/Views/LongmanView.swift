@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct LongmanView: View {
+    @ObservedObject private var store = Store.shared
+    
     var body: some View {
-        Text("Not implemented")
+        LongmanRepresenter(selectedText: self.$store.translateAction)
     }
 }
 

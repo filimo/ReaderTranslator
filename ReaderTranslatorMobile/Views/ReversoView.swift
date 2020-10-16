@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct ReversoView: View {
+    @ObservedObject private var store = Store.shared
+    
     var body: some View {
-        Text("Not implemented")
+        ReversoRepresenter(selectedText: self.$store.translateAction)
     }
 }
 

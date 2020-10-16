@@ -11,6 +11,12 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject private var store = Store.shared
 
+    @State var service: AvailableView = .gTranslator {
+        didSet {
+            enbaledService(service)
+        }
+    }
+
     init() {
         ViewsStore.shared.enabledViews = [.gTranslator, .web]
     }
@@ -22,13 +28,39 @@ struct ContentView: View {
         }
 
         return HStack {
-            HStack {
-                GTranslatorView()
-                    .frame(width: 400)
+            VStack {
+                Menu("TranslateBy") {
+                    Button("Google Translate", action: {
+                        service = .gTranslator
+                    })
+                    Button("ReversoContext", action: {
+                        service = .reverso
+                    })
+                    Button("Longman", action: {
+                        service = .longman
+                    })
+                    Button("Cancel", action: {})
+                }
 
-                WebView()
+                switch service {
+                case .gTranslator: GTranslatorView()
+                case .reverso: ReversoView()
+                case .longman: LongmanView()
+                default: EmptyView()
+                }
             }
+            .frame(width: 400)
+
+            WebView()
         }
+    }
+
+    private func enbaledService(_ service: AvailableView) {
+        ViewsStore.shared.enabledViews.remove(.gTranslator)
+        ViewsStore.shared.enabledViews.remove(.reverso)
+        ViewsStore.shared.enabledViews.remove(.longman)
+
+        ViewsStore.shared.enabledViews.insert(service)
     }
 }
 

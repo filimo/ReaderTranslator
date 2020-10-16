@@ -569,6 +569,9 @@
 		F0C706D1239ACE620061F790 /* BookmarksView_Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */; };
 		F0C934A824187D0C0006E31D /* SettingsView_Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C934A724187D0C0006E31D /* SettingsView_Views.swift */; };
 		F0C934A924187D0C0006E31D /* SettingsView_Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C934A724187D0C0006E31D /* SettingsView_Views.swift */; };
+		F0CFD3B32539BD4E00635677 /* ReversoRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9F35A2349228A00970C97 /* ReversoRepresenter.swift */; };
+		F0CFD3BC2539BDAB00635677 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C6657B2351A70B0087B6F2 /* Collection.swift */; };
+		F0CFD3C52539C5C200635677 /* LongmanRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */; };
 		F0D2E334234BA49000D95994 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
 		F0D2E335234BA49000D95994 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
 		F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
@@ -1163,8 +1166,8 @@
 			isa = PBXGroup;
 			children = (
 				F07CD2E9244CE22700BCBF71 /* Delegates */,
-				F07CD2DB244CDE0F00BCBF71 /* ContentView.swift */,
 				F07CD2EC244CE2C600BCBF71 /* Stores */,
+				F07CD2DB244CDE0F00BCBF71 /* ContentView.swift */,
 				F07CD2DD244CDE1100BCBF71 /* Assets.xcassets */,
 				F07CD2E2244CDE1100BCBF71 /* LaunchScreen.storyboard */,
 				F07CD2E5244CDE1100BCBF71 /* Info.plist */,
@@ -2292,6 +2295,7 @@
 				F07CD2F7244CE3DB00BCBF71 /* Store.swift in Sources */,
 				F07CD309244CE48500BCBF71 /* CircleButton.swift in Sources */,
 				F07CD306244CE47300BCBF71 /* CambidgeRepresenter.swift in Sources */,
+				F0CFD3B32539BD4E00635677 /* ReversoRepresenter.swift in Sources */,
 				F07CD303244CE46100BCBF71 /* WebViewContainer.swift in Sources */,
 				F07CD2F0244CE34600BCBF71 /* WikipediaView.swift in Sources */,
 				F07CD31F244CE5F500BCBF71 /* CambridgeStore.swift in Sources */,
@@ -2301,6 +2305,7 @@
 				F07CD30C244CE4B000BCBF71 /* WKPageView.swift in Sources */,
 				F07CD317244CE52800BCBF71 /* SpeechSynthesizer.swift in Sources */,
 				F07CD319244CE53C00BCBF71 /* String.swift in Sources */,
+				F0CFD3C52539C5C200635677 /* LongmanRepresenter.swift in Sources */,
 				F07CD31D244CE58300BCBF71 /* SentencesView_Row.swift in Sources */,
 				F07CD2F3244CE35600BCBF71 /* ReversoView.swift in Sources */,
 				F07CD30B244CE4A000BCBF71 /* AVAudioNetPlayer.swift in Sources */,
@@ -2327,6 +2332,7 @@
 				F07CD320244CE5FD00BCBF71 /* FileStore.swift in Sources */,
 				F07CD2DC244CDE0F00BCBF71 /* ContentView.swift in Sources */,
 				F07CD2EE244CE32F00BCBF71 /* Published.swift in Sources */,
+				F0CFD3BC2539BDAB00635677 /* Collection.swift in Sources */,
 				F07CD313244CE50C00BCBF71 /* ViewRepresentable.swift in Sources */,
 				F07CD2FA244CE41900BCBF71 /* DeepLView.swift in Sources */,
 				F026D3AC244CE76F0085BA72 /* WebView.swift in Sources */,
