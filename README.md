@@ -96,6 +96,11 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ![](files/Release_1.9_3.gif)
 ![](files/Release_1.9_4.png)
 
+
+## Commits:
+[291a055](https://github.com/filimo/ReaderTranslator/commit/291a05569546ca431afa2114306cb302a4ba9ad5)
+![](files/291a055.jpeg)
+
 ## Releases 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
