@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct CollinsView: View {
+    @ObservedObject private var store = Store.shared
+    
     var body: some View {
-        Text("Not implemented")
+        CollinsRepresenter(selectedText: self.$store.translateAction)
     }
 }
 

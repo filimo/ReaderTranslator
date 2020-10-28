@@ -33,6 +33,9 @@ struct ContentView: View {
                     Button("Google Translate") { service = .gTranslator }
                     Button("ReversoContext") { service = .reverso }
                     Button("Longman") { service = .longman }
+                    Button("Collins") { service = .collins }
+                    Button("Cambridge") { service = .cambridge }
+
                     Button("Cancel") {}
                 }
 
@@ -40,6 +43,8 @@ struct ContentView: View {
                     GTranslatorView().opacity(service == .gTranslator ? 1 : 0)
                     ReversoView().opacity(service == .reverso ? 1 : 0)
                     LongmanView().opacity(service == .longman ? 1 : 0)
+                    CollinsView().opacity(service == .collins ? 1 : 0)
+                    CambidgeView().opacity(service == .cambridge ? 1 : 0)
                 }
             }
             .frame(width: 400)
@@ -49,9 +54,7 @@ struct ContentView: View {
     }
 
     private func enbaledService(_ service: AvailableView) {
-        ViewsStore.shared.enabledViews.remove(.gTranslator)
-        ViewsStore.shared.enabledViews.remove(.reverso)
-        ViewsStore.shared.enabledViews.remove(.longman)
+        ViewsStore.shared.enabledViews = [.web]
 
         ViewsStore.shared.enabledViews.insert(service)
     }
