@@ -30,23 +30,16 @@ struct ContentView: View {
         return HStack {
             VStack {
                 Menu("TranslateBy") {
-                    Button("Google Translate", action: {
-                        service = .gTranslator
-                    })
-                    Button("ReversoContext", action: {
-                        service = .reverso
-                    })
-                    Button("Longman", action: {
-                        service = .longman
-                    })
-                    Button("Cancel", action: {})
+                    Button("Google Translate") { service = .gTranslator }
+                    Button("ReversoContext") { service = .reverso }
+                    Button("Longman") { service = .longman }
+                    Button("Cancel") {}
                 }
 
-                switch service {
-                case .gTranslator: GTranslatorView()
-                case .reverso: ReversoView()
-                case .longman: LongmanView()
-                default: EmptyView()
+                ZStack {
+                    GTranslatorView().opacity(service == .gTranslator ? 1 : 0)
+                    ReversoView().opacity(service == .reverso ? 1 : 0)
+                    LongmanView().opacity(service == .longman ? 1 : 0)
                 }
             }
             .frame(width: 400)
