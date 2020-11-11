@@ -57,38 +57,24 @@ extension AvailableView {
         ViewsStore.shared.viewOrder[self] ?? 0
     }
 
+    @ViewBuilder
     var view: some View {
         switch self {
-        case .wikipedia:
-            return WikipediaView().any
-        case .merriamWebster:
-            return MerriamWebsterView().any
-        case .stackExchange:
-            return StackExchangeView().any
-        case .reverso:
-            return ReversoView().any
-        case .gTranslator:
-            return GTranslatorView().any
-        case .deepL:
-            return DeepLView().any
-        case .yTranslator:
-            return YTranslatorView().any
-        case .longman:
-            return LongmanView().any
-        case .macmillan:
-            return MacmillanView().any
-        case .collins:
-            return CollinsView().any
-        case .cambridge:
-            return CambidgeView().any
-        case .bookmarks:
-            return BookmarksView().any
-        case .pdf:
-            return ReaderView_Pdf().any
-        case .web:
-            return ReaderView_Web().any
-        case .safari:
-            return SafariView().any
+        case .wikipedia: WikipediaView()
+        case .merriamWebster: MerriamWebsterView()
+        case .stackExchange: StackExchangeView()
+        case .reverso: ReversoView()
+        case .gTranslator: GTranslatorView()
+        case .deepL: DeepLView()
+        case .yTranslator: YTranslatorView()
+        case .longman: LongmanView()
+        case .macmillan: MacmillanView()
+        case .collins: CollinsView()
+        case .cambridge: CambidgeView()
+        case .bookmarks: BookmarksView()
+        case .pdf: ReaderView_Pdf()
+        case .web: ReaderView_Web()
+        case .safari: SafariView()
         }
     }
 
@@ -111,7 +97,7 @@ extension AvailableView {
         ]
         return views.sorted { $0.orderInt < $1.orderInt }
     }
-    
+
     var isEnabled: Bool {
         ViewsStore.shared.enabledViews.contains(self)
     }
