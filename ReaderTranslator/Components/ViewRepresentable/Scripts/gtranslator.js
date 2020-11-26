@@ -1,7 +1,6 @@
 (function() {
  	const css = " \
-     #source { font-size: 18px!important; } \
-     .translation { font-size: 18px!important; } \
+    .tm8pq, .V5PAJd, .J0lOec, .translation, textarea, #source { font-size: 18px!important; } \
  	"
  	
  	var style = document.createElement('style')
