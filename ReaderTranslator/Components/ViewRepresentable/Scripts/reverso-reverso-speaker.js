@@ -1,4 +1,6 @@
 (function() {
+    document.body.style.zoom = 0.8
+    
     if(!document.querySelector("#entry")) return
     
     function createElementFromHTML(htmlString) {
