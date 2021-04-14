@@ -42,11 +42,9 @@
 		F026B1E82344830200E032B9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026B1E72344830200E032B9 /* SafariView.swift */; };
 		F026D3AB244CE7170085BA72 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F026D3AA244CE7170085BA72 /* SwiftSoup */; };
 		F026D3AC244CE76F0085BA72 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459DD24093E57001EC43D /* WebView.swift */; };
-		F026D3AD244CE7780085BA72 /* WKRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DC232E97B0007CC07B /* WKRepresenter.swift */; };
 		F026D3AE244CE7910085BA72 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36AA02359D50A001E396C /* Clipboard.swift */; };
 		F026D3AF244CE79A0085BA72 /* GTranslatorMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01624116964006B8C1F /* GTranslatorMiniView.swift */; };
 		F026D3B0244CE8990085BA72 /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00A241112D8006B8C1F /* gtranslator.js */; };
-		F026D3B1244CEA0D0085BA72 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F026D3B2244CEA130085BA72 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
 		F026D3B3244CEA1F0085BA72 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F026D3B4244CEA250085BA72 /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
@@ -92,8 +90,9 @@
 		F038B02024124AC0006B8C1F /* DeepLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01D24124AC0006B8C1F /* DeepLView.swift */; };
 		F038B02124124AC0006B8C1F /* DeepLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01D24124AC0006B8C1F /* DeepLView.swift */; };
 		F038B02324126D71006B8C1F /* deep-L.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B02224126BC9006B8C1F /* deep-L.js */; };
-		F038B02924126DB4006B8C1F /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F038B02A24126DC1006B8C1F /* deep-L.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B02224126BC9006B8C1F /* deep-L.js */; };
+		F03EEC822626E058003476F0 /* WKRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EEC812626E058003476F0 /* WKRepresenter.swift */; };
+		F03EECB72626E1BC003476F0 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F03EECB62626E1BC003476F0 /* reader-translator.js */; };
 		F040512B23ABDBDB00A5240C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A9C2359C78A001E396C /* Array.swift */; };
 		F040D5782336A77D004567B8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
 		F040D57C2336BD97004567B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F040D57B2336BD97004567B8 /* README.md */; };
@@ -202,7 +201,6 @@
 		F075445223447A2800E1D88E /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075445123447A2800E1D88E /* SafariExtensionHandler.swift */; };
 		F075445423447A2800E1D88E /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075445323447A2800E1D88E /* SafariExtensionViewController.swift */; };
 		F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F075445523447A2800E1D88E /* SafariExtensionViewController.xib */; };
-		F075445A23447A2800E1D88E /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */; };
 		F07C3B45252D7F25002B8B1A /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07C3B44252D7F25002B8B1A /* Debug.swift */; };
 		F07C3B4E252D7F2E002B8B1A /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07C3B44252D7F25002B8B1A /* Debug.swift */; };
@@ -355,7 +353,6 @@
 		F09459A424092DFA001EC43D /* StackExchangeRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025D61C23B73C8B004A1D6B /* StackExchangeRepresenter.swift */; };
 		F09459A624092DFF001EC43D /* WKRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DC232E97B0007CC07B /* WKRepresenter.swift */; };
 		F09459A924092E0E001EC43D /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
-		F09459AA24092E0E001EC43D /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F09459AB24092E0E001EC43D /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F09459AC24092E0E001EC43D /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
 		F09459AD24092E0E001EC43D /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
@@ -549,8 +546,6 @@
 		F0C36A9F2359C78A001E396C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A9C2359C78A001E396C /* Array.swift */; };
 		F0C36AA12359D50A001E396C /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36AA02359D50A001E396C /* Clipboard.swift */; };
 		F0C36AA22359D50A001E396C /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36AA02359D50A001E396C /* Clipboard.swift */; };
-		F0C36AA7235ADF5E001E396C /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
-		F0C36AA8235ADF5E001E396C /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F0C4EDA42349260000CCD97A /* ReversoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A50E823492398001DCC11 /* ReversoView.swift */; };
 		F0C4EDA52349260000CCD97A /* ReversoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A50E823492398001DCC11 /* ReversoView.swift */; };
 		F0C4EDA6234926D400CCD97A /* ReversoRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9F35A2349228A00970C97 /* ReversoRepresenter.swift */; };
@@ -717,6 +712,8 @@
 		F038B01D24124AC0006B8C1F /* DeepLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLView.swift; sourceTree = "<group>"; };
 		F038B02224126BC9006B8C1F /* deep-L.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "deep-L.js"; sourceTree = "<group>"; };
 		F03D7DFD234DF59500E53E3D /* files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = files; sourceTree = "<group>"; };
+		F03EEC812626E058003476F0 /* WKRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKRepresenter.swift; sourceTree = "<group>"; };
+		F03EECB62626E1BC003476F0 /* reader-translator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "reader-translator.js"; sourceTree = "<group>"; };
 		F040D5772336A77D004567B8 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		F040D57B2336BD97004567B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F0418B97239A32FD00B59C66 /* BookmarksStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksStore.swift; sourceTree = "<group>"; };
@@ -1083,6 +1080,15 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
+		F03EEC932626E10A003476F0 /* ViewRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				F03EECB62626E1BC003476F0 /* reader-translator.js */,
+				F03EEC812626E058003476F0 /* WKRepresenter.swift */,
+			);
+			path = ViewRepresentable;
+			sourceTree = "<group>";
+		};
 		F04924372341F2F800F3C728 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -1169,6 +1175,7 @@
 			children = (
 				F07CD2E9244CE22700BCBF71 /* Delegates */,
 				F07CD2EC244CE2C600BCBF71 /* Stores */,
+				F03EEC932626E10A003476F0 /* ViewRepresentable */,
 				F07CD2DB244CDE0F00BCBF71 /* ContentView.swift */,
 				F07CD2DD244CDE1100BCBF71 /* Assets.xcassets */,
 				F07CD2E2244CDE1100BCBF71 /* LaunchScreen.storyboard */,
@@ -1508,8 +1515,8 @@
 		F0C36AA32359FA13001E396C /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
 				F075445923447A2800E1D88E /* reader-translator.js */,
+				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
 				F038B02224126BC9006B8C1F /* deep-L.js */,
 				F038B00C24113331006B8C1F /* gtranslator.js */,
 				F058C7F12397A180002C84F0 /* longman.json */,
@@ -1885,7 +1892,6 @@
 				F038B00E2411337C006B8C1F /* gtranslator.js in Resources */,
 				F08D45BE240E9CDC00E7A08E /* cambridge.json in Resources */,
 				F058C7F22397A94D002C84F0 /* longman.json in Resources */,
-				F0C36AA7235ADF5E001E396C /* reader-translator.js in Resources */,
 				F0E5BC6723D632AC004DACE5 /* merriam-webster.json in Resources */,
 				F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
@@ -1904,7 +1910,6 @@
 				F09AD47F23702DF100FFBF6A /* jquery.js in Resources */,
 				F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */,
 				F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */,
-				F075445A23447A2800E1D88E /* reader-translator.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1915,10 +1920,10 @@
 				F07CD2E4244CDE1100BCBF71 /* LaunchScreen.storyboard in Resources */,
 				F026D3B3244CEA1F0085BA72 /* longman.json in Resources */,
 				F026D3B4244CEA250085BA72 /* merriam-webster.json in Resources */,
+				F03EECB72626E1BC003476F0 /* reader-translator.js in Resources */,
 				F026D3B5244CEA2A0085BA72 /* gtranslator-reverso-speaker.js in Resources */,
 				F07CD2E1244CDE1100BCBF71 /* Preview Assets.xcassets in Resources */,
 				F026D3B0244CE8990085BA72 /* gtranslator.js in Resources */,
-				F026D3B1244CEA0D0085BA72 /* reader-translator.js in Resources */,
 				F026D3B2244CEA130085BA72 /* reverso-reverso-speaker.js in Resources */,
 				F07CD2DE244CDE1100BCBF71 /* Assets.xcassets in Resources */,
 			);
@@ -1933,7 +1938,6 @@
 				F09760C62409256C0030F928 /* Preview Assets.xcassets in Resources */,
 				F09459A924092E0E001EC43D /* reverso-reverso-speaker.js in Resources */,
 				F09459AC24092E0E001EC43D /* merriam-webster.json in Resources */,
-				F09459AA24092E0E001EC43D /* reader-translator.js in Resources */,
 				F09459AD24092E0E001EC43D /* gtranslator-reverso-speaker.js in Resources */,
 				F09459AB24092E0E001EC43D /* longman.json in Resources */,
 				F09760C32409256C0030F928 /* Assets.xcassets in Resources */,
@@ -1945,7 +1949,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0E5BC6A23D632B2004DACE5 /* merriam-webster.json in Resources */,
-				F038B02924126DB4006B8C1F /* reader-translator.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1957,7 +1960,6 @@
 				F08CE13B236EA9F200610342 /* index.js in Resources */,
 				F058C7EE2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
 				F040D57C2336BD97004567B8 /* README.md in Resources */,
-				F0C36AA8235ADF5E001E396C /* reader-translator.js in Resources */,
 				F058C7FE2397FBCE002C84F0 /* longman.json in Resources */,
 				F0AA69AD232E9712007CC07B /* LaunchScreen.storyboard in Resources */,
 				F00C7C87235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
@@ -2288,7 +2290,6 @@
 				F07CD31C244CE57800BCBF71 /* DirectoryObserver.swift in Sources */,
 				F07CD312244CE50400BCBF71 /* NSObject.swift in Sources */,
 				F07C3B4E252D7F2E002B8B1A /* Debug.swift in Sources */,
-				F026D3AD244CE7780085BA72 /* WKRepresenter.swift in Sources */,
 				F07CD2FD244CE43000BCBF71 /* CollinsView.swift in Sources */,
 				F07CD310244CE4E200BCBF71 /* WebStore.swift in Sources */,
 				F07CD322244CE62400BCBF71 /* GTranslatorView.swift in Sources */,
@@ -2345,6 +2346,7 @@
 				F07CD2F4244CE35800BCBF71 /* YTranslatorView.swift in Sources */,
 				F07CD300244CE44500BCBF71 /* ReaderView_Pdf.swift in Sources */,
 				F07CD301244CE45300BCBF71 /* ReaderView_Web.swift in Sources */,
+				F03EEC822626E058003476F0 /* WKRepresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
