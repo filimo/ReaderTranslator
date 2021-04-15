@@ -36,7 +36,6 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
         Self.views[self.webStore.currentTab] = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
-        setupScript(view: view, file: "reader-translator")
         
         webStore.canGoBack = view.canGoBack
 

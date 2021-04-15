@@ -571,6 +571,9 @@
 		F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */; };
 		F0D9A65826282C660094E776 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
+		F0D9A66926285D3F0094E776 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
+		F0D9A67B26285D490094E776 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
+		F0D9A68426285D4A0094E776 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F0DADAE5239BE8C200CFE2B1 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F0DADAE4239BE8C200CFE2B1 /* SwiftSoup */; };
 		F0E59130241A317B00CC0AA6 /* CambridgeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0623E412416D1C2005BC86C /* CambridgeStore.swift */; };
 		F0E5BC6323D62D63004DACE5 /* MerriamWebsterRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */; };
@@ -1877,6 +1880,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F038B00F24113388006B8C1F /* gtranslator.js in Resources */,
+				F0D9A67B26285D490094E776 /* reader-translator.js in Resources */,
 				F058C7FD2397FBCD002C84F0 /* longman.json in Resources */,
 				F038B02A24126DC1006B8C1F /* deep-L.js in Resources */,
 				F0120382239182DC008D0B47 /* LaunchScreen.storyboard in Resources */,
@@ -1895,6 +1899,7 @@
 				F058C7F22397A94D002C84F0 /* longman.json in Resources */,
 				F0E5BC6723D632AC004DACE5 /* merriam-webster.json in Resources */,
 				F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
+				F0D9A66926285D3F0094E776 /* reader-translator.js in Resources */,
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
 				F038B02324126D71006B8C1F /* deep-L.js in Resources */,
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
@@ -1940,6 +1945,7 @@
 				F09760C62409256C0030F928 /* Preview Assets.xcassets in Resources */,
 				F09459A924092E0E001EC43D /* reverso-reverso-speaker.js in Resources */,
 				F09459AC24092E0E001EC43D /* merriam-webster.json in Resources */,
+				F0D9A68426285D4A0094E776 /* reader-translator.js in Resources */,
 				F09459AD24092E0E001EC43D /* gtranslator-reverso-speaker.js in Resources */,
 				F09459AB24092E0E001EC43D /* longman.json in Resources */,
 				F09760C32409256C0030F928 /* Assets.xcassets in Resources */,
