@@ -17,27 +17,13 @@ protocol WKScriptsSetup {
 extension WKScriptsSetup {
     func setupScriptCoordinator<T>(view: WKPageView, coordinator: T) where T: WKCoordinator {
         let userContentController = view.configuration.userContentController
-        guard let scriptUrl = Bundle.main.url(forResource: "reader-translator", withExtension: "js") else { return }
 
-        do {
-            let script = try String(contentsOf: scriptUrl)
+        userContentController.add(coordinator, name: "send")
 
-            userContentController.add(coordinator, name: "send")
-
-            #if os(macOS)
-                view.allowsMagnification = true
-            #endif
-            view.navigationDelegate = coordinator
-
-            let userScript = WKUserScript(
-                source: script,
-                injectionTime: .atDocumentEnd,
-                forMainFrameOnly: true
-            )
-            userContentController.addUserScript(userScript)
-        } catch {
-            Logger.log(type: .error, value: error)
-        }
+        #if os(macOS)
+            view.allowsMagnification = true
+        #endif
+        view.navigationDelegate = coordinator
     }
 
     func setupScript(view: WKPageView, file name: String) {

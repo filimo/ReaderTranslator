@@ -1,7 +1,4 @@
 (function() {
-    if(window.readTranslatorJSLoaded) return    
-    window.readTranslatorJSLoaded = true
-    
     var keysStatus = {}
 
     function debounce(func, wait, immediate) {
@@ -210,7 +207,7 @@
             if(elm) {
                 if(lastElm) lastElm.style.color = ""
                 elm.style.color="yellow"
-                elm.scrollIntoViewIfNeeded()
+                elm.parentNode.parentNode.parentNode.scrollTop = elm.offsetTop - 50
                 lastElm = elm
             }
         }

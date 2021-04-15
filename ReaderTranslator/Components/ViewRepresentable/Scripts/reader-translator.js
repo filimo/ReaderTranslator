@@ -208,7 +208,7 @@
             if(elm) {
                 if(lastElm) lastElm.style.color = ""
                 elm.style.color="yellow"
-                elm.scrollIntoViewIfNeeded()
+                elm.parentNode.parentNode.parentNode.scrollTop = elm.offsetTop - 150
                 lastElm = elm
             }
         }
