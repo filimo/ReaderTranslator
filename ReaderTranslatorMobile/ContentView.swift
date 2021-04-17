@@ -28,15 +28,19 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
+            ZStack {
                 NavigationLink(
                     destination: GTranslatorView(),
                     isActive: $isShow
                 ) {
                     EmptyView()
                 }
+                
                 WebView()
-                if !isShow { GTranslatorMiniView().frame(height: 200) }
+                
+                BottomSheetView(isOpen: .constant(false), maxHeight: 600) {
+                    if !isShow { GTranslatorMiniView() }
+                }.edgesIgnoringSafeArea(.all)
             }
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarTitle("ReaderTranslator", displayMode: .inline)

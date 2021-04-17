@@ -190,6 +190,8 @@
 		F06EE7C923AFF32700CF989E /* ConnectionView_Servers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EE7C823AFF32700CF989E /* ConnectionView_Servers.swift */; };
 		F06EE7CB23AFF33E00CF989E /* ConnectionView_Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EE7CA23AFF33E00CF989E /* ConnectionView_Bookmarks.swift */; };
 		F06F21B923D421480032E756 /* LongmanRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06F21B823D421480032E756 /* LongmanRepresenter.swift */; };
+		F070C8DE262ADD330040496B /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9A696262AD7BB0094E776 /* BottomSheetView.swift */; };
+		F070C8EF262B0D190040496B /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07C3B44252D7F25002B8B1A /* Debug.swift */; };
 		F074D42D23D5B80D00492922 /* AVAudioNetPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */; };
 		F074D42E23D5B80D00492922 /* AVAudioNetPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */; };
 		F074D42F23D5B80D00492922 /* AVAudioNetPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */; };
@@ -880,6 +882,7 @@
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
 		F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
+		F0D9A696262AD7BB0094E776 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerriamWebsterRepresenter.swift; sourceTree = "<group>"; };
 		F0E5BC6623D630DF004DACE5 /* merriam-webster.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "merriam-webster.json"; sourceTree = "<group>"; };
 		F0EDE34C23641B1300E0B81C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -1428,6 +1431,7 @@
 				F0EDFB24239E49480048CFD1 /* AudioPlayer.swift */,
 				F0C0040723A899EA002B6060 /* CircleButton.swift */,
 				F026D3B6244CF0440085BA72 /* SpeechHandlerView.swift */,
+				F0D9A696262AD7BB0094E776 /* BottomSheetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -2373,6 +2377,7 @@
 				F08EE642240C04E7002CDB44 /* CambidgeRepresenter.swift in Sources */,
 				F094598E24092D7E001EC43D /* PeerListener.swift in Sources */,
 				F09760EA2409291D0030F928 /* Published.swift in Sources */,
+				F070C8DE262ADD330040496B /* BottomSheetView.swift in Sources */,
 				F094598124092D1B001EC43D /* URL.swift in Sources */,
 				F09459C52409310B001EC43D /* PDFKitViewRepresentable.swift in Sources */,
 				F09760ED2409298C0030F928 /* GTranslatorRepresenter.swift in Sources */,
@@ -2380,6 +2385,7 @@
 				F09459D2240931F2001EC43D /* YTranslatorView.swift in Sources */,
 				F094598324092D1B001EC43D /* CGFloat.swift in Sources */,
 				F094597B24092D14001EC43D /* Array.swift in Sources */,
+				F070C8EF262B0D190040496B /* Debug.swift in Sources */,
 				F09459C024093073001EC43D /* BookmarksView.swift in Sources */,
 				F09760CF2409261E0030F928 /* WebViewContainer.swift in Sources */,
 				F09760DE240927BF0030F928 /* WKCoordinatorNavigationDelegate.swift in Sources */,
