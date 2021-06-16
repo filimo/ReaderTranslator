@@ -75,24 +75,31 @@ class SpeechSynthesizer {
             if stopSpeaking { return }
         }
 
-        cancellableLongmanSpeak = Publishers.CombineLatest(
-            LongmanStore.shared.fetchInfo(text: text),
-            CambridgeStore.shared.fetchInfo(text: text))
-        .sink { isLongmanSoundExist, isCambridgeSoundExist in
-            if isCambridgeSoundExist {
-                CambridgeStore.shared.play()
-            } else if isLongmanSoundExist {
-                LongmanStore.shared.play()
-            } else {
-                if enabledSpeakByEngine {
-                    speakByEngine(text: text, voiceName: voiceName, isVoiceEnabled: isVoiceEnabled)
+        Store.shared.audioUrls.removeAll()
+
+        cancellableLongmanSpeak = Publishers
+            .CombineLatest3(
+                LongmanStore.shared.fetchInfo(text: text),
+                CambridgeStore.shared.fetchInfo(text: text),
+                CollinsStore.shared.fetchInfo(text: text)
+            )
+            .sink { hasLongmanSound, hasCambridgeSound, hasCollinsSound in
+                if hasCambridgeSound {
+                    CambridgeStore.shared.play()
+                } else if hasLongmanSound {
+                    LongmanStore.shared.play()
+                } else if hasCollinsSound {
+                    CollinsStore.shared.play()
+                } else {
+                    if enabledSpeakByEngine {
+                        speakByEngine(text: text, voiceName: voiceName, isVoiceEnabled: isVoiceEnabled)
+                    }
                 }
             }
-        }
     }
 
     private static func speakByEngine(text: String, voiceName: String, isVoiceEnabled: Bool) {
-        let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
+        let speechUtterance = AVSpeechUtterance(string: text)
 
         speechUtterance.voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.name == voiceName })
         speechUtterance.volume = AudioStore.shared.sentencesVolume

@@ -51,7 +51,6 @@ final class LongmanStore: NSObject, ObservableObject {
                 do {
                     let document = try SwiftSoup.parse(html)
 
-                    Store.shared.audioUrls.removeAll()
                     let isBreExist = self.addAudio(selector: ".brefile", document: document)
                     let isAmeExist = self.addAudio(selector: ".amefile", document: document)
                     

@@ -117,6 +117,8 @@
 		F0505C572360D485004F2D50 /* LongmanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C532360D3DA004F2D50 /* LongmanView.swift */; };
 		F0553728239BE3C700BA24BA /* LongmanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0553727239BE3C700BA24BA /* LongmanStore.swift */; };
 		F0553729239BE3C700BA24BA /* LongmanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0553727239BE3C700BA24BA /* LongmanStore.swift */; };
+		F05548E0267A8669000F1A9A /* CollinsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05548DF267A8669000F1A9A /* CollinsStore.swift */; };
+		F05548E1267A8977000F1A9A /* CollinsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05548DF267A8669000F1A9A /* CollinsStore.swift */; };
 		F0562E0C2362025D0074ACF5 /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0229BE02362021200F12F47 /* WikipediaView.swift */; };
 		F0562E0D2362025E0074ACF5 /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0229BE02362021200F12F47 /* WikipediaView.swift */; };
 		F0562E0E2362026C0074ACF5 /* WikipediaRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D1C0D2361FFBC008A0C38 /* WikipediaRepresenter.swift */; };
@@ -735,6 +737,7 @@
 		F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanRepresenter.swift; sourceTree = "<group>"; };
 		F0505C532360D3DA004F2D50 /* LongmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanView.swift; sourceTree = "<group>"; };
 		F0553727239BE3C700BA24BA /* LongmanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanStore.swift; sourceTree = "<group>"; };
+		F05548DF267A8669000F1A9A /* CollinsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollinsStore.swift; sourceTree = "<group>"; };
 		F0586481238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Pdf_Toolbar.swift; sourceTree = "<group>"; };
 		F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
 		F058C7F12397A180002C84F0 /* longman.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = longman.json; sourceTree = "<group>"; };
@@ -1401,6 +1404,7 @@
 				F065095D23AE0353003D2410 /* ViewsStore.swift */,
 				F0418B97239A32FD00B59C66 /* BookmarksStore.swift */,
 				F0553727239BE3C700BA24BA /* LongmanStore.swift */,
+				F05548DF267A8669000F1A9A /* CollinsStore.swift */,
 				F0623E412416D1C2005BC86C /* CambridgeStore.swift */,
 				F0039EC223447E24002F3F95 /* SharedContainer.swift */,
 				F06DB115234611BB00C2DE90 /* ExtensionManager.swift */,
@@ -2250,6 +2254,7 @@
 				F0039EC323447E24002F3F95 /* SharedContainer.swift in Sources */,
 				F0C53179234B3EE1003174B5 /* WKCoordinator.swift in Sources */,
 				F087370823D62CA4001CFBE3 /* MerriamWebsterView.swift in Sources */,
+				F05548E1267A8977000F1A9A /* CollinsStore.swift in Sources */,
 				F074D42D23D5B80D00492922 /* AVAudioNetPlayer.swift in Sources */,
 				F064B4A423CC569400F28314 /* CGFloat.swift in Sources */,
 				F0505C552360D475004F2D50 /* LongmanRepresenter.swift in Sources */,
@@ -2585,6 +2590,7 @@
 				F0EDFB1F239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift in Sources */,
 				F0AB12B0233F5968005B9F2A /* SettingsView_Voice.swift in Sources */,
 				F0AB12B2233F597B005B9F2A /* SettingsView_Voice_Select.swift in Sources */,
+				F05548E0267A8669000F1A9A /* CollinsStore.swift in Sources */,
 				F0EE0A162347BF09004A5EAD /* WKPageView.swift in Sources */,
 				F074D42E23D5B80D00492922 /* AVAudioNetPlayer.swift in Sources */,
 				F0F256C2233E6C4C00C9D719 /* FavoriteVoiceName.swift in Sources */,
