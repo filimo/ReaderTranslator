@@ -31,23 +31,29 @@ struct ContentView: View {
             VStack {
                 Menu("TranslateBy") {
                     Button("Google Translate") { service = .gTranslator }
+                    Button("DeepL") { service = .deepL }
                     Button("ReversoContext") { service = .reverso }
                     Button("Longman") { service = .longman }
                     Button("Collins") { service = .collins }
                     Button("Cambridge") { service = .cambridge }
+                    Button("Wiki") { service = .wikipedia }
+                    
+                    Divider()
 
                     Button("Cancel") {}
                 }
 
                 ZStack {
                     GTranslatorView().opacity(service == .gTranslator ? 1 : 0)
+                    DeepLView().opacity(service == .deepL ? 1 : 0)
                     ReversoView().opacity(service == .reverso ? 1 : 0)
                     LongmanView().opacity(service == .longman ? 1 : 0)
                     CollinsView().opacity(service == .collins ? 1 : 0)
                     CambidgeView().opacity(service == .cambridge ? 1 : 0)
+                    WikipediaView().opacity(service == .wikipedia ? 1 : 0)
                 }
             }
-            .frame(width: 400)
+            .frame(width: 470)
 
             WebView()
         }

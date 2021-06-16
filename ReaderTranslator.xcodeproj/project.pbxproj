@@ -44,7 +44,6 @@
 		F026D3AC244CE76F0085BA72 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459DD24093E57001EC43D /* WebView.swift */; };
 		F026D3AE244CE7910085BA72 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36AA02359D50A001E396C /* Clipboard.swift */; };
 		F026D3AF244CE79A0085BA72 /* GTranslatorMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01624116964006B8C1F /* GTranslatorMiniView.swift */; };
-		F026D3B0244CE8990085BA72 /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00A241112D8006B8C1F /* gtranslator.js */; };
 		F026D3B2244CEA130085BA72 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
 		F026D3B3244CEA1F0085BA72 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F026D3B4244CEA250085BA72 /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
@@ -77,7 +76,6 @@
 		F033F41523A75B5600605325 /* SentencesView_Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F41423A75B5600605325 /* SentencesView_Row.swift */; };
 		F0369E3223A2D92C00C33139 /* StatusBarView_Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0369E3123A2D92C00C33139 /* StatusBarView_Sync.swift */; };
 		F0369E3323A2D92C00C33139 /* StatusBarView_Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0369E3123A2D92C00C33139 /* StatusBarView_Sync.swift */; };
-		F038B00B241112D8006B8C1F /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00A241112D8006B8C1F /* gtranslator.js */; };
 		F038B00E2411337C006B8C1F /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00C24113331006B8C1F /* gtranslator.js */; };
 		F038B00F24113388006B8C1F /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00C24113331006B8C1F /* gtranslator.js */; };
 		F038B01724116964006B8C1F /* GTranslatorMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01624116964006B8C1F /* GTranslatorMiniView.swift */; };
@@ -215,7 +213,6 @@
 		F07CD2EB244CE2BA00BCBF71 /* StoreViewIPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07CD2EA244CE2BA00BCBF71 /* StoreViewIPad.swift */; };
 		F07CD2EE244CE32F00BCBF71 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = F002C629232FF40C00D3FC04 /* Published.swift */; };
 		F07CD2EF244CE33100BCBF71 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040D5772336A77D004567B8 /* UserDefault.swift */; };
-		F07CD2F0244CE34600BCBF71 /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459C9240931AC001EC43D /* WikipediaView.swift */; };
 		F07CD2F1244CE35000BCBF71 /* MerriamWebsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459CB240931B7001EC43D /* MerriamWebsterView.swift */; };
 		F07CD2F2244CE35200BCBF71 /* StackExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459CD240931D7001EC43D /* StackExchangeView.swift */; };
 		F07CD2F3244CE35600BCBF71 /* ReversoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459CF240931E2001EC43D /* ReversoView.swift */; };
@@ -267,6 +264,8 @@
 		F0814BA223562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F0814BA323562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F0814BA423562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
+		F0824625265F7FF000DC74E7 /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00C24113331006B8C1F /* gtranslator.js */; };
+		F0824626265F7FF100DC74E7 /* gtranslator.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B00C24113331006B8C1F /* gtranslator.js */; };
 		F083C01823D40C41004A7E01 /* WKScriptsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */; };
 		F083C01923D40C7A004A7E01 /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
 		F083C01A23D40C8A004A7E01 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F256BC233D309F00C9D719 /* String.swift */; };
@@ -399,6 +398,8 @@
 		F09760ED2409298C0030F928 /* GTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DB232E97AF007CC07B /* GTranslatorRepresenter.swift */; };
 		F09760EF24092C070030F928 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
 		F09760F024092C1C0030F928 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065095623ADF6A3003D2410 /* AudioStore.swift */; };
+		F098C991265F8993001F01B9 /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0229BE02362021200F12F47 /* WikipediaView.swift */; };
+		F098C992265F89B9001F01B9 /* WikipediaRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D1C0D2361FFBC008A0C38 /* WikipediaRepresenter.swift */; };
 		F099420C23AD4279003CF1EB /* BookmarksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0418B97239A32FD00B59C66 /* BookmarksStore.swift */; };
 		F099420D23AD4283003CF1EB /* LongmanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0553727239BE3C700BA24BA /* LongmanStore.swift */; };
 		F099420E23AD428C003CF1EB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69D7232E978E007CC07B /* Store.swift */; };
@@ -572,6 +573,7 @@
 		F0D31C5123491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0D31C5223491C23003CF86B /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D31C5023491C23003CF86B /* GTranslatorView.swift */; };
 		F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */; };
+		F0D8F770265F7EC60018877E /* deep-L.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B02224126BC9006B8C1F /* deep-L.js */; };
 		F0D9A65826282C660094E776 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F0D9A66926285D3F0094E776 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F0D9A67B26285D490094E776 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
@@ -711,7 +713,6 @@
 		F033F41123A6D3A800605325 /* DirectoryObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryObserver.swift; sourceTree = "<group>"; };
 		F033F41423A75B5600605325 /* SentencesView_Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentencesView_Row.swift; sourceTree = "<group>"; };
 		F0369E3123A2D92C00C33139 /* StatusBarView_Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_Sync.swift; sourceTree = "<group>"; };
-		F038B00A241112D8006B8C1F /* gtranslator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gtranslator.js; sourceTree = "<group>"; };
 		F038B00C24113331006B8C1F /* gtranslator.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = gtranslator.js; sourceTree = "<group>"; };
 		F038B01624116964006B8C1F /* GTranslatorMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorMiniView.swift; sourceTree = "<group>"; };
 		F038B01824124860006B8C1F /* DeepLRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLRepresenter.swift; sourceTree = "<group>"; };
@@ -1079,14 +1080,6 @@
 			path = SentencesView;
 			sourceTree = "<group>";
 		};
-		F038B00724111225006B8C1F /* Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				F038B00A241112D8006B8C1F /* gtranslator.js */,
-			);
-			path = Scripts;
-			sourceTree = "<group>";
-		};
 		F03EEC932626E10A003476F0 /* ViewRepresentable */ = {
 			isa = PBXGroup;
 			children = (
@@ -1279,7 +1272,6 @@
 		F09760BB240925680030F928 /* ReaderTranslatorMobile */ = {
 			isa = PBXGroup;
 			children = (
-				F038B00724111225006B8C1F /* Scripts */,
 				F09760D5240926C40030F928 /* Delegates */,
 				F09459BB24093020001EC43D /* Views */,
 				F09760C0240925680030F928 /* ContentView.swift */,
@@ -1820,7 +1812,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Viktor Kushnerov";
 				TargetAttributes = {
 					F0120372239182DA008D0B47 = {
@@ -1934,8 +1926,9 @@
 				F03EECB72626E1BC003476F0 /* reader-translator.js in Resources */,
 				F026D3B5244CEA2A0085BA72 /* gtranslator-reverso-speaker.js in Resources */,
 				F07CD2E1244CDE1100BCBF71 /* Preview Assets.xcassets in Resources */,
-				F026D3B0244CE8990085BA72 /* gtranslator.js in Resources */,
+				F0D8F770265F7EC60018877E /* deep-L.js in Resources */,
 				F026D3B2244CEA130085BA72 /* reverso-reverso-speaker.js in Resources */,
+				F0824626265F7FF100DC74E7 /* gtranslator.js in Resources */,
 				F07CD2DE244CDE1100BCBF71 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1944,7 +1937,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F038B00B241112D8006B8C1F /* gtranslator.js in Resources */,
+				F0824625265F7FF000DC74E7 /* gtranslator.js in Resources */,
 				F09760C92409256C0030F928 /* LaunchScreen.storyboard in Resources */,
 				F09760C62409256C0030F928 /* Preview Assets.xcassets in Resources */,
 				F09459A924092E0E001EC43D /* reverso-reverso-speaker.js in Resources */,
@@ -2297,6 +2290,7 @@
 				F026D3AE244CE7910085BA72 /* Clipboard.swift in Sources */,
 				F07CD30D244CE4B700BCBF71 /* WKCoordinator.swift in Sources */,
 				F07CD328244CE6A400BCBF71 /* BookmarksView.swift in Sources */,
+				F098C992265F89B9001F01B9 /* WikipediaRepresenter.swift in Sources */,
 				F07CD31E244CE5EC00BCBF71 /* DOMEvent.swift in Sources */,
 				F07CD307244CE47800BCBF71 /* BookmarksStore.swift in Sources */,
 				F07CD31C244CE57800BCBF71 /* DirectoryObserver.swift in Sources */,
@@ -2314,7 +2308,6 @@
 				F07CD306244CE47300BCBF71 /* CambidgeRepresenter.swift in Sources */,
 				F0CFD3B32539BD4E00635677 /* ReversoRepresenter.swift in Sources */,
 				F07CD303244CE46100BCBF71 /* WebViewContainer.swift in Sources */,
-				F07CD2F0244CE34600BCBF71 /* WikipediaView.swift in Sources */,
 				F07CD31F244CE5F500BCBF71 /* CambridgeStore.swift in Sources */,
 				F026D3AF244CE79A0085BA72 /* GTranslatorMiniView.swift in Sources */,
 				F07CD31A244CE56300BCBF71 /* ButtonModifier.swift in Sources */,
@@ -2331,6 +2324,7 @@
 				F07CD311244CE4FB00BCBF71 /* URL.swift in Sources */,
 				F07CD329244CE6AF00BCBF71 /* SafariView.swift in Sources */,
 				F07CD2F1244CE35000BCBF71 /* MerriamWebsterView.swift in Sources */,
+				F098C991265F8993001F01B9 /* WikipediaView.swift in Sources */,
 				F07CD2F2244CE35200BCBF71 /* StackExchangeView.swift in Sources */,
 				F01002CF25333E3500217F17 /* WKWebView.swift in Sources */,
 				F07CD325244CE65100BCBF71 /* FavoriteVoiceName.swift in Sources */,
@@ -3079,6 +3073,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3139,6 +3134,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
