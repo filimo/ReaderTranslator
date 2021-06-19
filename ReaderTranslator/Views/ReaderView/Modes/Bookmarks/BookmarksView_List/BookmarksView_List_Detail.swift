@@ -58,8 +58,8 @@ struct BookmarksView_List_Detail: View {
                     .font(.subheadline)
                     .onTapGesture {
                         self.selectSentence = sentence.text
-                        LongmanStore.shared.addAudio(url: sentence.url)
-                        LongmanStore.shared.play()
+                        AudioStore.shared.addAudio(url: sentence.url)
+                        AudioStore.shared.play()
                         self.store.translateAction.add(.gTranslator(text: sentence.text), isSpeaking: false)
                     }
             }

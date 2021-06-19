@@ -13,7 +13,6 @@ import SwiftSoup
 import SwiftUI
 
 private var cancellable: AnyCancellable?
-private var player: AVAudioNetPlayer?
 
 struct LongmanSentence: Hashable {
     static let empty = Self(text: "No sentences", url: URL.empty)
@@ -98,50 +97,17 @@ extension LongmanStore {
         }
     }
 
-    func addAudio(url: URL) {
-        Store.shared.audioUrls.push(url)
-    }
-
     private func addAudio(selector: String, document: Document) -> Bool {
         do {
             guard let elm = try document.select(selector).first else { return false }
             let string = try elm.attr("data-src-mp3")
             guard let url = URL(string: string) else { return false }
 
-            addAudio(url: url)
+            AudioStore.shared.addAudio(url: url)
             return true
         } catch {
             Logger.log(type: .error, value: error)
         }
         return false
     }
-}
-
-extension LongmanStore {
-    func play() {
-        guard let url = Store.shared.audioUrls.pop() else { return }
-
-        if AudioStore.shared.isSpeakWords {
-            player = AVAudioNetPlayer()
-            player?.delegate = self
-            player?.play(url: url)
-        }
-    }
-}
-
-extension LongmanStore: AVAudioNetPlayerDelegate {
-    func audioPlayerLoadDidFinishDidOccur() {}
-
-    func audioPlayerCreateSuccessOccur(player: AVAudioPlayer) {
-        player.enableRate = true
-        player.rate = audioRate
-        player.volume = AudioStore.shared.wordsVolume
-        player.play()
-    }
-
-    func audioPlayerLoadErrorDidOccur() { play() }
-    func audioPlayerCreateErrorDidOccur() { play() }
-
-    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully _: Bool) { play() }
-    func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) { play() }
 }

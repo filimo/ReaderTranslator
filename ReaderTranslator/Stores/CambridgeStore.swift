@@ -6,14 +6,12 @@
 //  Copyright © 2020 Viktor Kushnerov. All rights reserved.
 //
 
-import AVFoundation
 import Combine
 import Foundation
 import SwiftSoup
 import SwiftUI
 
 private var cancellable: AnyCancellable?
-private var player: AVAudioNetPlayer?
 
 struct CambridgeSentence: Hashable {
     static let empty = Self(text: "No sentences", url: URL.empty)
@@ -32,7 +30,6 @@ final class CambridgeStore: NSObject, ObservableObject {
     @Published var word = ""
 
     private let defaultURL = "https://dictionary.cambridge.org/dictionary/english-russian/"
-    private var audioUrls = Stack<URL>()
 
     func fetchInfo(text: String) -> AnyPublisher<Bool, Never> {
         let text = text.encodeUrl
@@ -46,7 +43,6 @@ final class CambridgeStore: NSObject, ObservableObject {
                 do {
                     let document = try SwiftSoup.parse(html)
 
-                    self.audioUrls.removeAll()
                     let isBreExist = self.addAudio(selector: ".uk [type='audio/mpeg']", document: document)
                     let isAmeExist = self.addAudio(selector: ".us [type='audio/mpeg']", document: document)
                     
@@ -65,50 +61,17 @@ final class CambridgeStore: NSObject, ObservableObject {
 }
 
 extension CambridgeStore {
-    func addAudio(url: URL) {
-        audioUrls.push(url)
-    }
-
     private func addAudio(selector: String, document: Document) -> Bool {
         do {
             guard let elm = try document.select(selector).first else { return false }
             let string = try elm.attr("src")
             guard let url = URL(string: "https://dictionary.cambridge.org/\(string)") else { return false }
 
-            addAudio(url: url)
+            AudioStore.shared.addAudio(url: url)
             return true
         } catch {
             Logger.log(type: .error, value: error)
         }
         return false
     }
-}
-
-extension CambridgeStore {
-    func play() {
-        guard let url = audioUrls.pop() else { return }
-
-        if AudioStore.shared.isSpeakWords {
-            player = AVAudioNetPlayer()
-            player?.delegate = self
-            player?.play(url: url)
-        }
-    }
-}
-
-extension CambridgeStore: AVAudioNetPlayerDelegate {
-    func audioPlayerLoadDidFinishDidOccur() {}
-
-    func audioPlayerCreateSuccessOccur(player: AVAudioPlayer) {
-        player.enableRate = true
-        player.rate = audioRate
-        player.volume = AudioStore.shared.wordsVolume
-        player.play()
-    }
-
-    func audioPlayerLoadErrorDidOccur() { play() }
-    func audioPlayerCreateErrorDidOccur() { play() }
-
-    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully _: Bool) { play() }
-    func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) { play() }
 }

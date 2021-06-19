@@ -31,8 +31,6 @@ final class CollinsStore: NSObject, ObservableObject {
                 do {
                     let document = try SwiftSoup.parse(html)
 
-                    Store.shared.audioUrls.removeAll()
-
                     let hasSound = self.addAudio(selector: ".hwd_sound.sound", document: document)
 
                     return hasSound
@@ -56,44 +54,14 @@ extension CollinsStore {
             let string = try elm.attr("data-src-mp3")
             guard let url = URL(string: string) else { return false }
 
-            addAudio(url: url)
+            AudioStore.shared.addAudio(url: url)
             return true
         } catch {
             Logger.log(type: .error, value: error)
         }
         return false
     }
-
-    func addAudio(url: URL) {
-        Store.shared.audioUrls.push(url)
-    }
 }
 
-extension CollinsStore {
-    func play() {
-        guard let url = Store.shared.audioUrls.pop() else { return }
 
-        if AudioStore.shared.isSpeakWords {
-            player = AVAudioNetPlayer()
-            player?.delegate = self
-            player?.play(url: url)
-        }
-    }
-}
 
-extension CollinsStore: AVAudioNetPlayerDelegate {
-    func audioPlayerLoadDidFinishDidOccur() {}
-
-    func audioPlayerCreateSuccessOccur(player: AVAudioPlayer) {
-        player.enableRate = true
-        player.rate = LongmanStore.shared.audioRate
-        player.volume = AudioStore.shared.wordsVolume
-        player.play()
-    }
-
-    func audioPlayerLoadErrorDidOccur() { play() }
-    func audioPlayerCreateErrorDidOccur() { play() }
-
-    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully _: Bool) { play() }
-    func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) { play() }
-}

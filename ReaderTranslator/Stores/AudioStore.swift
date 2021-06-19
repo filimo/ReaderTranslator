@@ -6,11 +6,18 @@
 //  Copyright © 2019 Viktor Kushnerov. All rights reserved.
 //
 
+import AVFoundation
 import Foundation
 
-final class AudioStore: ObservableObject {
-    private init() {}
+final class AudioStore: NSObject, ObservableObject {
+    private override init() {
+        super.init()
+    }
+    
     static var shared = AudioStore()
+
+    private var audioUrls = Stack<URL>()
+    private var player: AVAudioNetPlayer?
 
     @Published(key: "favoriteVoiceNames") var favoriteVoiceNames: [FavoriteVoiceName] = []
     @Published(key: "voiceLanguage") var language = "Select language"
@@ -21,4 +28,41 @@ final class AudioStore: ObservableObject {
     @Published(key: "sentencesVolume") var sentencesVolume: Float = 1
     @Published(key: "wordsVolume") var wordsVolume: Float = 1
     @Published(key: "playbackRate") var playbackRate: Float = 1.0
+}
+
+extension AudioStore {
+    func addAudio(url: URL) {
+        audioUrls.push(url)
+    }
+
+    func play() {
+        guard let url = audioUrls.pop() else { return }
+
+        if AudioStore.shared.isSpeakWords {
+            player = AVAudioNetPlayer()
+            player?.delegate = self
+            player?.play(url: url)
+        }
+    }
+    
+    func removeAllSounds() {
+        audioUrls.removeAll()
+    }
+}
+
+extension AudioStore: AVAudioNetPlayerDelegate {
+    func audioPlayerLoadDidFinishDidOccur() {}
+
+    func audioPlayerCreateSuccessOccur(player: AVAudioPlayer) {
+        player.enableRate = true
+        player.rate = LongmanStore.shared.audioRate
+        player.volume = AudioStore.shared.wordsVolume
+        player.play()
+    }
+
+    func audioPlayerLoadErrorDidOccur() { play() }
+    func audioPlayerCreateErrorDidOccur() { play() }
+
+    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully _: Bool) { play() }
+    func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) { play() }
 }

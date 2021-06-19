@@ -75,7 +75,7 @@ class SpeechSynthesizer {
             if stopSpeaking { return }
         }
 
-        Store.shared.audioUrls.removeAll()
+        AudioStore.shared.removeAllSounds()
 
         cancellableLongmanSpeak = Publishers
             .CombineLatest3(
@@ -85,11 +85,11 @@ class SpeechSynthesizer {
             )
             .sink { hasLongmanSound, hasCambridgeSound, hasCollinsSound in
                 if hasCambridgeSound {
-                    CambridgeStore.shared.play()
+                    AudioStore.shared.play()
                 } else if hasLongmanSound {
-                    LongmanStore.shared.play()
+                    AudioStore.shared.play()
                 } else if hasCollinsSound {
-                    CollinsStore.shared.play()
+                    AudioStore.shared.play()
                 } else {
                     if enabledSpeakByEngine {
                         speakByEngine(text: text, voiceName: voiceName, isVoiceEnabled: isVoiceEnabled)
