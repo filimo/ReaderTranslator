@@ -765,6 +765,7 @@
 		F06EE7C823AFF32700CF989E /* ConnectionView_Servers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView_Servers.swift; sourceTree = "<group>"; };
 		F06EE7CA23AFF33E00CF989E /* ConnectionView_Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView_Bookmarks.swift; sourceTree = "<group>"; };
 		F06F21B823D421480032E756 /* LongmanRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanRepresenter.swift; sourceTree = "<group>"; };
+		F06F6AEE267F09120035FDE0 /* collins.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = collins.js; sourceTree = "<group>"; };
 		F073289223A6C7A0008CB539 /* BookmarksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioNetPlayer.swift; sourceTree = "<group>"; };
 		F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1523,6 +1524,7 @@
 				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
 				F038B02224126BC9006B8C1F /* deep-L.js */,
 				F038B00C24113331006B8C1F /* gtranslator.js */,
+				F06F6AEE267F09120035FDE0 /* collins.js */,
 				F058C7F12397A180002C84F0 /* longman.json */,
 				F08D45BD240E9B4D00E7A08E /* cambridge.json */,
 				F0E5BC6623D630DF004DACE5 /* merriam-webster.json */,

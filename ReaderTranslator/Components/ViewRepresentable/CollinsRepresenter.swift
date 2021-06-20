@@ -28,6 +28,7 @@ struct CollinsRepresenter: ViewRepresentable, WKScriptsSetup {
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
+        setupScript(view: view, file: "collins")
 
         return view
     }
