@@ -44,7 +44,7 @@
 		F026D3AC244CE76F0085BA72 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459DD24093E57001EC43D /* WebView.swift */; };
 		F026D3AE244CE7910085BA72 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36AA02359D50A001E396C /* Clipboard.swift */; };
 		F026D3AF244CE79A0085BA72 /* GTranslatorMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038B01624116964006B8C1F /* GTranslatorMiniView.swift */; };
-		F026D3B2244CEA130085BA72 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
+		F026D3B2244CEA130085BA72 /* reverso.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso.js */; };
 		F026D3B3244CEA1F0085BA72 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F026D3B4244CEA250085BA72 /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
 		F026D3B5244CEA2A0085BA72 /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
@@ -125,8 +125,8 @@
 		F0562E0F2362026C0074ACF5 /* WikipediaRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D1C0D2361FFBC008A0C38 /* WikipediaRepresenter.swift */; };
 		F0586482238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0586481238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift */; };
 		F0586483238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0586481238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift */; };
-		F058C7EE2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
-		F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
+		F058C7EE2396ACC0002C84F0 /* reverso.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso.js */; };
+		F058C7EF2396ACC0002C84F0 /* reverso.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso.js */; };
 		F058C7F22397A94D002C84F0 /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F058C7F32397F968002C84F0 /* WKScriptsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53173234B06D3003174B5 /* WKScriptsSetup.swift */; };
 		F058C7F42397F9DB002C84F0 /* WKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A152347BF09004A5EAD /* WKPageView.swift */; };
@@ -368,7 +368,7 @@
 		F09459A324092DFA001EC43D /* YTranslatorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062029423812264002EEAEE /* YTranslatorRepresenter.swift */; };
 		F09459A424092DFA001EC43D /* StackExchangeRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025D61C23B73C8B004A1D6B /* StackExchangeRepresenter.swift */; };
 		F09459A624092DFF001EC43D /* WKRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA69DC232E97B0007CC07B /* WKRepresenter.swift */; };
-		F09459A924092E0E001EC43D /* reverso-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */; };
+		F09459A924092E0E001EC43D /* reverso.js in Resources */ = {isa = PBXBuildFile; fileRef = F058C7ED2396ACC0002C84F0 /* reverso.js */; };
 		F09459AB24092E0E001EC43D /* longman.json in Resources */ = {isa = PBXBuildFile; fileRef = F058C7F12397A180002C84F0 /* longman.json */; };
 		F09459AC24092E0E001EC43D /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
 		F09459AD24092E0E001EC43D /* gtranslator-reverso-speaker.js in Resources */ = {isa = PBXBuildFile; fileRef = F00C7C86235783FF003F6D28 /* gtranslator-reverso-speaker.js */; };
@@ -752,7 +752,7 @@
 		F0553727239BE3C700BA24BA /* LongmanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanStore.swift; sourceTree = "<group>"; };
 		F05548DF267A8669000F1A9A /* CollinsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollinsStore.swift; sourceTree = "<group>"; };
 		F0586481238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Pdf_Toolbar.swift; sourceTree = "<group>"; };
-		F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "reverso-reverso-speaker.js"; sourceTree = "<group>"; };
+		F058C7ED2396ACC0002C84F0 /* reverso.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = reverso.js; sourceTree = "<group>"; };
 		F058C7F12397A180002C84F0 /* longman.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = longman.json; sourceTree = "<group>"; };
 		F058C7FF23992F92002C84F0 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F062029423812264002EEAEE /* YTranslatorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTranslatorRepresenter.swift; sourceTree = "<group>"; };
@@ -1536,7 +1536,7 @@
 			isa = PBXGroup;
 			children = (
 				F075445923447A2800E1D88E /* reader-translator.js */,
-				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
+				F058C7ED2396ACC0002C84F0 /* reverso.js */,
 				F038B02224126BC9006B8C1F /* deep-L.js */,
 				F038B00C24113331006B8C1F /* gtranslator.js */,
 				F06F6AEF268077C10035FDE0 /* cambridge.js */,
@@ -1921,7 +1921,7 @@
 				F08D45BE240E9CDC00E7A08E /* cambridge.json in Resources */,
 				F058C7F22397A94D002C84F0 /* longman.json in Resources */,
 				F0E5BC6723D632AC004DACE5 /* merriam-webster.json in Resources */,
-				F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
+				F058C7EF2396ACC0002C84F0 /* reverso.js in Resources */,
 				F0D9A66926285D3F0094E776 /* reader-translator.js in Resources */,
 				F06F6AF3268078D50035FDE0 /* longman.js in Resources */,
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
@@ -1958,7 +1958,7 @@
 				F026D3B5244CEA2A0085BA72 /* gtranslator-reverso-speaker.js in Resources */,
 				F07CD2E1244CDE1100BCBF71 /* Preview Assets.xcassets in Resources */,
 				F0D8F770265F7EC60018877E /* deep-L.js in Resources */,
-				F026D3B2244CEA130085BA72 /* reverso-reverso-speaker.js in Resources */,
+				F026D3B2244CEA130085BA72 /* reverso.js in Resources */,
 				F06F6AFC268078FB0035FDE0 /* longman.js in Resources */,
 				F0824626265F7FF100DC74E7 /* gtranslator.js in Resources */,
 				F07CD2DE244CDE1100BCBF71 /* Assets.xcassets in Resources */,
@@ -1974,7 +1974,7 @@
 				F09760C92409256C0030F928 /* LaunchScreen.storyboard in Resources */,
 				F06F6AF7268078F60035FDE0 /* collins.js in Resources */,
 				F09760C62409256C0030F928 /* Preview Assets.xcassets in Resources */,
-				F09459A924092E0E001EC43D /* reverso-reverso-speaker.js in Resources */,
+				F09459A924092E0E001EC43D /* reverso.js in Resources */,
 				F09459AC24092E0E001EC43D /* merriam-webster.json in Resources */,
 				F0D9A68426285D4A0094E776 /* reader-translator.js in Resources */,
 				F09459AD24092E0E001EC43D /* gtranslator-reverso-speaker.js in Resources */,
@@ -1999,7 +1999,7 @@
 			files = (
 				F0E5BC6823D632AD004DACE5 /* merriam-webster.json in Resources */,
 				F08CE13B236EA9F200610342 /* index.js in Resources */,
-				F058C7EE2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
+				F058C7EE2396ACC0002C84F0 /* reverso.js in Resources */,
 				F040D57C2336BD97004567B8 /* README.md in Resources */,
 				F058C7FE2397FBCE002C84F0 /* longman.json in Resources */,
 				F0AA69AD232E9712007CC07B /* LaunchScreen.storyboard in Resources */,

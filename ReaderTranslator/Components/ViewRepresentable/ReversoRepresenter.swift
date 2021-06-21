@@ -28,7 +28,7 @@ struct ReversoRepresenter: ViewRepresentable, WKScriptsSetup {
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
-        setupScript(view: view, file: "reverso-reverso-speaker")
+        setupScript(view: view, file: "reverso")
 
         return view
     }

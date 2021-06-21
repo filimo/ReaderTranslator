@@ -1,6 +1,8 @@
 (function() {
     document.body.style.zoom = 0.8
     
+    document.querySelector('#lig_reverso_smartbox_article_tc').remove()
+    
     if(!document.querySelector("#entry")) return
     
     function createElementFromHTML(htmlString) {
