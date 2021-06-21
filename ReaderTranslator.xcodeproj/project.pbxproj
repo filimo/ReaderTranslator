@@ -190,6 +190,19 @@
 		F06EE7C923AFF32700CF989E /* ConnectionView_Servers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EE7C823AFF32700CF989E /* ConnectionView_Servers.swift */; };
 		F06EE7CB23AFF33E00CF989E /* ConnectionView_Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EE7CA23AFF33E00CF989E /* ConnectionView_Bookmarks.swift */; };
 		F06F21B923D421480032E756 /* LongmanRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06F21B823D421480032E756 /* LongmanRepresenter.swift */; };
+		F06F6AF1268078CC0035FDE0 /* cambridge.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AEF268077C10035FDE0 /* cambridge.js */; };
+		F06F6AF2268078D00035FDE0 /* collins.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AEE267F09120035FDE0 /* collins.js */; };
+		F06F6AF3268078D50035FDE0 /* longman.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AF02680786F0035FDE0 /* longman.js */; };
+		F06F6AF4268078DF0035FDE0 /* cambridge.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AEF268077C10035FDE0 /* cambridge.js */; };
+		F06F6AF5268078E20035FDE0 /* cambridge.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AEF268077C10035FDE0 /* cambridge.js */; };
+		F06F6AF6268078F30035FDE0 /* cambridge.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AEF268077C10035FDE0 /* cambridge.js */; };
+		F06F6AF7268078F60035FDE0 /* collins.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AEE267F09120035FDE0 /* collins.js */; };
+		F06F6AF8268078F70035FDE0 /* collins.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AEE267F09120035FDE0 /* collins.js */; };
+		F06F6AF9268078F70035FDE0 /* collins.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AEE267F09120035FDE0 /* collins.js */; };
+		F06F6AFA268078F90035FDE0 /* longman.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AF02680786F0035FDE0 /* longman.js */; };
+		F06F6AFB268078FA0035FDE0 /* longman.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AF02680786F0035FDE0 /* longman.js */; };
+		F06F6AFC268078FB0035FDE0 /* longman.js in Resources */ = {isa = PBXBuildFile; fileRef = F06F6AF02680786F0035FDE0 /* longman.js */; };
+		F06F6AFD268078FE0035FDE0 /* deep-L.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B02224126BC9006B8C1F /* deep-L.js */; };
 		F070C8DE262ADD330040496B /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9A696262AD7BB0094E776 /* BottomSheetView.swift */; };
 		F070C8EF262B0D190040496B /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07C3B44252D7F25002B8B1A /* Debug.swift */; };
 		F074D42D23D5B80D00492922 /* AVAudioNetPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */; };
@@ -766,6 +779,8 @@
 		F06EE7CA23AFF33E00CF989E /* ConnectionView_Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView_Bookmarks.swift; sourceTree = "<group>"; };
 		F06F21B823D421480032E756 /* LongmanRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongmanRepresenter.swift; sourceTree = "<group>"; };
 		F06F6AEE267F09120035FDE0 /* collins.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = collins.js; sourceTree = "<group>"; };
+		F06F6AEF268077C10035FDE0 /* cambridge.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = cambridge.js; sourceTree = "<group>"; };
+		F06F6AF02680786F0035FDE0 /* longman.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = longman.js; sourceTree = "<group>"; };
 		F073289223A6C7A0008CB539 /* BookmarksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioNetPlayer.swift; sourceTree = "<group>"; };
 		F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1524,7 +1539,9 @@
 				F058C7ED2396ACC0002C84F0 /* reverso-reverso-speaker.js */,
 				F038B02224126BC9006B8C1F /* deep-L.js */,
 				F038B00C24113331006B8C1F /* gtranslator.js */,
+				F06F6AEF268077C10035FDE0 /* cambridge.js */,
 				F06F6AEE267F09120035FDE0 /* collins.js */,
+				F06F6AF02680786F0035FDE0 /* longman.js */,
 				F058C7F12397A180002C84F0 /* longman.json */,
 				F08D45BD240E9B4D00E7A08E /* cambridge.json */,
 				F0E5BC6623D630DF004DACE5 /* merriam-webster.json */,
@@ -1882,10 +1899,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F038B00F24113388006B8C1F /* gtranslator.js in Resources */,
+				F06F6AF6268078F30035FDE0 /* cambridge.js in Resources */,
 				F0D9A67B26285D490094E776 /* reader-translator.js in Resources */,
 				F058C7FD2397FBCD002C84F0 /* longman.json in Resources */,
 				F038B02A24126DC1006B8C1F /* deep-L.js in Resources */,
+				F06F6AF8268078F70035FDE0 /* collins.js in Resources */,
 				F0120382239182DC008D0B47 /* LaunchScreen.storyboard in Resources */,
+				F06F6AFB268078FA0035FDE0 /* longman.js in Resources */,
 				F012037F239182DC008D0B47 /* Preview Assets.xcassets in Resources */,
 				F012037C239182DC008D0B47 /* Assets.xcassets in Resources */,
 				F0E5BC6923D632AE004DACE5 /* merriam-webster.json in Resources */,
@@ -1897,13 +1917,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F038B00E2411337C006B8C1F /* gtranslator.js in Resources */,
+				F06F6AF1268078CC0035FDE0 /* cambridge.js in Resources */,
 				F08D45BE240E9CDC00E7A08E /* cambridge.json in Resources */,
 				F058C7F22397A94D002C84F0 /* longman.json in Resources */,
 				F0E5BC6723D632AC004DACE5 /* merriam-webster.json in Resources */,
 				F058C7EF2396ACC0002C84F0 /* reverso-reverso-speaker.js in Resources */,
 				F0D9A66926285D3F0094E776 /* reader-translator.js in Resources */,
+				F06F6AF3268078D50035FDE0 /* longman.js in Resources */,
 				F00C7C88235783FF003F6D28 /* gtranslator-reverso-speaker.js in Resources */,
 				F038B02324126D71006B8C1F /* deep-L.js in Resources */,
+				F06F6AF2268078D00035FDE0 /* collins.js in Resources */,
 				F0754444234479DB00E1D88E /* Main.storyboard in Resources */,
 				F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */,
 				F09AD47E23702DF100FFBF6A /* jquery.js in Resources */,
@@ -1927,6 +1950,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F07CD2E4244CDE1100BCBF71 /* LaunchScreen.storyboard in Resources */,
+				F06F6AF9268078F70035FDE0 /* collins.js in Resources */,
+				F06F6AF4268078DF0035FDE0 /* cambridge.js in Resources */,
 				F026D3B3244CEA1F0085BA72 /* longman.json in Resources */,
 				F026D3B4244CEA250085BA72 /* merriam-webster.json in Resources */,
 				F03EECB72626E1BC003476F0 /* reader-translator.js in Resources */,
@@ -1934,6 +1959,7 @@
 				F07CD2E1244CDE1100BCBF71 /* Preview Assets.xcassets in Resources */,
 				F0D8F770265F7EC60018877E /* deep-L.js in Resources */,
 				F026D3B2244CEA130085BA72 /* reverso-reverso-speaker.js in Resources */,
+				F06F6AFC268078FB0035FDE0 /* longman.js in Resources */,
 				F0824626265F7FF100DC74E7 /* gtranslator.js in Resources */,
 				F07CD2DE244CDE1100BCBF71 /* Assets.xcassets in Resources */,
 			);
@@ -1944,7 +1970,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0824625265F7FF000DC74E7 /* gtranslator.js in Resources */,
+				F06F6AFA268078F90035FDE0 /* longman.js in Resources */,
 				F09760C92409256C0030F928 /* LaunchScreen.storyboard in Resources */,
+				F06F6AF7268078F60035FDE0 /* collins.js in Resources */,
 				F09760C62409256C0030F928 /* Preview Assets.xcassets in Resources */,
 				F09459A924092E0E001EC43D /* reverso-reverso-speaker.js in Resources */,
 				F09459AC24092E0E001EC43D /* merriam-webster.json in Resources */,
@@ -1952,6 +1980,8 @@
 				F09459AD24092E0E001EC43D /* gtranslator-reverso-speaker.js in Resources */,
 				F09459AB24092E0E001EC43D /* longman.json in Resources */,
 				F09760C32409256C0030F928 /* Assets.xcassets in Resources */,
+				F06F6AFD268078FE0035FDE0 /* deep-L.js in Resources */,
+				F06F6AF5268078E20035FDE0 /* cambridge.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

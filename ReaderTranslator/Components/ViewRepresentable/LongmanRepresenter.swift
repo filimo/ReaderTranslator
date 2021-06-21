@@ -29,6 +29,7 @@ struct LongmanRepresenter: ViewRepresentable, WKScriptsSetup {
         Self.pageView = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
+        setupScript(view: view, file: "longman")
 
         return view
     }
