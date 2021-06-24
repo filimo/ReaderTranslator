@@ -276,6 +276,8 @@
 		F07CD327244CE69600BCBF71 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F073289223A6C7A0008CB539 /* BookmarksView.swift */; };
 		F07CD328244CE6A400BCBF71 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459BF24093073001EC43D /* BookmarksView.swift */; };
 		F07CD329244CE6AF00BCBF71 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459DB24093230001EC43D /* SafariView.swift */; };
+		F080D9CE268494210088F078 /* CollinsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05548DF267A8669000F1A9A /* CollinsStore.swift */; };
+		F080D9CF268494220088F078 /* CollinsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05548DF267A8669000F1A9A /* CollinsStore.swift */; };
 		F0814BA223562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F0814BA323562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
 		F0814BA423562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
@@ -1336,8 +1338,8 @@
 				F0AA699F232E9710007CC07B /* ReaderTranslator */,
 				F0754438234479DA00E1D88E /* ReaderTranslatorMac */,
 				F07CD2D6244CDE0F00BCBF71 /* ReaderTranslatorIPad */,
-				F0120374239182DA008D0B47 /* ReaderTranslatorPlayer */,
 				F09760BB240925680030F928 /* ReaderTranslatorMobile */,
+				F0120374239182DA008D0B47 /* ReaderTranslatorPlayer */,
 				F075445023447A2800E1D88E /* ReaderTranslatorSafari */,
 				F0A2179923A9355E00968133 /* ReaderTranslatorMacTests */,
 				F0AF8D1923D3907600E8E4E2 /* ReaderTranslatorShare */,
@@ -1883,8 +1885,8 @@
 			targets = (
 				F0754436234479DA00E1D88E /* ReaderTranslatorMac */,
 				F07CD2D4244CDE0F00BCBF71 /* ReaderTranslatorIPad */,
-				F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */,
 				F09760B9240925680030F928 /* ReaderTranslatorMobile */,
+				F0120372239182DA008D0B47 /* ReaderTranslatorPlayer */,
 				F0AA699C232E9710007CC07B /* ReaderTranslator */,
 				F075444D23447A2700E1D88E /* ReaderTranslatorSafari */,
 				F0A2179723A9355E00968133 /* ReaderTranslatorMacTests */,
@@ -2333,6 +2335,7 @@
 				F07CD31C244CE57800BCBF71 /* DirectoryObserver.swift in Sources */,
 				F07CD312244CE50400BCBF71 /* NSObject.swift in Sources */,
 				F07C3B4E252D7F2E002B8B1A /* Debug.swift in Sources */,
+				F080D9CE268494210088F078 /* CollinsStore.swift in Sources */,
 				F07CD2FD244CE43000BCBF71 /* CollinsView.swift in Sources */,
 				F07CD310244CE4E200BCBF71 /* WebStore.swift in Sources */,
 				F07CD322244CE62400BCBF71 /* GTranslatorView.swift in Sources */,
@@ -2471,6 +2474,7 @@
 				F038B01724116964006B8C1F /* GTranslatorMiniView.swift in Sources */,
 				F09459CA240931AC001EC43D /* WikipediaView.swift in Sources */,
 				F09459D0240931E2001EC43D /* ReversoView.swift in Sources */,
+				F080D9CF268494220088F078 /* CollinsStore.swift in Sources */,
 				F094599424092D7E001EC43D /* NetBrowser.swift in Sources */,
 				F09459A024092DFA001EC43D /* CollinsRepresenter.swift in Sources */,
 				F094597924092D0D001EC43D /* View.swift in Sources */,

@@ -7,25 +7,41 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SentencesView_Row: View {
     let sentence: LongmanSentence
+
     @Binding var showGTranlator: LongmanSentence?
     @Binding var showLongmanView: Bool
+
+    @State var cancellableSpeakers: AnyCancellable?
 
     @ObservedObject var store = Store.shared
 
     var body: some View {
         HStack {
             Button(action: {
-                LongmanStore.shared.addAudio(url: self.sentence.url)
-                LongmanStore.shared.play()
-            }, label: { self.soundIco })
+                cancellableSpeakers = Publishers
+                    .CombineLatest3(
+                        LongmanStore.shared.fetchInfo(text: sentence.text),
+                        CambridgeStore.shared.fetchInfo(text: sentence.text),
+                        CollinsStore.shared.fetchInfo(text: sentence.text))
+                    .sink { hasLongmanSound, hasCambridgeSound, hasCollinsSound in
+                        if hasCambridgeSound {
+                            AudioStore.shared.play()
+                        } else if hasLongmanSound {
+                            AudioStore.shared.play()
+                        } else if hasCollinsSound {
+                            AudioStore.shared.play()
+                        } 
+                    }
+            }, label: { soundIco })
             Button(
-                action: { self.showGTranlator = self.sentence },
-                label: { Text(self.sentence.text).font(.headline) })
+                action: { showGTranlator = sentence },
+                label: { Text(sentence.text).font(.headline) })
             Spacer()
-            Button(action: { self.showLongmanView = true }, label: { self.longmanIco })
+            Button(action: { showLongmanView = true }, label: { longmanIco })
         }.padding(.leading, 10)
     }
 

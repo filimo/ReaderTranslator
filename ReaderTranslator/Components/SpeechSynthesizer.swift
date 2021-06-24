@@ -10,7 +10,7 @@ import Combine
 import Foundation
 import Speech
 
-private var cancellableLongmanSpeak: AnyCancellable?
+private var cancellableSpeakers: AnyCancellable?
 
 struct VoiceInfo {
     let id = UUID()
@@ -77,7 +77,7 @@ class SpeechSynthesizer {
 
         AudioStore.shared.removeAllSounds()
 
-        cancellableLongmanSpeak = Publishers
+        cancellableSpeakers = Publishers
             .CombineLatest3(
                 LongmanStore.shared.fetchInfo(text: text),
                 CambridgeStore.shared.fetchInfo(text: text),
