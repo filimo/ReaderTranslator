@@ -3,12 +3,13 @@
 
 # I built this project when SwiftUI was 1 beta in 2019 so there are bugs with memory leak and it has no perfect architecture but there are usefull features that you can implement to your projects. You can use this project as it is to pump a foreign languages and undestand more deeply acticles and WWDC videos. Sorry, I don't have enought time to fix and rewrite this project.
 
-## Каналы на русском о SwiftUI, Combine и Swift
+## [Если у вас есть вопросы по SwiftUI и другим новым frameworks](https://t.me/swift_ui) <br> 
+
+## Другие каналы на русском о SwiftUI, Combine и Swift
 [Swift, Xcode разработка под iOS, macOS](https://t.me/usovswift) <br>
 [CocoaHeads Chat](https://t.me/cocoaheads_chat) <br>
 [The Swift Developers|Сообщество разработчиков](https://t.me/joinchat/BAn0BkLMGrfpDYy2cnysNg) <br>
 [Server Side Swift Developer (SSSD) - russian/ukraine/etc. (сообщество Vapor, Kitura, Perfect, Smoke, Tris)](https://t.me/server_side_swift) <br>
-[SwiftUI Combine Swift 5.1+ newAppleFrameworks](https://t.me/swift_ui) <br> 
 
 ## Help
 ***If you mark this project with ✭. It will allow to easy find this project for other developers. Perhaps they already find more information about SwiftUI, Combine and other WWDC 2019 features in practice.
