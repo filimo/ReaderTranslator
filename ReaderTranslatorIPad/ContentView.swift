@@ -51,6 +51,7 @@ struct ContentView: View {
                     CollinsView().opacity(service == .collins ? 1 : 0)
                     CambidgeView().opacity(service == .cambridge ? 1 : 0)
                     WikipediaView().opacity(service == .wikipedia ? 1 : 0)
+                    
                 }
             }
             .frame(width: 470)
