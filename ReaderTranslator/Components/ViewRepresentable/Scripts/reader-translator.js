@@ -135,15 +135,16 @@
     	let isVideoPaused = true
 
         let $playbackRate = document.createElement('span')
-        document.querySelector('.footer-breadcrumbs').append($playbackRate)
-        $playbackRate.innerHTML = "1.00"
+        
+        document.querySelector('[data-supplement-id="transcript"] span').append($playbackRate)
+        updateStatus()
                    
         function updateStatus() {
             let playbackRate = video.playbackRate.toFixed(2)
             let currentTime = video.currentTime.toFixed(0)
             let duration = video.duration.toFixed(0)
 
-            $playbackRate.innerHTML = `playbackRate:${playbackRate} player:${currentTime}/${duration}`
+            $playbackRate.innerHTML = ` playbackRate:${playbackRate} player:${currentTime}/${duration}`
         }
 
         function playVideo() {
