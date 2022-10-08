@@ -23,8 +23,8 @@ class ServiceProvider: NSObject {
             return
         }
 
-        store.translateAction.add(.gTranslator(text: text))
-        openText(text: text)
+        store.translateAction.addAll(text: text)
+//        openText(text: text)
     }
 
     private func openText(text: String) {
