@@ -25,13 +25,12 @@ enum TranslateAction: Equatable {
     case cambridge(text: String)
     case wikipedia(text: String)
     case bookmarks(text: String)
-    
 
     init() {
         self = .none(text: "")
     }
 
-    func getText() -> String {
+    @MainActor func getText() -> String {
         switch self {
         case let .none(text),
              let .speak(text),
@@ -52,11 +51,7 @@ enum TranslateAction: Equatable {
         }
     }
 
-    mutating func add(_ action: TranslateAction, isSpeaking: Bool = true) {
-        add([action], isSpeaking: isSpeaking)
-    }
-
-    mutating func add(_ actions: [TranslateAction], isSpeaking: Bool = true) {
+    @MainActor mutating func add(_ actions: [TranslateAction], isSpeaking: Bool = true) {
         let isEmpty = stack.count == 0 ? true : false
 
         for action in actions {
@@ -67,7 +62,11 @@ enum TranslateAction: Equatable {
         if isEmpty { next() }
     }
 
-    mutating func addAll(text: String, except: AvailableView? = nil, isSpeaking: Bool = true) {
+    @MainActor mutating func add(_ action: TranslateAction, isSpeaking: Bool = true) {
+        add([action], isSpeaking: isSpeaking)
+    }
+    
+    @MainActor mutating func addAll(text: String, except: AvailableView? = nil, isSpeaking: Bool = true) {
         let actions = ViewsStore.shared.enabledViews
             .filter {
                 guard $0 != except else { return false }
@@ -83,7 +82,7 @@ enum TranslateAction: Equatable {
                      .wikipedia: if count < 4 { return true }
                 case .reverso: if count < 10 { return true }
                 case .gTranslator, .deepL, .yTranslator, .bookmarks: return true
-                case .pdf, .web, .safari: return false
+                case .audioToText, .pdf, .web, .safari: return false
                 }
                 return false
             }
@@ -92,7 +91,7 @@ enum TranslateAction: Equatable {
     }
 
     @discardableResult
-    mutating func next() -> TranslateAction {
+    @MainActor mutating func next() -> TranslateAction {
         if let action = stack.pop() {
             self = action
         } else {

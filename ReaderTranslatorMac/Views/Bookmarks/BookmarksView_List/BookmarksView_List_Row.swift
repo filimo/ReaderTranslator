@@ -36,13 +36,17 @@ struct BookmarksView_List_Row: View {
         HStack {
             ForEach(items, id: \.self) { bookmark in
                 HStack {
+                    Spacer()
+                    
                     CircleButton { Text("\(bookmark.counter)") }
                         .aspectRatio(contentMode: .fill)
                         .fixedSize(horizontal: true, vertical: false)
                         .onTapGesture {
-                            self.bookmarksStore.items.increase(bookmark: bookmark)
+                            bookmarksStore.items.increase(bookmark: bookmark)
                         }
-                    self.bookmarkItemView(bookmark: bookmark).font(.headline)
+                    bookmarkItemView(bookmark: bookmark).font(.headline)
+                    
+                    Spacer()
                 }
             }
         }
@@ -61,6 +65,6 @@ struct BookmarksView_List_Row: View {
 
 struct BookmarksView_List_Row_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView_List_Row(items: [.init(text: "test")], width: 100)
+        BookmarksView_Previews.previews
     }
 }

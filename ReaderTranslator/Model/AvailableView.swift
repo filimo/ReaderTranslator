@@ -24,6 +24,7 @@ enum AvailableView: String, Codable, CaseIterable {
     case pdf = "PDF"
     case web = "Web"
     case safari = "Safari"
+    case audioToText = "AudioToText"
 }
 
 extension AvailableView {
@@ -75,6 +76,7 @@ extension AvailableView {
         case .pdf: ReaderView_Pdf()
         case .web: ReaderView_Web()
         case .safari: SafariView()
+        case .audioToText: AudioToTextView()
         }
     }
 
@@ -93,7 +95,8 @@ extension AvailableView {
             .gTranslator,
             .deepL,
             .pdf,
-            .web
+            .web,
+            .audioToText
         ]
         return views.sorted { $0.orderInt < $1.orderInt }
     }
@@ -102,7 +105,9 @@ extension AvailableView {
         ViewsStore.shared.enabledViews.contains(self)
     }
 
-    func getAction(text: String = Store.shared.translateAction.getText()) -> TranslateAction {
+    @MainActor func getAction(text: String? = nil) -> TranslateAction {
+        let text = text ?? Store.shared.translateAction.getText()
+        
         switch self {
         case .wikipedia: return .wikipedia(text: text)
         case .merriamWebster: return .merriamWebster(text: text)
@@ -116,7 +121,11 @@ extension AvailableView {
         case .collins: return .collins(text: text)
         case .cambridge: return .collins(text: text)
         case .bookmarks: return .bookmarks(text: text)
-        case .pdf, .web, .safari: return .none(text: text)
+        case
+            .pdf,
+            .web,
+            .audioToText,
+            .safari: return .none(text: text)
         }
     }
 }

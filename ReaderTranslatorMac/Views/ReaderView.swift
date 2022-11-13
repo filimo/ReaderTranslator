@@ -10,7 +10,6 @@ import SwiftUI
 import WebKit
 
 struct ReaderView: View {
-    @ObservedObject var store = Store.shared
     @ObservedObject var viewsStore = ViewsStore.shared
 
     var body: some View {
@@ -20,9 +19,7 @@ struct ReaderView: View {
                     SafariView()
                 #endif
                 ForEach(AvailableView.resiableViews, id: \.self) { view in
-                    Group {
-                        if view.isEnabled { view.view }
-                    }
+                    if view.isEnabled { view.view }
                 }
             }.padding(.bottom, 20)
         }

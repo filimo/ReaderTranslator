@@ -26,7 +26,7 @@ struct BookmarksView: View {
                                         .lineLimit(1)
                                 }
                             ).layoutPriority(2)
-                            self.bookmarksIco(text: bookmark.text)
+                            bookmarksIco(text: bookmark.text)
 
                             Spacer()
 

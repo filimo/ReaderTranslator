@@ -63,13 +63,15 @@ class SpeechSynthesizer {
      isVoiceEnabled = true calls speak()
      isVoiceEnabled = false calls stop()
      */
-    static func speak(
-        text: String = Store.shared.translateAction.getText(),
+    @MainActor static func speak(
+        text: String? = nil,
         voiceName: String = AudioStore.shared.voiceName,
         stopSpeaking: Bool = false,
         isVoiceEnabled: Bool = AudioStore.shared.isSpeakSentences,
         enabledSpeakByEngine: Bool = true
     ) {
+        let text = text ?? Store.shared.translateAction.getText()
+        
         if speechSynthesizer.isSpeaking {
             SpeechSynthesizer.stop()
             if stopSpeaking { return }
@@ -79,9 +81,9 @@ class SpeechSynthesizer {
 
         cancellableSpeakers = Publishers
             .CombineLatest3(
-                LongmanStore.shared.fetchInfo(text: text),
                 CambridgeStore.shared.fetchInfo(text: text),
-                CollinsStore.shared.fetchInfo(text: text)
+                CollinsStore.shared.fetchInfo(text: text),
+                LongmanStore.shared.fetchInfo(text: text)
             )
             .sink { hasLongmanSound, hasCambridgeSound, hasCollinsSound in
                 if hasCambridgeSound {

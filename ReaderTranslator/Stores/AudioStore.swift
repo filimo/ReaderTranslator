@@ -10,10 +10,10 @@ import AVFoundation
 import Foundation
 
 final class AudioStore: NSObject, ObservableObject {
-    private override init() {
+    override private init() {
         super.init()
     }
-    
+
     static var shared = AudioStore()
 
     private var audioUrls = Stack<URL>()
@@ -22,8 +22,9 @@ final class AudioStore: NSObject, ObservableObject {
     @Published(key: "favoriteVoiceNames") var favoriteVoiceNames: [FavoriteVoiceName] = []
     @Published(key: "voiceLanguage") var language = "Select language"
     @Published(key: "voiceName") var voiceName = "Select voice"
-    @Published(key: "isSpeakSentences") var isSpeakSentences = true { didSet { SpeechSynthesizer.speak() } }
-    @Published(key: "isSpeakWords") var isSpeakWords = true { didSet { SpeechSynthesizer.speak() } }
+    @Published(key: "isSpeakSentences") var isSpeakSentences = true { didSet { speak() } }
+
+    @Published(key: "isSpeakWords") var isSpeakWords = true { didSet { speak() } }
     @Published(key: "voiceRate") var rate: Float = 0.5
     @Published(key: "sentencesVolume") var sentencesVolume: Float = 1
     @Published(key: "wordsVolume") var wordsVolume: Float = 1
@@ -31,6 +32,14 @@ final class AudioStore: NSObject, ObservableObject {
 }
 
 extension AudioStore {
+    func speak() {
+        Task {
+            await MainActor.run {
+                SpeechSynthesizer.speak()
+            }
+        }
+    }
+
     func addAudio(url: URL) {
         audioUrls.push(url)
     }
@@ -44,7 +53,7 @@ extension AudioStore {
             player?.play(url: url)
         }
     }
-    
+
     func removeAllSounds() {
         audioUrls.removeAll()
     }

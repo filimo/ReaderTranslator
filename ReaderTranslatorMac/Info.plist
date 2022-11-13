@@ -35,8 +35,6 @@
 	<string>ReaderTranslator requires permission to access the Downloads folder.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 Viktor Kushnerov. All rights reserved.</string>
-	<key>NSMainStoryboardFile</key>
-	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>NSServices</key>
@@ -65,5 +63,7 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Audio will be used to convert to text</string>
 </dict>
 </plist>

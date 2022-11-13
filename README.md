@@ -88,14 +88,13 @@ If you want to run the project on macOS I recommend to use 'ReaderTranslatorMac'
 ## Goals
 Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 
-## Upcoming features in 2.0
- - Watch videos with subtitles [#55](https://github.com/filimo/ReaderTranslator/issues/55)
-![](files/Release_2.0.0_1.png)
 
 ## Coming features
 - [New features for ReaderTranslatorPlayer](https://github.com/filimo/ReaderTranslator/issues/58)
 - [Sync bookmarks between macOS and mobile apps](https://github.com/filimo/ReaderTranslator/issues/63)
 - [Bookmarks for mobile version](https://github.com/filimo/ReaderTranslator/issues/66)
+ - Watch videos with subtitles [#55](https://github.com/filimo/ReaderTranslator/issues/55)
+![](files/Release_2.0.0_1.png)
 
 ![](files/Release_1.9_1.gif)
 ![](files/Release_1.9_2.gif)
@@ -107,8 +106,14 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 [291a055](https://github.com/filimo/ReaderTranslator/commit/291a05569546ca431afa2114306cb302a4ba9ad5)
 ![](files/291a055.jpeg)
 
-## Releases 
+## Releases
+## I stop to make .dmg for now. 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
+
+**2.0.0**
+Translate audio and video sources to text (macOS only, iOS might come in the future)
+![](files/Release_2.0.0.gif)
+
 
 **1.13.0**
 Implemeted iPadOS target project

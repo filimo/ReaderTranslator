@@ -22,12 +22,7 @@ struct ContentView: View {
     }
 
     var body: some View {
-        if case let .speak(text) = self.store.translateAction {
-            store.translateAction.next()
-            SpeechSynthesizer.speak(text: text, enabledSpeakByEngine: false)
-        }
-
-        return HStack {
+        HStack {
             VStack {
                 Menu("TranslateBy") {
                     Button("Google Translate") { service = .gTranslator }
@@ -37,7 +32,7 @@ struct ContentView: View {
                     Button("Collins") { service = .collins }
                     Button("Cambridge") { service = .cambridge }
                     Button("Wiki") { service = .wikipedia }
-                    
+
                     Divider()
 
                     Button("Cancel") {}
@@ -51,12 +46,17 @@ struct ContentView: View {
                     CollinsView().opacity(service == .collins ? 1 : 0)
                     CambidgeView().opacity(service == .cambridge ? 1 : 0)
                     WikipediaView().opacity(service == .wikipedia ? 1 : 0)
-                    
                 }
             }
             .frame(width: 470)
 
             WebView()
+        }
+        .onChange(of: store.translateAction) { value in
+            if case let .speak(text) = value {
+                store.translateAction.next()
+                SpeechSynthesizer.speak(text: text, enabledSpeakByEngine: false)
+            }
         }
     }
 

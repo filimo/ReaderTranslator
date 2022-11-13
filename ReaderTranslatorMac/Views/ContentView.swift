@@ -20,9 +20,12 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
-                ReaderView().blur(radius: viewStore.showSettings ? 1 : 0)
+                ReaderView()
+                    .blur(radius: viewStore.showSettings ? 1 : 0)
+                
                 StatusBarView()
             }
+            
             SettingsView()
         }
     }

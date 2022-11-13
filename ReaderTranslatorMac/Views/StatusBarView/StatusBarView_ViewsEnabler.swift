@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct StatusBarView_ViewsEnabler: View {
-    @ObservedObject var store = Store.shared
     @ObservedObject var viewsStore = ViewsStore.shared
 
     private let buttons: [AvailableView] = [
         .bookmarks,
+        .audioToText,
         .wikipedia,
         .macmillan,
         .collins,

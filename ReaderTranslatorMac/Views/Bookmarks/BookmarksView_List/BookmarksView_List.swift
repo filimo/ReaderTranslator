@@ -21,7 +21,11 @@ struct BookmarksView_List: View {
     private var bookmarkItems: [BookmarksStore.Bookmarks] {
         if case let .bookmarks(text) = store.translateAction {
             self.store.translateAction.next()
-            longmanStore.word = text
+            Task {
+                await MainActor.run {
+                    longmanStore.word = text
+                }
+            }
         }
 
         var bookmarks = debug ? [.init(text: "test")] : bookmarksStore.items
@@ -49,6 +53,6 @@ struct BookmarksView_List: View {
 
 struct BookmarksView_List_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView_List(columnts: 3, width: 100, filter: .constant(""), debug: true)
+        BookmarksView_Previews.previews
     }
 }

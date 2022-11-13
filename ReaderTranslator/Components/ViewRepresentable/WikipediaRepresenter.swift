@@ -32,7 +32,7 @@ struct WikipediaRepresenter: ViewRepresentable, WKScriptsSetup {
         return view
     }
 
-    func updateView(_ view: WKPageView, context _: Context) {
+    @MainActor func updateView(_ view: WKPageView, context _: Context) {
         guard case var .wikipedia(text) = selectedText else { return }
         text = text.replacingOccurrences(of: "\n", with: " ")
         Store.shared.translateAction.next()

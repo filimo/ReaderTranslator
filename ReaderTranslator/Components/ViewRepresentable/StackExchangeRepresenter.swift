@@ -32,7 +32,7 @@ struct StackExchangeRepresenter: ViewRepresentable, WKScriptsSetup {
         return view
     }
 
-    func updateView(_ view: WKPageView, context _: Context) {
+    @MainActor func updateView(_ view: WKPageView, context _: Context) {
         guard case let .stackExchange(text) = selectedText else { return }
         Store.shared.translateAction.next()
 
