@@ -1,7 +1,9 @@
 # ReaderTranslator 
 ### using SwiftUI, Combine, Catalyst and others new features on iOS, ipadOS, macOS that annonced at WWDC 2019
 
-# I built this project when SwiftUI was 1 beta in 2019 so there are bugs with memory leak and it has no perfect architecture but there are usefull features that you can implement to your projects. You can use this project as it is to pump a foreign languages and undestand more deeply acticles and WWDC videos. Sorry, I don't have enought time to fix and rewrite this project.
+## I built this project when SwiftUI was 1 beta in 2019 so there are bugs with memory leak and it has no perfect architecture but there are usefull features that you can implement to your projects. You can use this project as it is to pump a foreign languages and undestand more deeply acticles and WWDC videos. Sorry, I don't have enought time to fix and rewrite this project.
+
+# [Release history here](https://github.com/filimo/ReaderTranslator#releases)
 
 ## Here are video gifs of using on macOS. Wait for when they will downloaded.
 ![](files/videos/video_1.gif)
