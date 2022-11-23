@@ -63,8 +63,17 @@ struct AudioToTextView: View {
             }
             .frame(height: 20)
 
+            #if os(macOS)
             NSTextViewRepresentable(text: $audioService.text, selectedText: $selectedText)
                 .font(.title2)
+                .border(.blue)
+            #endif
+
+            #if os(iOS)
+            TextEditor(text: $audioService.text)
+            #endif
+
+            Spacer()
         }
         .frame(width: viewsStore.viewWidth[.audioToText] ?? ViewsStore.defaultWidth)
         .onAppear {

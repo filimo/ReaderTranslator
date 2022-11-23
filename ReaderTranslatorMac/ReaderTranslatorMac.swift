@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  ReaderTranslatorMac.swift
 //  ReaderTranslatorMac
 //
 //  Created by Viktor Kushnerov on 10/2/19.
@@ -9,7 +9,7 @@
 import SwiftUI
 
 @main
-struct AudioToTextApp: App {
+struct ReaderTranslatorMac: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

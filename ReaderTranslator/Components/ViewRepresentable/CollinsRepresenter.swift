@@ -13,11 +13,10 @@ struct CollinsRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://www.collinsdictionary.com/dictionary/english/"
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .collins))
+        WKCoordinator(self, currentView: .collins)
     }
 
     func makeView(context: Context) -> WKPageView {

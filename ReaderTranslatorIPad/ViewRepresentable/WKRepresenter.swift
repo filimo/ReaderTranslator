@@ -13,7 +13,6 @@ import WebKit
 struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var lastWebPage: String
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView { views[WebStore.shared.currentTab]! }
     static var hasSentTranslateAction = false
 
@@ -27,7 +26,7 @@ struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     }
     
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .web))
+        WKCoordinator(self, currentView: .web)
     }
 
     func makeView(context: Context) -> WKPageView {

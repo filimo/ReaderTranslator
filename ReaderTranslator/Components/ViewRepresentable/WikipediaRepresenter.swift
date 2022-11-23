@@ -14,10 +14,9 @@ struct WikipediaRepresenter: ViewRepresentable, WKScriptsSetup {
     private let defaultURL = "https://en.wikipedia.org/wiki/Special:Search"
 
     static var pageView: WKPageView?
-    static var coorinator: WKCoordinator?
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .wikipedia))
+        WKCoordinator(self, currentView: .wikipedia)
     }
 
     func makeView(context: Context) -> WKPageView {

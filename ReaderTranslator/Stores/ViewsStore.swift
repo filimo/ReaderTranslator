@@ -9,6 +9,7 @@
 import Foundation
 import CoreGraphics
 
+@MainActor
 final class ViewsStore: ObservableObject {
     private init() {}
     static let shared = ViewsStore()

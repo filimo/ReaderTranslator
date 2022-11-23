@@ -9,6 +9,7 @@ import Combine
 import SwiftUI
 import WebKit
 
+@MainActor
 class WKCoordinator: NSObject {
     let parent: WKScriptsSetup
     var selectedText = ""

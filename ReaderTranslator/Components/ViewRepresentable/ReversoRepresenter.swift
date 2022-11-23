@@ -13,11 +13,10 @@ struct ReversoRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://context.reverso.net/translation/"
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .reverso))
+        WKCoordinator(self, currentView: .reverso)
     }
 
     func makeView(context: Context) -> WKPageView {

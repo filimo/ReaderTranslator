@@ -26,6 +26,7 @@ extension Array where Element: Hashable {
     }
 }
 
+@MainActor
 class SpeechSynthesizer {
     private static var speechSynthesizer = AVSpeechSynthesizer()
     static var languages: [String] = {
@@ -63,13 +64,15 @@ class SpeechSynthesizer {
      isVoiceEnabled = true calls speak()
      isVoiceEnabled = false calls stop()
      */
-    @MainActor static func speak(
+    static func speak(
         text: String? = nil,
-        voiceName: String = AudioStore.shared.voiceName,
+        voiceName: String? = nil,
         stopSpeaking: Bool = false,
-        isVoiceEnabled: Bool = AudioStore.shared.isSpeakSentences,
+        isVoiceEnabled: Bool? = nil,
         enabledSpeakByEngine: Bool = true
     ) {
+        let voiceName = voiceName ?? AudioStore.shared.voiceName
+        let isVoiceEnabled = isVoiceEnabled ?? AudioStore.shared.isSpeakSentences
         let text = text ?? Store.shared.translateAction.getText()
         
         if speechSynthesizer.isSpeaking {

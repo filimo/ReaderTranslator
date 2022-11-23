@@ -23,6 +23,7 @@ struct LongmanSentence: Hashable {
 
 typealias LongmanSentences = [LongmanSentence]
 
+@MainActor
 final class LongmanStore: NSObject, ObservableObject {
     private override init() { super.init() }
     static var shared = LongmanStore()

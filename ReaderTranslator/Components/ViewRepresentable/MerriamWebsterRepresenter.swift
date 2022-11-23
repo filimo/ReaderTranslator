@@ -13,11 +13,10 @@ struct MerriamWebsterRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://www.merriam-webster.com/dictionary/"
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .merriamWebster))
+        WKCoordinator(self, currentView: .merriamWebster)
     }
 
     func makeView(context: Context) -> WKPageView {

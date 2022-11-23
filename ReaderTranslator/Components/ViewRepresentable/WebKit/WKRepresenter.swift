@@ -13,30 +13,34 @@ import WebKit
 struct WKRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var lastWebPage: String
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView { views[WebStore.shared.currentTab]! }
     static var hasSentTranslateAction = false
 
     @ObservedObject private var store = Store.shared
     @ObservedObject var webStore = WebStore.shared
 
-    static private var views = [Int: WKPageView]()
+    private static var views = [Int: WKPageView]()
 
     static var currentWebView: WKPageView? {
         Self.views[WebStore.shared.currentTab]
     }
-    
+
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .web))
+        WKCoordinator(self, currentView: .web)
     }
 
     func makeView(context: Context) -> WKPageView {
         if let view = Self.views[webStore.currentTab] { return view }
         let view = WKPageView()
-        Self.views[self.webStore.currentTab] = view
+        Self.views[webStore.currentTab] = view
 
         setupScriptCoordinator(view: view, coordinator: context.coordinator)
-        webStore.canGoBack = view.canGoBack
+
+        Task {
+            await MainActor.run {
+                webStore.canGoBack = view.canGoBack
+            }
+        }
 
         return view
     }

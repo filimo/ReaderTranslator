@@ -173,7 +173,7 @@
 		F074D42D23D5B80D00492922 /* AVAudioNetPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */; };
 		F074D42F23D5B80D00492922 /* AVAudioNetPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */; };
 		F075320F2920AE3300A13DCD /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075320E2920AE3300A13DCD /* NSTextView.swift */; };
-		F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0754439234479DA00E1D88E /* AppDelegate.swift */; };
+		F075443A234479DA00E1D88E /* ReaderTranslatorMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0754439234479DA00E1D88E /* ReaderTranslatorMac.swift */; };
 		F075443E234479DB00E1D88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F075443D234479DB00E1D88E /* Assets.xcassets */; };
 		F0754441234479DB00E1D88E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0754440234479DB00E1D88E /* Preview Assets.xcassets */; };
 		F075444F23447A2700E1D88E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00644462341E22D006BCA94 /* Cocoa.framework */; };
@@ -504,6 +504,8 @@
 		F0EE0A1A234897CC004A5EAD /* StatusBarView_Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A18234897CC004A5EAD /* StatusBarView_Safari.swift */; };
 		F0EE0A1E2348A66E004A5EAD /* PDFKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A1C2348A651004A5EAD /* PDFKitViewRepresentable.swift */; };
 		F0EE22E92920DDF6007679DB /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EE22E82920DDF6007679DB /* AVKit.framework */; };
+		F0EE22EB29213E20007679DB /* AudioToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03171162920959700F7B3AF /* AudioToTextView.swift */; };
+		F0EE22EC29213EC6007679DB /* AudioToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03171162920959700F7B3AF /* AudioToTextView.swift */; };
 		F0EFE4D82549942500F4EEFD /* CollinsRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCDD442361A7650016F23F /* CollinsRepresenter.swift */; };
 		F0EFE4F1254995AC00F4EEFD /* AvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD8B1A236413F60017C22F /* AvailableView.swift */; };
 		F0EFE5162549962100F4EEFD /* CambidgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFE5152549962100F4EEFD /* CambidgeView.swift */; };
@@ -670,7 +672,7 @@
 		F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioNetPlayer.swift; sourceTree = "<group>"; };
 		F075320E2920AE3300A13DCD /* NSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextView.swift; sourceTree = "<group>"; };
 		F0754437234479DA00E1D88E /* ReaderTranslatorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderTranslatorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0754439234479DA00E1D88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0754439234479DA00E1D88E /* ReaderTranslatorMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTranslatorMac.swift; sourceTree = "<group>"; };
 		F075443D234479DB00E1D88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0754440234479DB00E1D88E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0754445234479DB00E1D88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1088,7 +1090,7 @@
 				F07AEB952920A2CA00BDBF1D /* Representable */,
 				F03276A02748BA4700DB33E4 /* Views */,
 				F075443D234479DB00E1D88E /* Assets.xcassets */,
-				F0754439234479DA00E1D88E /* AppDelegate.swift */,
+				F0754439234479DA00E1D88E /* ReaderTranslatorMac.swift */,
 				F0754445234479DB00E1D88E /* Info.plist */,
 				F0754446234479DB00E1D88E /* ReaderTranslatorMac.entitlements */,
 				F075443F234479DB00E1D88E /* Preview Content */,
@@ -2152,7 +2154,7 @@
 				F07AEB972920A2DF00BDBF1D /* NSTextViewRepresentable.swift in Sources */,
 				F0C36AA22359D50A001E396C /* Clipboard.swift in Sources */,
 				F038B01E24124AC0006B8C1F /* DeepLView.swift in Sources */,
-				F075443A234479DA00E1D88E /* AppDelegate.swift in Sources */,
+				F075443A234479DA00E1D88E /* ReaderTranslatorMac.swift in Sources */,
 				F03276B42748BBAC00DB33E4 /* ReaderView_Web.swift in Sources */,
 				F0C36A972359AF76001E396C /* StatusBarView_Bookmarks.swift in Sources */,
 				F02989EC2360488800DF722E /* OpenPanel.swift in Sources */,
@@ -2248,6 +2250,7 @@
 				F07CD325244CE65100BCBF71 /* FavoriteVoiceName.swift in Sources */,
 				F07CD30E244CE4BE00BCBF71 /* WKScriptsSetup.swift in Sources */,
 				F07CD2EB244CE2BA00BCBF71 /* StoreViewIPad.swift in Sources */,
+				F0EE22EC29213EC6007679DB /* AudioToTextView.swift in Sources */,
 				F07CD30F244CE4C500BCBF71 /* Logger.swift in Sources */,
 				F07CD2F5244CE36B00BCBF71 /* TranslateAction.swift in Sources */,
 				F07CD2EF244CE33100BCBF71 /* UserDefault.swift in Sources */,
@@ -2302,6 +2305,7 @@
 				F09760CF2409261E0030F928 /* WebViewContainer.swift in Sources */,
 				F09760DE240927BF0030F928 /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F094596E24092C6D001EC43D /* TranslateAction.swift in Sources */,
+				F0EE22EB29213E20007679DB /* AudioToTextView.swift in Sources */,
 				F094597424092CB9001EC43D /* AvailableView.swift in Sources */,
 				F09459C4240930D8001EC43D /* GTranslatorView.swift in Sources */,
 				F094597C24092D1B001EC43D /* Image.swift in Sources */,
@@ -2712,7 +2716,7 @@
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReaderTranslatorIPad/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2738,7 +2742,7 @@
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReaderTranslatorIPad/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2762,7 +2766,7 @@
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReaderTranslatorMobile/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2786,7 +2790,7 @@
 				DEVELOPMENT_TEAM = B6QRXW5YF2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReaderTranslatorMobile/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

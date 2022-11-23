@@ -22,6 +22,7 @@ struct CambridgeSentence: Hashable {
 
 typealias CambridgeSentences = [CambridgeSentence]
 
+@MainActor
 final class CambridgeStore: NSObject, ObservableObject {
     private override init() { super.init() }
     static var shared = CambridgeStore()

@@ -8,19 +8,21 @@
 
 import Foundation
 
+@MainActor
 final class WebStore: ObservableObject {
     private init() {
         ({ currentTab = currentTab })() // call didSet
     }
+
     static var shared = WebStore()
 
     @Published(key: "currentTab") var currentTab = 0 {
-        didSet { lastWebPage = savedLastWebPage[self.currentTab] }
+        didSet { lastWebPage = savedLastWebPage[currentTab] }
     }
 
     @Published var canGoBack = false
-    @UserDefault(key: "lastWebPage")
-    private var savedLastWebPage = ["https://google.com", "", ""]
-    @Published
-    var lastWebPage = "" { willSet { savedLastWebPage[self.currentTab] = newValue } }
+
+    @UserDefault(key: "lastWebPage") private var savedLastWebPage = ["https://google.com", "", ""]
+
+    @Published var lastWebPage = "" { willSet { savedLastWebPage[currentTab] = newValue } }
 }

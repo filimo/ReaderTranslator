@@ -13,11 +13,10 @@ struct CambidgeRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://dictionary.cambridge.org/dictionary/english-russian/"
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .cambridge))
+        WKCoordinator(self, currentView: .cambridge)
     }
 
     func makeView(context: Context) -> WKPageView {

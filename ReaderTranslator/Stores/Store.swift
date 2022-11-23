@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 final class Store: ObservableObject {
     private init() {}
     static var shared = Store()

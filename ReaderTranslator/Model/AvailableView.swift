@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@MainActor
 enum AvailableView: String, Codable, CaseIterable {
     case bookmarks = "Bookmarks"
     case wikipedia = "Wikipedia"

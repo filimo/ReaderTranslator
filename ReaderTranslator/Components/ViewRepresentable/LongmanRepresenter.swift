@@ -13,11 +13,10 @@ struct LongmanRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://www.ldoceonline.com/dictionary/"
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .longman))
+        WKCoordinator(self, currentView: .longman)
     }
 
     func makeView(context: Context) -> WKPageView {

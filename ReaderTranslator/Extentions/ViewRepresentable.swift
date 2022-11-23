@@ -17,45 +17,31 @@ import SwiftUI
 protocol ViewRepresentable: ViewRepresentableType {
     associatedtype ViewType
 
-    static var coorinator: Coordinator? { get set }
-
-    func updateView(_ view: ViewType, context: Context)
-    func makeView(context: Context) -> ViewType
-    func makeCoordinator(coordinator: @autoclosure () -> Coordinator) -> Coordinator
+    @MainActor func updateView(_ view: ViewType, context: Context)
+    @MainActor func makeView(context: Context) -> ViewType
 }
 
 extension ViewRepresentable {
     #if os(macOS)
-        func makeNSView(context: Context) -> ViewType {
+        @MainActor func makeNSView(context: Context) -> ViewType {
             print("\(theClassName)_makeView")
             return makeView(context: context)
         }
 
-        func updateNSView(_ view: ViewType, context: Context) {
+        @MainActor func updateNSView(_ view: ViewType, context: Context) {
             print("\(theClassName)_updateView")
             updateView(view, context: context)
         }
 
     #else
-        func makeUIView(context: Context) -> ViewType {
+        @MainActor func makeUIView(context: Context) -> ViewType {
             print("\(theClassName)_makeView")
             return makeView(context: context)
         }
 
-        func updateUIView(_ view: ViewType, context: Context) {
+        @MainActor func updateUIView(_ view: ViewType, context: Context) {
             print("\(theClassName)_updateView")
             updateView(view, context: context)
         }
     #endif
-}
-
-extension ViewRepresentable {
-    func makeCoordinator(coordinator: @autoclosure () -> Coordinator) -> Coordinator {
-        if let coordinator = Self.coorinator { return coordinator }
-
-        let coorinator = coordinator()
-        Self.coorinator = coorinator
-
-        return coorinator
-    }
 }

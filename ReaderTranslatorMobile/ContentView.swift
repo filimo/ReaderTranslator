@@ -22,10 +22,6 @@ struct LazyView<Content: View>: View {
 struct ContentView: View {
     @State var isShow = false
 
-    init() {
-        ViewsStore.shared.enabledViews = [.gTranslator, .web]
-    }
-
     var body: some View {
         NavigationView {
             ZStack {
@@ -35,9 +31,9 @@ struct ContentView: View {
                 ) {
                     EmptyView()
                 }
-                
+
                 WebView()
-                
+
                 BottomSheetView(isOpen: .constant(false), maxHeight: 600) {
                     if !isShow { GTranslatorMiniView() }
                 }.edgesIgnoringSafeArea(.all)
@@ -45,6 +41,9 @@ struct ContentView: View {
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarTitle("ReaderTranslator", displayMode: .inline)
             .navigationBarItems(trailing: Button("Translate") { self.isShow = true })
+        }
+        .onAppear {
+            ViewsStore.shared.enabledViews = [.gTranslator, .web]
         }
     }
 }

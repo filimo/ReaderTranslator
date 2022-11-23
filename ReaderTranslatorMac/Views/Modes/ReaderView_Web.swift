@@ -35,6 +35,8 @@ struct ReaderView_Web: View {
                 tabsView
             }
         }
+        .foregroundColor(.black)
+        .frame(width: viewsStore.viewWidth[.web] ?? ViewsStore.defaultWidth)
     }
 
     var tabsView: some View {
@@ -60,12 +62,10 @@ struct ReaderView_Web: View {
 }
 
 extension ReaderView_Web {
+    @ViewBuilder
     private func webView(_ currentTab: Int) -> some View {
         if webStore.currentTab == currentTab {
-            let view = WKRepresenter(lastWebPage: $webStore.lastWebPage)
-            return view.any
-        } else {
-            return EmptyView().any
+            WKRepresenter(lastWebPage: $webStore.lastWebPage)
         }
     }
 

@@ -8,6 +8,7 @@
 import Speech
 import SwiftUI
 
+@MainActor
 class AudioService: NSObject, ObservableObject {
     static let shared = AudioService()
 

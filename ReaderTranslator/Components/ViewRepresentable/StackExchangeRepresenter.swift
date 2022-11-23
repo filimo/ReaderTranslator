@@ -13,11 +13,10 @@ struct StackExchangeRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://english.stackexchange.com/search"
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .stackExchange))
+        WKCoordinator(self, currentView: .stackExchange)
     }
 
     func makeView(context: Context) -> WKPageView {

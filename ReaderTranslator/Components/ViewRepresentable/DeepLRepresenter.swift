@@ -13,11 +13,10 @@ struct DeepLRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://www.deepl.com/en/translator#en/ru/"
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .deepL))
+        WKCoordinator(self, currentView: .deepL)
     }
 
     func makeView(context: Context) -> WKPageView {

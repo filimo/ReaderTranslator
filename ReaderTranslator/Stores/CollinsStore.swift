@@ -13,6 +13,7 @@ import SwiftSoup
 
 private var player: AVAudioNetPlayer?
 
+@MainActor
 final class CollinsStore: NSObject, ObservableObject {
     static var shared = CollinsStore()
 

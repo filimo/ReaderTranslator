@@ -9,6 +9,7 @@
 import Foundation
 import CoreGraphics
 
+@MainActor
 final class PdfStore: ObservableObject {
     private init() {}
     static var shared = PdfStore()

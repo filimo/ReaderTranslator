@@ -16,14 +16,13 @@ struct GTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
         didSet { setMiniMode() }
     }
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     @ObservedObject private var store = Store.shared
     private let defaultURL = "https://translate.google.com?op=translate&sl=auto&tl=ru"
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .gTranslator))
+        WKCoordinator(self, currentView: .gTranslator)
     }
 
     func makeView(context: Context) -> WKPageView {

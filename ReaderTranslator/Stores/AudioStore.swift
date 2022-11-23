@@ -9,6 +9,7 @@
 import AVFoundation
 import Foundation
 
+@MainActor
 final class AudioStore: NSObject, ObservableObject {
     override private init() {
         super.init()
@@ -74,4 +75,21 @@ extension AudioStore: AVAudioNetPlayerDelegate {
 
     func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully _: Bool) { play() }
     func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) { play() }
+}
+
+extension AudioStore {
+    var isFavorite: Bool {
+        favoriteVoiceNames.first { $0.voice == voiceName } != nil
+    }
+
+    func addCurrentVoice() {
+        removeCurrentVoice()
+        favoriteVoiceNames.append(.init(language: language, voice: voiceName))
+    }
+
+    func removeCurrentVoice() {
+        if let index = favoriteVoiceNames.firstIndex(where: { $0.voice == voiceName }) {
+            favoriteVoiceNames.remove(at: index)
+        }
+    }
 }

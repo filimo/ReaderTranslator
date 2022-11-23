@@ -13,11 +13,10 @@ struct MacmillanRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
     private let defaultURL = "https://www.macmillandictionary.com/dictionary/british/"
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .macmillan))
+        WKCoordinator(self, currentView: .macmillan)
     }
 
     func makeView(context: Context) -> WKPageView {

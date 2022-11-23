@@ -13,14 +13,13 @@ import WebKit
 struct YTranslatorRepresenter: ViewRepresentable, WKScriptsSetup {
     @Binding var selectedText: TranslateAction
 
-    static var coorinator: WKCoordinator?
     static var pageView: WKPageView?
 
     @ObservedObject private var store = Store.shared
     private let defaultURL = "https://translate.yandex.ru/?lang=en-ru"
 
     func makeCoordinator() -> WKCoordinator {
-        makeCoordinator(coordinator: WKCoordinator(self, currentView: .yTranslator))
+        WKCoordinator(self, currentView: .yTranslator)
     }
 
     func makeView(context: Context) -> WKPageView {

@@ -9,9 +9,9 @@
 import WebKit
 
 protocol WKCoordinatorNavigationDelegate: AnyObject {
-    func goBack(_ webView: WKWebView)
+    @MainActor func goBack(_ webView: WKWebView)
 }
 
 extension WKCoordinatorNavigationDelegate {
-    func goBack(_: WKWebView) {}
+    @MainActor func goBack(_: WKWebView) {}
 }

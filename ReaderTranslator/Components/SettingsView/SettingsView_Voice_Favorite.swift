@@ -34,10 +34,10 @@ struct SettingsView_Voice_Favorite: View {
     }
 
     private func favotiteButton() -> some View {
-        let action = FavoriteVoiceName.isFavorite ?
-            { FavoriteVoiceName.removeCurrentVoice() } :
-            { FavoriteVoiceName.addCurrentVoice() }
-        let label = FavoriteVoiceName.isFavorite ?
+        let action = store.isFavorite ?
+            { store.removeCurrentVoice() } :
+            { store.addCurrentVoice() }
+        let label = store.isFavorite ?
             { Image.sfSymbol("star.fill") } :
             { Image.sfSymbol("star") }
 
