@@ -21,15 +21,18 @@ struct StatusBarView: View {
             StatusBarView_Safari()
             StatusBarView_Bookmarks()
             StatusBarView_ViewsEnabler()
-//            gTranslatorNavbarView
+            //            gTranslatorNavbarView
             SpeechHandlerView()
             playbackRateView
             StatusBarView_SettingsView()
-//            StatusBarView_Sync()
+            //            StatusBarView_Sync()
+            speakView
         }.padding(5)
     }
+}
 
-    private var playbackRateView: some View {
+extension StatusBarView {
+    var playbackRateView: some View {
         Group {
             if AvailableView.safari.isEnabled {
                 Text(String(format: "Apple: %.2f", [audioStore.playbackRate]))
@@ -37,7 +40,7 @@ struct StatusBarView: View {
         }
     }
 
-    private var gTranslatorNavbarView: some View {
+    var gTranslatorNavbarView: some View {
         Group {
             Spacer()
             Button(action: {
@@ -47,6 +50,12 @@ struct StatusBarView: View {
             Button(action: {
                 GTranslatorRepresenter.pageView?.goForward()
             }, label: { Image.sfSymbol("arrowshape.turn.up.right.fill") })
+        }
+    }
+
+    var speakView: some View {
+        Button("Speak") {
+            SpeechSynthesizer.speak(isVoiceEnabled: true)
         }
     }
 }
