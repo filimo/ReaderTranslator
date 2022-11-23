@@ -8,6 +8,7 @@
 ## Here are video gifs of using on macOS. Wait for when they will downloaded.
 ![](files/videos/video_1.gif)
 ![](files/videos/video_2.gif)
+![](files/Release_2.0.0.gif)
 
 ## [Если у вас есть вопросы по SwiftUI и другим новым frameworks](https://t.me/swift_ui) <br> 
 
