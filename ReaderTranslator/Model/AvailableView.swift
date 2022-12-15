@@ -26,6 +26,7 @@ enum AvailableView: String, Codable, CaseIterable {
     case web = "Web"
     case safari = "Safari"
     case audioToText = "AudioToText"
+    case chatGPT = "ChatGPT"
 }
 
 extension AvailableView {
@@ -78,6 +79,7 @@ extension AvailableView {
         case .web: ReaderView_Web()
         case .safari: SafariView()
         case .audioToText: AudioToTextView()
+        case .chatGPT: ChatGPTView()
         }
     }
 
@@ -94,6 +96,7 @@ extension AvailableView {
             .reverso,
             .yTranslator,
             .gTranslator,
+            .chatGPT,
             .deepL,
             .pdf,
             .web,
@@ -122,6 +125,7 @@ extension AvailableView {
         case .collins: return .collins(text: text)
         case .cambridge: return .collins(text: text)
         case .bookmarks: return .bookmarks(text: text)
+        case .chatGPT: return .chatGPT(text: text)
         case
             .pdf,
             .web,

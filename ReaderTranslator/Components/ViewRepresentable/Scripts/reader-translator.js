@@ -98,7 +98,7 @@
         if(selection) {} else return
                               
         //Reverso selects text in `search-input` tag after the page loaded
-        if(selection.focusNode.id == 'search-input') return
+        if(selection.focusNode && selection.focusNode.id == 'search-input') return
                               
         if(selection.toString().trim()) {
             sendIn1000('selectionchange', 'document', event)
