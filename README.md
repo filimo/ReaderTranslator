@@ -1,7 +1,9 @@
 # ReaderTranslator 
-### using SwiftUI, Combine, Catalyst and others new features on iOS, ipadOS, macOS that annonced at WWDC 2019
 
-## I built this project when SwiftUI was 1 beta in 2019 so there are bugs with memory leak and it has no perfect architecture but there are usefull features that you can implement to your projects. You can use this project as it is to pump a foreign languages and undestand more deeply acticles and WWDC videos. Sorry, I don't have enought time to fix and rewrite this project.
+This project utilizes the following technologies: SwiftUI, Combine, Catalyst and others new features on iOS, ipadOS, macOS that annonced at WWDC 2019
+
+<ins> I started this project when SwiftUI was in beta 1 in 2019, so it's possible that there may be some bugs with memory leaks and the architecture is not perfect. However, there are useful features that you can incorporate into your own projects. You can use this project as it is to learn and practice a foreign language, and to deepen your understanding of articles and WWDC videos. Unfortunately, I don't currently have the time to fix and rewrite the project, but I plan to add new features in the future. </ins>
+
 
 # [Release history here](https://github.com/filimo/ReaderTranslator#releases)
 
@@ -112,6 +114,11 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## Releases
 ## I stop to make .dmg for now. 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
+
+**2.1.0**
+Add ChatGPT View
+![](files/Release_2.1.0_1.jpg)
+![](files/Release_2.1.0_2.jpg)
 
 **2.0.0**
 Translate audio and video sources to text (macOS only, iOS might come in the future)
