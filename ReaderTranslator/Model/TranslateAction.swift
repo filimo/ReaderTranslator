@@ -25,6 +25,7 @@ enum TranslateAction: Equatable {
     case cambridge(text: String)
     case wikipedia(text: String)
     case bookmarks(text: String)
+    case chatGPT(text: String)
 
     init() {
         self = .none(text: "")
@@ -45,7 +46,8 @@ enum TranslateAction: Equatable {
              let .collins(text),
              let .cambridge(text),
              let .bookmarks(text),
-             let .wikipedia(text):
+             let .wikipedia(text),
+             let .chatGPT(text):
             return text
                 .trimmingCharacters(in: .whitespaces)
         }
@@ -65,7 +67,7 @@ enum TranslateAction: Equatable {
     @MainActor mutating func add(_ action: TranslateAction, isSpeaking: Bool = true) {
         add([action], isSpeaking: isSpeaking)
     }
-    
+
     @MainActor mutating func addAll(text: String, except: AvailableView? = nil, isSpeaking: Bool = true) {
         let actions = ViewsStore.shared.enabledViews
             .filter {
@@ -81,7 +83,7 @@ enum TranslateAction: Equatable {
                      .macmillan,
                      .wikipedia: if count < 4 { return true }
                 case .reverso: if count < 10 { return true }
-                case .gTranslator, .deepL, .yTranslator, .bookmarks: return true
+                case .gTranslator, .deepL, .yTranslator, .bookmarks, .chatGPT: return true
                 case .audioToText, .pdf, .web, .safari: return false
                 }
                 return false

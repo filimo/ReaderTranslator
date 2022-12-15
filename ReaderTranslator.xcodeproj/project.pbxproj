@@ -495,6 +495,8 @@
 		F0E5BC6723D632AC004DACE5 /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
 		F0E5BC6923D632AE004DACE5 /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
 		F0E5BC6A23D632B2004DACE5 /* merriam-webster.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BC6623D630DF004DACE5 /* merriam-webster.json */; };
+		F0EC524B294AEC3300A71ECC /* ChatGPTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EC524A294AEC3300A71ECC /* ChatGPTView.swift */; };
+		F0EC524D294AEC9200A71ECC /* ChatGPTRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EC524C294AEC6000A71ECC /* ChatGPTRepresenter.swift */; };
 		F0EDE34B236418E000E0B81C /* DOMEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */; };
 		F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE34C23641B1300E0B81C /* Stack.swift */; };
 		F0EDFB23239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFB21239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift */; };
@@ -789,6 +791,8 @@
 		F0D9A696262AD7BB0094E776 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerriamWebsterRepresenter.swift; sourceTree = "<group>"; };
 		F0E5BC6623D630DF004DACE5 /* merriam-webster.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "merriam-webster.json"; sourceTree = "<group>"; };
+		F0EC524A294AEC3300A71ECC /* ChatGPTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTView.swift; sourceTree = "<group>"; };
+		F0EC524C294AEC6000A71ECC /* ChatGPTRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTRepresenter.swift; sourceTree = "<group>"; };
 		F0EDE34C23641B1300E0B81C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F0EDFB1E239E2F210048CFD1 /* BookmarksView_Controls_ActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_Controls_ActionMenu.swift; sourceTree = "<group>"; };
 		F0EDFB21239E467B0048CFD1 /* ReaderView_Pdf_Toolbar_PlayButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView_Pdf_Toolbar_PlayButtons.swift; sourceTree = "<group>"; };
@@ -961,6 +965,7 @@
 				F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */,
 				F0A9F35A2349228A00970C97 /* ReversoRepresenter.swift */,
 				F062029423812264002EEAEE /* YTranslatorRepresenter.swift */,
+				F0EC524C294AEC6000A71ECC /* ChatGPTRepresenter.swift */,
 				F0AA69DB232E97AF007CC07B /* GTranslatorRepresenter.swift */,
 				F025D61C23B73C8B004A1D6B /* StackExchangeRepresenter.swift */,
 				F0D2E333234BA49000D95994 /* Safari.swift */,
@@ -1010,6 +1015,7 @@
 				F01A50E823492398001DCC11 /* ReversoView.swift */,
 				F0D31C5023491C23003CF86B /* GTranslatorView.swift */,
 				F0305FD0238125E6002AC5F5 /* YTranslatorView.swift */,
+				F0EC524A294AEC3300A71ECC /* ChatGPTView.swift */,
 				F025D61F23B73FB1004A1D6B /* StackExchangeView.swift */,
 				F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */,
 				F0FCDD452361A7BF0016F23F /* CollinsView.swift */,
@@ -2065,6 +2071,7 @@
 				F03276B32748BB9B00DB33E4 /* BookmarksView_Controls.swift in Sources */,
 				F0586483238FB03900E6DDFA /* ReaderView_Pdf_Toolbar.swift in Sources */,
 				F075320F2920AE3300A13DCD /* NSTextView.swift in Sources */,
+				F0EC524B294AEC3300A71ECC /* ChatGPTView.swift in Sources */,
 				F06DB10B234504FD00C2DE90 /* EditorNSTextRepresentable.swift in Sources */,
 				F0AD8B1C236413F60017C22F /* AvailableView.swift in Sources */,
 				F065096223AE0C67003D2410 /* PdfStore.swift in Sources */,
@@ -2110,6 +2117,7 @@
 				F0EDFB26239E49480048CFD1 /* AudioPlayer.swift in Sources */,
 				F02B04B023A2844700F93B84 /* NWParameters.swift in Sources */,
 				F02B04B823A2894700F93B84 /* PeerBrowser.swift in Sources */,
+				F0EC524D294AEC9200A71ECC /* ChatGPTRepresenter.swift in Sources */,
 				F0BB437D2344845000ADBEF1 /* SettingsView_Voice.swift in Sources */,
 				F065095E23AE03F0003D2410 /* ViewsStore.swift in Sources */,
 				F08EBB1123956D80009025D3 /* NetworkManager.swift in Sources */,

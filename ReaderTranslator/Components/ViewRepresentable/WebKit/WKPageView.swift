@@ -21,7 +21,7 @@ class WKPageView: WKWebView {
         let contentController = WKUserContentController()
 
         config.userContentController = contentController
-        config.websiteDataStore = .nonPersistent()
+        config.websiteDataStore = .default()
 
         super.init(frame: .zero, configuration: config)
         self.allowsBackForwardNavigationGestures = true
