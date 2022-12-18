@@ -12,10 +12,29 @@ struct ChatGPTView: View {
     @ObservedObject private var store = Store.shared
     @ObservedObject private var viewsStore = ViewsStore.shared
 
+    @State var prefix = ""
+
     var body: some View {
         WebViewContainer {
-            ChatGPTRepresenter(selectedText: self.$store.translateAction)
-        }.frame(width: viewsStore.viewWidth[.yTranslator] ?? ViewsStore.defaultWidth)
+            ChatGPTRepresenter(prefix: $prefix, selectedText: $store.translateAction)
+
+            Menu(prefix) {
+                buttonView(text: "Translate to english")
+                buttonView(text: "Translate to russian")
+                buttonView(text: "Error in Swift")
+                buttonView(text: "Explain the following sentence")
+                buttonView(text: "Explain english gramma")
+                buttonView(text: "Исправь ошибки и раставь запятые")
+                buttonView(text: "Как понять по русски?")
+            }
+        }
+        .frame(width: viewsStore.viewWidth[.yTranslator] ?? ViewsStore.defaultWidth)
+    }
+
+    private func buttonView(text: String) -> some View {
+        Button(text) {
+            prefix = text
+        }
     }
 }
 

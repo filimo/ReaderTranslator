@@ -119,6 +119,7 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 Add ChatGPT View
 ![](files/Release_2.1.0_1.jpg)
 ![](files/Release_2.1.0_2.jpg)
+![](files/Release_2.1.0_3.jpg)
 
 **2.0.0**
 Translate audio and video sources to text (macOS only, iOS might come in the future)

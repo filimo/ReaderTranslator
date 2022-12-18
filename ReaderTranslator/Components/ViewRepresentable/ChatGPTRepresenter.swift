@@ -11,12 +11,15 @@ import SwiftUI
 import WebKit
 
 struct ChatGPTRepresenter: ViewRepresentable, WKScriptsSetup {
+    @Binding var prefix: String
     @Binding var selectedText: TranslateAction
 
     static var pageView: WKPageView?
 
     @ObservedObject private var store = Store.shared
     private let defaultURL = "https://chat.openai.com/chat"
+
+    @State var text = ""
 
     func makeCoordinator() -> WKCoordinator {
         WKCoordinator(self, currentView: .yTranslator)
@@ -38,10 +41,19 @@ struct ChatGPTRepresenter: ViewRepresentable, WKScriptsSetup {
         if case let .chatGPT(text) = selectedText {
             Store.shared.translateAction.next()
 
-            print("\(theClassName)_updateView_update", text)
-
-            view.evaluateJavaScript("document.querySelector('textarea').value = '\(text)'")
+            DispatchQueue.main.async {
+                self.text = text
+            }
         }
+
+        let prefix = prefix.isEmpty ? "" : prefix + ":"
+        view.evaluateJavaScript("""
+        (function() {
+            let elm = document.querySelector('textarea')
+            elm.value = '\(prefix) \(text)'
+            elm.focus()
+        })()
+        """)
     }
 
     private func getParams(url: URL?) -> String? {
