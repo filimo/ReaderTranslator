@@ -38,22 +38,22 @@ struct ChatGPTRepresenter: ViewRepresentable, WKScriptsSetup {
     }
 
     func updateView(_ view: WKPageView, context _: Context) {
-        if case let .chatGPT(text) = selectedText {
-            Store.shared.translateAction.next()
+        DispatchQueue.main.async {
+            if case let .chatGPT(text) = selectedText {
+                Store.shared.translateAction.next()
 
-            DispatchQueue.main.async {
                 self.text = text
             }
-        }
 
-        let prefix = prefix.isEmpty ? "" : prefix + ":"
-        view.evaluateJavaScript("""
-        (function() {
-            let elm = document.querySelector('textarea')
-            elm.value = '\(prefix) \(text)'
-            elm.focus()
-        })()
-        """)
+            let prefix = prefix.isEmpty ? "" : prefix + ":"
+            view.evaluateJavaScript("""
+            (function() {
+                let elm = document.querySelector('textarea')
+                elm.value = `\(prefix) \(text)`
+                elm.focus()
+            })()
+            """)
+        }
     }
 
     private func getParams(url: URL?) -> String? {

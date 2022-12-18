@@ -61,7 +61,9 @@ extension AudioStore {
 }
 
 extension AudioStore: AVAudioNetPlayerDelegate {
-    func audioPlayerLoadDidFinishDidOccur() {}
+    func audioPlayerLoadDidFinishDidOccur() {
+        print("audioPlayerLoadDidFinishDidOccur")
+    }
 
     func audioPlayerCreateSuccessOccur(player: AVAudioPlayer) {
         player.enableRate = true

@@ -29,6 +29,7 @@ class AVAudioNetPlayer {
     private func createAVAudioPlayer(data: Data) {
         do {
             self.player = try AVAudioPlayer(data: data)
+            
             if let player = self.player {
                 player.delegate = self.delegate
                 self.delegate?.audioPlayerCreateSuccessOccur(player: player)
@@ -46,6 +47,8 @@ protocol AVAudioNetPlayerDelegate: AVAudioPlayerDelegate {
 
     func audioPlayerCreateSuccessOccur(player: AVAudioPlayer)
     func audioPlayerCreateErrorDidOccur()
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool)
 }
 
 extension AVPlayer {

@@ -83,12 +83,15 @@ class SpeechSynthesizer {
         Task {
             if await CambridgeStore.shared.fetchInfo(text: text) {
                 AudioStore.shared.play()
+                try await Task.sleep(seconds: 2)
             }
             if await CollinsStore.shared.fetchInfo(text: text) {
                 AudioStore.shared.play()
+                try await Task.sleep(seconds: 2)
             }
             if await LongmanStore.shared.fetchInfo(text: text) {
                 AudioStore.shared.play()
+                try await Task.sleep(seconds: 2)
             }
 
             if enabledSpeakByEngine {

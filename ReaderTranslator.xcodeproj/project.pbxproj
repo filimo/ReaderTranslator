@@ -239,6 +239,10 @@
 		F07CD327244CE69600BCBF71 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F073289223A6C7A0008CB539 /* BookmarksView.swift */; };
 		F07CD328244CE6A400BCBF71 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459BF24093073001EC43D /* BookmarksView.swift */; };
 		F07CD329244CE6AF00BCBF71 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09459DB24093230001EC43D /* SafariView.swift */; };
+		F07F88B2294EEC5800278047 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F88B1294EEC5800278047 /* Task.swift */; };
+		F07F88B3294EECA500278047 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F88B1294EEC5800278047 /* Task.swift */; };
+		F07F88B4294EECA600278047 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F88B1294EEC5800278047 /* Task.swift */; };
+		F07F88B5294EECA700278047 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F88B1294EEC5800278047 /* Task.swift */; };
 		F080D9CE268494210088F078 /* CollinsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05548DF267A8669000F1A9A /* CollinsStore.swift */; };
 		F080D9CF268494220088F078 /* CollinsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05548DF267A8669000F1A9A /* CollinsStore.swift */; };
 		F0814BA323562AF300212F52 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0814BA123562AF300212F52 /* Set.swift */; };
@@ -697,6 +701,7 @@
 		F07CD2E0244CDE1100BCBF71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F07CD2E5244CDE1100BCBF71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F07CD2EA244CE2BA00BCBF71 /* StoreViewIPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewIPad.swift; sourceTree = "<group>"; };
+		F07F88B1294EEC5800278047 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F0814BA123562AF300212F52 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		F087370723D62CA4001CFBE3 /* MerriamWebsterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerriamWebsterView.swift; sourceTree = "<group>"; };
 		F08CE138236EA9F200610342 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -1569,6 +1574,7 @@
 				F074D42C23D5B80D00492922 /* AVAudioNetPlayer.swift */,
 				F01002CD25333E3500217F17 /* WKWebView.swift */,
 				F075320E2920AE3300A13DCD /* NSTextView.swift */,
+				F07F88B1294EEC5800278047 /* Task.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -2183,6 +2189,7 @@
 				F03276BB2748BBAC00DB33E4 /* YTranslatorView.swift in Sources */,
 				F04B6AA923D379C200CEC7DA /* SettingsView.swift in Sources */,
 				F04B6AAC23D37B2600CEC7DA /* StatusBarView_SettingsView.swift in Sources */,
+				F07F88B2294EEC5800278047 /* Task.swift in Sources */,
 				F02B04B423A2847700F93B84 /* ReaderTranslatorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2227,6 +2234,7 @@
 				F07CD322244CE62400BCBF71 /* GTranslatorView.swift in Sources */,
 				F07CD2F8244CE40400BCBF71 /* View.swift in Sources */,
 				F07CD304244CE46600BCBF71 /* DeepLRepresenter.swift in Sources */,
+				F07F88B3294EECA500278047 /* Task.swift in Sources */,
 				F07CD324244CE64B00BCBF71 /* AudioStore.swift in Sources */,
 				F0EFE4D82549942500F4EEFD /* CollinsRepresenter.swift in Sources */,
 				F07CD2F7244CE3DB00BCBF71 /* Store.swift in Sources */,
@@ -2377,6 +2385,7 @@
 				F09459D62409320E001EC43D /* MacmillanView.swift in Sources */,
 				F038B01F24124AC0006B8C1F /* DeepLView.swift in Sources */,
 				F09459C1240930A4001EC43D /* Clipboard.swift in Sources */,
+				F07F88B4294EECA600278047 /* Task.swift in Sources */,
 				F094598724092D30001EC43D /* FavoriteVoiceName.swift in Sources */,
 				F09760E9240929040030F928 /* DirectoryObserver.swift in Sources */,
 				F094596F24092C75001EC43D /* LongmanStore.swift in Sources */,
@@ -2424,6 +2433,7 @@
 				F099423623AD4558003CF1EB /* WikipediaRepresenter.swift in Sources */,
 				F065095923ADF6A3003D2410 /* AudioStore.swift in Sources */,
 				F08EE644240C04F0002CDB44 /* CambidgeRepresenter.swift in Sources */,
+				F07F88B5294EECA700278047 /* Task.swift in Sources */,
 				F099423523AD4551003CF1EB /* Clipboard.swift in Sources */,
 				F099423D23AD459D003CF1EB /* WKCoordinatorNavigationDelegate.swift in Sources */,
 				F099423923AD4585003CF1EB /* NSObject.swift in Sources */,

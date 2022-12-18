@@ -29,7 +29,9 @@ class WKPageView: WKWebView {
         $newUrl
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
-            .sink { url in
+            .sink { [weak self] url in
+                guard let self else { return }
+                
                 if self.url?.absoluteString.decodeUrl != url {
                     self.evaluateJavaScript("document.documentElement.innerHTML = ''")
                     if let url = URL(string: url.encodeUrl) {
