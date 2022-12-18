@@ -25,7 +25,7 @@ typealias LongmanSentences = [LongmanSentence]
 
 @MainActor
 final class LongmanStore: NSObject, ObservableObject {
-    private override init() { super.init() }
+    override private init() { super.init() }
     static var shared = LongmanStore()
 
     @Published var audioRate: Float = 1
@@ -33,43 +33,39 @@ final class LongmanStore: NSObject, ObservableObject {
 
     @Published var sentences: LongmanSentences = [] {
         didSet {
-            print("longmanSentences: ", sentences)
+            print("longmanSentences: ", self.sentences)
         }
     }
 
     private let defaultURL = "https://www.ldoceonline.com/dictionary/"
 
-    func fetchInfo(text: String) -> AnyPublisher<Bool, Never> {
-        let text = text.replacingOccurrences(of: " ", with: "-")
-        guard let url = URL(string: "\(defaultURL)\(text)") else {
-            return Just(false).eraseToAnyPublisher()
-        }
-
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map {
-                guard let html = String(data: $0.data, encoding: .utf8) else { return false }
-                do {
-                    let document = try SwiftSoup.parse(html)
-
-                    let isBreExist = self.addAudio(selector: ".brefile", document: document)
-                    let isAmeExist = self.addAudio(selector: ".amefile", document: document)
-                    
-                    RunLoop.main.perform {
-                        self.sentences.removeAll()
-                        self.addSentences(document: document)
-                    }
-
-                    return isBreExist || isAmeExist
-                } catch {
-                    Logger.log(type: .error, value: error)
-                }
-
+    func fetchInfo(text: String) async -> Bool {
+        do {
+            let text = text.replacingOccurrences(of: " ", with: "-")
+            guard let url = URL(string: "\(defaultURL)\(text)") else {
                 return false
             }
-            .catch { _ in
-                Just(false)
+
+            let (data, _) = try await URLSession.shared.data(from: url)
+            guard let html = String(data: data, encoding: .utf8) else { return false }
+
+            let document = try SwiftSoup.parse(html)
+
+            let isBreExist = self.addAudio(selector: ".brefile", document: document)
+            let isAmeExist = self.addAudio(selector: ".amefile", document: document)
+
+            await MainActor.run {
+                self.sentences.removeAll()
+                self.addSentences(document: document)
             }
-            .eraseToAnyPublisher()
+
+            return isBreExist || isAmeExist
+
+        } catch {
+            Logger.log(type: .error, value: error)
+
+            return false
+        }
     }
 }
 

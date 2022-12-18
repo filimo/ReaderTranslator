@@ -24,7 +24,7 @@ typealias CambridgeSentences = [CambridgeSentence]
 
 @MainActor
 final class CambridgeStore: NSObject, ObservableObject {
-    private override init() { super.init() }
+    override private init() { super.init() }
     static var shared = CambridgeStore()
 
     @Published var audioRate: Float = 1
@@ -32,32 +32,26 @@ final class CambridgeStore: NSObject, ObservableObject {
 
     private let defaultURL = "https://dictionary.cambridge.org/dictionary/english-russian/"
 
-    func fetchInfo(text: String) -> AnyPublisher<Bool, Never> {
-        let text = text.encodeUrl
-        guard let url = URL(string: "\(defaultURL)\(text)") else {
-            return Just(false).eraseToAnyPublisher()
-        }
-
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map {
-                guard let html = String(data: $0.data, encoding: .utf8) else { return false }
-                do {
-                    let document = try SwiftSoup.parse(html)
-
-                    let isBreExist = self.addAudio(selector: ".uk [type='audio/mpeg']", document: document)
-                    let isAmeExist = self.addAudio(selector: ".us [type='audio/mpeg']", document: document)
-                    
-                    return isBreExist || isAmeExist
-                } catch {
-                    Logger.log(type: .error, value: error)
-                }
-
+    func fetchInfo(text: String) async -> Bool {
+        do {
+            let text = text.encodeUrl
+            guard let url = URL(string: "\(defaultURL)\(text)") else {
                 return false
             }
-            .catch { _ in
-                Just(false)
-            }
-            .eraseToAnyPublisher()
+
+            let (data, _) = try await URLSession.shared.data(from: url)
+            guard let html = String(data: data, encoding: .utf8) else { return false }
+
+            let document = try SwiftSoup.parse(html)
+
+            let isBreExist = self.addAudio(selector: ".uk [type='audio/mpeg']", document: document)
+            let isAmeExist = self.addAudio(selector: ".us [type='audio/mpeg']", document: document)
+
+            return isBreExist || isAmeExist
+        } catch {
+            print(error)
+            return false
+        }
     }
 }
 

@@ -10,8 +10,6 @@ import Combine
 import Foundation
 import Speech
 
-private var cancellableSpeakers: AnyCancellable?
-
 struct VoiceInfo {
     let id = UUID()
     let name: String
@@ -74,7 +72,7 @@ class SpeechSynthesizer {
         let voiceName = voiceName ?? AudioStore.shared.voiceName
         let isVoiceEnabled = isVoiceEnabled ?? AudioStore.shared.isSpeakSentences
         let text = text ?? Store.shared.translateAction.getText()
-        
+
         if speechSynthesizer.isSpeaking {
             SpeechSynthesizer.stop()
             if stopSpeaking { return }
@@ -82,25 +80,21 @@ class SpeechSynthesizer {
 
         AudioStore.shared.removeAllSounds()
 
-        cancellableSpeakers = Publishers
-            .CombineLatest3(
-                CambridgeStore.shared.fetchInfo(text: text),
-                CollinsStore.shared.fetchInfo(text: text),
-                LongmanStore.shared.fetchInfo(text: text)
-            )
-            .sink { hasLongmanSound, hasCambridgeSound, hasCollinsSound in
-                if hasCambridgeSound {
-                    AudioStore.shared.play()
-                } else if hasLongmanSound {
-                    AudioStore.shared.play()
-                } else if hasCollinsSound {
-                    AudioStore.shared.play()
-                } else {
-                    if enabledSpeakByEngine {
-                        speakByEngine(text: text, voiceName: voiceName, isVoiceEnabled: isVoiceEnabled)
-                    }
-                }
+        Task {
+            if await CambridgeStore.shared.fetchInfo(text: text) {
+                AudioStore.shared.play()
             }
+            if await CollinsStore.shared.fetchInfo(text: text) {
+                AudioStore.shared.play()
+            }
+            if await LongmanStore.shared.fetchInfo(text: text) {
+                AudioStore.shared.play()
+            }
+
+            if enabledSpeakByEngine {
+                speakByEngine(text: text, voiceName: voiceName, isVoiceEnabled: isVoiceEnabled)
+            }
+        }
     }
 
     private static func speakByEngine(text: String, voiceName: String, isVoiceEnabled: Bool) {

@@ -19,32 +19,27 @@ final class CollinsStore: NSObject, ObservableObject {
 
     private let defaultURL = "https://www.collinsdictionary.com/dictionary/english/"
 
-    func fetchInfo(text: String) -> AnyPublisher<Bool, Never> {
-        let text = text.replacingOccurrences(of: " ", with: "-")
+    func fetchInfo(text: String) async -> Bool {
+        do {
+            let text = text.replacingOccurrences(of: " ", with: "-")
 
-        guard let url = URL(string: "\(defaultURL)\(text)") else {
-            return Just(false).eraseToAnyPublisher()
-        }
-
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map {
-                guard let html = String(data: $0.data, encoding: .utf8) else { return false }
-                do {
-                    let document = try SwiftSoup.parse(html)
-
-                    let hasSound = self.addAudio(selector: ".hwd_sound.sound", document: document)
-
-                    return hasSound
-                } catch {
-                    Logger.log(type: .error, value: error)
-                }
-
+            guard let url = URL(string: "\(defaultURL)\(text)") else {
                 return false
             }
-            .catch { _ in
-                Just(false)
-            }
-            .eraseToAnyPublisher()
+
+            let (data, _) = try await URLSession.shared.data(from: url)
+            guard let html = String(data: data, encoding: .utf8) else { return false }
+
+            let document = try SwiftSoup.parse(html)
+
+            let hasSound = self.addAudio(selector: ".hwd_sound.sound", document: document)
+
+            return hasSound
+        } catch {
+            Logger.log(type: .error, value: error)
+            
+            return false
+        }
     }
 }
 
@@ -63,6 +58,3 @@ extension CollinsStore {
         return false
     }
 }
-
-
-
