@@ -43,11 +43,14 @@ struct ReaderView_Pdf_Toolbar: View {
     private var openPdfButton: some View {
         Button(
             action: {
-                OpenPanel.showChooseFileDialog(title: "Open PDF file", allowedFileTypes: ["pdf"]) { url in
+                OpenPanel.showChooseFileDialog(
+                    title: "Open PDF file",
+                    allowedFileTypes: [.init(filenameExtension: "pdf")!]
+                ) { url in
                     guard let url = url?.absoluteString else { return }
 
-                    self.pdfStore.lastPdfPage = "1"
-                    self.pdfStore.lastPdf = url
+                    pdfStore.lastPdfPage = "1"
+                    pdfStore.lastPdf = url
                 }
             },
             label: { Text("📂 PDF") }
@@ -56,12 +59,18 @@ struct ReaderView_Pdf_Toolbar: View {
 
     private var openAudioButton: some View {
         Button(action: {
-            OpenPanel.showChooseFileDialog(title: "Open audio file", allowedFileTypes: ["mp3", "mov"]) { url in
+            OpenPanel.showChooseFileDialog(
+                title: "Open audio file",
+                allowedFileTypes: [
+                    .init(filenameExtension: "mp3")!,
+                    .init(filenameExtension: "mov")!
+                ]
+            ) { url in
                 guard let url = url else { return }
-                self.pdfStore.pdfAudio = url
-                self.player.openAudio(url: url)
-                self.player.rate = 1
-                self.currentStatus = self.player.status
+                pdfStore.pdfAudio = url
+                player.openAudio(url: url)
+                player.rate = 1
+                currentStatus = self.player.status
             }
         }, label: { Text("📂 audio") })
     }

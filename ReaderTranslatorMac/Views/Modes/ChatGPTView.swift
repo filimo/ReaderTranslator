@@ -19,11 +19,20 @@ struct ChatGPTView: View {
             ChatGPTRepresenter(prefix: $prefix, selectedText: $store.translateAction)
 
             Menu(prefix) {
+                Button("None") {
+                    prefix = ""
+                }
+                
+                buttonView(text: "What is it")
+                
                 buttonView(text: "Translate to english")
                 buttonView(text: "Translate to russian")
-                buttonView(text: "Error in Swift")
+
                 buttonView(text: "Explain the following sentence")
                 buttonView(text: "Explain english gramma")
+
+                buttonView(text: "Error in Swift")
+
                 buttonView(text: "Исправь ошибки и раставь запятые")
                 buttonView(text: "Как понять по русски?")
             }

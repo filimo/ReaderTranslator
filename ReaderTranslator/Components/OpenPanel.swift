@@ -8,11 +8,12 @@
 
 import AppKit
 import SwiftUI
+import UniformTypeIdentifiers
 
 class OpenPanel {
     static func showChooseFileDialog(
         title: String,
-        allowedFileTypes: [String],
+        allowedFileTypes: [UTType],
         onFinished: @escaping (_: URL?) -> Void
     ) {
         let openPanel = NSOpenPanel()
@@ -22,9 +23,9 @@ class OpenPanel {
         openPanel.canCreateDirectories = false
         openPanel.canChooseFiles = true
         openPanel.title = title
-        openPanel.allowedFileTypes = allowedFileTypes
+        openPanel.allowedContentTypes = allowedFileTypes
 
-        openPanel.begin { result -> Void in
+        openPanel.begin { result in
             if result == .OK {
                 onFinished(openPanel.url)
             } else {

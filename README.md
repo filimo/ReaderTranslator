@@ -115,6 +115,11 @@ Explore features, limitations and bugs *SwiftUI, Combine and Catalyst*.
 ## I stop to make .dmg for now. 
 ### Download .dmg from [here](https://github.com/filimo/ReaderTranslator/releases) 
 
+**2.2.0**
+Show subtitles from .srt. 
+Use the best subtitles generator [Whisper](https://github.com/openai/whisper.git) 
+![](files/Release_2.2.0_1.jpg)
+
 **2.1.0**
 Add ChatGPT View
 ![](files/Release_2.1.0_1.jpg)

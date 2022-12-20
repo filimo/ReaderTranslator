@@ -7,6 +7,7 @@
 
 import Speech
 import SwiftUI
+import Combine
 
 @MainActor
 class AudioService: NSObject, ObservableObject {
@@ -24,6 +25,12 @@ class AudioService: NSObject, ObservableObject {
     @Published var isRecognized = true
 
     @AppStorage("url") var url: String = "https://devstreaming-cdn.apple.com/videos/wwdc/2016/509n1cnykqms19r9jyp/509/509_sd_speech_recognition_api.mp4?dl=1"
+
+    var ratePublisher: some Publisher<Float, Never> {
+        // Create a publisher that observes the rate property of the player
+        return player.publisher(for: \.rate)
+    }
+
 
     func start() {
         guard let url = URL(string: url) else { return }

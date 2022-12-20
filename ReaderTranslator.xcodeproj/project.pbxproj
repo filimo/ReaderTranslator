@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -483,6 +483,11 @@
 		F0C53179234B3EE1003174B5 /* WKCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C53177234B3EE1003174B5 /* WKCoordinator.swift */; };
 		F0C6657D2351A70B0087B6F2 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C6657B2351A70B0087B6F2 /* Collection.swift */; };
 		F0C934A824187D0C0006E31D /* SettingsView_Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C934A724187D0C0006E31D /* SettingsView_Views.swift */; };
+		F0C9FB6629515ABF00102423 /* SubtitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9FB6529515ABF00102423 /* SubtitleService.swift */; };
+		F0C9FB6B29515B0100102423 /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9FB6A29515B0100102423 /* Subtitle.swift */; };
+		F0C9FB6C29515B0100102423 /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9FB6A29515B0100102423 /* Subtitle.swift */; };
+		F0C9FB6D29515B0100102423 /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9FB6A29515B0100102423 /* Subtitle.swift */; };
+		F0C9FB6E29515B0100102423 /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9FB6A29515B0100102423 /* Subtitle.swift */; };
 		F0CFD3B32539BD4E00635677 /* ReversoRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9F35A2349228A00970C97 /* ReversoRepresenter.swift */; };
 		F0CFD3BC2539BDAB00635677 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C6657B2351A70B0087B6F2 /* Collection.swift */; };
 		F0CFD3C52539C5C200635677 /* LongmanRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */; };
@@ -790,6 +795,8 @@
 		F0C6657B2351A70B0087B6F2 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		F0C706CF239ACDBD0061F790 /* BookmarksView_Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView_Controls.swift; sourceTree = "<group>"; };
 		F0C934A724187D0C0006E31D /* SettingsView_Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView_Views.swift; sourceTree = "<group>"; };
+		F0C9FB6529515ABF00102423 /* SubtitleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleService.swift; sourceTree = "<group>"; };
+		F0C9FB6A29515B0100102423 /* Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtitle.swift; sourceTree = "<group>"; };
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
 		F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
@@ -1361,6 +1368,7 @@
 				F0623E412416D1C2005BC86C /* CambridgeStore.swift */,
 				F0039EC223447E24002F3F95 /* SharedContainer.swift */,
 				F06DB115234611BB00C2DE90 /* ExtensionManager.swift */,
+				F0C9FB6529515ABF00102423 /* SubtitleService.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -1586,6 +1594,7 @@
 				F0AD8B1A236413F60017C22F /* AvailableView.swift */,
 				F0AD8B1D236414070017C22F /* TranslateAction.swift */,
 				F0EE0A0F23478C86004A5EAD /* DOMEvent.swift */,
+				F0C9FB6A29515B0100102423 /* Subtitle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1773,7 +1782,7 @@
 				};
 			};
 			buildConfigurationList = F0AA6998232E9710007CC07B /* Build configuration list for PBXProject "ReaderTranslator" */;
-			compatibilityVersion = "Xcode 11.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -2118,6 +2127,7 @@
 				F065095723ADF6A3003D2410 /* AudioStore.swift in Sources */,
 				F0EDE34E23641B1300E0B81C /* Stack.swift in Sources */,
 				F0562E0F2362026C0074ACF5 /* WikipediaRepresenter.swift in Sources */,
+				F0C9FB6B29515B0100102423 /* Subtitle.swift in Sources */,
 				F08EE641240C04E5002CDB44 /* CambidgeRepresenter.swift in Sources */,
 				F0369E3323A2D92C00C33139 /* StatusBarView_Sync.swift in Sources */,
 				F0EDFB26239E49480048CFD1 /* AudioPlayer.swift in Sources */,
@@ -2145,6 +2155,7 @@
 				F0BB43772344844800ADBEF1 /* WKRepresenter.swift in Sources */,
 				F08EBAF123952AD6009025D3 /* WebViewContainer.swift in Sources */,
 				F0BB436C2344842200ADBEF1 /* ReaderView.swift in Sources */,
+				F0C9FB6629515ABF00102423 /* SubtitleService.swift in Sources */,
 				F03171172920959700F7B3AF /* AudioToTextView.swift in Sources */,
 				F06EE7C223AFEB8A00CF989E /* Server.swift in Sources */,
 				F0BB437A2344845000ADBEF1 /* StatusBarView_Zoom.swift in Sources */,
@@ -2207,6 +2218,7 @@
 				F0C36A9F2359C78A001E396C /* Array.swift in Sources */,
 				F0814BA423562AF300212F52 /* Set.swift in Sources */,
 				F0C02D4723B27CA100B393A5 /* Logger.swift in Sources */,
+				F0C9FB6D29515B0100102423 /* Subtitle.swift in Sources */,
 				F075445223447A2800E1D88E /* SafariExtensionHandler.swift in Sources */,
 				F064B4AD23CC598400F28314 /* NumberFormatter.swift in Sources */,
 				F0B4843E23A8C6860031A811 /* URL.swift in Sources */,
@@ -2371,6 +2383,7 @@
 				F09760E22409280E0030F928 /* String.swift in Sources */,
 				F094597D24092D1B001EC43D /* StackView.swift in Sources */,
 				F01002D125333E3500217F17 /* WKWebView.swift in Sources */,
+				F0C9FB6C29515B0100102423 /* Subtitle.swift in Sources */,
 				F038B01724116964006B8C1F /* GTranslatorMiniView.swift in Sources */,
 				F09459CA240931AC001EC43D /* WikipediaView.swift in Sources */,
 				F09459D0240931E2001EC43D /* ReversoView.swift in Sources */,
@@ -2400,6 +2413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0C9FB6E29515B0100102423 /* Subtitle.swift in Sources */,
 				F099420E23AD428C003CF1EB /* Store.swift in Sources */,
 				F099423023AD4504003CF1EB /* WKCoordinator.swift in Sources */,
 				F099422623AD4476003CF1EB /* MacmillanRepresenter.swift in Sources */,
@@ -2630,7 +2644,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2661,7 +2675,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
