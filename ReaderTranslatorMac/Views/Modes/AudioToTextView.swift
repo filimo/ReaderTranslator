@@ -17,7 +17,7 @@ struct AudioToTextView: View {
 
     @State var height: CGFloat = 300
     @State var selectedText: String = ""
-    @State var currentLine: Int? = nil
+    @AppStorage("subtitles_currentLine") var currentLine: Int = 1
     @State var isPlaying = false
 
     var subtitlesUrl: URL? = nil
@@ -38,74 +38,9 @@ struct AudioToTextView: View {
 
             actionBarView
 
-            ScrollView {
-                ScrollViewReader { proxy in
-                    VStack(alignment: .leading) {
-                        ForEach(subtitleService.subtitles, id: \.id) { line in
-                            HStack {
-                                Button {
-                                    let time = CMTime(seconds: line.start, preferredTimescale: 1)
+            subtitleListView
 
-                                    audioService.player.seek(to: time)
-                                } label: {
-                                    Image(systemName: "forward.frame.fill")
-                                }
-                                .frame(height: 10)
-
-                                Text(line.text)
-                                    .onTapGesture {
-                                        if subtitleService.selectedLines[line.id]?.isEmpty == false {
-                                            subtitleService.selectedLines[line.id] = ""
-                                        } else {
-                                            subtitleService.selectedLines[line.id] = line.text
-                                        }
-                                    }
-                                    .id(line.id)
-                                    .bold(subtitleService.selectedLines[line.id]?.isEmpty == false)
-                                    .foregroundColor(currentLine == line.id ? .yellow : .primary)
-                                    .simultaneousGesture(TapGesture())
-                            }
-                        }
-                    }
-//                    .textSelection(.enabled)
-                    .onReceive(subtitleService.timerPublisher) { _ in
-                        let player = audioService.player
-                        if player.timeControlStatus == .playing {
-                            let line = subtitleService.subtitles.first {
-                                $0.start >= player.currentTime().seconds
-                            }
-
-                            proxy.scrollTo((line?.id ?? 1) + 5)
-                            currentLine = line?.id
-                        }
-                    }
-                    .onReceive(subtitleService.subtitleServicePublisher) { selectedLines in
-                        let text = selectedLines
-                            .filter { _, value in
-                                value.isEmpty == false
-                            }
-                            .sorted(by: {
-                                $0.key < $1.key
-                            })
-                            .map(\.value)
-                            .reduce(into: "") { partialResult, text in
-                                partialResult += text
-                            }
-
-                        store.translateAction.addAll(text: text)
-                    }
-                }
-            }
-
-            #if os(macOS)
-            NSTextViewRepresentable(text: $audioService.text, selectedText: $selectedText)
-                .font(.title2)
-                .border(.blue)
-            #endif
-
-            #if os(iOS)
-            TextEditor(text: $audioService.text)
-            #endif
+            recognizedTextView
 
             Spacer()
         }
@@ -192,10 +127,93 @@ private extension AudioToTextView {
         }
         .frame(height: 20)
     }
+
+    var subtitleListView: some View {
+        ScrollView {
+            ScrollViewReader { proxy in
+                LazyVStack(alignment: .leading) {
+                    ForEach(subtitleService.subtitles, id: \.id) { line in
+                        HStack {
+                            Button {
+                                let time = CMTime(seconds: line.start, preferredTimescale: 1)
+
+                                if isPlaying {
+                                    audioService.player.pause()
+                                }else {
+                                    audioService.player.seek(to: time)
+                                    audioService.player.play()
+                                }
+                            } label: {
+                                Image(systemName: isPlaying ? "pause.fill" : "play.fill")
+                            }
+                            .frame(width: 30, height: 10)
+
+                            Text(line.text)
+                                .onTapGesture {
+                                    if subtitleService.selectedLines[line.id]?.isEmpty == false {
+                                        subtitleService.selectedLines[line.id] = ""
+                                    } else {
+                                        subtitleService.selectedLines[line.id] = line.text
+                                    }
+                                }
+                                .id(line.id)
+                                .bold(subtitleService.selectedLines[line.id]?.isEmpty == false)
+                                .underline(currentLine == line.id)
+                                .simultaneousGesture(TapGesture())
+                        }
+                    }
+                }
+//                    .textSelection(.enabled)
+                .onReceive(subtitleService.timerPublisher) { _ in
+                    let player = audioService.player
+                    if player.timeControlStatus == .playing {
+                        let line = subtitleService.subtitles.last { item in
+                            player.currentTime().seconds + 1 >= item.start
+                        }
+
+                        currentLine = line?.id ?? 1
+                    }
+                }
+                .onReceive(subtitleService.subtitleServicePublisher) { selectedLines in
+                    let text = selectedLines
+                        .filter { _, value in
+                            value.isEmpty == false
+                        }
+                        .sorted(by: {
+                            $0.key < $1.key
+                        })
+                        .map(\.value)
+                        .reduce(into: "") { partialResult, text in
+                            partialResult += text
+                        }
+
+                    store.translateAction.addAll(text: text)
+                }
+                .onChange(of: currentLine) { line in
+                    proxy.scrollTo(line + 5)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    var recognizedTextView: some View {
+        #if os(macOS)
+            TextField("", text: $audioService.text, axis: .vertical)
+                .lineLimit(7)
+                .frame(maxHeight: 100)
+                .textFieldStyle(.roundedBorder)
+        #endif
+
+        #if os(iOS)
+            TextEditor(text: $audioService.text)
+                .textFieldStyle(.roundedBorder)
+        #endif
+    }
 }
 
 struct AudioToTextView_Previews: PreviewProvider {
     static var previews: some View {
-        AudioToTextView()
+        Text("test").foregroundColor(.blue)
     }
 }

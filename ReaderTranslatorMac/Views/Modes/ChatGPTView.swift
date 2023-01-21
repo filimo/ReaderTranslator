@@ -22,29 +22,35 @@ struct ChatGPTView: View {
                 Button("None") {
                     prefix = ""
                 }
-                
-                buttonView(text: "What is it")
-                
-                buttonView(text: "Translate to english")
-                buttonView(text: "Translate to russian")
 
-                buttonView(text: "Explain the following sentence")
-                buttonView(text: "Explain english gramma")
-
-                buttonView(text: "Error in Swift")
-
-                buttonView(text: "Исправь ошибки и раставь запятые")
-                buttonView(text: "Как понять по русски?")
+                ForEach(commands, id: \.self) { text in
+                    Button(text) {
+                        prefix = text
+                    }
+                }
             }
         }
-        .frame(width: viewsStore.viewWidth[.yTranslator] ?? ViewsStore.defaultWidth)
+        .frame(width: viewsStore.viewWidth[.chatGPT] ?? ViewsStore.defaultWidth)
     }
 
-    private func buttonView(text: String) -> some View {
-        Button(text) {
-            prefix = text
-        }
-    }
+    private let commands = [
+        "What is it",
+
+        "Translate and show as a table with origin and russian",
+        "Translate to english",
+        "Translate to english",
+
+        "Explain the following sentence",
+        "Explain english gramma",
+
+        "Error in Swift",
+
+        "Summarize this with 1000 words",
+        "Summarize this for a second-grade student",
+
+        "Исправь ошибки и раставь запятые",
+        "Как понять по русски?"
+    ]
 }
 
 struct ChatGPTView_Previews: PreviewProvider {

@@ -22,7 +22,7 @@ final class SubtitleService: ObservableObject {
     var timerPublisher: some Publisher<Date, Never> {
         Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
     }
-
+    
     func parseSRT(srt: String) -> [Subtitle] {
         let lines = srt.components(separatedBy: "\n")
         var subtitles: [Subtitle] = []

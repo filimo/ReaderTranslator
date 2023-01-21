@@ -22,7 +22,7 @@ class AudioService: NSObject, ObservableObject {
     private var playerItem: AVPlayerItem!
 
     @Published var text: String = ""
-    @Published var isRecognized = true
+    @Published(key: "isRecognized") var isRecognized = true
 
     @AppStorage("url") var url: String = "https://devstreaming-cdn.apple.com/videos/wwdc/2016/509n1cnykqms19r9jyp/509/509_sd_speech_recognition_api.mp4?dl=1"
 
@@ -37,22 +37,24 @@ class AudioService: NSObject, ObservableObject {
         
         let asset = AVURLAsset(url: url)
         
-        guard let audioTrack = asset.tracks(withMediaType: AVMediaType.audio).first else {
-            print("can't get audioTrack")
-            return
+        Task {
+            guard let audioTrack = try await asset.loadTracks(withMediaType: AVMediaType.audio).first else {
+                print("can't get audioTrack")
+                return
+            }
+            
+            playerItem = AVPlayerItem(asset: asset)
+            
+            // Taken from https://github.com/zats/SpeechRecognition
+            tap = MYAudioTapProcessor(audioAssetTrack: audioTrack)
+            tap.delegate = self
+            
+            player.insert(playerItem, after: nil)
+            player.currentItem?.audioMix = tap.audioMix
+            player.play()
+            
+            setupRecognition()
         }
-
-        playerItem = AVPlayerItem(asset: asset)
-
-        // Taken from https://github.com/zats/SpeechRecognition
-        tap = MYAudioTapProcessor(audioAssetTrack: audioTrack)
-        tap.delegate = self
-
-        player.insert(playerItem, after: nil)
-        player.currentItem?.audioMix = tap.audioMix
-        player.play()
-
-        setupRecognition()
     }
 
     func restart() {
@@ -68,7 +70,7 @@ class AudioService: NSObject, ObservableObject {
         // we want to get continuous recognition and not everything at once at the end of the video
         recognitionRequest.shouldReportPartialResults = true
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, _ in
-            guard let result = result, let self = self else { return }
+            guard let result, let self else { return }
 
             if self.isRecognized {
                 self.text = result.bestTranscription.formattedString
@@ -93,9 +95,9 @@ class AudioService: NSObject, ObservableObject {
         let newTime = playerCurrentTime + seconds
 
         if newTime < CMTimeGetSeconds(duration) {
-            let time2: CMTime = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
+            let time = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
 
-            player.seek(to: time2, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
+            player.seek(to: time, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
         }
     }
     

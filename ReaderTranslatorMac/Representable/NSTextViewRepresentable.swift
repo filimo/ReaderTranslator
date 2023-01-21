@@ -20,7 +20,8 @@ struct NSTextViewRepresentable: NSViewRepresentable {
     }
     
     func updateNSView(_ view: NSTextView, context: Context) {
-        // SwiftUI -> UIKit
+        textView.textContainerInset = NSSize(width: 20, height: 20)
+        
         if view.string != text { view.string = text }
     }
     
