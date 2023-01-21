@@ -17,4 +17,5 @@ final class Store: ObservableObject {
     let maxViewWidth: CGFloat = 400
 
     @Published var translateAction = TranslateAction()
+    @Published var enabledClipboard = true
 }
