@@ -23,23 +23,28 @@ struct StatusBarView: View {
             StatusBarView_ViewsEnabler()
             //            gTranslatorNavbarView
             SpeechHandlerView()
-            playbackRateView
+
+            if AvailableView.safari.isEnabled {
+                Text(String(format: "Apple: %.2f", [audioStore.playbackRate]))
+            }
+
             StatusBarView_SettingsView()
             //            StatusBarView_Sync()
-            speakView
+
+            Button("Speak") {
+                SpeechSynthesizer.speak(isVoiceEnabled: true)
+            }
+            
+            Toggle("Clipboard", isOn: $store.enabledClipboard)
+                .padding(2)
+                .background(.white)
+                .cornerRadius(5)
+            
         }.padding(5)
     }
 }
 
 extension StatusBarView {
-    var playbackRateView: some View {
-        Group {
-            if AvailableView.safari.isEnabled {
-                Text(String(format: "Apple: %.2f", [audioStore.playbackRate]))
-            }
-        }
-    }
-
     var gTranslatorNavbarView: some View {
         Group {
             Spacer()
@@ -50,12 +55,6 @@ extension StatusBarView {
             Button(action: {
                 GTranslatorRepresenter.pageView?.goForward()
             }, label: { Image.sfSymbol("arrowshape.turn.up.right.fill") })
-        }
-    }
-
-    var speakView: some View {
-        Button("Speak") {
-            SpeechSynthesizer.speak(isVoiceEnabled: true)
         }
     }
 }

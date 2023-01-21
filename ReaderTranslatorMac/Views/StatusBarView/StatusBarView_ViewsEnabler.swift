@@ -13,7 +13,6 @@ struct StatusBarView_ViewsEnabler: View {
 
     private let buttons: [AvailableView] = [
         .bookmarks,
-        .audioToText,
         .wikipedia,
         .macmillan,
         .collins,
@@ -26,6 +25,7 @@ struct StatusBarView_ViewsEnabler: View {
         .chatGPT,
         .deepL,
         .yTranslator,
+        .audioToText,
         .pdf,
         .web,
         .safari
