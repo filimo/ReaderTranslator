@@ -42,13 +42,13 @@
 		<key>SFSafariToolbarItem</key>
 		<dict>
 			<key>Action</key>
-			<string>Command</string>
+			<string>Popover</string>
 			<key>Identifier</key>
 			<string>Button</string>
 			<key>Image</key>
-			<string>ToolbarItemIcon.pdf</string>
+			<string>ToolbarItemIcon.png</string>
 			<key>Label</key>
-			<string>Your Button</string>
+			<string>ReaderTranslator</string>
 		</dict>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>

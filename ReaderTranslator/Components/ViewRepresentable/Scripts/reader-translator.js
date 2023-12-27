@@ -556,4 +556,12 @@
 
         init()
     })    
- })()
+    
+    
+    safari.self.addEventListener("message", (event) => {
+        if (event.name === "executeScript") {
+            eval(event.message.scriptToExecute);
+        }
+    })
+})()
+

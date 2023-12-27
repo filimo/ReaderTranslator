@@ -44,11 +44,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         }
     }
 
-    override func toolbarItemClicked(in _: SFSafariWindow) {
-        // This method will be called when your toolbar item is clicked.
-        NSLog("The extension's toolbar item was clicked")
-    }
-
     override func validateToolbarItem(
         in _: SFSafariWindow,
         validationHandler: @escaping ((Bool, String) -> Void)
@@ -62,3 +57,4 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         SafariExtensionViewController.shared
     }
 }
+

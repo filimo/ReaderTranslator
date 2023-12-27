@@ -93,6 +93,8 @@
 		F040512B23ABDBDB00A5240C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C36A9C2359C78A001E396C /* Array.swift */; };
 		F0418B99239A32FD00B59C66 /* BookmarksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0418B97239A32FD00B59C66 /* BookmarksStore.swift */; };
 		F046182E23A3A4AF0041E726 /* ConnectionClientStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F046182D23A3A4AF0041E726 /* ConnectionClientStatus.swift */; };
+		F04B61C92B3AB24E00B434FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B61C82B3AB24E00B434FC /* ContentView.swift */; };
+		F04B61CB2B3ABA8000B434FC /* ToolbarItemIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F04B61CA2B3ABA8000B434FC /* ToolbarItemIcon.png */; };
 		F04B6AA923D379C200CEC7DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B6AA823D379C200CEC7DA /* SettingsView.swift */; };
 		F04B6AAC23D37B2600CEC7DA /* StatusBarView_SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B6AAB23D37B2600CEC7DA /* StatusBarView_SettingsView.swift */; };
 		F04B6AAF23D37C0800CEC7DA /* StackExchangeRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025D61C23B73C8B004A1D6B /* StackExchangeRepresenter.swift */; };
@@ -639,6 +641,8 @@
 		F0418B97239A32FD00B59C66 /* BookmarksStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksStore.swift; sourceTree = "<group>"; };
 		F046182D23A3A4AF0041E726 /* ConnectionClientStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionClientStatus.swift; sourceTree = "<group>"; };
 		F049244E2341F54800F3C728 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		F04B61C82B3AB24E00B434FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F04B61CA2B3ABA8000B434FC /* ToolbarItemIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarItemIcon.png; sourceTree = "<group>"; };
 		F04B6AA823D379C200CEC7DA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F04B6AAB23D37B2600CEC7DA /* StatusBarView_SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView_SettingsView.swift; sourceTree = "<group>"; };
 		F04C830B23617653003A25B4 /* StatusBarView_ViewsEnabler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView_ViewsEnabler.swift; sourceTree = "<group>"; };
@@ -1127,10 +1131,12 @@
 		F075445023447A2800E1D88E /* ReaderTranslatorSafari */ = {
 			isa = PBXGroup;
 			children = (
+				F04B61C82B3AB24E00B434FC /* ContentView.swift */,
 				F075445123447A2800E1D88E /* SafariExtensionHandler.swift */,
 				F075445323447A2800E1D88E /* SafariExtensionViewController.swift */,
 				F075445523447A2800E1D88E /* SafariExtensionViewController.xib */,
 				F075445823447A2800E1D88E /* Info.plist */,
+				F04B61CA2B3ABA8000B434FC /* ToolbarItemIcon.png */,
 				F075445B23447A2800E1D88E /* ToolbarItemIcon.pdf */,
 				F075445D23447A2800E1D88E /* ReaderTranslatorSafari.entitlements */,
 			);
@@ -1854,6 +1860,7 @@
 			files = (
 				F09AD47F23702DF100FFBF6A /* jquery.js in Resources */,
 				F0D9A65826282C660094E776 /* reader-translator.js in Resources */,
+				F04B61CB2B3ABA8000B434FC /* ToolbarItemIcon.png in Resources */,
 				F075445C23447A2800E1D88E /* ToolbarItemIcon.pdf in Resources */,
 				F075445723447A2800E1D88E /* SafariExtensionViewController.xib in Resources */,
 			);
@@ -2220,6 +2227,7 @@
 				F0C02D4723B27CA100B393A5 /* Logger.swift in Sources */,
 				F0C9FB6D29515B0100102423 /* Subtitle.swift in Sources */,
 				F075445223447A2800E1D88E /* SafariExtensionHandler.swift in Sources */,
+				F04B61C92B3AB24E00B434FC /* ContentView.swift in Sources */,
 				F064B4AD23CC598400F28314 /* NumberFormatter.swift in Sources */,
 				F0B4843E23A8C6860031A811 /* URL.swift in Sources */,
 				F0039EC423447E24002F3F95 /* SharedContainer.swift in Sources */,
@@ -2701,7 +2709,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11;
 				MARKETING_VERSION = 1.16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2727,7 +2735,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11;
 				MARKETING_VERSION = 1.16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = by.filimo.ReaderTranslatorMac.ReaderTranslatorSafari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
