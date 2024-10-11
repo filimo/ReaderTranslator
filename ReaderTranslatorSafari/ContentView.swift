@@ -20,7 +20,7 @@ struct ContentView: View {
                 TextField("Language", text: $language)
                     .frame(width: 20)
             }
-
+            
             Button("Google Translate") {
                 Task {
                     Task {
@@ -30,12 +30,12 @@ struct ContentView: View {
                               let properties = await page.properties(),
                               let url = properties.url?.absoluteString
                         else { return }
-
+                        
                         self.translate(url, in: tab)
                     }
                 }
             }
-
+            
             Button("300.ya.ru") {
                 Task {
                     let service = "https://300.ya.ru"
@@ -45,21 +45,48 @@ struct ContentView: View {
                           let properties = await page.properties(),
                           let url = properties.url?.absoluteString
                     else { return }
-
-//                    copyToClipboard(url)
-
+                    
+                    //                    copyToClipboard(url)
+                    
                     if let tab = await window.openTab(with: URL(string: service)!, makeActiveIfPossible: true),
                        let page = await tab.activePage()
                     {
                         let script = """
                             document.getElementsByTagName('textarea')[0].value = "\(url)"
                         """
-
+                        
                         let userInfo = ["scriptToExecute": script]
-
+                        
                         try await Task.sleep(nanoseconds: 500_000_000)
                         page.dispatchMessageToScript(withName: "executeScript", userInfo: userInfo)
                     }
+                }
+            }
+        }
+        
+        Button("YTranslate") {
+            Task {
+                let service = "https://translate.yandex.ru/translate"
+                guard let window = await SFSafariApplication.activeWindow(),
+                      let tab = await window.activeTab(),
+                      let page = await tab.activePage(),
+                      let properties = await page.properties(),
+                      let url = properties.url?.absoluteString
+                else { return }
+                
+                //                    copyToClipboard(url)
+                
+                if let tab = await window.openTab(with: URL(string: service)!, makeActiveIfPossible: true),
+                   let page = await tab.activePage()
+                {
+                    let script = """
+                        document.getElementById('urlInput-input').value = "\(url)"
+                    """
+                    
+                    let userInfo = ["scriptToExecute": script]
+                    
+                    try await Task.sleep(nanoseconds: 500_000_000)
+                    page.dispatchMessageToScript(withName: "executeScript", userInfo: userInfo)
                 }
             }
         }
