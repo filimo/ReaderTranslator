@@ -495,6 +495,7 @@
 		F0CFD3C52539C5C200635677 /* LongmanRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0505C522360D37C004F2D50 /* LongmanRepresenter.swift */; };
 		F0D2E335234BA49000D95994 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2E333234BA49000D95994 /* Safari.swift */; };
 		F0D3551C23A6BE3C009FBA74 /* GTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */; };
+		F0D7A2BA2CB937C800E166EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7A2B92CB937C800E166EE /* AppDelegate.swift */; };
 		F0D8F770265F7EC60018877E /* deep-L.js in Resources */ = {isa = PBXBuildFile; fileRef = F038B02224126BC9006B8C1F /* deep-L.js */; };
 		F0D9A65826282C660094E776 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
 		F0D9A66926285D3F0094E776 /* reader-translator.js in Resources */ = {isa = PBXBuildFile; fileRef = F075445923447A2800E1D88E /* reader-translator.js */; };
@@ -804,6 +805,7 @@
 		F0D2E333234BA49000D95994 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		F0D31C5023491C23003CF86B /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
 		F0D3551B23A6BE3C009FBA74 /* GTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTranslatorView.swift; sourceTree = "<group>"; };
+		F0D7A2B92CB937C800E166EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0D9A696262AD7BB0094E776 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		F0E5BC6223D62D63004DACE5 /* MerriamWebsterRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerriamWebsterRepresenter.swift; sourceTree = "<group>"; };
 		F0E5BC6623D630DF004DACE5 /* merriam-webster.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "merriam-webster.json"; sourceTree = "<group>"; };
@@ -1113,6 +1115,7 @@
 				F03276A02748BA4700DB33E4 /* Views */,
 				F075443D234479DB00E1D88E /* Assets.xcassets */,
 				F0754439234479DA00E1D88E /* ReaderTranslatorMac.swift */,
+				F0D7A2B92CB937C800E166EE /* AppDelegate.swift */,
 				F0754445234479DB00E1D88E /* Info.plist */,
 				F0754446234479DB00E1D88E /* ReaderTranslatorMac.entitlements */,
 				F075443F234479DB00E1D88E /* Preview Content */,
@@ -2100,6 +2103,7 @@
 				F06DB10E23450B6000C2DE90 /* View.swift in Sources */,
 				F0C02D3623B26A3800B393A5 /* OSLog.swift in Sources */,
 				F04C830D23617653003A25B4 /* StatusBarView_ViewsEnabler.swift in Sources */,
+				F0D7A2BA2CB937C800E166EE /* AppDelegate.swift in Sources */,
 				F03276B12748BB9B00DB33E4 /* BookmarksView_List_Detail.swift in Sources */,
 				F064B4AA23CC598400F28314 /* NumberFormatter.swift in Sources */,
 				F0C36A9E2359C78A001E396C /* Array.swift in Sources */,

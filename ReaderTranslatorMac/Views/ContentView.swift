@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewStore = ViewsStore.shared
-    
+
     init() {
         #if os(macOS)
             NSApplication.shared.servicesProvider = ServiceProvider()
@@ -22,17 +22,11 @@ struct ContentView: View {
             VStack(alignment: .leading) {
                 ReaderView()
                     .blur(radius: viewStore.showSettings ? 1 : 0)
-                
+
                 StatusBarView()
             }
-            
+
             SettingsView()
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
